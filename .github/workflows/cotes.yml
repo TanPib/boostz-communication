@@ -1,19 +1,29 @@
+# Relevé des cotes Cardmarket de toutes les cartes Pokémon, le 1er et le 16 de
+# chaque mois, et top des plus fortes évolutions depuis le relevé précédent.
+# Sert la série « Les 10 cotes qui bougent » (voir TYPES.md). Lancement manuel
+# possible : Actions > Cotes > Run workflow.
 name: Cotes
 on:
+  schedule:
+    # 05:17 UTC : Cardmarket a publié les chiffres de la veille, et une minute
+    # hors de l'heure pile évite la file d'attente de GitHub.
+    - cron: '17 5 1,16 * *'
   workflow_dispatch:
-  push:
-    paths: ['.github/workflows/cotes.yml']
+permissions:
+  contents: write
+concurrency: cotes
 jobs:
-  sonde:
+  releve:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
-      - name: TCGdex en masse
+      - uses: actions/checkout@v4
+      - run: python3 outils/cotes.py releve
+      - run: python3 outils/cotes.py top
+      - name: Enregistrer
         run: |
-          curl -sS https://api.tcgdex.net/v2/fr/cards -o fr.json; python3 -c "import json; d=json.load(open('fr.json')); print('cartes fr', len(d), d[:2])"
-          curl -sS https://api.tcgdex.net/v2/en/cards -o en.json; python3 -c "import json; d=json.load(open('en.json')); print('cartes en', len(d))"
-          curl -sS -X POST https://api.tcgdex.net/v2/graphql -H 'content-type: application/json' \
-            -d '{"query":"{ cards(pagination:{page:1,itemsPerPage:3}) { id name pricing { cardmarket { avg7 avg30 trend } } } }"}' | head -c 1200; echo
-          curl -sS -X POST https://api.tcgdex.net/v2/graphql -H 'content-type: application/json' \
-            -d '{"query":"{ set(id:\"me02\") { name cards { id } } }"}' | head -c 300; echo
-          curl -sS https://api.tcgdex.net/v2/fr/sets/me02 | head -c 600; echo
-          time (for i in $(seq 1 20); do curl -s -o /dev/null https://api.tcgdex.net/v2/fr/cards/me02-$(printf %03d $i); done)
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add donnees/cotes
+          git diff --cached --quiet || git commit -q -m "Relevé des cotes Pokémon du $(date -u +%d/%m/%Y)"
+          git pull -q --rebase && git push -q
