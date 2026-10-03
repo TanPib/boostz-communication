@@ -7,13 +7,13 @@ jobs:
   sonde:
     runs-on: ubuntu-latest
     steps:
-      - name: Archives tcgcsv disponibles
+      - name: TCGdex en masse
         run: |
-          curl -sS https://tcgcsv.com/last-updated.txt; echo
-          for d in 2026-09-10 2026-09-15 2026-09-16 2026-09-17 2026-09-18 2026-09-25 2026-10-01 2026-10-02 2026-10-03; do
-            echo "$d $(curl -s -o /dev/null -w '%{http_code} %{size_download}' -r 0-0 https://tcgcsv.com/archive/tcgplayer/prices-$d.ppmd.7z)"
-          done
-          curl -sSI https://tcgcsv.com/archive/tcgplayer/prices-2026-10-02.ppmd.7z | head -12
-          which 7z 7za || true
-      - name: TCGdex (Cardmarket)
-        run: curl -sS https://api.tcgdex.net/v2/fr/cards/me02-130 | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('name'), json.dumps(d.get('pricing'))[:800])"
+          curl -sS https://api.tcgdex.net/v2/fr/cards -o fr.json; python3 -c "import json; d=json.load(open('fr.json')); print('cartes fr', len(d), d[:2])"
+          curl -sS https://api.tcgdex.net/v2/en/cards -o en.json; python3 -c "import json; d=json.load(open('en.json')); print('cartes en', len(d))"
+          curl -sS -X POST https://api.tcgdex.net/v2/graphql -H 'content-type: application/json' \
+            -d '{"query":"{ cards(pagination:{page:1,itemsPerPage:3}) { id name pricing { cardmarket { avg7 avg30 trend } } } }"}' | head -c 1200; echo
+          curl -sS -X POST https://api.tcgdex.net/v2/graphql -H 'content-type: application/json' \
+            -d '{"query":"{ set(id:\"me02\") { name cards { id } } }"}' | head -c 300; echo
+          curl -sS https://api.tcgdex.net/v2/fr/sets/me02 | head -c 600; echo
+          time (for i in $(seq 1 20); do curl -s -o /dev/null https://api.tcgdex.net/v2/fr/cards/me02-$(printf %03d $i); done)
