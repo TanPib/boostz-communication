@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz posts 2</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script>
+<style>
+  :root { --ink2: rgba(255,255,255,0.62); --acc: #C4B5FD; --card: #1D1730; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; }
+  .p { position: relative; overflow: hidden; color: #fff; font-family: Exo, sans-serif; margin-bottom: 20px;
+    background: linear-gradient(160deg, #0B0812 0%, #131020 35%, #1B1330 70%, #150E22 100%); }
+  .abs { position: absolute; }
+  .glow { position: absolute; border-radius: 50%; filter: blur(110px); }
+  .t { position: absolute; left: 0; width: 1080px; text-align: center; font-family: Poppins; font-weight: 800; letter-spacing: -1.5px; line-height: 1.06; }
+  .s { position: absolute; left: 0; width: 1080px; text-align: center; font-family: Exo; font-weight: 600; color: var(--ink2); }
+  .acc { color: var(--acc); }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; color: #fff; }
+  .ui { font-family: 'DM Sans'; font-weight: 700; }
+  .back { position: absolute; border-radius: 9%/6.5%; box-shadow: 0 18px 50px rgba(0,0,0,.55); }
+  .pix { image-rendering: pixelated; image-rendering: crisp-edges; display: block; }
+  .holoRing { box-shadow: 0 0 0 6px #fff, 0 0 60px 18px rgba(139,61,255,.55), 0 0 120px 30px rgba(255,79,160,.25); }
+</style></head><body>
+<script>
+const GAMES = [['pokemon','Pokémon','#F5C93B'],['onepiece','One Piece','#F2706C'],['lorcana','Disney Lorcana','#35C6BC'],['yugioh','Yu-Gi-Oh!','#B189E8'],
+  ['magic','Magic','#C0A183'],['starwarsunlimited','Star Wars Unlimited','#A9B2C4'],['dragonball','Dragon Ball Super','#F58A4E'],['wow','Warcraft','#58A6DD']];
+const emblemSvg = (id, c, size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48">${EMBLEMS[id].replace(/COLOR/g, c)}</svg>`;
+const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const sig = (pos = 'left:60px;top:56px', size = 52) => `<div class="abs" style="${pos}">${wordmark(size)}</div>`;
+const glows = (a = 'left:120px;top:300px', b = 'left:560px;top:820px', o = .3) => `<div class="glow" style="width:760px;height:760px;${a};background:#8B3DFF;opacity:${o}"></div><div class="glow" style="width:520px;height:520px;${b};background:#FF4FA0;opacity:${o / 2}"></div>`;
+const fanPaths = `<g transform="rotate(-14 50 95)"><rect x="31" y="24" width="38" height="54" rx="7" fill="rgba(196,181,253,.22)"/></g>
+  <rect x="31" y="21" width="38" height="54" rx="7" fill="rgba(196,181,253,.5)"/>
+  <g transform="rotate(14 50 95)"><rect x="31" y="18" width="38" height="54" rx="7" fill="url(#FF)"/><path d="M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z" fill="#fff"/></g>`;
+const fanDefs = `<defs><linearGradient id="FF" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient></defs>`;
+const euro = (v) => v.toFixed(2).replace('.', ',') + ' €';
+const POSTS = [];
+
+// 1 - The Boostz booster: a foil pack torn open, five card backs fanning out, the last one holo.
+const crimp = (y, dir) => Array.from({ length: 21 }, (_, i) => `${20 + i * 23},${y + (i % 2 ? dir * 14 : 0)}`).join(' ');
+POSTS.push(['n1-reel-booster-boostz', 1080, 1920, `${glows('left:160px;top:640px', 'left:520px;top:1150px', .35)}${sig('left:60px;top:150px')}
+  <div class="t" style="top:290px;font-size:92px">On a mis l’app<br>dans un <span class="acc">booster.</span></div>
+  <div class="s" style="top:500px;font-size:40px">Reste jusqu’à la rare.</div>
+  ${[['pokemon', -40], ['onepiece', -20], ['lorcana', 20], ['yugioh', 40]].map(([id, r]) => `<img class="back" src="assets/dos-${id}.svg" style="left:390px;top:700px;width:300px;height:415px;transform:rotate(${r}deg);transform-origin:50% 135%">`).join('')}
+  <div class="back holoRing" style="left:390px;top:640px;width:300px;height:415px;transform-origin:50% 135%;overflow:hidden;border-radius:26px">
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(139,61,255,.55),transparent 60%),radial-gradient(circle at 80% 85%,rgba(255,79,160,.35),transparent 55%),radial-gradient(circle at 85% 15%,rgba(58,169,255,.3),transparent 50%),#1C1533"></div>
+    <svg viewBox="0 0 100 100" style="position:absolute;left:50px;top:90px;width:200px;height:200px;filter:drop-shadow(0 0 18px rgba(196,181,253,.8))"><path d="M30 20 H70 V31 L47 56 H70 V67 H30 V56 L53 31 H30 Z" fill="#fff" transform="translate(0 6)"/></svg>
+    <div style="position:absolute;inset:-40%;background:linear-gradient(105deg,transparent 38%,rgba(255,79,160,.45) 46%,rgba(255,255,255,.65) 50%,rgba(58,169,255,.45) 54%,transparent 62%)"></div>
+  </div>
+  <svg class="abs" width="560" height="700" viewBox="0 0 520 650" style="left:260px;top:1060px">
+    <defs><linearGradient id="foil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B1C6E"/><stop offset=".45" stop-color="#5B21B6"/><stop offset=".55" stop-color="#7C3AED"/><stop offset="1" stop-color="#24103F"/></linearGradient>
+      <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>${fanDefs}</defs>
+    <polygon points="${crimp(40, -1)} 480,610 ${crimp(610, 1).split(' ').reverse().join(' ')} 20,40" fill="url(#foil)" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+    <rect x="140" y="40" width="70" height="580" fill="url(#sheen)" transform="skewX(-12)"/>
+    <rect x="300" y="40" width="30" height="580" fill="url(#sheen)" transform="skewX(-12)"/>
+    <g transform="translate(150 120) scale(2.2)">${fanPaths}</g>
+    <text x="260" y="470" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="64" fill="#fff">boostZ</text>
+    <text x="260" y="525" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="24" letter-spacing="6" fill="rgba(255,255,255,.75)">MISE À JOUR N°1</text>
+  </svg>`]);
+
+// 2a - Guess the pre-grade: centring guides on a card in the scanner frame.
+POSTS.push(['n2a-carrousel-devine-la-prenote', 1080, 1350, `${glows('left:160px;top:200px', 'left:600px;top:800px')}${sig()}
+  <div class="t" style="top:170px;font-size:96px">9 ou 10 ?</div>
+  <div class="s" style="top:285px;font-size:38px">Tu as 3 secondes.</div>
+  <img class="back" src="assets/dos-pokemon.svg" style="left:345px;top:430px;width:390px;height:540px">
+  <svg class="abs" width="560" height="720" viewBox="0 0 560 720" style="left:260px;top:360px;overflow:visible;transform:scale(.93);transform-origin:50% 50%">
+    <g fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"><path d="M10 90 V10 H90"/><path d="M470 10 H550 V90"/><path d="M550 630 V710 H470"/><path d="M90 710 H10 V630"/></g>
+    <g stroke="#FF4FA0" stroke-width="4" stroke-dasharray="14 10"><path d="M96 40 V690"/><path d="M466 40 V690"/><path d="M40 92 H520"/><path d="M40 640 H520"/></g>
+    <g font-family="DM Sans" font-weight="700" font-size="30" fill="#FF8FB4"><text x="20" y="372">52</text><text x="490" y="372">48</text><text x="262" y="80">50</text><text x="262" y="684">50</text></g>
+  </svg>
+  <div class="t" style="top:1060px;font-size:110px"><span style="color:#fff">?</span><span class="ui" style="font-size:52px;color:var(--ink2)">&nbsp;/ 10</span></div>
+  <div class="s ui" style="top:1210px;font-size:30px;letter-spacing:3px;color:var(--acc)">CENTRAGE · COINS · BORDS · SURFACE</div>`]);
+
+// 2b - The answer, in Boostz's own pre-grade case (not a grading-company label).
+POSTS.push(['n2b-carrousel-prenote-reponse', 1080, 1350, `${glows('left:160px;top:250px')}${sig()}
+  <div class="abs" style="left:250px;top:150px;width:580px;height:1060px;border-radius:44px;background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.05));border:3px solid rgba(255,255,255,.28);box-shadow:0 40px 120px rgba(0,0,0,.6), inset 0 0 40px rgba(196,181,253,.12);padding:24px">
+    <div style="height:250px;border-radius:24px;background:#1A1030;border:2px solid rgba(196,181,253,.35);display:flex;align-items:center;padding:0 30px;gap:24px">
+      <div style="flex:1">
+        <div class="ui" style="font-size:24px;letter-spacing:4px;color:var(--acc)">PRÉ-NOTE BOOSTZ</div>
+        <div style="margin-top:14px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-family:'DM Sans';font-weight:700;font-size:22px">
+          ${[['Centrage', 10], ['Coins', 8], ['Bords', 8], ['Surface', 8.6]].map(([k, v]) => `<span style="color:rgba(255,255,255,.7)">${k}</span><span style="display:flex;align-items:center;gap:10px"><i style="display:block;height:8px;width:${v * 14}px;border-radius:9px;background:#C4B5FD"></i>${String(v).replace('.', ',')}</span>`).join('')}
+        </div>
+      </div>
+      <div class="grad" style="font-family:Poppins;font-weight:800;font-size:120px;line-height:1">8,5</div>
+    </div>
+    <div style="margin:22px auto 0;width:470px;height:650px;border-radius:30px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.4)"><img src="assets/dos-pokemon.svg" style="width:100%;height:100%;display:block"></div>
+    <div style="margin-top:20px;text-align:center;font-family:Exo;font-weight:600;font-size:22px;color:rgba(255,255,255,.6)">Estimation Boostz, pas une note officielle</div>
+  </div>
+  <div class="s ui" style="top:1250px;font-size:34px;color:#fff">T’avais dit combien ?</div>`]);
+
+// 3 - "Une page, un tableau": a binder spread across three slides (3240 x 1350), Michi style.
+const pocket = (inner, x, y, w = 250, h = 348) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;border-radius:14px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);overflow:hidden">${inner}</div>`;
+let binder = '';
+const pages = [60, 1140, 2220];
+pages.forEach((px, pi) => {
+  binder += `<div class="abs" style="left:${px - 20}px;top:150px;width:1000px;height:1140px;border-radius:30px;background:#120B1E;border:3px solid rgba(255,255,255,.08);box-shadow:0 30px 90px rgba(0,0,0,.6)"></div>`;
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) {
+    const x = px + 45 + c * 310, y = 185 + r * 368;
+    let inner = '';
+    if (pi === 0) {
+      const i = r * 3 + c;
+      inner = i < 8 ? `<img src="assets/dos-${GAMES[i][0]}.svg" style="width:100%;height:100%;display:block">`
+        : `<div style="position:absolute;inset:14px;border:3px dashed rgba(196,181,253,.6);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'DM Sans';font-weight:700;font-size:30px;color:#C4B5FD;text-align:center">à<br>trouver</div>`;
+    } else if (pi === 1) {
+      // Page 2: the eight emblems around the Z, one per pocket.
+      const i = r * 3 + c;
+      const g = i === 4 ? null : GAMES[i < 4 ? i : i - 1];
+      inner = g ? `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,${g[2]}33,transparent 70%)">${emblemSvg(g[0], g[2], 150)}</div>`
+        : `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,rgba(139,61,255,.5),transparent 70%)"><svg viewBox="0 0 100 100" width="170" height="170"><path d="M30 20 H70 V31 L47 56 H70 V67 H30 V56 L53 31 H30 Z" fill="#fff" transform="translate(0 6)"/></svg></div>`;
+    } else {
+      // Page 3: the fan, one picture cut across the nine pockets (Michi method).
+      const gx = 1080 + 45 + c * 310, gy = 35 + r * 368;
+      inner = `<svg width="250" height="348" viewBox="${gx} ${gy} 250 348" style="display:block"><rect x="0" y="0" width="2160" height="1140" fill="#1A1030"/>${fanDefs}<g transform="translate(925 95) scale(11)">${fanPaths}</g></svg>`;
+    }
+    binder += pocket(inner, x, y);
+  }
+});
+POSTS.push(['n3-carrousel-panoramique-classeur', 3240, 1350, `${glows('left:200px;top:300px', 'left:2200px;top:500px', .25)}
+  <div class="abs" style="left:60px;top:40px;display:flex;align-items:baseline;gap:30px">${wordmark(52)}<span class="ui" style="font-size:36px;color:#fff">Ton classeur n’est pas un tableur.</span><span class="ui" style="font-size:36px;color:var(--acc)">Swipe →</span></div>
+  ${binder}`]);
+
+// 4 - Same card, three prices: three bands, prices as stickers, the top one holo.
+POSTS.push(['n4-carrousel-meme-carte-trois-prix', 1080, 1350, `${sig()}
+  <div class="t" style="top:150px;font-size:80px">Même carte.<br>Trois <span class="acc">prix.</span></div>
+  ${[['FR', 'Français', 42.9, '#3AA9FF', -4], ['EN', 'Anglais', 36.5, '#8B3DFF', 3], ['JA', 'Japonais', 61.2, '#FF4FA0', -3]].map(([k, n, p, c, r], i) => `
+  <div class="abs" style="left:${60 + i * 330}px;top:380px;width:300px;height:860px;border-radius:30px;background:linear-gradient(180deg,${c}26,rgba(255,255,255,.03));border:2px solid ${c}66"></div>
+  <div class="abs ui" style="left:${60 + i * 330}px;top:410px;width:300px;text-align:center;font-size:64px;color:#fff">${k}</div>
+  <div class="abs" style="left:${60 + i * 330}px;top:490px;width:300px;text-align:center;font-family:Exo;font-weight:600;font-size:28px;color:var(--ink2)">${n}</div>
+  <img class="back" src="assets/dos-pokemon.svg" style="left:${85 + i * 330}px;top:560px;width:250px;height:346px;transform:rotate(${r}deg)">
+  <div class="abs ${i === 2 ? 'holoRing' : ''}" style="left:${75 + i * 330}px;top:${960 + (i % 2) * 20}px;width:270px;padding:18px 0;border-radius:18px;background:#fff;color:#1A1225;text-align:center;font-family:Poppins;font-weight:800;font-size:56px;transform:rotate(${-r * 1.5}deg);box-shadow:0 10px 30px rgba(0,0,0,.5)">${euro(p)}</div>`).join('')}
+  <div class="s ui" style="top:1270px;font-size:34px;color:#fff">Laquelle tu prends ?</div>`]);
+
+// 5 - 1 chance in 99: 99 pack silhouettes, one lit.
+let packs = '';
+for (let i = 0; i < 99; i++) {
+  const c = i % 11, r = Math.floor(i / 11), lit = i === 60;
+  packs += `<div class="abs ${lit ? 'holoRing' : ''}" style="left:${95 + c * 82}px;top:${390 + r * 92}px;width:60px;height:78px;border-radius:8px;${lit ? 'background:linear-gradient(135deg,#FF4FA0,#8B3DFF 55%,#3AA9FF)' : 'background:rgba(196,181,253,.16);border:2px solid rgba(196,181,253,.22)'}"></div>`;
+}
+POSTS.push(['n5-carrousel-1-chance-sur-99', 1080, 1350, `${glows('left:160px;top:350px', 'left:600px;top:800px', .2)}${sig()}
+  <div class="t" style="top:160px;font-size:104px">1 chance <span class="acc">sur 99.</span></div>
+  ${packs}
+  <div class="s" style="top:1250px;font-size:34px;color:#fff">Voilà à quoi ça ressemble vraiment.</div>
+  <div class="s" style="top:1300px;font-size:22px">Taux relevé par la communauté · source à citer</div>`]);
+
+// 6 - Choose your fighter: 16-bit character select, drawn in the brand fonts then pixelated.
+POSTS.push(['n6-reel-choisis-ton-combattant', 1080, 1920, `<div class="abs" style="inset:0;background:#0B0812"></div>
+  <canvas id="pxTitle" class="pix abs" style="left:40px;top:200px;width:1000px;height:200px"></canvas>
+  <div class="abs" style="left:90px;top:470px;width:900px;display:grid;grid-template-columns:repeat(3,280px);gap:30px">
+    ${[...GAMES.slice(0, 4), ['Z', 'Boostz', '#C4B5FD'], ...GAMES.slice(4)].map(([id, n, c], i) => [id, ({ 'Disney Lorcana': 'Lorcana', 'Star Wars Unlimited': 'Star Wars', 'Dragon Ball Super': 'Dragon Ball' })[n] || n, c, i]).map(([id, n, c, i]) => `<div style="position:relative;height:280px;border-radius:6px;background:${id === 'Z' ? '#24103F' : '#160E26'};border:6px solid ${i === 0 ? '#fff' : c + '88'};${i === 0 ? 'box-shadow:0 0 0 6px #FF4FA0, 0 0 50px 10px rgba(255,79,160,.45)' : ''}"><canvas class="pix emb" data-id="${id}" data-c="${c}" style="position:absolute;left:50px;top:30px;width:168px;height:168px"></canvas><canvas class="pix lbl" data-t="${n.toUpperCase()}" data-c="${c}" style="position:absolute;left:0;bottom:16px;width:268px;height:48px"></canvas></div>`).join('')}
+  </div>
+  <div class="abs" style="left:90px;top:1440px;width:900px;border:6px solid #fff;border-radius:6px;background:#160E26;padding:30px 40px">
+    <canvas class="pix stat" data-t="POKÉMON" data-c="#F5C93B" style="width:600px;height:60px"></canvas>
+    ${[['NOSTALGIE', 10], ['PATIENCE', 2], ['BUDGET', 1]].map(([k, v]) => `<div style="display:flex;align-items:center;gap:20px;margin-top:22px"><canvas class="pix stat" data-t="${k}" data-c="#FFFFFF" style="width:300px;height:44px"></canvas><div style="display:flex;gap:6px">${Array.from({ length: 10 }, (_, j) => `<i style="display:block;width:34px;height:30px;background:${j < v ? '#5FD3A3' : 'rgba(255,255,255,.15)'}"></i>`).join('')}</div></div>`).join('')}
+  </div>
+  <div class="s ui" style="top:1790px;font-size:40px;color:#fff">Assume en commentaire.</div>`]);
+
+document.body.innerHTML = POSTS.map(([id, w, h, html]) => `<div class="p" id="${id}" style="width:${w}px;height:${h}px">${html}</div>`).join('');
+
+// Pixelate: draw at a tiny size with the real brand fonts / emblems, then let the canvas upscale with nearest-neighbour.
+window.pixelate = async () => {
+  await document.fonts.ready;
+  const txt = (cv, t, color, font, k) => {
+    const W = Math.round(cv.clientWidth / k), H = Math.round(cv.clientHeight / k);
+    cv.width = W; cv.height = H;
+    const g = cv.getContext('2d'); g.imageSmoothingEnabled = false;
+    g.fillStyle = color; g.textBaseline = 'middle'; g.textAlign = 'center';
+    const [weight, ...fam] = font.split(' ');
+    const setF = (z) => { g.font = `${weight} ${z}px ${fam.join(' ')}`; };
+    let size = H; setF(size);
+    while (g.measureText(t).width > W - 2 && size > 4) { size--; setF(size); }
+    g.fillText(t, W / 2, H / 2 + 1);
+    // Hard threshold on alpha: no anti-aliasing, a real 16-bit edge.
+    const d = g.getImageData(0, 0, W, H);
+    for (let i = 3; i < d.data.length; i += 4) d.data[i] = d.data[i] > 110 ? 255 : 0;
+    g.putImageData(d, 0, 0);
+  };
+  const t = document.getElementById('pxTitle');
+  txt(t, 'CHOISIS TON', '#FFFFFF', '800 Poppins', 8);
+  const t2 = document.createElement('canvas'); t2.className = 'pix abs'; t2.style.cssText = 'left:40px;top:320px;width:1000px;height:140px';
+  t.parentNode.appendChild(t2); txt(t2, 'COMBATTANT', '#C4B5FD', '800 Poppins', 8);
+  t.style.height = '130px';
+  txt(t, 'CHOISIS TON', '#FFFFFF', '800 Poppins', 8);
+  document.querySelectorAll('canvas.lbl').forEach((cv) => txt(cv, cv.dataset.t, cv.dataset.c, '700 "DM Sans"', 4));
+  document.querySelectorAll('canvas.stat').forEach((cv) => { cv.style.display = 'block'; txt(cv, cv.dataset.t, cv.dataset.c, '700 "DM Sans"', 4); });
+  for (const cv of document.querySelectorAll('canvas.emb')) {
+    const W = 24; cv.width = W; cv.height = W;
+    const g = cv.getContext('2d'); g.imageSmoothingEnabled = false;
+    const img = new Image();
+    const svg = cv.dataset.id === 'Z'
+      ? `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path d="M12 9 H36 V15 L20 33 H36 V39 H12 V33 L28 15 H12 Z" fill="${cv.dataset.c}"/></svg>`
+      : `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">${EMBLEMS[cv.dataset.id].replace(/COLOR/g, cv.dataset.c).replace(/stroke-width="([0-9.]+)"/g, (m, v) => `stroke-width="${Math.max(3.2, v * 1.6)}"`)}</svg>`;
+    img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    await img.decode();
+    g.drawImage(img, 0, 0, W, W);
+    const d = g.getImageData(0, 0, W, W);
+    for (let i = 3; i < d.data.length; i += 4) d.data[i] = d.data[i] > 90 ? 255 : 0;
+    g.putImageData(d, 0, 0);
+  }
+};
+</script></body></html>

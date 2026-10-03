@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz cotes qui bougent</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script>
+<!-- window.TOP: one top-AAAA-MM-JJ.json written by outils/cotes.py, wrapped as
+     `window.TOP = {...};` (a page opened from file:// cannot fetch a JSON file). -->
+<script src="cotes-donnees.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; }
+  .p { position: relative; overflow: hidden; width: 1080px; height: 1350px; margin-bottom: 20px; color: #fff; font-family: Exo;
+    background: linear-gradient(160deg, #0B0812 0%, #131020 35%, #1B1330 70%, #150E22 100%); }
+  .abs { position: absolute; }
+  .glow { position: absolute; border-radius: 50%; filter: blur(110px); }
+  .pop { font-family: Poppins; font-weight: 800; letter-spacing: -1.5px; line-height: 1.04; }
+  .ui { font-family: 'DM Sans'; font-weight: 700; }
+  .acc { color: #C4B5FD; }
+  .mut { color: rgba(255,255,255,.62); }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; }
+  .src { position: absolute; left: 70px; right: 70px; bottom: 34px; font-family: Exo; font-size: 20px; line-height: 1.35; color: rgba(255,255,255,.42); }
+  .panel { position: absolute; background: #1D1730; border: 2px solid rgba(255,255,255,.08); border-radius: 40px; }
+</style></head><body>
+<script>
+const UP = '#5FD3A3', DOWN = '#F0899A';
+const T = window.TOP;
+const emblemSvg = (id, c, size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48">${EMBLEMS[id].replace(/COLOR/g, c)}</svg>`;
+const badge = (id, c, d) => `<div style="width:${d}px;height:${d}px;flex:none;border-radius:999px;border:3px solid ${c};background:${c}33;display:flex;align-items:center;justify-content:center">${emblemSvg(id, c, d * 0.6)}</div>`;
+const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px;color:#fff">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const glows = (a, b, o = .3) => `<div class="glow" style="width:760px;height:760px;${a};background:#8B3DFF;opacity:${o}"></div><div class="glow" style="width:520px;height:520px;${b};background:#FF4FA0;opacity:${o / 2}"></div>`;
+const euro = (v) => v.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' €';
+const pct = (v) => (v > 0 ? '+' : '−') + Math.abs(v).toFixed(1).replace('.', ',') + ' %';
+const day = (iso) => iso.slice(8, 10) + '/' + iso.slice(5, 7);
+// The two prices being compared, named for what they are in each mode.
+const SPAN = T.debut ? { a: `le ${day(T.debut)}`, b: `le ${day(T.fin)}` } : { a: 'moyenne 30 jours', b: 'moyenne 7 jours' };
+const PERIOD = T.debut ? `du ${day(T.debut)} au ${day(T.fin)}` : `au ${day(T.fin)}`;
+const SRC = T.debut
+  ? `Cardmarket, prix de vente moyen sur 7 jours, relevés du ${day(T.debut)} et du ${day(T.fin)}/${T.fin.slice(0, 4)}. Cartes à plus de ${T.seuil_eur} € dont la tendance Cardmarket va dans le même sens.`
+  : `Cardmarket au ${day(T.fin)}/${T.fin.slice(0, 4)} : prix de vente moyen des 7 derniers jours comparé à celui des 30 derniers jours. Cartes à plus de ${T.seuil_eur} €.`;
+const head = (kicker) => `<div class="abs ui" style="left:70px;top:66px;font-size:24px;letter-spacing:6px;color:#C4B5FD">${kicker}</div>
+  <div class="abs" style="right:70px;top:50px;display:flex;align-items:center;gap:18px"><div style="text-align:right"><div class="ui" style="font-size:21px;letter-spacing:5px;color:#F5C93B">POKÉMON</div><div style="font-family:Exo;font-weight:600;font-size:24px;color:rgba(255,255,255,.72);margin-top:2px">Cotes Cardmarket</div></div>${badge('pokemon', '#F5C93B', 66)}</div>`;
+const img = (c) => `../donnees/cotes/pokemon/images/${c.id}.png`;
+const card = (c, x, y, w, r = 0, glow = 'rgba(139,61,255,.55)') => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.375}px;transform:rotate(${r}deg);border-radius:${w * .045}px;overflow:hidden;box-shadow:0 0 0 5px rgba(255,255,255,.9),0 0 80px 18px ${glow}"><img src="${img(c)}" style="width:100%;height:100%;display:block;object-fit:cover"></div>`;
+const fit = (s, big, small, max) => s.length > max ? small : big;
+const POSTS = [];
+const top = T.mouvements;
+
+// 1 - Cover: the three biggest moves fanned out, the title, the period.
+POSTS.push(['01-couverture', `${glows('left:160px;top:360px', 'left:560px;top:860px', .36)}${head('LES COTES QUI BOUGENT')}
+  <div class="abs pop" style="left:0;top:170px;width:1080px;text-align:center;font-size:92px">Les 10 cotes<br><span class="acc">qui ont le plus bougé</span></div>
+  <div class="abs mut" style="left:0;top:395px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:36px">${T.debut ? 'en 15 jours, ' + PERIOD : 'cette semaine, ' + PERIOD}</div>
+  ${card(top[2], 180, 520, 300, -12)}${card(top[1], 600, 520, 300, 12)}${card(top[0], 375, 480, 330, 0, (top[0].evolution > 0 ? 'rgba(95,211,163,.5)' : 'rgba(240,137,154,.5)'))}
+  <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
+  <div class="abs ui mut" style="right:70px;top:1250px;font-size:30px">Swipe →</div>`]);
+
+// 2 to 11 - The countdown, 10th to 1st: the card, then the two prices and the move.
+top.map((c, i) => [c, i + 1]).reverse().forEach(([c, rank]) => {
+  const col = c.evolution > 0 ? UP : DOWN;
+  const delta = c.apres - c.avant;
+  // A two-point slope: the honest chart for two records, nothing invented in between.
+  const y0 = c.evolution > 0 ? 150 : 40, y1 = c.evolution > 0 ? 40 : 150;
+  POSTS.push([`${String(13 - rank).padStart(2, '0')}-rang-${rank}`, `${glows('left:60px;top:260px', 'left:620px;top:880px', .26)}${head('LES 10 COTES QUI BOUGENT')}
+    ${card(c, 70, 190, 430, -3)}
+    <div class="abs" style="left:560px;top:170px;width:450px">
+      <div class="pop grad" style="font-size:190px;line-height:1">${rank}</div>
+      <div class="pop" style="font-size:${fit(c.nom, 56, 44, 16)}px;margin-top:10px">${c.nom}</div>
+      <div class="mut" style="font-family:Exo;font-weight:600;font-size:28px;margin-top:10px;line-height:1.3">${c.set}<br>n° ${c.numero}${c.rarete ? ' · ' + c.rarete : ''}</div>
+    </div>
+    <div class="panel" style="left:70px;top:860px;width:940px;height:330px;padding:40px 50px">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between">
+        <div><div class="ui mut" style="font-size:22px;letter-spacing:3px">${SPAN.a.toUpperCase()}</div><div class="pop" style="font-size:52px;margin-top:6px">${euro(c.avant)}</div></div>
+        <svg width="250" height="190" viewBox="0 0 250 190" style="margin-top:-6px"><line x1="20" y1="${y0}" x2="230" y2="${y1}" stroke="${col}" stroke-width="8" stroke-linecap="round"/><circle cx="20" cy="${y0}" r="13" fill="#1D1730" stroke="rgba(255,255,255,.7)" stroke-width="6"/><circle cx="230" cy="${y1}" r="15" fill="${col}"/></svg>
+        <div style="text-align:right"><div class="ui mut" style="font-size:22px;letter-spacing:3px">${SPAN.b.toUpperCase()}</div><div class="pop" style="font-size:52px;margin-top:6px;color:${col}">${euro(c.apres)}</div></div>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:24px;margin-top:6px"><span class="pop" style="font-size:96px;color:${col}">${c.evolution > 0 ? '▲' : '▼'} ${pct(c.evolution)}</span><span class="ui mut" style="font-size:32px">${delta > 0 ? '+' : '−'}${euro(Math.abs(delta))}</span></div>
+    </div>
+    <div class="src">${SRC}</div>`]);
+});
+
+// 12 - The whole list on one slide (the one people save), then Boostz.
+POSTS.push(['12-recap', `${glows('left:160px;top:300px', 'left:600px;top:900px', .26)}${head('LE RÉCAP')}
+  <div class="abs pop" style="left:70px;top:150px;font-size:64px">Les 10 cotes qui bougent</div>
+  <div class="abs mut" style="left:70px;top:230px;font-family:Exo;font-weight:600;font-size:30px">Pokémon · Cardmarket · ${PERIOD}</div>
+  <div class="abs" style="left:70px;top:300px;width:940px">${top.map((c, i) => `<div style="display:flex;align-items:center;gap:26px;height:68px;border-bottom:2px solid rgba(255,255,255,.07)">
+    <span class="pop grad" style="width:62px;font-size:40px">${i + 1}</span>
+    <span class="ui" style="flex:1;font-size:30px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.nom} <span class="mut" style="font-family:Exo;font-weight:600;font-size:24px">· ${c.set}</span></span>
+    <span class="pop" style="font-size:36px;color:${c.evolution > 0 ? UP : DOWN}">${c.evolution > 0 ? '▲' : '▼'} ${pct(c.evolution)}</span></div>`).join('')}</div>
+  <div class="abs pop" style="left:0;top:1030px;width:1080px;text-align:center;font-size:52px">Suis tes cotes sur <span class="acc">Boostz.</span></div>
+  <div class="abs mut" style="left:0;top:1105px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:32px">Ton compagnon TCG, bientôt sur ton téléphone</div>
+  <div class="abs" style="left:0;top:1175px;width:1080px;display:flex;justify-content:center">${wordmark(64)}</div>
+  <div class="src" style="bottom:24px;font-size:18px">${SRC}</div>`]);
+
+document.body.innerHTML = POSTS.map(([id, html]) => `<div class="p" id="${id}">${html}</div>`).join('');
+</script></body></html>

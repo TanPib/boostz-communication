@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz posts 3</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; }
+  .p { position: relative; overflow: hidden; width: 1080px; height: 1350px; margin-bottom: 20px; color: #fff; font-family: Exo;
+    background: linear-gradient(160deg, #0B0812 0%, #131020 35%, #1B1330 70%, #150E22 100%); }
+  .light { color: #1A1225; background: linear-gradient(160deg, #FFFFFF 0%, #FBFAFD 35%, #F6F4FA 70%, #F8F5FB 100%); }
+  .abs { position: absolute; }
+  .glow { position: absolute; border-radius: 50%; filter: blur(110px); }
+  .pop { font-family: Poppins; font-weight: 800; letter-spacing: -1.5px; line-height: 1.02; }
+  .ui { font-family: 'DM Sans'; font-weight: 700; }
+  .acc { color: #C4B5FD; }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; }
+  .ex { position: absolute; z-index: 20; left: 50%; bottom: 18px; transform: translateX(-50%); font-family: 'DM Sans'; font-weight: 700; font-size: 18px; letter-spacing: 3px; color: rgba(255,255,255,.35); }
+  .light .ex { color: rgba(26,18,37,.35); }
+</style></head><body>
+<script>
+const emblemSvg = (id, c, size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48">${EMBLEMS[id].replace(/COLOR/g, c)}</svg>`;
+const badge = (id, c, d, a = '33') => `<div style="width:${d}px;height:${d}px;flex:none;border-radius:999px;border:3px solid ${c};background:${c}${a};display:flex;align-items:center;justify-content:center">${emblemSvg(id, c, d * 0.6)}</div>`;
+const wordmark = (size, ink = '#fff') => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px;color:${ink}">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const glows = (a, b, o = .3) => `<div class="glow" style="width:760px;height:760px;${a};background:#8B3DFF;opacity:${o}"></div><div class="glow" style="width:520px;height:520px;${b};background:#FF4FA0;opacity:${o / 2}"></div>`;
+const back = (game, x, y, w, r = 0, extra = '') => `<img class="abs" src="assets/dos-${game}.svg" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.383}px;border-radius:${w * .09}px;transform:rotate(${r}deg);box-shadow:0 24px 60px rgba(0,0,0,.5);${extra}">`;
+const euro = (v) => v.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' €';
+const curve = (w, h, pts, color) => {
+  const max = Math.max(...pts), min = Math.min(...pts);
+  const xy = pts.map((v, i) => [i * w / (pts.length - 1), h - (v - min) / (max - min) * (h - 20) - 10]);
+  const d = xy.map(([x, y], i) => (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1)).join(' ');
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><defs><linearGradient id="cv${w}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${color}" stop-opacity=".35"/><stop offset="1" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>
+    ${[0.25, 0.5, 0.75].map((f) => `<line x1="0" x2="${w}" y1="${h * f}" y2="${h * f}" stroke="rgba(255,255,255,.07)" stroke-width="2"/>`).join('')}
+    <path d="${d} L${w} ${h} L0 ${h} Z" fill="url(#cv${w})"/><path d="${d}" fill="none" stroke="${color}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+};
+const POSTS = [];
+
+// 1a - Market top 10 (Zebradex-style), cover.
+POSTS.push(['m1a-top10-couverture', '', `${glows('left:160px;top:420px', 'left:600px;top:850px', .32)}
+  <div class="abs ui" style="left:0;top:110px;width:1080px;text-align:center;font-size:30px;letter-spacing:8px;color:#C4B5FD">ÉVOLUTION SUR 180 JOURS</div>
+  <div class="abs pop" style="left:0;top:175px;width:1080px;text-align:center;font-size:84px">Les 10 enchantées<br><span style="color:#5FD3A3">qui ont le plus monté</span></div>
+  <div class="abs" style="left:0;top:395px;width:1080px;display:flex;justify-content:center;align-items:center;gap:16px">${badge('lorcana', '#35C6BC', 60)}<span class="ui" style="font-size:30px;letter-spacing:5px;color:#35C6BC">DISNEY LORCANA · WILDS UNKNOWN</span></div>
+  ${back('lorcana', 215, 600, 300, -12)}${back('lorcana', 565, 600, 300, 12)}${back('lorcana', 380, 560, 320, 0, 'z-index:2;box-shadow:0 0 0 5px #fff,0 0 70px 14px rgba(53,198,188,.45)')}
+  <svg class="abs" width="1080" height="700" viewBox="0 0 1080 700" style="left:0;top:520px;z-index:3;overflow:visible"><path d="M-10 560 C140 540 200 600 300 520 S470 470 540 380 S700 300 760 230 S900 140 980 60" fill="none" stroke="#5FD3A3" stroke-width="9" stroke-linecap="round"/><circle cx="980" cy="60" r="16" fill="#131020" stroke="#5FD3A3" stroke-width="8"/></svg>
+  <div class="abs" style="left:0;top:1150px;width:1080px;display:flex;justify-content:center">${wordmark(84)}</div>
+  <div class="abs ui" style="right:70px;top:1180px;font-size:30px;color:rgba(255,255,255,.6)">Swipe →</div>
+  <div class="ex">MAQUETTE · VISUELS ET CHIFFRES D’EXEMPLE</div>`]);
+
+// 1b - Market top 10, one rank: the card, the app's price panel, periods, and the language row.
+const pts = [37.4, 37.2, 38.1, 37.6, 38.4, 38.0, 39.2, 39.0, 41.5, 40.8, 44.9, 46.2, 50.4, 50.1, 50.4, 49.6, 48.1, 46.9, 45.5, 45.1];
+POSTS.push(['m1b-top10-rang', '', `${glows('left:60px;top:300px', 'left:640px;top:900px', .25)}
+  <div class="abs pop" style="left:70px;top:90px;font-size:150px;color:#C4B5FD">10.</div>
+  <div class="abs" style="left:290px;top:120px"><div class="pop" style="font-size:56px">Nom de la carte</div><div style="font-family:Exo;font-weight:600;font-size:30px;color:rgba(255,255,255,.6);margin-top:6px">Wilds Unknown · enchantée · n°000</div></div>
+  ${back('lorcana', 70, 330, 380, -3)}
+  <div class="abs" style="left:490px;top:330px;width:520px;height:600px;border-radius:40px;background:#1D1730;border:2px solid rgba(255,255,255,.08);padding:36px 38px">
+    <div class="ui" style="font-size:22px;letter-spacing:4px;color:rgba(255,255,255,.55)">COTE BOOSTZ</div>
+    <div class="pop" style="font-size:78px;margin-top:8px">${euro(45.07)}</div>
+    <div class="ui" style="display:inline-block;margin-top:12px;font-size:26px;color:#5FD3A3;background:rgba(61,220,151,.16);border:2px solid #A8E0C6;border-radius:99px;padding:6px 18px">+20,73 % · +7,74 € en 180 j</div>
+    <div style="margin-top:22px">${curve(444, 230, pts, '#5FD3A3')}</div>
+    <div style="display:flex;justify-content:space-between;margin-top:14px;font-family:'DM Sans';font-weight:700;font-size:22px">
+      <div><div style="color:rgba(255,255,255,.5)">Plus bas</div><div style="color:#F0899A;font-size:28px">37,22 €</div></div>
+      <div><div style="color:rgba(255,255,255,.5)">Plus haut</div><div style="color:#5FD3A3;font-size:28px">50,45 €</div></div>
+      <div><div style="color:rgba(255,255,255,.5)">Écart</div><div style="font-size:28px">13,23 €</div></div>
+    </div>
+  </div>
+  <div class="abs" style="left:70px;top:965px;width:940px;display:flex;gap:14px">
+    ${[['7 j', '−0,02 %', '#F0899A'], ['30 j', '−6,36 %', '#F0899A'], ['90 j', '−6,10 %', '#F0899A'], ['180 j', '+20,73 %', '#5FD3A3'], ['1 an', '+137,21 %', '#5FD3A3']].map(([k, v, c], i) => `<div style="flex:1;border-radius:22px;padding:16px 0;text-align:center;background:${i === 3 ? 'rgba(139,61,255,.16)' : 'rgba(255,255,255,.05)'};border:2px solid ${i === 3 ? '#D9C4FB' : 'rgba(255,255,255,.1)'}"><div class="ui" style="font-size:22px;color:rgba(255,255,255,.55)">${k}</div><div class="ui" style="font-size:30px;color:${c}">${v}</div></div>`).join('')}
+  </div>
+  <div class="abs" style="left:70px;top:1110px;width:940px;display:flex;gap:14px">
+    ${[['fr', 'FR', '45,07 €'], ['en', 'EN', '52,30 €'], ['ja', 'JA', '38,90 €']].map(([f, k, v]) => `<div style="flex:1;display:flex;align-items:center;gap:14px;border-radius:22px;padding:14px 20px;background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.1)"><img src="assets/drapeau-${f}.svg" style="width:48px;height:33px;border-radius:6px"><span class="ui" style="font-size:26px;color:rgba(255,255,255,.6)">${k}</span><span class="pop" style="margin-left:auto;font-size:34px;letter-spacing:-.5px">${v}</span></div>`).join('')}
+  </div>
+  <div class="abs" style="left:70px;top:1230px">${wordmark(46)}</div>
+  <div class="abs ui" style="right:70px;top:1240px;font-size:24px;color:rgba(255,255,255,.5)">Cote par langue, sur Boostz</div>
+  <div class="ex">MAQUETTE · VISUELS ET CHIFFRES D’EXEMPLE</div>`]);
+
+// 2 - Single-card market update (double.holo-style): ghost rank, the card huge, the price, graded price.
+POSTS.push(['m2-marche-carte-du-set', '', `<div class="abs" style="inset:0;background:radial-gradient(circle at 50% 38%,rgba(245,201,59,.35),transparent 55%),radial-gradient(circle at 20% 90%,rgba(139,61,255,.4),transparent 50%)"></div>
+  <div class="abs pop" style="left:40px;top:40px;font-size:300px;color:rgba(255,255,255,.08)">3</div>
+  <div class="abs ui" style="left:70px;top:330px;font-size:28px;color:rgba(255,255,255,.65)">◀ Swipe</div>
+  <div class="abs" style="right:60px;top:60px;display:flex;align-items:center;gap:16px"><div style="text-align:right"><div class="ui" style="font-size:22px;letter-spacing:5px;color:#F5C93B">POKÉMON</div><div style="font-family:Exo;font-weight:600;font-size:26px;color:rgba(255,255,255,.75)">Nom de l’extension</div></div>${badge('pokemon', '#F5C93B', 70)}</div>
+  ${back('pokemon', 300, 180, 480, 0, 'box-shadow:0 40px 100px rgba(0,0,0,.6)')}
+  <div class="abs pop" style="left:0;top:880px;width:1080px;text-align:center;font-size:150px;text-shadow:0 10px 40px rgba(0,0,0,.5)">376,89 €</div>
+  <div class="abs ui" style="left:0;top:1055px;width:1080px;text-align:center;font-size:44px;color:#5FD3A3">Gradée 10 : 1 427,44 €</div>
+  <div class="abs" style="left:0;top:1170px;width:1080px;display:flex;justify-content:center;align-items:center;gap:26px"><div style="height:2px;width:260px;background:rgba(255,255,255,.35)"></div>${wordmark(54)}<div style="height:2px;width:260px;background:rgba(255,255,255,.35)"></div></div>
+  <div class="ex">MAQUETTE · VISUELS ET CHIFFRES D’EXEMPLE</div>`]);
+
+// 3 - Value-proposition ad (Phygitals / Courtyard style): the Boostz booster, a card bursting out, the promise, one CTA.
+const crimp = (y, dir) => Array.from({ length: 21 }, (_, i) => `${20 + i * 23},${y + (i % 2 ? dir * 14 : 0)}`).join(' ');
+let sparks = '';
+[[180, 300, 22, '#FF4FA0'], [740, 360, 16, '#3AA9FF'], [250, 620, 12, '#8B3DFF'], [760, 680, 26, '#FF4FA0'], [140, 480, 10, '#3AA9FF'], [820, 520, 12, '#C4B5FD'], [320, 230, 9, '#C4B5FD'], [660, 250, 14, '#8B3DFF']].forEach(([x, y, r, c]) => {
+  sparks += `<div class="abs" style="left:${x}px;top:${y + 380}px;width:${r * 2}px;height:${r * 2}px;border-radius:50%;background:${c};box-shadow:0 0 ${r * 2}px ${c}"></div>`;
+});
+POSTS.push(['m3-pub-cote-avant-ouvrir', '', `${glows('left:120px;top:520px', 'left:520px;top:900px', .38)}
+  <div class="abs" style="left:70px;top:70px">${wordmark(56)}</div>
+  <div class="abs pop" style="left:70px;top:170px;width:940px;font-size:100px">On te montre<br>la cote <span class="acc">avant</span><br>que tu ouvres.</div>
+  ${sparks}
+  <svg class="abs" width="540" height="560" viewBox="0 0 520 540" style="left:150px;top:820px;z-index:3">
+    <defs><linearGradient id="foil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B1C6E"/><stop offset=".45" stop-color="#5B21B6"/><stop offset=".55" stop-color="#7C3AED"/><stop offset="1" stop-color="#24103F"/></linearGradient>
+      <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+    <polygon points="${crimp(40, -1)} 480,640 20,640" fill="url(#foil)" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+    <rect x="140" y="40" width="70" height="600" fill="url(#sheen)" transform="skewX(-12)"/>
+    <text x="260" y="300" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="76" fill="#fff">boostZ</text>
+    <text x="260" y="352" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="24" letter-spacing="6" fill="rgba(255,255,255,.75)">BOOSTER</text>
+  </svg>
+  <div class="abs" style="left:300px;top:560px;width:300px;height:415px;border-radius:26px;overflow:hidden;transform:rotate(-8deg);z-index:2;box-shadow:0 0 0 6px #fff,0 0 80px 20px rgba(139,61,255,.6),0 0 140px 40px rgba(255,79,160,.3)"><img src="assets/dos-lorcana.svg" style="width:100%;height:100%;display:block"><div style="position:absolute;inset:-40%;background:linear-gradient(105deg,transparent 40%,rgba(255,79,160,.4) 47%,rgba(255,255,255,.6) 50%,rgba(58,169,255,.4) 53%,transparent 60%)"></div></div>
+  <div class="abs" style="left:610px;top:690px;width:410px;padding:26px 30px;border-radius:30px;background:#2E2838;border:2px solid rgba(255,255,255,.14);box-shadow:0 30px 80px rgba(0,0,0,.5);z-index:4">
+    <div class="ui" style="font-size:20px;letter-spacing:4px;color:rgba(255,255,255,.55)">SA COTE</div>
+    <div class="pop" style="font-size:56px;margin-top:6px;white-space:nowrap">42 à 269 €</div>
+    <div style="font-family:Exo;font-weight:600;font-size:24px;color:rgba(255,255,255,.65);margin-top:4px">96 boosters : 575 €</div>
+  </div>
+  <div class="abs ui" style="left:610px;top:1000px;width:410px;padding:26px 0;border-radius:999px;background:#D12E77;text-align:center;font-size:31px;white-space:nowrap;color:#fff;box-shadow:0 14px 40px rgba(209,46,119,.45);z-index:4">Bientôt sur ton téléphone</div>
+  <div class="ex" style="white-space:nowrap">MAQUETTE · CHIFFRES DU REEL « 1 SUR 96 »</div>`]);
+
+// 4 - Editorial, light theme (Kinkai style): huge type, one word boxed, then a wall of the app's objects.
+const caseObj = (x, y, w, r, note, game) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;transform:rotate(${r}deg);border-radius:${w * .08}px;background:linear-gradient(180deg,#F1EEF7,#E3DFEC);border:3px solid #CFC9DB;box-shadow:0 20px 50px rgba(26,18,37,.18);padding:${w * .045}px">
+  <div style="height:${w * .3}px;border-radius:${w * .04}px;background:#1A1030;display:flex;align-items:center;justify-content:space-between;padding:0 ${w * .06}px"><div><div class="ui" style="font-size:${w * .052}px;letter-spacing:2px;color:#C4B5FD">PRÉ-NOTE BOOSTZ</div><div style="font-family:Exo;font-size:${w * .045}px;color:rgba(255,255,255,.6)">estimation</div></div><div class="grad pop" style="font-size:${w * .16}px">${note}</div></div>
+  <img src="assets/dos-${game}.svg" style="display:block;margin:${w * .04}px auto 0;width:${w * .82}px;height:${w * .82 * 1.383}px;border-radius:${w * .05}px"></div>`;
+POSTS.push(['m4-editorial-arrete-de-deviner', 'light', `
+  <div class="abs" style="left:0;top:70px;width:1080px;display:flex;justify-content:center">${wordmark(46, '#17131F')}</div>
+  <div class="abs pop" style="left:0;top:170px;width:1080px;text-align:center;font-size:150px;letter-spacing:-4px;color:#1A1225">Arrête</div>
+  <div class="abs" style="left:0;top:330px;width:1080px;display:flex;justify-content:center;align-items:center;gap:30px"><span class="pop" style="font-size:150px;letter-spacing:-4px;color:#1A1225">de</span><span class="pop" style="font-size:136px;letter-spacing:-4px;color:#fff;background:#7C3AED;padding:4px 34px 18px;line-height:1">deviner.</span></div>
+  <div class="abs" style="left:0;top:540px;width:1080px;text-align:center;font-family:Poppins;font-weight:700;font-size:50px;line-height:1.25;color:#1A1225">Ta carte a une <span style="color:#7C3AED">cote</span>.<br>Boostz te la donne, <span style="color:#7C3AED">langue par langue</span>.</div>
+  ${caseObj(30, 760, 300, -6, '9,5', 'pokemon')}${caseObj(390, 720, 300, 2, '8,5', 'lorcana')}${caseObj(750, 770, 300, 7, '10', 'onepiece')}
+  ${caseObj(-90, 1160, 260, 4, '9', 'magic')}${caseObj(230, 1130, 260, -3, '9,5', 'yugioh')}${caseObj(560, 1150, 260, 5, '8', 'dragonball')}${caseObj(880, 1120, 260, -6, '10', 'wow')}
+  <div class="ex">MAQUETTE · PRÉ-NOTES D’EXEMPLE</div>`]);
+
+document.body.innerHTML = POSTS.map(([id, cls, html]) => `<div class="p ${cls}" id="${id}">${html}</div>`).join('');
+</script></body></html>

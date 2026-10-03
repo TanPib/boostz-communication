@@ -4,6 +4,14 @@ Les vidéos et visuels publiés sur les comptes Instagram (@boostz.app) et TikTo
 
 Ce dépôt est public exprès : Metricool, qui programme les publications, récupère chaque vidéo par son lien direct (`raw.githubusercontent.com`). Un fichier déposé ici est donc accessible à quiconque a son lien, avant même sa date de publication.
 
+## Organisation
+
+- `TYPES.md` : les types de publication (le menu), les règles pour varier, et l'historique de ce qui a été publié.
+- `gabarits/` : les sources HTML de chaque type de post, avec les polices, les dos de cartes et les emblèmes du design system.
+- `outils/` et `.github/workflows/cotes.yml` : le relevé des cotes Cardmarket, le 1er et le 16 du mois, pour la série « Les 10 cotes qui bougent ».
+- `donnees/cotes/` : les relevés et les classements qui en sortent.
+- `images/` et `videos/` : les fichiers publiés, nommés par date de publication.
+
 ## Contenu
 
 | Fichier | Publication prévue | Format |

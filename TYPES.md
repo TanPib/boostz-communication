@@ -1,0 +1,110 @@
+# Types de publication
+
+Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est tendance et ce qu'on a posté récemment, tu choisis un numéro (avec une carte ou un jeu si tu as une idée), et Claude construit le post, te le montre, puis le programme dans Metricool.
+
+## Le menu
+
+| N° | Type | Format | Tendance | État | Dernière publication |
+| --- | --- | --- | --- | --- | --- |
+| 1 | **Analyse de carte** | carrousel, 5 slides | 🔥🔥🔥 | prêt | 22/10/2026 · Méga-Dracaufeu X ex (Pokémon) |
+| 2 | **Les 10 cotes qui bougent** | carrousel, 12 slides | 🔥🔥🔥 | série, le 1er et le 16 du mois | première édition à venir |
+| 3 | **1 chance sur N** | Reel de 22 s, ou carrousel de 5 slides | 🔥🔥🔥 | prêt | 04/11/2026 · enchantée (Lorcana) |
+| 4 | **Top 10 d'un set** | carrousel, 11 slides | 🔥🔥🔥 à la sortie d'un set | maquette | jamais |
+| 5 | **Même carte, trois langues** | carrousel, 3 à 5 slides | 🔥🔥 | maquette | jamais |
+| 6 | **Devine la note** | carrousel, 2 slides | 🔥🔥 | maquette | jamais |
+| 7 | **Classeur panoramique** | carrousel, 3 slides qui se suivent | 🔥🔥 | maquette | jamais |
+| 8 | **Choisis ton combattant** | Reel, écran de sélection 16-bit | 🔥🔥 | maquette | jamais |
+| 9 | **Pub Boostz** | image ou Reel court | 🔥 | maquette | jamais |
+| 10 | **Édito** | image, thème clair | 🔥 | maquette | jamais |
+| 11 | **Annonce** | Reel | selon l'actu | prêt | 16/10/2026 · lancement |
+
+*Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
+
+## Pour varier
+
+- **Alterner Reel et carrousel.** Le Reel va chercher des gens qui ne te suivent pas encore ; le carrousel fait commenter et enregistrer ceux qui te suivent déjà.
+- **Pas deux fois le même type d'affilée**, sauf la série n° 2 qui a son propre rythme.
+- **Varier les jeux.** Pokémon fait le plus d'audience, mais pas plus d'un post sur deux ; les 8 TCG doivent tous passer.
+- **Une pub Boostz (n° 9) au plus tous les cinq posts.** Les autres types montrent déjà l'app en situation.
+- **Des chiffres réels, datés et sourcés sur le visuel.** Rien n'est inventé : sans donnée fiable, on change de sujet.
+
+## Les fiches
+
+### 1 · Analyse de carte
+Une carte précise, de la couverture au verdict : « elle vaut combien ? », sa cote et sa version gradée, sa rareté face au prix des boosters, puis « Tu la veux ? Achète-la. ».
+- **Il me faut :** une carte, ou je choisis une carte phare d'un set récent.
+- **Données :** cote Cardmarket, ventes PSA 10, taux de tirage, prix des displays.
+- **Gabarit :** `gabarits/analyse-de-carte.html`
+- **Met en avant :** le suivi de cote.
+
+### 2 · Les 10 cotes qui bougent
+Les 10 cartes Pokémon dont la cote a le plus évolué en 15 jours : une couverture, un compte à rebours du 10e au 1er (la carte, son prix avant et après, la hausse ou la baisse), puis un récap à enregistrer.
+- **Rythme :** le 1er et le 16 de chaque mois. Le relevé tourne tout seul sur GitHub ces jours-là (`.github/workflows/cotes.yml`) et compare au relevé précédent.
+- **Il me faut :** rien, le classement sort du relevé.
+- **Données :** le prix de vente moyen sur 7 jours de Cardmarket, relevé par Boostz pour toutes les cartes Pokémon via TCGdex (`donnees/cotes/pokemon/`). Une carte entre au classement si elle vaut plus de 10 € et si la tendance Cardmarket va dans le même sens, ce qui écarte une vente isolée.
+- **Gabarit :** `gabarits/cotes-qui-bougent.html`
+- **Met en avant :** le suivi de cote.
+
+### 3 · 1 chance sur N
+La rareté d'une carte rendue visible : N boosters qui s'ouvrent un par un, presque tous vides de la carte voulue, puis le coût de la chasse comparé au prix de la carte seule.
+- **Il me faut :** un jeu et une rareté (une enchantée, une illustration spéciale, une manga rare…).
+- **Données :** taux de tirage, prix du booster, cote de la carte.
+- **Gabarit :** `gabarits/chance-reel.html` (thème clair, celui publié), `chance-reel-sombre.html`, `chance-carrousel.html`
+- **Met en avant :** « regarde sa cote avant d'ouvrir ».
+
+### 4 · Top 10 d'un set
+Les 10 cartes les plus chères d'un set qui vient de sortir. C'est le format qui explose dans la semaine de sortie.
+- **Il me faut :** un set, de préférence sorti depuis moins de 15 jours.
+- **Données :** pour Pokémon, le relevé du n° 2 donne déjà la cote de toutes les cartes.
+- **Gabarit :** maquette `m1a`/`m1b` dans `gabarits/maquettes-references.html`
+- **Met en avant :** la cote, et la cote par langue.
+
+### 5 · Même carte, trois langues
+Une carte, trois prix : française, anglaise, japonaise. Le débat « japonaise ou anglaise ? » tourne beaucoup en 2026, et c'est une fonction que Boostz est presque seul à proposer.
+- **Il me faut :** une carte éditée dans les trois langues.
+- **Gabarit :** maquette `n4` dans `gabarits/maquettes-tcg.html`
+- **Met en avant :** la cote par langue.
+
+### 6 · Devine la note
+Slide 1 : une carte dans le cadre du scan, avec les repères de centrage. « Tu lui donnes combien ? » Slide 2 : la réponse. Fait commenter.
+- **Il me faut :** une photo de carte réelle à faire passer au scan.
+- **Gabarit :** maquettes `n2a`/`n2b` dans `gabarits/maquettes-tcg.html`
+- **Met en avant :** le scan d'état.
+
+### 7 · Classeur panoramique
+Une double page de classeur étalée sur trois slides qui se suivent : en swipant, on la parcourt comme une vraie page.
+- **Il me faut :** un thème (une génération, un Pokémon, une couleur…).
+- **Gabarit :** maquette `n3` dans `gabarits/maquettes-tcg.html`
+- **Met en avant :** la collection.
+
+### 8 · Choisis ton combattant
+Un écran de sélection de personnage façon 16-bit, avec les 8 TCG. « Tu joues lequel ? » Fait commenter.
+- **Gabarit :** maquette `n6` dans `gabarits/maquettes-tcg.html`
+- **Met en avant :** les 8 jeux dans une seule app.
+
+### 9 · Pub Boostz
+Une promesse et une seule action, comme les pubs de Phygitals ou Courtyard : le booster Boostz, une carte qui en jaillit, « regarde sa cote avant d'ouvrir ».
+- **Gabarit :** maquette `m3` dans `gabarits/maquettes-references.html`
+
+### 10 · Édito
+Une phrase en très grand, un mot encadré, puis un mur d'objets de l'app (façon Kinkai). Sert l'image de marque.
+- **Gabarit :** maquette `m4` dans `gabarits/maquettes-references.html`
+
+### 11 · Annonce
+Pour les étapes de l'app : lancement, bêta, sortie sur les stores, nouvelle fonction.
+- **Gabarit :** `gabarits/annonce-reel.html`
+
+## Historique
+
+| Date | Réseaux | N° | Sujet | Jeu | Fichiers |
+| --- | --- | --- | --- | --- | --- |
+| ven. 16/10/2026, 10 h | Instagram (Reel), TikTok | 11 | Lancement : « boostZ ta collection » | les 8 | `videos/2026-10-16-lancement.mp4` |
+| jeu. 22/10/2026, 10 h | Instagram (carrousel), TikTok (photos) | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-22-analyse-mega-dracaufeu-x/` |
+| mer. 04/11/2026, 10 h | Instagram (Reel), TikTok | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-11-04-1-chance-sur-96-clair.mp4` |
+
+## D'où viennent les notes de tendance
+
+Recherche du 03/10/2026 :
+- Les contenus « combien vaut cette carte » et « les cartes qui montent » sont parmi les plus vus sur TikTok Pokémon en 2026, avec les ouvertures de boosters ([TikTok, Pokemon Card Market](https://www.tiktok.com/discover/pokemon-card-market), [TikTok, Why Are All Pokemon Cards Going Up 2026](https://www.tiktok.com/discover/why-are-all-pokemon-cards-going-up-2026)).
+- Le Reel touche plus de monde, surtout des non-abonnés, ce qui compte pour un compte qui démarre ; le carrousel fait davantage commenter et enregistrer ceux qu'il touche ([Socialinsider, benchmarks Instagram 2026](https://www.socialinsider.io/social-media-benchmarks/instagram), [Collabkit, étude sur 10 000 posts](https://collabkit.me/blog/instagram-reels-vs-carousels-vs-images-data-study-2026)).
+- L'écart de prix entre cartes japonaises et anglaises fait débat cette année ([PokemonPriceTracker](https://www.pokemonpricetracker.com/blog/posts/japanese-vs-english-pokemon-cards-value-guide-2026)).

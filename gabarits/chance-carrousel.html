@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz 1 chance sur N</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script>
+<style>
+  :root { --ink2: rgba(255,255,255,0.62); --acc: #C4B5FD; --card: #1D1730; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; }
+  .p { position: relative; overflow: hidden; color: #fff; font-family: Exo, sans-serif; margin-bottom: 20px; width: 1080px; height: 1350px;
+    background: linear-gradient(160deg, #0B0812 0%, #131020 35%, #1B1330 70%, #150E22 100%); }
+  .abs { position: absolute; }
+  .glow { position: absolute; border-radius: 50%; filter: blur(110px); }
+  .t { position: absolute; left: 0; width: 1080px; text-align: center; font-family: Poppins; font-weight: 800; letter-spacing: -1.5px; line-height: 1.04; }
+  .s { position: absolute; left: 0; width: 1080px; text-align: center; font-family: Exo; font-weight: 600; color: var(--ink2); }
+  .acc { color: var(--acc); }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; color: #fff; }
+  .ui { font-family: 'DM Sans'; font-weight: 700; }
+  .swipe { position: absolute; right: 70px; bottom: 60px; font-family: 'DM Sans'; font-weight: 700; font-size: 32px; color: var(--ink2); }
+  .src { position: absolute; left: 70px; right: 70px; bottom: 34px; font-family: Exo; font-size: 20px; color: rgba(255,255,255,.42); }
+</style></head><body>
+<script>
+const emblemSvg = (id, c, size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48">${EMBLEMS[id].replace(/COLOR/g, c)}</svg>`;
+const badge = (id, c, d) => `<div style="width:${d}px;height:${d}px;flex:none;border-radius:999px;border:3px solid ${c};background:${c}33;display:flex;align-items:center;justify-content:center">${emblemSvg(id, c, d * 0.6)}</div>`;
+const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const sig = () => `<div class="abs" style="left:70px;top:60px">${wordmark(48)}</div>`;
+const glows = (a = 'left:160px;top:300px', b = 'left:600px;top:800px', o = .28) => `<div class="glow" style="width:760px;height:760px;${a};background:#8B3DFF;opacity:${o}"></div><div class="glow" style="width:520px;height:520px;${b};background:#FF4FA0;opacity:${o / 2}"></div>`;
+const gameTag = (id, c, game, rarity) => `<div class="abs" style="right:70px;top:50px;display:flex;align-items:center;gap:18px"><div style="text-align:right"><div class="ui" style="font-size:21px;letter-spacing:5px;color:${c}">${game}</div><div style="font-family:Exo;font-weight:600;font-size:24px;color:rgba(255,255,255,.72);margin-top:2px">${rarity}</div></div>${badge(id, c, 66)}</div>`;
+// A booster silhouette: crimped top and bottom.
+const CLIP = 'polygon(0.00% 0%, 16.67% 6%, 33.33% 0%, 50.00% 6%, 66.67% 0%, 83.33% 6%, 100.00% 0%, 100.00% 100%, 83.33% 94%, 66.67% 100%, 50.00% 94%, 33.33% 100%, 16.67% 94%, 0.00% 100%)';
+// A booster dressed in the app's card back for its game; the one that hits gets the holo ring.
+const pack = (w, h, lit, game = 'lorcana') => `<div style="width:${w}px;height:${h}px;clip-path:${CLIP};background:#1C1533;position:relative"><img src="assets/dos-${game}.svg" style="width:100%;height:100%;object-fit:cover;display:block;${lit ? 'filter:brightness(1.25)' : 'filter:brightness(.45) saturate(.7)'}">${lit ? '<div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,79,160,.7),rgba(139,61,255,.35) 50%,rgba(58,169,255,.7))"></div><div style="position:absolute;inset:-30%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.7) 50%,transparent 58%)"></div>' : ''}</div>`;
+const grid = (n, cols, x0, y0, pw, ph, gx, gy, litIndex, game = 'lorcana') => {
+  let h = '';
+  for (let i = 0; i < n; i++) {
+    const c = i % cols, r = Math.floor(i / cols), lit = i === litIndex;
+    h += `<div class="abs" style="left:${x0 + c * (pw + gx)}px;top:${y0 + r * (ph + gy)}px;${lit ? 'filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 22px rgba(255,79,160,.95)) drop-shadow(0 0 46px rgba(139,61,255,.85));z-index:2;transform:scale(1.18)' : ''}">${pack(pw, ph, lit, game)}</div>`;
+  }
+  return h;
+};
+// The Display mark (BrandMark family): top, side, face in the fan's gradient, the Z.
+const display = (size) => `<svg width="${size}" height="${size}" viewBox="0 0 100 100"><defs><linearGradient id="dm${size}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs>
+  <path d="M22 36 L38 22 L80 22 L64 36 Z" fill="rgba(196,181,253,.5)"/><path d="M64 36 L80 22 L80 66 L64 80 Z" fill="rgba(196,181,253,.22)"/>
+  <rect x="22" y="36" width="42" height="44" rx="4" fill="url(#dm${size})"/><path d="M33 47 H54 V52.5 L42 65 H54 V70.5 H33 V65 L45 52.5 H33 Z" fill="#fff"/></svg>`;
+const SRC = 'Taux : relevés communautaires sur des milliers de boosters (les éditeurs ne publient pas leurs taux). Calculs Boostz.';
+const POSTS = [];
+const LOR = ['lorcana', '#35C6BC', 'DISNEY LORCANA', 'carte enchantée'];
+
+// Slide 1 - the hook.
+POSTS.push(['c1-lorcana-slide1-accroche', `${glows()}${sig()}${gameTag(...LOR)}
+  <div class="t" style="top:180px;font-size:118px">1 chance<br><span class="acc">sur 96.</span></div>
+  ${grid(96, 12, 120, 470, 56, 72, 16, 18, 61)}
+  <div class="s" style="top:1200px;font-size:34px;color:#fff">Un seul de ces 96 boosters a ta carte.</div>
+  <div class="swipe" style="bottom:70px">Swipe →</div>`]);
+// Slide 2 - what 96 boosters are.
+POSTS.push(['c1-lorcana-slide2-quatre-displays', `${glows('left:160px;top:350px')}${sig()}${gameTag(...LOR)}
+  <div class="t" style="top:190px;font-size:96px">96 boosters,<br>c’est <span class="acc">4 displays.</span></div>
+  <div class="abs" style="left:0;top:520px;width:1080px;display:flex;justify-content:center;gap:10px">${[0, 1, 2, 3].map(() => display(240)).join('')}</div>
+  <div class="t" style="top:830px;font-size:140px">575 €</div>
+  <div class="s" style="top:1010px;font-size:36px">96 boosters à 5,99 €, pour UNE chance d’y arriver.</div>
+  <div class="src">Booster : prix public 5,99 €. ${SRC}</div>`]);
+// Slide 3 - and even then.
+const pct = 63.4;
+POSTS.push(['c1-lorcana-slide3-une-fois-sur-trois', `${glows('left:160px;top:300px')}${sig()}${gameTag(...LOR)}
+  <div class="t" style="top:180px;font-size:92px">Et même là,<br><span class="acc">rien n’est garanti.</span></div>
+  <svg class="abs" width="520" height="520" viewBox="0 0 520 520" style="left:280px;top:440px">
+    <defs><linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF4FA0"/><stop offset=".55" stop-color="#8B3DFF"/><stop offset="1" stop-color="#3AA9FF"/></linearGradient></defs>
+    <circle cx="260" cy="260" r="210" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="44"/>
+    <circle cx="260" cy="260" r="210" fill="none" stroke="url(#ring)" stroke-width="44" stroke-linecap="round" stroke-dasharray="${2 * Math.PI * 210 * pct / 100} 2000" transform="rotate(-90 260 260)"/>
+    <text x="260" y="285" text-anchor="middle" font-family="Poppins" font-weight="800" font-size="120" fill="#fff">63 %</text>
+    <text x="260" y="345" text-anchor="middle" font-family="Exo" font-weight="600" font-size="30" fill="rgba(255,255,255,.62)">de l’avoir</text>
+  </svg>
+  <div class="t" style="top:1010px;font-size:60px">1 fois sur 3,<br><span class="acc">tu repars sans.</span></div>
+  <div class="src">${SRC}</div>`]);
+// Slide 4 - to be 90 % sure.
+POSTS.push(['c1-lorcana-slide4-220-boosters', `${glows('left:160px;top:400px', 'left:600px;top:900px', .22)}${sig()}${gameTag(...LOR)}
+  <div class="t" style="top:180px;font-size:84px">Pour être sûr à 90 % ?</div>
+  <div class="t" style="top:300px;font-size:170px"><span class="acc">220</span></div>
+  <div class="s" style="top:490px;font-size:40px;color:#fff">boosters.</div>
+  ${grid(220, 20, 110, 590, 34, 44, 9.5, 12, -1)}
+  <div class="src">${SRC}</div>`]);
+// Slide 5 - the turn: a balance (the exchange screen's own motif), 96 boosters against one card.
+POSTS.push(['c1-lorcana-slide5-ou-alors', `${glows('left:160px;top:250px')}${sig()}${gameTag(...LOR)}
+  <div class="t" style="top:170px;font-size:96px">Ou alors…</div>
+  <svg class="abs" width="940" height="560" viewBox="0 0 940 560" style="left:70px;top:330px;overflow:visible">
+    <g transform="rotate(-7 470 120)">
+      <rect x="70" y="114" width="800" height="12" rx="6" fill="rgba(255,255,255,.92)"/>
+    </g>
+    <path d="M172 157 V282 M768 83 V208" stroke="rgba(255,255,255,.42)" stroke-width="4"/>
+    <path d="M440 132 L470 96 L500 132 Q470 124 440 132 Z" fill="rgba(255,255,255,.9)"/>
+    <rect x="466" y="132" width="8" height="300" fill="rgba(255,255,255,.18)"/>
+  </svg>
+  <div class="abs" style="left:72px;top:612px;width:340px;padding:26px 0;border-radius:30px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);text-align:center">
+    <div style="display:flex;justify-content:center;gap:2px">${display(80)}${display(80)}${display(80)}${display(80)}</div>
+    <div style="font-family:Poppins;font-weight:800;font-size:58px;margin-top:6px">575 €</div>
+    <div style="font-family:Exo;font-weight:600;font-size:26px;color:var(--ink2)">96 boosters</div>
+  </div>
+  <div class="abs" style="left:668px;top:538px;width:340px;padding:26px 0;border-radius:30px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);text-align:center">
+    <div style="position:relative;margin:0 auto;width:100px;height:138px;border-radius:12px;overflow:hidden;border:3px solid #fff;box-shadow:0 0 30px rgba(53,198,188,.55)"><img src="assets/dos-lorcana.svg" style="width:100%;height:100%;display:block"><div style="position:absolute;inset:-40%;background:linear-gradient(105deg,transparent 40%,rgba(255,79,160,.35) 47%,rgba(255,255,255,.55) 50%,rgba(58,169,255,.35) 53%,transparent 60%)"></div></div>
+    <div style="font-family:Poppins;font-weight:800;font-size:50px;margin-top:12px">42 à 269 €</div>
+    <div style="font-family:Exo;font-weight:600;font-size:26px;color:var(--ink2)">l’enchantée, achetée seule</div>
+  </div>
+  <div class="t" style="top:930px;font-size:56px">Même la plus chère<br><span class="acc">coûte 2 fois moins.</span></div>
+  <div class="s" style="top:1090px;font-size:34px;color:#fff">Avant d’ouvrir, regarde sa cote sur Boostz.</div>
+  <div class="src">Cartes enchantées de Wilds Unknown : cotes TCGplayer du 25/09/2026, 1 € = 1,135 $. Booster 5,99 €. ${SRC}</div>`]);
+// Series covers: the grid grows with the rarity.
+POSTS.push(['c2-serie-pokemon-1-sur-81', `${glows()}${sig()}${gameTag('pokemon', '#F5C93B', 'POKÉMON', 'illustration spéciale rare')}
+  <div class="t" style="top:180px;font-size:118px">1 chance<br><span class="acc">sur 81.</span></div>
+  ${grid(81, 9, 227, 455, 50, 64, 22, 12, 40, 'pokemon')}
+  <div class="s" style="top:1220px;font-size:30px">Perfect Order · relevé sur plus de 3 500 boosters</div>`]);
+POSTS.push(['c3-serie-onepiece-1-sur-288', `${glows()}${sig()}${gameTag('onepiece', '#F2706C', 'ONE PIECE', 'manga rare')}
+  <div class="t" style="top:180px;font-size:118px">1 chance<br><span class="acc">sur 288.</span></div>
+  ${grid(288, 24, 90, 480, 30, 39, 7.5, 18.5, 201, 'onepiece')}
+  <div class="s" style="top:1220px;font-size:30px">Soit environ une caisse entière de 6 displays</div>`]);
+
+document.body.innerHTML = POSTS.map(([id, html]) => `<div class="p" id="${id}">${html}</div>`).join('');
+</script></body></html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz reel 1 sur 96</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #131020; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; color: #fff; font-family: Exo;
+    background: linear-gradient(160deg, #0B0812 0%, #131020 35%, #1B1330 70%, #150E22 100%); }
+  .abs { position: absolute; will-change: transform, opacity; }
+  .glow { position: absolute; border-radius: 50%; filter: blur(110px); }
+  .t { position: absolute; left: 0; width: 1080px; text-align: center; font-family: Poppins; font-weight: 800; letter-spacing: -1.5px; line-height: 1.04; }
+  .acc { color: #C4B5FD; }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; color: #fff; }
+  .ui { font-family: 'DM Sans'; font-weight: 700; }
+</style></head><body><div id="stage">
+  <div id="gA" class="glow" style="width:760px;height:760px;left:160px;top:640px;background:#8B3DFF;opacity:.28"></div>
+  <div id="gB" class="glow" style="width:520px;height:520px;left:560px;top:1200px;background:#FF4FA0;opacity:.14"></div>
+  <div id="tag" class="abs" style="left:0;top:110px;width:1080px;display:flex;flex-direction:column;align-items:center;gap:18px"></div>
+  <div id="title" class="t" style="top:262px;font-size:104px">1 chance<br><span class="acc">sur 96.</span></div>
+  <div id="titleSub" class="abs" style="left:0;top:492px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:44px;color:rgba(255,255,255,.78)">d’avoir une carte enchantée.</div>
+  <div id="counter" class="t" style="top:280px;font-size:84px"></div>
+  <div id="sub" class="abs ui" style="left:0;top:392px;width:1080px;text-align:center;font-size:40px;color:rgba(255,255,255,.62)"></div>
+  <div id="grid"></div>
+  <div id="rien" class="t" style="top:292px;font-size:100px">… rien.</div>
+  <div id="end1" class="t" style="top:560px;font-size:104px">1 fois sur 3,<br><span class="acc">ça finit comme ça.</span></div>
+  <div id="end2" class="abs" style="left:0;top:880px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:40px;line-height:1.35;color:rgba(255,255,255,.75)">Même après 96 boosters,<br>37 % de chances de repartir sans.</div>
+  <div id="cmp" class="abs" style="left:0;top:0;width:1080px;height:1920px">
+    <div class="t" style="top:300px;font-size:96px">Et en <span class="acc">euros ?</span></div>
+    <svg class="abs" width="1080" height="700" viewBox="0 0 1080 700" style="left:0;top:520px;overflow:visible">
+      <path d="M510 160 L540 120 L570 160 Q540 152 510 160 Z" fill="rgba(255,255,255,.9)"/>
+      <rect x="536" y="160" width="8" height="380" fill="rgba(255,255,255,.18)"/>
+      <g id="beam"><rect x="210" y="114" width="660" height="12" rx="6" fill="rgba(255,255,255,.92)"/></g>
+      <path id="strL" d="" stroke="rgba(255,255,255,.42)" stroke-width="4"/>
+      <path id="strR" d="" stroke="rgba(255,255,255,.42)" stroke-width="4"/>
+    </svg>
+    <div id="plateL" class="abs" style="left:70px;top:0;width:360px;padding:30px 0;border-radius:34px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.2);text-align:center">
+      <div id="displays" style="display:flex;justify-content:center;gap:4px"></div>
+      <div style="font-family:Poppins;font-weight:800;font-size:76px;margin-top:8px">575 €</div>
+      <div style="font-family:Exo;font-weight:600;font-size:30px;color:rgba(255,255,255,.62)">96 boosters à 5,99 €</div>
+    </div>
+    <div id="plateR" class="abs" style="left:630px;top:0;width:360px;padding:30px 0;border-radius:34px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.2);text-align:center">
+      <div style="position:relative;margin:0 auto;width:100px;height:138px;border-radius:12px;overflow:hidden;border:3px solid #fff;box-shadow:0 0 30px rgba(53,198,188,.55)"><img src="assets/dos-lorcana.svg" style="width:100%;height:100%;display:block"><div style="position:absolute;inset:-40%;background:linear-gradient(105deg,transparent 40%,rgba(255,79,160,.35) 47%,rgba(255,255,255,.55) 50%,rgba(58,169,255,.35) 53%,transparent 60%)"></div></div>
+      <div style="font-family:Poppins;font-weight:800;font-size:60px;margin-top:12px;line-height:1.05">42 à 269 €</div>
+      <div style="font-family:Exo;font-weight:600;font-size:28px;color:rgba(255,255,255,.62)">l’enchantée, achetée seule</div>
+    </div>
+    <div id="punch" class="t" style="top:1290px;font-size:70px">Même la plus chère<br><span class="acc">coûte 2 fois moins.</span></div>
+    <div id="srcC" class="abs" style="left:70px;right:70px;top:1500px;text-align:center;font-family:Exo;font-size:24px;line-height:1.4;color:rgba(255,255,255,.45)">Booster : prix public 5,99 €. Cartes enchantées de Wilds Unknown : cotes TCGplayer du 25/09/2026, 1 € = 1,135 $.</div>
+  </div>
+  <div id="end3" class="abs" style="left:0;top:700px;width:1080px;display:flex;flex-direction:column;align-items:center;gap:40px"></div>
+</div>
+<script>
+const $ = (id) => document.getElementById(id);
+const emblemSvg = (id, c, size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48">${EMBLEMS[id].replace(/COLOR/g, c)}</svg>`;
+$('tag').innerHTML = `<div style="width:84px;height:84px;border-radius:999px;border:3px solid #35C6BC;background:#35C6BC33;display:flex;align-items:center;justify-content:center">${emblemSvg('lorcana', '#35C6BC', 50)}</div><span class="ui" style="font-size:26px;letter-spacing:7px;color:#35C6BC">DISNEY LORCANA</span>`;
+const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const displayMark = (size) => `<svg width="${size}" height="${size}" viewBox="0 0 100 100"><defs><linearGradient id="dm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs><path d="M22 36 L38 22 L80 22 L64 36 Z" fill="rgba(196,181,253,.5)"/><path d="M64 36 L80 22 L80 66 L64 80 Z" fill="rgba(196,181,253,.22)"/><rect x="22" y="36" width="42" height="44" rx="4" fill="url(#dm)"/><path d="M33 47 H54 V52.5 L42 65 H54 V70.5 H33 V65 L45 52.5 H33 Z" fill="#fff"/></svg>`;
+$('displays').innerHTML = [0, 1, 2, 3].map(() => displayMark(80)).join('');
+$('end3').innerHTML = `<div class="t" style="position:relative;font-size:64px">Avant d’ouvrir,<br><span class="acc">regarde sa cote.</span></div>${wordmark(110)}<div id="endLine" style="text-align:center;font-family:Exo;font-weight:600;font-size:42px;line-height:1.3;color:rgba(255,255,255,.75)">Ton compagnon TCG,<br>bientôt sur ton téléphone</div>`;
+
+// 96 boosters, 8 x 12, each a crimped pack.
+const COLS = 12, PW = 74, PH = 90, GX = 12, GY = 18, X0 = (1080 - (COLS * PW + (COLS - 1) * GX)) / 2, Y0 = 610;
+// A booster dressed in the app's own Lorcana card back (CardBack), with crimped edges.
+const CLIP = 'polygon(0.00% 0%, 16.67% 6%, 33.33% 0%, 50.00% 6%, 66.67% 0%, 83.33% 6%, 100.00% 0%, 100.00% 100%, 83.33% 94%, 66.67% 100%, 50.00% 94%, 33.33% 100%, 16.67% 94%, 0.00% 100%)';
+const packSvg = (w, h) => `<div class="packArt" style="width:${w}px;height:${h}px;clip-path:${CLIP};background:#1C1533"><img src="assets/dos-lorcana.svg" style="width:100%;height:100%;object-fit:cover;display:block"></div>`;
+const packs = [];
+for (let i = 0; i < 96; i++) {
+  const el = document.createElement('div');
+  el.className = 'abs';
+  el.style.left = (X0 + (i % COLS) * (PW + GX)) + 'px';
+  el.style.top = (Y0 + Math.floor(i / COLS) * (PH + GY)) + 'px';
+  el.innerHTML = packSvg(PW, PH) + '<div class="flash" style="position:absolute;inset:-6px;border-radius:12px;background:#fff;opacity:0"></div>';
+  $('grid').appendChild(el);
+  packs.push(el);
+}
+
+// Opening schedule: slow, then fast, then slow again on the last ten (the suspense).
+const OPEN0 = 2.4;
+const T = [];
+let acc = OPEN0;
+for (let i = 0; i < 96; i++) {
+  T.push(acc);
+  let d;
+  if (i < 12) d = 0.26 - i * 0.018;
+  else if (i < 84) d = 0.04;
+  else d = 0.06 + (i - 84) * 0.045;
+  acc += d;
+}
+const END_OPEN = T[95] + 0.25;       // the last booster is open
+const S_RIEN = END_OPEN + 0.15;
+const S_END = S_RIEN + 1.6;
+const S_CMP = S_END + 2.7;           // boosters vs the card, on the exchange balance
+const S_FIN = S_CMP + 4.6;
+window.TOTAL = S_FIN + 3.0;
+
+const clamp = (x) => Math.max(0, Math.min(1, x));
+const glide = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const seg = (t, a, b) => glide((t - a) / (b - a));
+const set = (el, { x = 0, y = 0, s = 1, o = 1 }) => { el.style.transform = `translate(${x}px, ${y}px) scale(${s})`; el.style.opacity = o; };
+
+window.render = (t) => {
+  // Title, then it gives way to the counter once the opening starts.
+  const tOut = seg(t, OPEN0 - 0.35, OPEN0 - 0.05);
+  set($('tag'), { o: 1 - seg(t, S_END - 0.3, S_END) });
+  set($('title'), { y: -30 * tOut, o: 1 - tOut });
+  set($('titleSub'), { y: -30 * tOut, o: 1 - tOut });
+  let opened = 0;
+  for (let i = 0; i < 96; i++) if (t >= T[i]) opened = i + 1;
+  const cIn = seg(t, OPEN0 - 0.1, OPEN0 + 0.2);
+  $('counter').innerHTML = `Booster <span class="acc">${opened}</span> / 96`;
+  set($('counter'), { o: cIn * (1 - seg(t, S_RIEN - 0.2, S_RIEN + 0.05)) });
+  $('sub').textContent = opened < 96 ? 'On les ouvre tous.' : 'Les 96 sont ouverts.';
+  set($('sub'), { o: cIn * (1 - seg(t, S_RIEN - 0.2, S_RIEN + 0.05)) });
+  // Packs: appear at the start, open one by one (white flash, then emptied), fade out for the ending.
+  const gOut = seg(t, S_END - 0.3, S_END + 0.2);
+  packs.forEach((el, i) => {
+    const appear = seg(t, 0.15 + i * 0.008, 0.45 + i * 0.008);
+    const isOpen = t >= T[i];
+    const since = t - T[i];
+    el.querySelector('.flash').style.opacity = isOpen ? Math.max(0, 0.6 - since * 8) : 0;
+    // Opened: the booster is spent, its art goes grey and dark.
+    const art = el.querySelector('.packArt');
+    art.style.filter = isOpen ? 'grayscale(1) brightness(.32)' : 'none';
+    const pop = isOpen ? 1 - 0.08 * Math.max(0, 1 - since * 6) : 1;
+    set(el, { y: 30 * (1 - appear), s: pop, o: appear * (1 - gOut) });
+  });
+  set($('rien'), { y: 30 * (1 - seg(t, S_RIEN, S_RIEN + 0.35)), o: seg(t, S_RIEN, S_RIEN + 0.35) * (1 - seg(t, S_END - 0.3, S_END)) });
+  // Ending: the line, the figure, then the turn and the wordmark.
+  const out1 = seg(t, S_CMP - 0.35, S_CMP - 0.05);
+  set($('end1'), { y: 40 * (1 - seg(t, S_END + 0.1, S_END + 0.5)) - 40 * out1, o: seg(t, S_END + 0.1, S_END + 0.5) * (1 - out1) });
+  set($('end2'), { y: 30 * (1 - seg(t, S_END + 0.9, S_END + 1.25)) - 40 * out1, o: seg(t, S_END + 0.9, S_END + 1.25) * (1 - out1) });
+  // The balance: flat, then it tips (glide, no bounce) towards the 96 boosters.
+  const cIn2 = seg(t, S_CMP, S_CMP + 0.4), cOut = seg(t, S_FIN - 0.35, S_FIN - 0.05);
+  set($('cmp'), { o: cIn2 * (1 - cOut) });
+  const tilt = -9 * seg(t, S_CMP + 0.8, S_CMP + 1.6);
+  $('beam').setAttribute('transform', `rotate(${tilt} 540 120)`);
+  const rad = tilt * Math.PI / 180;
+  const endL = [540 - 300 * Math.cos(rad), 120 - 300 * Math.sin(rad)], endR = [540 + 300 * Math.cos(rad), 120 + 300 * Math.sin(rad)];
+  $('strL').setAttribute('d', `M${endL[0]} ${endL[1]} V${endL[1] + 110}`);
+  $('strR').setAttribute('d', `M${endR[0]} ${endR[1]} V${endR[1] + 110}`);
+  $('plateL').style.left = (endL[0] - 180) + 'px'; $('plateL').style.top = (520 + endL[1] + 110) + 'px';
+  $('plateR').style.left = (endR[0] - 180) + 'px'; $('plateR').style.top = (520 + endR[1] + 110) + 'px';
+  set($('punch'), { y: 30 * (1 - seg(t, S_CMP + 1.9, S_CMP + 2.3)), o: seg(t, S_CMP + 1.9, S_CMP + 2.3) });
+  set($('srcC'), { o: seg(t, S_CMP + 1.9, S_CMP + 2.3) });
+  set($('end3'), { y: 30 * (1 - seg(t, S_FIN + 0.1, S_FIN + 0.5)), o: seg(t, S_FIN + 0.1, S_FIN + 0.5) });
+  set($('endLine'), { y: 20 * (1 - seg(t, S_FIN + 0.7, S_FIN + 1.1)), o: seg(t, S_FIN + 0.7, S_FIN + 1.1) });
+  set($('gA'), { x: 60 * Math.sin(t * 0.6), y: 40 * Math.cos(t * 0.5), o: 0.28 });
+  set($('gB'), { x: -50 * Math.cos(t * 0.45), y: 30 * Math.sin(t * 0.7), o: 0.14 });
+};
+window.render(0);
+</script></body></html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz analyse de carte</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; }
+  .p { position: relative; overflow: hidden; width: 1080px; height: 1350px; margin-bottom: 20px; color: #fff; font-family: Exo;
+    background: linear-gradient(160deg, #0B0812 0%, #131020 35%, #1B1330 70%, #150E22 100%); }
+  .abs { position: absolute; }
+  .glow { position: absolute; border-radius: 50%; filter: blur(110px); }
+  .pop { font-family: Poppins; font-weight: 800; letter-spacing: -1.5px; line-height: 1.04; }
+  .ui { font-family: 'DM Sans'; font-weight: 700; }
+  .acc { color: #C4B5FD; }
+  .mut { color: rgba(255,255,255,.62); }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; }
+  .src { position: absolute; left: 70px; right: 70px; bottom: 34px; font-family: Exo; font-size: 20px; line-height: 1.35; color: rgba(255,255,255,.42); }
+  .panel { position: absolute; background: #1D1730; border: 2px solid rgba(255,255,255,.08); border-radius: 40px; }
+</style></head><body>
+<script>
+const emblemSvg = (id, c, size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48">${EMBLEMS[id].replace(/COLOR/g, c)}</svg>`;
+const badge = (id, c, d) => `<div style="width:${d}px;height:${d}px;flex:none;border-radius:999px;border:3px solid ${c};background:${c}33;display:flex;align-items:center;justify-content:center">${emblemSvg(id, c, d * 0.6)}</div>`;
+const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px;color:#fff">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const glows = (a, b, o = .3) => `<div class="glow" style="width:760px;height:760px;${a};background:#8B3DFF;opacity:${o}"></div><div class="glow" style="width:520px;height:520px;${b};background:#FF4FA0;opacity:${o / 2}"></div>`;
+// Header: the kicker on the left, the game label on the right (same label as the "1 chance sur N" series).
+const head = (kicker) => `<div class="abs ui" style="left:70px;top:66px;font-size:24px;letter-spacing:6px;color:#C4B5FD">${kicker}</div>
+  <div class="abs" style="right:70px;top:50px;display:flex;align-items:center;gap:18px"><div style="text-align:right"><div class="ui" style="font-size:21px;letter-spacing:5px;color:#F5C93B">POKÉMON</div><div style="font-family:Exo;font-weight:600;font-size:24px;color:rgba(255,255,255,.72);margin-top:2px">Flammes Fantasmagoriques</div></div>${badge('pokemon', '#F5C93B', 66)}</div>`;
+// The real card, with the holo treatment the design system reserves for the legendary moment.
+const card = (x, y, w, r = 0) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.397}px;transform:rotate(${r}deg);border-radius:${w * .045}px;overflow:hidden;box-shadow:0 0 0 5px rgba(255,255,255,.9),0 0 80px 18px rgba(139,61,255,.55),0 0 160px 40px rgba(255,79,160,.25)"><img src="assets/carte-mega-dracaufeu-x-pfl130.jpg" style="width:100%;height:100%;display:block;object-fit:cover"></div>`;
+const SRC_CM = 'Cardmarket : relevé du 21/09/2026.';
+const SRC_COTE = 'Cardmarket, relevé du 21/09/2026 (plus bas = annonce la moins chère, tous états). PSA 10 : ventes eBay de septembre 2026, 1 € = 1,135 $.';
+const SRC_TAUX = 'Taux : TCGplayer, 1 Méga Hyper Rare pour 1 260 boosters. Display de 36 boosters ≈ 250 €, prix publics FR. Cardmarket, relevé du 21/09/2026.';
+const SRC_VERDICT = '34 × : ≈ 8 750 € de boosters ÷ 259,92 €. 1 chance sur 3 : 37 % de ne pas l’avoir après 1 260 boosters.';
+const POSTS = [];
+
+// 1 - Cover: the real card, its name, the question.
+POSTS.push(['a1-couverture', `${glows('left:160px;top:330px', 'left:560px;top:820px', .38)}${head('ANALYSE DE CARTE')}
+  ${card(300, 170, 480, -3)}
+  <div class="abs pop" style="left:0;top:880px;width:1080px;text-align:center;font-size:88px">Méga-Dracaufeu X ex</div>
+  <div class="abs mut" style="left:0;top:985px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:34px">130/094 · Méga Hyper Rare · la seule du set</div>
+  <div class="abs pop" style="left:0;top:1075px;width:1080px;text-align:center;font-size:64px">Elle vaut <span class="acc">combien ?</span></div>
+  <div class="abs ui mut" style="right:70px;top:1250px;font-size:30px">Swipe →</div>
+  <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>`]);
+
+// 2 - The cote: three real Cardmarket figures, the range, then graded.
+POSTS.push(['a2-la-cote', `${glows('left:160px;top:300px', 'left:600px;top:900px', .26)}${head('LA COTE')}
+  ${card(70, 170, 300, -4)}
+  <div class="abs" style="left:420px;top:180px;width:590px">
+    <div class="ui mut" style="font-size:24px;letter-spacing:4px">PRIX MOYEN</div>
+    <div class="pop" style="font-size:130px;margin-top:6px">259,92 €</div>
+    <div class="ui" style="margin-top:14px;font-size:32px;color:#5FD3A3">▲ Tendance 266,77 €</div>
+    <div class="mut" style="font-family:Exo;font-weight:600;font-size:26px;margin-top:10px;line-height:1.35">La tendance passe au-dessus<br>de la moyenne.</div>
+  </div>
+  <div class="panel" style="left:70px;top:640px;width:940px;height:250px;display:flex;align-items:center">
+    ${[['Plus bas', '195,00 €', '#F0899A'], ['Moyenne', '259,92 €', '#fff'], ['Tendance', '266,77 €', '#5FD3A3']].map(([l, v, c], i) => `<div style="flex:1;text-align:center;${i ? 'border-left:2px solid rgba(255,255,255,.08);' : ''}"><div class="ui mut" style="font-size:26px">${l}</div><div class="pop" style="font-size:50px;margin-top:12px;color:${c}">${v}</div></div>`).join('')}
+  </div>
+  <div class="panel" style="left:70px;top:920px;width:940px;height:250px;padding:40px 50px;display:flex;align-items:center;gap:40px">
+    <div><div class="ui mut" style="font-size:24px;letter-spacing:4px">GRADÉE PSA 10</div><div class="pop" style="font-size:66px;margin-top:8px">1 230 à 2 640 €</div><div class="mut" style="font-family:Exo;font-weight:600;font-size:26px;margin-top:6px">ventes de septembre 2026</div></div>
+    <div style="margin-left:auto;text-align:center"><div class="pop grad" style="font-size:110px">×10</div><div class="ui mut" style="font-size:24px">au plus haut</div></div>
+  </div>
+  <div class="src">${SRC_COTE}</div>`]);
+
+// 3 - Rarity: 1 in 1 260; in displays and euros, against buying it alone.
+const dm = (s, lit) => `<svg width="${s}" height="${s}" viewBox="0 0 100 100"><defs><linearGradient id="dm${lit ? 'L' : 'N'}" x1="0" y1="0" x2="1" y2="1">${lit ? '<stop offset="0" stop-color="#FF4FA0"/><stop offset=".55" stop-color="#8B3DFF"/><stop offset="1" stop-color="#3AA9FF"/>' : '<stop offset="0" stop-color="#3A2E5C"/><stop offset="1" stop-color="#2A1F45"/>'}</linearGradient></defs>
+  <path d="M22 36 L38 22 L80 22 L64 36 Z" fill="${lit ? '#C4B5FD' : 'rgba(196,181,253,.22)'}"/><path d="M64 36 L80 22 L80 66 L64 80 Z" fill="${lit ? 'rgba(196,181,253,.5)' : 'rgba(196,181,253,.1)'}"/>
+  <rect x="22" y="36" width="42" height="44" rx="4" fill="url(#dm${lit ? 'L' : 'N'})"/><path d="M33 47 H54 V52.5 L42 65 H54 V70.5 H33 V65 L45 52.5 H33 Z" fill="${lit ? '#fff' : 'rgba(255,255,255,.25)'}"/></svg>`;
+let grid = '';
+for (let i = 0; i < 35; i++) grid += `<div style="${i === 22 ? 'filter:drop-shadow(0 0 18px rgba(255,79,160,.9)) drop-shadow(0 0 36px rgba(139,61,255,.8))' : ''}">${dm(108, i === 22)}</div>`;
+POSTS.push(['a3-1-chance-sur-1260', `${glows('left:160px;top:350px', 'left:600px;top:850px', .26)}${head('LA RARETÉ')}
+  <div class="abs pop" style="left:0;top:150px;width:1080px;text-align:center;font-size:110px">1 chance<br><span class="acc">sur 1 260.</span></div>
+  <div class="abs mut" style="left:0;top:400px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:36px">C’est la seule Méga Hyper Rare du set.</div>
+  <div class="abs" style="left:140px;top:470px;width:800px;display:grid;grid-template-columns:repeat(7,1fr);justify-items:center;row-gap:0">${grid}</div>
+  <div class="abs" style="left:70px;top:1035px;width:940px;display:flex;gap:24px">
+    <div class="panel" style="position:relative;flex:1;padding:26px 30px"><div class="ui mut" style="font-size:22px;letter-spacing:3px">POUR LA TIRER, EN MOYENNE</div><div class="pop" style="font-size:54px;margin-top:6px">≈ 8 750 €</div><div class="mut" style="font-family:Exo;font-weight:600;font-size:24px">35 displays de 36 boosters</div></div>
+    <div class="panel" style="position:relative;flex:1;padding:26px 30px;border-color:#A8E0C6"><div class="ui mut" style="font-size:22px;letter-spacing:3px">POUR L’ACHETER, SEULE</div><div class="pop" style="font-size:54px;margin-top:6px;color:#5FD3A3">≈ 260 €</div><div class="mut" style="font-family:Exo;font-weight:600;font-size:24px">prix moyen Cardmarket</div></div>
+  </div>
+  <div class="src">${SRC_TAUX}</div>`]);
+
+// 4 - The verdict.
+POSTS.push(['a4-le-verdict', `${glows('left:160px;top:250px', 'left:600px;top:850px', .3)}${head('LE VERDICT')}
+  <div class="abs pop" style="left:0;top:190px;width:1080px;text-align:center;font-size:96px">Tu la veux ?</div>
+  <div class="abs pop" style="left:0;top:300px;width:1080px;text-align:center;font-size:96px"><span class="acc">Achète-la.</span></div>
+  ${card(380, 450, 320, 4)}
+  <div class="abs" style="left:110px;top:950px;width:860px;text-align:center;font-family:Exo;font-weight:600;font-size:38px;line-height:1.4;color:rgba(255,255,255,.85)">L’ouvrir te coûterait 34 fois son prix,<br>et même après 1 260 boosters, tu aurais<br><b style="font-family:'DM Sans';color:#fff">1 chance sur 3 de repartir sans.</b></div>
+  <div class="src">${SRC_VERDICT}</div>`]);
+
+// 5 - Follow it on Boostz.
+POSTS.push(['a5-suis-sa-cote', `${glows('left:160px;top:330px', 'left:560px;top:820px', .38)}
+  <div class="abs pop" style="left:0;top:230px;width:1080px;text-align:center;font-size:96px">Suis sa cote<br><span class="acc">sur Boostz.</span></div>
+  ${card(380, 520, 320, -3)}
+  <div class="abs" style="left:0;top:1040px;width:1080px;display:flex;justify-content:center">${wordmark(100)}</div>
+  <div class="abs mut" style="left:0;top:1170px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:38px">Ton compagnon TCG, bientôt sur ton téléphone</div>`]);
+
+document.body.innerHTML = POSTS.map(([id, html]) => `<div class="p" id="${id}">${html}</div>`).join('');
+</script></body></html>
