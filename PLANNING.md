@@ -9,7 +9,7 @@ Un post tous les 3 jours à partir du lancement : 16 posts, publiés le même jo
 | 1 | ven. 16/10, 10 h | Reel | 11 Annonce | Lancement : « boostZ ta collection » | les 8 | ✅ programmé |
 | 2 | lun. 19/10, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 1 : relevés du 03/10 au 16/10 | Pokémon | relevé auto le 16/10 |
 | 3 | jeu. 22/10, 10 h | carrousel | 1 Analyse de carte | Méga-Dracaufeu X ex | Pokémon | ✅ programmé |
-| 4 | dim. 25/10, 10 h | Reel | 8 Choisis ton combattant | « Tu joues lequel ? » | les 8 | à produire |
+| 4 | dim. 25/10, 10 h | Reel | 8 Choisis ton combattant | « Tu joues lequel ? » | les 8 | ✅ programmé |
 | 5 | mer. 28/10, 10 h | carrousel | 4 Top 10 d'un set | Hyperia City (chapitre 14, sorti le 23/10) | Lorcana | à produire |
 | 6 | sam. 31/10, 18 h | Reel | 4 Top (spécial) | Halloween : les 5 cartes Spectre les plus chères | Pokémon | à produire |
 | 7 | mar. 03/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 2 : du 16/10 au 01/11 | Pokémon | relevé auto le 01/11 |
