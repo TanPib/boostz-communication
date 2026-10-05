@@ -6,7 +6,7 @@ This repo is **public on purpose**: Metricool fetches each image and video from 
 
 ## Autonomy
 
-On 05/10/2026 the user gave standing approval for every action in this work: producing, scheduling, moving and replacing Metricool posts, and changing the communication site. Do not ask before acting; report what was done. `PLANNING.md` is the approved plan to produce, in date order.
+On 05/10/2026 the user gave standing approval for every action in this work: producing, scheduling, moving and replacing Metricool posts, and changing the communication site. Do not ask before acting; report what was done. `PLANNING.md` is the approved plan to produce, in date order. Start with its "À reprendre" section when there is one.
 
 ## "Fais-moi une publication"
 
@@ -25,6 +25,9 @@ When the user asks for a post without saying which kind, this is the workflow:
 Never overwrite a scheduled post with `updateScheduledPost` without reading it first: the user edits them by hand in Metricool (they add the Instagram music themselves, which the API only supports on Reels).
 
 ## What the user has asked for, every time
+
+- **Decorations never touch text**: the dashed path and the ghost card outlines go in empty space, never across a sentence, a source line or the wordmark (05/10/2026: a source line on the Charizard post was crossed). Check it on every slide and still.
+- **Music on every post, every network** (05/10/2026): cool, soft, never aggressive, matching the post's style. TikTok and Facebook have no music API for videos, so the track is **embedded in the MP4**, mixed low (about −18 LUFS, fade in and out). Instagram Reels also get a library track via `audioConfiguration` (`videoVolume: 0`). Carousels: TikTok `autoAddMusic: true`; Instagram and Facebook carousels cannot get music through the API (the user adds Instagram's by hand). Stories announcing a carousel are exported as a short MP4 (the story image + music) so they carry sound. Runway music generation needs a paid plan (refused 05/10/2026): compose original tracks in code instead, never third-party audio.
 
 - **Real figures only**, each dated and sourced in a line at the bottom of the visual. No invented price history, no curve with made-up points: two records make a two-point line. A mockup with example figures says so on the slide ("MAQUETTE · CHIFFRES D'EXEMPLE").
 - **No chips or pills** (rounded labels with a border). Plain coloured text instead.
