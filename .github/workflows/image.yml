@@ -1,0 +1,52 @@
+# Fetches a card image for a post, which the cloud container cannot reach
+# (image CDNs are blocked there). Give it a page (its og:image is taken) or a
+# direct image URL, and a file name; the image lands in gabarits/assets/.
+# Run by hand: Actions > Image > Run workflow.
+name: Image
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Page or direct image URL
+        required: true
+      nom:
+        description: File name in gabarits/assets/, without extension
+        required: true
+permissions:
+  contents: write
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        env:
+          URL: ${{ inputs.url }}
+          NOM: ${{ inputs.nom }}
+        run: |
+          python3 - <<'PY'
+          import os, re, urllib.request
+          url, nom = os.environ['URL'], os.environ['NOM']
+          assert re.fullmatch(r'[a-z0-9-]+', nom), 'nom: lowercase letters, digits and dashes only'
+          get = lambda u: urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 (boostz-communication)'}), timeout=60)
+          r = get(url)
+          kind = r.headers.get('Content-Type', '')
+          data = r.read()
+          if kind.startswith('text/html'):
+              html = data.decode('utf-8', 'replace')
+              m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)', html) or re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image', html)
+              assert m, 'no og:image on the page'
+              print('og:image', m.group(1))
+              r = get(m.group(1).replace('&amp;', '&')); kind = r.headers.get('Content-Type', ''); data = r.read()
+          ext = {'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif'}.get(kind.split(';')[0], 'jpg')
+          path = f'gabarits/assets/{nom}.{ext}'
+          open(path, 'wb').write(data)
+          print(path, len(data), 'bytes', kind)
+          PY
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add gabarits/assets
+          git diff --cached --quiet || git commit -q -m "Add the image ${{ inputs.nom }} for a post"
+          git pull -q --rebase && git push -q
