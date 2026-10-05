@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz fonction etat</title>
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #131020; }
+  .abs { position: absolute; }
+  .h { font-family: Outfit; font-weight: 800; line-height: 1.02; letter-spacing: -1px; color: #F5F2FB; }
+  .ui { font-family: Poppins; font-weight: 700; }
+  .mut { color: #A8A2B8; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .st { position: absolute; background: #1D1730; border: 6px solid #F5F2FB; border-radius: 36px; overflow: hidden; opacity: 0; }
+</style></head><body>
+<div id="stage" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
+<script>
+// "Fonction à la loupe": the condition estimate, in the onboarding's sticker
+// style. Only what the app does: a photo of the front and the back, a
+// pre-estimate of corners, edges, surface and centring, three free analyses
+// every 30 days. The grades are example values, and the video says so.
+const SHADOW = '#05040A', VSOFT = '#C4B5FD', DARK = '#1A1424', VIOLET = '#7C3AED', SUN = '#FCD34D', DONE = '#5FD3A3';
+const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px;color:#fff">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const mini = (w, art) => `<div style="width:${w}px;height:${w * 1.4}px;border-radius:${w * .1}px;background:#2A2140;padding:${w * .1}px"><div style="height:${w * .1}px;width:60%;border-radius:9px;background:#5A5470"></div><div style="height:${w * .62}px;margin-top:${w * .08}px;border-radius:${w * .06}px;background:${art}"></div><div style="height:${w * .06}px;width:80%;margin-top:${w * .1}px;border-radius:9px;background:#4A4460"></div><div style="height:${w * .06}px;width:55%;margin-top:${w * .05}px;border-radius:9px;background:#4A4460"></div></div>`;
+const clamp = (x) => Math.max(0, Math.min(1, x));
+const out3 = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const inOut = (x) => { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const back = (x) => { x = clamp(x); const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const $ = (id) => document.getElementById(id);
+function stick(id, t, t0, r = 0, sh = 12, dur = .3) {
+  const el = $(id), p = clamp((t - t0) / dur);
+  if (p <= 0) { el.style.opacity = 0; return; }
+  const k = out3((p - .55) / .45) * sh;
+  el.style.opacity = clamp(p / .2);
+  el.style.transform = `translateY(${-50 * (1 - out3(p))}px) rotate(${r + 10 * (1 - out3(p))}deg) scale(${1.3 - .3 * back(p)})`;
+  el.style.boxShadow = `${k}px ${k}px 0 ${SHADOW}`;
+}
+const rise = (id, t, t0) => { const p = out3((t - t0) / .4); $(id).style.opacity = p; $(id).style.transform = `translateY(${36 * (1 - p)}px)`; };
+
+// --- timeline (s) ---
+const T_CARD = .3, T_SCAN1 = 1.0, T_FLIP = 2.1, T_SCAN2 = 2.6, T_SUBS = 3.6, T_NOTE = 5.1, T_FREE = 6.0, T_END = 8.0;
+window.TOTAL = 10;
+const SUBS = [['Coins', '9,5', 24, 640, -4], ['Bords', '9', 24, 860, 3], ['Surface', '10', 806, 640, 4], ['Centrage', '9,5', 806, 860, -3]];
+
+$('stage').innerHTML = `
+  ${[[60, 160, 90, -8], [920, 300, 80, 6], [80, 1700, 100, 10], [880, 1760, 110, -6]].map(([x, y, w, r], i) => `<div id="g${i}" class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border:4px solid rgba(255,255,255,.14);border-radius:${w * .16}px;transform:rotate(${r}deg)"><div style="width:60%;height:6px;margin:${w * .1}px auto 0;border-radius:3px;background:rgba(255,255,255,.14)"></div></div>`).join('')}
+  <svg class="abs" width="1080" height="1920" style="left:0;top:0"><defs><clipPath id="draw"><rect id="drawRect" x="0" y="0" width="0" height="1920"/></clipPath></defs>
+    <path clip-path="url(#draw)" d="M-20 1720 C160 1660 300 1800 520 1740 S860 1640 1100 1710" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>
+  <div id="title" class="abs h" style="left:0;top:150px;width:1080px;text-align:center;font-size:112px;opacity:0">Estime l’état<br><span style="color:${VSOFT}">de tes cartes.</span></div>
+  <div id="mark" class="abs" style="left:0;top:190px;width:1080px;display:flex;flex-direction:column;align-items:center;gap:26px;opacity:0">${wordmark(120)}<div class="mut" style="font-family:Exo;font-weight:600;font-size:40px">Ton compagnon TCG, bientôt sur ton téléphone</div></div>
+  <div id="cardWrap" class="abs" style="left:340px;top:560px;width:400px;height:560px">
+    <div id="card" class="st" style="left:0;top:0;width:400px;height:560px;border-radius:40px"><div id="recto" style="margin:30px">${mini(328, '#2F5A7A')}</div>
+      <img id="verso" src="assets/dos-starwarsunlimited.svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0"></div></div>
+  <div id="brk" class="abs" style="left:300px;top:520px;width:480px;height:640px;opacity:0;z-index:3">${['top:0;left:0;border-width:10px 0 0 10px', 'top:0;right:0;border-width:10px 10px 0 0', 'bottom:0;left:0;border-width:0 0 10px 10px', 'bottom:0;right:0;border-width:0 10px 10px 0'].map((p) => `<div style="position:absolute;${p};width:96px;height:96px;border-style:solid;border-color:#F5F2FB;border-radius:22px"></div>`).join('')}</div>
+  <div id="side" class="st ui" style="left:330px;top:470px;width:200px;height:84px;background:${VSOFT};color:${DARK};display:flex;align-items:center;justify-content:center;font-size:34px;border-radius:24px;z-index:4">Recto</div>
+  <div id="scan" class="abs" style="left:350px;top:580px;width:380px;height:14px;border-radius:7px;background:${VSOFT};box-shadow:0 0 0 4px rgba(196,181,253,.25);opacity:0;z-index:4"></div>
+  ${SUBS.map(([k, v, x, y], i) => `<div id="sub${i}" class="st" style="left:${x}px;top:${y}px;width:250px;height:160px;z-index:4"><div style="padding:22px 26px"><div class="ui mut" style="font-size:30px;font-weight:600">${k}</div><div class="h" style="font-size:66px">${v}</div></div></div>`).join('')}
+  <div id="note" class="abs" style="left:640px;top:1040px;width:240px;height:240px;border-radius:50%;background:${VIOLET};border:6px solid #F5F2FB;display:flex;align-items:center;justify-content:center;opacity:0;z-index:5"><div style="text-align:center"><div class="h" style="font-size:112px;color:#fff;line-height:1">9,5</div><div class="ui" style="font-size:24px;color:#fff;margin-top:4px">Note estimée</div></div></div>
+  <div id="free" class="st" style="left:120px;top:1320px;width:840px;height:130px;background:${SUN};z-index:5"><div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:42px;color:${DARK}">3 analyses offertes tous les 30 jours</div></div>
+  <div id="ex" class="abs mut" style="left:0;top:1490px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:26px;opacity:0">Valeurs d’exemple · une pré-estimation, pas une note officielle</div>`;
+
+window.render = (t) => {
+  [0, 1, 2, 3].forEach((i) => { $('g' + i).style.transform = `translateX(${t * (5 + i)}px) rotate(${[-8, 6, 10, -6][i] + Math.sin(t / 2 + i) * 3}deg)`; });
+  $('drawRect').setAttribute('width', 1100 * out3(t / 2.4));
+  const end = out3((t - T_END) / .5);
+  rise('title', t, 0); $('title').style.opacity = out3(t / .4) * (1 - end);
+  $('mark').style.opacity = end; $('mark').style.transform = `translateY(${30 * (1 - end)}px)`;
+  stick('card', t, T_CARD, 0, 14);
+  // The brackets close in on the card, the "Recto" label lands, then flips to "Verso" with the card.
+  const bp = out3((t - T_CARD - .4) / .4); $('brk').style.opacity = bp; $('brk').style.transform = `scale(${1.15 - .15 * bp})`;
+  stick('side', t, T_CARD + .5, -4, 8);
+  const flip = clamp((t - T_FLIP) / .4);
+  $('cardWrap').style.transform = `scaleX(${Math.abs(Math.cos(Math.PI * flip))})`;
+  const versoOn = flip >= .5;
+  $('verso').style.opacity = versoOn ? 1 : 0; $('recto').style.opacity = versoOn ? 0 : 1;
+  $('side').textContent = t >= T_FLIP + .2 ? 'Verso' : 'Recto';
+  // Two sweeps of the scan line, one per side.
+  const s1 = clamp((t - T_SCAN1) / .8), s2 = clamp((t - T_SCAN2) / .8);
+  const sp = t < T_FLIP ? s1 : s2, live = (t < T_FLIP && s1 > 0 && s1 < 1) || (s2 > 0 && s2 < 1);
+  $('scan').style.opacity = live ? 1 : 0; $('scan').style.transform = `translateY(${500 * inOut(sp)}px)`;
+  SUBS.forEach(([, , , , r], i) => stick('sub' + i, t, T_SUBS + i * .2, r));
+  stick('note', t, T_NOTE, 6, 14);
+  stick('free', t, T_FREE, -2, 14);
+  rise('ex', t, T_FREE + .4);
+};
+window.render(0);
+</script></body></html>
