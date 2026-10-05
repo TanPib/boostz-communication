@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Metricool_Social_Media_Management",
+      "mcp__claude-code-remote__send_later",
+      "mcp__claude-code-remote__update_trigger",
+      "WebSearch",
+      "WebFetch",
+      "Bash(node rendu.mjs:*)",
+      "Bash(ffmpeg:*)"
+    ]
+  }
+}
