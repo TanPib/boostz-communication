@@ -12,6 +12,9 @@ on:
       nom:
         description: File name in gabarits/assets/, without extension
         required: true
+      motif:
+        description: Optional word in the <img> src to pick when the page has no og:image
+        required: false
 permissions:
   contents: write
 jobs:
@@ -23,9 +26,10 @@ jobs:
         env:
           URL: ${{ inputs.url }}
           NOM: ${{ inputs.nom }}
+          MOTIF: ${{ inputs.motif }}
         run: |
           python3 - <<'PY'
-          import os, re, urllib.request
+          import os, re, urllib.parse, urllib.request
           url, nom = os.environ['URL'], os.environ['NOM']
           assert re.fullmatch(r'[a-z0-9-]+', nom), 'nom: lowercase letters, digits and dashes only'
           get = lambda u: urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36', 'Accept': '*/*', 'Accept-Language': 'fr,en;q=0.8'}), timeout=60)
@@ -40,9 +44,15 @@ jobs:
           elif kind.startswith('text/html'):
               html = data.decode('utf-8', 'replace')
               m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)', html) or re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image', html)
-              assert m, 'no og:image on the page'
-              print('og:image', m.group(1))
-              r = get(m.group(1).replace('&amp;', '&')); kind = r.headers.get('Content-Type', ''); data = r.read()
+              src = m and m.group(1)
+              if not src and os.environ.get('MOTIF'):
+                  imgs = re.findall(r'<img[^>]+src=["\']([^"\']+)', html, re.I)
+                  print('images on the page:', imgs)
+                  src = next((i for i in imgs if os.environ['MOTIF'].lower() in i.lower()), None)
+              assert src, 'no og:image on the page, and no <img> matching motif'
+              src = urllib.parse.urljoin(url, src.replace('&amp;', '&'))
+              print('image', src)
+              r = get(src); kind = r.headers.get('Content-Type', ''); data = r.read()
           ext = {'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif'}.get(kind.split(';')[0], 'jpg')
           path = f'gabarits/assets/{nom}.{ext}'
           open(path, 'wb').write(data)
