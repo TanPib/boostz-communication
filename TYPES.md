@@ -17,6 +17,9 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 9 | **Pub Boostz** | image ou Reel court | 🔥 | maquette | jamais |
 | 10 | **Édito** | image, thème clair | 🔥 | maquette | jamais |
 | 11 | **Annonce** | Reel | selon l'actu | prêt | 16/10/2026 · lancement |
+| 12 | **Fonction à la loupe** | Reel ou carrousel | 🔥🔥 | à concevoir | jamais |
+| 13 | **Mythe ou réalité** | carrousel, 5 slides | 🔥🔥 | à concevoir | jamais |
+| 14 | **Tu préfères ?** | carrousel, 3 slides | 🔥🔥 | à concevoir | jamais |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -93,6 +96,18 @@ Une phrase en très grand, un mot encadré, puis un mur d'objets de l'app (faço
 ### 11 · Annonce
 Pour les étapes de l'app : lancement, bêta, sortie sur les stores, nouvelle fonction.
 - **Gabarit :** `gabarits/annonce-stickers-reel.html` (version publiée, style stickers), `gabarits/annonce-reel.html` (V8, dont la fin est reprise)
+
+### 12 · Fonction à la loupe
+Une fonction de l'app, montrée en stickers, étape par étape : l'état, l'échange, les alertes prix, les extensions et les Boosties, la commu. Chaque post n'en montre qu'une, et ne promet que ce que l'app fait déjà en prod.
+- **Données :** aucune cote ; des valeurs d'exemple, comme dans la vidéo de lancement.
+
+### 13 · Mythe ou réalité
+Une idée reçue du monde TCG, en grand, puis les faits sourcés et le verdict. Instructif, donc enregistré et partagé.
+- **Données :** chaque fait cité avec sa source et sa date.
+
+### 14 · Tu préfères ?
+Deux cartes au même prix, de préférence de deux jeux différents, face à face. Fait commenter, et montre que Boostz couvre plusieurs jeux.
+- **Données :** cotes réelles, à moins de 10 % d'écart, datées.
 
 ## Historique
 

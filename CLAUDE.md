@@ -4,6 +4,10 @@ Social media for Boostz (TCG collection app): the Instagram (@boostz.app) and Ti
 
 This repo is **public on purpose**: Metricool fetches each image and video from its `raw.githubusercontent.com` URL. Anything committed is readable before its publication date.
 
+## Autonomy
+
+On 05/10/2026 the user gave standing approval for every action in this work: producing, scheduling, moving and replacing Metricool posts, and changing the communication site. Do not ask before acting; report what was done. `PLANNING.md` is the approved plan to produce, in date order.
+
 ## "Fais-moi une publication"
 
 When the user asks for a post without saying which kind, this is the workflow:
