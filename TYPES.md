@@ -8,7 +8,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | --- | --- | --- | --- | --- | --- |
 | 1 | **Analyse de carte** | carrousel, 5 slides | 🔥🔥🔥 | prêt | 22/10/2026 · Méga-Dracaufeu X ex (Pokémon) |
 | 2 | **Les 10 cotes qui bougent** | carrousel, 12 slides | 🔥🔥🔥 | série, le 1er et le 16 du mois | première édition à venir |
-| 3 | **1 chance sur N** | Reel de 22 s, ou carrousel de 5 slides | 🔥🔥🔥 | prêt | 06/11/2026 · enchantée (Lorcana) |
+| 3 | **1 chance sur N** | Reel de 22 s, ou carrousel de 5 slides | 🔥🔥🔥 | prêt | 09/11/2026 · enchantée (Lorcana) |
 | 4 | **Top 10 d'un set** | carrousel, 11 slides | 🔥🔥🔥 à la sortie d'un set | maquette | jamais |
 | 5 | **Même carte, trois langues** | carrousel, 3 à 5 slides | 🔥🔥 | maquette | jamais |
 | 6 | **Devine la note** | carrousel, 2 slides | 🔥🔥 | maquette | jamais |
@@ -128,7 +128,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | ven. 16/10/2026, 10 h | Instagram (Reel), TikTok | 11 | Lancement : « boostZ ta collection », style stickers de l'onboarding | les 8 | `videos/2026-10-16-lancement-stickers.mp4` |
 | jeu. 22/10/2026, 10 h | Instagram (carrousel), TikTok (photos) | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-22-analyse-mega-dracaufeu-x-stickers/` |
 | dim. 25/10/2026, 10 h | Instagram (Reel, musique « 8 Bit Breakthrough »), TikTok | 8 | Choisis ton combattant : « Tu joues lequel ? » | les 8 | `videos/2026-10-25-choisis-ton-combattant-8s.mp4` |
-| ven. 06/11/2026, 10 h | Instagram (Reel), TikTok | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-11-04-1-chance-sur-96-stickers.mp4` |
+| lun. 09/11/2026, 10 h | Instagram (Reel), TikTok | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-11-04-1-chance-sur-96-stickers.mp4` |
 
 ## D'où viennent les notes de tendance
 

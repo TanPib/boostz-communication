@@ -14,12 +14,12 @@ Trois principes, demandés par l'utilisateur :
 | 1 | ven. 16/10, 10 h | Reel | 11 Annonce | Lancement : « boostZ ta collection » | les 8 | ✅ programmé |
 | 2 | lun. 19/10, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 1 : relevés du 03/10 au 16/10 | Pokémon | relevé auto le 16/10 |
 | 3 | jeu. 22/10, 10 h | carrousel | 1 Analyse de carte | Méga-Dracaufeu X ex | Pokémon | ✅ programmé |
-| 4 | dim. 25/10, 10 h | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », raccourci à 8 s | les 8 | ✅ programmé, à raccourcir |
+| 4 | dim. 25/10, 10 h | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », raccourci à 8 s | les 8 | ✅ programmé (8 s) |
 | 5 | mer. 28/10, 10 h | carrousel | 15 Sortie d'extension | Hyperia City (chapitre 14, sorti le 23/10) : les 10 cartes qui valent le plus | Lorcana | à produire |
 | 6 | sam. 31/10, 18 h | Reel | 16 Thème | Halloween : une carte qui fait peur par jeu, et sa cote | Pokémon, Magic, One Piece, Lorcana, Yu-Gi-Oh! | à produire |
 | 7 | mar. 03/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 2 : du 16/10 au 01/11 | One Piece | à produire |
 | 8 | ven. 06/11, 10 h | carrousel | 15 Sortie d'extension | Delta Reign sort aujourd'hui (ME06, en anglais) | Pokémon | à produire |
-| 9 | lun. 09/11, 10 h | Reel | 3 1 chance sur N | 1 chance sur 96 d'avoir une enchantée | Lorcana | ✅ produit, à décaler du 06/11 |
+| 9 | lun. 09/11, 10 h | Reel | 3 1 chance sur N | 1 chance sur 96 d'avoir une enchantée | Lorcana | ✅ programmé |
 | 10 | jeu. 12/11, 10 h | carrousel | 15 Sortie d'extension | Vendredi, deux sorties : Magnificent Maestros et Magic × Star Trek | Yu-Gi-Oh!, Magic | à produire |
 | 11 | dim. 15/11, 10 h | Reel | 12 Fonction à la loupe | Estime l'état de tes cartes | les 8 | à produire |
 | 12 | mer. 18/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 3 : du 01/11 au 16/11 | Magic | à produire |
@@ -63,7 +63,7 @@ Légendes en brouillon. Les chiffres entre crochets sortent des données le jour
 - **Hashtags :** `#pokemontcg #cartespokemon #cotepokemon #collectionpokemon #pokemonfr`
 
 ### 4 · Choisis ton combattant — dim. 25/10
-- ✅ Programmé ; à raccourcir à 8 s (un tour rapide du curseur, la question vers 4,6 s, la fin Boostz à 8 s).
+- ✅ Programmé, raccourci à 8 s le 05/10.
 
 ### 5 · Hyperia City : les 10 cartes qui valent le plus — mer. 28/10
 - **Déroulé :** couverture « Hyperia City est sorti : ses 10 cartes les plus chères à J+5 », un rang par slide, le récap.
@@ -88,7 +88,7 @@ Légendes en brouillon. Les chiffres entre crochets sortent des données le jour
 - **Hashtags :** `#pokemontcg #deltareign #megaevolution #cartespokemon #pokemon`
 
 ### 9 · 1 chance sur 96 — lun. 09/11
-- ✅ Vidéo produite. À décaler du 06/11 au 09/11 pour laisser le 06/11 à Delta Reign. Revérifier les cotes des enchantées, qui datent du 25/09.
+- ✅ Programmé le 09/11 (décalé pour laisser le 06/11 à Delta Reign). Revérifier les cotes des enchantées, qui datent du 25/09.
 
 ### 10 · Vendredi, deux sorties : Magnificent Maestros et Magic × Star Trek — jeu. 12/11
 - **Déroulé (carrousel, 5 slides) :** « Demain, deux sorties » ; Yu-Gi-Oh! Magnificent Maestros (ce qu'il y a dedans, les cartes attendues) ; Magic × Star Trek (les 60 ans de Star Trek, les cartes attendues) ; prix d'un booster de chaque ; « Tu ouvres lequel ? ».
