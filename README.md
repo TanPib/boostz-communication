@@ -16,7 +16,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 
 | Fichier | Publication prévue | Format |
 | --- | --- | --- |
-| `videos/2026-10-16-lancement.mp4` | ven. 16/10/2026, 10 h — Instagram et TikTok | 9:16, 1080 × 1920, 21 s, sans son |
+| `videos/2026-10-16-lancement-stickers.mp4` | ven. 16/10/2026, 10 h — Instagram et TikTok | 9:16, 1080 × 1920, 31 s, sans son, style stickers de l'onboarding |
+| `videos/2026-10-16-lancement.mp4` | remplacée le 05/10/2026 par la version stickers ; sa fin y est reprise | 9:16, 1080 × 1920, 21 s, sans son |
 | `videos/2026-11-04-1-chance-sur-96-clair.mp4` | mer. 4/11/2026, 10 h — Instagram et TikTok | 9:16, 1080 × 1920, 22,6 s, thème clair, sans son |
 | `images/2026-10-22-analyse-mega-dracaufeu-x/` | jeu. 22/10/2026, 10 h — Instagram et TikTok | carrousel 4:5, 5 JPEG 1080 × 1350 |
 

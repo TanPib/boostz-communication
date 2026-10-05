@@ -92,13 +92,13 @@ Une phrase en très grand, un mot encadré, puis un mur d'objets de l'app (faço
 
 ### 11 · Annonce
 Pour les étapes de l'app : lancement, bêta, sortie sur les stores, nouvelle fonction.
-- **Gabarit :** `gabarits/annonce-reel.html`
+- **Gabarit :** `gabarits/annonce-stickers-reel.html` (version publiée, style stickers), `gabarits/annonce-reel.html` (V8, dont la fin est reprise)
 
 ## Historique
 
 | Date | Réseaux | N° | Sujet | Jeu | Fichiers |
 | --- | --- | --- | --- | --- | --- |
-| ven. 16/10/2026, 10 h | Instagram (Reel), TikTok | 11 | Lancement : « boostZ ta collection » | les 8 | `videos/2026-10-16-lancement.mp4` |
+| ven. 16/10/2026, 10 h | Instagram (Reel), TikTok | 11 | Lancement : « boostZ ta collection », style stickers de l'onboarding | les 8 | `videos/2026-10-16-lancement-stickers.mp4` |
 | jeu. 22/10/2026, 10 h | Instagram (carrousel), TikTok (photos) | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-22-analyse-mega-dracaufeu-x/` |
 | mer. 04/11/2026, 10 h | Instagram (Reel), TikTok | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-11-04-1-chance-sur-96-clair.mp4` |
 
