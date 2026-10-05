@@ -46,7 +46,7 @@ const SRC_VERDICT = `${TIMES} × : ≈ 8 750 € de boosters ÷ ${euro(CM.avg30)
 const POSTS = [];
 
 // 1 - Cover: the card stuck on, its name, the question.
-POSTS.push(['a1-couverture', `${ghosts([[80, 300, 80, -6], [920, 980, 90, 8], [130, 1150, 70, 4]])}${track(0)}${head('ANALYSE DE CARTE')}
+POSTS.push(['a1-couverture', `${ghosts([[80, 300, 80, -6], [920, 980, 90, 8], [120, 1100, 70, 4]])}${track(0)}${head('ANALYSE DE CARTE')}
   ${card(305, 160, 470, -4)}
   ${st(680, 220, 330, 110, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:34px;color:${DARK}">La seule du set</div>`, { fill: SUN, r: 7, z: 3 })}
   <div class="abs h" style="left:0;top:880px;width:1080px;text-align:center;font-size:90px">Méga-Dracaufeu X ex</div>
@@ -56,7 +56,7 @@ POSTS.push(['a1-couverture', `${ghosts([[80, 300, 80, -6], [920, 980, 90, 8], [1
   <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`]);
 
 // 2 - The cote: one big price, three smaller ones, then the graded range.
-POSTS.push(['a2-la-cote', `${ghosts([[900, 1040, 80, 6], [60, 1180, 70, -4]])}${track(1)}${head('LA COTE')}
+POSTS.push(['a2-la-cote', `${ghosts([[900, 1040, 80, 6]])}${track(1)}${head('LA COTE')}
   ${card(70, 175, 300, -5)}
   ${st(420, 180, 590, 300, `<div style="padding:34px 40px"><div class="lab mut" style="font-size:22px">PRIX MOYEN · 30 JOURS</div><div class="h" style="font-size:118px;margin-top:8px;white-space:nowrap">${euro(CM.avg30)}</div></div>`, { r: 2, z: 3 })}
   ${[['Plus bas', CM.low, PINK, -3], ['Sur 7 jours', CM.avg7, '#F5F2FB', 2], ['Tendance', CM.trend, DONE, -2]].map(([k, v, c, r], i) => st(70 + i * 318, 640, 290, 190, `<div style="padding:26px 28px"><div class="ui mut" style="font-size:28px;font-weight:600">${k}</div><div class="h" style="font-size:54px;margin-top:10px;white-space:nowrap;color:${c}">${euro(v)}</div></div>`, { r, z: 3 })).join('')}
@@ -83,7 +83,7 @@ POSTS.push(['a4-le-verdict', `${ghosts([[80, 520, 80, -6], [920, 1100, 80, 6]])}
   <div class="src">${SRC_VERDICT}</div>`]);
 
 // 5 - Follow it on Boostz.
-POSTS.push(['a5-suis-sa-cote', `${ghosts([[90, 300, 80, -6], [900, 360, 90, 8], [110, 1120, 70, 4], [920, 1080, 80, -6]])}${track(4)}
+POSTS.push(['a5-suis-sa-cote', `${ghosts([[90, 300, 80, -6], [900, 360, 90, 8], [100, 1215, 70, 4], [910, 1215, 80, -6]])}${track(4)}
   <div class="abs h" style="left:0;top:170px;width:1080px;text-align:center;font-size:104px">Suis sa cote<br><span class="acc">sur Boostz.</span></div>
   ${card(380, 450, 320, -3)}
   <div class="abs" style="left:0;top:1000px;width:1080px;display:flex;justify-content:center">${wordmark(100)}</div>
