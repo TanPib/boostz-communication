@@ -32,4 +32,4 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 
 Les fichiers sont nommés par leur date de publication. Chaque vidéo publiée porte une musique originale, composée en code par `outils/musique.mjs` et mixée bas (`outils/mixer.sh`) : TikTok et Facebook n'ont pas d'API de musique pour les vidéos. Les Reels Instagram reçoivent en plus une piste de la bibliothèque Instagram.
 
-Les visuels de cartes reprennent l'illustration officielle de la carte, qui reste la propriété de son éditeur (ici The Pokémon Company). Les cotes affichées sont datées sur chaque visuel.
+Les visuels de cartes reprennent l'illustration officielle de la carte, qui reste la propriété de son éditeur (The Pokémon Company, Upper Deck et Blizzard Entertainment pour le Tigre spectral). Les cotes affichées sont datées sur chaque visuel.

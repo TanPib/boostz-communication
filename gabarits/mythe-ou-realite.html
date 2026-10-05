@@ -53,6 +53,13 @@ const lootCard = (x, y, w, r = 0, scratched = false, z = 2) => {
     <div style="height:${w * .16}px;margin-top:${w * .055}px">${strip}</div></div>`;
 };
 
+// The real card (scan from Category One Games, 286 x 400), in a sticker frame.
+// Its grey box near the bottom is the scratch-off strip; "scratched" covers it
+// with a revealed code, as on a used card.
+const realCard = (x, y, w, r = 0, scratched = false, z = 2) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;transform:rotate(${r}deg);border:8px solid #F5F2FB;border-radius:${w * .05}px;overflow:hidden;box-shadow:16px 16px 0 ${SHADOW};z-index:${z};background:#000">
+    <img src="assets/carte-tigre-spectral.jpg" style="width:100%;height:100%;display:block;object-fit:cover">
+    ${scratched ? `<div class="abs" style="left:21.5%;top:80%;width:56.5%;height:6.2%;border-radius:4px;background:#2A2140;display:flex;align-items:center;justify-content:center;font-family:'DM Sans';font-weight:700;font-size:${w * .05}px;letter-spacing:${w * .006}px;color:#F5F2FB">••••-••••-••••</div>` : ''}</div>`;
+
 // Figures, each from a public record (searched 05/10/2026):
 // - Heritage Auctions: Spectral Tiger #3 Fires of Outland loot, PSA NM-MT 8, sold 5,250 $ on 21/03/2025.
 // - PSA Auction Prices Realized, "Spectral Tiger outland loot scratched": PSA 9 sold 108.50 $ on 11/11/2025.
@@ -61,14 +68,14 @@ const lootCard = (x, y, w, r = 0, scratched = false, z = 2) => {
 const INTACT = 5250, GRATTEE = 108.5;
 const FACTOR = Math.round(INTACT / GRATTEE);
 const usd = (v) => (Number.isInteger(v) ? String(v) : v.toFixed(2).replace('.', ',')).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' $';
-const SRC_JEU = 'Wikipedia, « World of Warcraft Trading Card Game » : sortie le 25/10/2006, arrêt annoncé par Blizzard le 23/08/2013.';
-const SRC_TIGRE = 'Taux de tirage : fiche du lot Heritage Auctions du 24/07/2021, wowlootcards.com. Montures : warcraft.wiki.gg. Carte redessinée, pas l’illustration officielle.';
-const SRC_PRIX = `Code intact : Heritage Auctions, PSA 8, vendue le 21/03/2025. Code gratté : PSA Auction Prices Realized, PSA 9, vendue le 11/11/2025. Prix en dollars, relevés le 05/10/2026.`;
+const SRC_JEU = 'Wikipedia, « World of Warcraft Trading Card Game » : sortie le 25/10/2006, arrêt annoncé par Blizzard le 23/08/2013. Carte © 2007 Upper Deck / Blizzard Entertainment.';
+const SRC_TIGRE = 'Taux de tirage : fiche du lot Heritage Auctions du 24/07/2021, wowlootcards.com. Montures : warcraft.wiki.gg. Carte © 2007 Upper Deck / Blizzard Entertainment.';
+const SRC_PRIX = `Code intact : Heritage Auctions, PSA 8, vendue le 21/03/2025. Code gratté : PSA Auction Prices Realized, PSA 9, vendue le 11/11/2025. Relevés le 05/10/2026. Carte © 2007 Upper Deck / Blizzard.`;
 const POSTS = [];
 
 // 1 - The claim.
 POSTS.push(['m1-affirmation', `${ghosts([[80, 300, 80, -6], [930, 400, 80, 8]])}${track(0)}${head('MYTHE OU RÉALITÉ ?')}
-  ${lootCard(370, 170, 340, -4)}
+  ${realCard(370, 170, 340, -4)}
   ${disc(700, 210, 190, VIOLET, `<div class="h" style="font-size:130px;color:#fff;line-height:1">?</div>`, 8)}
   <div class="abs h" style="left:0;top:850px;width:1080px;text-align:center;font-size:80px">Une carte s’est vendue<br>${usd(INTACT)}…</div>
   <div class="abs h acc" style="left:0;top:1035px;width:1080px;text-align:center;font-size:64px">pour un tigre<br>qui n’existe pas.</div>
@@ -79,7 +86,7 @@ POSTS.push(['m1-affirmation', `${ghosts([[80, 300, 80, -6], [930, 400, 80, 8]])}
 POSTS.push(['m2-le-jeu', `${ghosts([[900, 1040, 80, 6]])}${track(1)}${head('LE JEU')}
   <div class="abs h" style="left:70px;top:160px;font-size:96px">Le TCG<br><span class="acc">World of Warcraft</span></div>
   ${[['2006', 'Upper Deck<br>le lance', WOW, -3], ['2010', 'Cryptozoic<br>le reprend', '#F5F2FB', 2], ['2013', 'Blizzard<br>l’arrête', PINK, -2]].map(([y, k, c, r], i) => st(70 + i * 318, 410, 290, 215, `<div style="padding:24px 28px"><div class="h" style="font-size:72px;color:${c}">${y}</div><div class="ui mut" style="font-size:26px;font-weight:600;margin-top:6px;line-height:1.3">${k}</div></div>`, { r, z: 3 })).join('')}
-  ${lootCard(90, 700, 280, -6)}
+  ${realCard(90, 700, 280, -6)}
   ${st(420, 760, 590, 330, `<div style="padding:34px 40px;color:${DARK}"><div class="lab" style="font-size:22px">LES CARTES « LOOT »</div><div class="ui" style="font-size:40px;line-height:1.25;margin-top:12px">Un code à gratter, qui débloque un objet dans le jeu vidéo.</div></div>`, { fill: SUN, r: 2, z: 3 })}
   <div class="src">${SRC_JEU}</div>`]);
 
@@ -93,8 +100,8 @@ POSTS.push(['m3-le-tigre', `${track(2)}${head('LE TIGRE SPECTRAL')}
 
 // 4 - What it sells for: intact against scratched.
 POSTS.push(['m4-ce-quelle-vaut', `${ghosts([[920, 1100, 80, 6]])}${track(3)}${head('CE QU’ELLE VAUT')}
-  ${lootCard(110, 170, 300, -5)}
-  ${lootCard(640, 170, 300, 5, true)}
+  ${realCard(110, 170, 300, -5)}
+  ${realCard(640, 170, 300, 5, true)}
   ${st(70, 650, 450, 250, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:21px;letter-spacing:2px">CODE INTACT · PSA 8</div><div class="h" style="font-size:88px;margin-top:6px;white-space:nowrap">${usd(INTACT)}</div><div class="ui" style="font-weight:600;font-size:24px">Heritage Auctions, 21/03/2025</div></div>`, { fill: DONE, r: -2, z: 3 })}
   ${st(560, 650, 450, 250, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:21px;letter-spacing:2px">CODE GRATTÉ · PSA 9</div><div class="h" style="font-size:88px;margin-top:6px;white-space:nowrap">${usd(GRATTEE)}</div><div class="ui" style="font-weight:600;font-size:24px">vente du 11/11/2025</div></div>`, { fill: PINK, r: 2, z: 3 })}
   ${disc(440, 330, 200, SUN, `<div style="text-align:center;color:${DARK}"><div class="h" style="font-size:84px;line-height:1">÷${FACTOR}</div><div class="ui" style="font-size:22px;margin-top:4px">une fois<br>grattée</div></div>`, -6)}
