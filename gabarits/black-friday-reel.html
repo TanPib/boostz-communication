@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz black friday</title>
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #131020; }
+  .abs { position: absolute; }
+  .h { font-family: Outfit; font-weight: 800; line-height: 1.02; letter-spacing: -1px; color: #F5F2FB; }
+  .ui { font-family: Poppins; font-weight: 700; }
+  .mut { color: #A8A2B8; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .st { position: absolute; background: #1D1730; border: 6px solid #F5F2FB; border-radius: 36px; overflow: hidden; opacity: 0; }
+</style></head><body>
+<div id="stage" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
+<script>
+// Black Friday, "Promo ou pas ?": a promo tag peels off a display and shows
+// the market price underneath, which is lower than the "deal". The prices are
+// an example, and the video says so.
+const SHADOW = '#05040A', VSOFT = '#C4B5FD', DARK = '#1A1424', VIOLET = '#7C3AED', SUN = '#FCD34D', DONE = '#5FD3A3';
+const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px;color:#fff">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const mini = (w, art) => `<div style="width:${w}px;height:${w * 1.4}px;border-radius:${w * .1}px;background:#2A2140;padding:${w * .1}px"><div style="height:${w * .1}px;width:60%;border-radius:9px;background:#5A5470"></div><div style="height:${w * .62}px;margin-top:${w * .08}px;border-radius:${w * .06}px;background:${art}"></div><div style="height:${w * .06}px;width:80%;margin-top:${w * .1}px;border-radius:9px;background:#4A4460"></div><div style="height:${w * .06}px;width:55%;margin-top:${w * .05}px;border-radius:9px;background:#4A4460"></div></div>`;
+const clamp = (x) => Math.max(0, Math.min(1, x));
+const out3 = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const inOut = (x) => { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const back = (x) => { x = clamp(x); const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const $ = (id) => document.getElementById(id);
+function stick(id, t, t0, r = 0, sh = 12, dur = .3) {
+  const el = $(id), p = clamp((t - t0) / dur);
+  if (p <= 0) { el.style.opacity = 0; return; }
+  const k = out3((p - .55) / .45) * sh;
+  el.style.opacity = clamp(p / .2);
+  el.style.transform = `translateY(${-50 * (1 - out3(p))}px) rotate(${r + 10 * (1 - out3(p))}deg) scale(${1.3 - .3 * back(p)})`;
+  el.style.boxShadow = `${k}px ${k}px 0 ${SHADOW}`;
+}
+const rise = (id, t, t0) => { const p = out3((t - t0) / .4); $(id).style.opacity = p; $(id).style.transform = `translateY(${36 * (1 - p)}px)`; };
+
+// --- timeline (s) ---
+const T_BOX = .3, T_TAG = .8, T_PEEL = 2.6, T_COTE = 3.4, T_VERDICT = 4.4, T_LINE = 5.5, T_END = 7.8;
+window.TOTAL = 10;
+const box = (s) => `<svg width="${s}" height="${s}" viewBox="0 0 100 100"><path d="M22 36 L38 22 L80 22 L64 36 Z" fill="#F5F2FB"/><path d="M64 36 L80 22 L80 66 L64 80 Z" fill="${VSOFT}"/><rect x="22" y="36" width="42" height="44" rx="5" fill="${VIOLET}" stroke="#F5F2FB" stroke-width="3"/><path d="M33 47 H54 V52.5 L42 65 H54 V70.5 H33 V65 L45 52.5 H33 Z" fill="#fff"/></svg>`;
+$('stage').innerHTML = `
+  ${[[60, 160, 90, -8], [920, 300, 80, 6], [80, 1700, 100, 10], [880, 1760, 110, -6]].map(([x, y, w, r], i) => `<div id="g${i}" class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border:4px solid rgba(255,255,255,.14);border-radius:${w * .16}px;transform:rotate(${r}deg)"><div style="width:60%;height:6px;margin:${w * .1}px auto 0;border-radius:3px;background:rgba(255,255,255,.14)"></div></div>`).join('')}
+  <svg class="abs" width="1080" height="1920" style="left:0;top:0"><defs><clipPath id="draw"><rect id="drawRect" x="0" y="0" width="0" height="1920"/></clipPath></defs>
+    <path clip-path="url(#draw)" d="M-20 1720 C160 1660 300 1800 520 1740 S860 1640 1100 1710" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>
+  <div id="title" class="abs h" style="left:0;top:150px;width:1080px;text-align:center;font-size:112px;opacity:0">Black Friday :<br><span style="color:${VSOFT}">promo ou pas ?</span></div>
+  <div id="mark" class="abs" style="left:0;top:190px;width:1080px;display:flex;flex-direction:column;align-items:center;gap:26px;opacity:0">${wordmark(120)}<div class="mut" style="font-family:Exo;font-weight:600;font-size:40px">Ton compagnon TCG, bientôt sur ton téléphone</div></div>
+  <div id="box" class="abs" style="left:100px;top:400px;width:800px;height:800px;opacity:0;filter:drop-shadow(16px 16px 0 ${SHADOW})">${box(800)}</div>
+  <div id="tag" class="st" style="left:580px;top:520px;width:420px;height:240px;background:#F0899A;z-index:5"><div style="padding:22px 30px;color:${DARK}"><div class="h" style="font-size:96px;line-height:1">−30 %</div><div class="ui" style="font-size:40px;margin-top:6px"><s style="opacity:.6">199 €</s> → 139 €</div></div></div>
+  <div id="cote" class="st" style="left:580px;top:540px;width:420px;height:210px;background:${DONE};z-index:4"><div style="padding:24px 30px;color:${DARK}"><div class="ui" style="font-size:30px">Cote du marché</div><div class="h" style="font-size:96px;line-height:1.05">129 €</div></div></div>
+  <div id="verdict" class="st" style="left:110px;top:1170px;width:860px;height:150px;background:${SUN};z-index:5"><div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:40px;color:${DARK};text-align:center;line-height:1.2">La « promo » est 10 € au-dessus<br>du prix du marché.</div></div>
+  <div id="line" class="abs h" style="left:0;top:1380px;width:1080px;text-align:center;font-size:64px;opacity:0">Avant de craquer,<br><span style="color:${VSOFT}">regarde la cote.</span></div>
+  <div id="ex" class="abs mut" style="left:0;top:1570px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:30px;opacity:0">Exemple · prix fictifs</div>`;
+
+window.render = (t) => {
+  [0, 1, 2, 3].forEach((i) => { $('g' + i).style.transform = `translateX(${t * (5 + i)}px) rotate(${[-8, 6, 10, -6][i] + Math.sin(t / 2 + i) * 3}deg)`; });
+  $('drawRect').setAttribute('width', 1100 * out3(t / 2.4));
+  const end = out3((t - T_END) / .5);
+  $('title').style.opacity = out3(t / .4) * (1 - end); $('title').style.transform = `translateY(${36 * (1 - out3(t / .4))}px)`;
+  $('mark').style.opacity = end; $('mark').style.transform = `translateY(${30 * (1 - end)}px)`;
+  const bp = clamp((t - T_BOX) / .3);
+  $('box').style.opacity = clamp(bp / .2);
+  $('box').style.transform = `translateY(${-50 * (1 - out3(bp))}px) rotate(${-3 + 10 * (1 - out3(bp))}deg) scale(${1.3 - .3 * back(bp)})`;
+  // The promo tag lands, then peels off and falls out of frame, away from the title:
+  // the market price was underneath.
+  stick('tag', t, T_TAG, 6, 14);
+  const peel = inOut((t - T_PEEL) / .7);
+  if (peel > 0) {
+    $('tag').style.transform = `translate(${620 * peel}px, ${420 * peel * peel}px) rotate(${6 + 50 * peel}deg)`;
+    $('tag').style.opacity = 1 - peel;
+  }
+  stick('cote', t, T_COTE, -3, 14);
+  stick('verdict', t, T_VERDICT, -1, 14);
+  rise('line', t, T_LINE); rise('ex', t, T_LINE + .4);
+};
+window.render(0);
+</script></body></html>
