@@ -1,6 +1,6 @@
 # Fetches a card image for a post, which the cloud container cannot reach
 # (image CDNs are blocked there). Give it a page (its og:image is taken) or a
-# direct image URL, and a file name; the image lands in gabarits/assets/.
+# direct image URL, or a MediaWiki pageimages API query, and a file name; the image lands in gabarits/assets/.
 # Run by hand: Actions > Image > Run workflow.
 name: Image
 on:
@@ -28,11 +28,16 @@ jobs:
           import os, re, urllib.request
           url, nom = os.environ['URL'], os.environ['NOM']
           assert re.fullmatch(r'[a-z0-9-]+', nom), 'nom: lowercase letters, digits and dashes only'
-          get = lambda u: urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 (boostz-communication)'}), timeout=60)
+          get = lambda u: urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36', 'Accept': '*/*', 'Accept-Language': 'fr,en;q=0.8'}), timeout=60)
           r = get(url)
           kind = r.headers.get('Content-Type', '')
           data = r.read()
-          if kind.startswith('text/html'):
+          if 'json' in kind:  # a MediaWiki pageimages answer: take the original image
+              m = re.search(r'"source":\s*"([^"]+)"', data.decode())
+              assert m, 'no image source in the JSON answer'
+              print('source', m.group(1))
+              r = get(m.group(1).replace('\\/', '/')); kind = r.headers.get('Content-Type', ''); data = r.read()
+          elif kind.startswith('text/html'):
               html = data.decode('utf-8', 'replace')
               m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)', html) or re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image', html)
               assert m, 'no og:image on the page'
