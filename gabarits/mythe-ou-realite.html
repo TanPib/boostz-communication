@@ -67,18 +67,18 @@ const SRC_PRIX = `Code intact : Heritage Auctions, PSA 8, vendue le 21/03/2025. 
 const POSTS = [];
 
 // 1 - The claim.
-POSTS.push(['m1-affirmation', `${ghosts([[80, 300, 80, -6], [920, 980, 90, 8], [130, 1150, 70, 4]])}${track(0)}${head('MYTHE OU RÉALITÉ ?')}
+POSTS.push(['m1-affirmation', `${ghosts([[80, 300, 80, -6], [930, 400, 80, 8]])}${track(0)}${head('MYTHE OU RÉALITÉ ?')}
   ${lootCard(370, 170, 340, -4)}
   ${disc(700, 210, 190, VIOLET, `<div class="h" style="font-size:130px;color:#fff;line-height:1">?</div>`, 8)}
-  <div class="abs h" style="left:0;top:740px;width:1080px;text-align:center;font-size:86px">Une carte s’est vendue<br>${usd(INTACT)}…</div>
-  <div class="abs h acc" style="left:0;top:935px;width:1080px;text-align:center;font-size:72px">pour un tigre<br>qui n’existe pas.</div>
+  <div class="abs h" style="left:0;top:850px;width:1080px;text-align:center;font-size:80px">Une carte s’est vendue<br>${usd(INTACT)}…</div>
+  <div class="abs h acc" style="left:0;top:1035px;width:1080px;text-align:center;font-size:64px">pour un tigre<br>qui n’existe pas.</div>
   <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
   <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`]);
 
 // 2 - The game, and its loot cards.
-POSTS.push(['m2-le-jeu', `${ghosts([[900, 1040, 80, 6], [60, 1180, 70, -4]])}${track(1)}${head('LE JEU')}
+POSTS.push(['m2-le-jeu', `${ghosts([[900, 1040, 80, 6]])}${track(1)}${head('LE JEU')}
   <div class="abs h" style="left:70px;top:160px;font-size:96px">Le TCG<br><span class="acc">World of Warcraft</span></div>
-  ${[['2006', 'Upper Deck le lance', WOW, -3], ['2010', 'Cryptozoic le reprend', '#F5F2FB', 2], ['2013', 'Blizzard l’arrête', PINK, -2]].map(([y, k, c, r], i) => st(70 + i * 318, 420, 290, 190, `<div style="padding:24px 28px"><div class="h" style="font-size:72px;color:${c}">${y}</div><div class="ui mut" style="font-size:26px;font-weight:600;margin-top:8px">${k}</div></div>`, { r, z: 3 })).join('')}
+  ${[['2006', 'Upper Deck<br>le lance', WOW, -3], ['2010', 'Cryptozoic<br>le reprend', '#F5F2FB', 2], ['2013', 'Blizzard<br>l’arrête', PINK, -2]].map(([y, k, c, r], i) => st(70 + i * 318, 410, 290, 215, `<div style="padding:24px 28px"><div class="h" style="font-size:72px;color:${c}">${y}</div><div class="ui mut" style="font-size:26px;font-weight:600;margin-top:6px;line-height:1.3">${k}</div></div>`, { r, z: 3 })).join('')}
   ${lootCard(90, 700, 280, -6)}
   ${st(420, 760, 590, 330, `<div style="padding:34px 40px;color:${DARK}"><div class="lab" style="font-size:22px">LES CARTES « LOOT »</div><div class="ui" style="font-size:40px;line-height:1.25;margin-top:12px">Un code à gratter, qui débloque un objet dans le jeu vidéo.</div></div>`, { fill: SUN, r: 2, z: 3 })}
   <div class="src">${SRC_JEU}</div>`]);
@@ -87,8 +87,8 @@ POSTS.push(['m2-le-jeu', `${ghosts([[900, 1040, 80, 6], [60, 1180, 70, -4]])}${t
 POSTS.push(['m3-le-tigre', `${track(2)}${head('LE TIGRE SPECTRAL')}
   <div class="abs h" style="left:0;top:140px;width:1080px;text-align:center;font-size:112px">1 booster<br><span class="acc">sur 484.</span></div>
   <div class="abs mut" style="left:0;top:395px;width:1080px;text-align:center;font-weight:600;font-size:34px">C’est la carte loot la plus rare de Fires of Outland (2007).</div>
-  <div class="abs" style="left:232px;top:470px;width:616px;display:grid;grid-template-columns:repeat(22,1fr);gap:6px;z-index:2">${Array.from({ length: 484 }, (_, i) => `<div style="height:22px;border-radius:5px;${i === 301 ? `background:${WOW};outline:4px solid #F5F2FB;box-shadow:6px 6px 0 ${SHADOW};transform:scale(1.5);z-index:3;position:relative` : 'background:rgba(196,181,253,.16)'}"></div>`).join('')}</div>
-  ${st(70, 1130, 940, 130, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:36px;text-align:center;line-height:1.2">Son code donne deux montures dans le jeu :<br>le tigre spectral, et sa version rapide.</div>`, { r: -1, z: 3 })}
+  <div class="abs" style="left:212px;top:462px;width:656px;padding:20px;background:#131020;border-radius:24px;display:grid;grid-template-columns:repeat(22,1fr);gap:6px;z-index:2">${Array.from({ length: 484 }, (_, i) => `<div style="height:19px;border-radius:5px;${i === 301 ? `background:${WOW};outline:4px solid #F5F2FB;box-shadow:6px 6px 0 ${SHADOW};transform:scale(1.5);z-index:3;position:relative` : 'background:rgba(196,181,253,.16)'}"></div>`).join('')}</div>
+  ${st(70, 1085, 940, 130, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:36px;text-align:center;line-height:1.2">Son code donne deux montures dans le jeu :<br>le tigre spectral, et sa version rapide.</div>`, { r: -1, z: 3 })}
   <div class="src">${SRC_TIGRE}</div>`]);
 
 // 4 - What it sells for: intact against scratched.
@@ -97,15 +97,15 @@ POSTS.push(['m4-ce-quelle-vaut', `${ghosts([[920, 1100, 80, 6]])}${track(3)}${he
   ${lootCard(640, 170, 300, 5, true)}
   ${st(70, 650, 450, 250, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:21px;letter-spacing:2px">CODE INTACT · PSA 8</div><div class="h" style="font-size:88px;margin-top:6px;white-space:nowrap">${usd(INTACT)}</div><div class="ui" style="font-weight:600;font-size:24px">Heritage Auctions, 21/03/2025</div></div>`, { fill: DONE, r: -2, z: 3 })}
   ${st(560, 650, 450, 250, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:21px;letter-spacing:2px">CODE GRATTÉ · PSA 9</div><div class="h" style="font-size:88px;margin-top:6px;white-space:nowrap">${usd(GRATTEE)}</div><div class="ui" style="font-weight:600;font-size:24px">vente du 11/11/2025</div></div>`, { fill: PINK, r: 2, z: 3 })}
-  ${disc(430, 560, 220, SUN, `<div style="text-align:center;color:${DARK}"><div class="h" style="font-size:84px;line-height:1">÷${FACTOR}</div><div class="ui" style="font-size:22px;margin-top:4px">une fois<br>grattée</div></div>`, -6)}
+  ${disc(440, 330, 200, SUN, `<div style="text-align:center;color:${DARK}"><div class="h" style="font-size:84px;line-height:1">÷${FACTOR}</div><div class="ui" style="font-size:22px;margin-top:4px">une fois<br>grattée</div></div>`, -6)}
   <div class="abs" style="left:110px;top:980px;width:860px;text-align:center;font-weight:600;font-size:38px;line-height:1.4;color:rgba(245,242,251,.85)">Mieux notée, mais grattée :<br><b class="ui" style="color:#fff">elle vaut ${FACTOR} fois moins.</b><br>Ce qui se paie, c’est le code.</div>
   <div class="src">${SRC_PRIX}</div>`]);
 
 // 5 - The verdict.
-POSTS.push(['m5-verdict', `${ghosts([[90, 300, 80, -6], [900, 360, 90, 8], [110, 1120, 70, 4], [920, 1080, 80, -6]])}${track(4)}${head('LE VERDICT')}
+POSTS.push(['m5-verdict', `${ghosts([[90, 300, 80, -6], [950, 230, 80, 8], [110, 1120, 70, 4], [920, 1080, 80, -6]])}${track(4)}${head('LE VERDICT')}
   <div class="abs h" style="left:0;top:170px;width:1080px;text-align:center;font-size:150px;color:${DONE}">Réalité.</div>
   <div class="abs" style="left:110px;top:360px;width:860px;text-align:center;font-weight:600;font-size:40px;line-height:1.35;color:rgba(245,242,251,.85)">${usd(INTACT)} pour un tigre qu’on ne voit<br>que dans le jeu vidéo…<br><b class="ui" style="color:#fff">tant que personne ne gratte le code.</b></div>
-  ${st(170, 620, 740, 130, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:36px;color:${DARK}">Warcraft fait partie des 8 TCG de Boostz.</div>`, { fill: SUN, r: -2, z: 3 })}
+  ${st(120, 620, 840, 130, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-size:36px;color:${DARK}">Warcraft fait partie des 8 TCG de Boostz.</div>`, { fill: SUN, r: -2, z: 3 })}
   <div class="abs" style="left:0;top:880px;width:1080px;display:flex;justify-content:center">${wordmark(100)}</div>
   <div class="abs mut" style="left:0;top:1015px;width:1080px;text-align:center;font-weight:600;font-size:38px">Ton compagnon TCG, bientôt sur ton téléphone</div>
   <div class="abs ui" style="left:0;top:1110px;width:1080px;text-align:center;font-size:34px;color:${VSOFT}">Abonne-toi pour ne rien manquer</div>`]);
