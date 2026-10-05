@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz story de post</title>
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; }
+  /* A 9:16 story announcing a 4:5 carousel post: its cover stuck on as a sticker.
+     Stories have no caption, so the page carries the hook itself. The top 200 px
+     and bottom 260 px stay clear of Instagram's and Facebook's story chrome. */
+  .p { position: relative; overflow: hidden; width: 1080px; height: 1920px; margin-bottom: 20px; color: #F5F2FB; font-family: Exo; background: #131020; }
+  .abs { position: absolute; }
+  .h { font-family: Outfit; font-weight: 800; line-height: 1.02; letter-spacing: -1px; }
+  .lab { font-family: 'DM Sans'; font-weight: 700; letter-spacing: 6px; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+</style></head><body>
+<script>
+const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px;color:#fff">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const ghosts = [[60, 260, 90, -8], [920, 300, 80, 6], [80, 1650, 100, 10], [900, 1700, 110, -6]].map(([x, y, w, r]) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border:4px solid rgba(255,255,255,.14);border-radius:${w * .16}px;transform:rotate(${r}deg)"><div style="width:60%;height:6px;margin:${w * .1}px auto 0;border-radius:3px;background:rgba(255,255,255,.14)"></div></div>`).join('');
+// One entry per carousel post: the id (file name), the cover image (relative to this page), the hook.
+const STORIES = [
+  ['2026-10-22-dracaufeu', '../images/2026-10-22-analyse-mega-dracaufeu-x-stickers/1-couverture.jpg', 'Méga-Dracaufeu X ex :', 'elle vaut combien ?', 'La réponse est dans notre nouveau post.']
+];
+document.body.innerHTML = STORIES.map(([id, img, a, b, sub]) => `<div class="p" id="${id}">${ghosts}
+  <svg class="abs" width="1080" height="1920" style="left:0;top:0"><path d="M-20 1760 C160 1700 300 1840 520 1780 S860 1680 1100 1750" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>
+  <div class="abs lab" style="left:0;top:230px;width:1080px;text-align:center;font-size:26px;color:#C4B5FD">NOUVEAU POST</div>
+  <div class="abs" style="left:150px;top:300px;width:780px;height:975px;border:8px solid #F5F2FB;border-radius:40px;overflow:hidden;box-shadow:16px 16px 0 #05040A;transform:rotate(-2deg)"><img src="${img}" style="width:100%;height:100%;display:block"></div>
+  <div class="abs h" style="left:0;top:1330px;width:1080px;text-align:center;font-size:76px">${a}<br><span style="color:#C4B5FD">${b}</span></div>
+  <div class="abs" style="left:0;top:1515px;width:1080px;text-align:center;font-weight:600;font-size:38px;color:#A8A2B8">${sub}</div>
+  <div class="abs" style="left:0;top:1600px;width:1080px;display:flex;justify-content:center">${wordmark(64)}</div></div>`).join('');
+</script></body></html>
