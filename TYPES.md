@@ -49,7 +49,7 @@ Les 10 cartes Pokémon dont la cote a le plus évolué en 15 jours : une couvert
 La rareté d'une carte rendue visible : N boosters qui s'ouvrent un par un, presque tous vides de la carte voulue, puis le coût de la chasse comparé au prix de la carte seule.
 - **Il me faut :** un jeu et une rareté (une enchantée, une illustration spéciale, une manga rare…).
 - **Données :** taux de tirage, prix du booster, cote de la carte.
-- **Gabarit :** `gabarits/chance-reel.html` (thème clair, celui publié), `chance-reel-sombre.html`, `chance-carrousel.html`
+- **Gabarit :** `gabarits/chance-reel-stickers.html` (style stickers), `chance-reel.html` (thème clair), `chance-reel-sombre.html`, `chance-carrousel.html`
 - **Met en avant :** « regarde sa cote avant d'ouvrir ».
 
 ### 4 · Top 10 d'un set
@@ -99,7 +99,7 @@ Pour les étapes de l'app : lancement, bêta, sortie sur les stores, nouvelle fo
 | Date | Réseaux | N° | Sujet | Jeu | Fichiers |
 | --- | --- | --- | --- | --- | --- |
 | ven. 16/10/2026, 10 h | Instagram (Reel), TikTok | 11 | Lancement : « boostZ ta collection », style stickers de l'onboarding | les 8 | `videos/2026-10-16-lancement-stickers.mp4` |
-| jeu. 22/10/2026, 10 h | Instagram (carrousel), TikTok (photos) | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-22-analyse-mega-dracaufeu-x/` |
+| jeu. 22/10/2026, 10 h | Instagram (carrousel), TikTok (photos) | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-22-analyse-mega-dracaufeu-x-stickers/` |
 | mer. 04/11/2026, 10 h | Instagram (Reel), TikTok | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-11-04-1-chance-sur-96-clair.mp4` |
 
 ## D'où viennent les notes de tendance
