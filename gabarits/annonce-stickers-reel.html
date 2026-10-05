@@ -7,81 +7,210 @@
   html, body { width: 1080px; height: 1920px; overflow: hidden; background: #131020; }
   .abs { position: absolute; }
   .h { font-family: Outfit; font-weight: 800; line-height: 1.02; letter-spacing: -1px; color: #F5F2FB; }
+  .ui { font-family: Poppins; font-weight: 700; }
+  .mut { color: #A8A2B8; }
   .word { font-family: Outfit; font-weight: 800; line-height: 1; }
   .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  /* A sticker: white outline, hard offset shadow (its size is animated: a sticker "lands" when its shadow appears). */
+  /* A sticker: white outline, hard offset shadow. Its shadow is animated - a sticker "lands" when its shadow appears. */
+  .st { position: absolute; background: #1D1730; border: 6px solid #F5F2FB; border-radius: 36px; overflow: hidden; }
   .card { position: absolute; left: 0; top: 0; width: 430px; height: 595px; border: 7px solid #F5F2FB; border-radius: 38px; overflow: hidden; }
   .card img { width: 100%; height: 100%; display: block; }
+  .scene { position: absolute; top: 0; width: 1080px; height: 1920px; }
 </style></head><body>
 <div id="stage" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
 <script>
-// The launch Reel in the onboarding's visual language. Deterministic:
-// window.render(t) draws the frame at t seconds (see rendu.mjs).
-const SHADOW = '#05040A', VSOFT = '#C4B5FD', DARK = '#1A1424';
+// The launch Reel in the visual language of the app's onboarding (stickers,
+// hard shadows, a dashed path, drifting card outlines, the intro palette of
+// components/intro/introPalette.js) - but with the Reel's own scenes, not the
+// onboarding's. Deterministic: window.render(t) draws the frame at t seconds.
+// The V8 ending (the splash Z) is appended afterwards with ffmpeg.
+const SHADOW = '#05040A', VSOFT = '#C4B5FD', DARK = '#1A1424', DONE = '#5FD3A3', BLUE = '#63B7FF', GOLD = '#F0C066', TEAL = '#5FDCDC', SUN = '#FCD34D', VIOLET = '#7C3AED';
+const ART = ['#4B3A78', '#2F5A7A', '#3E6B4F', '#7A4A3A', '#5A3A6E', '#6B5A2E'];
 const GAMES = [['pokemon', 'Pokémon', '#F5C93B'], ['onepiece', 'One Piece', '#F2706C'], ['lorcana', 'Disney Lorcana', '#35C6BC'], ['yugioh', 'Yu-Gi-Oh!', '#B189E8'],
   ['magic', 'Magic', '#C0A183'], ['starwarsunlimited', 'Star Wars Unlimited', '#A9B2C4'], ['dragonball', 'Dragon Ball Super', '#F58A4E'], ['wow', 'Warcraft', '#58A6DD']];
 const emblemSvg = (id, c, size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48">${EMBLEMS[id].replace(/COLOR/g, c)}</svg>`;
 const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px;color:#fff">boost</span><span style="position:relative;display:inline-block">`
   + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
   + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const icon = (d, c, s = 56) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24"><path d="${d}" fill="none" stroke="${c}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+// A card drawn the onboarding way: a colour block for the art, grey lines for the text.
+const mini = (w, art) => `<div style="width:${w}px;height:${w * 1.4}px;border-radius:${w * .1}px;background:#2A2140;padding:${w * .1}px"><div style="height:${w * .1}px;width:60%;border-radius:9px;background:#5A5470"></div><div style="height:${w * .62}px;margin-top:${w * .08}px;border-radius:${w * .06}px;background:${art}"></div><div style="height:${w * .06}px;width:80%;margin-top:${w * .1}px;border-radius:9px;background:#4A4460"></div><div style="height:${w * .06}px;width:55%;margin-top:${w * .05}px;border-radius:9px;background:#4A4460"></div></div>`;
+const st = (id, x, y, w, h, inner, fill = '#1D1730') => `<div id="${id}" class="st" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${fill};opacity:0">${inner}</div>`;
+const disc = (id, x, y, d, fill, inner) => `<div id="${id}" class="abs" style="left:${x}px;top:${y}px;width:${d}px;height:${d}px;border-radius:50%;background:${fill};border:6px solid #F5F2FB;display:flex;align-items:center;justify-content:center;opacity:0;z-index:4">${inner}</div>`;
+const head = (id, a, b, size = 112) => `<div id="${id}" class="abs h" style="left:0;top:170px;width:1080px;text-align:center;font-size:${size}px;opacity:0">${a}<br><span style="color:${VSOFT}">${b}</span></div>`;
+
 const clamp = (x) => Math.max(0, Math.min(1, x));
 const out3 = (x) => 1 - Math.pow(1 - clamp(x), 3);
 const inOut = (x) => { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
 // Overshoots a little, then settles: the slap of a sticker.
 const back = (x) => { x = clamp(x); const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const $ = (id) => document.getElementById(id);
+const euro = (v) => v.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' €';
+// A sticker landing at t0: big and tilted, slapped down, its hard shadow appearing last.
+function stick(id, t, t0, r = 0, sh = 12, dur = .3) {
+  const el = $(id), p = clamp((t - t0) / dur);
+  if (p <= 0) { el.style.opacity = 0; return; }
+  const k = out3((p - .55) / .45) * sh;
+  el.style.opacity = clamp(p / .2);
+  el.style.transform = `translateY(${-50 * (1 - out3(p))}px) rotate(${r + 10 * (1 - out3(p))}deg) scale(${1.3 - .3 * back(p)})`;
+  el.style.boxShadow = `${k}px ${k}px 0 ${SHADOW}`;
+}
+const rise = (id, t, t0) => { const p = out3((t - t0) / .4); $(id).style.opacity = p; $(id).style.transform = `translateY(${36 * (1 - p)}px)`; };
+const draw = (id, t, t0, dur) => { $(id).style.strokeDashoffset = 1 - out3((t - t0) / dur); };
 
 // --- timeline (s) ---
 const STEP = 0.48;          // one game per step, the pace the V8 hook was slowed to
-const LAND = 0.3;           // a sticker's slap
+const LAND = 0.3;
 const T0 = 0.35;            // the first card is already down on frame 0 (it is the cover)
 const LANDS = GAMES.map((_, i) => (i === 0 ? -1 : T0 + (i - 1) * STEP));
-const EXIT = T0 + (GAMES.length - 1) * STEP + 0.6;   // the pile leaves along the path
-window.TOTAL = EXIT + 1.1;
+const PAN = 0.7;
+const DUR = [3.0, 3.0, 3.0, 3.0, 3.2, 3.6];          // scenes 1-6, from their arrival
+const ARRIVE = [];
+let a = T0 + (GAMES.length - 1) * STEP + 0.6 + PAN;   // the hook ends, the camera follows the path
+DUR.forEach((d) => { ARRIVE.push(a); a += d + PAN; });
+window.TOTAL = ARRIVE[5] + DUR[5];
+const L = (k) => ARRIVE[k - 1] - .3;                  // a scene starts playing just before it arrives
 
-// A loose pile: each card lands a little off the last one.
-const POSE = [[0, 0, -4], [-22, 14, 6], [18, -10, -9], [-10, 20, 3], [26, 6, 10], [-28, -8, -6], [12, 18, 7], [0, 0, -2]];
-const stage = document.getElementById('stage');
-stage.innerHTML = `
-  <div id="ghosts"></div>
-  <svg class="abs" width="1080" height="1920" style="left:0;top:0"><defs><clipPath id="draw"><rect id="drawRect" x="0" y="0" width="0" height="1920"/></clipPath></defs>
-    <path id="track" clip-path="url(#draw)" d="M-20 1140 C160 1060 300 1220 470 1150 S800 980 1100 1060" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>
-  <div id="cam" class="abs" style="left:0;top:0;width:1080px;height:1920px">
-    <div id="title" class="abs" style="left:0;top:230px;width:1080px;display:flex;flex-direction:column;align-items:center">${wordmark(200)}<div class="h" style="font-size:100px;margin-top:20px">ta collection</div></div>
-    <div id="pile" class="abs" style="left:325px;top:690px;width:430px;height:595px">${GAMES.map(([g], i) => `<div class="card" id="c${i}"><img src="assets/dos-${g}.svg"></div>`).join('')}</div>
-    <div id="label" class="abs" style="left:0;top:1370px;width:1080px;display:flex;justify-content:center"></div>
-  </div>`;
-// The faint card outlines of the onboarding, drifting slowly to the right.
+// The dashed path, one piece across all seven scenes.
+let trackD = 'M-20 1140 C160 1060 300 1220 470 1150 S800 980 1100 1060 C1200 1110 1190 1600 1340 1650';
+for (let x = 1880, i = 0; x <= 7560 + 540; x += 540, i++) trackD += ` S${x - 200} ${i % 2 ? 1700 : 1610} ${x} ${i % 2 ? 1660 : 1640}`;
+
 const GHOSTS = [[60, 160, 90, -8, 8], [880, 300, 80, 6, 6], [140, 1560, 100, 10, 7], [860, 1700, 110, -6, 9], [520, 120, 70, 0, 5], [960, 1250, 80, 4, 6]];
-document.getElementById('ghosts').innerHTML = GHOSTS.map(([x, y, w, r], i) => `<div id="g${i}" class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border:4px solid rgba(255,255,255,.14);border-radius:${w * .16}px;transform:rotate(${r}deg)"><div style="width:60%;height:6px;margin:${w * .1}px auto 0;border-radius:3px;background:rgba(255,255,255,.14)"></div></div>`).join('');
+const POSE = [[0, 0, -4], [-22, 14, 6], [18, -10, -9], [-10, 20, 3], [26, 6, 10], [-28, -8, -6], [12, 18, 7], [0, 0, -2]];
+const FAN = GAMES.map((_, i) => -35 + i * 10);
+const LANGS = [['fr', 'Français', 18.40, 640, -2], ['en', 'Anglais', 15.60, 900, 2], ['ja', 'Japonais', 11.90, 1160, -1]];
+const SUBS = [['Coins', '9,5', 40, 700, -4], ['Bords', '9', 40, 900, 3], ['Surface', '10', 760, 700, 4], ['Centrage', '9,5', 760, 900, -3]];
+const CHART = [[0, 150], [60, 140], [120, 146], [180, 118], [240, 124], [300, 92], [360, 98], [420, 56]];
+
+$('stage').innerHTML = `
+  <div id="ghosts">${GHOSTS.map(([x, y, w, r], i) => `<div id="g${i}" class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border:4px solid rgba(255,255,255,.14);border-radius:${w * .16}px;transform:rotate(${r}deg)"><div style="width:60%;height:6px;margin:${w * .1}px auto 0;border-radius:3px;background:rgba(255,255,255,.14)"></div></div>`).join('')}</div>
+  <div id="cam" class="abs" style="left:0;top:0;width:7560px;height:1920px">
+    <svg class="abs" width="7560" height="1920" style="left:0;top:0"><defs><clipPath id="draw"><rect id="drawRect" x="0" y="0" width="0" height="1920"/></clipPath></defs>
+      <path clip-path="url(#draw)" d="${trackD}" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>
+
+    <div class="scene" style="left:0">
+      <div class="abs" style="left:0;top:230px;width:1080px;display:flex;flex-direction:column;align-items:center">${wordmark(200)}<div class="h" style="font-size:100px;margin-top:20px">ta collection</div></div>
+      <div class="abs" style="left:325px;top:690px;width:430px;height:595px">${GAMES.map(([g], i) => `<div class="card" id="c${i}"><img src="assets/dos-${g}.svg"></div>`).join('')}</div>
+      <div id="label" class="abs" style="left:0;top:1370px;width:1080px;display:flex;justify-content:center"></div>
+    </div>
+
+    <div class="scene" style="left:1080px">${head('t1', '8 TCG.', 'Une seule app.')}
+      ${GAMES.map(([g], i) => `<div id="f${i}" class="abs" style="left:410px;top:650px;width:260px;height:360px;transform-origin:50% 170%;z-index:${i}"><div class="card" style="width:260px;height:360px;border-width:6px;border-radius:24px;box-shadow:12px 12px 0 ${SHADOW}"><img src="assets/dos-${g}.svg"></div></div>`).join('')}
+      ${GAMES.map(([g, , c], i) => { const r = FAN[i] * Math.PI / 180; return disc('fb' + i, 540 + 690 * Math.sin(r) - 48, 1262 - 690 * Math.cos(r) - 48, 96, c, emblemSvg(g, DARK, 54)); }).join('')}
+      <div id="ctaWrap" class="abs" style="left:250px;top:1330px;width:580px;height:130px;opacity:0"><div class="abs" style="left:12px;top:12px;width:580px;height:130px;border-radius:30px;background:${SHADOW}"></div>
+        <div id="cta" class="abs ui" style="left:0;top:0;width:580px;height:130px;border-radius:30px;background:${VIOLET};border:6px solid #F5F2FB;display:flex;align-items:center;justify-content:center;gap:18px;font-size:46px;color:#fff">Choisis tes jeux ${icon('M5 12h14M13 6l6 6-6 6', '#fff', 46)}</div></div>
+      <div id="s1" class="abs mut" style="left:0;top:1505px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:44px;opacity:0">Boostz fait le reste.</div>
+    </div>
+
+    <div class="scene" style="left:2160px">${head('t2', 'Ta collection,', 'et sa valeur.')}
+      ${st('bind', 70, 600, 560, 700, `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:40px">${[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => `<div style="height:190px;border:4px dashed rgba(196,181,253,.35);border-radius:16px;position:relative"><div id="m${i}" style="position:absolute;inset:-4px;opacity:0">${mini(140, ART[i % 6]).replace('width:140px', 'width:100%').replace(/height:196px/, 'height:190px')}</div></div>`).join('')}</div>`)}
+      ${st('val', 600, 600, 430, 250, `<div style="padding:30px 36px"><div class="mut" style="font-family:Exo;font-weight:600;font-size:34px">Valeur totale</div><div id="valN" class="h" style="font-size:96px;margin-top:6px;white-space:nowrap">0 €</div></div>`)}
+      ${st('chart', 620, 900, 410, 330, `<div style="padding:26px 30px"><div class="mut" style="font-family:Exo;font-weight:600;font-size:30px">Évolution · 30 jours</div><svg width="350" height="170" viewBox="0 0 420 170" style="margin-top:16px"><path id="chLine" pathLength="1" d="${CHART.map(([x, y], i) => (i ? 'L' : 'M') + x + ' ' + y).join(' ')}" fill="none" stroke="${DONE}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 1" stroke-dashoffset="1"/></svg><div id="chUp" class="ui" style="font-size:38px;color:${DONE};opacity:0">↑ +9,4 %</div></div>`)}
+    </div>
+
+    <div class="scene" style="left:3240px">${head('t3', 'Ta cote,', 'dans ta langue.')}
+      <svg class="abs" width="1080" height="1920" style="left:0;top:0">${LANGS.map(([, , , y], i) => `<path id="br${i}" pathLength="1" d="M440 960 C560 960 560 ${y} 640 ${y}" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-linecap="round" stroke-dasharray="1 1" stroke-dashoffset="1"/>`).join('')}</svg>
+      ${st('ccard', 70, 700, 380, 520, `<div style="margin:28px">${mini(310, ART[0])}</div>`)}
+      ${LANGS.map(([f, k, v, y], i) => st('lp' + i, 580, y - 60, 470, 130, `<div style="display:flex;align-items:center;gap:20px;height:100%;padding:0 26px"><img src="assets/drapeau-${f}.svg" style="width:62px;height:43px;border-radius:7px;box-shadow:0 0 0 3px rgba(127,120,145,.65)"><span class="ui mut" style="font-size:32px;font-weight:600">${k}</span><span class="h" style="margin-left:auto;font-size:54px;white-space:nowrap">${euro(v)}</span></div>`)).join('')}
+      ${st('jp', 610, 1290, 420, 110, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:36px;white-space:nowrap;color:${DARK}">−35 % en japonais</div>`, SUN)}
+    </div>
+
+    <div class="scene" style="left:4320px">${head('t4', 'Estime l’état', 'de tes cartes.')}
+      ${st('scard', 340, 640, 400, 560, `<div style="margin:30px">${mini(328, ART[1])}</div>`)}
+      <div id="brk" class="abs" style="left:300px;top:600px;width:480px;height:640px;opacity:0">${['top:0;left:0;border-width:10px 0 0 10px', 'top:0;right:0;border-width:10px 10px 0 0', 'bottom:0;left:0;border-width:0 0 10px 10px', 'bottom:0;right:0;border-width:0 10px 10px 0'].map((p) => `<div style="position:absolute;${p};width:96px;height:96px;border-style:solid;border-color:#F5F2FB;border-radius:22px"></div>`).join('')}</div>
+      <div id="scan" class="abs" style="left:330px;top:650px;width:420px;height:14px;border-radius:7px;background:${VSOFT};box-shadow:0 0 0 4px rgba(196,181,253,.25);opacity:0"></div>
+      ${SUBS.map(([k, v, x, y], i) => st('sub' + i, x, y, 280, 150, `<div style="padding:20px 26px"><div class="ui mut" style="font-size:30px;font-weight:600">${k}</div><div class="h" style="font-size:62px">${v}</div></div>`)).join('')}
+      ${disc('note', 620, 1110, 240, VIOLET, `<div style="text-align:center"><div class="h" style="font-size:112px;color:#fff;line-height:1">9,5</div><div class="ui" style="font-size:24px;color:#fff;margin-top:4px">Note estimée</div></div>`)}
+    </div>
+
+    <div class="scene" style="left:5400px">${head('t5', 'Échange,', 'valeurs à l’appui.')}
+      <svg class="abs" width="1080" height="1920" style="left:0;top:0"><path id="arc" pathLength="1" d="M300 760 C420 560 660 560 780 760" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-linecap="round" stroke-dasharray="1 1" stroke-dashoffset="1"/></svg>
+      ${st('ea', 110, 700, 330, 460, `<div style="margin:25px">${mini(268, ART[1])}</div>`)}${st('eb', 640, 700, 330, 460, `<div style="margin:25px">${mini(268, ART[3])}</div>`)}
+      ${disc('swap', 470, 830, 150, BLUE, `<div id="swapI">${icon('M4 9h14l-4-4M20 15H6l4 4', DARK, 80)}</div>`)}
+      <div id="la" class="abs ui mut" style="left:200px;top:1190px;font-size:34px;opacity:0">Tu donnes</div><div id="lb" class="abs ui mut" style="left:740px;top:1190px;font-size:34px;opacity:0">Tu reçois</div>
+      ${st('stonks', 110, 1280, 860, 230, `<div style="display:flex;align-items:center;height:100%;padding:0 40px;gap:30px"><svg width="380" height="150" viewBox="0 0 380 150"><path id="stLine" pathLength="1" d="M10 130 L80 112 L140 120 L200 80 L260 92 L330 30" fill="none" stroke="${DONE}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 1" stroke-dashoffset="1"/></svg><div><div class="ui mut" style="font-size:30px;font-weight:600">Valeur de l’échange</div><div id="stN" class="h" style="font-size:84px;white-space:nowrap;color:${DONE}">+0,00 €</div></div></div>`)}
+    </div>
+
+    <div class="scene" style="left:6480px">${head('t6', 'Tournois, brocantes,', 'boutiques.', 98)}
+      <div id="s6" class="abs mut" style="left:0;top:420px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:44px;opacity:0">Près de chez toi.</div>
+      <div id="phone" class="abs" style="left:310px;top:560px;width:460px;height:1000px;border-radius:64px;border:7px solid #F5F2FB;box-shadow:14px 14px 0 ${SHADOW};overflow:hidden;background:#131020;z-index:2;opacity:0">
+        <img id="scrMap" src="shots/forums-carte.png" style="position:absolute;left:0;top:0;width:446px"><img id="scrList" src="shots/forum-rhone.png" style="position:absolute;left:0;top:0;width:446px;opacity:0"></div>
+      ${st('k0', 40, 700, 340, 120, `<div class="ui" style="display:flex;align-items:center;gap:16px;height:100%;padding:0 24px;font-size:38px;color:${DARK}">${icon('M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4', DARK, 50)}Tournois</div>`, VSOFT)}
+      ${st('k1', 700, 1000, 360, 120, `<div class="ui" style="display:flex;align-items:center;gap:16px;height:100%;padding:0 24px;font-size:38px;color:${DARK}">${icon('M5 21V4M5 4h11l-2 4 2 4H5', DARK, 50)}Brocantes</div>`, GOLD)}
+      ${st('k2', 60, 1290, 360, 120, `<div class="ui" style="display:flex;align-items:center;gap:16px;height:100%;padding:0 24px;font-size:38px;color:${DARK}">${icon('M4 10h16l-1-5H5zM5 10v10h14V10M10 20v-5h4v5', DARK, 50)}Boutiques</div>`, TEAL)}
+    </div>
+  </div>`;
+['k0', 'k1', 'k2', 'jp', 'note', 'swap'].forEach((id) => { $(id).style.zIndex = 5; });
 // The game under the pile: its emblem as a round sticker, then its name.
 const labels = GAMES.map(([g, name, c]) => `<div style="display:flex;align-items:center;gap:28px"><div style="width:112px;height:112px;border-radius:50%;background:${c};border:7px solid #F5F2FB;box-shadow:12px 12px 0 ${SHADOW};display:flex;align-items:center;justify-content:center">${emblemSvg(g, DARK, 64)}</div><span class="h" style="font-size:74px">${name}</span></div>`);
 let shown = -1;
 
 window.render = (t) => {
-  GHOSTS.forEach(([, , , r, v], i) => { document.getElementById('g' + i).style.transform = `translateX(${t * v}px) rotate(${r + Math.sin(t / 2 + i) * 3}deg)`; });
-  // The dashed path draws itself under the pile, from the left.
-  document.getElementById('drawRect').setAttribute('width', 1100 * out3(t / 2.6));
+  GHOSTS.forEach(([, , , r, v], i) => { $('g' + i).style.transform = `translateX(${t * v}px) rotate(${r + Math.sin(t / 2 + i) * 3}deg)`; });
+  // Camera: one pan per scene, along the path.
+  const camX = 1080 * ARRIVE.reduce((s, A) => s + inOut((t - (A - PAN)) / PAN), 0);
+  $('cam').style.transform = `translateX(${-camX}px)`;
+  const k = ARRIVE.reduce((s, A, i) => (t >= A - PAN ? i + 1 : s), 0);
+  const ahead = k === 0 ? 1100 * out3(t / 2.6) : camX + 1100 * out3((t - (ARRIVE[k - 1] - PAN)) / 1.6);
+  $('drawRect').setAttribute('width', Math.max(ahead, camX));
+
+  // 0 - the hook: one back per game slapped on the pile, its emblem and name below.
   GAMES.forEach((_, i) => {
-    const el = document.getElementById('c' + i);
-    const p = clamp((t - LANDS[i]) / LAND);
-    const [dx, dy, r] = POSE[i];
+    const el = $('c' + i), p = clamp((t - LANDS[i]) / LAND), [dx, dy, r] = POSE[i];
     if (p <= 0) { el.style.opacity = 0; return; }
-    const s = 1.35 - .35 * back(p);
     const sh = 13 * out3((p - .55) / .45);
-    el.style.opacity = clamp(p / .2);
-    el.style.zIndex = i;
+    el.style.opacity = clamp(p / .2); el.style.zIndex = i;
     el.style.boxShadow = `${sh}px ${sh}px 0 ${SHADOW}`;
-    el.style.transform = `translate(${dx}px, ${dy - 60 * (1 - out3(p))}px) rotate(${r + 12 * (1 - out3(p))}deg) scale(${s})`;
+    el.style.transform = `translate(${dx}px, ${dy - 60 * (1 - out3(p))}px) rotate(${r + 12 * (1 - out3(p))}deg) scale(${1.35 - .35 * back(p)})`;
   });
-  const k = LANDS.reduce((a, l, i) => (t >= l + LAND * .5 ? i : a), 0);
-  const lab = document.getElementById('label');
-  if (k !== shown) { lab.innerHTML = labels[k]; shown = k; }
-  const lp = k === 0 ? 1 : clamp((t - LANDS[k] - LAND * .5) / .22);
-  lab.style.transform = `scale(${.75 + .25 * back(lp)})`;
-  lab.style.opacity = clamp(lp / .3);
-  // Exit: the camera follows the path to the right, towards the 8-TCG fan.
-  const e = inOut((t - EXIT) / .8);
-  document.getElementById('cam').style.transform = `translateX(${-1150 * e}px)`;
+  const g = LANDS.reduce((s, l, i) => (t >= l + LAND * .5 ? i : s), 0);
+  if (g !== shown) { $('label').innerHTML = labels[g]; shown = g; }
+  const lp = g === 0 ? 1 : clamp((t - LANDS[g] - LAND * .5) / .22);
+  $('label').style.transform = `scale(${.75 + .25 * back(lp)})`; $('label').style.opacity = clamp(lp / .3);
+
+  // 1 - 8 TCG: the pile opens into a fan, each game stamps its emblem, the button gets pressed.
+  let s = L(1); rise('t1', t, s);
+  FAN.forEach((ang, i) => {
+    const p = out3((t - s - .15 - i * .09) / .45);
+    $('f' + i).style.transform = `rotate(${ang * p}deg)`;
+    stick('fb' + i, t, s + .55 + i * .09, 0, 10, .25);
+  });
+  stick('ctaWrap', t, s + 1.45, 0, 0);
+  const press = clamp((t - s - 2.3) / .12) * (1 - clamp((t - s - 2.55) / .15));
+  $('cta').style.transform = `translate(${10 * press}px, ${10 * press}px)`;
+  rise('s1', t, s + 1.75);
+
+  // 2 - Collection: the binder fills, the value counts up, the curve draws.
+  s = L(2); rise('t2', t, s); stick('bind', t, s + .1, -3);
+  for (let i = 0; i < 9; i++) { const p = out3((t - s - .45 - i * .1) / .25); $('m' + i).style.opacity = p; $('m' + i).style.transform = `scale(${1.2 - .2 * p})`; }
+  stick('val', t, s + .6, 3);
+  $('valN').textContent = euro(1183 * out3((t - s - .8) / 1.4)).replace(/,\d\d/, '');
+  stick('chart', t, s + .9, -2); draw('chLine', t, s + 1.2, 1); $('chUp').style.opacity = clamp((t - s - 2.1) / .3);
+
+  // 3 - Cote: one card, the path splits three ways, a price at each language.
+  s = L(3); rise('t3', t, s); stick('ccard', t, s + .1, -4);
+  LANGS.forEach(([, , , , r], i) => { draw('br' + i, t, s + .5 + i * .15, .5); stick('lp' + i, t, s + .85 + i * .22, r); });
+  stick('jp', t, s + 1.9, 4);
+
+  // 4 - Condition: the brackets close on the card, the scan sweeps, the subgrades, then the note.
+  s = L(4); rise('t4', t, s); stick('scard', t, s + .1, 0);
+  const bp = out3((t - s - .35) / .4); $('brk').style.opacity = bp; $('brk').style.transform = `scale(${1.15 - .15 * bp})`;
+  const sp = clamp((t - s - .75) / .8); $('scan').style.opacity = sp > 0 && sp < 1 ? 1 : 0; $('scan').style.transform = `translateY(${500 * inOut(sp)}px)`;
+  SUBS.forEach(([, , , , r], i) => stick('sub' + i, t, s + 1.3 + i * .15, r));
+  stick('note', t, s + 2.0, 6, 14);
+
+  // 5 - Trade: two cards, the swap spins, then what the trade is worth.
+  s = L(5); rise('t5', t, s); stick('ea', t, s + .1, -6); stick('eb', t, s + .25, 5); draw('arc', t, s + .4, .5);
+  stick('swap', t, s + .6, 0, 12); $('swapI').style.transform = `rotate(${180 * inOut((t - s - .9) / .6)}deg)`;
+  rise('la', t, s + .7); rise('lb', t, s + .7);
+  stick('stonks', t, s + 1.4, -1); draw('stLine', t, s + 1.6, .9);
+  $('stN').textContent = '+' + euro(12.4 * out3((t - s - 1.7) / 1)) ;
+
+  // 6 - Community: the real app on a phone sticker, the map then a department's forum, the meet-ups stuck around.
+  s = L(6); rise('t6', t, s); rise('s6', t, s + .3);
+  const pp = out3((t - s - .1) / .5); $('phone').style.opacity = pp; $('phone').style.transform = `translateY(${200 * (1 - pp)}px) rotate(-3deg)`;
+  const lst = out3((t - s - 1.6) / .5); $('scrList').style.opacity = lst; $('scrList').style.transform = `translateY(${-40 * out3((t - s - 2.1) / 1.4)}px)`;
+  stick('k0', t, s + .8, -6); stick('k1', t, s + 1.05, 5); stick('k2', t, s + 1.3, -3);
 };
 window.render(0);
 </script></body></html>
