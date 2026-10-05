@@ -17,11 +17,11 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 9 | **Pub Boostz** | image ou Reel court | 🔥 | maquette | jamais |
 | 10 | **Édito** | image, thème clair | 🔥 | maquette | jamais |
 | 11 | **Annonce** | Reel | selon l'actu | prêt | 16/10/2026 · lancement |
-| 12 | **Fonction à la loupe** | Reel ou carrousel | 🔥🔥 | à concevoir | jamais |
-| 13 | **Mythe ou réalité** | carrousel, 5 slides | 🔥🔥 | à concevoir | jamais |
+| 12 | **Fonction à la loupe** | Reel ou carrousel | 🔥🔥 | prêt (`fonction-etat-reel.html`) | 15/11/2026 · l'état des cartes |
+| 13 | **Mythe ou réalité** | carrousel, 5 slides | 🔥🔥 | prêt (`mythe-ou-realite.html`) | 24/11/2026 · Tigre spectral (Warcraft) |
 | 14 | **Tu préfères ?** | carrousel, 3 slides | 🔥🔥 | à concevoir | jamais |
 | 15 | **Sortie d'extension** | carrousel ou Reel | 🔥🔥🔥 | à concevoir | jamais |
-| 16 | **Thème** | Reel | 🔥🔥🔥 le jour J | à concevoir | jamais |
+| 16 | **Thème** | Reel | 🔥🔥🔥 le jour J | prêt (`black-friday-reel.html`) | 27/11/2026 · Black Friday |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -125,10 +125,15 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 
 | Date | Réseaux | N° | Sujet | Jeu | Fichiers |
 | --- | --- | --- | --- | --- | --- |
-| ven. 16/10/2026, 10 h | Instagram (Reel), TikTok | 11 | Lancement : « boostZ ta collection », style stickers de l'onboarding | les 8 | `videos/2026-10-16-lancement-stickers.mp4` |
-| jeu. 22/10/2026, 10 h | Instagram (carrousel), TikTok (photos) | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-22-analyse-mega-dracaufeu-x-stickers/` |
-| dim. 25/10/2026, 10 h | Instagram (Reel, musique « 8 Bit Breakthrough »), TikTok | 8 | Choisis ton combattant : « Tu joues lequel ? » | les 8 | `videos/2026-10-25-choisis-ton-combattant-8s.mp4` |
-| lun. 09/11/2026, 10 h | Instagram (Reel), TikTok | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-11-04-1-chance-sur-96-stickers.mp4` |
+| ven. 16/10/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Lancement : « boostZ ta collection », style stickers de l'onboarding | les 8 | `videos/2026-10-16-lancement-stickers.mp4` |
+| jeu. 22/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-22-analyse-mega-dracaufeu-x-stickers/`, `videos/2026-10-22-story-mega-dracaufeu-x.mp4` |
+| dim. 25/10/2026, 10 h | Instagram (Reel, musique « 8 Bit Breakthrough »), TikTok, Facebook (Reel), story Instagram et Facebook | 8 | Choisis ton combattant : « Tu joues lequel ? » | les 8 | `videos/2026-10-25-choisis-ton-combattant-8s.mp4` |
+| lun. 09/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-11-04-1-chance-sur-96-stickers.mp4` |
+| dim. 15/11/2026, 10 h | Instagram (Reel, musique « Retro Bit Dip »), TikTok, Facebook (Reel), story Instagram et Facebook | 12 | Fonction à la loupe : estime l'état de tes cartes | les 8 | `videos/2026-11-15-fonction-etat.mp4` |
+| mar. 24/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 13 | Mythe ou réalité : une carte à 5 250 $ pour un tigre qui n'existe pas (Tigre spectral) | Warcraft | `images/2026-11-24-mythe-tigre-spectral/`, `videos/2026-11-24-story-tigre-spectral.mp4` |
+| ven. 27/11/2026, 10 h | Instagram (Reel, musique « Game Face »), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Black Friday : « Promo ou pas ? » (exemple, prix fictifs) | les 8 | `videos/2026-11-27-black-friday.mp4` |
+
+Chaque vidéo porte une musique originale composée en code (`outils/musique.mjs`, mixée vers −18 LUFS par `outils/mixer.sh`), pour TikTok et Facebook ; les Reels Instagram jouent en plus la piste de la bibliothèque Instagram indiquée.
 
 ## D'où viennent les notes de tendance
 

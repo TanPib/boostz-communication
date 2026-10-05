@@ -2,22 +2,14 @@
 
 Un post tous les 3 jours à partir du lancement : 16 posts, publiés le même jour sur Instagram et TikTok. Validé le 05/10/2026 ; Claude produit et programme sans redemander. Le style visuel est partout celui des stickers de l'onboarding.
 
-## À reprendre (état au 05/10/2026, 23 h 45)
+## Repris le 05/10/2026 (nuit) : fait
 
-La session précédente tournait sur deux dépôts à la fois : elle ne lisait pas `.claude/settings.json`, et chaque appel Metricool demandait une validation. **Les sessions ouvertes sur ce dépôt seul la lisent : plus aucune validation.** Ce qu'il reste à faire, dans l'ordre :
-
-1. **Musique dans chaque vidéo** (demandé le 05/10) : douce, pas agressive, dans le style du post. Les MP4 sont muets aujourd'hui, donc muets sur TikTok et Facebook. Intégrer la piste dans le MP4 (voir « Music » dans `CLAUDE.md`), pousser, puis mettre à jour le post TikTok, le post Facebook et la story de chaque Reel (lire chaque post avant, ne changer que `media`) :
-   - lancement 16/10 : TikTok 388901067, story 388933645 ;
-   - combattant 25/10 : TikTok 388926497, Facebook 388933810, story 388933831 ;
-   - Lorcana 09/11 : TikTok 388926554, Facebook 388933870, story 388933895 ;
-   - état 15/11 : TikTok 388938735, Facebook 388938756, story 388938789 ;
-   - Black Friday 27/11 : TikTok 388943762, Facebook 388944018, story 388944045.
-   Les Reels Instagram gardent leur musique de la bibliothèque Instagram : n'y toucher que pour le média.
-2. **Reel Facebook du lancement (16/10, 10 h)** : à créer, le refus du 05/10 était une erreur de clic. Même légende que le Reel Instagram 388901014, avec la vidéo musicale.
-3. **Story du Dracaufeu (22/10)** : 388933773 est une image fixe, sans musique. La remplacer par une vidéo de 8 s (`story.jpg` + musique). Les posts Dracaufeu sont à jour (slides corrigées le 05/10) : Instagram 388948363 (garder `isAiGenerated: true`, mis par l'utilisateur), TikTok 388948392, Facebook 388948415.
-4. **N° 14, Tigre spectral (24/11)** : `gabarits/mythe-ou-realite.html` est écrit, pas encore rendu. Rendre, regarder chaque slide, exporter en JPEG, story vidéo, programmer Instagram, TikTok (`autoAddMusic: true`), Facebook et la story. Les chiffres et leurs sources sont en commentaire dans le gabarit.
-5. **Historique** : ajouter dans `TYPES.md` et `README.md` les posts du 15/11 (état), du 24/11 et du 27/11 (Black Friday), avec Facebook et les stories.
-6. **Rappels** : les rappels programmés (`list_triggers`) réveillent l'ancienne session. Les recréer pour la nouvelle (même date, même consigne) et désactiver les anciens.
+- **Musique** : chaque vidéo porte une piste originale composée en code (`outils/musique.mjs`, un style par post, mixée vers −18 LUFS par `outils/mixer.sh`). Posts TikTok, Facebook et stories des Reels du 16/10, 25/10, 09/11, 15/11 et 27/11 mis à jour (média seul). Les Reels Instagram gardent leur piste Instagram.
+- **Reel Facebook du lancement (16/10)** : créé, même légende que le Reel Instagram.
+- **Story du Dracaufeu (22/10)** : remplacée par une vidéo de 8 s avec musique (`outils/story-video.sh`).
+- **N° 14, Tigre spectral (24/11)** : rendu, vérifié slide par slide, programmé sur Instagram, TikTok (`autoAddMusic`), Facebook et en story vidéo.
+- **Historique** : `TYPES.md` et `README.md` à jour.
+- **Rappels** : recréés pour la session qui a fait ce travail, les anciens désactivés.
 
 Trois principes, demandés par l'utilisateur :
 - **Les 8 TCG ont tous leurs posts**, pas seulement Pokémon et Lorcana.
@@ -41,7 +33,7 @@ Trois principes, demandés par l'utilisateur :
 | 11 | dim. 15/11, 10 h | Reel | 12 Fonction à la loupe | Estime l'état de tes cartes | les 8 | ✅ programmé |
 | 12 | mer. 18/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 3 : du 01/11 au 16/11 | Magic | à produire |
 | 13 | sam. 21/11, 10 h | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | à produire |
-| 14 | mar. 24/11, 10 h | carrousel | 13 Mythe ou réalité | « Une carte s'est vendue 5 250 \$… pour un tigre qui n'existe pas » | Warcraft | gabarit écrit, à rendre |
+| 14 | mar. 24/11, 10 h | carrousel | 13 Mythe ou réalité | « Une carte s'est vendue 5 250 \$… pour un tigre qui n'existe pas » | Warcraft | ✅ programmé |
 | 15 | ven. 27/11, 10 h | Reel | 16 Thème | Black Friday : « Promo ou pas ? » | les 8 | ✅ programmé |
 | 16 | lun. 30/11, 10 h | carrousel | 14 Tu préfères ? | La chase de Brightness of Hope (FB11) contre celle de Magnificent Maestros | Dragon Ball, Yu-Gi-Oh! | à produire |
 
