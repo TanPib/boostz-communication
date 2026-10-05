@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz lancement stickers anime</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #131020; }
+  .abs { position: absolute; }
+  .h { font-family: Outfit; font-weight: 800; line-height: 1.02; letter-spacing: -1px; color: #F5F2FB; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  /* A sticker: white outline, hard offset shadow (its size is animated: a sticker "lands" when its shadow appears). */
+  .card { position: absolute; left: 0; top: 0; width: 430px; height: 595px; border: 7px solid #F5F2FB; border-radius: 38px; overflow: hidden; }
+  .card img { width: 100%; height: 100%; display: block; }
+</style></head><body>
+<div id="stage" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
+<script>
+// The launch Reel in the onboarding's visual language. Deterministic:
+// window.render(t) draws the frame at t seconds (see rendu.mjs).
+const SHADOW = '#05040A', VSOFT = '#C4B5FD', DARK = '#1A1424';
+const GAMES = [['pokemon', 'Pokémon', '#F5C93B'], ['onepiece', 'One Piece', '#F2706C'], ['lorcana', 'Disney Lorcana', '#35C6BC'], ['yugioh', 'Yu-Gi-Oh!', '#B189E8'],
+  ['magic', 'Magic', '#C0A183'], ['starwarsunlimited', 'Star Wars Unlimited', '#A9B2C4'], ['dragonball', 'Dragon Ball Super', '#F58A4E'], ['wow', 'Warcraft', '#58A6DD']];
+const emblemSvg = (id, c, size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48">${EMBLEMS[id].replace(/COLOR/g, c)}</svg>`;
+const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px;color:#fff">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+const clamp = (x) => Math.max(0, Math.min(1, x));
+const out3 = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const inOut = (x) => { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+// Overshoots a little, then settles: the slap of a sticker.
+const back = (x) => { x = clamp(x); const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+
+// --- timeline (s) ---
+const STEP = 0.48;          // one game per step, the pace the V8 hook was slowed to
+const LAND = 0.3;           // a sticker's slap
+const T0 = 0.35;            // the first card is already down on frame 0 (it is the cover)
+const LANDS = GAMES.map((_, i) => (i === 0 ? -1 : T0 + (i - 1) * STEP));
+const EXIT = T0 + (GAMES.length - 1) * STEP + 0.6;   // the pile leaves along the path
+window.TOTAL = EXIT + 1.1;
+
+// A loose pile: each card lands a little off the last one.
+const POSE = [[0, 0, -4], [-22, 14, 6], [18, -10, -9], [-10, 20, 3], [26, 6, 10], [-28, -8, -6], [12, 18, 7], [0, 0, -2]];
+const stage = document.getElementById('stage');
+stage.innerHTML = `
+  <div id="ghosts"></div>
+  <svg class="abs" width="1080" height="1920" style="left:0;top:0"><defs><clipPath id="draw"><rect id="drawRect" x="0" y="0" width="0" height="1920"/></clipPath></defs>
+    <path id="track" clip-path="url(#draw)" d="M-20 1140 C160 1060 300 1220 470 1150 S800 980 1100 1060" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>
+  <div id="cam" class="abs" style="left:0;top:0;width:1080px;height:1920px">
+    <div id="title" class="abs" style="left:0;top:230px;width:1080px;display:flex;flex-direction:column;align-items:center">${wordmark(200)}<div class="h" style="font-size:100px;margin-top:20px">ta collection</div></div>
+    <div id="pile" class="abs" style="left:325px;top:690px;width:430px;height:595px">${GAMES.map(([g], i) => `<div class="card" id="c${i}"><img src="assets/dos-${g}.svg"></div>`).join('')}</div>
+    <div id="label" class="abs" style="left:0;top:1370px;width:1080px;display:flex;justify-content:center"></div>
+  </div>`;
+// The faint card outlines of the onboarding, drifting slowly to the right.
+const GHOSTS = [[60, 160, 90, -8, 8], [880, 300, 80, 6, 6], [140, 1560, 100, 10, 7], [860, 1700, 110, -6, 9], [520, 120, 70, 0, 5], [960, 1250, 80, 4, 6]];
+document.getElementById('ghosts').innerHTML = GHOSTS.map(([x, y, w, r], i) => `<div id="g${i}" class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border:4px solid rgba(255,255,255,.14);border-radius:${w * .16}px;transform:rotate(${r}deg)"><div style="width:60%;height:6px;margin:${w * .1}px auto 0;border-radius:3px;background:rgba(255,255,255,.14)"></div></div>`).join('');
+// The game under the pile: its emblem as a round sticker, then its name.
+const labels = GAMES.map(([g, name, c]) => `<div style="display:flex;align-items:center;gap:28px"><div style="width:112px;height:112px;border-radius:50%;background:${c};border:7px solid #F5F2FB;box-shadow:12px 12px 0 ${SHADOW};display:flex;align-items:center;justify-content:center">${emblemSvg(g, DARK, 64)}</div><span class="h" style="font-size:74px">${name}</span></div>`);
+let shown = -1;
+
+window.render = (t) => {
+  GHOSTS.forEach(([, , , r, v], i) => { document.getElementById('g' + i).style.transform = `translateX(${t * v}px) rotate(${r + Math.sin(t / 2 + i) * 3}deg)`; });
+  // The dashed path draws itself under the pile, from the left.
+  document.getElementById('drawRect').setAttribute('width', 1100 * out3(t / 2.6));
+  GAMES.forEach((_, i) => {
+    const el = document.getElementById('c' + i);
+    const p = clamp((t - LANDS[i]) / LAND);
+    const [dx, dy, r] = POSE[i];
+    if (p <= 0) { el.style.opacity = 0; return; }
+    const s = 1.35 - .35 * back(p);
+    const sh = 13 * out3((p - .55) / .45);
+    el.style.opacity = clamp(p / .2);
+    el.style.zIndex = i;
+    el.style.boxShadow = `${sh}px ${sh}px 0 ${SHADOW}`;
+    el.style.transform = `translate(${dx}px, ${dy - 60 * (1 - out3(p))}px) rotate(${r + 12 * (1 - out3(p))}deg) scale(${s})`;
+  });
+  const k = LANDS.reduce((a, l, i) => (t >= l + LAND * .5 ? i : a), 0);
+  const lab = document.getElementById('label');
+  if (k !== shown) { lab.innerHTML = labels[k]; shown = k; }
+  const lp = k === 0 ? 1 : clamp((t - LANDS[k] - LAND * .5) / .22);
+  lab.style.transform = `scale(${.75 + .25 * back(lp)})`;
+  lab.style.opacity = clamp(lp / .3);
+  // Exit: the camera follows the path to the right, towards the 8-TCG fan.
+  const e = inOut((t - EXIT) / .8);
+  document.getElementById('cam').style.transform = `translateX(${-1150 * e}px)`;
+};
+window.render(0);
+</script></body></html>
