@@ -1,6 +1,6 @@
-# Planning du 16 octobre au 30 novembre 2026
+# Planning du 16 octobre au 30 décembre 2026
 
-Un post tous les 3 jours à partir du lancement : 16 posts, publiés le même jour sur Instagram et TikTok. Validé le 05/10/2026 ; Claude produit et programme sans redemander. Le style visuel est partout celui des stickers de l'onboarding.
+Un post tous les 3 jours, sans interruption, depuis le premier post (16/10) : avant la sortie de l'appli comme après (demandé le 05/10/2026). 26 posts jusqu'au 30/12, publiés le même jour sur Instagram, TikTok et Facebook, avec leur story. Le rythme continue en janvier : le planning du mois suivant s'écrit avant la fin du mois en cours. Validé le 05/10/2026 ; Claude produit et programme sans redemander. Le style visuel est partout celui des stickers de l'onboarding.
 
 ## Repris le 05/10/2026 (nuit) : fait
 
@@ -60,6 +60,28 @@ Trois principes, demandés par l'utilisateur :
 **Heures.** 10 h, le meilleur créneau TikTok du compte, sauf Halloween à 18 h.
 
 **News TCG.** À chaque rappel programmé, Claude cherche les grosses actus des 8 jeux : annonce d'extension, réédition, record de vente, ban. Une news importante prend la place du prochain post qui n'est lié à aucune date (11, 14, 15 ou 16) ; le post remplacé passe en décembre.
+
+## Décembre (posts 17 à 26)
+
+Écrit le 05/10/2026 pour que le rythme ne s'arrête pas au 30/11. Même logique : les sorties d'abord, les 8 jeux, l'alternance Reel et carrousel, 10 h.
+
+| N° | Date | Format | Type (`TYPES.md`) | Sujet | Jeu | État |
+| --- | --- | --- | --- | --- | --- | --- |
+| 17 | jeu. 03/12, 10 h | Reel | 15 Sortie d'extension | Demain : Glorious Victors (sortie le 04/12) | Yu-Gi-Oh! | à produire |
+| 18 | dim. 06/12, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 4 : du 21/11 au 05/12 (historique Lorcast via `rarebox-data`) | Lorcana | à produire |
+| 19 | mer. 09/12, 10 h | Reel | 3 1 chance sur N | Les chances de tirer une manga rare | One Piece | à produire |
+| 20 | sam. 12/12, 10 h | carrousel | 5 Même carte, trois langues | Une carte en FR, EN et JP : trois cotes | Pokémon | à produire |
+| 21 | mar. 15/12, 10 h | Reel | 12 Fonction à la loupe | L'échange : la valeur de chaque côté | les 8 | à produire |
+| 22 | ven. 18/12, 10 h | carrousel | 15 Sortie d'extension | FB12 sort aujourd'hui | Dragon Ball | à produire |
+| 23 | lun. 21/12, 10 h | Reel | 16 Thème | Noël : une carte à glisser sous le sapin par jeu, et sa cote | Pokémon, Magic, One Piece, Lorcana, Star Wars Unlimited | à produire |
+| 24 | jeu. 24/12, 10 h | carrousel | 7 Classeur panoramique | Une double page de leaders | Star Wars Unlimited | à produire |
+| 25 | dim. 27/12, 10 h | Reel | 9 Pub Boostz | Après les boosters de Noël : « regarde sa cote avant de vendre ou d'échanger » | les 8 | à produire |
+| 26 | mer. 30/12, 10 h | carrousel | 16 Thème | 2026 en 5 ventes records, une par jeu, chacune sourcée | Pokémon, Magic, One Piece, Lorcana, Warcraft | à produire |
+
+- **Sortie de l'appli** : le jour où sa date est connue, un post « Annonce » (type 11) prend la place du post sans date le plus proche (19, 20, 21, 24, 25 ou 26), qui glisse en janvier.
+- **Dates à reconfirmer une semaine avant** : Yu-Gi-Oh! Glorious Victors le 04/12 ([tcgalerts](https://www.tcgalerts.net/yugioh/calendar/), [vintageccg](https://www.vintageccg.com/ccg-news/tcg-release-schedule-2026-2027/)), Dragon Ball FB12 le 18/12. Un set spécial Pokémon est attendu en décembre sans date ([Beckett](https://www.beckett.com/news/2026-tcg-release-dates-checklists-and-set-information/)) : s'il sort, il remplace le n° 20.
+- **Types sur décembre** : 8 différents. Jeux : chacun des 8 au moins une fois entre novembre et décembre, Star Wars Unlimited et Warcraft compris.
+
 
 ## Le contenu, post par post
 
