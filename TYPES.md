@@ -20,6 +20,8 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 12 | **Fonction à la loupe** | Reel ou carrousel | 🔥🔥 | à concevoir | jamais |
 | 13 | **Mythe ou réalité** | carrousel, 5 slides | 🔥🔥 | à concevoir | jamais |
 | 14 | **Tu préfères ?** | carrousel, 3 slides | 🔥🔥 | à concevoir | jamais |
+| 15 | **Sortie d'extension** | carrousel ou Reel | 🔥🔥🔥 | à concevoir | jamais |
+| 16 | **Thème** | Reel | 🔥🔥🔥 le jour J | à concevoir | jamais |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -27,7 +29,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 
 - **Alterner Reel et carrousel.** Le Reel va chercher des gens qui ne te suivent pas encore ; le carrousel fait commenter et enregistrer ceux qui te suivent déjà.
 - **Pas deux fois le même type d'affilée**, sauf la série n° 2 qui a son propre rythme.
-- **Varier les jeux.** Pokémon fait le plus d'audience, mais pas plus d'un post sur deux ; les 8 TCG doivent tous passer.
+- **Varier les jeux.** Les 8 TCG ont tous leurs posts, chaque mois : Pokémon fait le plus d'audience, mais pas plus d'un post sur trois.
 - **Une pub Boostz (n° 9) au plus tous les cinq posts.** Les autres types montrent déjà l'app en situation.
 - **Des chiffres réels, datés et sourcés sur le visuel.** Rien n'est inventé : sans donnée fiable, on change de sujet.
 
@@ -109,13 +111,23 @@ Une idée reçue du monde TCG, en grand, puis les faits sourcés et le verdict. 
 Deux cartes au même prix, de préférence de deux jeux différents, face à face. Fait commenter, et montre que Boostz couvre plusieurs jeux.
 - **Données :** cotes réelles, à moins de 10 % d'écart, datées.
 
+### 15 · Sortie d'extension
+Une extension, en deux temps possibles : l'annonce quelques jours avant (ce qu'il y a dedans, les cartes attendues, le prix d'un booster), ou le jour même et les jours suivants (« elle sort aujourd'hui », les premières cotes, le top des cartes). C'est le type préféré de l'utilisateur, à prévoir pour chaque grosse sortie des 8 jeux.
+- **Données :** annonces officielles et calendriers de sorties, datés ; les cotes seulement quand elles existent.
+
+### 16 · Thème
+Un temps fort du calendrier (Halloween, Noël, Black Friday, rentrée…) lu à travers les cartes : une carte qui fait peur par jeu, une promo à vérifier… De préférence plusieurs jeux à la fois.
+
+### News TCG
+Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, record, ban) prend la place du prochain post qui n'est lié à aucune date, dans le format qui lui va le mieux.
+
 ## Historique
 
 | Date | Réseaux | N° | Sujet | Jeu | Fichiers |
 | --- | --- | --- | --- | --- | --- |
 | ven. 16/10/2026, 10 h | Instagram (Reel), TikTok | 11 | Lancement : « boostZ ta collection », style stickers de l'onboarding | les 8 | `videos/2026-10-16-lancement-stickers.mp4` |
 | jeu. 22/10/2026, 10 h | Instagram (carrousel), TikTok (photos) | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-22-analyse-mega-dracaufeu-x-stickers/` |
-| dim. 25/10/2026, 10 h | Instagram (Reel, musique « 8 Bit Breakthrough »), TikTok | 8 | Choisis ton combattant : « Tu joues lequel ? » | les 8 | `videos/2026-10-25-choisis-ton-combattant.mp4` |
+| dim. 25/10/2026, 10 h | Instagram (Reel, musique « 8 Bit Breakthrough »), TikTok | 8 | Choisis ton combattant : « Tu joues lequel ? » | les 8 | `videos/2026-10-25-choisis-ton-combattant-8s.mp4` |
 | ven. 06/11/2026, 10 h | Instagram (Reel), TikTok | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-11-04-1-chance-sur-96-stickers.mp4` |
 
 ## D'où viennent les notes de tendance
