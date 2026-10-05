@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz lancement stickers</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; }
+  /* The onboarding's look: a flat near-black ground, UI pieces drawn as stickers
+     (white outline, hard offset shadow, no blur), a dashed path running between
+     them, and faint card outlines scattered behind. */
+  .p { position: relative; overflow: hidden; width: 1080px; height: 1920px; margin-bottom: 20px; color: #fff; font-family: Exo; background: #15121E; }
+  .abs { position: absolute; }
+  .st { position: absolute; background: #1F1A2E; border: 5px solid #fff; border-radius: 30px; box-shadow: 10px 10px 0 #05040A; }
+  .h { font-family: Outfit; font-weight: 800; line-height: 1.02; letter-spacing: -1px; }
+  .ui { font-family: Poppins; font-weight: 700; }
+  .mut { color: #A39CB8; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .ex { position: absolute; left: 0; right: 0; bottom: 30px; text-align: center; font-family: 'DM Sans'; font-weight: 700; font-size: 20px; letter-spacing: 3px; color: rgba(255,255,255,.3); }
+</style></head><body>
+<script>
+const LAV = '#C9B8FF', GREEN = '#5FD3A0', YELLOW = '#F5C451', PINK = '#F49AC1', INK = '#15121E';
+const ART = ['#5B4A9E', '#2F6A87', '#8A5B3E', '#3F7A56'];
+const emblemSvg = (id, c, size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48">${EMBLEMS[id].replace(/COLOR/g, c)}</svg>`;
+const wordmark = (size) => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px;color:#fff">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+// The app header's own logo: "boost" and the Z in its rounded purple tile.
+const appLogo = (x, y) => `<div class="abs" style="left:${x}px;top:${y}px;display:flex;align-items:center;gap:8px"><span class="word" style="font-size:52px">boost</span><span style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#8B3DFF,#C9B8FF);display:flex;align-items:center;justify-content:center;transform:rotate(-8deg)"><svg width="30" height="30" viewBox="36 28 28 32"><path d="M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z" fill="#fff"/></svg></span></div>`;
+const st = (x, y, w, h, inner, o = {}) => `<div class="st" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;${o.fill ? 'background:' + o.fill + ';' : ''}${o.r ? 'transform:rotate(' + o.r + 'deg);' : ''}${o.z ? 'z-index:' + o.z + ';' : ''}${o.css || ''}">${inner}</div>`;
+// A card drawn the onboarding way: a colour block for the art, two grey lines for the text.
+const mini = (w, art, o = {}) => `<div style="width:${w}px;height:${w * 1.4}px;border-radius:${w * .1}px;background:#2A2440;padding:${w * .1}px;${o.css || ''}"><div style="height:${w * .1}px;width:60%;border-radius:9px;background:#5A5470"></div><div style="height:${w * .62}px;margin-top:${w * .08}px;border-radius:${w * .06}px;background:${art}"></div><div style="height:${w * .06}px;width:80%;margin-top:${w * .1}px;border-radius:9px;background:#4A4460"></div><div style="height:${w * .06}px;width:55%;margin-top:${w * .05}px;border-radius:9px;background:#4A4460"></div></div>`;
+// The real card backs from the design system, wrapped as stickers.
+const back = (game, x, y, w, r) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.383}px;transform:rotate(${r}deg);border:5px solid #fff;border-radius:${w * .09}px;overflow:hidden;box-shadow:10px 10px 0 #05040A"><img src="assets/dos-${game}.svg" style="width:100%;height:100%;display:block"></div>`;
+const path = (d, w = 12) => `<svg class="abs" width="1080" height="1920" viewBox="0 0 1080 1920" style="left:0;top:0"><path d="${d}" fill="none" stroke="#6E6290" stroke-width="${w}" stroke-dasharray="30 22" stroke-linecap="round"/></svg>`;
+// The faint card outlines the onboarding scatters behind everything.
+const ghosts = (list) => list.map(([x, y, w, r]) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border:4px solid rgba(255,255,255,.13);border-radius:${w * .16}px;transform:rotate(${r || 0}deg)"><div style="width:44%;height:5px;margin:${w * .14}px auto 0;border-radius:3px;background:rgba(255,255,255,.13)"></div></div>`).join('');
+const check = (on) => `<span style="width:40px;height:40px;flex:none;border-radius:10px;border:4px solid ${on ? INK : '#A39CB8'};background:${on ? INK : 'transparent'};display:flex;align-items:center;justify-content:center">${on ? '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12.5 L10 17 L19 7" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' : ''}</span>`;
+const chip = (label, on, x, y) => st(x, y, 'auto', 96, `<div class="ui" style="display:flex;align-items:center;gap:16px;height:100%;padding:0 26px;font-size:34px;color:${on ? INK : '#fff'}">${check(on)}${label}</div>`, { fill: on ? LAV : '#1F1A2E', css: 'width:auto;border-radius:24px;box-shadow:8px 8px 0 #05040A' });
+const title = (a, b, sub) => `<div class="abs h" style="left:80px;top:1290px;font-size:104px">${a}<br>${b}</div><div class="abs mut" style="left:80px;top:1530px;width:900px;font-size:42px;line-height:1.45">${sub}</div>`;
+const FRAMES = [];
+
+// A - The hook: the brand wordmark, the eight games' backs slapped around it as stickers.
+FRAMES.push(['A-accroche', `${ghosts([[90, 120, 90, -8], [880, 260, 80, 6], [140, 1500, 100, 10], [860, 1640, 110, -6], [520, 90, 70, 0]])}
+  ${path('M-20 1250 C200 1190 300 1300 520 1250 S880 1150 1100 1230')}
+  ${back('pokemon', 90, 330, 230, -12)}${back('onepiece', 400, 250, 240, 4)}${back('lorcana', 730, 340, 230, 13)}
+  ${back('magic', 70, 1290, 200, 9)}${back('yugioh', 440, 1350, 200, -5)}${back('starwarsunlimited', 790, 1280, 200, -11)}
+  <div class="abs" style="left:0;top:800px;width:1080px;display:flex;justify-content:center">${wordmark(210)}</div>
+  <div class="abs h" style="left:0;top:1030px;width:1080px;text-align:center;font-size:92px">ta collection</div>
+  ${st(700, 640, 280, 120, `<div class="ui" style="display:flex;align-items:center;justify-content:center;gap:12px;height:100%;font-size:34px;color:${INK}"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M5 12.5 L10 17 L19 7" fill="none" stroke="${INK}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Reconnue</div>`, { fill: GREEN, r: 6, z: 3 })}
+  ${st(90, 650, 300, 120, `<div class="ui" style="display:flex;align-items:center;justify-content:center;gap:14px;height:100%;font-size:40px;color:${INK}"><span style="width:50px;height:50px;border-radius:50%;border:4px solid ${INK};display:flex;align-items:center;justify-content:center;font-size:28px">b</span>+300</div>`, { fill: YELLOW, r: -7, z: 3 })}
+  <div class="ex">PROPOSITION · PLAN 1, L'ACCROCHE</div>`]);
+
+// B - Station "add": the scanner finds the card, burst mode fills up, a graded slab, the search field.
+FRAMES.push(['B-ajoute', `${ghosts([[880, 140, 80, 6], [380, 1170, 70, -4], [900, 1560, 110, 8], [60, 1760, 80, 0]])}${appLogo(80, 70)}
+  ${path('M560 760 C700 800 760 900 880 960 S1040 1020 1120 1000')}
+  ${st(80, 200, 640, 120, `<div class="ui" style="display:flex;align-items:center;height:100%;padding:0 14px;gap:8px;font-size:36px"><span style="flex:1;text-align:center;background:${LAV};color:${INK};border-radius:20px;padding:14px 0">Carte</span><span class="mut" style="flex:1;text-align:center">Rafale</span><span class="mut" style="flex:1;text-align:center">Classeur</span></div>`, { r: -1 })}
+  ${st(90, 370, 480, 500, `<div style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center">${['top:40px;left:40px;border-width:6px 0 0 6px', 'top:40px;right:40px;border-width:6px 6px 0 0', 'bottom:40px;left:40px;border-width:0 0 6px 6px', 'bottom:40px;right:40px;border-width:0 6px 6px 0'].map((p) => `<div style="position:absolute;${p};width:70px;height:70px;border-style:solid;border-color:#fff;border-radius:12px"></div>`).join('')}${mini(260, ART[0])}</div>`)}
+  ${st(560, 350, 400, 200, `<div style="padding:24px 28px"><div class="ui" style="font-size:34px">Rafale · 9 cartes</div><div style="display:flex;gap:14px;margin-top:22px">${mini(50, ART[0])}${mini(50, ART[1])}${[0, 1, 2, 3].map(() => '<div style="width:50px;height:70px;border:4px dashed #6E6290;border-radius:8px"></div>').join('')}</div></div>`, { r: 2, z: 2 })}
+  ${st(650, 590, 240, 330, `<div style="padding:16px"><div class="ui" style="background:${YELLOW};color:${INK};border-radius:14px;padding:8px 14px;font-size:30px;display:flex;justify-content:space-between;align-items:center">CGC 9,5 <span style="width:24px;height:24px;border-radius:6px;background:${INK}"></span></div><div style="margin:14px auto 0;width:150px">${mini(150, ART[1])}</div></div>`, { r: 3, z: 2 })}
+  ${st(950, 680, 240, 330, mini(200, ART[3], { css: 'margin:14px' }), { r: -8 })}
+  ${st(80, 880, 640, 170, `<div style="display:flex;align-items:center;gap:22px;height:100%;padding:0 24px">${mini(80, ART[0])}<div class="ui" style="color:${INK}"><div style="font-size:34px">✓ Reconnue</div><div style="font-size:34px;font-weight:600">045/198 · Éclats du Nord</div></div></div>`, { fill: GREEN, r: -2, z: 3 })}
+  ${st(80, 1080, 520, 150, `<div style="display:flex;align-items:center;height:100%"><svg width="110" height="60" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6" fill="none" stroke="${LAV}" stroke-width="2.4"/><path d="M15.5 15.5 L20 20" stroke="${LAV}" stroke-width="2.4" stroke-linecap="round"/></svg><div style="border-left:4px dashed #fff;height:100%;padding:28px 22px"><div class="mut ui" style="font-size:28px;font-weight:600">Rech. par nom</div><div style="width:4px;height:40px;background:${LAV};margin-top:8px"></div></div></div>`, { r: 1 })}
+  ${title('Ajoute tes cartes', 'et tes scellés', 'Photo, rafale, page de classeur ou recherche par nom : Boostz reconnaît, tu valides.')}
+  <div class="ex">PROPOSITION · PLAN 2, AJOUTER</div>`]);
+
+// C - Station "8 TCG": the chips tick one by one (Animal Crossing left out), the language picker.
+const games = [['Pokémon', 1], ['One Piece', 1], ['Magic', 0], ['Star Wars Unlimited', 0], ['Yu-Gi-Oh!', 0], ['Lorcana', 1], ['Dragon Ball Super', 0], ['Warcraft', 0]];
+const pos = [[70, 200], [400, 200], [740, 200], [50, 335], [580, 335], [100, 470], [430, 470], [180, 605]];
+FRAMES.push(['C-8-tcg', `${ghosts([[880, 110, 80, 6], [60, 1100, 90, -6], [900, 1700, 100, 4]])}${appLogo(80, 70)}
+  ${path('M-20 1010 C180 1080 300 1120 420 1110 M820 1060 C930 1030 1000 1010 1100 1000')}
+  ${games.map(([g, on], i) => chip(g, on, ...pos[i])).join('')}
+  ${st(-60, 780, 330, 330, mini(250, ART[3], { css: 'margin:30px' }), { r: -6 })}
+  ${st(240, 770, 300, 380, `<div style="position:relative;padding:20px">${mini(250, ART[1])}<span class="ui" style="position:absolute;top:30px;right:30px;background:${LAV};color:${INK};border-radius:10px;padding:2px 12px;font-size:28px">FR</span></div>`, { r: 2 })}
+  ${st(400, 960, 470, 200, `<div style="padding:22px 26px"><div class="ui" style="font-size:32px;font-weight:600">Langue de la carte</div><div style="display:flex;gap:10px;margin-top:20px;background:#2A2440;border-radius:20px;padding:8px">${[['fr', 'FR', 1], ['en', 'EN', 0], ['ja', 'JP', 0]].map(([f, k, on]) => `<span class="ui" style="flex:1;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 0;border-radius:14px;font-size:30px;${on ? `background:${LAV};color:${INK}` : 'color:#A39CB8'}"><img src="assets/drapeau-${f}.svg" style="width:38px;height:26px;border-radius:5px">${k}</span>`).join('')}</div></div>`, { r: -2, z: 3 })}
+  ${back('pokemon', 890, 760, 250, 8)}
+  ${title('8 TCG.', 'Une seule app.', 'Choisis tes jeux, ta langue entre français, anglais et japonais. Boostz fait le reste.')}
+  <div class="ex">PROPOSITION · PLAN 3, LES 8 TCG</div>`]);
+
+// D - Station "the cote": one card, three languages, its listings, its graded prices, the display.
+FRAMES.push(['D-la-cote', `${ghosts([[900, 120, 80, 6], [70, 1190, 80, -4], [900, 1650, 100, 6]])}${appLogo(80, 70)}
+  ${path('M-20 620 C120 640 200 700 290 720 M960 900 C1010 890 1050 890 1110 900')}
+  ${st(140, 200, 600, 220, `<div style="padding:26px 30px"><div class="ui" style="font-size:38px">045/198 · Éclats du Nord</div><div style="display:flex;gap:10px;margin-top:22px;background:#2A2440;border-radius:20px;padding:8px;width:440px">${[['fr', 'FR', 0], ['en', 'EN', 0], ['ja', 'JP', 1]].map(([f, k, on]) => `<span class="ui" style="flex:1;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 0;border-radius:14px;font-size:30px;${on ? `background:${LAV};color:${INK}` : 'color:#A39CB8'}"><img src="assets/drapeau-${f}.svg" style="width:38px;height:26px;border-radius:5px">${k}</span>`).join('')}</div></div>`, { r: -1 })}
+  ${st(360, 440, 600, 120, `<div class="ui" style="display:flex;align-items:center;height:100%;padding:0 12px;gap:6px;font-size:32px"><span style="flex:1;text-align:center;background:${LAV};color:${INK};border-radius:18px;padding:12px 0">Normale</span><span class="mut" style="flex:1;text-align:center">Reverse</span><span class="mut" style="flex:1;text-align:center">1re édition</span></div>`, { r: 1, z: 2 })}
+  ${st(90, 600, 470, 230, `<div style="padding:28px 32px"><div class="mut" style="font-size:34px;font-weight:600">Prix moyen</div><div class="h" style="font-size:100px;margin-top:6px;white-space:nowrap">15,60 €</div></div>`, { r: -2, z: 2 })}
+  ${st(570, 660, 440, 330, `<div style="padding:24px 30px"><div style="display:flex;justify-content:space-between;font-size:32px;font-weight:600"><span class="mut">Annonces</span><span class="ui" style="color:${LAV};font-size:28px">JP · Normale</span></div>${[['NM', '14,20 €'], ['NM', '15,40 €'], ['EX', '17,20 €']].map(([c, v]) => `<div style="display:flex;justify-content:space-between;align-items:center;border-top:3px solid #3A3450;margin-top:16px;padding-top:14px"><span class="ui" style="font-size:32px">Annonce <span class="mut" style="font-weight:600">· ${c}</span></span><span class="ui" style="font-size:34px">${v}</span></div>`).join('')}</div>`, { r: 1, z: 1 })}
+  ${st(150, 880, 370, 170, `<div style="padding:22px 28px"><div class="ui" style="font-size:30px;color:${INK}">Cotes par note</div><div style="display:flex;gap:16px;margin-top:14px">${['10', '9', '8'].map((n) => `<span class="ui" style="width:76px;height:60px;border:4px solid ${INK};border-radius:16px;display:flex;align-items:center;justify-content:center;color:${INK};font-size:30px">${n}</span>`).join('')}</div></div>`, { fill: YELLOW, r: -3, z: 3 })}
+  ${st(180, 1090, 620, 150, `<div style="display:flex;align-items:center;gap:22px;height:100%;padding:0 26px"><span style="width:76px;height:76px;flex:none;border-radius:16px;background:linear-gradient(135deg,#8B3DFF,#C9B8FF);display:flex;align-items:center;justify-content:center"><svg width="46" height="46" viewBox="36 28 28 32"><path d="M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z" fill="#fff"/></svg></span><div><div class="ui" style="font-size:32px">Display · Éclats du Nord</div><div class="ui" style="display:flex;gap:26px;margin-top:6px;font-size:32px"><span style="display:flex;align-items:center;gap:10px"><img src="assets/drapeau-fr.svg" style="width:36px;height:25px;border-radius:5px">148,00 €</span><span style="display:flex;align-items:center;gap:10px"><img src="assets/drapeau-en.svg" style="width:36px;height:25px;border-radius:5px">132,50 €</span></div></div></div>`, { r: 1 })}
+  ${title('Ta cote,', 'dans ta langue.', 'Cartes et scellés, selon leur langue, leur tirage et leur note de gradation.')}
+  <div class="ex">PROPOSITION · PLAN 5, LA COTE</div>`]);
+
+document.body.innerHTML = FRAMES.map(([id, html]) => `<div class="p" id="${id}">${html}</div>`).join('');
+</script></body></html>
