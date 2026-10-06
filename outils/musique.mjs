@@ -34,7 +34,7 @@ const chord = (name) => { const [, r, q] = name.match(/^([A-G][b#]?)(.*)$/); if 
 // chord, a few notes spread over the bar) or sparse (a long chord every other bar).
 // swing: how late the off-beat 16ths fall. cut: master low-pass (Hz). dust: crackle and hiss.
 const STYLES = {
-  lancement:   { bpm: 100, prog: ['Cadd9', 'G', 'Am7', 'Fmaj7'], lead: 'vibes', kit: 'bounce', swing: .12, cut: 12000, dust: 0, comp: 'arp', dense: true, clean: true },
+  lancement:   { bpm: 104, prog: ['C', 'G', 'Am', 'F'], lead: 'glock', kit: 'pop', swing: .06, cut: 13000, dust: 0, comp: 'strum', clean: true, melody: 'lancement' },
   combattant:  { bpm: 88, prog: ['Cmaj9', 'A7b9', 'Dm9', 'G13'], lead: 'chip', kit: 'boombap', swing: .18, cut: 5600, dust: .5, comp: 'sparse' },
   lorcana:     { bpm: 76, prog: ['Dmaj9', 'Bm9', 'Gmaj9', 'A13'], lead: 'musicbox', kit: 'brushes', swing: .2, cut: 4800, dust: .7, comp: 'hold' },
   etat:        { bpm: 80, prog: ['Ebmaj9', 'Cm9', 'Fm9', 'Bb13'], lead: 'felt', kit: 'boombap', swing: .24, cut: 4600, dust: .7, comp: 'arp' },
@@ -122,7 +122,36 @@ const pad = (f, len, vel) => { // warm swell: detuned soft saws, slow attack, da
     b[i] = vel * x * .5 * Math.min(1, t / .45) * tail(t, len, 1); }
   return lowpass(lowpass(b, 900), 1400);
 };
-const LEAD = { rhodes, felt, guitar, vibes, musicbox, chip };
+const glock = (f, len, vel) => { // glockenspiel: a bright bar with its inharmonic partials
+  const n = Math.floor(1.8 * SR), b = new Float32Array(n);
+  for (let i = 0; i < n; i++) { const t = i / SR;
+    b[i] = vel * Math.min(1, t / .002) * (Math.sin(2 * Math.PI * f * t) * Math.exp(-t * 2.4) + .35 * Math.sin(2 * Math.PI * f * 2.76 * t) * Math.exp(-t * 7) + .12 * Math.sin(2 * Math.PI * f * 5.4 * t) * Math.exp(-t * 14)); }
+  return lowpass(b, 7000);
+};
+const LEAD = { rhodes, felt, guitar, vibes, musicbox, chip, glock };
+// A ukulele string: a short, bright Karplus-Strong pluck.
+const uke = (f, vel) => {
+  const n = Math.floor(.9 * SR), b = new Float32Array(n), p = Math.max(2, Math.round(SR / f)), ring = new Float32Array(p);
+  for (let i = 0; i < p; i++) ring[i] = rnd() * .8;
+  let j = 0;
+  for (let i = 0; i < n; i++) { const next = (j + 1) % p, v = ring[j]; ring[j] = .496 * (v + ring[next]); j = next; b[i] = vel * v; }
+  return lowpass(highpass(b, 180), 5200);
+};
+// Written melodies, for the tracks that need a real tune rather than a loose
+// phrase (06/10/2026: the launch track sounded aimless): per chord bar, a list of
+// [16th step, MIDI note, length in 16ths]; the second phrase answers the first.
+const MELODIES = {
+  lancement: [
+    [[0, 76, 2], [2, 79, 2], [4, 79, 2], [6, 81, 2], [8, 79, 4], [12, 76, 2], [14, 74, 2]],
+    [[0, 74, 2], [2, 79, 2], [4, 79, 2], [6, 83, 2], [8, 83, 3], [11, 81, 1], [12, 79, 4]],
+    [[0, 84, 2], [2, 81, 2], [4, 81, 2], [6, 79, 2], [8, 76, 4], [12, 72, 2], [14, 74, 2]],
+    [[0, 77, 2], [2, 76, 2], [4, 77, 2], [6, 81, 2], [8, 79, 6]],
+    [[0, 76, 2], [2, 79, 2], [4, 79, 2], [6, 81, 2], [8, 79, 4], [12, 76, 2], [14, 74, 2]],
+    [[0, 74, 2], [2, 79, 2], [4, 79, 2], [6, 83, 2], [8, 83, 3], [11, 81, 1], [12, 79, 4]],
+    [[0, 84, 2], [2, 81, 2], [4, 81, 2], [6, 79, 2], [8, 76, 4], [12, 79, 2], [14, 81, 2]],
+    [[0, 77, 2], [2, 81, 2], [4, 84, 2], [6, 83, 2], [8, 84, 6]],
+  ],
+};
 const keys = S.lead === 'guitar' || S.lead === 'chip' || S.lead === 'musicbox' ? rhodes : LEAD[S.lead]; // who plays the chords
 const bassNote = (f, len, vel) => { // round upright-ish bass, a little slide into the note
   const n = Math.floor((len + .25) * SR), b = new Float32Array(n); let ph = 0;
@@ -153,6 +182,12 @@ const KITS = { // 16 steps a bar: kick, snare, ghost snare, hats
   halftime: { k: [0, 11], s: [8], g: [14], h: [0, 2, 4, 6, 8, 10, 12, 14] },
   bounce:   { k: [0, 3, 8, 10], s: [4, 12], g: [7, 15], h: [0, 2, 3, 4, 6, 8, 10, 11, 12, 14, 15] }, // livelier, for the upbeat tracks
   brushes:  { k: [0, 10], s: [4, 12], g: [7, 15], h: [0, 2, 3, 4, 6, 8, 10, 11, 12, 14] },
+  pop:      { k: [0, 8, 10], s: [], c: [4, 12], g: [], h: [] }, // claps and a shaker, for a cheerful track
+};
+const clap = (vel) => { // three quick noise bursts, like hands
+  const n = Math.floor(.22 * SR), b = new Float32Array(n);
+  for (let i = 0; i < n; i++) { const t = i / SR, e = [0, .011, .023].reduce((s, o) => s + (t >= o ? Math.exp(-(t - o) * (o < .02 ? 140 : 22)) : 0), 0); b[i] = vel * rnd() * e; }
+  return lowpass(highpass(b, 900), 4200);
 };
 
 // The song: one bar per chord, an intro bar without drums on longer tracks, and a
@@ -177,6 +212,13 @@ for (let bar = 0; bar < bars; bar++) {
   if (S.comp === 'hold') {
     v.forEach((n, j) => add(MUS, step(bar, 0) + j * .03, pad(midi(n), BAR * 1.1, .05), pan(j)));
     if (bar % 2 === 1) add(MUS, step(bar, 0) + .05 + hum(6), keys(midi(v[v.length - 1] + 12), BEAT * 2, .05), .3);
+  } else if (S.comp === 'strum') {
+    // Ukulele, the island strum (down, down-up, up-down-up): downs low to high, ups softer.
+    const strings = c.tones.slice(0, 3).map((x) => 60 + ((c.root + x) % 12)).concat([67 + ((c.root + c.tones[0]) % 12) - (c.root > 4 ? 12 : 0)]).sort((a, b) => a - b);
+    [[0, 1], [4, 1], [6, 0], [10, 0], [12, 1], [14, 0]].forEach(([st, down]) => {
+      const order = down ? strings : [...strings].reverse().slice(0, 3);
+      order.forEach((n, j) => add(MUS, step(bar, st) + j * .011 + hum(4), uke(midi(n), (down ? .11 : .07) * (1 + .15 * rnd())), (j - 1.5) * .2));
+    });
   } else if (S.comp === 'arp') {
     const slots = bar % 2 ? [0, 3, 6, 10] : [0, 4, 9, 13];
     slots.forEach((st, k) => add(MUS, step(bar, st) + .02 + hum(8), keys(midi(v[(k + bar) % v.length]), BEAT * 2.2, .07 * (1 + .15 * rnd())), pan(k)));
@@ -187,14 +229,24 @@ for (let bar = 0; bar < bars; bar++) {
   // a pickup only now and then.
   const root = 36 + c.root + (c.root > 7 ? -12 : 0);
   if (S.comp === 'hold') add(MUS, step(bar, 0) + hum(5), bassNote(midi(root), BAR * .9, .13));
+  else if (S.comp === 'strum') [[0, 0, 3], [6, 7, 1.5], [8, 12, 2], [12, 7, 2], [14, 0, 1.5]].forEach(([st, iv, l]) => add(MUS, step(bar, st) + hum(4), bassNote(midi(root + iv), SIX * l, iv ? .09 : .13)));
   else {
     add(MUS, step(bar, 0) + hum(5), bassNote(midi(root), BEAT * (S.comp === 'arp' ? 2.6 : 1.6), .13));
     add(MUS, step(bar, S.comp === 'arp' ? 11 : 8) + hum(5), bassNote(midi(root + (S.comp === 'arp' ? 7 : 12)), BEAT * 1.1, .09));
   }
   if (bar % 4 === 3) add(MUS, step(bar, 14) + hum(5), bassNote(midi(root + 5), BEAT * .4, .07));
-  if (S.kit === 'bounce' && S.comp !== 'hold') add(MUS, step(bar, 6) + hum(5), bassNote(midi(root + 12), BEAT * .3, .07)); // octave bounce
+  if (S.kit === 'bounce' && S.comp === 'arp') add(MUS, step(bar, 6) + hum(5), bassNote(midi(root + 12), BEAT * .3, .07)); // octave bounce
   // Lead: from the second bar, the phrase in the key's pentatonic, an octave up.
-  if (bar > 0 && bar < bars - 1) {
+  // Written melody: two bars of strum alone, then the tune, its answer, and again;
+  // the last bar rings out on the tonic.
+  const M = S.melody && MELODIES[S.melody];
+  if (M && bar >= 2 && bar < bars - 1) {
+    M[(bar - 2) % M.length].forEach(([st, n, l]) => {
+      add(MUS, step(bar, st) + hum(4), LEAD[S.lead](midi(n), SIX * l, .13), .1);
+      add(MUS, step(bar, st) + .012 + hum(4), LEAD[S.lead](midi(n + 12), SIX * l, .035), -.25); // a shimmer an octave up
+    });
+  } else if (M && bar === bars - 1) [72, 76, 79, 84].forEach((n, j) => add(MUS, step(bar, 0) + j * .06, glock(midi(n), BAR, .09), (j - 1.5) * .2));
+  if (!M && bar > 0 && bar < bars - 1) {
     const p = phrase[bar % 2], lead = LEAD[S.lead];
     p.forEach((deg, k) => { if (deg == null || (bar % 4 === 3 && k > 4)) return;
       const n = S.clean // a clean track sings its chord's own notes, so nothing ever clashes
@@ -206,6 +258,8 @@ for (let bar = 0; bar < bars; bar++) {
   if (bar > 0 || DUR < 12) {
     const K = KITS[S.kit], brush = S.kit === 'brushes';
     for (const s of K.k) { const t = step(bar, s) + hum(4); add(DRM, t, kick(.42)); kickTimes.push(t); }
+    for (const s of K.c || []) add(DRM, step(bar, s) + hum(3), clap(.3), .08);
+    if (S.kit === 'pop') for (let st = 0; st < 16; st++) add(DRM, step(bar, st) + hum(4), hat((st % 4 === 2 ? .07 : .035) * (1 + .3 * rnd())), -.3); // shaker
     for (const s of K.s) add(DRM, step(bar, s) + hum(6), snare(brush ? .16 : .22, brush), .05);
     for (const s of K.g) if (rnd() > -.2) add(DRM, step(bar, s) + hum(8), snare(.05, brush), .1);
     for (const s of K.h) add(DRM, step(bar, s) + hum(7), hat((s % 4 ? .1 : .14) * (1 + .3 * rnd()), s === 14 && bar % 4 === 3), .3);

@@ -72,12 +72,20 @@ window.TOTAL = ARRIVE[5] + DUR[5];
 const L = (k) => ARRIVE[k - 1] - .3;                  // a scene starts playing just before it arrives
 
 // The dashed path, one piece across all seven scenes.
-let trackD = 'M-20 1140 C160 1060 300 1220 470 1150 S800 980 1100 1060 C1200 1110 1190 1600 1340 1650';
+let trackD = 'M-20 1680 C200 1620 360 1740 560 1680 S900 1610 1340 1650';
 for (let x = 1880, i = 0; x <= 7560 + 540; x += 540, i++) trackD += ` S${x - 200} ${i % 2 ? 1700 : 1610} ${x} ${i % 2 ? 1660 : 1640}`;
 
-const GHOSTS = [[60, 160, 90, -8, 8], [880, 300, 80, 6, 6], [140, 1560, 100, 10, 7], [860, 1700, 110, -6, 9], [520, 120, 70, 0, 5], [960, 1250, 80, 4, 6]];
+const GHOSTS = [[40, 120, 90, -8, 8], [900, 330, 80, 6, 6], [140, 1560, 100, 10, 7], [860, 1700, 110, -6, 9], [500, 20, 70, 0, 5], [480, 1770, 80, 4, 6]];
 const POSE = [[0, 0, -4], [-22, 14, 6], [18, -10, -9], [-10, 20, 3], [26, 6, 10], [-28, -8, -6], [12, 18, 7], [0, 0, -2]];
-const FAN = GAMES.map((_, i) => -35 + i * 10);
+// Scene 0: the real card of each game in a 4 x 2 grid (06/10/2026: the stacked
+// backs read as nothing). Scene 1: the eight emblems wired to the app icon.
+const CARDS = { pokemon: 'carte-dracaufeu-ex-sv035-199.jpg', onepiece: 'carte-luffy-op05-119-p1-jp.png', lorcana: 'carte-elsa-enchantee-tfc-207.avif', yugioh: 'carte-dragon-blanc-yeux-bleus.jpg',
+  magic: 'carte-valgavoth-dsk-407.jpg', starwarsunlimited: 'carte-luke-skywalker-sor-005.png', dragonball: 'carte-son-goku-fb01-139-p1.webp', wow: 'carte-tigre-spectral.jpg' };
+const CW = 216, CH = 302;
+const CELL = (i) => [54 + (i % 4) * (CW + 36), 560 + Math.floor(i / 4) * 470];
+const TILT = [-4, 3, -2, 5, 3, -5, 4, -3];
+const HUB = 940;
+const RING = (i) => { const a = (i / 8) * 2 * Math.PI - Math.PI / 2 + Math.PI / 8; return [540 + 370 * Math.cos(a), HUB + 370 * Math.sin(a)]; };
 const LANGS = [['fr', 'Français', 18.40, 640, -2], ['en', 'Anglais', 15.60, 900, 2], ['ja', 'Japonais', 11.90, 1160, -1]];
 const SUBS = [['Coins', '9,5', 40, 700, -4], ['Bords', '9', 40, 900, 3], ['Surface', '10', 760, 700, 4], ['Centrage', '9,5', 760, 900, -3]];
 const CHART = [[0, 150], [60, 140], [120, 146], [180, 118], [240, 124], [300, 92], [360, 98], [420, 56]];
@@ -89,17 +97,17 @@ $('stage').innerHTML = `
       <path clip-path="url(#draw)" d="${trackD}" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>
 
     <div class="scene" style="left:0">
-      <div class="abs" style="left:0;top:230px;width:1080px;display:flex;flex-direction:column;align-items:center">${wordmark(200)}<div class="h" style="font-size:100px;margin-top:20px">ta collection</div></div>
-      <div class="abs" style="left:325px;top:690px;width:430px;height:595px">${GAMES.map(([g], i) => `<div class="card" id="c${i}"><img src="assets/dos-${g}.svg"></div>`).join('')}</div>
-      <div id="label" class="abs" style="left:0;top:1370px;width:1080px;display:flex;justify-content:center"></div>
+      <div class="abs" style="left:0;top:150px;width:1080px;display:flex;flex-direction:column;align-items:center">${wordmark(190)}<div class="h" style="font-size:96px;margin-top:16px">ta collection</div></div>
+      ${GAMES.map(([g, name, c], i) => { const [x, y] = CELL(i); return `<div id="c${i}" class="abs" style="left:${x}px;top:${y}px;width:${CW}px;height:${CH}px;border:6px solid #F5F2FB;border-radius:20px;overflow:hidden;background:#1D1730;opacity:0;z-index:${2 + i}"><img src="assets/${CARDS[g]}" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div id="n${i}" class="abs h" style="left:${x - 20}px;top:${y + CH + 18}px;width:${CW + 40}px;text-align:center;font-size:32px;line-height:1.08;color:${c};opacity:0">${name}</div>`; }).join('')}
+      <div class="abs mut" style="left:0;top:1470px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:21px">© The Pokémon Company, Bandai, Disney, Konami, Wizards of the Coast, Lucasfilm, Blizzard</div>
     </div>
 
     <div class="scene" style="left:1080px">${head('t1', '8 TCG.', 'Une seule app.')}
-      ${GAMES.map(([g], i) => `<div id="f${i}" class="abs" style="left:410px;top:650px;width:260px;height:360px;transform-origin:50% 170%;z-index:${i}"><div class="card" style="width:260px;height:360px;border-width:6px;border-radius:24px;box-shadow:12px 12px 0 ${SHADOW}"><img src="assets/dos-${g}.svg"></div></div>`).join('')}
-      ${GAMES.map(([g, , c], i) => { const r = FAN[i] * Math.PI / 180; return disc('fb' + i, 540 + 690 * Math.sin(r) - 48, 1262 - 690 * Math.cos(r) - 48, 96, c, emblemSvg(g, DARK, 54)); }).join('')}
-      <div id="ctaWrap" class="abs" style="left:250px;top:1330px;width:580px;height:130px;opacity:0"><div class="abs" style="left:12px;top:12px;width:580px;height:130px;border-radius:30px;background:${SHADOW}"></div>
-        <div id="cta" class="abs ui" style="left:0;top:0;width:580px;height:130px;border-radius:30px;background:${VIOLET};border:6px solid #F5F2FB;display:flex;align-items:center;justify-content:center;gap:18px;font-size:46px;color:#fff">Choisis tes jeux ${icon('M5 12h14M13 6l6 6-6 6', '#fff', 46)}</div></div>
-      <div id="s1" class="abs mut" style="left:0;top:1505px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:44px;opacity:0">Boostz fait le reste.</div>
+      <svg class="abs" width="1080" height="1920" style="left:0;top:0">${GAMES.map((_, i) => { const [x, y] = RING(i); return `<path id="sp${i}" pathLength="1" d="M${x} ${y} L${540 + (x - 540) * .42} ${HUB + (y - HUB) * .42}" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="10" stroke-linecap="round" stroke-dasharray="1 1" stroke-dashoffset="1"/>`; }).join('')}</svg>
+      <div id="hub" class="abs" style="left:${540 - 150}px;top:${HUB - 150}px;width:300px;height:300px;border-radius:66px;overflow:hidden;border:8px solid #F5F2FB;opacity:0;z-index:5"><img src="assets/icone-app.png" style="width:100%;height:100%;display:block"></div>
+      ${GAMES.map(([g, , c], i) => { const [x, y] = RING(i); return disc('fb' + i, x - 62, y - 62, 124, c, emblemSvg(g, DARK, 70)); }).join('')}
+      <div id="s1" class="abs mut" style="left:0;top:1430px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:46px;opacity:0">Tous tes jeux, au même endroit.</div>
     </div>
 
     <div class="scene" style="left:2160px">${head('t2', 'Ta collection,', 'et sa valeur.')}
@@ -141,9 +149,6 @@ $('stage').innerHTML = `
     </div>
   </div>`;
 ['k0', 'k1', 'k2', 'jp', 'note', 'swap'].forEach((id) => { $(id).style.zIndex = 5; });
-// The game under the pile: its emblem as a round sticker, then its name.
-const labels = GAMES.map(([g, name, c]) => `<div style="display:flex;align-items:center;gap:28px"><div style="width:112px;height:112px;border-radius:50%;background:${c};border:7px solid #F5F2FB;box-shadow:12px 12px 0 ${SHADOW};display:flex;align-items:center;justify-content:center">${emblemSvg(g, DARK, 64)}</div><span class="h" style="font-size:74px">${name}</span></div>`);
-let shown = -1;
 
 window.render = (t) => {
   GHOSTS.forEach(([, , , r, v], i) => { $('g' + i).style.transform = `translateX(${t * v}px) rotate(${r + Math.sin(t / 2 + i) * 3}deg)`; });
@@ -154,31 +159,25 @@ window.render = (t) => {
   const ahead = k === 0 ? 1100 * out3(t / 2.6) : camX + 1100 * out3((t - (ARRIVE[k - 1] - PAN)) / 1.6);
   $('drawRect').setAttribute('width', Math.max(ahead, camX));
 
-  // 0 - the hook: one back per game slapped on the pile, its emblem and name below.
+  // 0 - the hook: each game's real card slapped into the grid, its name below.
   GAMES.forEach((_, i) => {
-    const el = $('c' + i), p = clamp((t - LANDS[i]) / LAND), [dx, dy, r] = POSE[i];
-    if (p <= 0) { el.style.opacity = 0; return; }
-    const sh = 13 * out3((p - .55) / .45);
-    el.style.opacity = clamp(p / .2); el.style.zIndex = i;
+    const el = $('c' + i), p = clamp((t - LANDS[i]) / LAND);
+    if (p <= 0) { el.style.opacity = 0; $('n' + i).style.opacity = 0; return; }
+    const sh = 12 * out3((p - .55) / .45);
+    el.style.opacity = clamp(p / .2);
     el.style.boxShadow = `${sh}px ${sh}px 0 ${SHADOW}`;
-    el.style.transform = `translate(${dx}px, ${dy - 60 * (1 - out3(p))}px) rotate(${r + 12 * (1 - out3(p))}deg) scale(${1.35 - .35 * back(p)})`;
+    el.style.transform = `translateY(${-50 * (1 - out3(p))}px) rotate(${TILT[i] + 12 * (1 - out3(p))}deg) scale(${1.35 - .35 * back(p)})`;
+    const np = i === 0 ? 1 : out3((t - LANDS[i] - .15) / .3);
+    $('n' + i).style.opacity = np; $('n' + i).style.transform = `translateY(${16 * (1 - np)}px)`;
   });
-  const g = LANDS.reduce((s, l, i) => (t >= l + LAND * .5 ? i : s), 0);
-  if (g !== shown) { $('label').innerHTML = labels[g]; shown = g; }
-  const lp = g === 0 ? 1 : clamp((t - LANDS[g] - LAND * .5) / .22);
-  $('label').style.transform = `scale(${.75 + .25 * back(lp)})`; $('label').style.opacity = clamp(lp / .3);
 
-  // 1 - 8 TCG: the pile opens into a fan, each game stamps its emblem, the button gets pressed.
+  // 1 - 8 TCG: the app icon lands, each game stamps its emblem around it and is wired in.
   let s = L(1); rise('t1', t, s);
-  FAN.forEach((ang, i) => {
-    const p = out3((t - s - .15 - i * .09) / .45);
-    $('f' + i).style.transform = `rotate(${ang * p}deg)`;
-    stick('fb' + i, t, s + .55 + i * .09, 0, 10, .25);
-  });
-  stick('ctaWrap', t, s + 1.45, 0, 0);
-  const press = clamp((t - s - 2.3) / .12) * (1 - clamp((t - s - 2.55) / .15));
-  $('cta').style.transform = `translate(${10 * press}px, ${10 * press}px)`;
-  rise('s1', t, s + 1.75);
+  stick('hub', t, s + .15, -3, 16, .35);
+  GAMES.forEach((_, i) => { stick('fb' + i, t, s + .5 + i * .11, 0, 10, .25); draw('sp' + i, t, s + .65 + i * .11, .35); });
+  const pulse = Math.sin(Math.PI * clamp((t - s - 1.65) / .35));
+  if (t > s + .5) $('hub').style.transform = `rotate(-3deg) scale(${1 + .06 * pulse})`;
+  rise('s1', t, s + 1.85);
 
   // 2 - Collection: the binder fills, the value counts up, the curve draws.
   s = L(2); rise('t2', t, s); stick('bind', t, s + .1, -3);
