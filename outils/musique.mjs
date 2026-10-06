@@ -34,27 +34,27 @@ const chord = (name) => { const [, r, q] = name.match(/^([A-G][b#]?)(.*)$/); if 
 // chord, a few notes spread over the bar) or sparse (a long chord every other bar).
 // swing: how late the off-beat 16ths fall. cut: master low-pass (Hz). dust: crackle and hiss.
 const STYLES = {
-  lancement:   { bpm: 98, prog: ['Fmaj9', 'G6', 'Em7', 'Am9'], lead: 'rhodes', kit: 'bounce', swing: .18, cut: 7800, dust: .3, comp: 'arp' },
-  combattant:  { bpm: 104, prog: ['Cmaj9', 'Am7', 'Fmaj9', 'G6'], lead: 'chip', kit: 'bounce', swing: .14, cut: 8200, dust: .25, comp: 'sparse' },
-  lorcana:     { bpm: 94, prog: ['Dmaj9', 'Gmaj9', 'Em9', 'A6'], lead: 'musicbox', kit: 'bounce', swing: .18, cut: 7600, dust: .3, comp: 'arp' },
-  etat:        { bpm: 96, prog: ['Ebmaj9', 'Abmaj9', 'Fm9', 'Bb6'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 7400, dust: .3, comp: 'arp' },
-  blackfriday: { bpm: 100, prog: ['Gmaj9', 'Em9', 'Cmaj9', 'D6'], lead: 'guitar', kit: 'bounce', swing: .16, cut: 8000, dust: .25, comp: 'sparse' },
-  dracaufeu:   { bpm: 96, prog: ['Cmaj9', 'Em7', 'Fmaj9', 'G6'], lead: 'rhodes', kit: 'boombap', swing: .2, cut: 7400, dust: .3, comp: 'arp' },
-  tigre:       { bpm: 92, prog: ['Amadd9', 'Fmaj9', 'C6', 'G6'], lead: 'guitar', kit: 'brushes', swing: .2, cut: 7000, dust: .35, comp: 'arp' },
-  halloween:   { bpm: 96, prog: ['Am9', 'Fmaj9', 'Cmaj9', 'G6'], lead: 'musicbox', kit: 'bounce', swing: .2, cut: 7000, dust: .4, comp: 'sparse' },
-  sortie:      { bpm: 102, prog: ['Cmaj9', 'Fmaj9', 'Am7', 'G6'], lead: 'vibes', kit: 'bounce', swing: .16, cut: 8200, dust: .25, comp: 'arp' },
-  erreurs:     { bpm: 98, prog: ['Fmaj9', 'Bbmaj9', 'Gm9', 'C6'], lead: 'chip', kit: 'boombap', swing: .18, cut: 7600, dust: .3, comp: 'sparse' },
-  lexique:     { bpm: 94, prog: ['Gmaj9', 'Cmaj9', 'Am9', 'D6'], lead: 'rhodes', kit: 'brushes', swing: .2, cut: 7400, dust: .3, comp: 'arp' },
-  echange:     { bpm: 100, prog: ['Dmaj9', 'Gmaj9', 'Bm7', 'A6'], lead: 'guitar', kit: 'bounce', swing: .16, cut: 8000, dust: .25, comp: 'arp' },
-  noel:        { bpm: 100, prog: ['Cmaj9', 'Fmaj9', 'Dm9', 'G6'], lead: 'musicbox', kit: 'brushes', swing: .2, cut: 8000, dust: .3, comp: 'arp' },
-  protege:     { bpm: 94, prog: ['Ebmaj9', 'Abmaj9', 'Cm7', 'Bb6'], lead: 'vibes', kit: 'brushes', swing: .2, cut: 7400, dust: .3, comp: 'arp' },
-  contrefacon: { bpm: 96, prog: ['Gmaj9', 'Em9', 'Cmaj9', 'D6'], lead: 'guitar', kit: 'boombap', swing: .2, cut: 7200, dust: .35, comp: 'sparse' },
-  records:     { bpm: 102, prog: ['Fmaj9', 'C6', 'Dm9', 'Bbmaj9'], lead: 'rhodes', kit: 'bounce', swing: .16, cut: 8200, dust: .25, comp: 'sparse' },
-  beta14:      { bpm: 100, prog: ['Ebmaj9', 'Abmaj9', 'Cm7', 'Bb6'], lead: 'vibes', kit: 'bounce', swing: .16, cut: 8000, dust: .25, comp: 'arp' },
-  beta6:       { bpm: 96, prog: ['Bbmaj9', 'Ebmaj9', 'Gm9', 'F6'], lead: 'guitar', kit: 'boombap', swing: .18, cut: 7600, dust: .3, comp: 'arp' },
-  beta3:       { bpm: 104, prog: ['Amadd9', 'Fmaj9', 'C6', 'G6'], lead: 'chip', kit: 'bounce', swing: .14, cut: 8200, dust: .25, comp: 'sparse' },
-  betajour:    { bpm: 104, prog: ['Fmaj9', 'Bbmaj9', 'Dm9', 'C6'], lead: 'rhodes', kit: 'bounce', swing: .16, cut: 8400, dust: .25, comp: 'arp' },
-  nouvelan:    { bpm: 102, prog: ['Gmaj9', 'Cmaj9', 'Em7', 'D6'], lead: 'vibes', kit: 'bounce', swing: .16, cut: 8200, dust: .25, comp: 'arp' },
+  lancement:   { bpm: 98, prog: ['Fmaj9', 'G6', 'Em7', 'Am9'], lead: 'rhodes', kit: 'bounce', swing: .18, cut: 7800, dust: .3, comp: 'arp', dense: true },
+  combattant:  { bpm: 88, prog: ['Cmaj9', 'A7b9', 'Dm9', 'G13'], lead: 'chip', kit: 'boombap', swing: .18, cut: 5600, dust: .5, comp: 'sparse' },
+  lorcana:     { bpm: 76, prog: ['Dmaj9', 'Bm9', 'Gmaj9', 'A13'], lead: 'musicbox', kit: 'brushes', swing: .2, cut: 4800, dust: .7, comp: 'hold' },
+  etat:        { bpm: 80, prog: ['Ebmaj9', 'Cm9', 'Fm9', 'Bb13'], lead: 'felt', kit: 'boombap', swing: .24, cut: 4600, dust: .7, comp: 'arp' },
+  blackfriday: { bpm: 86, prog: ['Am9', 'D9', 'Gmaj9', 'Cmaj9'], lead: 'guitar', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'sparse' },
+  dracaufeu:   { bpm: 78, prog: ['Em9', 'Cmaj9', 'Am9', 'B7b9'], lead: 'rhodes', kit: 'halftime', swing: .2, cut: 4800, dust: .6, comp: 'hold' },
+  tigre:       { bpm: 72, prog: ['Amadd9', 'Fmaj9', 'Dm9', 'E7b9'], lead: 'guitar', kit: 'brushes', swing: .26, cut: 4400, dust: .8, comp: 'arp' },
+  halloween:   { bpm: 74, prog: ['Am9', 'Fmaj7', 'Dm9', 'E7b9'], lead: 'musicbox', kit: 'halftime', swing: .22, cut: 4000, dust: 1, comp: 'hold' },
+  sortie:      { bpm: 86, prog: ['Cmaj9', 'Em9', 'Fmaj9', 'G13'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5800, dust: .5, comp: 'arp' },
+  erreurs:     { bpm: 82, prog: ['Fmaj9', 'Dm9', 'Bbmaj9', 'C13'], lead: 'felt', kit: 'boombap', swing: .22, cut: 5000, dust: .7, comp: 'sparse' },
+  lexique:     { bpm: 78, prog: ['Gmaj9', 'Em9', 'Am9', 'D13'], lead: 'rhodes', kit: 'brushes', swing: .24, cut: 5000, dust: .6, comp: 'hold' },
+  echange:     { bpm: 84, prog: ['Dmaj9', 'F#m9', 'Bm9', 'A13'], lead: 'guitar', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'arp' },
+  noel:        { bpm: 80, prog: ['Cmaj9', 'Am9', 'Dm9', 'G13'], lead: 'vibes', kit: 'brushes', swing: .2, cut: 5200, dust: .8, comp: 'hold' },
+  protege:     { bpm: 76, prog: ['Ebmaj9', 'Gm9', 'Abmaj9', 'Bb69'], lead: 'felt', kit: 'brushes', swing: .24, cut: 4600, dust: .7, comp: 'arp' },
+  contrefacon: { bpm: 80, prog: ['Gm9', 'Ebmaj9', 'Cm9', 'D7b9'], lead: 'guitar', kit: 'halftime', swing: .22, cut: 4400, dust: .8, comp: 'hold' },
+  records:     { bpm: 86, prog: ['Fmaj9', 'Dm9', 'Gm9', 'C13'], lead: 'rhodes', kit: 'boombap', swing: .2, cut: 5600, dust: .5, comp: 'sparse' },
+  beta14:      { bpm: 82, prog: ['Ebmaj9', 'Fm9', 'Gm9', 'Abmaj9'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'arp' },
+  beta6:       { bpm: 78, prog: ['Bbmaj9', 'Gm9', 'Cm9', 'F13'], lead: 'felt', kit: 'brushes', swing: .24, cut: 5000, dust: .6, comp: 'hold' },
+  beta3:       { bpm: 80, prog: ['Am9', 'Gmaj9', 'Fmaj9', 'E7b9'], lead: 'guitar', kit: 'halftime', swing: .22, cut: 4800, dust: .6, comp: 'sparse' },
+  betajour:    { bpm: 86, prog: ['Fmaj9', 'Gm9', 'Am9', 'Bbmaj9'], lead: 'rhodes', kit: 'boombap', swing: .2, cut: 5800, dust: .5, comp: 'arp' },
+  nouvelan:    { bpm: 82, prog: ['Gmaj9', 'Bm9', 'Cmaj9', 'D13'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5600, dust: .6, comp: 'arp' },
 };
 const S = STYLES[style];
 if (!S) throw new Error(`unknown style ${style}: ${Object.keys(STYLES).join(', ')}`);
@@ -161,9 +161,9 @@ const bars = Math.ceil(DUR / BAR);
 const kickTimes = [];
 const scale = chord(S.prog[0]).minor ? [0, 3, 5, 7, 10] : [0, 2, 4, 7, 9];
 const tonic = chord(S.prog[0]).root;
-// Upbeat (06/10/2026: "un peu plus fun et entraînant, là c'est morose"): about half
-// the eighths carry a note, in the major pentatonic for the bright progressions.
-const phrase = Array.from({ length: 2 }, () => Array.from({ length: 8 }, () => (rnd() > .05 ? null : Math.floor((rnd() + 1) * 3.5))));
+// dense: a livelier lead on about half the eighths, for the upbeat launch track
+// (06/10/2026: "plus fun et entraînant, là c'est morose", about that video only).
+const phrase = Array.from({ length: 2 }, () => Array.from({ length: 8 }, () => (rnd() > (S.dense ? .05 : .35) ? null : Math.floor((rnd() + 1) * 3.5))));
 let prevVoicing = null;
 for (let bar = 0; bar < bars; bar++) {
   const c = chord(S.prog[bar % S.prog.length]);
