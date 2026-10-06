@@ -3,6 +3,8 @@
 //   node rendu.mjs <page.html> images                 every .p element -> sortie/<page>/<id>.png
 //   node rendu.mjs <page.html> plans 0,2.5,7          a video page at those seconds -> sortie/<page>/plans/
 //   node rendu.mjs <page.html> video                  a video page, 30 fps -> sortie/<page>.mp4
+//   node rendu.mjs <page.html>#<entry> ...            a page holding several entries (accroche.html):
+//                                                     the hash picks one, outputs go to sortie/<page>-<entry>
 //
 // Run it from this folder: every page loads fonts/, assets/, shots/ and
 // posts-emblems.js by relative path. A video page exposes window.TOTAL (its
@@ -16,7 +18,8 @@ import path from 'path';
 
 const [file, mode = 'images', times = '0'] = process.argv.slice(2);
 if (!file) throw new Error('usage: node rendu.mjs <page.html> images|plans|video [t1,t2]');
-const name = path.basename(file, '.html');
+const [filePath, entry] = file.split('#');
+const name = path.basename(filePath, '.html') + (entry ? `-${entry}` : '');
 const out = path.join('sortie', name);
 fs.mkdirSync(out, { recursive: true });
 
@@ -26,7 +29,7 @@ const page = await browser.newPage({ viewport: mode === 'images' ? { width: 3240
 const errors = [];
 page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
 page.on('pageerror', (e) => errors.push(String(e)));
-await page.goto(pathToFileURL(path.resolve(file)).href);
+await page.goto(pathToFileURL(path.resolve(filePath)).href + (entry ? `#${entry}` : ''));
 await page.evaluate(() => document.fonts.ready);
 // The 16-bit mockup draws its text then pixelates it once the fonts are in.
 await page.evaluate(() => window.pixelate && window.pixelate());

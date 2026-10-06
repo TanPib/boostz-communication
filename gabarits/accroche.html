@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz accroches</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// The hook of each Reel: 1.5 s spliced in front of the video, so the first
+// frame already shows the strongest image and line (asked on 06/10/2026: the
+// Reels opened on an empty frame with a title rising). Everything is visible
+// at t = 0; only a slow punch-in moves. The settled last frame is the cover.
+// The main content stays inside the 3:4 band (y 240-1680) that the Instagram
+// grid keeps. Render one entry with: node rendu.mjs accroche.html#<entry> video
+const HOOK = 1.5;
+const big = (top, html, size = 124) => `<div class="abs h pop" style="left:70px;right:70px;top:${top}px;font-size:${size}px;text-align:center">${html}</div>`;
+const kick = (text, color = VSOFT) => `<div class="abs lab" style="left:0;top:290px;width:1080px;text-align:center;font-size:28px;letter-spacing:8px;color:${color}">${text}</div>`;
+const price = (x, y, w, text, fill, r, size = 92) => st(x, y, w, 170, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:${size}px;color:${DARK};white-space:nowrap">${text}</div>`, { fill, r, z: 8, attrs: 'data-pop="1.12"' });
+const mark = `<div class="abs" style="left:0;top:1560px;width:1080px;display:flex;justify-content:center">${wordmark(64)}</div>`;
+const discs = (games, y, d, gap) => `<div class="abs pop" style="left:0;top:${y}px;width:1080px;display:flex;flex-wrap:wrap;justify-content:center;gap:${gap}px;padding:0 60px">${games.map((g) => emblemDisc(g, d)).join('')}</div>`;
+
+const HOOKS = {
+  'lancement': `${kick('NOUVELLE APPLI · LES 8 TCG')}${big(360, 'Ta collection TCG,<br><span class="acc">au même endroit.</span>', 112)}
+    <div class="abs pop" style="left:390px;top:700px;width:300px;height:300px;border-radius:66px;overflow:hidden;border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW}"><img src="assets/icone-app.png" style="width:100%;height:100%;display:block"></div>
+    ${discs(ALL8, 1110, 96, 18)}${mark}`,
+  'combattant': `${kick('CHOISIS TON COMBATTANT')}${big(360, 'Tu ne peux en<br><span class="acc">garder qu’un.</span>')}
+    ${discs(ALL8, 780, 190, 34)}${mark}`,
+  'halloween': `${kick('HALLOWEEN', '#F0899A')}${big(360, 'Elles font peur…<br><span class="acc">à ton portefeuille.</span>', 104)}
+    ${card('assets/carte-valgavoth-dsk-407.jpg', 120, 720, 330, -9, 3, { attrs: 'data-pop="1.08"' })}
+    ${card('assets/carte-malefique-p1-5.avif', 630, 720, 330, 9, 3, { attrs: 'data-pop="1.08"' })}
+    ${card('assets/carte-ectoplasma-vmax-swsh8-271.jpg', 365, 680, 350, 0, 4, { attrs: 'data-pop="1.06"' })}
+    ${price(290, 1290, 500, 'jusqu’à 840 $', SUN, -3, 80)}`,
+  'chance': `${kick('LORCANA', GAMES.lorcana[1])}${big(350, '1 chance<br><span class="acc">sur 96.</span>', 140)}
+    <div class="abs ui pop" style="left:0;top:660px;width:1080px;text-align:center;font-size:42px;color:#C9C3D6">d’avoir une carte enchantée</div>
+    ${card('assets/carte-elsa-enchantee-tfc-207.avif', 360, 760, 360, -4, 3, { attrs: 'data-pop="1.07"' })}
+    ${price(210, 1310, 660, '575 € de boosters', GAMES.lorcana[1], 3, 72)}`,
+  'etat': `${kick('ESTIME L’ÉTAT DE TES CARTES')}${big(360, 'PSA 10<br><span class="acc">ou pas ?</span>', 140)}
+    ${card('assets/record-black-lotus.jpg', 330, 700, 420, -4, 3, { attrs: 'data-pop="1.07"', pos: 'center 30%' })}
+    ${price(200, 1300, 680, 'Demande à Boostz', DONE, 3, 64)}`,
+  'blackfriday': `${kick('BLACK FRIDAY', PINK)}${big(360, '−30 %…<br><span class="acc">vraiment ?</span>', 150)}
+    ${st(190, 800, 700, 300, `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:${DARK}"><div class="h" style="font-size:130px">−30 %</div><div class="ui" style="font-size:52px"><s style="opacity:.55">199 €</s> → 139 €</div></div>`, { fill: PINK, r: -4, z: 5, attrs: 'data-pop="1.1"' })}
+    ${price(240, 1160, 600, 'Cote : 129 €', DONE, 3, 76)}
+    <div class="abs mut" style="left:0;top:1400px;width:1080px;text-align:center;font-weight:600;font-size:30px">Exemple · prix fictifs</div>`,
+  'glorious': `${kick('YU-GI-OH! · GLORIOUS VICTORS', GAMES.yugioh[1])}${big(360, 'Sort<br><span class="acc">aujourd’hui.</span>', 140)}
+    ${card('assets/sortie-glorious-victors.webp', 140, 720, 800, -3, 3, { h: 560, attrs: 'data-pop="1.06"' })}
+    ${price(300, 1240, 480, '60 cartes', GAMES.yugioh[1], 3, 80)}`,
+  'erreurs': `${kick('ERREUR D’IMPRESSION')}${big(360, 'Une erreur d’usine<br><span class="acc">à 216 000 $.</span>', 104)}
+    ${card('assets/erreur-tortank-dos-magic-cgc65.jpg', 350, 640, 380, -4, 3, { h: 640, attrs: 'data-pop="1.07"' })}
+    ${price(260, 1290, 560, '216 000 $', SUN, 3, 104)}`,
+  'echange': `${kick('L’ÉCHANGE SUR BOOSTZ')}${big(360, 'Cet échange<br><span class="acc">est-il juste ?</span>', 120)}
+    ${card('assets/carte-dracaufeu-ex-sv035-199.jpg', 90, 760, 300, -8, 3, { attrs: 'data-pop="1.08"' })}
+    ${card('assets/carte-givrali-ex-sv085-150.jpg', 250, 840, 300, 5, 4, { attrs: 'data-pop="1.08"' })}
+    <div class="abs h pop" style="left:560px;top:920px;font-size:110px;color:${VSOFT}">⇄</div>
+    ${card('assets/carte-ectoplasma-vmax-swsh8-271.jpg', 690, 760, 320, 6, 3, { attrs: 'data-pop="1.08"' })}
+    ${price(300, 1300, 480, '+299,74 €', DONE, -3, 96)}`,
+  'noel': `${kick('NOËL', '#F0899A')}${big(360, 'Sous le sapin,<br><span class="acc">dès 2,92 €.</span>', 124)}
+    ${card('assets/carte-cadoizo-me01-152.jpg', 340, 640, 400, -4, 3, { attrs: 'data-pop="1.07"' })}
+    ${price(300, 1260, 480, '2,92 €', SUN, 3, 110)}`,
+  'contrefacon': `${kick('REPÈRE LA CONTREFAÇON', PINK)}${big(360, 'Cette carte<br><span class="acc">est fausse.</span>', 130)}
+    <div class="abs pop" data-pop="1.07" style="left:290px;top:680px;width:500px;height:654px;border:8px solid ${INK};border-radius:24px;overflow:hidden;box-shadow:16px 16px 0 ${SHADOW};transform:rotate(-3deg)"><img src="assets/faux-arcanin-pv.webp" style="width:100%;height:100%;display:block">
+      <div class="abs" style="left:63%;top:1%;width:34%;height:8%;border:7px solid ${SUN};border-radius:999px;box-shadow:0 0 0 4px ${INK}"></div></div>
+    ${price(190, 1290, 700, '13 000 PV ?!', SUN, 3, 104)}`,
+  'bonneannee': `${kick('BONNE ANNÉE')}<div class="abs h pop" style="left:0;top:380px;width:1080px;text-align:center;font-size:330px;line-height:1"><span class="grad">2027</span></div>
+    ${big(760, 'Les 8 TCG,<br><span class="acc">au même endroit.</span>', 104)}
+    ${discs(ALL8, 1100, 96, 18)}${mark}`,
+};
+
+const key = location.hash.slice(1);
+document.body.innerHTML = `<div class="reel" id="stage">${ghosts([[60, 120, 90, -8], [930, 140, 80, 6], [60, 1700, 90, 10], [920, 1720, 100, -6]])}
+  ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}${HOOKS[key] || HOOKS.erreurs}</div>`;
+window.TOTAL = HOOK;
+const pops = [...document.querySelectorAll('.pop, [data-pop]')].map((el) => [el, el.style.transform || '', +(el.dataset.pop || 1.05)]);
+const gs = [...document.querySelectorAll('.ghost')];
+window.render = (t) => {
+  // A punch-in: every element starts slightly larger and settles; nothing appears from nothing.
+  const p = out3(t / 1.2);
+  for (const [el, base, from] of pops) el.style.transform = `${base} scale(${from - (from - 1) * p})`;
+  gs.forEach((g, i) => { g.style.transform = `translateX(${t * (5 + i)}px) rotate(${+g.dataset.r}deg)`; });
+  const dr = document.getElementById('drawRect'); if (dr) dr.setAttribute('width', 1100);
+};
+window.render(0);
+</script></body></html>
