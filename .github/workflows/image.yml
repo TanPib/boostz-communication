@@ -36,11 +36,17 @@ jobs:
           r = get(url)
           kind = r.headers.get('Content-Type', '')
           data = r.read()
-          if 'json' in kind:  # a MediaWiki pageimages answer: take the original image
-              m = re.search(r'"source":\s*"([^"]+)"', data.decode())
-              assert m, 'no image source in the JSON answer'
-              print('source', m.group(1))
-              r = get(m.group(1).replace('\\/', '/')); kind = r.headers.get('Content-Type', ''); data = r.read()
+          if 'json' in kind:  # a MediaWiki pageimages answer, or a card API: take its image
+              text = data.decode().replace('\\/', '/')
+              m = re.search(r'"source":\s*"([^"]+)"', text)
+              src = m and m.group(1)
+              if not src:  # a card API (Lorcast, Scryfall...): the first image URL matching motif
+                  urls = re.findall(r'"(https://[^"]+\.(?:jpg|jpeg|png|webp|avif)[^"]*)"', text)
+                  print('image URLs in the answer:', urls)
+                  src = next((u for u in urls if os.environ.get('MOTIF', '').lower() in u.lower()), None)
+              assert src, 'no image in the JSON answer'
+              print('source', src)
+              r = get(src); kind = r.headers.get('Content-Type', ''); data = r.read()
           elif kind.startswith('text/html'):
               html = data.decode('utf-8', 'replace')
               m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)', html) or re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image', html)
@@ -53,7 +59,7 @@ jobs:
               src = urllib.parse.urljoin(url, src.replace('&amp;', '&'))
               print('image', src)
               r = get(src); kind = r.headers.get('Content-Type', ''); data = r.read()
-          ext = {'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif'}.get(kind.split(';')[0], 'jpg')
+          ext = {'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif', 'image/avif': 'avif'}.get(kind.split(';')[0], 'jpg')
           path = f'gabarits/assets/{nom}.{ext}'
           open(path, 'wb').write(data)
           print(path, len(data), 'bytes', kind)
