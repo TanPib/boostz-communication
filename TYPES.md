@@ -131,8 +131,8 @@ Des conseils concrets en stickers : sleeves, toploaders, classeurs sans PVC, hum
 - **Données :** aucune ; les recommandations viennent des guides des fabricants ou des services de gradation, cités.
 
 ### 19 · Repère la contrefaçon
-Les signes connus d'une fausse carte, un par plan ou par slide : la police, le dos, l'épaisseur, le test de la lumière, la brillance. Toujours avec la vraie carte en face. Choisi le 06/10/2026.
-- **Données :** les signes viennent de guides officiels ou communautaires, cités ; jamais une fausse carte présentée comme vraie.
+Les signes connus d'une fausse carte, un par plan ou par slide, chacun montré sur la photo d'une vraie contrefaçon : un cercle sur l'endroit à regarder et un zoom dessus (le dos comparé à un vrai, les fautes, les chiffres, les symboles, l'accent). Un signe qu'aucune photo ne montre (lumière, tranche, relief) va dans la légende, pas à l'écran. Choisi le 06/10/2026, refait le même jour à la demande de l'utilisateur.
+- **Données :** les signes et les photos viennent de guides cités (JustInBasil pour les photos) ; jamais une fausse carte présentée comme vraie.
 
 ### 20 · Erreurs d'impression
 Des cartes mal imprimées (cadre décalé, texte manquant, mauvais dos, double impression) qui se sont vendues une fortune, une par plan, avec sa vente. Choisi le 06/10/2026.

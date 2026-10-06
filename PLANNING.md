@@ -75,7 +75,7 @@ Trois principes, demandés par l'utilisateur :
 | 22 | ven. 18/12, 10 h | carrousel | 15 Sortie d'extension | FB12 Reach the God sort aujourd'hui | Dragon Ball | ✅ programmé |
 | 23 | lun. 21/12, 10 h | Reel | 16 Thème | Noël : une carte sous le sapin pour chaque budget, et sa cote | Pokémon, Lorcana | ✅ programmé (cotes du 03 et du 05/10, à rafraîchir) |
 | 24 | jeu. 24/12, 10 h | carrousel | 18 Protège ta collection | Tes cartes de Noël : pochettes, étuis, classeurs, rangement, envoi | les 8 | ✅ programmé |
-| 25 | dim. 27/12, 10 h | Reel | 19 Repère la contrefaçon | Tes cartes de Noël sont-elles vraies ? 5 signes, vraie carte en face | Pokémon | ✅ programmé |
+| 25 | dim. 27/12, 10 h | Reel | 19 Repère la contrefaçon | Tes cartes de Noël sont-elles vraies ? 5 signes montrés sur de vraies contrefaçons | Pokémon | ✅ programmé |
 | 26 | mer. 30/12, 10 h | carrousel | 16 Thème | 2026, l'année des records : 5 ventes sourcées | Pokémon, Magic, One Piece | ✅ programmé (ventes jusqu'au 06/10, à compléter) |
 | 27 | ven. 01/01/2027, 10 h | Reel | 16 Thème | Bonne année 2027 : les 8 TCG au même endroit | les 8 | ✅ programmé |
 
