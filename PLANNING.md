@@ -1,4 +1,6 @@
-# Planning du 16 octobre au 30 décembre 2026
+# Planning du 16 octobre 2026 au 29 janvier 2027
+
+**Sortie de l'appli : jeudi 14 janvier 2027** (décidé le 06/10/2026). Le 01/01 l'annonce, janvier est construit autour.
 
 Un post tous les 3 jours, sans interruption, depuis le premier post (16/10) : avant la sortie de l'appli comme après (demandé le 05/10/2026). 26 posts jusqu'au 30/12, publiés le même jour sur Instagram, TikTok et Facebook, avec leur story. Le rythme continue en janvier : le planning du mois suivant s'écrit avant la fin du mois en cours. Validé le 05/10/2026 ; Claude produit et programme sans redemander. Le style visuel est partout celui des stickers de l'onboarding.
 
@@ -82,12 +84,36 @@ Trois principes, demandés par l'utilisateur :
 - **Programmé le 06/10/2026** : tous les posts qui ne dépendent pas d'un relevé futur sont dans Metricool (Instagram, TikTok, Facebook, story vidéo). Les 7 posts « Cotes qui bougent », Hyperia City, OP18/Icons et « Tu préfères ? » sont des brouillons Instagram (image « Ne pas publier », publication automatique coupée) : le rappel de leur date les produit, puis transforme le brouillon en vrai post (`updateScheduledPost` : Metricool ne permet pas de supprimer un post par l'API) et crée TikTok, Facebook et la story.
 - **Bonne année (01/01)** : le seul écart de 2 jours du rythme. Janvier reprend le 04/01, puis tous les 3 jours.
 - **Cotes datées d'octobre** sur Halloween, l'échange et Noël : le rappel qui précède chacun les rafraîchit et remplace la vidéo si un chiffre a bougé.
-- **Sortie de l'appli** : le jour où sa date est connue, un post « Annonce » (type 11) prend la place du post sans date le plus proche (19, 20, 21, 24, 25 ou 26), qui glisse en janvier.
+- **Sortie de l'appli** : fixée au jeu. 14/01/2027 (06/10/2026). La légende de la bonne année (01/01) l'annonce ; le reste du dispositif est en janvier.
 - **Dates à reconfirmer une semaine avant** : Yu-Gi-Oh! Glorious Victors le 04/12 ([tcgalerts](https://www.tcgalerts.net/yugioh/calendar/), [vintageccg](https://www.vintageccg.com/ccg-news/tcg-release-schedule-2026-2027/)), Dragon Ball FB12 le 18/12. Un set spécial Pokémon est attendu en décembre sans date ([Beckett](https://www.beckett.com/news/2026-tcg-release-dates-checklists-and-set-information/)) : s'il sort, il prend la place du n° 21, qui glisse en janvier.
 - **Les 4 nouveaux types** choisis le 06/10/2026 (17 Lexique, 18 Protège ta collection, 19 Contrefaçon, 20 Erreurs d'impression) prennent les places sans date du 09, du 12, du 24 et du 27/12. La contrefaçon et la protection tombent juste après Noël, quand on vient de recevoir des cartes.
 - **Reportés en janvier** : 1 chance sur N (One Piece), Même carte trois langues (Pokémon), Classeur panoramique (Star Wars Unlimited), Pub Boostz.
 - **Types sur décembre** : 9 différents. Star Wars Unlimited n'a plus de post dédié en décembre (seulement le n° 23) : le classeur panoramique SWU ouvre janvier.
 
+
+## Janvier 2027 (posts 28 à 37) : le lancement
+
+Écrit le 06/10/2026 autour de la sortie de l'appli le **jeudi 14/01**. Un post tous les 3 jours ; deux écarts de 2 jours (10 → 12 → 14) pour resserrer le compte à rebours, jamais plus de 3 jours sans post. Reel et carrousel alternent.
+
+| N° | Date | Format | Type (`TYPES.md`) | Sujet | Jeu | État |
+| --- | --- | --- | --- | --- | --- | --- |
+| 28 | lun. 04/01, 10 h | Reel | 3 1 chance sur N | La chase d'un set récent : N boosters, le coût de la chasse, la carte seule | One Piece | à produire (rappel du 22/12) |
+| 29 | jeu. 07/01, 10 h | carrousel | 7 Classeur panoramique | Une page de classeur qui se suit sur 3 slides | Star Wars Unlimited | à produire (rappel du 22/12) |
+| 30 | dim. 10/01, 10 h | Reel | 11 Annonce | « Dans 4 jours. » Compte à rebours, la date, ce qui arrive | les 8 | à produire (rappel du 05/01) |
+| 31 | mar. 12/01, 10 h | carrousel | 9 Pub Boostz | « Jeudi, tu pourras… » : collection, cote, état, échange, sur de vraies captures de l'appli | Yu-Gi-Oh!, Lorcana, Warcraft | à produire (rappel du 05/01) |
+| 32 | **jeu. 14/01, 10 h** | Reel | 11 Annonce | **Boostz est disponible.** Le Reel de lancement, les liens des stores en story | les 8 | à produire (rappel du 05/01) |
+| 33 | dim. 17/01, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 5 : relevé du 16/01 contre celui du 01/01 | Pokémon | brouillon, rappel du 16/01 |
+| 34 | mer. 20/01, 10 h | Reel | 12 Fonction à la loupe | Tuto : ajoute ta première carte en 10 s, puis regarde sa cote | Dragon Ball | à produire (rappel du 16/01) |
+| 35 | sam. 23/01, 10 h | carrousel | 5 Même carte, trois langues | Une carte en FR, EN et JP, et l'écart de cote | Pokémon | à produire (rappel du 16/01) |
+| 36 | mar. 26/01, 10 h | Reel | 15 Sortie d'extension | Demain : le coffret Saint-Valentin Pokémon (27/01), et Aura Seeker en anglais si sa date est confirmée | Pokémon | à produire (rappel du 16/01) |
+| 37 | ven. 29/01, 10 h | carrousel | 15 Sortie d'extension | Magic Nauctis : avant-premières dès le 29/01, sortie le 05/02 | Magic | à produire (rappel du 16/01) |
+
+- **Avant le lancement (jusqu'au 13/01)**, les posts gardent « Ton compagnon TCG, bientôt sur ton téléphone » et « Abonne-toi pour ne rien manquer ».
+- **À partir du 14/01**, la ligne de fin devient « Ton compagnon TCG, disponible sur ton téléphone » et l'appel « Télécharge Boostz, lien en bio ». Le lien des stores va dans la bio Instagram, TikTok et Facebook le 14/01 au matin (à la main) et dans un rond « Boostz » à la une.
+- **Pub Boostz deux fois en 5 posts** (n° 30 à 32) : exception assumée du lancement ; la règle « une pub au plus tous les cinq posts » reprend après.
+- **Il faudra** : les liens App Store et Google Play, et les captures de la version publiée (pour le n° 31 et le n° 32).
+- **Pokémon** : 3 posts sur 10. Lorcana (Into the Inkdark, attendu au 1er trimestre sans date), Yu-Gi-Oh! et Warcraft passent par la pub du 12/01 ; un post dédié dès qu'une date tombe.
+- **Sources** : coffret Saint-Valentin Pokémon le 27/01/2027 et Aura Seeker anglais non confirmé ([Game Rant](https://gamerant.com/pokemon-tcg-valentines-day-box-release-date/), [Screen Rant](https://screenrant.com/pokemon-tcg-valentines-day-set-2027/)) ; Magic Nauctis, avant-premières le 29/01, sortie le 05/02 ([MTG Rocks](https://mtgrocks.com/mtg-rotation/), [TheGamer](https://www.thegamer.com/magic-the-gathering-2027-release-schedule/)) ; One Piece OP-19 annoncé par des revendeurs le 05/03, pas confirmé ([Samurai Sword Tokyo](https://samuraiswordtokyo.com/blogs/news/one-piece-card-game-release-schedule-2026-2027)). Relevé le 06/10/2026, à reconfirmer.
 
 ## Le contenu, post par post
 
