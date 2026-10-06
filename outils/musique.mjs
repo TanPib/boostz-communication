@@ -34,7 +34,7 @@ const chord = (name) => { const [, r, q] = name.match(/^([A-G][b#]?)(.*)$/); if 
 // chord, a few notes spread over the bar) or sparse (a long chord every other bar).
 // swing: how late the off-beat 16ths fall. cut: master low-pass (Hz). dust: crackle and hiss.
 const STYLES = {
-  lancement:   { bpm: 98, prog: ['Fmaj9', 'G6', 'Em7', 'Am9'], lead: 'rhodes', kit: 'bounce', swing: .18, cut: 7800, dust: .3, comp: 'arp', dense: true },
+  lancement:   { bpm: 100, prog: ['Cadd9', 'G', 'Am7', 'Fmaj7'], lead: 'vibes', kit: 'bounce', swing: .12, cut: 12000, dust: 0, comp: 'arp', dense: true, clean: true },
   combattant:  { bpm: 88, prog: ['Cmaj9', 'A7b9', 'Dm9', 'G13'], lead: 'chip', kit: 'boombap', swing: .18, cut: 5600, dust: .5, comp: 'sparse' },
   lorcana:     { bpm: 76, prog: ['Dmaj9', 'Bm9', 'Gmaj9', 'A13'], lead: 'musicbox', kit: 'brushes', swing: .2, cut: 4800, dust: .7, comp: 'hold' },
   etat:        { bpm: 80, prog: ['Ebmaj9', 'Cm9', 'Fm9', 'Bb13'], lead: 'felt', kit: 'boombap', swing: .24, cut: 4600, dust: .7, comp: 'arp' },
@@ -197,7 +197,9 @@ for (let bar = 0; bar < bars; bar++) {
   if (bar > 0 && bar < bars - 1) {
     const p = phrase[bar % 2], lead = LEAD[S.lead];
     p.forEach((deg, k) => { if (deg == null || (bar % 4 === 3 && k > 4)) return;
-      const n = 72 + tonic + scale[(deg + (bar % 4 === 2 ? 1 : 0)) % 5] - (tonic > 5 ? 12 : 0);
+      const n = S.clean // a clean track sings its chord's own notes, so nothing ever clashes
+        ? 72 + ((c.root + c.tones[(deg + (bar % 4 === 2 ? 1 : 0)) % c.tones.length]) % 12)
+        : 72 + tonic + scale[(deg + (bar % 4 === 2 ? 1 : 0)) % 5] - (tonic > 5 ? 12 : 0);
       add(MUS, step(bar, k * 2) + hum(8), lead(midi(n), BEAT * .8, .1 * (1 + .15 * rnd())), Math.sin(k + bar) * .35); });
   }
   // Drums.
@@ -212,10 +214,10 @@ for (let bar = 0; bar < bars; bar++) {
 }
 
 // Lo-fi treatment. Drums: crushed to 10 bits at a quarter rate, kept below 8 kHz.
-for (const ch of DRM) { lowpass(ch, 7000); let hold = 0; for (let i = 0; i < N; i++) { if (i % 4 === 0) hold = Math.round(ch[i] * 512) / 512; ch[i] = hold; } lowpass(ch, 8000); }
+for (const ch of DRM) if (S.clean) lowpass(ch, 11000); else { lowpass(ch, 7000); let hold = 0; for (let i = 0; i < N; i++) { if (i % 4 === 0) hold = Math.round(ch[i] * 512) / 512; ch[i] = hold; } lowpass(ch, 8000); }
 // Music ducks under each kick, the "breathing" of a sidechained beat.
 const duck = new Float32Array(N).fill(1);
-for (const t of kickTimes) { const i0 = Math.floor(t * SR); for (let i = 0; i < .3 * SR && i0 + i < N; i++) if (i0 + i >= 0) duck[i0 + i] = Math.min(duck[i0 + i], 1 - .32 * Math.exp(-(i / SR) * 9)); }
+for (const t of kickTimes) { const i0 = Math.floor(t * SR); for (let i = 0; i < .3 * SR && i0 + i < N; i++) if (i0 + i >= 0) duck[i0 + i] = Math.min(duck[i0 + i], 1 - (S.clean ? .12 : .32) * Math.exp(-(i / SR) * 9)); }
 const L = new Float32Array(N), R = new Float32Array(N);
 for (let i = 0; i < N; i++) { L[i] = MUS[0][i] * duck[i] + DRM[0][i] * .9; R[i] = MUS[1][i] * duck[i] + DRM[1][i] * .9; }
 
@@ -229,7 +231,7 @@ const reverb = (x, off) => {
   return y;
 };
 const rl = reverb(L, 0), rr = reverb(R, 23);
-for (let i = 0; i < N; i++) { L[i] += rl[i] * .3; R[i] += rr[i] * .3; }
+for (let i = 0; i < N; i++) { L[i] += rl[i] * (S.clean ? .18 : .3); R[i] += rr[i] * (S.clean ? .18 : .3); }
 
 // Tape: wow (slow) and flutter (fast) as a moving delay, then the dark master filter.
 const tape = (x, ph) => {
@@ -238,7 +240,9 @@ const tape = (x, ph) => {
     y[i] = a >= 0 && a + 1 < N ? x[a] * (1 - f) + x[a + 1] * f : 0; }
   lowpass(y, S.cut); return lowpass(y, S.cut * 1.6);
 };
-const TL = tape(L, 0), TR = tape(R, .4);
+// clean: no tape and no vinyl (06/10/2026: the lo-fi wobble made the launch track
+// sound eerie), only a gentle top filter.
+const TL = S.clean ? lowpass(L, S.cut) : tape(L, 0), TR = S.clean ? lowpass(R, S.cut) : tape(R, .4);
 // Vinyl: sparse crackles and a soft hiss, both band-limited and kept well under
 // the music (06/10/2026: the crackle was too loud).
 const crackle = new Float32Array(N), hiss = new Float32Array(N);
