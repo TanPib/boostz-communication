@@ -39,12 +39,26 @@ const st = (x, y, w, h, inner, o = {}) => `<div ${o.id ? `id="${o.id}"` : ''} ${
 const disc = (x, y, d, fill, inner, r = 0, attrs = '') => `<div ${attrs} class="abs" style="left:${x}px;top:${y}px;width:${d}px;height:${d}px;border-radius:50%;background:${fill};border:6px solid ${INK};box-shadow:12px 12px 0 ${SHADOW};display:flex;align-items:center;justify-content:center;transform:rotate(${r}deg);z-index:4">${inner}</div>`;
 const emblemDisc = (game, d) => `<div style="width:${d}px;height:${d}px;border-radius:50%;background:${GAMES[game][1]};border:5px solid ${INK};box-shadow:8px 8px 0 ${SHADOW};display:flex;align-items:center;justify-content:center;flex:none">${emblemSvg(game, DARK, d * .58)}</div>`;
 const ghosts = (list) => list.map(([x, y, w, r]) => `<div class="abs ghost" data-r="${r}" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border:4px solid rgba(255,255,255,.14);border-radius:${w * .16}px;transform:rotate(${r}deg)"><div style="width:60%;height:6px;margin:${w * .1}px auto 0;border-radius:3px;background:rgba(255,255,255,.14)"></div></div>`).join('');
-// Seasonal stickers (asked on 06/10/2026: clear seasonal visuals on Halloween,
-// Christmas, New Year... posts). Noto Color Emoji (OFL) cut out like a sticker:
-// white outline, hard shadow. list: [[emoji, x, y, size, rotation]]. In a Reel they
-// bob in place (no drift, so they stay where they were checked). Place them in
-// empty bands: they never touch text.
-const deco = (list) => list.map(([e, x, y, size, r = 0]) => `<div class="abs deco" data-r="${r}" style="left:${x}px;top:${y}px;font-size:${size}px;line-height:1;font-family:'Noto Color Emoji';transform:rotate(${r}deg);filter:drop-shadow(5px 0 0 ${INK}) drop-shadow(-5px 0 0 ${INK}) drop-shadow(0 5px 0 ${INK}) drop-shadow(0 -5px 0 ${INK}) drop-shadow(10px 10px 0 ${SHADOW});z-index:1">${e}</div>`).join('');
+// Seasonal icons (asked on 06/10/2026: discreet, drawn in our style, one or two
+// per seasonal post at most). Flat fills, the white outline and the hard shadow
+// of the stickers. list: [[name, x, y, size, rotation]]. In a Reel they bob in
+// place. Place them in empty bands: they never touch text.
+const starPts = (cx, cy, R, r, n) => Array.from({ length: n * 2 }, (_, i) => { const a = Math.PI * i / n - Math.PI / 2, d = i % 2 ? r : R; return `${(cx + d * Math.cos(a)).toFixed(1)},${(cy + d * Math.sin(a)).toFixed(1)}`; }).join(' ');
+const ICONS = {
+  citrouille: `<path d="M46 27 L47 11 Q53 7 59 10 L55 27 Z" fill="${DONE}"/><ellipse cx="31" cy="59" rx="21" ry="29" fill="#F58A4E"/><ellipse cx="69" cy="59" rx="21" ry="29" fill="#F58A4E"/><ellipse cx="50" cy="59" rx="21" ry="31" fill="#F58A4E"/>
+    <path d="M35 51 L45 51 L40 41 Z M55 51 L65 51 L60 41 Z M33 63 Q50 82 67 63 Q50 72 33 63 Z" fill="${DARK}" stroke="none"/>`,
+  fantome: `<path d="M22 88 L22 46 Q22 13 50 13 Q78 13 78 46 L78 88 L68 79 L59 88 L50 79 L41 88 L32 79 Z" fill="${VSOFT}"/>
+    <g fill="${DARK}" stroke="none"><ellipse cx="40" cy="45" rx="5" ry="7"/><ellipse cx="60" cy="45" rx="5" ry="7"/><ellipse cx="50" cy="63" rx="5" ry="6"/></g>`,
+  sapin: `<rect x="43" y="78" width="14" height="14" fill="#C0A183"/><path d="M50 18 L76 50 L63 50 L84 80 L16 80 L37 50 L24 50 Z" fill="${DONE}"/>
+    <g stroke="none"><circle cx="42" cy="64" r="4.5" fill="${PINK}"/><circle cx="60" cy="70" r="4.5" fill="${SUN}"/><circle cx="53" cy="44" r="4.5" fill="${BLUE}"/></g>
+    <polygon points="${starPts(50, 15, 12, 5, 5)}" fill="${SUN}"/>`,
+  cadeau: `<rect x="17" y="46" width="66" height="42" rx="4" fill="${PINK}"/><rect x="12" y="33" width="76" height="16" rx="4" fill="${PINK}"/>
+    <rect x="44" y="33" width="12" height="55" fill="${SUN}"/><path d="M50 33 Q30 8 25 25 Q28 34 50 33 Z M50 33 Q70 8 75 25 Q72 34 50 33 Z" fill="${SUN}"/>`,
+  etincelle: `<polygon points="${starPts(44, 56, 36, 10, 4)}" fill="${SUN}"/><polygon points="${starPts(80, 20, 14, 4, 4)}" fill="${BLUE}"/><circle cx="18" cy="20" r="6" fill="${PINK}"/>`,
+  etiquette: `<path d="M8 50 L34 20 L88 20 Q92 20 92 24 L92 76 Q92 80 88 80 L34 80 Z" fill="${PINK}"/><circle cx="30" cy="50" r="6" fill="#131020"/>
+    <text x="64" y="64" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="40" fill="${DARK}" stroke="none">%</text>`,
+};
+const deco = (list) => list.map(([name, x, y, size, r = 0]) => `<svg class="abs deco" data-r="${r}" width="${size}" height="${size}" viewBox="0 0 100 100" style="left:${x}px;top:${y}px;overflow:visible;transform:rotate(${r}deg);filter:drop-shadow(8px 8px 0 ${SHADOW});z-index:1"><g stroke="${INK}" stroke-width="5" stroke-linejoin="round">${ICONS[name]}</g></svg>`).join('');
 // The dashed path runs across the slides of a carousel. On each slide, y puts
 // its centre line in an empty band and amp flattens its waves to fit the band.
 const TRACK = 'M-20 760 C200 700 300 820 540 780 S900 640 1080 700 S1400 860 1620 800 S1980 600 2160 680 S2500 900 2700 820 S3060 640 3240 720 S3600 880 3780 820 S4140 640 4320 700 S4700 860 4900 800 S5300 700 5420 740 S5800 860 6000 800 S6300 680 6500 740 S6900 860 7100 800 S7500 680 7700 740 S8100 860 8300 800 S8700 700 8900 740 S9300 860 9500 800 S9900 680 10100 740 S10500 860 10700 800 S11100 700 11300 740 S11700 860 11900 800';

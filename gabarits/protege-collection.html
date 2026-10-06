@@ -13,7 +13,7 @@ const sleeve = (x, y, w, r, game, layers) => `<div class="abs" style="left:${x}p
   <div class="abs lab" style="left:${w + 70}px;top:${40 + i * 80}px;white-space:nowrap;font-size:24px;color:${color};z-index:9">${label}</div>`).join('')}</div>`;
 const tip = (y, h, text, fill, r = 1) => st(70, y, 940, h, `<div class="ui" style="display:flex;align-items:center;height:100%;padding:0 46px;font-size:36px;line-height:1.3;color:${DARK}">${text}</div>`, { fill, r, z: 3 });
 carousel([
-  ['1-couverture', `${ghosts([[90, 330, 80, -6], [930, 340, 80, 8]])}${deco([['🎄', 70, 150, 120, -8], ['🎁', 890, 150, 110, 8], ['❄️', 60, 620, 80, -10], ['⭐', 940, 660, 80, 12]])}${track(0, 1130, .45)}${head('PROTÈGE TA COLLECTION', 'all')}
+  ['1-couverture', `${ghosts([[90, 330, 80, -6], [930, 340, 80, 8]])}${deco([['sapin', 70, 150, 110, -6], ['cadeau', 890, 155, 100, 8]])}${track(0, 1130, .45)}${head('PROTÈGE TA COLLECTION', 'all')}
     ${back('pokemon', 260, 190, 200, -9, 2)}${back('lorcana', 440, 170, 200, 3, 3)}${back('onepiece', 620, 200, 200, 11, 2)}
     <div class="abs h" style="left:0;top:530px;width:1080px;text-align:center;font-size:110px">Tes cartes<br>de Noël,</div>
     <div class="abs h acc" style="left:0;top:770px;width:1080px;text-align:center;font-size:84px">protège-les.</div>
@@ -46,7 +46,7 @@ carousel([
     ${['Pochette souple', 'Étui rigide', 'Ruban de masquage sur l’ouverture', 'Entre deux cartons', 'Enveloppe à bulles'].map((k, i) => `<div class="abs" style="left:70px;top:${430 + i * 125}px;display:flex;align-items:center;gap:30px">${disc(0, 0, 90, [VSOFT, SUN, DONE, PINK, BLUE][i], `<div class="h" style="font-size:46px;color:${DARK}">${i + 1}</div>`).replace('class="abs" style="left:0px;top:0px;', 'style="position:relative;')}<div class="ui" style="font-size:40px">${k}</div></div>`).join('')}
     <div class="abs mut" style="left:70px;right:70px;top:1060px;font-weight:600;font-size:32px">Jamais de scotch sur la carte : il laisse des traces.</div>
     ${src('Sources : help.cardnexus.com, cardshellz.com (envoi de cartes), relevé le 06/10/2026.')}`],
-  ['7-fin', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8], [110, 1120, 70, 4], [920, 1100, 80, -6]])}${deco([['🎁', 100, 690, 100, -8], ['🎄', 900, 700, 100, 8]])}${track(6, 1200, .6)}${head('PROTÈGE TA COLLECTION', 'all')}
+  ['7-fin', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8], [110, 1120, 70, 4], [920, 1100, 80, -6]])}${track(6, 1200, .6)}${head('PROTÈGE TA COLLECTION', 'all')}
     <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Et sur Boostz,<br><span class="acc">suis leur valeur.</span></div>
     ${back('pokemon', 330, 470, 180, -8, 2)}${back('lorcana', 560, 470, 180, 7, 2)}
     ${closing(800)}`],

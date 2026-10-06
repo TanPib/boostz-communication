@@ -22,7 +22,7 @@ const HOOKS = {
     ${discs(ALL8, 1110, 96, 18)}${mark}`,
   'combattant': `${kick('CHOISIS TON COMBATTANT')}${big(360, 'Tu ne peux en<br><span class="acc">garder qu’un.</span>')}
     ${discs(ALL8, 780, 190, 34)}${mark}`,
-  'halloween': `${deco([['🎃', 110, 110, 130, -8], ['👻', 840, 100, 130, 10], ['🦇', 50, 1480, 100, -12], ['🦇', 930, 1500, 90, 12]])}${kick('HALLOWEEN', '#F0899A')}${big(360, 'Elles font peur…<br><span class="acc">à ton portefeuille.</span>', 104)}
+  'halloween': `${deco([['citrouille', 200, 110, 120, -8], ['fantome', 765, 105, 115, 8]])}${kick('HALLOWEEN', '#F0899A')}${big(360, 'Elles font peur…<br><span class="acc">à ton portefeuille.</span>', 104)}
     ${card('assets/carte-valgavoth-dsk-407.jpg', 120, 720, 330, -9, 3, { attrs: 'data-pop="1.08"' })}
     ${card('assets/carte-malefique-p1-5.avif', 630, 720, 330, 9, 3, { attrs: 'data-pop="1.08"' })}
     ${card('assets/carte-ectoplasma-vmax-swsh8-271.jpg', 365, 680, 350, 0, 4, { attrs: 'data-pop="1.06"' })}
@@ -34,7 +34,7 @@ const HOOKS = {
   'etat': `${kick('ESTIME L’ÉTAT DE TES CARTES')}${big(360, 'PSA 10<br><span class="acc">ou pas ?</span>', 140)}
     ${card('assets/record-black-lotus.jpg', 330, 700, 420, -4, 3, { attrs: 'data-pop="1.07"', pos: 'center 30%' })}
     ${price(200, 1300, 680, 'Demande à Boostz', DONE, 3, 64)}`,
-  'blackfriday': `${deco([['🛍️', 100, 110, 120, -8], ['🏷️', 860, 110, 120, 10]])}${kick('BLACK FRIDAY', PINK)}${big(360, '−30 %…<br><span class="acc">vraiment ?</span>', 150)}
+  'blackfriday': `${deco([['etiquette', 760, 110, 120, 10]])}${kick('BLACK FRIDAY', PINK)}${big(360, '−30 %…<br><span class="acc">vraiment ?</span>', 150)}
     ${st(190, 800, 700, 300, `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:${DARK}"><div class="h" style="font-size:130px">−30 %</div><div class="ui" style="font-size:52px"><s style="opacity:.55">199 €</s> → 139 €</div></div>`, { fill: PINK, r: -4, z: 5, attrs: 'data-pop="1.1"' })}
     ${price(240, 1160, 600, 'Cote : 129 €', DONE, 3, 76)}
     <div class="abs mut" style="left:0;top:1400px;width:1080px;text-align:center;font-weight:600;font-size:30px">Exemple · prix fictifs</div>`,
@@ -50,14 +50,14 @@ const HOOKS = {
     <div class="abs h pop" style="left:560px;top:920px;font-size:110px;color:${VSOFT}">⇄</div>
     ${card('assets/carte-ectoplasma-vmax-swsh8-271.jpg', 690, 760, 320, 6, 3, { attrs: 'data-pop="1.08"' })}
     ${price(300, 1300, 480, '+299,74 €', DONE, -3, 96)}`,
-  'noel': `${deco([['🎄', 110, 100, 130, -6], ['🎁', 840, 120, 120, 8], ['❄️', 90, 820, 90, -10], ['⭐', 900, 880, 90, 12], ['⛄', 60, 1470, 100, -6], ['🎁', 930, 1480, 90, 8]])}${kick('NOËL', '#F0899A')}${big(360, 'Sous le sapin,<br><span class="acc">dès 2,92 €.</span>', 124)}
+  'noel': `${deco([['sapin', 200, 100, 120, -6], ['cadeau', 770, 115, 110, 8]])}${kick('NOËL', '#F0899A')}${big(360, 'Sous le sapin,<br><span class="acc">dès 2,92 €.</span>', 124)}
     ${card('assets/carte-cadoizo-me01-152.jpg', 340, 640, 400, -4, 3, { attrs: 'data-pop="1.07"' })}
     ${price(300, 1260, 480, '2,92 €', SUN, 3, 110)}`,
-  'contrefacon': `${deco([['🎄', 100, 110, 110, -6], ['🎁', 860, 120, 110, 8]])}${kick('REPÈRE LA CONTREFAÇON', PINK)}${big(360, 'Cette carte<br><span class="acc">est fausse.</span>', 130)}
+  'contrefacon': `${kick('REPÈRE LA CONTREFAÇON', PINK)}${big(360, 'Cette carte<br><span class="acc">est fausse.</span>', 130)}
     <div class="abs pop" data-pop="1.07" style="left:290px;top:680px;width:500px;height:654px;border:8px solid ${INK};border-radius:24px;overflow:hidden;box-shadow:16px 16px 0 ${SHADOW};transform:rotate(-3deg)"><img src="assets/faux-arcanin-pv.webp" style="width:100%;height:100%;display:block">
       <div class="abs" style="left:63%;top:1%;width:34%;height:8%;border:7px solid ${SUN};border-radius:999px;box-shadow:0 0 0 4px ${INK}"></div></div>
     ${price(190, 1290, 700, '13 000 PV ?!', SUN, 3, 104)}`,
-  'bonneannee': `${deco([['🎆', 100, 100, 130, -8], ['🎉', 840, 100, 130, 10], ['🥂', 60, 1460, 110, -8], ['✨', 920, 1470, 100, 10]])}${kick('BONNE ANNÉE')}<div class="abs h pop" style="left:0;top:380px;width:1080px;text-align:center;font-size:330px;line-height:1"><span class="grad">2027</span></div>
+  'bonneannee': `${deco([['etincelle', 760, 100, 130, 0]])}${kick('BONNE ANNÉE')}<div class="abs h pop" style="left:0;top:380px;width:1080px;text-align:center;font-size:330px;line-height:1"><span class="grad">2027</span></div>
     ${big(760, 'Les 8 TCG,<br><span class="acc">au même endroit.</span>', 104)}
     ${discs(ALL8, 1100, 96, 18)}${mark}`,
 };
