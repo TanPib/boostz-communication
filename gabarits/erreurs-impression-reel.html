@@ -4,7 +4,7 @@
 <script src="posts-emblems.js"></script><script src="stickers.js"></script>
 </head><body><script>
 // Erreurs d'impression: three misprints and what they sold for. The errors are
-// drawn (card backs from the app, a black "Discard" card), not photographed.
+// photographed: the real cards, as their sellers and the press showed them.
 // Sales searched on 06/10/2026:
 // - Growlithe (Caninos) German Base Set with a Magic back, CGC 8: 26,400 $,
 //   Heritage Auctions, 05/04/2021 (CGC); 10 Magic-back Pokémon cards are known.
@@ -16,9 +16,9 @@ const discard = (x, y, w, r, attrs) => `<div ${attrs} class="abs" style="left:${
   <div style="position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,79,160,.25) 42%,rgba(58,169,255,.25) 52%,rgba(95,211,163,.2) 60%,transparent 72%)"></div>
   <div style="font-family:Sora;font-weight:600;font-size:${w * .13}px;color:#E9E4F5;letter-spacing:2px;position:relative">Discard</div></div>`;
 const ERRORS = [
-  { game: 'pokemon', visual: (a) => back('magic', 300, 380, 480, -4, 3, a), r: -4, title: 'Un Caninos<br>avec un dos Magic', detail: 'Pokémon · Set de base allemand · CGC 8', price: usd(26400), src: 'Heritage Auctions, vente du 05/04/2021 (CGC).<br>On ne connaît que 10 cartes Pokémon à dos Magic.' },
-  { game: 'lorcana', visual: (a) => discard(300, 380, 480, 3, a), r: 3, title: 'Une carte « Discard »<br>imprimée en enchantée', detail: 'Lorcana · carte de remplissage d’usine · PSA 10', price: usd(40000), src: 'Vente eBay du 03/07/2024, rapportée par Screen Rant.' },
-  { game: 'pokemon', visual: (a) => back('magic', 300, 380, 480, 4, 3, a), r: 4, title: 'Un Tortank<br>avec un dos Magic', detail: 'Pokémon · carte test de 1998 · CGC 6,5', price: usd(216000), src: 'Heritage Auctions, vente du 07/11/2021 (CGC, Hypebeast).' },
+  { game: 'pokemon', visual: (a) => card('assets/erreur-caninos-dos-magic-cgc8.jpg', 330, 330, 420, -4, 3, { h: 710, attrs: a }), r: -4, title: 'Un Caninos<br>avec un dos Magic', detail: 'Pokémon · Set de base allemand · CGC 8', price: usd(26400), src: 'Heritage Auctions, vente du 05/04/2021. Photo : CGC.<br>On ne connaît que 10 cartes Pokémon à dos Magic.' },
+  { game: 'lorcana', visual: (a) => card('assets/erreur-discard-enchantee-psa10.jpg', 330, 330, 420, 3, 3, { h: 720, attrs: a }), r: 3, title: 'Une carte « Discard »<br>imprimée en enchantée', detail: 'Lorcana · carte de remplissage d’usine · PSA 10', price: usd(40000), src: 'Vente eBay du 03/07/2024, rapportée par Screen Rant.<br>Photo de la carte : Screen Rant.' },
+  { game: 'pokemon', visual: (a) => card('assets/erreur-tortank-dos-magic-cgc65.jpg', 330, 330, 420, 4, 3, { h: 707, attrs: a }), r: 4, title: 'Un Tortank<br>avec un dos Magic', detail: 'Pokémon · carte test de 1998 · CGC 6,5', price: usd(216000), src: 'Heritage Auctions, vente du 07/11/2021 (CGC, Hypebeast).<br>Photo d’un exemplaire CGC 6,5 : Fanatics Collect.' },
 ];
 const scene = (e, i) => {
   const at = T0 + i * STEP, out = at + STEP - .3;

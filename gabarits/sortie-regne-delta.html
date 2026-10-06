@@ -25,12 +25,13 @@ carousel([
       st(70 + (i % 2) * 480, 470 + Math.floor(i / 2) * 300, 450, 250, `<div style="padding:30px 36px"><div class="h" style="font-size:96px;color:${c}">${n}</div><div class="ui" style="font-size:34px;line-height:1.2;margin-top:6px">${k}</div></div>`, { r, z: 3 })).join('')}
     <div class="abs mut" style="left:70px;right:70px;top:1100px;font-weight:600;font-size:34px;text-align:center">Et 6 cartes Stade qui s’assemblent<br>en 3 Stades légendaires.</div>
     ${src(SRC_SET)}`],
-  ['3-a-chasser', `${track(2, 660, .25)}${head('LES CARTES À CHASSER', G, SUB)}
+  ['3-a-chasser', `${track(2, 1095, .15)}${head('LES CARTES À CHASSER', G, SUB)}
     <div class="abs h" style="left:70px;top:170px;font-size:92px">Les 3 cartes<br><span class="acc">que tout le monde veut.</span></div>
-    ${[['Méga-Rayquaza-ex', 'Méga Hyper Rare dorée', SUN], ['Méga-Rayquaza-ex', 'Illustration spéciale rare, par Kazuki Minami', VSOFT], ['Raikou-ex', 'Illustration spéciale rare', BLUE]].map(([n, k, c], i) =>
-      st(70, 450 + i * 230, 940, 190, `<div style="display:flex;align-items:center;gap:34px;height:100%;padding:0 40px"><div class="h" style="font-size:90px;color:${c};width:70px">${i + 1}</div><div><div class="h" style="font-size:52px">${n}</div><div class="ui mut" style="font-size:28px;margin-top:6px">${k}</div></div></div>`, { r: [-1.5, 1, -1][i], z: 3 })).join('')}
+    ${[['carte-mega-rayquaza-ex-mur.jpg', 'Méga‑Rayquaza‑ex', 'Méga Hyper Rare<br>dorée', SUN, -5], ['carte-mega-rayquaza-ex-sar.jpg', 'Méga‑Rayquaza‑ex', 'Illustration<br>spéciale rare', VSOFT, 2], ['carte-raikou-ex-sar-108.jpg', 'Raikou‑ex', 'Illustration<br>spéciale rare', BLUE, 6]].map(([img, n, k, c, r], i) => `
+      ${card('assets/' + img, 80 + i * 320, 470, 280, r, 3)}
+      <div class="abs" style="left:${70 + i * 320}px;top:890px;width:300px;text-align:center"><div class="h" style="font-size:52px;color:${c}">${i + 1}</div><div class="h" style="font-size:31px;margin-top:4px;white-space:nowrap">${n}</div><div class="ui mut" style="font-size:24px;margin-top:6px">${k}</div></div>`).join('')}
     <div class="abs mut" style="left:70px;right:70px;top:1150px;font-weight:600;font-size:30px;text-align:center">Pas encore de cote : elle se forme dans les premiers jours.</div>
-    ${src('Cartes les plus attendues selon la presse spécialisée (wargamer.com, cardlines.com), relevé le 06/10/2026.')}`],
+    ${src('Cartes les plus attendues selon la presse spécialisée (wargamer.com, cardlines.com), relevé le 06/10/2026. Images : versions japonaises (Storm Emeralda), samuraiswordtokyo.com, serebii.net.')}`],
   ['4-prix', `${track(3, 805, .4)}${head('LE PRIX', G, SUB)}
     <div class="abs h" style="left:70px;top:170px;font-size:100px">Combien pour<br><span class="acc">un display ?</span></div>
     ${st(70, 470, 940, 300, `<div style="padding:40px 50px;color:${DARK}"><div class="lab" style="font-size:24px">DISPLAY DE 36 BOOSTERS · EN FRANÇAIS</div><div class="h" style="font-size:110px;margin-top:14px;white-space:nowrap">${eur(215.64)} à ${eur(249)}</div><div class="ui" style="font-size:28px;margin-top:8px">selon les boutiques, en précommande</div></div>`, { fill: SUN, r: -1.5, z: 3 })}
