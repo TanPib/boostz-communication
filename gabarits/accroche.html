@@ -21,6 +21,18 @@ const mark = `<div class="abs" style="left:0;top:1560px;width:1080px;display:fle
 const discs = (games, y, d, gap) => `<div class="abs pop" style="left:0;top:${y}px;width:1080px;display:flex;flex-wrap:wrap;justify-content:center;gap:${gap}px;padding:0 60px">${games.map((g) => emblemDisc(g, d)).join('')}</div>`;
 
 const HOOKS = {
+  'beta14': `${kick('BÊTA FERMÉE · SUR INSCRIPTION', PINK)}${big(360, 'Teste Boostz avant<br><span class="acc">tout le monde.</span>', 96)}
+    <div class="abs pop" style="left:390px;top:720px;width:300px;height:300px;border-radius:66px;overflow:hidden;border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW}"><img src="assets/icone-app.png" style="width:100%;height:100%;display:block"></div>
+    ${price(240, 1130, 600, 'Samedi 28/11', SUN, -3, 80)}`,
+  'beta6': `${kick('BÊTA FERMÉE', PINK)}${big(360, 'Samedi prochain,<br><span class="acc">la bêta ouvre.</span>', 116)}
+    <div class="abs pop" style="left:390px;top:720px;width:300px;height:300px;border-radius:66px;overflow:hidden;border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW}"><img src="assets/icone-app.png" style="width:100%;height:100%;display:block"></div>
+    ${price(190, 1130, 700, 'MP pour t’inscrire', DONE, 3, 72)}`,
+  'beta3': `${kick('BÊTA FERMÉE', PINK)}<div class="abs h pop" style="left:0;top:380px;width:1080px;text-align:center;font-size:330px;line-height:1"><span class="grad">J-3</span></div>
+    ${big(760, 'Il te reste 3 jours<br><span class="acc">pour t’inscrire.</span>', 96)}
+    ${price(190, 1130, 700, 'MP pour t’inscrire', DONE, -3, 72)}`,
+  'betajour': `${kick('C’EST AUJOURD’HUI', PINK)}${big(360, 'La bêta fermée<br><span class="acc">est ouverte.</span>', 120)}
+    <div class="abs pop" style="left:390px;top:720px;width:300px;height:300px;border-radius:66px;overflow:hidden;border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW}"><img src="assets/icone-app.png" style="width:100%;height:100%;display:block"></div>
+    ${price(140, 1130, 800, 'Pas trop tard : MP', SUN, 3, 72)}`,
   'lancement': `${kick('NOUVELLE APPLI · LES 8 TCG')}${big(360, 'Ta collection TCG,<br><span class="acc">au même endroit.</span>', 112)}
     <div class="abs pop" style="left:390px;top:700px;width:300px;height:300px;border-radius:66px;overflow:hidden;border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW}"><img src="assets/icone-app.png" style="width:100%;height:100%;display:block"></div>
     ${discs(ALL8, 1110, 96, 18)}${mark}`,

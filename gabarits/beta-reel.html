@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz beta fermee</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// The closed beta of Saturday 28/11/2026, on sign-up only (asked on 06/10/2026):
+// three teasers (J-14, J-6, J-3) and the opening day, which says it is not too
+// late to sign up. Render one with: node rendu.mjs beta-reel.html#<entry> video
+// No figures: the features named are the app's own, the method is the real one.
+const key = location.hash.slice(1) || 'j14';
+const center = (top, size, html, at, out, kind = 'rise') => `<div class="abs h" ${A(at, out, 0, kind)} style="left:60px;right:60px;top:${top}px;text-align:center;font-size:${size}px;z-index:5">${html}</div>`;
+const kick = (text, at, out) => `<div class="abs lab" ${A(at, out, 0, 'fade')} style="left:0;top:330px;width:1080px;text-align:center;font-size:30px;letter-spacing:8px;color:${PINK};z-index:5">${text}</div>`;
+// The sign-up method, three numbered stickers.
+const STEPS = ['Envoie-nous un MP', 'Donne ton adresse mail', 'Reçois ton invitation'];
+const steps = (top, at, out) => STEPS.map((s, i) => st(150, top + i * 190, 780, 150,
+  `<div style="display:flex;align-items:center;gap:30px;height:100%;padding:0 36px"><div class="h" style="flex:none;width:86px;height:86px;border-radius:50%;background:${[PINK, VSOFT, DONE][i]};color:${DARK};border:5px solid ${INK};display:flex;align-items:center;justify-content:center;font-size:50px">${i + 1}</div><div class="ui" style="font-size:46px">${s}</div></div>`,
+  { r: [-2, 1.5, -1][i], z: 6, attrs: A(at + i * .5, out, [-2, 1.5, -1][i]) })).join('');
+// What the beta lets you try, the app's own features.
+const FEAT = [['Ta collection', 'pokemon'], ['Ta cote FR · EN · JP', 'onepiece'], ['L’état de tes cartes', 'lorcana'], ['L’échange', 'magic']];
+const feats = (at, out) => FEAT.map(([t, g], i) => st(i % 2 ? 560 : 90, 760 + Math.floor(i / 2) * 230, 430, 180,
+  `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;height:100%">${emblemDisc(g, 70)}<div class="ui" style="font-size:36px;text-align:center">${t}</div></div>`,
+  { r: [-3, 2, 2, -2][i], z: 6, attrs: A(at + i * .45, out, [-3, 2, 2, -2][i]) })).join('');
+const backs = (at, out, y = 760) => ALL8.map((g, i) => back(g, 45 + i * 112, y + (i % 2) * 40, 170, -10 + i * 3, 4, A(at + i * .12, out, -10 + i * 3))).join('');
+const end = (at, line1, line2) => `<div class="abs" ${A(at, null, 0, 'rise')} style="left:0;top:560px;width:1080px;display:flex;flex-direction:column;align-items:center;gap:28px;z-index:5">${wordmark(120)}
+    <div class="h" style="font-size:64px;text-align:center;line-height:1.1">${line1}</div>
+    <div class="ui" style="font-size:40px;color:${VSOFT};text-align:center">${line2}</div>
+    <div class="mut" style="font-weight:600;font-size:34px;margin-top:30px">Ton compagnon TCG, bientôt sur ton téléphone</div></div>`;
+
+const ENTRIES = {
+  j14: [`${kick('BÊTA FERMÉE · SUR INSCRIPTION', .2, 6.2)}
+    ${center(420, 96, 'Dans 2 semaines,<br><span class="acc">teste Boostz avant<br>tout le monde.</span>', .4, 3.4)}
+    ${center(420, 80, 'Samedi 28 novembre,<br><span class="acc">la bêta ouvre.</span>', 3.6, 6.2)}
+    ${feats(3.9, 6.2)}
+    ${center(420, 80, 'Pour recevoir<br><span class="acc">ton invitation :</span>', 6.4, 10.4)}
+    ${steps(800, 6.8, 10.4)}
+    ${end(10.6, 'Bêta fermée le 28 novembre.', 'MP pour recevoir l’invitation par mail.')}`, 14],
+  j6: [`${kick('BÊTA FERMÉE', .2, 4.2)}
+    ${center(440, 110, 'Samedi prochain,<br><span class="acc">la bêta ouvre.</span>', .4, 4.2)}
+    <div class="abs" ${A(1.2, 4.2, -4)} style="left:390px;top:860px;width:300px;height:300px;border-radius:66px;overflow:hidden;border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW};z-index:6"><img src="assets/icone-app.png" style="width:100%;height:100%;display:block"></div>
+    ${center(420, 80, 'Sur inscription<br><span class="acc">uniquement :</span>', 4.4, 8.6)}
+    ${steps(800, 4.8, 8.6)}
+    ${end(8.8, 'Samedi 28 novembre.', 'MP pour recevoir l’invitation par mail.')}`, 12],
+  j3: [`${kick('BÊTA FERMÉE', .2, 4)}
+    <div class="abs h" ${A(.3, 4, -3)} style="left:0;top:360px;width:1080px;text-align:center;font-size:300px;line-height:1;z-index:5"><span class="grad">J-3</span></div>
+    ${center(720, 70, 'avant la bêta fermée.', 1, 4)}
+    ${backs(1.6, 4, 900)}
+    ${center(420, 86, 'Il te reste 3 jours<br><span class="acc">pour t’inscrire.</span>', 4.2, 8.4)}
+    ${steps(800, 4.6, 8.4)}
+    ${end(8.6, 'Samedi 28 novembre.', 'MP pour recevoir l’invitation par mail.')}`, 12],
+  jour: [`${kick('C’EST AUJOURD’HUI', .2, 4.4)}
+    ${center(430, 104, 'La bêta fermée<br><span class="acc">est ouverte.</span>', .4, 4.4)}
+    ${backs(1.4, 4.4)}
+    ${center(420, 86, 'Il n’est pas trop tard<br><span class="acc">pour t’inscrire.</span>', 4.6, 9)}
+    ${steps(800, 5, 9)}
+    ${end(9.2, 'Sortie officielle le 14 janvier.', 'MP pour recevoir l’invitation par mail.')}`, 13],
+};
+const [html, total] = ENTRIES[key];
+reel(`${ghosts([[60, 160, 90, -8], [930, 200, 80, 6], [70, 1760, 90, 10], [900, 1780, 100, -6]])}
+  ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}${html}`, total);
+</script></body></html>

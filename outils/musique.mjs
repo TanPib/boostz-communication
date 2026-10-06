@@ -50,6 +50,10 @@ const STYLES = {
   protege:     { bpm: 76, prog: ['Ebmaj9', 'Gm9', 'Abmaj9', 'Bb69'], lead: 'felt', kit: 'brushes', swing: .24, cut: 4600, dust: .7, comp: 'arp' },
   contrefacon: { bpm: 80, prog: ['Gm9', 'Ebmaj9', 'Cm9', 'D7b9'], lead: 'guitar', kit: 'halftime', swing: .22, cut: 4400, dust: .8, comp: 'hold' },
   records:     { bpm: 86, prog: ['Fmaj9', 'Dm9', 'Gm9', 'C13'], lead: 'rhodes', kit: 'boombap', swing: .2, cut: 5600, dust: .5, comp: 'sparse' },
+  beta14:      { bpm: 82, prog: ['Ebmaj9', 'Fm9', 'Gm9', 'Abmaj9'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'arp' },
+  beta6:       { bpm: 78, prog: ['Bbmaj9', 'Gm9', 'Cm9', 'F13'], lead: 'felt', kit: 'brushes', swing: .24, cut: 5000, dust: .6, comp: 'hold' },
+  beta3:       { bpm: 80, prog: ['Am9', 'Gmaj9', 'Fmaj9', 'E7b9'], lead: 'guitar', kit: 'halftime', swing: .22, cut: 4800, dust: .6, comp: 'sparse' },
+  betajour:    { bpm: 86, prog: ['Fmaj9', 'Gm9', 'Am9', 'Bbmaj9'], lead: 'rhodes', kit: 'boombap', swing: .2, cut: 5800, dust: .5, comp: 'arp' },
   nouvelan:    { bpm: 82, prog: ['Gmaj9', 'Bm9', 'Cmaj9', 'D13'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5600, dust: .6, comp: 'arp' },
 };
 const S = STYLES[style];
