@@ -1,6 +1,6 @@
 # Planning du 16 octobre 2026 au 29 janvier 2027
 
-**Sortie de l'appli : jeudi 14 janvier 2027** (décidé le 06/10/2026). Le 01/01 l'annonce, janvier est construit autour.
+**Bêta fermée : samedi 28 novembre 2026**, sur inscription uniquement (MP, invitation par mail). **Sortie de l'appli : jeudi 14 janvier 2027** (décidés le 06/10/2026). Le premier post (16/10) annonce les deux dates. Le 01/01 l'annonce, janvier est construit autour.
 
 Un post tous les 3 jours, sans interruption, depuis le premier post (16/10) : avant la sortie de l'appli comme après (demandé le 05/10/2026). 26 posts jusqu'au 30/12, publiés le même jour sur Instagram, TikTok et Facebook, avec leur story. Le rythme continue en janvier : le planning du mois suivant s'écrit avant la fin du mois en cours. Validé le 05/10/2026 ; Claude produit et programme sans redemander. Le style visuel est partout celui des stickers de l'onboarding.
 

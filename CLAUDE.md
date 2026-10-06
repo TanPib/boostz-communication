@@ -39,6 +39,7 @@ Never overwrite a scheduled post with `updateScheduledPost` without reading it f
 - **8 TCG**, never 9: Animal Crossing is not mentioned in communication.
 - French card vocabulary: "enchantée" (not "enchanted"), the French card names (Méga-Dracaufeu, not Mega Charizard).
 - Slow enough to read: animations were slowed down twice on request.
+- **Closed beta on Saturday 28/11/2026**, on sign-up only: people send a DM ("MP pour recevoir l'invitation par mail") and get an invitation by email (decided on 06/10/2026, announced from the first post on).
 - **The app launches on Thursday 14/01/2027** (decided on 06/10/2026; January in `PLANNING.md` is built around it). Until 13/01, the closing line under the wordmark is "Ton compagnon TCG, bientôt sur ton téléphone" and the call is "Abonne-toi pour ne rien manquer" (never "pour l'avoir en premier"). From 14/01: "Ton compagnon TCG, disponible sur ton téléphone" and "Télécharge Boostz, lien en bio".
 
 ## Templates (`gabarits/`)
