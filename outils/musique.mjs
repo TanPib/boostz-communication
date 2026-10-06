@@ -29,25 +29,28 @@ const QUAL = {
 const chord = (name) => { const [, r, q] = name.match(/^([A-G][b#]?)(.*)$/); if (!QUAL[q]) throw new Error(`unknown chord ${name}`); return { root: NOTE[r], tones: QUAL[q], minor: q.startsWith('m') && !q.startsWith('maj') }; };
 
 // lead: rhodes | felt | guitar | vibes | musicbox | chip. kit: boombap | halftime | brushes.
+// comp: how the chords are played (06/10/2026: the same stab on every bar of every
+// track got tiresome while scrolling): hold (one soft swell per bar), arp (broken
+// chord, a few notes spread over the bar) or sparse (a long chord every other bar).
 // swing: how late the off-beat 16ths fall. cut: master low-pass (Hz). dust: crackle and hiss.
 const STYLES = {
-  lancement:   { bpm: 84, prog: ['Fmaj9', 'Am9', 'Dm9', 'C69'], lead: 'rhodes', kit: 'boombap', swing: .22, cut: 5200, dust: .6 },
-  combattant:  { bpm: 88, prog: ['Cmaj9', 'A7b9', 'Dm9', 'G13'], lead: 'chip', kit: 'boombap', swing: .18, cut: 5600, dust: .5 },
-  lorcana:     { bpm: 76, prog: ['Dmaj9', 'Bm9', 'Gmaj9', 'A13'], lead: 'musicbox', kit: 'brushes', swing: .2, cut: 4800, dust: .7 },
-  etat:        { bpm: 80, prog: ['Ebmaj9', 'Cm9', 'Fm9', 'Bb13'], lead: 'felt', kit: 'boombap', swing: .24, cut: 4600, dust: .7 },
-  blackfriday: { bpm: 86, prog: ['Am9', 'D9', 'Gmaj9', 'Cmaj9'], lead: 'guitar', kit: 'boombap', swing: .2, cut: 5400, dust: .5 },
-  dracaufeu:   { bpm: 78, prog: ['Em9', 'Cmaj9', 'Am9', 'B7b9'], lead: 'rhodes', kit: 'halftime', swing: .2, cut: 4800, dust: .6 },
-  tigre:       { bpm: 72, prog: ['Amadd9', 'Fmaj9', 'Dm9', 'E7b9'], lead: 'guitar', kit: 'brushes', swing: .26, cut: 4400, dust: .8 },
-  halloween:   { bpm: 74, prog: ['Am9', 'Fmaj7', 'Dm9', 'E7b9'], lead: 'musicbox', kit: 'halftime', swing: .22, cut: 4000, dust: 1 },
-  sortie:      { bpm: 86, prog: ['Cmaj9', 'Em9', 'Fmaj9', 'G13'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5800, dust: .5 },
-  erreurs:     { bpm: 82, prog: ['Fmaj9', 'Dm9', 'Bbmaj9', 'C13'], lead: 'felt', kit: 'boombap', swing: .22, cut: 5000, dust: .7 },
-  lexique:     { bpm: 78, prog: ['Gmaj9', 'Em9', 'Am9', 'D13'], lead: 'rhodes', kit: 'brushes', swing: .24, cut: 5000, dust: .6 },
-  echange:     { bpm: 84, prog: ['Dmaj9', 'F#m9', 'Bm9', 'A13'], lead: 'guitar', kit: 'boombap', swing: .2, cut: 5400, dust: .5 },
-  noel:        { bpm: 80, prog: ['Cmaj9', 'Am9', 'Dm9', 'G13'], lead: 'vibes', kit: 'brushes', swing: .2, cut: 5200, dust: .8 },
-  protege:     { bpm: 76, prog: ['Ebmaj9', 'Gm9', 'Abmaj9', 'Bb69'], lead: 'felt', kit: 'brushes', swing: .24, cut: 4600, dust: .7 },
-  contrefacon: { bpm: 80, prog: ['Gm9', 'Ebmaj9', 'Cm9', 'D7b9'], lead: 'guitar', kit: 'halftime', swing: .22, cut: 4400, dust: .8 },
-  records:     { bpm: 86, prog: ['Fmaj9', 'Dm9', 'Gm9', 'C13'], lead: 'rhodes', kit: 'boombap', swing: .2, cut: 5600, dust: .5 },
-  nouvelan:    { bpm: 82, prog: ['Gmaj9', 'Bm9', 'Cmaj9', 'D13'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5600, dust: .6 },
+  lancement:   { bpm: 84, prog: ['Fmaj9', 'Am9', 'Dm9', 'C69'], lead: 'rhodes', kit: 'boombap', swing: .22, cut: 5200, dust: .6, comp: 'arp' },
+  combattant:  { bpm: 88, prog: ['Cmaj9', 'A7b9', 'Dm9', 'G13'], lead: 'chip', kit: 'boombap', swing: .18, cut: 5600, dust: .5, comp: 'sparse' },
+  lorcana:     { bpm: 76, prog: ['Dmaj9', 'Bm9', 'Gmaj9', 'A13'], lead: 'musicbox', kit: 'brushes', swing: .2, cut: 4800, dust: .7, comp: 'hold' },
+  etat:        { bpm: 80, prog: ['Ebmaj9', 'Cm9', 'Fm9', 'Bb13'], lead: 'felt', kit: 'boombap', swing: .24, cut: 4600, dust: .7, comp: 'arp' },
+  blackfriday: { bpm: 86, prog: ['Am9', 'D9', 'Gmaj9', 'Cmaj9'], lead: 'guitar', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'sparse' },
+  dracaufeu:   { bpm: 78, prog: ['Em9', 'Cmaj9', 'Am9', 'B7b9'], lead: 'rhodes', kit: 'halftime', swing: .2, cut: 4800, dust: .6, comp: 'hold' },
+  tigre:       { bpm: 72, prog: ['Amadd9', 'Fmaj9', 'Dm9', 'E7b9'], lead: 'guitar', kit: 'brushes', swing: .26, cut: 4400, dust: .8, comp: 'arp' },
+  halloween:   { bpm: 74, prog: ['Am9', 'Fmaj7', 'Dm9', 'E7b9'], lead: 'musicbox', kit: 'halftime', swing: .22, cut: 4000, dust: 1, comp: 'hold' },
+  sortie:      { bpm: 86, prog: ['Cmaj9', 'Em9', 'Fmaj9', 'G13'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5800, dust: .5, comp: 'arp' },
+  erreurs:     { bpm: 82, prog: ['Fmaj9', 'Dm9', 'Bbmaj9', 'C13'], lead: 'felt', kit: 'boombap', swing: .22, cut: 5000, dust: .7, comp: 'sparse' },
+  lexique:     { bpm: 78, prog: ['Gmaj9', 'Em9', 'Am9', 'D13'], lead: 'rhodes', kit: 'brushes', swing: .24, cut: 5000, dust: .6, comp: 'hold' },
+  echange:     { bpm: 84, prog: ['Dmaj9', 'F#m9', 'Bm9', 'A13'], lead: 'guitar', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'arp' },
+  noel:        { bpm: 80, prog: ['Cmaj9', 'Am9', 'Dm9', 'G13'], lead: 'vibes', kit: 'brushes', swing: .2, cut: 5200, dust: .8, comp: 'hold' },
+  protege:     { bpm: 76, prog: ['Ebmaj9', 'Gm9', 'Abmaj9', 'Bb69'], lead: 'felt', kit: 'brushes', swing: .24, cut: 4600, dust: .7, comp: 'arp' },
+  contrefacon: { bpm: 80, prog: ['Gm9', 'Ebmaj9', 'Cm9', 'D7b9'], lead: 'guitar', kit: 'halftime', swing: .22, cut: 4400, dust: .8, comp: 'hold' },
+  records:     { bpm: 86, prog: ['Fmaj9', 'Dm9', 'Gm9', 'C13'], lead: 'rhodes', kit: 'boombap', swing: .2, cut: 5600, dust: .5, comp: 'sparse' },
+  nouvelan:    { bpm: 82, prog: ['Gmaj9', 'Bm9', 'Cmaj9', 'D13'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5600, dust: .6, comp: 'arp' },
 };
 const S = STYLES[style];
 if (!S) throw new Error(`unknown style ${style}: ${Object.keys(STYLES).join(', ')}`);
@@ -108,6 +111,13 @@ const chip = (f, len, vel) => { // a soft pulse, like an old handheld through a 
   for (let i = 0; i < n; i++) { const t = i / SR, ph = (f * t * (1 + .004 * Math.sin(2 * Math.PI * 5 * t))) % 1; b[i] = vel * (ph < .3 ? .7 : -.3) * Math.min(1, t / .006) * Math.exp(-t * 2.2) * tail(t, len, .08); }
   return lowpass(b, 1800);
 };
+const pad = (f, len, vel) => { // warm swell: detuned soft saws, slow attack, dark
+  const n = Math.floor((len + 1.2) * SR), b = new Float32Array(n);
+  for (let i = 0; i < n; i++) { const t = i / SR; let x = 0;
+    for (const d of [-.004, .003]) x += ((f * (1 + d) * t) % 1) * 2 - 1;
+    b[i] = vel * x * .5 * Math.min(1, t / .45) * tail(t, len, 1); }
+  return lowpass(lowpass(b, 900), 1400);
+};
 const LEAD = { rhodes, felt, guitar, vibes, musicbox, chip };
 const keys = S.lead === 'guitar' || S.lead === 'chip' || S.lead === 'musicbox' ? rhodes : LEAD[S.lead]; // who plays the chords
 const bassNote = (f, len, vel) => { // round upright-ish bass, a little slide into the note
@@ -155,13 +165,26 @@ for (let bar = 0; bar < bars; bar++) {
   let v = tones.map((x) => 57 + ((c.root + x) % 12)).map((n) => (n > 69 ? n - 12 : n)).sort((a, b) => a - b);
   if (prevVoicing) { const shift = Math.round((prevVoicing[0] - v[0]) / 12) * 12; if (Math.abs(shift) === 12) v = v.map((n) => n + shift); }
   prevVoicing = v;
-  // Chords: laid back on beat 1, a softer push on the "and" of 2, slightly strummed.
-  for (const [s, vel] of [[0, .11], [6, .07]]) v.forEach((n, j) => add(MUS, step(bar, s) + .018 + j * .014 + hum(6), keys(midi(n), s ? BEAT * 1.4 : BEAT * 1.9, vel * (1 + .12 * rnd())), (j - v.length / 2) * .18));
-  // Bass: root, a syncopated push, the fifth before the next bar.
+  // Chords, played the style's way; never the same stab on every bar.
+  const pan = (j) => (j - v.length / 2) * .18;
+  if (S.comp === 'hold') {
+    v.forEach((n, j) => add(MUS, step(bar, 0) + j * .03, pad(midi(n), BAR * 1.1, .05), pan(j)));
+    if (bar % 2 === 1) add(MUS, step(bar, 0) + .05 + hum(6), keys(midi(v[v.length - 1] + 12), BEAT * 2, .05), .3);
+  } else if (S.comp === 'arp') {
+    const slots = bar % 2 ? [0, 3, 6, 10] : [0, 4, 9, 13];
+    slots.forEach((st, k) => add(MUS, step(bar, st) + .02 + hum(8), keys(midi(v[(k + bar) % v.length]), BEAT * 2.2, .07 * (1 + .15 * rnd())), pan(k)));
+  } else if (bar % 2 === 0) {
+    v.forEach((n, j) => add(MUS, step(bar, 0) + .02 + j * .022 + hum(6), keys(midi(n), BAR * 1.7, .075), pan(j)));
+  }
+  // Bass: long notes under held chords, a little more movement otherwise, and
+  // a pickup only now and then.
   const root = 36 + c.root + (c.root > 7 ? -12 : 0);
-  add(MUS, step(bar, 0) + hum(5), bassNote(midi(root), BEAT * 1.6, .14));
-  add(MUS, step(bar, 7) + hum(5), bassNote(midi(root), BEAT * .7, .09));
-  add(MUS, step(bar, 12) + hum(5), bassNote(midi(root + 7), BEAT * .9, .1));
+  if (S.comp === 'hold') add(MUS, step(bar, 0) + hum(5), bassNote(midi(root), BAR * .9, .13));
+  else {
+    add(MUS, step(bar, 0) + hum(5), bassNote(midi(root), BEAT * (S.comp === 'arp' ? 2.6 : 1.6), .13));
+    add(MUS, step(bar, S.comp === 'arp' ? 11 : 8) + hum(5), bassNote(midi(root + (S.comp === 'arp' ? 7 : 12)), BEAT * 1.1, .09));
+  }
+  if (bar % 4 === 3) add(MUS, step(bar, 14) + hum(5), bassNote(midi(root + 5), BEAT * .4, .07));
   // Lead: from the second bar, the phrase in the key's pentatonic, an octave up.
   if (bar > 0 && bar < bars - 1) {
     const p = phrase[bar % 2], lead = LEAD[S.lead];
@@ -207,9 +230,10 @@ const tape = (x, ph) => {
   lowpass(y, S.cut); return lowpass(y, S.cut * 1.6);
 };
 const TL = tape(L, 0), TR = tape(R, .4);
-// Vinyl: sparse crackles and a soft hiss, both band-limited.
+// Vinyl: sparse crackles and a soft hiss, both band-limited and kept well under
+// the music (06/10/2026: the crackle was too loud).
 const crackle = new Float32Array(N), hiss = new Float32Array(N);
-for (let i = 0; i < N; i++) { hiss[i] = rnd() * .006 * S.dust; if (rnd() > 1 - 2 * (7 * S.dust) / SR) { const a = rnd() * .09 * S.dust, len = 20 + Math.floor((rnd() + 1) * 60); for (let k = 0; k < len && i + k < N; k++) crackle[i + k] += a * Math.exp(-k / 8) * (k % 2 ? -1 : 1); } }
+for (let i = 0; i < N; i++) { hiss[i] = rnd() * .0025 * S.dust; if (rnd() > 1 - 2 * (5 * S.dust) / SR) { const a = rnd() * .03 * S.dust, len = 20 + Math.floor((rnd() + 1) * 60); for (let k = 0; k < len && i + k < N; k++) crackle[i + k] += a * Math.exp(-k / 8) * (k % 2 ? -1 : 1); } }
 lowpass(highpass(hiss, 1200), 7000); lowpass(highpass(crackle, 700), 8000);
 let peak = 0;
 for (let i = 0; i < N; i++) { TL[i] += hiss[i] + crackle[i]; TR[i] += hiss[i] * .9 + crackle[i] * .8; peak = Math.max(peak, Math.abs(TL[i]), Math.abs(TR[i])); }
