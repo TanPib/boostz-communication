@@ -128,7 +128,7 @@ for (let bar = 0; bar < bars; bar++) {
   if (S.lead === 'bells') arp.forEach((n, k) => { if (k % 2 === 0 || bar % 2) add(t0 + k * BEAT / 2, bell(midi(n), .13), k % 2 ? .5 : -.5); });
   if (S.lead === 'musicbox') arp.forEach((n, k) => add(t0 + k * BEAT / 2, musicbox(midi(n + (bar % 2 && k === 7 ? 2 : 0)), .14), Math.sin(k) * .6));
   if (S.lead === 'chip') arp.forEach((n, k) => add(t0 + k * BEAT / 2, chip(midi(n - 12), BEAT * .4, .12), k % 2 ? .3 : -.3));
-  if (S.lead === 'keys') [0, 2, 1, 3].forEach((k, j) => add(t0 + (j * 2 + 1) * BEAT / 2, epiano(midi(base + 24 + c.tones[k]), BEAT * .6, .1), .3));
+  if (S.lead === 'keys') [0, 2, 1, 3].forEach((k, j) => add(t0 + (j * 2 + 1) * BEAT / 2, epiano(midi(base + 24 + c.tones[k % c.tones.length]), BEAT * .6, .1), .3));
   // Drums: kick on 1 and 3 (plus a pickup), rim on 2 and 4, quiet off-beat hats.
   const d = S.drums;
   if (bar > 0 || DUR < 12) { // long tracks open with one bar of keys alone
@@ -155,6 +155,8 @@ const pcm = Buffer.alloc(44 + N * 4);
 pcm.write('RIFF', 0); pcm.writeUInt32LE(36 + N * 4, 4); pcm.write('WAVEfmt ', 8); pcm.writeUInt32LE(16, 16);
 pcm.writeUInt16LE(1, 20); pcm.writeUInt16LE(2, 22); pcm.writeUInt32LE(SR, 24); pcm.writeUInt32LE(SR * 4, 28);
 pcm.writeUInt16LE(4, 32); pcm.writeUInt16LE(16, 34); pcm.write('data', 36); pcm.writeUInt32LE(N * 4, 40);
+// A note outside its chord would turn every sample into NaN and the file into silence.
+if (!(peak > 0) || !Number.isFinite(peak)) throw new Error(`style ${style}: the track is silent or invalid`);
 const g = .8 / peak;
 for (let i = 0; i < N; i++) { pcm.writeInt16LE(Math.round(Math.tanh(L[i] * g) * 32000), 44 + i * 4); pcm.writeInt16LE(Math.round(Math.tanh(R[i] * g) * 32000), 46 + i * 4); }
 fs.writeFileSync(out, pcm);
