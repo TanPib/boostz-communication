@@ -39,7 +39,7 @@ Never overwrite a scheduled post with `updateScheduledPost` without reading it f
 - **8 TCG**, never 9: Animal Crossing is not mentioned in communication.
 - French card vocabulary: "enchantée" (not "enchanted"), the French card names (Méga-Dracaufeu, not Mega Charizard).
 - Slow enough to read: animations were slowed down twice on request.
-- **Closed beta on Saturday 28/11/2026**, on sign-up only: people send a DM ("MP pour recevoir l'invitation par mail") and get an invitation by email (decided on 06/10/2026, announced from the first post on).
+- **Closed beta on Saturday 28/11/2026**, on sign-up only: people send a DM ("MP pour recevoir l'invitation par mail") and get an invitation by email (decided on 06/10/2026, announced from the first post on). Every caption carries it, just before the hashtags: until 27/11 "🔒 Bêta fermée le samedi 28 novembre, sur inscription : envoie-nous un MP pour recevoir ton invitation par mail.", from 28/11 to 13/01 "🔒 La bêta fermée est ouverte : il n'est pas trop tard, envoie-nous un MP pour recevoir ton invitation par mail." Dedicated Reels (`beta-reel.html`): J-14 (14/11), J-6 (22/11), J-3 (25/11) and the opening day (28/11).
 - **The app launches on Thursday 14/01/2027** (decided on 06/10/2026; January in `PLANNING.md` is built around it). Until 13/01, the closing line under the wordmark is "Ton compagnon TCG, bientôt sur ton téléphone" and the call is "Abonne-toi pour ne rien manquer" (never "pour l'avoir en premier"). From 14/01: "Ton compagnon TCG, disponible sur ton téléphone" and "Télécharge Boostz, lien en bio".
 
 ## Templates (`gabarits/`)

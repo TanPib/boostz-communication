@@ -32,11 +32,15 @@ Trois principes, demandés par l'utilisateur :
 | 8 | ven. 06/11, 10 h | carrousel | 15 Sortie d'extension | Règne Delta sort aujourd'hui (ME06, en français et en anglais) | Pokémon | ✅ programmé |
 | 9 | lun. 09/11, 10 h | Reel | 3 1 chance sur N | 1 chance sur 96 d'avoir une enchantée | Lorcana | ✅ programmé |
 | 10 | jeu. 12/11, 10 h | carrousel | 15 Sortie d'extension | Cette semaine, deux sorties : Magnificent Maestros (12/11 en Europe) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | ✅ programmé |
+| 10 bis | sam. 14/11, 10 h | Reel | 11 Annonce | Bêta fermée J-14 : « Dans 2 semaines, teste Boostz avant tout le monde » | les 8 | ✅ programmé |
 | 11 | dim. 15/11, 10 h | Reel | 12 Fonction à la loupe | Estime l'état de tes cartes | les 8 | ✅ programmé |
 | 12 | mer. 18/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 3 : du 01/11 au 16/11 | Magic | brouillon dans Metricool, produit par le rappel du 16/11 |
 | 13 | sam. 21/11, 10 h | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | brouillon dans Metricool, produit par le rappel du 20/11 |
+| 13 bis | dim. 22/11, 10 h | Reel | 11 Annonce | Bêta fermée J-6 : « Samedi prochain, la bêta ouvre » | les 8 | ✅ programmé |
 | 14 | mar. 24/11, 10 h | carrousel | 13 Mythe ou réalité | « Une carte s'est vendue 5 250 \$… pour un tigre qui n'existe pas » | Warcraft | ✅ programmé |
+| 14 bis | mer. 25/11, 10 h | Reel | 11 Annonce | Bêta fermée J-3 : « Il te reste 3 jours pour t'inscrire » | les 8 | ✅ programmé |
 | 15 | ven. 27/11, 10 h | Reel | 16 Thème | Black Friday : « Promo ou pas ? » | les 8 | ✅ programmé |
+| 15 bis | sam. 28/11, 10 h | Reel | 11 Annonce | Bêta fermée ouverte : « Il n'est pas trop tard pour t'inscrire » | les 8 | ✅ programmé |
 | 16 | lun. 30/11, 10 h | carrousel | 14 Tu préfères ? | La chase de Brightness of Hope (FB11) contre celle de Magnificent Maestros | Dragon Ball, Yu-Gi-Oh! | brouillon dans Metricool, produit par le rappel du 27/11 |
 
 **Les 8 jeux.**
