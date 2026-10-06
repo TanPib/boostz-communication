@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz bonne annee</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Bonne année 2027: the year lands, the eight games pop in around it, then the
+// promise and the wordmark. No figures.
+const ring = ALL8.map((g, i) => {
+  const a = -Math.PI / 2 + i * Math.PI / 4, x = 540 + Math.cos(a) * 410 - 70, y = 790 + Math.sin(a) * 400 - 70, r = [-8, 6, -4, 9, -6, 5, -9, 7][i];
+  return `<div class="abs" ${A(1.4 + i * .22, 5.6, r)} style="left:${x}px;top:${y}px;z-index:4">${emblemDisc(g, 140)}</div>`;
+}).join('');
+reel(`${ghosts([[60, 200, 80, -8], [930, 260, 80, 6], [70, 1760, 90, 10], [900, 1780, 100, -6]])}
+  ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}
+  <div class="abs h" ${A(.3, 5.6, 0, 'rise')} style="left:0;top:650px;width:1080px;text-align:center;font-size:76px;z-index:5">Bonne année</div>
+  <div class="abs h" ${A(.7, 5.6, -3)} style="left:0;top:740px;width:1080px;text-align:center;font-size:170px;line-height:1;z-index:5"><span class="grad">2027</span></div>
+  ${ring}
+  <div class="abs h" ${A(3.6, 5.6, 0, 'rise')} style="left:0;top:1330px;width:1080px;text-align:center;font-size:62px">Les 8 TCG,<br><span class="acc">au même endroit.</span></div>
+  <div class="abs h" ${A(5.8, null, 0, 'rise')} style="left:0;top:500px;width:1080px;text-align:center;font-size:96px">Merci d’être là<br><span class="acc">depuis le début.</span></div>
+  <div class="abs" ${A(6.3, null, 0, 'rise')} style="left:0;top:840px;width:1080px;display:flex;flex-direction:column;align-items:center;gap:26px">${wordmark(120)}
+    <div class="mut" style="font-weight:600;font-size:38px">Ton compagnon TCG, bientôt sur ton téléphone</div>
+    <div class="ui" style="font-size:36px;color:${VSOFT}">Abonne-toi pour ne rien manquer</div></div>`, 9.5);
+</script></body></html>

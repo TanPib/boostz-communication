@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz echange</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Fonction à la loupe, l'échange: each side of a trade with its value, then the
+// gap. The cards and figures are real: Cardmarket 30-day averages from our
+// record of 03/10/2026 (donnees/cotes/pokemon/2026-10-03.json):
+// Dracaufeu-ex 151 199/165: 364.87 €; Givrali-ex Évolutions Prismatiques 150: 168.02 €;
+// Ectoplasma VMAX Poing de Fusion 271/264: 832.63 €.
+const GIVE = [['assets/carte-dracaufeu-ex-sv035-199.jpg', 'Dracaufeu-ex', 364.87], ['assets/carte-givrali-ex-sv085-150.jpg', 'Givrali-ex', 168.02]];
+const GET = [['assets/carte-ectoplasma-vmax-swsh8-271.jpg', 'Ectoplasma VMAX', 832.63]];
+const sum = (l) => Math.round(l.reduce((a, c) => a + c[2], 0) * 100) / 100;
+const S1 = sum(GIVE), S2 = sum(GET), GAP = Math.round((S2 - S1) * 100) / 100;
+const col = (x, title, list, t, color) => `<div class="abs lab" ${A(t, null, 0, 'rise')} style="left:${x}px;top:470px;width:440px;text-align:center;font-size:30px;letter-spacing:6px;color:${color}">${title}</div>
+  ${list.map(([img, name, v], i) => {
+    const n = list.length, w = n > 1 ? 210 : 300, cx = x + (n > 1 ? i * 230 : 70), r = n > 1 ? [-5, 4][i] : 3;
+    return `${card(img, cx, 540, w, r, 3, { attrs: A(t + .3 + i * .4, null, r) })}
+    <div class="abs" ${A(t + .6 + i * .4, null, 0, 'rise')} style="left:${cx - 10}px;top:${540 + w * 1.4 + 30}px;width:${w + 20}px;text-align:center"><div class="ui" style="font-size:28px">${name}</div><div class="h" style="font-size:44px;color:${color};margin-top:4px">${eur(v)}</div></div>`;
+  }).join('')}`;
+reel(`${ghosts([[930, 300, 80, 6], [70, 1760, 90, 10], [900, 1780, 100, -6]])}
+  ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}
+  <div class="abs lab" ${A(.2, null, 0, 'rise')} style="left:70px;top:160px;font-size:26px;letter-spacing:6px;color:${VSOFT}">FONCTION À LA LOUPE · L’ÉCHANGE</div>
+  <div class="abs h" ${A(.4, null, 0, 'rise')} style="left:70px;top:230px;font-size:96px">Cet échange,<br><span class="acc">il est juste ?</span></div>
+  ${col(70, 'TU DONNES', GIVE, 1.6, PINK)}
+  ${col(570, 'TU REÇOIS', GET, 3, DONE)}
+  ${st(90, 1260, 900, 200, `<div style="display:flex;align-items:center;justify-content:space-between;height:100%;padding:0 50px"><div><div class="lab" style="font-size:22px;color:${PINK}">TU DONNES</div><div class="h" style="font-size:66px">${eur(S1)}</div></div><div class="h" style="font-size:70px;color:${VSOFT}">→</div><div style="text-align:right"><div class="lab" style="font-size:22px;color:${DONE}">TU REÇOIS</div><div class="h" style="font-size:66px">${eur(S2)}</div></div></div>`, { r: -1, z: 5, attrs: A(5, null, -1) })}
+  ${st(190, 1500, 700, 150, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:44px;color:${DARK}">+${eur(GAP)} pour toi</div>`, { fill: DONE, r: 2, z: 6, attrs: A(6.2, null, 2) })}
+  <div class="abs" ${A(6.6, null, 0, 'fade')} style="left:70px;right:70px;top:1690px;text-align:center;font-family:Exo;font-size:26px;color:rgba(255,255,255,.5)">Cotes Cardmarket, moyenne 30 jours, relevé du 03/10/2026.</div>
+  <div class="abs" ${A(8.6, null, 0, 'fade')} style="left:0;top:0;width:1080px;height:1920px;background:#131020;z-index:20"></div>
+  <div class="abs h" ${A(8.9, null, 0, 'rise')} style="left:0;top:500px;width:1080px;text-align:center;font-size:88px;z-index:21">Échange en voyant<br><span class="acc">la valeur des deux côtés.</span></div>
+  <div class="abs" ${A(9.4, null, 0, 'rise')} style="left:0;top:850px;width:1080px;display:flex;flex-direction:column;align-items:center;gap:26px;z-index:21">${wordmark(110)}
+    <div class="mut" style="font-weight:600;font-size:38px">Ton compagnon TCG, bientôt sur ton téléphone</div>
+    <div class="ui" style="font-size:36px;color:${VSOFT}">Abonne-toi pour ne rien manquer</div></div>`, 12.4);
+</script></body></html>

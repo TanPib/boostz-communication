@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz records 2026</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// 2026, l'année des records: five public sales, each sourced and dated.
+// Searched on 06/10/2026 (to refresh in late December):
+// - Pikachu Illustrator PSA 10, 16,492,000 $, Goldin, 16/02/2026 (Guinness World Records, CNN).
+// - "Raincoat" Pikachu XY promo PSA 10, 8,400,000 $, Fanatics Collect, 27-28/09/2026 (Dexerto, Kovels).
+// - Alpha Black Lotus PSA 10, 2,208,000 $, Goldin, 19/09/2026 (ICv2, StarCityGames).
+// - Japanese Base Set Charizard "No Rarity" PSA 10, 1,700,000 $, 03/03/2026 (Sports Illustrated).
+// - Korean serialized top prize Monkey D. Luffy 001/077, 440,420 $, Goldin, 17/05/2026.
+const SALES = [
+  ['pokemon', 'Pikachu Illustrator', 'PSA 10. Le record mondial<br>pour une carte Pokémon', 16492000, 'Goldin, vente du 16/02/2026. Sources : Guinness World Records, CNN.', back('pokemon', 130, 360, 330, -5, 2)],
+  ['pokemon', 'Pikachu « imperméable »', 'Promo japonaise XY de 2015<br>PSA 10', 8400000, 'Fanatics Collect, vente des 27 et 28/09/2026, frais inclus. Sources : Dexerto, Kovels.', card('assets/record-pikachu-impermeable.jpg', 130, 360, 330, -5, 2, { pos: '69% 45%' })],
+  ['magic', 'Black Lotus', 'Édition Alpha de 1993<br>PSA 10', 2208000, 'Goldin, vente du 19/09/2026. Sources : ICv2, StarCityGames.', card('assets/record-black-lotus.jpg', 130, 360, 330, -5, 2, { pos: 'center 30%' })],
+  ['pokemon', 'Dracaufeu « sans rareté »', 'Set de base japonais, 1996<br>PSA 10', 1700000, 'Vente du 03/03/2026. Source : Sports Illustrated.', card('assets/record-dracaufeu-sans-rarete.jpg', 130, 360, 330, -5, 2, { pos: '55% 30%' })],
+  ['onepiece', 'Monkey D. Luffy', 'Premier prix coréen numéroté 001/077', 440420, 'Goldin, vente du 17/05/2026. Le record pour une carte One Piece.', back('onepiece', 130, 360, 330, -5, 2)],
+];
+carousel([
+  ['1-couverture', `${ghosts([[90, 330, 80, -6], [930, 340, 80, 8]])}${track(0, 1130, .45)}${head('L’ANNÉE DES RECORDS', 'all')}
+    <div class="abs h" style="left:0;top:300px;width:1080px;text-align:center;font-size:190px;line-height:1"><span class="grad">2026</span></div>
+    <div class="abs h" style="left:0;top:520px;width:1080px;text-align:center;font-size:100px">5 ventes,<br><span class="acc">5 records.</span></div>
+    <div class="abs mut" style="left:0;top:800px;width:1080px;text-align:center;font-weight:600;font-size:36px">La plus chère : plus de 16 millions de dollars.</div>
+    <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
+    <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
+  ...SALES.map(([g, name, detail, price, source, visual], i) => [`${i + 2}-record`, `${track(i + 1, 1080, .3)}${head(`RECORD ${i + 1}/5`, g)}
+    <div class="abs h" style="left:70px;top:170px;width:940px;font-size:${name.length > 18 ? 70 : 84}px">${name}</div>
+    ${visual}
+    ${st(510, 420, 500, 230, `<div style="padding:30px 36px;color:${DARK}"><div class="lab" style="font-size:22px">VENDUE</div><div class="h" style="font-size:${price > 9999999 ? 64 : price > 999999 ? 68 : 80}px;margin-top:8px;white-space:nowrap">${usd(price)}</div></div>`, { fill: [SUN, SUN, GAMES.magic[1], DONE, GAMES.onepiece[1]][i], r: 2, z: 3 })}
+    <div class="abs ui" style="left:510px;top:700px;width:500px;font-size:34px;line-height:1.3">${detail}</div>
+    ${src(source)}`]),
+  ['7-fin', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8], [110, 1120, 70, 4], [920, 1100, 80, -6]])}${track(6, 1200, .6)}${head('L’ANNÉE DES RECORDS', 'all')}
+    <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:88px">Et toi, ta carte<br><span class="acc">la plus chère ?</span></div>
+    ${back('pokemon', 330, 470, 180, -8, 2)}${back('magic', 560, 470, 180, 7, 2)}
+    ${closing(800)}`],
+]);
+</script></body></html>

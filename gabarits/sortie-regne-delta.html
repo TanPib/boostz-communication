@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz Regne Delta</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Sortie d'extension: Pokémon Méga-Évolution – Règne Delta (ME06), out on 06/11/2026.
+// Facts searched on 06/10/2026:
+// - pokemon.com/fr, "Aperçu de certaines cartes de l'extension Méga-Évolution Règne Delta":
+//   4 Méga-Évolution Pokémon-ex, 6 Pokémon-ex, 14 Illustrations rares, 17 Ultra rares.
+// - pokemon.com/us: "over 135 cards", out 6 November 2026.
+// - Chase cards as reported by the press (wargamer, cardlines), not official.
+// - Display prices: French retailers les7royaumes.com, otakuland-mangapassion.com (pre-orders).
+const G = 'pokemon', SUB = 'Méga-Évolution · Règne Delta';
+const SRC_SET = 'Sources : pokemon.com (fiche de l’extension et aperçu des cartes), relevé le 06/10/2026.';
+carousel([
+  ['1-couverture', `${ghosts([[940, 1090, 70, 8]])}${track(0, 1150, .5)}${head('SORTIE D’EXTENSION', G, SUB)}
+    ${card('assets/sortie-regne-delta.jpg', 90, 190, 900, -2, 3, { h: 506 })}
+    <div class="abs h" style="left:0;top:770px;width:1080px;text-align:center;font-size:100px">Règne Delta<br><span class="acc">sort aujourd’hui.</span></div>
+    <div class="abs mut" style="left:0;top:1010px;width:1080px;text-align:center;font-weight:600;font-size:36px">Vendredi 6 novembre, en français et en anglais.</div>
+    <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
+    <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
+  ['2-dedans', `${ghosts([[920, 1120, 80, 6]])}${track(1, 745, .35)}${head('CE QU’IL Y A DEDANS', G, SUB)}
+    <div class="abs h" style="left:70px;top:170px;font-size:110px">Plus de<br><span class="acc">135 cartes.</span></div>
+    ${[['4', 'Pokémon<br>Méga-Évolution-ex', SUN, -3], ['6', 'Pokémon-ex', '#F5F2FB', 2], ['14', 'Illustrations<br>rares', DONE, 2], ['17', 'Ultra<br>rares', PINK, -2]].map(([n, k, c, r], i) =>
+      st(70 + (i % 2) * 480, 470 + Math.floor(i / 2) * 300, 450, 250, `<div style="padding:30px 36px"><div class="h" style="font-size:96px;color:${c}">${n}</div><div class="ui" style="font-size:34px;line-height:1.2;margin-top:6px">${k}</div></div>`, { r, z: 3 })).join('')}
+    <div class="abs mut" style="left:70px;right:70px;top:1100px;font-weight:600;font-size:34px;text-align:center">Et 6 cartes Stade qui s’assemblent<br>en 3 Stades légendaires.</div>
+    ${src(SRC_SET)}`],
+  ['3-a-chasser', `${track(2, 660, .25)}${head('LES CARTES À CHASSER', G, SUB)}
+    <div class="abs h" style="left:70px;top:170px;font-size:92px">Les 3 cartes<br><span class="acc">que tout le monde veut.</span></div>
+    ${[['Méga-Rayquaza-ex', 'Méga Hyper Rare dorée', SUN], ['Méga-Rayquaza-ex', 'Illustration spéciale rare, par Kazuki Minami', VSOFT], ['Raikou-ex', 'Illustration spéciale rare', BLUE]].map(([n, k, c], i) =>
+      st(70, 450 + i * 230, 940, 190, `<div style="display:flex;align-items:center;gap:34px;height:100%;padding:0 40px"><div class="h" style="font-size:90px;color:${c};width:70px">${i + 1}</div><div><div class="h" style="font-size:52px">${n}</div><div class="ui mut" style="font-size:28px;margin-top:6px">${k}</div></div></div>`, { r: [-1.5, 1, -1][i], z: 3 })).join('')}
+    <div class="abs mut" style="left:70px;right:70px;top:1150px;font-weight:600;font-size:30px;text-align:center">Pas encore de cote : elle se forme dans les premiers jours.</div>
+    ${src('Cartes les plus attendues selon la presse spécialisée (wargamer.com, cardlines.com), relevé le 06/10/2026.')}`],
+  ['4-prix', `${track(3, 805, .4)}${head('LE PRIX', G, SUB)}
+    <div class="abs h" style="left:70px;top:170px;font-size:100px">Combien pour<br><span class="acc">un display ?</span></div>
+    ${st(70, 470, 940, 300, `<div style="padding:40px 50px;color:${DARK}"><div class="lab" style="font-size:24px">DISPLAY DE 36 BOOSTERS · EN FRANÇAIS</div><div class="h" style="font-size:110px;margin-top:14px;white-space:nowrap">${eur(215.64)} à ${eur(249)}</div><div class="ui" style="font-size:28px;margin-top:8px">selon les boutiques, en précommande</div></div>`, { fill: SUN, r: -1.5, z: 3 })}
+    ${st(70, 840, 940, 200, `<div style="padding:34px 50px"><div class="lab" style="font-size:22px;color:${VSOFT}">AUX ÉTATS-UNIS · PRIX CONSEILLÉ</div><div class="ui" style="font-size:44px;margin-top:12px">Booster ${usd(4.49)} · display ${usd(159.99)}</div></div>`, { r: 1, z: 3 })}
+    <div class="abs mut" style="left:70px;right:70px;top:1110px;font-weight:600;font-size:34px;text-align:center">Tu ouvres, ou tu attends que la cote retombe ?</div>
+    ${src('Prix relevés le 06/10/2026 : les7royaumes.com, otakuland-mangapassion.com (displays FR), trackalacker.com (prix conseillés US).')}`],
+  ['5-suis-sa-cote', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8], [110, 1120, 70, 4], [920, 1100, 80, -6]])}${track(4, 1200, .6)}${head('SUR BOOSTZ', G, SUB)}
+    <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Suis leur cote<br><span class="acc">dès le premier jour.</span></div>
+    ${back('pokemon', 330, 470, 180, -8, 2)}${back('pokemon', 560, 470, 180, 7, 2)}
+    ${closing(800)}`],
+]);
+</script></body></html>

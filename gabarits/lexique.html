@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz lexique TCG</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Lexique TCG: one word per slide, a one-sentence definition, a real example.
+// Definitions checked on 06/10/2026 against psacard.com (grading standards),
+// Bulbapedia and pokemon.com (Special Illustration Rare), cardcodex.com
+// (chase card), pokemoncenter.com (sealed product), dexerto.com (Lorcana
+// rarities: no official Enchanted pull rate).
+const booster = (x, y, w, r) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.55}px;transform:rotate(${r}deg);z-index:2;filter:drop-shadow(16px 16px 0 ${SHADOW})">
+  <svg width="100%" height="100%" viewBox="0 0 100 155"><path d="M8 6 L92 6 L96 14 L92 22 L96 30 L92 38 L92 125 L96 133 L92 141 L96 149 L8 149 L4 141 L8 133 L4 125 L8 38 L4 30 L8 22 L4 14 Z" fill="${VIOLET}" stroke="${INK}" stroke-width="3"/>
+  <rect x="8" y="22" width="84" height="8" fill="${INK}" opacity=".9"/><rect x="8" y="125" width="84" height="8" fill="${INK}" opacity=".9"/>
+  <circle cx="50" cy="78" r="22" fill="none" stroke="${INK}" stroke-width="4"/><path d="M28 78 H72" stroke="${INK}" stroke-width="4"/></svg></div>`;
+const grid = (x, y, w, n, hit) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;display:grid;grid-template-columns:repeat(${Math.sqrt(n)},1fr);gap:8px;z-index:2">${Array.from({ length: n }, (_, i) => `<div style="aspect-ratio:1;border-radius:6px;${i === hit ? `background:${SUN};outline:4px solid ${INK};box-shadow:6px 6px 0 ${SHADOW}` : 'background:rgba(196,181,253,.16)'}"></div>`).join('')}</div>`;
+const WORDS = [
+  ['PSA 10', card('assets/record-black-lotus.jpg', 90, 380, 380, -4, 2, { pos: 'center 20%' }), 'La note maximale de PSA. Elle authentifie la carte, la note de 1 à 10 (centrage, coins, bords, surface) et la scelle dans un boîtier numéroté.', 'Exemple : Black Lotus (Magic), PSA 10. Source : psacard.com, barème de notation.'],
+  ['Alt art', card('assets/carte-ectoplasma-vmax-swsh8-271.jpg', 90, 380, 380, -4), 'Une autre illustration d’une carte qui existe déjà, souvent sur toute la carte. Même nom, même effet en jeu.', 'Exemple : Ectoplasma VMAX, Poing de Fusion 271/264. Source : snkrdunk.com.'],
+  ['Illustration spéciale rare', card('assets/carte-dracaufeu-ex-sv035-199.jpg', 90, 380, 380, -4), 'La rareté Pokémon des illustrations pleine carte, apparue avec Écarlate et Violet. Elle porte deux étoiles dorées.', 'Exemple : Dracaufeu-ex, 151, 199/165. En anglais : SIR. Sources : pokemon.com, Bulbapedia.'],
+  ['Chase', card('assets/carte-mega-dracaufeu-x-pfl130.jpg', 90, 380, 380, -4), 'La carte que tout le monde chasse dans un set : la plus rare, la plus belle, la plus demandée.', 'Exemple : Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094. Source : cardcodex.com.'],
+  ['Taux de tirage', grid(100, 400, 360, 100, 57), 'La chance de tirer une carte ou une rareté précise dans un booster. On le note « 1 sur N ».', 'Exemple : le Tigre spectral du TCG World of Warcraft, 1 booster sur 484 (Heritage Auctions).'],
+  ['Scellé', booster(140, 360, 300, -5), 'Un produit neuf, jamais ouvert, dans son emballage d’origine. Un booster ouvert puis refermé ne l’est plus.', 'Source : pokemoncenter.com, fiches produit.'],
+  ['Enchantée', back('lorcana', 90, 380, 380, -4), 'La rareté la plus haute d’un booster Lorcana : une illustration sans bord, en foil arc‑en‑ciel.', 'Pas de taux officiel : de 1 sur 48 à 1 sur 96 boosters selon les relevés de joueurs. Source : dexerto.com.'],
+];
+carousel([
+  ['1-couverture', `${ghosts([[90, 300, 80, -6], [920, 340, 90, 8]])}${track(0, 1110, .45)}${head('LEXIQUE TCG', 'all')}
+    <div class="abs h" style="left:0;top:330px;width:1080px;text-align:center;font-size:130px">Ça veut<br>dire quoi ?</div>
+    <div class="abs h acc" style="left:0;top:650px;width:1080px;text-align:center;font-size:70px">7 mots pour parler<br>comme un collectionneur.</div>
+    <div class="abs mut" style="left:0;top:900px;width:1080px;text-align:center;font-weight:600;font-size:36px">Enregistre-le pour ne plus jamais être perdu.</div>
+    <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
+    <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
+  ...WORDS.map(([w, visual, def, ex], i) => [`${i + 2}-${w.toLowerCase().normalize('NFD').replace(/[^a-z0-9 ]/g, '').replace(/ +/g, '-')}`,
+    `${track(i + 1, 1150, .35)}${head(`LEXIQUE · ${i + 1}/7`, 'all')}
+    <div class="abs h" style="left:70px;top:220px;width:940px;font-size:${w.length > 14 ? 84 : 110}px;line-height:1">${w}</div>
+    <div class="abs" style="left:0;top:80px;width:1080px;height:1000px">${visual}</div>
+    ${st(520, 500, 490, 500, `<div class="ui" style="display:flex;align-items:center;height:100%;padding:0 40px;font-size:36px;line-height:1.3;color:${DARK}">${def}</div>`, { fill: [SUN, VSOFT, DONE, PINK, SUN, VSOFT, GAMES.lorcana[1]][i], r: 2, z: 3 })}
+    ${src(ex)}`]),
+  ['9-fin', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8], [110, 1120, 70, 4], [920, 1100, 80, -6]])}${track(8, 1200, .6)}${head('LEXIQUE TCG', 'all')}
+    <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Il manque un mot ?<br><span class="acc">Dis-le en commentaire.</span></div>
+    ${back('pokemon', 330, 470, 180, -8, 2)}${back('lorcana', 560, 470, 180, 7, 2)}
+    ${closing(800)}`],
+]);
+</script></body></html>

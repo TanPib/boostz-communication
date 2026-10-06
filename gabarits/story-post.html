@@ -22,7 +22,13 @@ const ghosts = [[60, 260, 90, -8], [920, 300, 80, 6], [80, 1650, 100, 10], [900,
 // One entry per carousel post: the id (file name), the cover image (relative to this page), the hook.
 const STORIES = [
   ['2026-10-22-dracaufeu', '../images/2026-10-22-analyse-mega-dracaufeu-x-stickers/1-couverture.jpg', 'Méga-Dracaufeu X ex :', 'elle vaut combien ?', 'La réponse est dans notre nouveau post.'],
-  ['2026-11-24-tigre-spectral', '../images/2026-11-24-mythe-tigre-spectral/1-affirmation.jpg', 'Une carte à 5 250 $', 'pour un tigre ?', 'Mythe ou réalité : swipe notre nouveau post.']
+  ['2026-11-24-tigre-spectral', '../images/2026-11-24-mythe-tigre-spectral/1-affirmation.jpg', 'Une carte à 5 250 $', 'pour un tigre ?', 'Mythe ou réalité : swipe notre nouveau post.'],
+  ['2026-11-06-regne-delta', '../images/2026-11-06-sortie-regne-delta/1-couverture.jpg', 'Règne Delta', 'sort aujourd’hui.', 'Tout savoir dans notre nouveau post.'],
+  ['2026-11-12-deux-sorties', '../images/2026-11-12-sorties-maestros-star-trek/1-couverture.jpg', 'Deux sorties', 'cette semaine.', 'Yu-Gi-Oh! et Magic : notre nouveau post.'],
+  ['2026-12-12-lexique', '../images/2026-12-12-lexique-tcg/1-couverture.jpg', 'Ça veut', 'dire quoi ?', 'Le lexique TCG dans notre nouveau post.'],
+  ['2026-12-18-fb12', '../images/2026-12-18-sortie-fb12/1-couverture.jpg', 'Reach the God', 'sort aujourd’hui.', 'Dragon Ball : notre nouveau post.'],
+  ['2026-12-24-protege', '../images/2026-12-24-protege-ta-collection/1-couverture.jpg', 'Tes cartes de Noël,', 'protège-les.', '5 gestes dans notre nouveau post.'],
+  ['2026-12-30-records', '../images/2026-12-30-records-2026/1-couverture.jpg', '2026,', 'l’année des records.', '5 ventes records dans notre nouveau post.']
 ];
 document.body.innerHTML = STORIES.map(([id, img, a, b, sub]) => `<div class="p" id="${id}">${ghosts}
   <svg class="abs" width="1080" height="1920" style="left:0;top:0"><path d="M-20 1820 C160 1770 300 1890 520 1840 S860 1760 1100 1810" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>

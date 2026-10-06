@@ -30,6 +30,16 @@ const STYLES = {
   blackfriday: { bpm: 98, prog: ['Am7', 'D9', 'Gmaj7', 'Cmaj7'], lead: 'bells', drums: 1, bright: .8 },
   dracaufeu:   { bpm: 90, prog: ['Em9', 'Cmaj7', 'G', 'D'], lead: 'keys', drums: .8, bright: .8 },
   tigre:       { bpm: 80, prog: ['Amadd9', 'Fmaj7', 'C', 'G'], lead: 'musicbox', drums: .5, bright: .9 },
+  halloween:   { bpm: 82, prog: ['Am', 'Fmaj7', 'Dm7', 'E'], lead: 'musicbox', drums: .5, bright: .7 },
+  sortie:      { bpm: 100, prog: ['Cmaj7', 'Em7', 'Fmaj7', 'G6'], lead: 'bells', drums: 1, bright: 1 },
+  erreurs:     { bpm: 104, prog: ['F', 'Dm', 'Bbmaj7', 'C'], lead: 'chip', drums: .9, bright: .8 },
+  lexique:     { bpm: 88, prog: ['Gmaj7', 'Em7', 'Cmaj7', 'D6'], lead: 'keys', drums: .7, bright: .9 },
+  echange:     { bpm: 92, prog: ['Dmaj7', 'F#m7', 'Gmaj7', 'A6'], lead: 'keys', drums: .9, bright: .9 },
+  noel:        { bpm: 90, prog: ['Cmaj7', 'Am7', 'Fmaj7', 'G6'], lead: 'bells', drums: .6, bright: 1 },
+  protege:     { bpm: 84, prog: ['Ebmaj7', 'Gm7', 'Abmaj7', 'Bb6'], lead: 'keys', drums: .6, bright: .8 },
+  contrefacon: { bpm: 88, prog: ['Em7', 'Cmaj7', 'Am7', 'B'], lead: 'keys', drums: .8, bright: .7 },
+  records:     { bpm: 96, prog: ['Fmaj7', 'Dm7', 'Bbmaj7', 'C6'], lead: 'bells', drums: 1, bright: 1 },
+  nouvelan:    { bpm: 98, prog: ['Gmaj7', 'Bm7', 'Cmaj7', 'D6'], lead: 'bells', drums: 1, bright: 1 },
 };
 const S = STYLES[style];
 if (!S) throw new Error(`unknown style ${style}: ${Object.keys(STYLES).join(', ')}`);
