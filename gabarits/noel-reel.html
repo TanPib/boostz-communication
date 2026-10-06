@@ -26,6 +26,7 @@ const scene = (c, i) => {
 };
 const END = T0 + CARDS.length * STEP;
 reel(`${ghosts([[60, 160, 90, -8], [930, 260, 80, 6], [70, 1760, 90, 10], [900, 1780, 100, -6]])}
+  ${deco([['🎄', 330, 100, 140, -6], ['🎁', 620, 120, 120, 8], ['❄️', 120, 190, 90, -10], ['⭐', 860, 200, 90, 12], ['🎁', 850, 1540, 90, 8], ['⛄', 30, 1540, 90, -6]])}
   ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}
   <div class="abs h" ${A(.2, T0 - .3, 0, 'rise')} style="left:0;top:560px;width:1080px;text-align:center;font-size:110px">Une carte<br>sous le sapin ?</div>
   <div class="abs h acc" ${A(1.1, T0 - .3, 0, 'rise')} style="left:0;top:880px;width:1080px;text-align:center;font-size:72px">Une idée<br>pour chaque budget.</div>

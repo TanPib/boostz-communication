@@ -10,6 +10,7 @@ const ring = ALL8.map((g, i) => {
   return `<div class="abs" ${A(1.4 + i * .22, 5.6, r)} style="left:${x}px;top:${y}px;z-index:4">${emblemDisc(g, 140)}</div>`;
 }).join('');
 reel(`${ghosts([[60, 200, 80, -8], [930, 260, 80, 6], [70, 1760, 90, 10], [900, 1780, 100, -6]])}
+  ${deco([['🎆', 330, 90, 130, -8], ['🎉', 620, 100, 120, 10], ['🥂', 100, 1450, 110, -8], ['✨', 880, 1450, 110, 10], ['🎊', 480, 1560, 100, 4]])}
   ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}
   <div class="abs h" ${A(.3, 5.6, 0, 'rise')} style="left:0;top:650px;width:1080px;text-align:center;font-size:76px;z-index:5">Bonne année</div>
   <div class="abs h" ${A(.7, 5.6, -3)} style="left:0;top:740px;width:1080px;text-align:center;font-size:170px;line-height:1;z-index:5"><span class="grad">2027</span></div>

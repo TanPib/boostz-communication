@@ -39,6 +39,12 @@ const st = (x, y, w, h, inner, o = {}) => `<div ${o.id ? `id="${o.id}"` : ''} ${
 const disc = (x, y, d, fill, inner, r = 0, attrs = '') => `<div ${attrs} class="abs" style="left:${x}px;top:${y}px;width:${d}px;height:${d}px;border-radius:50%;background:${fill};border:6px solid ${INK};box-shadow:12px 12px 0 ${SHADOW};display:flex;align-items:center;justify-content:center;transform:rotate(${r}deg);z-index:4">${inner}</div>`;
 const emblemDisc = (game, d) => `<div style="width:${d}px;height:${d}px;border-radius:50%;background:${GAMES[game][1]};border:5px solid ${INK};box-shadow:8px 8px 0 ${SHADOW};display:flex;align-items:center;justify-content:center;flex:none">${emblemSvg(game, DARK, d * .58)}</div>`;
 const ghosts = (list) => list.map(([x, y, w, r]) => `<div class="abs ghost" data-r="${r}" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border:4px solid rgba(255,255,255,.14);border-radius:${w * .16}px;transform:rotate(${r}deg)"><div style="width:60%;height:6px;margin:${w * .1}px auto 0;border-radius:3px;background:rgba(255,255,255,.14)"></div></div>`).join('');
+// Seasonal stickers (asked on 06/10/2026: clear seasonal visuals on Halloween,
+// Christmas, New Year... posts). Noto Color Emoji (OFL) cut out like a sticker:
+// white outline, hard shadow. list: [[emoji, x, y, size, rotation]]. In a Reel they
+// bob in place (no drift, so they stay where they were checked). Place them in
+// empty bands: they never touch text.
+const deco = (list) => list.map(([e, x, y, size, r = 0]) => `<div class="abs deco" data-r="${r}" style="left:${x}px;top:${y}px;font-size:${size}px;line-height:1;font-family:'Noto Color Emoji';transform:rotate(${r}deg);filter:drop-shadow(5px 0 0 ${INK}) drop-shadow(-5px 0 0 ${INK}) drop-shadow(0 5px 0 ${INK}) drop-shadow(0 -5px 0 ${INK}) drop-shadow(10px 10px 0 ${SHADOW});z-index:1">${e}</div>`).join('');
 // The dashed path runs across the slides of a carousel. On each slide, y puts
 // its centre line in an empty band and amp flattens its waves to fit the band.
 const TRACK = 'M-20 760 C200 700 300 820 540 780 S900 640 1080 700 S1400 860 1620 800 S1980 600 2160 680 S2500 900 2700 820 S3060 640 3240 720 S3600 880 3780 820 S4140 640 4320 700 S4700 860 4900 800 S5300 700 5420 740 S5800 860 6000 800 S6300 680 6500 740 S6900 860 7100 800 S7500 680 7700 740 S8100 860 8300 800 S8700 700 8900 740 S9300 860 9500 800 S9900 680 10100 740 S10500 860 10700 800 S11100 700 11300 740 S11700 860 11900 800';
@@ -77,8 +83,10 @@ function reel(html, total) {
   window.TOTAL = total;
   const els = [...document.querySelectorAll('[data-at]')];
   const gs = [...document.querySelectorAll('.ghost')];
+  const ds = [...document.querySelectorAll('.deco')];
   window.render = (t) => {
     gs.forEach((g, i) => { g.style.transform = `translateX(${t * (5 + i)}px) rotate(${+g.dataset.r + Math.sin(t / 2 + i) * 3}deg)`; });
+    ds.forEach((d, i) => { d.style.transform = `translateY(${Math.sin(t * 1.6 + i * 1.3) * 10}px) rotate(${+d.dataset.r + Math.sin(t + i) * 5}deg)`; });
     const dr = document.getElementById('drawRect'); if (dr) dr.setAttribute('width', 1100 * out3(t / 2.4));
     for (const el of els) {
       const at = +el.dataset.at, kind = el.dataset.kind || 'stick', r = +(el.dataset.r || 0);
