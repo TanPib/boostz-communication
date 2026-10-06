@@ -8,12 +8,15 @@ on:
     inputs:
       url:
         description: Page or direct image URL
-        required: true
+        required: false
       nom:
         description: File name in gabarits/assets/, without extension
-        required: true
+        required: false
       motif:
-        description: Optional word in the <img> src to pick when the page has no og:image
+        description: Optional word in the <img> src to pick instead of the og:image
+        required: false
+      lot:
+        description: Several images, one "nom | url | motif" per line (or separated by ;;)
         required: false
 permissions:
   contents: write
@@ -27,47 +30,65 @@ jobs:
           URL: ${{ inputs.url }}
           NOM: ${{ inputs.nom }}
           MOTIF: ${{ inputs.motif }}
+          LOT: ${{ inputs.lot }}
         run: |
           python3 - <<'PY'
-          import os, re, urllib.parse, urllib.request
-          url, nom = os.environ['URL'], os.environ['NOM']
-          assert re.fullmatch(r'[a-z0-9-]+', nom), 'nom: lowercase letters, digits and dashes only'
+          import os, re, sys, urllib.parse, urllib.request
           get = lambda u: urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36', 'Accept': '*/*', 'Accept-Language': 'fr,en;q=0.8'}), timeout=60)
-          r = get(url)
-          kind = r.headers.get('Content-Type', '')
-          data = r.read()
-          if 'json' in kind:  # a MediaWiki pageimages answer, or a card API: take its image
-              text = data.decode().replace('\\/', '/')
-              m = re.search(r'"source":\s*"([^"]+)"', text)
-              src = m and m.group(1)
-              if not src:  # a card API (Lorcast, Scryfall...): the first image URL matching motif
-                  urls = re.findall(r'"(https://[^"]+\.(?:jpg|jpeg|png|webp|avif)[^"]*)"', text)
-                  print('image URLs in the answer:', urls)
-                  src = next((u for u in urls if os.environ.get('MOTIF', '').lower() in u.lower()), None)
-              assert src, 'no image in the JSON answer'
-              print('source', src)
-              r = get(src); kind = r.headers.get('Content-Type', ''); data = r.read()
-          elif kind.startswith('text/html'):
-              html = data.decode('utf-8', 'replace')
-              m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)', html) or re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image', html)
-              src = m and m.group(1)
-              if not src and os.environ.get('MOTIF'):
-                  imgs = re.findall(r'<img[^>]+src=["\']([^"\']+)', html, re.I)
-                  print('images on the page:', imgs)
-                  src = next((i for i in imgs if os.environ['MOTIF'].lower() in i.lower()), None)
-              assert src, 'no og:image on the page, and no <img> matching motif'
-              src = urllib.parse.urljoin(url, src.replace('&amp;', '&'))
-              print('image', src)
-              r = get(src); kind = r.headers.get('Content-Type', ''); data = r.read()
-          ext = {'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif', 'image/avif': 'avif'}.get(kind.split(';')[0], 'jpg')
-          path = f'gabarits/assets/{nom}.{ext}'
-          open(path, 'wb').write(data)
-          print(path, len(data), 'bytes', kind)
+
+          def fetch(nom, url, motif):
+              assert re.fullmatch(r'[a-z0-9-]+', nom), 'nom: lowercase letters, digits and dashes only'
+              r = get(url); kind = r.headers.get('Content-Type', ''); data = r.read()
+              if 'json' in kind:  # a MediaWiki pageimages answer, or a card API: take its image
+                  text = data.decode().replace('\\/', '/')
+                  m = re.search(r'"source":\s*"([^"]+)"', text)
+                  src = m and m.group(1)
+                  if not src:  # a card API (Lorcast, Scryfall...): the first image URL matching motif
+                      urls = re.findall(r'"(https://[^"]+\.(?:jpg|jpeg|png|webp|avif)[^"]*)"', text)
+                      print('image URLs in the answer:', urls)
+                      src = next((u for u in urls if motif.lower() in u.lower()), None)
+                  assert src, 'no image in the JSON answer'
+              elif kind.startswith('text/html'):
+                  html = data.decode('utf-8', 'replace')
+                  m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)', html) or re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image', html)
+                  src = None
+                  if motif:  # a word given: an <img> matching it beats the og:image, often a generic banner
+                      imgs = re.findall(r'<img[^>]+?(?:data-src|src)=["\']([^"\']+)', html, re.I)
+                      print('images on the page:', imgs)
+                      src = next((i for i in imgs if motif.lower() in i.lower()), None)
+                  src = src or (m and m.group(1))
+                  assert src, 'no og:image on the page, and no <img> matching motif'
+                  src = urllib.parse.urljoin(url, src.replace('&amp;', '&'))
+              else:
+                  src = None
+              if src:
+                  print('image', src)
+                  r = get(src); kind = r.headers.get('Content-Type', ''); data = r.read()
+              ext = {'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif', 'image/avif': 'avif'}.get(kind.split(';')[0], 'jpg')
+              path = f'gabarits/assets/{nom}.{ext}'
+              open(path, 'wb').write(data)
+              print(path, len(data), 'bytes', kind)
+
+          # One image from url/nom/motif, or a batch: one "nom | url | motif" per line in lot.
+          jobs = [(os.environ['NOM'], os.environ['URL'], os.environ.get('MOTIF', ''))] if os.environ.get('URL') else []
+          for line in os.environ.get('LOT', '').replace(';;', '\n').splitlines():
+              parts = [x.strip() for x in line.split('|')]
+              if len(parts) >= 2 and parts[0]:
+                  jobs.append((parts[0], parts[1], parts[2] if len(parts) > 2 else ''))
+          ok = 0
+          for nom, url, motif in jobs:
+              print('==', nom, url)
+              try:
+                  fetch(nom, url, motif); ok += 1
+              except Exception as e:
+                  print('FAILED', nom, type(e).__name__, e)
+          print(f'{ok}/{len(jobs)} images')
+          sys.exit(0 if ok else 1)
           PY
       - name: Commit
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add gabarits/assets
-          git diff --cached --quiet || git commit -q -m "Add the image ${{ inputs.nom }} for a post"
+          git diff --cached --quiet || git commit -q -m "Add the image ${{ inputs.nom || 'batch' }} for a post"
           for i in 1 2 3 4 5 6; do git pull -q --rebase && git push -q && exit 0; sleep $((i * 5)); done; exit 1
