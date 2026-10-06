@@ -21,21 +21,21 @@ Trois principes, demandés par l'utilisateur :
 | N° | Date | Format | Type (`TYPES.md`) | Sujet | Jeu | État |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | ven. 16/10, 10 h | Reel | 11 Annonce | Lancement : « boostZ ta collection » | les 8 | ✅ programmé |
-| 2 | lun. 19/10, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 1 : relevés du 03/10 au 16/10 | Pokémon | relevé auto le 16/10 |
+| 2 | lun. 19/10, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 1 : relevés du 03/10 au 16/10 | Pokémon | brouillon dans Metricool, produit par le rappel du 16/10 |
 | 3 | jeu. 22/10, 10 h | carrousel | 1 Analyse de carte | Méga-Dracaufeu X ex | Pokémon | ✅ programmé |
 | 4 | dim. 25/10, 10 h | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », raccourci à 8 s | les 8 | ✅ programmé (8 s) |
-| 5 | mer. 28/10, 10 h | carrousel | 15 Sortie d'extension | Hyperia City (chapitre 14, sorti le 23/10) : les 10 cartes qui valent le plus | Lorcana | à produire |
-| 6 | sam. 31/10, 18 h | Reel | 16 Thème | Halloween : une carte qui fait peur par jeu, et sa cote | Pokémon, Magic, One Piece, Lorcana, Yu-Gi-Oh! | à produire |
-| 7 | mar. 03/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 2 : du 16/10 au 01/11 | One Piece | à produire |
-| 8 | ven. 06/11, 10 h | carrousel | 15 Sortie d'extension | Delta Reign sort aujourd'hui (ME06, en anglais) | Pokémon | à produire |
+| 5 | mer. 28/10, 10 h | carrousel | 15 Sortie d'extension | Hyperia City (chapitre 14, sorti le 23/10) : les 10 cartes qui valent le plus | Lorcana | brouillon dans Metricool, produit par le rappel du 26/10 |
+| 6 | sam. 31/10, 18 h | Reel | 16 Thème | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | ✅ programmé (cotes du 03 et du 05/10) |
+| 7 | mar. 03/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 2 : du 16/10 au 01/11 | One Piece | brouillon dans Metricool, produit par le rappel du 01/11 |
+| 8 | ven. 06/11, 10 h | carrousel | 15 Sortie d'extension | Règne Delta sort aujourd'hui (ME06, en français et en anglais) | Pokémon | ✅ programmé |
 | 9 | lun. 09/11, 10 h | Reel | 3 1 chance sur N | 1 chance sur 96 d'avoir une enchantée | Lorcana | ✅ programmé |
-| 10 | jeu. 12/11, 10 h | carrousel | 15 Sortie d'extension | Vendredi, deux sorties : Magnificent Maestros et Magic × Star Trek | Yu-Gi-Oh!, Magic | à produire |
+| 10 | jeu. 12/11, 10 h | carrousel | 15 Sortie d'extension | Cette semaine, deux sorties : Magnificent Maestros (12/11 en Europe) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | ✅ programmé |
 | 11 | dim. 15/11, 10 h | Reel | 12 Fonction à la loupe | Estime l'état de tes cartes | les 8 | ✅ programmé |
-| 12 | mer. 18/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 3 : du 01/11 au 16/11 | Magic | à produire |
-| 13 | sam. 21/11, 10 h | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | à produire |
+| 12 | mer. 18/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 3 : du 01/11 au 16/11 | Magic | brouillon dans Metricool, produit par le rappel du 16/11 |
+| 13 | sam. 21/11, 10 h | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | brouillon dans Metricool, produit par le rappel du 20/11 |
 | 14 | mar. 24/11, 10 h | carrousel | 13 Mythe ou réalité | « Une carte s'est vendue 5 250 \$… pour un tigre qui n'existe pas » | Warcraft | ✅ programmé |
 | 15 | ven. 27/11, 10 h | Reel | 16 Thème | Black Friday : « Promo ou pas ? » | les 8 | ✅ programmé |
-| 16 | lun. 30/11, 10 h | carrousel | 14 Tu préfères ? | La chase de Brightness of Hope (FB11) contre celle de Magnificent Maestros | Dragon Ball, Yu-Gi-Oh! | à produire |
+| 16 | lun. 30/11, 10 h | carrousel | 14 Tu préfères ? | La chase de Brightness of Hope (FB11) contre celle de Magnificent Maestros | Dragon Ball, Yu-Gi-Oh! | brouillon dans Metricool, produit par le rappel du 27/11 |
 
 **Les 8 jeux.**
 - Pokémon : 3 posts (2, 3, 8).
@@ -61,23 +61,27 @@ Trois principes, demandés par l'utilisateur :
 
 **News TCG.** À chaque rappel programmé, Claude cherche les grosses actus des 8 jeux : annonce d'extension, réédition, record de vente, ban. Une news importante prend la place du prochain post qui n'est lié à aucune date (11, 14, 15 ou 16) ; le post remplacé passe en décembre.
 
-## Décembre (posts 17 à 26)
+## Décembre (posts 17 à 27)
 
 Écrit le 05/10/2026 pour que le rythme ne s'arrête pas au 30/11. Même logique : les sorties d'abord, les 8 jeux, l'alternance Reel et carrousel, 10 h.
 
 | N° | Date | Format | Type (`TYPES.md`) | Sujet | Jeu | État |
 | --- | --- | --- | --- | --- | --- | --- |
-| 17 | jeu. 03/12, 10 h | Reel | 15 Sortie d'extension | Demain : Glorious Victors (sortie le 04/12) | Yu-Gi-Oh! | à produire |
-| 18 | dim. 06/12, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 4 : du 21/11 au 05/12 (historique Lorcast via `rarebox-data`) | Lorcana | à produire |
-| 19 | mer. 09/12, 10 h | Reel | 20 Erreurs d'impression | Des cartes mal imprimées vendues une fortune, une vente sourcée par plan | plusieurs jeux | à produire |
-| 20 | sam. 12/12, 10 h | carrousel | 17 Lexique TCG | « Ça veut dire quoi ? » PSA 10, alt art, SIR, chase, taux de tirage, scellé, enchantée | les 8 | à produire |
-| 21 | mar. 15/12, 10 h | Reel | 12 Fonction à la loupe | L'échange : la valeur de chaque côté | les 8 | à produire |
-| 22 | ven. 18/12, 10 h | carrousel | 15 Sortie d'extension | FB12 sort aujourd'hui | Dragon Ball | à produire |
-| 23 | lun. 21/12, 10 h | Reel | 16 Thème | Noël : une carte à glisser sous le sapin par jeu, et sa cote | Pokémon, Magic, One Piece, Lorcana, Star Wars Unlimited | à produire |
-| 24 | jeu. 24/12, 10 h | carrousel | 18 Protège ta collection | Tes cartes de Noël : sleeves, toploaders, classeurs, humidité, lumière | les 8 | à produire |
-| 25 | dim. 27/12, 10 h | Reel | 19 Repère la contrefaçon | Tes cartes de Noël sont-elles vraies ? Les signes, vraie carte en face | Pokémon, One Piece | à produire |
-| 26 | mer. 30/12, 10 h | carrousel | 16 Thème | 2026 en 5 ventes records, une par jeu, chacune sourcée | Pokémon, Magic, One Piece, Lorcana, Warcraft | à produire |
+| 17 | jeu. 03/12, 10 h | Reel | 15 Sortie d'extension | Glorious Victors sort aujourd'hui (03/12 en Europe) | Yu-Gi-Oh! | ✅ programmé |
+| 18 | dim. 06/12, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 4 : du 21/11 au 05/12 (historique Lorcast via `rarebox-data`) | Lorcana | brouillon dans Metricool, produit par le rappel du 05/12 |
+| 19 | mer. 09/12, 10 h | Reel | 20 Erreurs d'impression | Caninos et Tortank à dos Magic, la carte « Discard » enchantée | Pokémon, Lorcana | ✅ programmé |
+| 20 | sam. 12/12, 10 h | carrousel | 17 Lexique TCG | « Ça veut dire quoi ? » PSA 10, alt art, illustration spéciale rare, chase, taux de tirage, scellé, enchantée | les 8 | ✅ programmé |
+| 21 | mar. 15/12, 10 h | Reel | 12 Fonction à la loupe | L'échange : la valeur de chaque côté, avec de vraies cotes | Pokémon | ✅ programmé (cotes du 03/10) |
+| 22 | ven. 18/12, 10 h | carrousel | 15 Sortie d'extension | FB12 Reach the God sort aujourd'hui | Dragon Ball | ✅ programmé |
+| 23 | lun. 21/12, 10 h | Reel | 16 Thème | Noël : une carte sous le sapin pour chaque budget, et sa cote | Pokémon, Lorcana | ✅ programmé (cotes du 03 et du 05/10, à rafraîchir) |
+| 24 | jeu. 24/12, 10 h | carrousel | 18 Protège ta collection | Tes cartes de Noël : pochettes, étuis, classeurs, rangement, envoi | les 8 | ✅ programmé |
+| 25 | dim. 27/12, 10 h | Reel | 19 Repère la contrefaçon | Tes cartes de Noël sont-elles vraies ? 5 signes, vraie carte en face | Pokémon | ✅ programmé |
+| 26 | mer. 30/12, 10 h | carrousel | 16 Thème | 2026, l'année des records : 5 ventes sourcées | Pokémon, Magic, One Piece | ✅ programmé (ventes jusqu'au 06/10, à compléter) |
+| 27 | ven. 01/01/2027, 10 h | Reel | 16 Thème | Bonne année 2027 : les 8 TCG au même endroit | les 8 | ✅ programmé |
 
+- **Programmé le 06/10/2026** : tous les posts qui ne dépendent pas d'un relevé futur sont dans Metricool (Instagram, TikTok, Facebook, story vidéo). Les 7 posts « Cotes qui bougent », Hyperia City, OP18/Icons et « Tu préfères ? » sont des brouillons Instagram (image « Ne pas publier », publication automatique coupée) : le rappel de leur date les produit, puis transforme le brouillon en vrai post (`updateScheduledPost` : Metricool ne permet pas de supprimer un post par l'API) et crée TikTok, Facebook et la story.
+- **Bonne année (01/01)** : le seul écart de 2 jours du rythme. Janvier reprend le 04/01, puis tous les 3 jours.
+- **Cotes datées d'octobre** sur Halloween, l'échange et Noël : le rappel qui précède chacun les rafraîchit et remplace la vidéo si un chiffre a bougé.
 - **Sortie de l'appli** : le jour où sa date est connue, un post « Annonce » (type 11) prend la place du post sans date le plus proche (19, 20, 21, 24, 25 ou 26), qui glisse en janvier.
 - **Dates à reconfirmer une semaine avant** : Yu-Gi-Oh! Glorious Victors le 04/12 ([tcgalerts](https://www.tcgalerts.net/yugioh/calendar/), [vintageccg](https://www.vintageccg.com/ccg-news/tcg-release-schedule-2026-2027/)), Dragon Ball FB12 le 18/12. Un set spécial Pokémon est attendu en décembre sans date ([Beckett](https://www.beckett.com/news/2026-tcg-release-dates-checklists-and-set-information/)) : s'il sort, il prend la place du n° 21, qui glisse en janvier.
 - **Les 4 nouveaux types** choisis le 06/10/2026 (17 Lexique, 18 Protège ta collection, 19 Contrefaçon, 20 Erreurs d'impression) prennent les places sans date du 09, du 12, du 24 et du 27/12. La contrefaçon et la protection tombent juste après Noël, quand on vient de recevoir des cartes.

@@ -29,7 +29,21 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `images/2026-11-24-mythe-tigre-spectral/` | mar. 24/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG 1080 × 1350, style stickers, plus `story.jpg` |
 | `videos/2026-11-24-story-tigre-spectral.mp4` | mar. 24/11/2026, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
 | `videos/2026-11-27-black-friday.mp4` | ven. 27/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 10 s, musique originale |
+| `videos/2026-10-31-halloween.mp4` | sam. 31/10/2026, 18 h — Instagram, TikTok, Facebook, stories | 9:16, 15 s, musique originale |
+| `images/2026-11-06-sortie-regne-delta/` | ven. 06/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
+| `images/2026-11-12-sorties-maestros-star-trek/` | jeu. 12/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2026-12-03-glorious-victors.mp4` | jeu. 03/12/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 14,5 s, musique originale |
+| `videos/2026-12-09-erreurs-impression.mp4` | mer. 09/12/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, musique originale |
+| `images/2026-12-12-lexique-tcg/` | sam. 12/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2026-12-15-fonction-echange.mp4` | mar. 15/12/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 12,4 s, musique originale |
+| `images/2026-12-18-sortie-fb12/` | ven. 18/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 4 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2026-12-21-noel.mp4` | lun. 21/12/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, musique originale |
+| `images/2026-12-24-protege-ta-collection/` | jeu. 24/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 7 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2026-12-27-contrefacon.mp4` | dim. 27/12/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, musique originale |
+| `images/2026-12-30-records-2026/` | mer. 30/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 7 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2027-01-01-bonne-annee.mp4` | ven. 01/01/2027, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 9,5 s, musique originale |
+| `images/brouillon/a-produire.jpg` | jamais : image des brouillons Metricool des posts qui attendent un relevé de cotes | 4:5, « Ne pas publier » |
 
 Les fichiers sont nommés par leur date de publication. Chaque vidéo publiée porte une musique originale, composée en code par `outils/musique.mjs` et mixée bas (`outils/mixer.sh`) : TikTok et Facebook n'ont pas d'API de musique pour les vidéos. Les Reels Instagram reçoivent en plus une piste de la bibliothèque Instagram.
 
-Les visuels de cartes reprennent l'illustration officielle de la carte, qui reste la propriété de son éditeur (The Pokémon Company, Upper Deck et Blizzard Entertainment pour le Tigre spectral). Les cotes affichées sont datées sur chaque visuel.
+Les visuels de cartes reprennent l'illustration officielle de la carte, qui reste la propriété de son éditeur (The Pokémon Company, Wizards of the Coast, Disney et Ravensburger, Bandai, Konami, Upper Deck et Blizzard Entertainment). Les cotes affichées sont datées sur chaque visuel.
