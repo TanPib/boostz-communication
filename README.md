@@ -26,9 +26,13 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-11-04-1-chance-sur-96-stickers.mp4` | lun. 9/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 22,6 s, musique originale, style stickers |
 | `videos/2026-11-04-1-chance-sur-96-clair.mp4` | remplacée le 05/10/2026 par la version stickers | 9:16, 1080 × 1920, 22,6 s, thème clair, sans son |
 | `videos/2026-11-15-fonction-etat.mp4` | dim. 15/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 10 s, musique originale |
+| `videos/2026-11-14-beta-dans-2-semaines.mp4` | sam. 14/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 16 s, bêta fermée J-14, musique originale |
 | `images/2026-11-24-mythe-tigre-spectral/` | mar. 24/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG 1080 × 1350, style stickers, plus `story.jpg` |
 | `videos/2026-11-24-story-tigre-spectral.mp4` | mar. 24/11/2026, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
+| `videos/2026-11-22-beta-samedi-prochain.mp4` | dim. 22/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 14 s, bêta fermée J-6, musique originale |
+| `videos/2026-11-25-beta-j-3.mp4` | mer. 25/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 14 s, bêta fermée J-3, musique originale |
 | `videos/2026-11-27-black-friday.mp4` | ven. 27/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 10 s, musique originale |
+| `videos/2026-11-28-beta-ouverte.mp4` | sam. 28/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 15 s, ouverture de la bêta fermée, musique originale |
 | `videos/2026-10-31-halloween.mp4` | sam. 31/10/2026, 18 h — Instagram, TikTok, Facebook, stories | 9:16, 15 s, musique originale |
 | `images/2026-11-06-sortie-regne-delta/` | ven. 06/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `images/2026-11-12-sorties-maestros-star-trek/` | jeu. 12/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
