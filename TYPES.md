@@ -22,6 +22,10 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 14 | **Tu préfères ?** | carrousel, 3 slides | 🔥🔥 | à concevoir | jamais |
 | 15 | **Sortie d'extension** | carrousel ou Reel | 🔥🔥🔥 | à concevoir | jamais |
 | 16 | **Thème** | Reel | 🔥🔥🔥 le jour J | prêt (`black-friday-reel.html`) | 27/11/2026 · Black Friday |
+| 17 | **Lexique TCG** | carrousel, 6 à 8 slides | 🔥🔥 | à concevoir | jamais |
+| 18 | **Protège ta collection** | carrousel, 5 à 6 slides | 🔥🔥 | à concevoir | jamais |
+| 19 | **Repère la contrefaçon** | Reel ou carrousel | 🔥🔥🔥 | à concevoir | jamais |
+| 20 | **Erreurs d'impression** | Reel | 🔥🔥🔥 | à concevoir | jamais |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -117,6 +121,22 @@ Une extension, en deux temps possibles : l'annonce quelques jours avant (ce qu'i
 
 ### 16 · Thème
 Un temps fort du calendrier (Halloween, Noël, Black Friday, rentrée…) lu à travers les cartes : une carte qui fait peur par jeu, une promo à vérifier… De préférence plusieurs jeux à la fois.
+
+### 17 · Lexique TCG
+« Ça veut dire quoi ? » : un mot du monde TCG par slide (PSA 10, alt art, SIR, chase, taux de tirage, scellé, enchantée…), avec sa définition en une phrase et un exemple en image. Pour les débutants ; fait enregistrer. Choisi le 06/10/2026.
+- **Données :** aucune cote ; un exemple chiffré est sourcé et daté.
+
+### 18 · Protège ta collection
+Des conseils concrets en stickers : sleeves, toploaders, classeurs sans PVC, humidité, lumière, transport. Fait enregistrer. Choisi le 06/10/2026.
+- **Données :** aucune ; les recommandations viennent des guides des fabricants ou des services de gradation, cités.
+
+### 19 · Repère la contrefaçon
+Les signes connus d'une fausse carte, un par plan ou par slide : la police, le dos, l'épaisseur, le test de la lumière, la brillance. Toujours avec la vraie carte en face. Choisi le 06/10/2026.
+- **Données :** les signes viennent de guides officiels ou communautaires, cités ; jamais une fausse carte présentée comme vraie.
+
+### 20 · Erreurs d'impression
+Des cartes mal imprimées (cadre décalé, texte manquant, mauvais dos, double impression) qui se sont vendues une fortune, une par plan, avec sa vente. Choisi le 06/10/2026.
+- **Données :** chaque vente sourcée et datée (maison d'enchères, PSA Auction Prices Realized), images réelles via le workflow Image.
 
 ### News TCG
 Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, record, ban) prend la place du prochain post qui n'est lié à aucune date, dans le format qui lui va le mieux.
