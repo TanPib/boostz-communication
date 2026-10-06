@@ -9,7 +9,11 @@
 // at t = 0; only a slow punch-in moves. The settled last frame is the cover.
 // The main content stays inside the 3:4 band (y 240-1680) that the Instagram
 // grid keeps. Render one entry with: node rendu.mjs accroche.html#<entry> video
-const HOOK = 1.5;
+// The hook holds for 1.5 s, then its content lifts and fades in 0.4 s, and
+// outils/accroche.sh dissolves into the video's first frames on the same
+// background, so the two never overlap (asked on 06/10/2026: the hard
+// cut felt abrupt).
+const HOOK = 1.5, XF = .7;
 const big = (top, html, size = 124) => `<div class="abs h pop" style="left:70px;right:70px;top:${top}px;font-size:${size}px;text-align:center">${html}</div>`;
 const kick = (text, color = VSOFT) => `<div class="abs lab" style="left:0;top:290px;width:1080px;text-align:center;font-size:28px;letter-spacing:8px;color:${color}">${text}</div>`;
 const price = (x, y, w, text, fill, r, size = 92) => st(x, y, w, 170, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:${size}px;color:${DARK};white-space:nowrap">${text}</div>`, { fill, r, z: 8, attrs: 'data-pop="1.12"' });
@@ -22,7 +26,7 @@ const HOOKS = {
     ${discs(ALL8, 1110, 96, 18)}${mark}`,
   'combattant': `${kick('CHOISIS TON COMBATTANT')}${big(360, 'Tu ne peux en<br><span class="acc">garder qu’un.</span>')}
     ${discs(ALL8, 780, 190, 34)}${mark}`,
-  'halloween': `${deco([['citrouille', 200, 110, 120, -8], ['fantome', 765, 105, 115, 8]])}${kick('HALLOWEEN', '#F0899A')}${big(360, 'Elles font peur…<br><span class="acc">à ton portefeuille.</span>', 104)}
+  'halloween': `${deco([['citrouille', 170, 100, 120, -8], ['fantome', 790, 100, 115, 8]])}${kick('HALLOWEEN', '#F0899A')}${big(360, 'Elles font peur…<br><span class="acc">à ton portefeuille.</span>', 104)}
     ${card('assets/carte-valgavoth-dsk-407.jpg', 120, 720, 330, -9, 3, { attrs: 'data-pop="1.08"' })}
     ${card('assets/carte-malefique-p1-5.avif', 630, 720, 330, 9, 3, { attrs: 'data-pop="1.08"' })}
     ${card('assets/carte-ectoplasma-vmax-swsh8-271.jpg', 365, 680, 350, 0, 4, { attrs: 'data-pop="1.06"' })}
@@ -50,14 +54,14 @@ const HOOKS = {
     <div class="abs h pop" style="left:560px;top:920px;font-size:110px;color:${VSOFT}">⇄</div>
     ${card('assets/carte-ectoplasma-vmax-swsh8-271.jpg', 690, 760, 320, 6, 3, { attrs: 'data-pop="1.08"' })}
     ${price(300, 1300, 480, '+299,74 €', DONE, -3, 96)}`,
-  'noel': `${deco([['sapin', 200, 100, 120, -6], ['cadeau', 770, 115, 110, 8]])}${kick('NOËL', '#F0899A')}${big(360, 'Sous le sapin,<br><span class="acc">dès 2,92 €.</span>', 124)}
+  'noel': `${deco([['sapin', 170, 100, 120, -6], ['cadeau', 790, 110, 110, 8]])}${kick('NOËL', '#F0899A')}${big(360, 'Sous le sapin,<br><span class="acc">dès 2,92 €.</span>', 124)}
     ${card('assets/carte-cadoizo-me01-152.jpg', 340, 640, 400, -4, 3, { attrs: 'data-pop="1.07"' })}
     ${price(300, 1260, 480, '2,92 €', SUN, 3, 110)}`,
   'contrefacon': `${kick('REPÈRE LA CONTREFAÇON', PINK)}${big(360, 'Cette carte<br><span class="acc">est fausse.</span>', 130)}
     <div class="abs pop" data-pop="1.07" style="left:290px;top:680px;width:500px;height:654px;border:8px solid ${INK};border-radius:24px;overflow:hidden;box-shadow:16px 16px 0 ${SHADOW};transform:rotate(-3deg)"><img src="assets/faux-arcanin-pv.webp" style="width:100%;height:100%;display:block">
       <div class="abs" style="left:63%;top:1%;width:34%;height:8%;border:7px solid ${SUN};border-radius:999px;box-shadow:0 0 0 4px ${INK}"></div></div>
     ${price(190, 1290, 700, '13 000 PV ?!', SUN, 3, 104)}`,
-  'bonneannee': `${deco([['etincelle', 760, 100, 130, 0]])}${kick('BONNE ANNÉE')}<div class="abs h pop" style="left:0;top:380px;width:1080px;text-align:center;font-size:330px;line-height:1"><span class="grad">2027</span></div>
+  'bonneannee': `${deco([['etincelle', 800, 100, 130, 0]])}${kick('BONNE ANNÉE')}<div class="abs h pop" style="left:0;top:380px;width:1080px;text-align:center;font-size:330px;line-height:1"><span class="grad">2027</span></div>
     ${big(760, 'Les 8 TCG,<br><span class="acc">au même endroit.</span>', 104)}
     ${discs(ALL8, 1100, 96, 18)}${mark}`,
 };
@@ -65,13 +69,17 @@ const HOOKS = {
 const key = location.hash.slice(1);
 document.body.innerHTML = `<div class="reel" id="stage">${ghosts([[60, 120, 90, -8], [930, 140, 80, 6], [60, 1700, 90, 10], [920, 1720, 100, -6]])}
   ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}${HOOKS[key] || HOOKS.erreurs}</div>`;
-window.TOTAL = HOOK;
+window.TOTAL = HOOK + XF;
 const pops = [...document.querySelectorAll('.pop, [data-pop]')].map((el) => [el, el.style.transform || '', +(el.dataset.pop || 1.05)]);
 const gs = [...document.querySelectorAll('.ghost')];
+// Everything but the background (ghost outlines, dashed path) and the seasonal
+// icons, which sit where the video has them, fades out on the handover.
+const fades = [...document.getElementById('stage').children].filter((el) => !el.classList.contains('ghost') && el.tagName !== 'svg');
 window.render = (t) => {
   // A punch-in: every element starts slightly larger and settles; nothing appears from nothing.
-  const p = out3(t / 1.2);
-  for (const [el, base, from] of pops) el.style.transform = `${base} scale(${from - (from - 1) * p})`;
+  const p = out3(t / 1.2), q = clamp((t - HOOK) / .4), lift = q * q * (3 - 2 * q);
+  for (const [el, base, from] of pops) { el.style.transform = `${base} translateY(${-60 * lift}px) scale(${(from - (from - 1) * p) * (1 - .04 * lift)})`; el.style.opacity = 1 - lift; }
+  for (const el of fades) el.style.opacity = 1 - lift;
   gs.forEach((g, i) => { g.style.transform = `translateX(${t * (5 + i)}px) rotate(${+g.dataset.r}deg)`; });
   const dr = document.getElementById('drawRect'); if (dr) dr.setAttribute('width', 1100);
 };
