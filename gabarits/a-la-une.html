@@ -54,6 +54,9 @@ const COVERS = [
   ['19-repere-la-contrefacon', `<polygon points="50,12 90,84 10,84" fill="${SUN}"/><g fill="${DARK}" stroke="none"><rect x="45.5" y="36" width="9" height="28" rx="4.5"/><circle cx="50" cy="73" r="5"/></g>`],
   ['20-erreurs-d-impression', `<rect x="32" y="12" width="46" height="66" rx="5" fill="${PINK}"/><rect x="22" y="22" width="46" height="66" rx="5" fill="${VSOFT}"/>
     <rect x="28" y="28" width="34" height="28" rx="2" fill="${BLUE}" stroke-width="3"/><g stroke="${DARK}" stroke-width="3" stroke-linecap="round"><line x1="30" y1="66" x2="60" y2="66"/><line x1="30" y1="75" x2="52" y2="75"/></g>`],
+  ['21-guide-des-scelles', `<rect x="28" y="12" width="20" height="34" rx="3" fill="${PINK}"/><rect x="50" y="8" width="20" height="38" rx="3" fill="${BLUE}"/>
+    <rect x="14" y="40" width="72" height="48" rx="6" fill="${VIOLET}"/><rect x="14" y="40" width="72" height="13" rx="4" fill="${VSOFT}"/>
+    <polygon points="${starPts(50, 70, 11, 4.8, 5)}" fill="${SUN}"/>`],
 ];
 carousel(COVERS.map(([id, svg]) => [id, `<svg class="abs" width="640" height="640" viewBox="0 0 100 100" style="left:220px;top:640px;overflow:visible;filter:drop-shadow(22px 22px 0 ${SHADOW})"><g stroke="${INK}" stroke-width="4" stroke-linejoin="round">${svg}</g></svg>`]));
 document.head.insertAdjacentHTML('beforeend', '<style>.p { height: 1920px; }</style>');

@@ -25,17 +25,22 @@ Trois principes, demandés par l'utilisateur :
 | 1 | ven. 16/10, 10 h | Reel | 11 Annonce | Lancement : « boostZ ta collection » | les 8 | ✅ programmé |
 | 1 bis | sam. 17/10, 10 h | carrousel | 15 Sortie d'extension | Mondes Natals (Homeworlds) est sorti le 09/10 | Star Wars Unlimited | ✅ programmé |
 | 2 | lun. 19/10, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 1 : relevés du 03/10 au 16/10 | Pokémon | brouillon dans Metricool, produit par le rappel du 16/10 |
+| 2 bis | mar. 20/10, 10 h | carrousel | 21 Guide des produits scellés | Épisode 1 : Pokémon (booster, blister, duopack, tripack, mini tin, display de mini tins, Pokébox, ETB, display, UPC, Académie de Combat) | Pokémon | ✅ programmé |
 | 3 | jeu. 22/10, 10 h | carrousel | 1 Analyse de carte | Méga-Dracaufeu X ex | Pokémon | ✅ programmé |
 | 4 | dim. 25/10, 10 h | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », raccourci à 8 s | les 8 | ✅ programmé (8 s) |
+| 4 ter | mar. 27/10, 10 h | carrousel | 21 Guide des produits scellés | Épisode 2 : One Piece (booster, display, Premium Booster, deck de démarrage, Fruits du Démon, Apprenez Ensemble) | One Piece | ✅ programmé |
 | 5 | mer. 28/10, 10 h | carrousel | 15 Sortie d'extension | Hyperia City (chapitre 14, sorti le 23/10) : les 10 cartes qui valent le plus | Lorcana | brouillon dans Metricool, produit par le rappel du 26/10 |
 | 6 | sam. 31/10, 18 h | Reel | 16 Thème | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | ✅ programmé (cotes du 03 et du 05/10) |
 | 7 | mar. 03/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 2 : du 16/10 au 01/11 | One Piece | brouillon dans Metricool, produit par le rappel du 01/11 |
+| 7 ter | mer. 04/11, 10 h | carrousel | 21 Guide des produits scellés | Épisode 3 : Lorcana (booster, display, deck de démarrage, Trésor des Illumineurs, coffret cadeau, coffret 2 joueurs, Quête des Illumineurs) | Lorcana | ✅ programmé |
 | 8 | ven. 06/11, 10 h | carrousel | 15 Sortie d'extension | Règne Delta sort aujourd'hui (ME06, en français et en anglais) | Pokémon | ✅ programmé |
 | 9 | lun. 09/11, 10 h | Reel | 3 1 chance sur N | 1 chance sur 96 d'avoir une enchantée | Lorcana | ✅ programmé |
+| 9 ter | mer. 11/11, 10 h | carrousel | 21 Guide des produits scellés | Épisode 4 : Magic (booster de jeu, display, Bundle, kit d'avant-première, deck Commander, kit de démarrage) | Magic | ✅ programmé |
 | 10 | jeu. 12/11, 10 h | carrousel | 15 Sortie d'extension | Cette semaine, deux sorties : Magnificent Maestros (12/11 en Europe) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | ✅ programmé |
 | 10 bis | sam. 14/11, 10 h | Reel | 11 Annonce | Bêta fermée J-14 : « Dans 2 semaines, teste Boostz avant tout le monde » | les 8 | ✅ programmé |
 | 11 | dim. 15/11, 10 h | Reel | 12 Fonction à la loupe | Estime l'état de tes cartes | les 8 | ✅ programmé |
 | 12 | mer. 18/11, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 3 : du 01/11 au 16/11 | Magic | brouillon dans Metricool, produit par le rappel du 16/11 |
+| 12 ter | jeu. 19/11, 10 h | carrousel | 21 Guide des produits scellés | Épisode 5 : Star Wars Unlimited (booster, display, Carbonite en VO, deck de démarrage, avant-première, kit 2 joueurs) | Star Wars Unlimited | ✅ programmé |
 | 13 | sam. 21/11, 10 h | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | brouillon dans Metricool, produit par le rappel du 20/11 |
 | 13 bis | dim. 22/11, 10 h | Reel | 11 Annonce | Bêta fermée J-6 : « Samedi prochain, la bêta ouvre » | les 8 | ✅ programmé |
 | 14 | mar. 24/11, 10 h | carrousel | 13 Mythe ou réalité | « Une carte s'est vendue 5 250 \$… pour un tigre qui n'existe pas » | Warcraft | ✅ programmé |
@@ -43,6 +48,7 @@ Trois principes, demandés par l'utilisateur :
 | 15 | ven. 27/11, 10 h | Reel | 16 Thème | Black Friday : « Promo ou pas ? » | les 8 | ✅ programmé |
 | 15 bis | sam. 28/11, 10 h | Reel | 11 Annonce | Bêta fermée ouverte : « Il n'est pas trop tard pour t'inscrire » | les 8 | ✅ programmé |
 | 16 | lun. 30/11, 10 h | carrousel | 14 Tu préfères ? | La chase de Brightness of Hope (FB11) contre celle de Magnificent Maestros | Dragon Ball, Yu-Gi-Oh! | brouillon dans Metricool, produit par le rappel du 27/11 |
+| 16 ter | mer. 02/12, 10 h | carrousel | 21 Guide des produits scellés | Épisode 6 : Yu-Gi-Oh! (booster, boîte de 24, Deck de Structure, Méga-Tin, Batailles de Légende, Collection Rareté) | Yu-Gi-Oh! | ✅ programmé |
 
 **Les 8 jeux.**
 - Pokémon : 3 posts (2, 3, 8).

@@ -9,41 +9,112 @@
 //   node rendu.mjs produits-scelles.html#<game> images
 const game = location.hash.slice(1) || 'pokemon';
 // Per game: cover line, the formats [file, name, other name, contents, price, source], the credit line.
+const SHOPS = 'Photos des produits : boutiques citées.';
 const GUIDES = {
   pokemon: {
-    sub: 'Le guide des produits scellés',
+    title: 'Booster, ETB, UPC…',
     cover: ['item-pk-booster.png', 'item-pk-etb.jpg', 'item-pk-upc.jpg'],
     items: [
       ['item-pk-booster.png', 'Le booster', 'Booster pack', '10 cartes d’une extension.<br>La base de tout.', ['Booster Méga-Évolution', 7.42], 'investcollect.com, blazingtail.fr'],
       ['item-pk-checklane.png', 'Le blister', 'Booster carton · checklane', '1 booster sous blister cartonné,<br>avec une carte promo et une pièce.', null, 'pokepedia.fr (checklane blister Méga-Évolution)'],
       ['item-pk-duopack.png', 'Le duopack', '2-pack blister', '2 boosters, 3 cartes brillantes<br>et une pièce.', null, 'investcollect.com'],
       ['item-pk-tripack.jpg', 'Le tripack', '3-pack blister', '3 boosters, une carte promo<br>exclusive et un jeton.', ['Tripack Méga-Évolution', 19.92], 'blazingtail.fr'],
+      ['item-pk-minitin.png', 'La mini tin', 'Mini tin', '2 boosters et une carte illustrée,<br>dans une petite boîte en métal.', ['Mini tin Méga-Évolution', 14.08], 'blazingtail.fr'],
+      ['item-pk-minitindisplay.png', 'Le display de mini tins', 'Mini tin display', '10 mini tins, soit 20 boosters.<br>Les designs se collectionnent.', null, 'blazingtail.fr (display de mini tins Illumis)'],
+      ['item-pk-pokebox.png', 'La Pokébox', 'Tin', '4 boosters et une carte promo<br>brillante, dans une boîte en métal.', null, 'play-in.com, chocobonplan.com (Pokébox Méga Forces)'],
       ['item-pk-etb.jpg', 'L’ETB', 'Coffret Dresseur d’élite', '9 boosters, 65 protège-cartes,<br>45 Énergies et une boîte de rangement.', null, 'pokepedia.fr (ETB Méga-Évolution)'],
       ['item-pk-display.jpg', 'Le display', 'Booster box · demi-display', '36 boosters scellés.<br>Le demi-display en a 18.', ['Display Méga-Évolution', 241.58], 'blazingtail.fr, chocobonplan.com'],
       ['item-pk-upc.jpg', 'L’UPC', 'Collection Ultra-Premium', '18 boosters, 2 cartes promo,<br>un tapis de jeu et une pièce en métal.', null, 'pokepedia.fr (UPC Méga-Dracaufeu X-ex)'],
       ['item-pk-academie.jpg', 'Pour s’initier', 'Académie de Combat', '3 decks de 60 cartes prêts à jouer,<br>un plateau et des guides.', null, 'play-in.com'],
     ],
-    credit: '© Pokémon / Nintendo / Creatures / GAME FREAK. Photos des produits : boutiques citées.',
+    credit: '© Pokémon / Nintendo / Creatures / GAME FREAK.',
+  },
+  onepiece: {
+    title: 'PRB, Fruits du Démon…',
+    cover: ['item-op-booster.png', 'item-op-fruits.png', 'item-op-display2.png'],
+    items: [
+      ['item-op-booster.png', 'Le booster', 'Booster pack', '12 cartes d’une extension.', null, 'chocobonplan.com (booster OP-13 Successeurs)'],
+      ['item-op-display2.png', 'Le display', 'Booster box', '24 boosters de 12 cartes.', null, 'investcollect.com (display OP-13)'],
+      ['item-op-prb.png', 'Le Premium Booster', 'PRB · The Best', '10 cartes, dont au moins une Super Rare.<br>Le display français en a 20.', null, 'investcollect.com, espritjeu.com, cardshunter.fr'],
+      ['item-op-starter.png', 'Le deck de démarrage', 'Starter deck', '51 cartes (1 Leader et 50 cartes)<br>et 10 cartes DON!!.', null, 'investcollect.com (deck ST-29 Egghead)'],
+      ['item-op-fruits.png', 'Fruits du Démon', 'Devil Fruits Collection', '3 boosters, 1 carte DON!!<br>et 10 protège-cartes, dans un fruit.', null, 'investcollect.com (DF-03)'],
+      ['item-op-learn.png', 'Pour s’initier', 'Lot de decks Apprenez Ensemble', '3 decks prêts à jouer, un tapis<br>2 joueurs et des guides.', null, 'play-in.com (LD-01)'],
+    ],
+    credit: '© Eiichiro Oda / Shueisha, Toei Animation, Bandai.',
+  },
+  lorcana: {
+    title: 'Booster, Trésor, coffret…',
+    cover: ['item-lo-booster.png', 'item-lo-trove.png', 'item-lo-display.png'],
+    items: [
+      ['item-lo-booster.png', 'Le booster', 'Booster pack', '12 cartes, dont 1 brillante<br>ou 1 enchantée.', null, 'investcollect.com (Chapitre 10)'],
+      ['item-lo-display.png', 'Le display', 'Booster box', '24 boosters, soit 288 cartes.', ['Display Chapitre 10', 129.90], 'investcollect.com'],
+      ['item-lo-starter.png', 'Le deck de démarrage', 'Starter deck', '60 cartes en 2 encres,<br>2 brillantes et 1 booster.', null, 'play-in.com (Chapitre 10)'],
+      ['item-lo-trove.png', 'Le Trésor des Illumineurs', 'Illumineer’s Trove', '8 boosters et des accessoires<br>pour ranger et jouer.', null, 'play-in.com, smythstoys.com'],
+      ['item-lo-gift.png', 'Le coffret cadeau', 'Gift set', 'Picsou : 5 boosters, 1 carte promo<br>et une boîte de rangement.', null, 'investcollect.com'],
+      ['item-lo-2j.jpg', 'Le coffret 2 joueurs', 'Starter set', '2 decks de 60 cartes prêts à jouer,<br>2 boîtes et 2 compteurs de Lore.', null, 'espritjeu.com (Chapitre 12)'],
+      ['item-lo-quest.jpg', 'La Quête des Illumineurs', 'Illumineer’s Quest', 'Le mode coopératif : 2 decks<br>joueur contre un deck boss.', null, 'ludum.fr (Vol au Palais)'],
+    ],
+    credit: '© Disney, édité par Ravensburger.',
+  },
+  yugioh: {
+    title: 'Méga-Tin, Structure…',
+    cover: ['item-yg-booster.png', 'item-yg-tin.png', 'item-yg-display.png'],
+    items: [
+      ['item-yg-booster.png', 'Le booster', 'Booster pack', '9 cartes d’une extension.', null, 'play-in.com (Les Origines du Chaos)'],
+      ['item-yg-display.png', 'La boîte de 24', 'Booster box', '24 boosters de 9 cartes.', null, 'play-in.com'],
+      ['item-yg-structure.png', 'Le Deck de Structure', 'Structure deck', 'Un deck prêt à jouer d’environ<br>45 cartes, à améliorer.', null, 'investcollect.com, cardtrader.com'],
+      ['item-yg-tin.png', 'La Méga-Tin', 'Mega Tin', '3 Méga-Packs de 13 cartes<br>dans une boîte en métal.', null, 'play-in.com (Méga-Tin 2025)'],
+      ['item-yg-legende.png', 'Batailles de Légende', 'Battles of Legend', '5 cartes par booster,<br>toutes brillantes.', null, 'play-in.com, investcollect.com'],
+      ['item-yg-rarete.png', 'Collection Rareté', 'Rarity Collection (visuel VO)', 'Des rééditions de cartes cultes<br>dans des raretés spéciales.', null, 'play-in.com, yugioh-card.com'],
+    ],
+    credit: '© Studio Dice / Shueisha, TV TOKYO, KONAMI.',
+  },
+  magic: {
+    title: 'Bundle, Commander…',
+    cover: ['item-mg-play.png', 'item-mg-bundle.png', 'item-mg-commander.png'],
+    items: [
+      ['item-mg-play.png', 'Le booster de jeu', 'Play Booster', '14 cartes, dont 1 à 4 rares<br>ou mythiques et 1 brillante.', ['Booster de jeu Strixhaven', 5.90], 'investcollect.com, media.wizards.com'],
+      ['item-mg-display.png', 'Le display', 'Booster box', '30 boosters de jeu.', ['Display Strixhaven', 134.90], 'investcollect.com'],
+      ['item-mg-bundle.png', 'Le Bundle', 'Bundle', '9 boosters de jeu, 1 carte promo,<br>30 terrains et une boîte.', ['Bundle Strixhaven', 54.90], 'investcollect.com, smythstoys.com'],
+      ['item-mg-prerelease.png', 'Le kit d’avant-première', 'Prerelease Pack', '6 boosters de jeu, 1 carte promo<br>et un compteur de vie.', ['Kit Strixhaven', 34.90], 'investcollect.com, wpn.wizards.com'],
+      ['item-mg-commander.png', 'Le deck Commander', 'Commander deck', '100 cartes prêtes à jouer,<br>dont 2 commandants brillants.', null, 'play-in.com (Réalité fracturée)'],
+      ['item-mg-starter.png', 'Pour s’initier', 'Kit de démarrage', '2 decks de 60 cartes<br>prêts à jouer.', null, 'play-in.com (Final Fantasy)'],
+    ],
+    credit: '© Wizards of the Coast.',
+  },
+  starwarsunlimited: {
+    title: 'Carbonite, Spotlight…',
+    cover: ['item-sw-booster.png', 'item-sw-carbonite.png', 'item-sw-spotlight.png'],
+    items: [
+      ['item-sw-booster.png', 'Le booster', 'Booster pack', '16 cartes, dont 1 leader,<br>1 rare et 1 brillante.', null, 'investcollect.com (Sans Foi Ni Loi)'],
+      ['item-sw-display.png', 'Le display', 'Booster box', '24 boosters.', null, 'investcollect.com'],
+      ['item-sw-carbonite.png', 'Le booster Carbonite', 'Carbonite Edition · en VO', '16 cartes premium, dont 1 leader<br>Hyperspace ou Showcase.', null, 'investcollect.com (display de 12, en anglais)'],
+      ['item-sw-spotlight.png', 'Le deck de démarrage', 'Spotlight Deck', 'Un deck préconstruit,<br>avec son leader et sa base.', null, 'play-in.com (Cendres de l’Empire)'],
+      ['item-sw-prerelease.png', 'Le pack d’avant-première', 'Prerelease Box', '6 boosters et 2 leaders promo.', null, 'investcollect.com'],
+      ['item-sw-2j.png', 'Le kit 2 joueurs', 'Two-Player Starter', '2 decks prêts à jouer,<br>des tapis et des compteurs.', null, 'play-in.com (Ombres de la Galaxie)'],
+    ],
+    credit: '© & ™ Lucasfilm Ltd., édité par Fantasy Flight Games.',
   },
 };
 const g = GUIDES[game];
+g.sub = 'Le guide des produits scellés';
 const N = g.items.length;
 const photo = (img, x, y, s, r, z = 3) => `<div class="abs" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px;transform:rotate(${r}deg);background:#fff;border:8px solid ${INK};border-radius:40px;box-shadow:16px 16px 0 ${SHADOW};overflow:hidden;z-index:${z}"><img src="assets/${img}" style="width:100%;height:100%;object-fit:contain;padding:22px;box-sizing:border-box;display:block"></div>`;
 const C = GAMES[game][1];
 carousel([
   ['1-couverture', `${ghosts([[70, 1080, 80, -6], [930, 1060, 70, 8]])}${track(0, 1180, .4)}${head('LE GUIDE', game, 'Les produits scellés')}
     ${photo(g.cover[0], 90, 230, 300, -6, 3)}${photo(g.cover[1], 390, 190, 300, 2, 4)}${photo(g.cover[2], 690, 240, 300, 6, 3)}
-    <div class="abs h" style="left:0;top:640px;width:1080px;text-align:center;font-size:98px">Booster, ETB, UPC…<br><span class="acc">tu t’y retrouves ?</span></div>
+    <div class="abs h" style="left:0;top:640px;width:1080px;text-align:center;font-size:${g.title.length > 18 ? 84 : 98}px">${g.title}<br><span class="acc">tu t’y retrouves ?</span></div>
     <div class="abs mut" style="left:0;top:890px;width:1080px;text-align:center;font-weight:600;font-size:36px">${N} produits scellés, expliqués.</div>
     <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
     <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
   ...g.items.map(([img, name, alias, what, price, from], i) => [`${i + 2}-${img.replace(/^item-[a-z]+-|\.\w+$/g, '')}`, `${track(i + 1, 335, .1)}${head(`PRODUIT ${i + 1} / ${N}`, game, g.sub)}
-    <div class="abs h" style="left:70px;top:150px;font-size:100px;white-space:nowrap">${name}</div>
+    <div class="abs h" style="left:70px;top:${name.length > 18 ? 168 : 150}px;font-size:${name.length > 18 ? 76 : 100}px;white-space:nowrap">${name}</div>
     <div class="abs ui" style="left:72px;top:262px;font-size:32px;color:${C}">${alias}</div>
     ${photo(img, 300, 400, 480, i % 2 ? 2 : -2)}
     <div class="abs ui" style="left:70px;right:70px;top:935px;font-size:42px;line-height:1.3;text-align:center">${what}</div>
     ${price ? `<div class="abs h" style="left:0;top:1105px;width:1080px;text-align:center;font-size:52px;color:${SUN}">${eur(price[1])}<span class="mut" style="font-family:Exo;font-weight:600;font-size:28px"> · ${price[0]}, prix du 07/10/2026</span></div>` : ''}
-    ${src(`Sources : ${from}, relevé le 07/10/2026. ${g.credit}`)}`]),
+    ${src(`Sources : ${from}, relevé le 07/10/2026. ${g.credit} ${SHOPS}`)}`]),
   [`${N + 2}-boostz`, `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8], [110, 1120, 70, 4], [920, 1100, 80, -6]])}${track(N + 1, 1200, .6)}${head('SUR BOOSTZ', game, g.sub)}
     <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Tes scellés aussi<br><span class="acc">ont une cote.</span></div>
     ${back(game, 330, 470, 180, -8, 2)}${back(game, 560, 470, 180, 7, 2)}
