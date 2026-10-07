@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz raretés</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// "Les raretés, expliquées" (asked on 07/10/2026): one carousel per game, one slide
+// per rarity, each with the real scan of a card of that rarity and a zoom on the
+// card's own rarity marker, cropped from the same scan (so the symbol is never
+// redrawn). Pull rates only when a source gives them, marked as estimates.
+// Render one game with: node rendu.mjs raretes.html#<game> images
+const game = location.hash.slice(1) || 'pokemon';
+const RARETES = {
+  pokemon: {
+    pub: '2027-04-05',
+    title: 'Commune, reverse, AR, SIR…',
+    set: 'Méga-Évolution',
+    // The marker sits after the card number, bottom left: [x, y, w, h] in a 600 x 825 scan.
+    zoom: [52, 768, 150, 40],
+    items: [
+      ['rar-pk-commune.png', 'Commune', 'Common', 'Un rond noir ●.', 'Carte normale, sans brillance.', null, 'Tarsal 058/132'],
+      ['rar-pk-peucommune.png', 'Peu commune', 'Uncommon', 'Un losange noir ◆.', 'Carte normale, sans brillance.', null, 'Caratroc 011/132'],
+      ['rar-pk-rare.png', 'Rare', 'Rare', 'Une étoile noire ★.', 'Souvent holo : l’illustration brille.', null, 'Kyogre 034/132'],
+      ['rar-pk-reverse.png', 'Reverse', 'Reverse holo', 'Le symbole de la carte de base.', 'Tout brille <b>sauf l’illustration</b>. N’importe quelle Commune, Peu commune ou Rare existe en reverse.', null, 'Kirlia 059/132', 'reverse'],
+      ['rar-pk-doublerare.png', 'Double rare', 'Double Rare · ex', 'Deux étoiles noires ★★.', 'Un Pokémon-ex : carte holo, cadre normal.', '1 booster sur 5', 'Méga-Gardevoir-ex 060/132'],
+      ['rar-pk-illustration.png', 'Illustration rare', 'Illustration Rare · AR', 'Une étoile dorée.', 'L’illustration déborde sur toute la carte.', '1 booster sur 9', 'Caratroc 136/132'],
+      ['rar-pk-ultra.png', 'Ultra rare', 'Ultra Rare · full art', 'Deux étoiles argentées.', 'Full art texturée : la carte a du relief sous le doigt.', '1 booster sur 12', 'Méga-Gardevoir-ex 159/132'],
+      ['rar-pk-speciale.png', 'Illustration spéciale rare', 'Special Illustration Rare · SIR', 'Deux étoiles dorées.', 'Une scène inédite sur toute la carte : la fameuse «&nbsp;alt&nbsp;».', '1 booster sur 101', 'Méga-Gardevoir-ex 178/132'],
+      ['rar-pk-megahyper.png', 'Méga hyper rare', 'Mega Hyper Rare', 'Une étoile à 4 branches dorée.', 'Toute dorée et en relief. Elle remplace la carte « gold » des sets précédents.', '1 booster sur 1 260', 'Méga-Gardevoir-ex 187/132'],
+    ],
+    rates: 'Taux : estimations TCGplayer sur le set Méga-Évolution, pas des chiffres officiels.',
+    sources: 'Sources : Poképédia, Bulbapedia, TCGplayer, relevé le 07/10/2026. Cartes : TCGdex.',
+    credit: '© Pokémon / Nintendo / Creatures / GAME FREAK.',
+  },
+};
+const g = RARETES[game];
+window.PUB = g.pub;
+const C = GAMES[game][1], N = g.items.length;
+const [zx, zy, zw, zh] = g.zoom;
+const cardImg = (img, x, y, w, r, rev) => {
+  const h = w * 825 / 600;
+  // Reverse: a sheen everywhere but the artwork window (x 7.8-92.2 %, y 9.7-47.3 % on this layout).
+  const sheen = rev ? `<svg class="abs" width="${w}" height="${h}" viewBox="0 0 100 137.5" preserveAspectRatio="none" style="left:0;top:0;mix-blend-mode:screen"><defs><linearGradient id="sh" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".35" stop-color="#9FE8FF" stop-opacity=".85"/><stop offset=".5" stop-color="#FFB8F0" stop-opacity=".9"/><stop offset=".65" stop-color="#FFF3A0" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+    <path fill-rule="evenodd" fill="url(#sh)" d="M0 0H100V137.5H0Z M7.8 13.3H92.2V65H7.8Z"/></svg>` : '';
+  return `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;transform:rotate(${r}deg);border:8px solid ${INK};border-radius:${w * .05}px;overflow:hidden;box-shadow:16px 16px 0 ${SHADOW};z-index:3;background:#000"><img src="assets/${img}" style="width:100%;height:100%;display:block">${sheen}</div>`;
+};
+// The zoom: the marker area of the scan, magnified 2.2 times, as a sticker.
+const zoom = (img, x, y) => {
+  const k = 2.8, w = zw * k, h = zh * k;
+  return `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:7px solid ${INK};border-radius:24px;box-shadow:12px 12px 0 ${SHADOW};overflow:hidden;z-index:5;transform:rotate(2deg);background:url(assets/${img}) ${-zx * k}px ${-zy * k}px / ${600 * k}px ${825 * k}px no-repeat"></div>`;
+};
+carousel([
+  ['1-couverture', `${ghosts([[70, 1080, 80, -6], [930, 1060, 70, 8]])}${track(0, 1180, .4)}${head('LE GUIDE', game, 'Les raretés')}
+    ${cardImg(g.items[0][0], 120, 250, 260, -8)}${cardImg(g.items[5][0], 410, 220, 260, 0)}${cardImg(g.items[8][0], 700, 250, 260, 8)}
+    <div class="abs h" style="left:0;top:690px;width:1080px;text-align:center;font-size:${g.title.length > 24 ? 80 : 92}px">${g.title}<br><span style="color:${C}">tu t’y retrouves ?</span></div>
+    <div class="abs mut" style="left:0;top:930px;width:1080px;text-align:center;font-weight:600;font-size:36px">${N} raretés, et comment les reconnaître.</div>
+    <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
+    <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
+  ...g.items.map(([img, name, alias, mark, look, rate, card, kind], i) => [`${i + 2}-${img.replace(/^rar-[a-z]+-|\.\w+$/g, '')}`, `${track(i + 1, 335, .1)}${head(`RARETÉ ${i + 1} / ${N}`, game, 'Les raretés expliquées')}
+    <div class="abs h" style="left:70px;top:${name.length > 16 ? 168 : 150}px;font-size:${name.length > 16 ? 70 : 100}px;white-space:nowrap">${name}</div>
+    <div class="abs ui" style="left:72px;top:262px;font-size:32px;color:${C}">${alias}</div>
+    ${cardImg(img, 60, 360, 480, -2, kind === 'reverse')}
+    <div class="abs lab" style="left:600px;top:372px;font-size:22px;letter-spacing:5px;color:${VSOFT}">LE SYMBOLE</div>
+    ${zoom(img, 600, 410)}
+    <div class="abs ui" style="left:600px;top:540px;width:420px;font-size:34px;line-height:1.25">${mark}</div>
+    <div class="abs lab" style="left:600px;top:690px;font-size:22px;letter-spacing:5px;color:${VSOFT}">LA CARTE</div>
+    <div class="abs" style="left:600px;top:728px;width:420px;font-family:Poppins;font-weight:600;font-size:32px;line-height:1.3">${look}</div>
+    ${rate ? `<div class="abs h" style="left:600px;top:960px;width:420px;font-size:50px;color:${C}">${rate}</div><div class="abs mut" style="left:600px;top:1025px;width:420px;font-size:24px;font-weight:600">environ, estimation</div>` : ''}
+    <div class="abs mut" style="left:60px;top:1040px;width:480px;text-align:center;font-family:Exo;font-weight:600;font-size:24px">${card}${kind === 'reverse' ? '<br>(effet reverse illustré)' : ''}</div>
+    ${src(`${rate ? g.rates + ' ' : ''}${g.sources} ${g.credit}`)}`]),
+  [`${N + 2}-boostz`, `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8], [110, 1120, 70, 4], [920, 1100, 80, -6]])}${track(N + 1, 1200, .6)}${head('SUR BOOSTZ', game, 'Les raretés expliquées')}
+    <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Chaque rareté<br><span style="color:${C}">a sa cote.</span></div>
+    ${back(game, 330, 470, 180, -8, 2)}${back(game, 560, 470, 180, 7, 2)}
+    ${closing(800)}`],
+]);
+</script></body></html>
