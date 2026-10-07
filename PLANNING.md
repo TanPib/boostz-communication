@@ -197,7 +197,7 @@ Légendes en brouillon. Les chiffres entre crochets sortent des données le jour
 
 ## Sources des dates de sortie
 
-Relevées le 05/10/2026, à reconfirmer une semaine avant chaque post :
+Relevées le 05/10/2026, toutes reconfirmées le 07/10/2026 (Hyperia City : avant-première le 16/10, sortie le 23/10 ; Magnificent Maestros le 12/11 en Europe ; FB11 le 16/10 en anglais), à reconfirmer une semaine avant chaque post :
 - Dragon Ball Fusion World FB11 le 16/10 ([db-fusionworld.com](https://db-fusionworld.com/en/articles/bandai-next-plan-report-upcoming-dragon-ball-super-fusion-world-releases)).
 - Lorcana Hyperia City le 23/10, One Piece EB05 le 30/10, Pokémon Delta Reign le 06/11, Magic × Star Trek le 13/11, OP18 le 20/11 ([pokezenith](https://www.pokezenith.com/content/51-calendrier-sorties-tcg-2026), [Maison du Booster](https://maisondubooster.com/pages/calendrier-sorties-tcg)).
 - Yu-Gi-Oh! Magnificent Maestros le 13/11 ([ICv2](https://icv2.com/articles/news/view/63153/new-yu-gi-oh-tcg-booster-set-revealed)).
