@@ -102,7 +102,7 @@ Légendes en brouillon. Les chiffres entre crochets sortent des données le jour
 - **Hashtags :** `#pokemontcg #cartespokemon #cotepokemon #collectionpokemon #pokemonfr`
 
 ### 4 · Opening Collect Aura — mar. 15/12
-- ✅ Programmé le 07/10 sur Instagram (Reel et story) et TikTok seulement, comme demandé. Vidéo de l'ancien compte PokePotes, montée par Julien Ardid : la voix est gardée jusqu'à « nos futurs contenus », le filigrane TikTok remplacé par celui de Boostz, la fin PokePotes par l'icône de l'appli, des confettis et le balayage vers l'écran de fin (`outils/opening-collect-aura.sh`). Collect Aura et Julien tagués (@collectaura, @ardidjulien sur Instagram, @ardidprod sur TikTok). Pas de musique Instagram : elle couperait la voix.
+- ✅ Programmé le 07/10 sur Instagram (Reel et story) et TikTok seulement, comme demandé. Vidéo de l'ancien compte PokePotes, montée par Julien Ardid : la voix est gardée jusqu'à « nos futurs contenus », le filigrane TikTok remplacé par celui de Boostz, la fin PokePotes par l'icône de l'appli, des confettis et le balayage vers l'écran de fin (`outils/opening-collect-aura.sh`). Collect Aura et Julien tagués (@collectaura, @ardidjulien sur Instagram, @ardidprod sur TikTok). Pas de musique Instagram : elle couperait la voix. Julien (@ardidjulien) invité en collaborateur du Reel Instagram : il apparaîtra sur son profil s'il accepte.
 
 ### Choisis ton combattant — ven. 02/04
 - ✅ Programmé, raccourci à 8 s le 05/10 ; déplacé du 15/12 au 02/04 le 07/10, légende passée à « Télécharge Boostz, lien en bio ».
