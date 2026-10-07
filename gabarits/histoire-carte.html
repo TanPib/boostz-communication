@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz histoire d'une carte</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// "L'histoire d'une carte" (asked on 07/10/2026): where a card comes from, what makes it
+// unique, what it is worth now. Edit the content in place for each edition.
+// Edition 1: Pikachu Illustrator, published on 09/11/2026. Facts searched on 07/10/2026:
+// - Bulbapedia (Pokémon Illustrator (TCG)): CoroCoro Comic illustration contest, January 1998,
+//   23 copies for the first contest, 16 more in later contests, 39 in all; art by Atsuko Nishida.
+// - Guinness World Records, Antique Trader: Logan Paul bought it for 5,275,000 $ in 2021 (private
+//   sale), sold it at Goldin on 16/02/2026 for 16,492,000 $, the only known PSA 10 and the most
+//   expensive trading card ever sold at auction.
+// - Card text: read on the scan, translated from Japanese. Scan: slabfol.io (as in records-2026).
+window.PUB = '2026-11-09';
+const G = 'pokemon', SUB = 'L’histoire d’une carte';
+const IMG = 'assets/record-pikachu-illustrator-carte.jpg';
+const SRC_IMG = 'Image de la carte : slabfol.io. © Pokémon / Nintendo / Creatures / GAME FREAK.';
+carousel([
+  ['1-couverture', `${ghosts([[130, 420, 80, -6], [870, 440, 80, 8]])}${track(0, 1170, .4)}${head('L’HISTOIRE D’UNE CARTE', G, 'Pikachu Illustrateur')}
+    ${card(IMG, 330, 175, 420, -4, 3, { h: 574 })}
+    <div class="abs h" style="left:0;top:800px;width:1080px;text-align:center;font-size:92px">39 exemplaires.<br><span class="acc">Un record mondial.</span></div>
+    <div class="abs mut" style="left:0;top:1030px;width:1080px;text-align:center;font-weight:600;font-size:34px">L’histoire du Pikachu Illustrateur.</div>
+    <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
+    <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
+  ['2-concours', `${ghosts([[900, 970, 80, 6]])}${track(1, 1180, .3)}${head('1998', G, SUB)}
+    <div class="abs h" style="left:70px;top:170px;font-size:92px">Elle ne s’achetait<br><span class="acc">pas en boutique.</span></div>
+    <div class="abs ui" style="left:70px;right:70px;top:420px;font-size:38px;line-height:1.4">En janvier 1998, le magazine japonais <b>CoroCoro Comic</b> lance un concours de dessin Pokémon. Les gagnants reçoivent cette carte.</div>
+    ${[['23', 'au premier<br>concours', SUN, -3], ['+16', 'aux concours<br>suivants', '#F5F2FB', 2], ['39', 'exemplaires<br>en tout', DONE, -2]].map(([n, k, c, r], i) =>
+      st(70 + i * 320, 680, 300, 260, `<div style="padding:30px 32px"><div class="h" style="font-size:96px;color:${c}">${n}</div><div class="ui" style="font-size:30px;line-height:1.2;margin-top:6px">${k}</div></div>`, { r, z: 3 })).join('')}
+    ${src('Source : Bulbapedia (Pokémon Illustrator), relevé le 07/10/2026.')}`],
+  ['3-le-texte', `${track(2, 1185, .2)}${head('CE QUI EST ÉCRIT DESSUS', G, SUB)}
+    ${card(IMG, 80, 200, 400, -3, 3, { h: 546 })}
+    <div class="abs" style="left:540px;top:200px;width:470px">
+      <div class="h" style="font-size:60px;line-height:1.05">« Illustrator »,<br><span class="acc">pas « Trainer ».</span></div>
+      <div class="ui" style="font-size:31px;line-height:1.4;margin-top:30px">« Ton illustration a été jugée excellente au concours. Nous te reconnaissons comme <b>illustrateur officiel</b> des cartes Pokémon. »</div>
+      <div class="ui mut" style="font-size:24px;margin-top:14px">Texte de la carte, traduit du japonais.</div>
+      <div class="ui" style="font-size:30px;line-height:1.35;margin-top:30px;color:${SUN}">Et un stylo à la place<br>du symbole d’énergie.</div></div>
+    <div class="abs mut" style="left:70px;right:70px;top:860px;font-weight:600;font-size:34px;text-align:center">Ce n’est pas une carte de jeu :<br>c’est un diplôme.</div>
+    ${src(SRC_IMG)}`],
+  ['4-l-artiste', `${ghosts([[100, 990, 70, -6], [910, 990, 70, 8]])}${track(3, 1180, .3)}${head('L’ARTISTE', G, SUB)}
+    <div class="abs h" style="left:70px;top:170px;font-size:92px">Dessinée par<br><span class="acc">la mère de Pikachu.</span></div>
+    <div class="abs ui" style="left:70px;right:70px;top:420px;font-size:38px;line-height:1.4">L’illustration est signée <b>Atsuko Nishida</b>, qui a créé Pikachu pour les premiers jeux Game Boy.</div>
+    ${st(70, 640, 940, 300, `<div style="padding:36px 46px;color:${DARK}"><div class="lab" style="font-size:22px;letter-spacing:3px">LE SAVAIS-TU ?</div><div class="ui" style="font-size:36px;line-height:1.35;margin-top:14px">Son premier Pikachu ressemblait à un daifuku, une pâtisserie japonaise, avec des oreilles. Ses joues viennent des écureuils.</div></div>`, { fill: SUN, r: -1.5, z: 3 })}
+    ${src('Sources : Bulbapedia (Atsuko Nishida), relevé le 07/10/2026.')}`],
+  ['5-la-cote', `${track(4, 1190, .2)}${head('CE QU’ELLE VAUT', G, SUB)}
+    <div class="abs h" style="left:70px;top:170px;font-size:92px">Trois fois plus<br><span class="acc">en cinq ans.</span></div>
+    ${st(70, 430, 940, 210, `<div style="padding:30px 46px"><div class="lab" style="font-size:22px;color:${VSOFT}">2021 · VENTE PRIVÉE · ACHETÉE PAR LOGAN PAUL</div><div class="h" style="font-size:96px;margin-top:10px;white-space:nowrap">${usd(5275000)}</div></div>`, { r: 1, z: 3 })}
+    ${st(70, 690, 940, 250, `<div style="padding:34px 46px;color:${DARK}"><div class="lab" style="font-size:22px">16/02/2026 · ENCHÈRES GOLDIN · PSA 10</div><div class="h" style="font-size:110px;margin-top:10px;white-space:nowrap">${usd(16492000)}</div></div>`, { fill: SUN, r: -1.5, z: 3 })}
+    <div class="abs mut" style="left:70px;right:70px;top:1000px;font-weight:600;font-size:34px;text-align:center">Le seul exemplaire noté PSA 10 connu, et la carte<br>la plus chère jamais vendue aux enchères.</div>
+    ${src('Sources : Guinness World Records, Antique Trader, relevé le 07/10/2026.')}`],
+  ['6-fin', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8], [110, 1120, 70, 4], [920, 1100, 80, -6]])}${track(5, 1200, .6)}${head('SUR BOOSTZ', G, SUB)}
+    <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Et tes cartes,<br><span class="acc">elles ont une histoire ?</span></div>
+    ${back(G, 330, 470, 180, -8, 2)}${back(G, 560, 470, 180, 7, 2)}
+    ${closing(800)}`],
+]);
+</script></body></html>
