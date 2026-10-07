@@ -3,6 +3,8 @@
 //   node rendu.mjs <page.html> images                 every .p element -> sortie/<page>/<id>.png
 //   node rendu.mjs <page.html> plans 0,2.5,7          a video page at those seconds -> sortie/<page>/plans/
 //   node rendu.mjs <page.html> video                  a video page, 30 fps -> sortie/<page>.mp4
+//   node rendu.mjs <page.html> alpha                  the same with a transparent background -> sortie/<page>.mov,
+//                                                     to lay over footage (the page makes body and .reel transparent)
 //   node rendu.mjs <page.html>#<entry> ...            a page holding several entries (accroche.html):
 //                                                     the hash picks one, outputs go to sortie/<page>-<entry>
 //
@@ -53,9 +55,11 @@ if (mode === 'images') {
   const n = Math.round((await page.evaluate(() => window.TOTAL)) * 30);
   for (let i = 0; i < n; i++) {
     await page.evaluate((t) => window.render(t), i / 30);
-    await page.screenshot({ path: path.join(frames, `f${String(i).padStart(4, '0')}.png`) });
+    await page.screenshot({ path: path.join(frames, `f${String(i).padStart(4, '0')}.png`), omitBackground: mode === 'alpha' });
   }
-  execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-framerate', '30', '-i', path.join(frames, 'f%04d.png'),
+  if (mode === 'alpha') execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-framerate', '30', '-i', path.join(frames, 'f%04d.png'),
+    '-c:v', 'png', `${out}.mov`]);
+  else execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-framerate', '30', '-i', path.join(frames, 'f%04d.png'),
     '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '16', '-preset', 'slow', '-movflags', '+faststart', `${out}.mp4`]);
   fs.rmSync(frames, { recursive: true, force: true });
 }
