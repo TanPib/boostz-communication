@@ -1,0 +1,43 @@
+# Transcribes the speech of a video in the repo, word by word with timestamps,
+# so a voice-over can be cut at the right word (the cloud container cannot
+# download speech models). The transcript lands next to the file, as <file>.mots.txt.
+# Run by hand: Actions > Transcription > Run workflow.
+name: Transcription
+on:
+  workflow_dispatch:
+    inputs:
+      fichier:
+        description: Path of the video or audio file in the repo
+        required: true
+permissions:
+  contents: write
+jobs:
+  transcription:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Transcribe
+        env:
+          FICHIER: ${{ inputs.fichier }}
+        run: |
+          pip install -q faster-whisper
+          python3 - <<'PY'
+          import os
+          from faster_whisper import WhisperModel
+          f = os.environ['FICHIER']
+          model = WhisperModel('medium', device='cpu', compute_type='int8')
+          segments, _ = model.transcribe(f, language='fr', word_timestamps=True)
+          with open(f + '.mots.txt', 'w') as out:
+              for s in segments:
+                  out.write(f'## {s.start:.2f}-{s.end:.2f} {s.text.strip()}\n')
+                  for w in s.words:
+                      out.write(f'{w.start:6.2f} {w.end:6.2f} {w.word.strip()}\n')
+          print(open(f + '.mots.txt').read())
+          PY
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "${{ inputs.fichier }}.mots.txt"
+          git diff --cached --quiet || git commit -q -m "Add the transcript of ${{ inputs.fichier }}"
+          for i in 1 2 3 4 5 6; do git pull -q --rebase && git push -q && exit 0; sleep $((i * 5)); done; exit 1
