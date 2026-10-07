@@ -46,7 +46,7 @@ if (mode === 'images') {
   fs.mkdirSync(path.join(out, 'plans'), { recursive: true });
   for (const t of times.split(',').map(Number)) {
     await page.evaluate((t) => window.render(t), t);
-    await page.screenshot({ path: path.join(out, 'plans', `t${t}.png`) });
+    await page.screenshot({ path: path.join(out, 'plans', `t${t}.png`), omitBackground: true });
   }
 } else {
   const frames = path.join(out, 'frames');
