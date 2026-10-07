@@ -28,7 +28,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 20 | **Erreurs d'impression** | Reel | 🔥🔥🔥 | prêt | 13/02/2027 · dos Magic, Discard |
 | 21 | **Guide des produits scellés** | carrousel | 🔥🔥 | prêt (`produits-scelles.html#<jeu>`) | 07/02/2027 · Yu-Gi-Oh! (un épisode par jeu, depuis le 20/10) |
 | 22 | **L'histoire d'une carte** | carrousel, 6 slides | 🔥🔥🔥 | prêt (`histoire-carte.html`) | 09/11/2026 · Pikachu Illustrateur (Pokémon) |
-| 23 | **Zoom sur un artiste** | carrousel, 6 slides | 🔥🔥 | à créer | jamais |
+| 23 | **Zoom sur un artiste** | carrousel, 6 slides | 🔥🔥 | prêt (`zoom-artiste.html`) | 04/02/2027 · Atsuko Nishida (Pokémon) |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -186,6 +186,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | ven. 01/01/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Bonne année 2027 | les 8 | `videos/2027-01-01-bonne-annee.mp4` |
 | jeu. 07/01/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Star Wars Unlimited | Star Wars Unlimited | `images/2027-01-07-guide-scelles-starwarsunlimited/` |
 | lun. 01/02/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 13 | Mythe ou réalité : une carte à 5 250 $ pour un tigre qui n'existe pas (Tigre spectral) | Warcraft | `images/2027-02-01-mythe-tigre-spectral/`, `videos/2027-02-01-story-tigre-spectral.mp4` |
+| jeu. 04/02/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 23 | Zoom sur Atsuko Nishida | Pokémon | `images/2027-02-04-zoom-atsuko-nishida/`, `videos/2027-02-04-story-zoom-atsuko-nishida.mp4` |
 | dim. 07/02/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Yu-Gi-Oh! | Yu-Gi-Oh! | `images/2027-02-07-guide-scelles-yugioh/` |
 | sam. 13/02/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 20 | Erreurs d'impression : Caninos et Tortank à dos Magic, la « Discard » enchantée | Pokémon, Lorcana | `videos/2027-02-13-erreurs-impression.mp4` |
 | mar. 16/02/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 17 | Lexique TCG : 7 mots | les 8 | `images/2027-02-16-lexique-tcg/` |

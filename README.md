@@ -50,6 +50,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `images/2027-01-07-guide-scelles-starwarsunlimited/` | jeu. 07/01/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
 | `images/2027-02-01-mythe-tigre-spectral/` | lun. 01/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG 1080 × 1350, style stickers, plus `story.jpg` |
 | `videos/2027-02-01-story-tigre-spectral.mp4` | lun. 01/02/2027, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
+| `images/2027-02-04-zoom-atsuko-nishida/` | jeu. 04/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
 | `images/2027-02-07-guide-scelles-yugioh/` | dim. 07/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-02-13-erreurs-impression.mp4` | sam. 13/02/2027, 10 h — Instagram, TikTok, Facebook, stories | 9:16, musique originale |
 | `images/2027-02-16-lexique-tcg/` | mar. 16/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG, plus `story.jpg` et sa story vidéo |

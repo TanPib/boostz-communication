@@ -61,7 +61,7 @@ Réorganisé le 07/10/2026 selon le rythme ci-dessus : les posts sans date ont �
 | \*mar. 26/01 | Reel | 15 Sortie d'extension | Demain : le coffret Saint-Valentin Pokémon (27/01) | Pokémon | à produire (rappel du 16/01) |
 | \*ven. 29/01 | carrousel | 15 Sortie d'extension | Magic Nauctis : avant-premières dès le 29/01, sortie le 05/02 | Magic | à produire (rappel du 16/01) |
 | lun. 01/02 | carrousel | 13 Mythe ou réalité | « Une carte s'est vendue 5 250 \$… pour un tigre qui n'existe pas » | Warcraft | ✅ programmé (fin « disponible ») |
-| jeu. 04/02 | carrousel | 23 Zoom sur un artiste | Atsuko Nishida, la créatrice de Pikachu, et ses cartes | Pokémon | à valider |
+| jeu. 04/02 | carrousel | 23 Zoom sur un artiste | Atsuko Nishida, la créatrice de Pikachu, et ses cartes | Pokémon | ✅ programmé |
 | dim. 07/02 | carrousel | 21 Guide des produits scellés | Épisode 6 : Yu-Gi-Oh! | Yu-Gi-Oh! | ✅ programmé (fin « disponible ») |
 | mer. 10/02 | carrousel | 2 Cotes qui bougent | Édition n° 5 : du 16/01 au 01/02 | Lorcana | brouillon dans Metricool, produit par le rappel du 02/02 |
 | sam. 13/02 | Reel | 20 Erreurs d'impression | Caninos et Tortank à dos Magic, la carte « Discard » enchantée | Pokémon, Lorcana | ✅ programmé (fin « disponible ») |

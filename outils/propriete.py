@@ -44,6 +44,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2027-01-01': (ALL, ''),
  '2027-01-07': ('S', "Photos des produits : investcollect.com, play-in.com."),
  '2027-02-01': ('W', "Image de la carte : Category One Games."),
+ '2027-02-04': ('P', "Images des cartes : TCGdex, slabfol.io."),
  '2027-02-07': ('Y', "Photos des produits : play-in.com, investcollect.com."),
  '2027-02-13': ('PLM', "Photos des cartes : CGC, Screen Rant, Fanatics Collect."),
  '2027-02-16': ('PML', ''),
