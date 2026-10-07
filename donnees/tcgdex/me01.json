@@ -1,0 +1,2646 @@
+{
+ "set": "me01",
+ "nom": "Méga-Évolution",
+ "total": {
+  "firstEd": 0,
+  "holo": 105,
+  "normal": 131,
+  "official": 132,
+  "reverse": 123,
+  "total": 188
+ },
+ "cartes": [
+  {
+   "n": "001",
+   "nom": "Bulbizarre",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "HYOGONOSUKE",
+   "image": "https://assets.tcgdex.net/fr/me/me01/001"
+  },
+  {
+   "n": "002",
+   "nom": "Herbizarre",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Takumi Wada",
+   "image": "https://assets.tcgdex.net/fr/me/me01/002"
+  },
+  {
+   "n": "003",
+   "nom": "Méga-Florizarre-ex",
+   "rarete": "Double rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/003"
+  },
+  {
+   "n": "004",
+   "nom": "Noeunoeuf",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "aspara",
+   "image": "https://assets.tcgdex.net/fr/me/me01/004"
+  },
+  {
+   "n": "005",
+   "nom": "Noadkoko",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Kazumasa Yasukuni",
+   "image": "https://assets.tcgdex.net/fr/me/me01/005"
+  },
+  {
+   "n": "006",
+   "nom": "Saquedeneu",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Yuriko Akase",
+   "image": "https://assets.tcgdex.net/fr/me/me01/006"
+  },
+  {
+   "n": "007",
+   "nom": "Bouldeneu",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "REND",
+   "image": "https://assets.tcgdex.net/fr/me/me01/007"
+  },
+  {
+   "n": "008",
+   "nom": "Germignon",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "kamonabe",
+   "image": "https://assets.tcgdex.net/fr/me/me01/008"
+  },
+  {
+   "n": "009",
+   "nom": "Macronium",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "nisimono",
+   "image": "https://assets.tcgdex.net/fr/me/me01/009"
+  },
+  {
+   "n": "010",
+   "nom": "Méganium",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Yoriyuki Ikegami",
+   "image": "https://assets.tcgdex.net/fr/me/me01/010"
+  },
+  {
+   "n": "011",
+   "nom": "Caratroc",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Shinya Komatsu",
+   "image": "https://assets.tcgdex.net/fr/me/me01/011"
+  },
+  {
+   "n": "012",
+   "nom": "Celebi",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Naoki Saito",
+   "image": "https://assets.tcgdex.net/fr/me/me01/012"
+  },
+  {
+   "n": "013",
+   "nom": "Grainipiot",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Miki Tanaka",
+   "image": "https://assets.tcgdex.net/fr/me/me01/013"
+  },
+  {
+   "n": "014",
+   "nom": "Pifeuil",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "takashi shiraishi",
+   "image": "https://assets.tcgdex.net/fr/me/me01/014"
+  },
+  {
+   "n": "015",
+   "nom": "Tengalice",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Uninori",
+   "image": "https://assets.tcgdex.net/fr/me/me01/015"
+  },
+  {
+   "n": "016",
+   "nom": "Ningale",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Kuroimori",
+   "image": "https://assets.tcgdex.net/fr/me/me01/016"
+  },
+  {
+   "n": "017",
+   "nom": "Ninjask",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Apios",
+   "image": "https://assets.tcgdex.net/fr/me/me01/017"
+  },
+  {
+   "n": "018",
+   "nom": "Sinistrail",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Haru Akasaka",
+   "image": "https://assets.tcgdex.net/fr/me/me01/018"
+  },
+  {
+   "n": "019",
+   "nom": "Goupix",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Naoyo Kimura",
+   "image": "https://assets.tcgdex.net/fr/me/me01/019"
+  },
+  {
+   "n": "020",
+   "nom": "Feunard",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "satoma",
+   "image": "https://assets.tcgdex.net/fr/me/me01/020"
+  },
+  {
+   "n": "021",
+   "nom": "Chamallot",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Wintr Wandr",
+   "image": "https://assets.tcgdex.net/fr/me/me01/021"
+  },
+  {
+   "n": "022",
+   "nom": "Méga-Camérupt-ex",
+   "rarete": "Double rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/022"
+  },
+  {
+   "n": "023",
+   "nom": "Hélionceau",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Kurata So",
+   "image": "https://assets.tcgdex.net/fr/me/me01/023"
+  },
+  {
+   "n": "024",
+   "nom": "Némélios",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "KEIICHIRO ITO",
+   "image": "https://assets.tcgdex.net/fr/me/me01/024"
+  },
+  {
+   "n": "025",
+   "nom": "Volcanion",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "GIDORA",
+   "image": "https://assets.tcgdex.net/fr/me/me01/025"
+  },
+  {
+   "n": "026",
+   "nom": "Flambino",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "svlt",
+   "image": "https://assets.tcgdex.net/fr/me/me01/026"
+  },
+  {
+   "n": "027",
+   "nom": "Lapyro",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Narumi Sato",
+   "image": "https://assets.tcgdex.net/fr/me/me01/027"
+  },
+  {
+   "n": "028",
+   "nom": "Pyrobut",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "REND",
+   "image": "https://assets.tcgdex.net/fr/me/me01/028"
+  },
+  {
+   "n": "029",
+   "nom": "Grillepattes",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "GIDORA",
+   "image": "https://assets.tcgdex.net/fr/me/me01/029"
+  },
+  {
+   "n": "030",
+   "nom": "Scolocendre",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Shiburingaru",
+   "image": "https://assets.tcgdex.net/fr/me/me01/030"
+  },
+  {
+   "n": "031",
+   "nom": "Yuyu",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Gemi",
+   "image": "https://assets.tcgdex.net/fr/me/me01/031"
+  },
+  {
+   "n": "032",
+   "nom": "Démanta",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Shimaris Yukichi",
+   "image": "https://assets.tcgdex.net/fr/me/me01/032"
+  },
+  {
+   "n": "033",
+   "nom": "Écrapince",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Sanosuke Sakuma",
+   "image": "https://assets.tcgdex.net/fr/me/me01/033"
+  },
+  {
+   "n": "034",
+   "nom": "Kyogre",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Nisota Niso",
+   "image": "https://assets.tcgdex.net/fr/me/me01/034"
+  },
+  {
+   "n": "035",
+   "nom": "Blizzi",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Pani Kobayashi",
+   "image": "https://assets.tcgdex.net/fr/me/me01/035"
+  },
+  {
+   "n": "036",
+   "nom": "Méga-Blizzaroi-ex",
+   "rarete": "Double rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/036"
+  },
+  {
+   "n": "037",
+   "nom": "Flingouste",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Tomokazu Komiya",
+   "image": "https://assets.tcgdex.net/fr/me/me01/037"
+  },
+  {
+   "n": "038",
+   "nom": "Gamblast",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Anesaki Dynamic",
+   "image": "https://assets.tcgdex.net/fr/me/me01/038"
+  },
+  {
+   "n": "039",
+   "nom": "Larméléon",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Taira Akitsu",
+   "image": "https://assets.tcgdex.net/fr/me/me01/039"
+  },
+  {
+   "n": "040",
+   "nom": "Arrozard",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Souichirou Gunjima",
+   "image": "https://assets.tcgdex.net/fr/me/me01/040"
+  },
+  {
+   "n": "041",
+   "nom": "Lézargus",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "akagi",
+   "image": "https://assets.tcgdex.net/fr/me/me01/041"
+  },
+  {
+   "n": "042",
+   "nom": "Frissonille",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Kagemaru Himeno",
+   "image": "https://assets.tcgdex.net/fr/me/me01/042"
+  },
+  {
+   "n": "043",
+   "nom": "Beldeneige",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "miki kudo",
+   "image": "https://assets.tcgdex.net/fr/me/me01/043"
+  },
+  {
+   "n": "044",
+   "nom": "Bekaglaçon",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Akira Komayama",
+   "image": "https://assets.tcgdex.net/fr/me/me01/044"
+  },
+  {
+   "n": "045",
+   "nom": "Magnéti",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Krgc",
+   "image": "https://assets.tcgdex.net/fr/me/me01/045"
+  },
+  {
+   "n": "046",
+   "nom": "Magnéton",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Saboteri",
+   "image": "https://assets.tcgdex.net/fr/me/me01/046"
+  },
+  {
+   "n": "047",
+   "nom": "Magnézone",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "nagimiso",
+   "image": "https://assets.tcgdex.net/fr/me/me01/047"
+  },
+  {
+   "n": "048",
+   "nom": "Raikou",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Takumi Wada",
+   "image": "https://assets.tcgdex.net/fr/me/me01/048"
+  },
+  {
+   "n": "049",
+   "nom": "Dynavolt",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Naoki Saito",
+   "image": "https://assets.tcgdex.net/fr/me/me01/049"
+  },
+  {
+   "n": "050",
+   "nom": "Méga-Élecsprint-ex",
+   "rarete": "Double rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/050"
+  },
+  {
+   "n": "051",
+   "nom": "Pachirisu",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "tono",
+   "image": "https://assets.tcgdex.net/fr/me/me01/051"
+  },
+  {
+   "n": "052",
+   "nom": "Galvaran",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Yuka Morii",
+   "image": "https://assets.tcgdex.net/fr/me/me01/052"
+  },
+  {
+   "n": "053",
+   "nom": "Iguolta",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Nakamura Ippan",
+   "image": "https://assets.tcgdex.net/fr/me/me01/053"
+  },
+  {
+   "n": "054",
+   "nom": "Abra",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Orca",
+   "image": "https://assets.tcgdex.net/fr/me/me01/054"
+  },
+  {
+   "n": "055",
+   "nom": "Kadabra",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Saboteri",
+   "image": "https://assets.tcgdex.net/fr/me/me01/055"
+  },
+  {
+   "n": "056",
+   "nom": "Alakazam",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Bun Toujo",
+   "image": "https://assets.tcgdex.net/fr/me/me01/056"
+  },
+  {
+   "n": "057",
+   "nom": "Lippoutou",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Minahamu",
+   "image": "https://assets.tcgdex.net/fr/me/me01/057"
+  },
+  {
+   "n": "058",
+   "nom": "Tarsal",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Terada Tera",
+   "image": "https://assets.tcgdex.net/fr/me/me01/058"
+  },
+  {
+   "n": "059",
+   "nom": "Kirlia",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "satoma",
+   "image": "https://assets.tcgdex.net/fr/me/me01/059"
+  },
+  {
+   "n": "060",
+   "nom": "Méga-Gardevoir-ex",
+   "rarete": "Double rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "takuyoa",
+   "image": "https://assets.tcgdex.net/fr/me/me01/060"
+  },
+  {
+   "n": "061",
+   "nom": "Munja",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "IKEDA Saki",
+   "image": "https://assets.tcgdex.net/fr/me/me01/061"
+  },
+  {
+   "n": "062",
+   "nom": "Spoink",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "toi8",
+   "image": "https://assets.tcgdex.net/fr/me/me01/062"
+  },
+  {
+   "n": "063",
+   "nom": "Groret",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "cochi8i",
+   "image": "https://assets.tcgdex.net/fr/me/me01/063"
+  },
+  {
+   "n": "064",
+   "nom": "Xerneas",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Kazumasa Yasukuni",
+   "image": "https://assets.tcgdex.net/fr/me/me01/064"
+  },
+  {
+   "n": "065",
+   "nom": "Toutombe",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Narumi Sato",
+   "image": "https://assets.tcgdex.net/fr/me/me01/065"
+  },
+  {
+   "n": "066",
+   "nom": "Tomberro",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "matazo",
+   "image": "https://assets.tcgdex.net/fr/me/me01/066"
+  },
+  {
+   "n": "067",
+   "nom": "Mordudor",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Takeshi Nakamura",
+   "image": "https://assets.tcgdex.net/fr/me/me01/067"
+  },
+  {
+   "n": "068",
+   "nom": "Sabelette",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Shinji Kanda",
+   "image": "https://assets.tcgdex.net/fr/me/me01/068"
+  },
+  {
+   "n": "069",
+   "nom": "Sablaireau",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "imoniii",
+   "image": "https://assets.tcgdex.net/fr/me/me01/069"
+  },
+  {
+   "n": "070",
+   "nom": "Onix",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Uta",
+   "image": "https://assets.tcgdex.net/fr/me/me01/070"
+  },
+  {
+   "n": "071",
+   "nom": "Débugant",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "OKUBO",
+   "image": "https://assets.tcgdex.net/fr/me/me01/071"
+  },
+  {
+   "n": "072",
+   "nom": "Makuhita",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Jerky",
+   "image": "https://assets.tcgdex.net/fr/me/me01/072"
+  },
+  {
+   "n": "073",
+   "nom": "Hariyama",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "GOSSAN",
+   "image": "https://assets.tcgdex.net/fr/me/me01/073"
+  },
+  {
+   "n": "074",
+   "nom": "Séléroc",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Whisker",
+   "image": "https://assets.tcgdex.net/fr/me/me01/074"
+  },
+  {
+   "n": "075",
+   "nom": "Solaroc",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Whisker",
+   "image": "https://assets.tcgdex.net/fr/me/me01/075"
+  },
+  {
+   "n": "076",
+   "nom": "Riolu",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "hncl",
+   "image": "https://assets.tcgdex.net/fr/me/me01/076"
+  },
+  {
+   "n": "077",
+   "nom": "Méga-Lucario-ex",
+   "rarete": "Double rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/077"
+  },
+  {
+   "n": "078",
+   "nom": "Cradopaud",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "matazo",
+   "image": "https://assets.tcgdex.net/fr/me/me01/078"
+  },
+  {
+   "n": "079",
+   "nom": "Coatox",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Hasuno",
+   "image": "https://assets.tcgdex.net/fr/me/me01/079"
+  },
+  {
+   "n": "080",
+   "nom": "Marshadow",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Tomomi Ozaki",
+   "image": "https://assets.tcgdex.net/fr/me/me01/080"
+  },
+  {
+   "n": "081",
+   "nom": "Dolman",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Hitoshi Ariga",
+   "image": "https://assets.tcgdex.net/fr/me/me01/081"
+  },
+  {
+   "n": "082",
+   "nom": "Selutin",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "sowsow",
+   "image": "https://assets.tcgdex.net/fr/me/me01/082"
+  },
+  {
+   "n": "083",
+   "nom": "Amassel",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "kodama",
+   "image": "https://assets.tcgdex.net/fr/me/me01/083"
+  },
+  {
+   "n": "084",
+   "nom": "Gigansel",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "danciao",
+   "image": "https://assets.tcgdex.net/fr/me/me01/084"
+  },
+  {
+   "n": "085",
+   "nom": "Colhomard",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "kawayoo",
+   "image": "https://assets.tcgdex.net/fr/me/me01/085"
+  },
+  {
+   "n": "086",
+   "nom": "Méga-Absol-ex",
+   "rarete": "Double rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "aky CG Works",
+   "image": "https://assets.tcgdex.net/fr/me/me01/086"
+  },
+  {
+   "n": "087",
+   "nom": "Spiritomb",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "mingo",
+   "image": "https://assets.tcgdex.net/fr/me/me01/087"
+  },
+  {
+   "n": "088",
+   "nom": "Yveltal",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "akagi",
+   "image": "https://assets.tcgdex.net/fr/me/me01/088"
+  },
+  {
+   "n": "089",
+   "nom": "Goupilou",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Souichirou Gunjima",
+   "image": "https://assets.tcgdex.net/fr/me/me01/089"
+  },
+  {
+   "n": "090",
+   "nom": "Roublenard",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "ryoma uratsuka",
+   "image": "https://assets.tcgdex.net/fr/me/me01/090"
+  },
+  {
+   "n": "091",
+   "nom": "Gribouraigne",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "osare",
+   "image": "https://assets.tcgdex.net/fr/me/me01/091"
+  },
+  {
+   "n": "092",
+   "nom": "Tag-Tag",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Dsuke",
+   "image": "https://assets.tcgdex.net/fr/me/me01/092"
+  },
+  {
+   "n": "093",
+   "nom": "Steelix",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Anesaki Dynamic",
+   "image": "https://assets.tcgdex.net/fr/me/me01/093"
+  },
+  {
+   "n": "094",
+   "nom": "Méga-Mysdibule-ex",
+   "rarete": "Double rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "aky CG Works",
+   "image": "https://assets.tcgdex.net/fr/me/me01/094"
+  },
+  {
+   "n": "095",
+   "nom": "Dialga",
+   "rarete": "Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Teeziro",
+   "image": "https://assets.tcgdex.net/fr/me/me01/095"
+  },
+  {
+   "n": "096",
+   "nom": "Forgerette",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "You Iribi",
+   "image": "https://assets.tcgdex.net/fr/me/me01/096"
+  },
+  {
+   "n": "097",
+   "nom": "Forgella",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "KEIICHIRO ITO",
+   "image": "https://assets.tcgdex.net/fr/me/me01/097"
+  },
+  {
+   "n": "098",
+   "nom": "Forgelina",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "toriyufu",
+   "image": "https://assets.tcgdex.net/fr/me/me01/098"
+  },
+  {
+   "n": "099",
+   "nom": "Gromago",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Yukihiro Tada",
+   "image": "https://assets.tcgdex.net/fr/me/me01/099"
+  },
+  {
+   "n": "100",
+   "nom": "Méga-Latias-ex",
+   "rarete": "Double rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/100"
+  },
+  {
+   "n": "101",
+   "nom": "Latios",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Uninori",
+   "image": "https://assets.tcgdex.net/fr/me/me01/101"
+  },
+  {
+   "n": "102",
+   "nom": "Piafabec",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Scav",
+   "image": "https://assets.tcgdex.net/fr/me/me01/102"
+  },
+  {
+   "n": "103",
+   "nom": "Rapasdepic",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Saboteri",
+   "image": "https://assets.tcgdex.net/fr/me/me01/103"
+  },
+  {
+   "n": "104",
+   "nom": "Méga-Kangourex-ex",
+   "rarete": "Double rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/104"
+  },
+  {
+   "n": "105",
+   "nom": "Cadoizo",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Naoyo Kimura",
+   "image": "https://assets.tcgdex.net/fr/me/me01/105"
+  },
+  {
+   "n": "106",
+   "nom": "Écrémeuh",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Kouki Saitou",
+   "image": "https://assets.tcgdex.net/fr/me/me01/106"
+  },
+  {
+   "n": "107",
+   "nom": "Laporeille",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "ryoma uratsuka",
+   "image": "https://assets.tcgdex.net/fr/me/me01/107"
+  },
+  {
+   "n": "108",
+   "nom": "Lockpin",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Oswaldo KATO",
+   "image": "https://assets.tcgdex.net/fr/me/me01/108"
+  },
+  {
+   "n": "109",
+   "nom": "Manglouton",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Mékayu",
+   "image": "https://assets.tcgdex.net/fr/me/me01/109"
+  },
+  {
+   "n": "110",
+   "nom": "Argouste",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Shigenori Negishi",
+   "image": "https://assets.tcgdex.net/fr/me/me01/110"
+  },
+  {
+   "n": "111",
+   "nom": "Nounourson",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Shibuzoh.",
+   "image": "https://assets.tcgdex.net/fr/me/me01/111"
+  },
+  {
+   "n": "112",
+   "nom": "Chelours",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "HYOGONOSUKE",
+   "image": "https://assets.tcgdex.net/fr/me/me01/112"
+  },
+  {
+   "n": "113",
+   "nom": "Espièglerie de Margie",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Yuu Nishida",
+   "image": "https://assets.tcgdex.net/fr/me/me01/113"
+  },
+  {
+   "n": "114",
+   "nom": "Ordres du Boss",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "NC Empire",
+   "image": "https://assets.tcgdex.net/fr/me/me01/114"
+  },
+  {
+   "n": "115",
+   "nom": "Échange d'Énergie",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Studio Bora Inc.",
+   "image": "https://assets.tcgdex.net/fr/me/me01/115"
+  },
+  {
+   "n": "116",
+   "nom": "Gong de Combat",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Toyste Beach",
+   "image": "https://assets.tcgdex.net/fr/me/me01/116"
+  },
+  {
+   "n": "117",
+   "nom": "Forêt de Vitalité",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "AYUMI ODASHIMA",
+   "image": "https://assets.tcgdex.net/fr/me/me01/117"
+  },
+  {
+   "n": "118",
+   "nom": "Défense de Fer",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Studio Bora Inc.",
+   "image": "https://assets.tcgdex.net/fr/me/me01/118"
+  },
+  {
+   "n": "119",
+   "nom": "Détermination de Lilie",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Atsushi Furusawa",
+   "image": "https://assets.tcgdex.net/fr/me/me01/119"
+  },
+  {
+   "n": "120",
+   "nom": "Négociation de Major Bob",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Hideki Ishikawa",
+   "image": "https://assets.tcgdex.net/fr/me/me01/120"
+  },
+  {
+   "n": "121",
+   "nom": "Méga Signal",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "inose yukie",
+   "image": "https://assets.tcgdex.net/fr/me/me01/121"
+  },
+  {
+   "n": "122",
+   "nom": "Jardin Mystère",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "AYUMI ODASHIMA",
+   "image": "https://assets.tcgdex.net/fr/me/me01/122"
+  },
+  {
+   "n": "123",
+   "nom": "Dame du Centre Pokémon",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Tomowaka",
+   "image": "https://assets.tcgdex.net/fr/me/me01/123"
+  },
+  {
+   "n": "124",
+   "nom": "Puissance Premium Pro",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Toyste Beach",
+   "image": "https://assets.tcgdex.net/fr/me/me01/124"
+  },
+  {
+   "n": "125",
+   "nom": "Super Bonbon",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Studio Bora Inc.",
+   "image": "https://assets.tcgdex.net/fr/me/me01/125"
+  },
+  {
+   "n": "126",
+   "nom": "Repousse",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Studio Bora Inc.",
+   "image": "https://assets.tcgdex.net/fr/me/me01/126"
+  },
+  {
+   "n": "127",
+   "nom": "Ruines Risquées",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "imoniii",
+   "image": "https://assets.tcgdex.net/fr/me/me01/127"
+  },
+  {
+   "n": "128",
+   "nom": "Compteur de Temps Étrange",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Toyste Beach",
+   "image": "https://assets.tcgdex.net/fr/me/me01/128"
+  },
+  {
+   "n": "129",
+   "nom": "Plage de Surf",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "AYUMI ODASHIMA",
+   "image": "https://assets.tcgdex.net/fr/me/me01/129"
+  },
+  {
+   "n": "130",
+   "nom": "Échange",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Studio Bora Inc.",
+   "image": "https://assets.tcgdex.net/fr/me/me01/130"
+  },
+  {
+   "n": "131",
+   "nom": "Hyper Ball",
+   "rarete": "Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": false,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Ayaka Yoshida",
+   "image": "https://assets.tcgdex.net/fr/me/me01/131"
+  },
+  {
+   "n": "132",
+   "nom": "Compassion de Timmy",
+   "rarete": "Peu Commune",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": true,
+    "reverse": true,
+    "wPromo": false
+   },
+   "illustrateur": "Iori Suzuki",
+   "image": "https://assets.tcgdex.net/fr/me/me01/132"
+  },
+  {
+   "n": "133",
+   "nom": "Bulbizarre",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "mashu",
+   "image": "https://assets.tcgdex.net/fr/me/me01/133"
+  },
+  {
+   "n": "134",
+   "nom": "Herbizarre",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "mashu",
+   "image": "https://assets.tcgdex.net/fr/me/me01/134"
+  },
+  {
+   "n": "135",
+   "nom": "Noadkoko",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Yukihiro Tada",
+   "image": "https://assets.tcgdex.net/fr/me/me01/135"
+  },
+  {
+   "n": "136",
+   "nom": "Caratroc",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "OKUBO",
+   "image": "https://assets.tcgdex.net/fr/me/me01/136"
+  },
+  {
+   "n": "137",
+   "nom": "Ninjask",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Tetsu Kayama",
+   "image": "https://assets.tcgdex.net/fr/me/me01/137"
+  },
+  {
+   "n": "138",
+   "nom": "Goupix",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "saino misaki",
+   "image": "https://assets.tcgdex.net/fr/me/me01/138"
+  },
+  {
+   "n": "139",
+   "nom": "Hélionceau",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Teeziro",
+   "image": "https://assets.tcgdex.net/fr/me/me01/139"
+  },
+  {
+   "n": "140",
+   "nom": "Blizzi",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Nurikabe",
+   "image": "https://assets.tcgdex.net/fr/me/me01/140"
+  },
+  {
+   "n": "141",
+   "nom": "Gamblast",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Mori Yuu",
+   "image": "https://assets.tcgdex.net/fr/me/me01/141"
+  },
+  {
+   "n": "142",
+   "nom": "Lézargus",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Ligton",
+   "image": "https://assets.tcgdex.net/fr/me/me01/142"
+  },
+  {
+   "n": "143",
+   "nom": "Galvaran",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Akira Komayama",
+   "image": "https://assets.tcgdex.net/fr/me/me01/143"
+  },
+  {
+   "n": "144",
+   "nom": "Munja",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Tetsu Kayama",
+   "image": "https://assets.tcgdex.net/fr/me/me01/144"
+  },
+  {
+   "n": "145",
+   "nom": "Tomberro",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Arai Kiriko",
+   "image": "https://assets.tcgdex.net/fr/me/me01/145"
+  },
+  {
+   "n": "146",
+   "nom": "Marshadow",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "0313",
+   "image": "https://assets.tcgdex.net/fr/me/me01/146"
+  },
+  {
+   "n": "147",
+   "nom": "Gigansel",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Yano Keiji",
+   "image": "https://assets.tcgdex.net/fr/me/me01/147"
+  },
+  {
+   "n": "148",
+   "nom": "Spiritomb",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "IKEDA Saki",
+   "image": "https://assets.tcgdex.net/fr/me/me01/148"
+  },
+  {
+   "n": "149",
+   "nom": "Gribouraigne",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Shimaris Yukichi",
+   "image": "https://assets.tcgdex.net/fr/me/me01/149"
+  },
+  {
+   "n": "150",
+   "nom": "Steelix",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Tonji Matsuno",
+   "image": "https://assets.tcgdex.net/fr/me/me01/150"
+  },
+  {
+   "n": "151",
+   "nom": "Piafabec",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "MINAMINAMI Take",
+   "image": "https://assets.tcgdex.net/fr/me/me01/151"
+  },
+  {
+   "n": "152",
+   "nom": "Cadoizo",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Takeshi Nakamura",
+   "image": "https://assets.tcgdex.net/fr/me/me01/152"
+  },
+  {
+   "n": "153",
+   "nom": "Argouste",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Mina Nakai",
+   "image": "https://assets.tcgdex.net/fr/me/me01/153"
+  },
+  {
+   "n": "154",
+   "nom": "Nounourson",
+   "rarete": "Illustration rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "OKACHEKE",
+   "image": "https://assets.tcgdex.net/fr/me/me01/154"
+  },
+  {
+   "n": "155",
+   "nom": "Méga-Florizarre-ex",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/155"
+  },
+  {
+   "n": "156",
+   "nom": "Méga-Camérupt-ex",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/156"
+  },
+  {
+   "n": "157",
+   "nom": "Méga-Blizzaroi-ex",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/157"
+  },
+  {
+   "n": "158",
+   "nom": "Méga-Élecsprint-ex",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/158"
+  },
+  {
+   "n": "159",
+   "nom": "Méga-Gardevoir-ex",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "takuyoa",
+   "image": "https://assets.tcgdex.net/fr/me/me01/159"
+  },
+  {
+   "n": "160",
+   "nom": "Méga-Lucario-ex",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "takuyoa",
+   "image": "https://assets.tcgdex.net/fr/me/me01/160"
+  },
+  {
+   "n": "161",
+   "nom": "Méga-Absol-ex",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "aky CG Works",
+   "image": "https://assets.tcgdex.net/fr/me/me01/161"
+  },
+  {
+   "n": "162",
+   "nom": "Méga-Mysdibule-ex",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "aky CG Works",
+   "image": "https://assets.tcgdex.net/fr/me/me01/162"
+  },
+  {
+   "n": "163",
+   "nom": "Méga-Latias-ex",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/163"
+  },
+  {
+   "n": "164",
+   "nom": "Méga-Kangourex-ex",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/164"
+  },
+  {
+   "n": "165",
+   "nom": "Espièglerie de Margie",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Yuu Nishida",
+   "image": "https://assets.tcgdex.net/fr/me/me01/165"
+  },
+  {
+   "n": "166",
+   "nom": "Ballon",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Studio Bora Inc.",
+   "image": "https://assets.tcgdex.net/fr/me/me01/166"
+  },
+  {
+   "n": "167",
+   "nom": "Poffin Copain-Copain",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "AYUMI ODASHIMA",
+   "image": "https://assets.tcgdex.net/fr/me/me01/167"
+  },
+  {
+   "n": "168",
+   "nom": "Gong de Combat",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Toyste Beach",
+   "image": "https://assets.tcgdex.net/fr/me/me01/168"
+  },
+  {
+   "n": "169",
+   "nom": "Détermination de Lilie",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Atsushi Furusawa",
+   "image": "https://assets.tcgdex.net/fr/me/me01/169"
+  },
+  {
+   "n": "170",
+   "nom": "Négociation de Major Bob",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Hideki Ishikawa",
+   "image": "https://assets.tcgdex.net/fr/me/me01/170"
+  },
+  {
+   "n": "171",
+   "nom": "Méga Signal",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "inose yukie",
+   "image": "https://assets.tcgdex.net/fr/me/me01/171"
+  },
+  {
+   "n": "172",
+   "nom": "Jardin Mystère",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "AYUMI ODASHIMA",
+   "image": "https://assets.tcgdex.net/fr/me/me01/172"
+  },
+  {
+   "n": "173",
+   "nom": "Civière Nocturne",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Toyste Beach",
+   "image": "https://assets.tcgdex.net/fr/me/me01/173"
+  },
+  {
+   "n": "174",
+   "nom": "Puissance Premium Pro",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Toyste Beach",
+   "image": "https://assets.tcgdex.net/fr/me/me01/174"
+  },
+  {
+   "n": "175",
+   "nom": "Super Bonbon",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Studio Bora Inc.",
+   "image": "https://assets.tcgdex.net/fr/me/me01/175"
+  },
+  {
+   "n": "176",
+   "nom": "Compassion de Timmy",
+   "rarete": "Ultra Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Iori Suzuki",
+   "image": "https://assets.tcgdex.net/fr/me/me01/176"
+  },
+  {
+   "n": "177",
+   "nom": "Méga-Florizarre-ex",
+   "rarete": "Illustration spéciale rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "mashu",
+   "image": "https://assets.tcgdex.net/fr/me/me01/177"
+  },
+  {
+   "n": "178",
+   "nom": "Méga-Gardevoir-ex",
+   "rarete": "Illustration spéciale rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Raita Kazama",
+   "image": "https://assets.tcgdex.net/fr/me/me01/178"
+  },
+  {
+   "n": "179",
+   "nom": "Méga-Lucario-ex",
+   "rarete": "Illustration spéciale rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Atsushi Furusawa",
+   "image": "https://assets.tcgdex.net/fr/me/me01/179"
+  },
+  {
+   "n": "180",
+   "nom": "Méga-Absol-ex",
+   "rarete": "Illustration spéciale rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Mitsuhiro Arita",
+   "image": "https://assets.tcgdex.net/fr/me/me01/180"
+  },
+  {
+   "n": "181",
+   "nom": "Méga-Latias-ex",
+   "rarete": "Illustration spéciale rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "AKIRA EGAWA",
+   "image": "https://assets.tcgdex.net/fr/me/me01/181"
+  },
+  {
+   "n": "182",
+   "nom": "Méga-Kangourex-ex",
+   "rarete": "Illustration spéciale rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "GOTO minori",
+   "image": "https://assets.tcgdex.net/fr/me/me01/182"
+  },
+  {
+   "n": "183",
+   "nom": "Espièglerie de Margie",
+   "rarete": "Illustration spéciale rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "sui",
+   "image": "https://assets.tcgdex.net/fr/me/me01/183"
+  },
+  {
+   "n": "184",
+   "nom": "Détermination de Lilie",
+   "rarete": "Illustration spéciale rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "satoma",
+   "image": "https://assets.tcgdex.net/fr/me/me01/184"
+  },
+  {
+   "n": "185",
+   "nom": "Négociation de Major Bob",
+   "rarete": "Illustration spéciale rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "osare",
+   "image": "https://assets.tcgdex.net/fr/me/me01/185"
+  },
+  {
+   "n": "186",
+   "nom": "Compassion de Timmy",
+   "rarete": "Illustration spéciale rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "Jiro Sasumo",
+   "image": "https://assets.tcgdex.net/fr/me/me01/186"
+  },
+  {
+   "n": "187",
+   "nom": "Méga-Gardevoir-ex",
+   "rarete": "Méga Hyper Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/187"
+  },
+  {
+   "n": "188",
+   "nom": "Méga-Lucario-ex",
+   "rarete": "Méga Hyper Rare",
+   "variantes": {
+    "firstEdition": false,
+    "holo": true,
+    "normal": false,
+    "reverse": false,
+    "wPromo": false
+   },
+   "illustrateur": "5ban Graphics",
+   "image": "https://assets.tcgdex.net/fr/me/me01/188"
+  }
+ ]
+}
