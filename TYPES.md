@@ -146,6 +146,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | Date | Réseaux | N° | Sujet | Jeu | Fichiers |
 | --- | --- | --- | --- | --- | --- |
 | ven. 16/10/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Lancement : « boostZ ta collection », style stickers de l'onboarding | les 8 | `videos/2026-10-16-lancement-stickers.mp4` |
+| sam. 17/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Mondes Natals (Homeworlds) est sorti | Star Wars Unlimited | `images/2026-10-17-sortie-mondes-natals/` |
 | jeu. 22/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-22-analyse-mega-dracaufeu-x-stickers/`, `videos/2026-10-22-story-mega-dracaufeu-x.mp4` |
 | dim. 25/10/2026, 10 h | Instagram (Reel, musique « 8 Bit Breakthrough »), TikTok, Facebook (Reel), story Instagram et Facebook | 8 | Choisis ton combattant : « Tu joues lequel ? » | les 8 | `videos/2026-10-25-choisis-ton-combattant-8s.mp4` |
 | sam. 31/10/2026, 18 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | `videos/2026-10-31-halloween.mp4` |

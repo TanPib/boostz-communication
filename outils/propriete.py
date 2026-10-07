@@ -18,6 +18,7 @@ ALL = 'PLMOYDSW'
 POSTS = {  # date: (IPs, photo credit or '')
  '2026-10-16': (ALL, ''),
  '2026-10-17': ('S', "Illustration et cartes : starwarsunlimited.com et swu-db.com."),
+ '2026-10-20': ('P', "Photos des produits : investcollect.com, blazingtail.fr, pokepedia.fr, play-in.com."),
  '2026-10-22': ('P', ''),
  '2026-10-25': (ALL, ''),
  '2026-10-31': ('MPL', ''),

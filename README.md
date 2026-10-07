@@ -19,6 +19,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | --- | --- | --- |
 | `videos/2026-10-16-lancement-stickers.mp4` | ven. 16/10/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 31 s, musique originale, style stickers de l'onboarding |
 | `videos/2026-10-16-lancement.mp4` | remplacée le 05/10/2026 par la version stickers ; sa fin y est reprise | 9:16, 1080 × 1920, 21 s, sans son |
+| `images/2026-10-17-sortie-mondes-natals/` | sam. 17/10/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `images/2026-10-22-analyse-mega-dracaufeu-x-stickers/` | jeu. 22/10/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG 1080 × 1350, style stickers, plus `story.jpg` |
 | `videos/2026-10-22-story-mega-dracaufeu-x.mp4` | jeu. 22/10/2026, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
 | `images/2026-10-22-analyse-mega-dracaufeu-x/` | remplacé le 05/10/2026 par la version stickers | carrousel 4:5, 5 JPEG 1080 × 1350 |

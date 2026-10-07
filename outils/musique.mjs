@@ -36,6 +36,7 @@ const chord = (name) => { const [, r, q] = name.match(/^([A-G][b#]?)(.*)$/); if 
 const STYLES = {
   lancement:   { bpm: 104, prog: ['C', 'G', 'Am', 'F'], lead: 'glock', kit: 'pop', swing: .06, cut: 13000, dust: 0, comp: 'strum', clean: true, melody: 'lancement' },
   mondesnatals: { bpm: 84, prog: ['Dm9', 'Bbmaj9', 'Gm9', 'A7b9'], lead: 'rhodes', kit: 'halftime', swing: .2, cut: 5000, dust: .5, comp: 'sparse' },
+  guidepokemon: { bpm: 82, prog: ['Gmaj9', 'Em9', 'Cmaj9', 'D13'], lead: 'musicbox', kit: 'brushes', swing: .22, cut: 5200, dust: .5, comp: 'arp' },
   combattant:  { bpm: 88, prog: ['Cmaj9', 'A7b9', 'Dm9', 'G13'], lead: 'chip', kit: 'boombap', swing: .18, cut: 5600, dust: .5, comp: 'sparse' },
   lorcana:     { bpm: 76, prog: ['Dmaj9', 'Bm9', 'Gmaj9', 'A13'], lead: 'musicbox', kit: 'brushes', swing: .2, cut: 4800, dust: .7, comp: 'hold' },
   etat:        { bpm: 80, prog: ['Ebmaj9', 'Cm9', 'Fm9', 'Bb13'], lead: 'felt', kit: 'boombap', swing: .24, cut: 4600, dust: .7, comp: 'arp' },

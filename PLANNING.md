@@ -23,6 +23,7 @@ Trois principes, demandés par l'utilisateur :
 | N° | Date | Format | Type (`TYPES.md`) | Sujet | Jeu | État |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | ven. 16/10, 10 h | Reel | 11 Annonce | Lancement : « boostZ ta collection » | les 8 | ✅ programmé |
+| 1 bis | sam. 17/10, 10 h | carrousel | 15 Sortie d'extension | Mondes Natals (Homeworlds) est sorti le 09/10 | Star Wars Unlimited | ✅ programmé |
 | 2 | lun. 19/10, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 1 : relevés du 03/10 au 16/10 | Pokémon | brouillon dans Metricool, produit par le rappel du 16/10 |
 | 3 | jeu. 22/10, 10 h | carrousel | 1 Analyse de carte | Méga-Dracaufeu X ex | Pokémon | ✅ programmé |
 | 4 | dim. 25/10, 10 h | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », raccourci à 8 s | les 8 | ✅ programmé (8 s) |
