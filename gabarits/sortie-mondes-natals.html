@@ -10,7 +10,7 @@
 // - Booster contents and the US price (24 x 4,99 $ = 119,76 $): retailer pages (zulusgames, dacardworld).
 // - French name and date: play-in.com product pages ("Mondes Natals", 09/10/2026, deck "Tarkin Étoile Noire").
 // - Card images: api.swu-db.com (set HMW), leader unit sides. Key art: starwarsunlimited.com.
-const G = 'starwarsunlimited', SUB = 'Mondes Natals · Homeworlds';
+const G = 'starwarsunlimited', GC = GAMES.starwarsunlimited[1], SUB = 'Mondes Natals · Homeworlds';
 const SRC_SET = 'Sources : starwarsunlimited.com, icv2.com, play-in.com, relevé le 07/10/2026.';
 carousel([
   ['1-couverture', `${ghosts([[940, 1090, 70, 8]])}${track(0, 1150, .5)}${head('SORTIE D’EXTENSION', G, SUB)}
@@ -21,20 +21,20 @@ carousel([
     <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
   ['2-dedans', `${ghosts([[920, 1120, 80, 6]])}${track(1, 425, .12)}${head('CE QU’IL Y A DEDANS', G, SUB)}
     <div class="abs h" style="left:70px;top:170px;font-size:110px">Plus de<br><span class="acc">260 cartes.</span></div>
-    ${[['1', 'nouveau mot-clé :<br>Fortify (en VO)', SUN, -3], ['2', 'nouveaux jetons :<br>Beast et Weakness', '#F5F2FB', 2], ['2', 'decks Spotlight :<br>Chewbacca, Tarkin', DONE, 2], ['16', 'cartes<br>par booster', PINK, -2]].map(([n, k, c, r], i) =>
+    ${[['1', 'nouveau mot-clé :<br>Fortify (en VO)', GC, -3], ['2', 'nouveaux jetons :<br>Beast et Weakness', '#F5F2FB', 2], ['2', 'decks Spotlight :<br>Chewbacca, Tarkin', DONE, 2], ['16', 'cartes<br>par booster', PINK, -2]].map(([n, k, c, r], i) =>
       st(70 + (i % 2) * 480, 470 + Math.floor(i / 2) * 300, 450, 250, `<div style="padding:30px 36px"><div class="h" style="font-size:96px;color:${c}">${n}</div><div class="ui" style="font-size:34px;line-height:1.2;margin-top:6px">${k}</div></div>`, { r, z: 3 })).join('')}
     <div class="abs mut" style="left:70px;right:70px;top:1100px;font-weight:600;font-size:34px;text-align:center">Et un leader qui se retourne<br>en Étoile Noire.</div>
     ${src(SRC_SET)}`],
   ['3-leaders', `${track(2, 1095, .15)}${head('LES LEADERS', G, SUB)}
     <div class="abs h" style="left:70px;top:170px;font-size:92px">3 leaders<br><span class="acc">à surveiller.</span></div>
-    ${[['carte-etoile-noire-hmw-004.png', 'L’Étoile Noire', 'Grand Moff Tarkin,<br>une fois retourné', SUN, -5], ['carte-chewbacca-hmw-009.png', 'Chewbacca', 'Leader de son<br>deck Spotlight', DONE, 2], ['carte-dark-vador-hmw-007.png', 'Dark Vador', 'Leader', PINK, 6]].map(([img, n, k, c, r], i) => `
+    ${[['carte-etoile-noire-hmw-004.png', 'L’Étoile Noire', 'Grand Moff Tarkin,<br>une fois retourné', GC, -5], ['carte-chewbacca-hmw-009.png', 'Chewbacca', 'Leader de son<br>deck Spotlight', DONE, 2], ['carte-dark-vador-hmw-007.png', 'Dark Vador', 'Leader', PINK, 6]].map(([img, n, k, c, r], i) => `
       ${card('assets/' + img, 80 + i * 320, 470, 280, r, 3)}
       <div class="abs" style="left:${70 + i * 320}px;top:890px;width:300px;text-align:center"><div class="h" style="font-size:52px;color:${c}">${i + 1}</div><div class="h" style="font-size:34px;margin-top:4px;white-space:nowrap">${n}</div><div class="ui mut" style="font-size:24px;margin-top:6px">${k}</div></div>`).join('')}
     <div class="abs mut" style="left:70px;right:70px;top:1150px;font-weight:600;font-size:30px;text-align:center">Leur cote se forme en ce moment.</div>
     ${src('Cartes : api.swu-db.com (face déployée des leaders), relevé le 07/10/2026. © & ™ Lucasfilm Ltd.')}`],
   ['4-prix', `${track(3, 425, .12)}${head('LE PRIX', G, SUB)}
     <div class="abs h" style="left:70px;top:170px;font-size:100px">Combien pour<br><span class="acc">un display ?</span></div>
-    ${st(70, 470, 940, 300, `<div style="padding:40px 50px;color:${DARK}"><div class="lab" style="font-size:24px">DISPLAY DE 24 BOOSTERS · PRIX CONSEILLÉ US</div><div class="h" style="font-size:110px;margin-top:14px;white-space:nowrap">${usd(119.76)}</div><div class="ui" style="font-size:28px;margin-top:8px">soit ${usd(4.99)} le booster</div></div>`, { fill: SUN, r: -1.5, z: 3 })}
+    ${st(70, 470, 940, 300, `<div style="padding:40px 50px;color:${DARK}"><div class="lab" style="font-size:24px">DISPLAY DE 24 BOOSTERS · PRIX CONSEILLÉ US</div><div class="h" style="font-size:110px;margin-top:14px;white-space:nowrap">${usd(119.76)}</div><div class="ui" style="font-size:28px;margin-top:8px">soit ${usd(4.99)} le booster</div></div>`, { fill: GC, r: -1.5, z: 3 })}
     ${st(70, 840, 940, 200, `<div style="padding:34px 50px"><div class="lab" style="font-size:22px;color:${VSOFT}">DANS UN BOOSTER</div><div class="ui" style="font-size:38px;margin-top:12px">1 leader · 1 rare ou légendaire · 1 foil</div></div>`, { r: 1, z: 3 })}
     <div class="abs mut" style="left:70px;right:70px;top:1110px;font-weight:600;font-size:34px;text-align:center">Tu ouvres, ou tu attends que la cote retombe ?</div>
     ${src('Prix relevés le 07/10/2026 : zulusgames.com, dacardworld.com (prix conseillés US). Prix français non encore affichés.')}`],

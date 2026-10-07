@@ -87,7 +87,7 @@ POSTS.push(['m2-le-jeu', `${ghosts([[900, 1040, 80, 6]])}${track(1)}${head('LE J
   <div class="abs h" style="left:70px;top:160px;font-size:96px">Le TCG<br><span class="acc">World of Warcraft</span></div>
   ${[['2006', 'Upper Deck<br>le lance', WOW, -3], ['2010', 'Cryptozoic<br>le reprend', '#F5F2FB', 2], ['2013', 'Blizzard<br>l’arrête', PINK, -2]].map(([y, k, c, r], i) => st(70 + i * 318, 410, 290, 215, `<div style="padding:24px 28px"><div class="h" style="font-size:72px;color:${c}">${y}</div><div class="ui mut" style="font-size:26px;font-weight:600;margin-top:6px;line-height:1.3">${k}</div></div>`, { r, z: 3 })).join('')}
   ${realCard(90, 700, 280, -6)}
-  ${st(420, 760, 590, 330, `<div style="padding:34px 40px;color:${DARK}"><div class="lab" style="font-size:22px">LES CARTES « LOOT »</div><div class="ui" style="font-size:40px;line-height:1.25;margin-top:12px">Un code à gratter, qui débloque un objet dans le jeu vidéo.</div></div>`, { fill: SUN, r: 2, z: 3 })}
+  ${st(420, 760, 590, 330, `<div style="padding:34px 40px;color:${DARK}"><div class="lab" style="font-size:22px">LES CARTES « LOOT »</div><div class="ui" style="font-size:40px;line-height:1.25;margin-top:12px">Un code à gratter, qui débloque un objet dans le jeu vidéo.</div></div>`, { fill: '#58A6DD', r: 2, z: 3 })}
   <div class="src">${SRC_JEU}</div>`]);
 
 // 3 - The Spectral Tiger: 484 packs, one lit.
@@ -104,7 +104,7 @@ POSTS.push(['m4-ce-quelle-vaut', `${ghosts([[920, 1100, 80, 6]])}${track(3)}${he
   ${realCard(640, 170, 300, 5, true)}
   ${st(70, 650, 450, 250, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:21px;letter-spacing:2px">CODE INTACT · PSA 8</div><div class="h" style="font-size:88px;margin-top:6px;white-space:nowrap">${usd(INTACT)}</div><div class="ui" style="font-weight:600;font-size:24px">Heritage Auctions, 21/03/2025</div></div>`, { fill: DONE, r: -2, z: 3 })}
   ${st(560, 650, 450, 250, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:21px;letter-spacing:2px">CODE GRATTÉ · PSA 9</div><div class="h" style="font-size:88px;margin-top:6px;white-space:nowrap">${usd(GRATTEE)}</div><div class="ui" style="font-weight:600;font-size:24px">vente du 11/11/2025</div></div>`, { fill: PINK, r: 2, z: 3 })}
-  ${disc(440, 330, 200, SUN, `<div style="text-align:center;color:${DARK}"><div class="h" style="font-size:84px;line-height:1">÷${FACTOR}</div><div class="ui" style="font-size:22px;margin-top:4px">une fois<br>grattée</div></div>`, -6)}
+  ${disc(440, 330, 200, '#58A6DD', `<div style="text-align:center;color:${DARK}"><div class="h" style="font-size:84px;line-height:1">÷${FACTOR}</div><div class="ui" style="font-size:22px;margin-top:4px">une fois<br>grattée</div></div>`, -6)}
   <div class="abs" style="left:110px;top:980px;width:860px;text-align:center;font-weight:600;font-size:38px;line-height:1.4;color:rgba(245,242,251,.85)">Mieux notée, mais grattée :<br><b class="ui" style="color:#fff">elle vaut ${FACTOR} fois moins.</b><br>Ce qui se paie, c’est le code.</div>
   <div class="src">${SRC_PRIX}</div>`]);
 
@@ -112,7 +112,7 @@ POSTS.push(['m4-ce-quelle-vaut', `${ghosts([[920, 1100, 80, 6]])}${track(3)}${he
 POSTS.push(['m5-verdict', `${ghosts([[90, 300, 80, -6], [950, 230, 80, 8], [110, 1120, 70, 4], [920, 1080, 80, -6]])}${track(4)}${head('LE VERDICT')}
   <div class="abs h" style="left:0;top:170px;width:1080px;text-align:center;font-size:150px;color:${DONE}">Réalité.</div>
   <div class="abs" style="left:110px;top:360px;width:860px;text-align:center;font-weight:600;font-size:40px;line-height:1.35;color:rgba(245,242,251,.85)">${usd(INTACT)} pour un tigre qu’on ne voit<br>que dans le jeu vidéo…<br><b class="ui" style="color:#fff">tant que personne ne gratte le code.</b></div>
-  ${st(120, 620, 840, 130, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-size:36px;color:${DARK}">Warcraft fait partie des 8 TCG de Boostz.</div>`, { fill: SUN, r: -2, z: 3 })}
+  ${st(120, 620, 840, 130, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-size:36px;color:${DARK}">Warcraft fait partie des 8 TCG de Boostz.</div>`, { fill: '#58A6DD', r: -2, z: 3 })}
   <div class="abs" style="left:0;top:880px;width:1080px;display:flex;justify-content:center">${wordmark(100)}</div>
   <div class="abs mut" style="left:0;top:1015px;width:1080px;text-align:center;font-weight:600;font-size:38px">Ton compagnon TCG, disponible sur ton téléphone</div>
   <div class="abs ui" style="left:0;top:1110px;width:1080px;text-align:center;font-size:34px;color:${VSOFT}">Télécharge Boostz, lien en bio</div>`]);
