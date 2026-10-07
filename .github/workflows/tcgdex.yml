@@ -1,0 +1,50 @@
+# Records every card of one Pokémon set from TCGdex (number, name, rarity,
+# variants, image URL), which the cloud container cannot reach. Used to pick a
+# real card of each rarity for a post. Writes donnees/tcgdex/<set>.json.
+# Run by hand: Actions > TCGdex > Run workflow.
+name: TCGdex
+on:
+  workflow_dispatch:
+    inputs:
+      set:
+        description: TCGdex set id, e.g. me01
+        required: true
+      langue:
+        description: Language of the card names
+        required: false
+        default: fr
+permissions:
+  contents: write
+jobs:
+  tcgdex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch
+        env:
+          SET: ${{ inputs.set }}
+          LANGUE: ${{ inputs.langue }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, urllib.request
+          s, lang = os.environ['SET'], os.environ.get('LANGUE') or 'fr'
+          assert re.fullmatch(r'[a-z0-9.]+', s) and re.fullmatch(r'[a-z]{2}', lang)
+          get = lambda u: json.load(urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'boostz-communication'}), timeout=60))
+          info = get(f'https://api.tcgdex.net/v2/{lang}/sets/{s}')
+          cards = []
+          for c in info['cards']:
+              d = get(f"https://api.tcgdex.net/v2/{lang}/cards/{c['id']}")
+              cards.append({'n': d.get('localId'), 'nom': d.get('name'), 'rarete': d.get('rarity'),
+                            'variantes': d.get('variants'), 'illustrateur': d.get('illustrator'), 'image': d.get('image')})
+          os.makedirs('donnees/tcgdex', exist_ok=True)
+          out = {'set': s, 'nom': info.get('name'), 'total': info.get('cardCount'), 'cartes': cards}
+          json.dump(out, open(f'donnees/tcgdex/{s}.json', 'w'), ensure_ascii=False, indent=1)
+          print(len(cards), 'cards')
+          PY
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add donnees/tcgdex
+          git diff --cached --quiet || git commit -q -m "Record the TCGdex card list of ${{ inputs.set }}"
+          for i in 1 2 3 4 5 6; do git pull -q --rebase && git push -q && exit 0; sleep $((i * 5)); done; exit 1
