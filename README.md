@@ -84,7 +84,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-03-24-1-chance-sur-1533-pikachu.mp4` | mer. 24/03/2027, 10 h — Instagram, TikTok, Facebook, stories | Reel 9:16, 1080 × 1920, 21,2 s, musique originale |
 | `images/2027-03-27-guide-scelles-magic/` | sam. 27/03/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-03-27-story-guide-scelles-magic.mp4` | sam. 27/03/2027, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
-| `images/2027-03-30-guide-scelles-pokemon/` | mar. 30/03/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 13 JPEG, plus `story.jpg` et sa story vidéo |
+| `images/2027-03-30-guide-scelles-pokemon/` | mar. 30/03/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 15 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-03-30-story-guide-scelles-pokemon.mp4` | mar. 30/03/2027, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
 | `videos/2027-04-02-choisis-ton-combattant-8s.mp4` | ven. 02/04/2027, 10 h — Instagram, TikTok, Facebook, stories | Reel 9:16, 1080 × 1920, 9,8 s, musique originale |
 | `images/couvertures/` | avec chaque Reel | couverture (`videoThumbnailUrl`), dernière image de l'accroche |
