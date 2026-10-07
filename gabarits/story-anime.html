@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz story animée</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// The story of every post (asked on 07/10/2026): not the video itself, only the
+// post's cover with a small animation, and a line sending people to the profile
+// (the APIs cannot add a link sticker to a scheduled story). The cover lands as a
+// sticker, breathes, a few sparkles twinkle, the call bobs. The top 200 px and
+// bottom 260 px stay clear of the story chrome.
+//   node rendu.mjs "story-anime.html#<date>-<slug>" video   (then outils/story-anime.sh adds the sound)
+// Entries: id -> [cover image relative to this page, 'reel' | 'post'].
+const COV = (f) => `../images/couvertures/${f}.jpg`, CAR = (d) => `../images/${d}/1-couverture.jpg`;
+const STORIES = {
+  '2026-10-16-lancement': [COV('2026-10-16-lancement-stickers'), 'reel'],
+  '2026-10-17-sortie-mondes-natals': [CAR('2026-10-17-sortie-mondes-natals'), 'post'],
+  '2026-10-23-discord': [COV('2026-10-23-discord'), 'reel'],
+  '2026-10-26-mega-dracaufeu-x': [CAR('2026-10-26-analyse-mega-dracaufeu-x-stickers'), 'post'],
+  '2026-10-31-halloween': [COV('2026-10-31-halloween'), 'reel'],
+  '2026-11-03-histoire-tyler-grand-guerrier': [CAR('2026-11-03-histoire-tyler-grand-guerrier'), 'post'],
+  '2026-11-06-sortie-regne-delta': [CAR('2026-11-06-sortie-regne-delta'), 'post'],
+  '2026-11-09-1-chance-sur-96': [COV('2026-11-09-1-chance-sur-96-stickers'), 'reel'],
+  '2026-11-12-sorties-maestros-star-trek': [CAR('2026-11-12-sorties-maestros-star-trek'), 'post'],
+  '2026-11-14-beta-dans-2-semaines': [COV('2026-11-14-beta-dans-2-semaines'), 'reel'],
+  '2026-11-17-histoire-pikachu-illustrateur': [CAR('2026-11-17-histoire-pikachu-illustrateur'), 'post'],
+  '2026-11-22-beta-samedi-prochain': [COV('2026-11-22-beta-samedi-prochain'), 'reel'],
+  '2026-11-25-beta-j-3': [COV('2026-11-25-beta-j-3'), 'reel'],
+  '2026-11-27-black-friday': [COV('2026-11-27-black-friday'), 'reel'],
+  '2026-11-28-beta-ouverte': [COV('2026-11-28-beta-ouverte'), 'reel'],
+  '2026-12-03-glorious-victors': [COV('2026-12-03-glorious-victors'), 'reel'],
+  '2026-12-06-guide-scelles-onepiece': [CAR('2026-12-06-guide-scelles-onepiece'), 'post'],
+  '2026-12-09-fonction-etat': [COV('2026-12-09-fonction-etat'), 'reel'],
+  '2026-12-12-zoom-mitsuhiro-arita': [CAR('2026-12-12-zoom-mitsuhiro-arita'), 'post'],
+  '2026-12-15-opening-collect-aura': [COV('2026-12-15-opening-collect-aura'), 'reel'],
+  '2026-12-18-sortie-fb12': [CAR('2026-12-18-sortie-fb12'), 'post'],
+  '2026-12-21-noel': [COV('2026-12-21-noel'), 'reel'],
+  '2026-12-24-protege-ta-collection': [CAR('2026-12-24-protege-ta-collection'), 'post'],
+  '2026-12-27-contrefacon': [COV('2026-12-27-contrefacon'), 'reel'],
+  '2026-12-30-records-2026': [CAR('2026-12-30-records-2026'), 'post'],
+  '2027-01-01-bonne-annee': [COV('2027-01-01-bonne-annee'), 'reel'],
+  '2027-01-07-guide-scelles-lorcana': [CAR('2027-01-07-guide-scelles-lorcana'), 'post'],
+  '2027-01-20-guide-scelles-starwarsunlimited': [CAR('2027-01-20-guide-scelles-starwarsunlimited'), 'post'],
+  '2027-02-01-erreurs-impression': [COV('2027-02-01-erreurs-impression'), 'reel'],
+  '2027-02-04-zoom-atsuko-nishida': [CAR('2027-02-04-zoom-atsuko-nishida'), 'post'],
+  '2027-02-07-tigre-spectral': ['../images/2027-02-07-mythe-tigre-spectral/1-affirmation.jpg', 'post'],
+  '2027-02-13-fonction-echange': [COV('2027-02-13-fonction-echange'), 'reel'],
+  '2027-02-16-zoom-rebecca-guay': [CAR('2027-02-16-zoom-rebecca-guay'), 'post'],
+  '2027-02-19-guide-scelles-yugioh': [CAR('2027-02-19-guide-scelles-yugioh'), 'post'],
+  '2027-02-25-histoire-pikachu-van-gogh': [CAR('2027-02-25-histoire-pikachu-van-gogh'), 'post'],
+  '2027-02-28-lexique-tcg': [CAR('2027-02-28-lexique-tcg'), 'post'],
+  '2027-03-06-choisis-tes-encres-lorcana': [COV('2027-03-06-choisis-tes-encres-lorcana'), 'reel'],
+  '2027-03-12-zoom-christopher-rush': [CAR('2027-03-12-zoom-christopher-rush'), 'post'],
+  '2027-03-15-histoire-tyler-reel': [COV('2027-03-15-histoire-tyler-reel'), 'reel'],
+  '2027-03-18-zoom-yuka-morii': [CAR('2027-03-18-zoom-yuka-morii'), 'post'],
+  '2027-03-24-1-chance-sur-1533-pikachu': [COV('2027-03-24-1-chance-sur-1533-pikachu'), 'reel'],
+  '2027-03-27-guide-scelles-magic': [CAR('2027-03-27-guide-scelles-magic'), 'post'],
+  '2027-03-30-guide-scelles-pokemon': [CAR('2027-03-30-guide-scelles-pokemon'), 'post'],
+  '2027-04-02-choisis-ton-combattant': [COV('2027-04-02-choisis-ton-combattant-8s'), 'reel'],
+};
+const [img, kind] = STORIES[location.hash.slice(1)] || Object.values(STORIES)[0];
+// A Reel cover is 9:16, a carousel cover 4:5: both cards end above y 1330.
+const [w, h] = kind === 'reel' ? [580, 1031] : [780, 975];
+const cx = 540, ty = kind === 'reel' ? 290 : 330;
+const spark = (x, y, s, c, i) => `<svg id="sp${i}" class="abs" width="${s}" height="${s}" viewBox="-50 -50 100 100" style="left:${x - s / 2}px;top:${y - s / 2}px;overflow:visible;z-index:7"><path d="M0 -46 C6 -10 10 -6 46 0 C10 6 6 10 0 46 C-6 10 -10 6 -46 0 C-10 -6 -6 -10 0 -46 Z" fill="${c}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/></svg>`;
+const SPARKS = [[cx - w / 2 - 20, ty + 60, 84, SUN], [cx + w / 2 + 10, ty + h * .45, 70, '#FF4FA0'], [cx - w / 2 + 10, ty + h - 40, 60, '#3AA9FF']];
+reel(`${ghosts([[60, 250, 90, -8], [930, 260, 80, 6], [70, 1560, 90, 10], [930, 1560, 100, -6]])}
+  ${reelPath('M-20 1820 C160 1770 300 1890 520 1840 S860 1760 1100 1810')}
+  <div class="abs lab" ${A(.1, null, 0, 'rise')} style="left:0;top:205px;width:1080px;text-align:center;font-size:28px;letter-spacing:8px;color:${VSOFT}">${kind === 'reel' ? 'NOUVEAU REEL' : 'NOUVEAU POST'}</div>
+  <div id="card" class="abs" ${A(.2, null, -2)} style="left:${cx - w / 2}px;top:${ty}px;width:${w}px;height:${h}px;border:8px solid ${INK};border-radius:40px;overflow:hidden;box-shadow:16px 16px 0 ${SHADOW};z-index:5">
+    <img id="cov" src="${img}" style="width:100%;height:100%;display:block;object-fit:cover"></div>
+  ${SPARKS.map(([x, y, s, c], i) => spark(x, y, s, c, i)).join('')}
+  ${st(160, 1400, 760, 150, `<div id="call" class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:54px;color:${DARK}">${kind === 'reel' ? 'Le Reel complet' : 'Le post complet'} sur le profil <span id="finger" style="display:inline-block;margin-left:14px">👆</span></div>`, { fill: SUN, r: 2, z: 6, attrs: A(.9, null, 2) })}
+  <div class="abs" ${A(1.3, null, 0, 'fade')} style="left:0;top:1600px;width:1080px;display:flex;justify-content:center">${wordmark(60)}</div>`, 7);
+const base = window.render;
+window.render = (t) => {
+  base(t);
+  // The cover breathes inside its card, the card floats, the finger points up.
+  document.getElementById('cov').style.transform = `scale(${1 + .05 * Math.sin(t * .9)})`;
+  const card = document.getElementById('card');
+  if (t > .55) card.style.transform += ` translateY(${Math.sin((t - .55) * 1.8) * 8}px)`;
+  document.getElementById('finger').style.transform = `translateY(${-Math.abs(Math.sin(t * 3.2)) * 14}px)`;
+  SPARKS.forEach((_, i) => {
+    const k = (t * .8 + i * .33) % 1, s = Math.sin(Math.PI * k);
+    const el = document.getElementById('sp' + i);
+    el.style.opacity = t < .6 ? 0 : s; el.style.transform = `scale(${.4 + .7 * s}) rotate(${t * 40 + i * 30}deg)`;
+  });
+};
+window.render(0);
+</script></body></html>
