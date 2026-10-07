@@ -27,6 +27,7 @@ Trois principes, demandés par l'utilisateur :
 | 2 | lun. 19/10, 10 h | carrousel | 2 Cotes qui bougent | Édition n° 1 : relevés du 03/10 au 16/10 | Pokémon | brouillon dans Metricool, produit par le rappel du 16/10 |
 | 2 bis | mar. 20/10, 10 h | carrousel | 21 Guide des produits scellés | Épisode 1 : Pokémon (booster, blister, duopack, tripack, mini tin, display de mini tins, Pokébox, ETB, display, UPC, Académie de Combat) | Pokémon | ✅ programmé |
 | 3 | jeu. 22/10, 10 h | carrousel | 1 Analyse de carte | Méga-Dracaufeu X ex | Pokémon | ✅ programmé |
+| 3 bis | ven. 23/10, 10 h | Reel | 11 Annonce | Rejoins le serveur Discord Boostz (discord.gg/R54wCGtkr) | les 8 | ✅ programmé |
 | 4 | dim. 25/10, 10 h | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », raccourci à 8 s | les 8 | ✅ programmé (8 s) |
 | 4 ter | mar. 27/10, 10 h | carrousel | 21 Guide des produits scellés | Épisode 2 : One Piece (booster, display, Premium Booster, deck de démarrage, Fruits du Démon, Apprenez Ensemble) | One Piece | ✅ programmé |
 | 5 | mer. 28/10, 10 h | carrousel | 15 Sortie d'extension | Hyperia City (chapitre 14, sorti le 23/10) : les 10 cartes qui valent le plus | Lorcana | brouillon dans Metricool, produit par le rappel du 26/10 |

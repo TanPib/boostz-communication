@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz Discord</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Join the Boostz Discord server (asked on 07/10/2026). The channels are not
+// named: only what the server is for, the 8 TCG and the invite link.
+// Render with: node rendu.mjs discord-reel.html video
+const LINK = 'discord.gg/R54wCGtkr';
+const center = (top, size, html, at, out, kind = 'rise') => `<div class="abs h" ${A(at, out, 0, kind)} style="left:60px;right:60px;top:${top}px;text-align:center;font-size:${size}px;z-index:5">${html}</div>`;
+const kick = (text, at, out) => `<div class="abs lab" ${A(at, out, 0, 'fade')} style="left:0;top:330px;width:1080px;text-align:center;font-size:30px;letter-spacing:8px;color:${VSOFT};z-index:5">${text}</div>`;
+const bubble = (x, y, size, at, out, r) => `<div class="abs" ${A(at, out, r)} style="left:${x}px;top:${y}px;z-index:6">${deco([['bulles', 0, 0, size, 0]])}</div>`;
+const discs = (at, out, y) => ALL8.map((g, i) => `<div class="abs" ${A(at + i * .12, out, 0)} style="left:${95 + (i % 4) * 230}px;top:${y + Math.floor(i / 4) * 230}px;z-index:6">${emblemDisc(g, 170)}</div>`).join('');
+const link = (at) => st(110, 1020, 860, 170, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:72px;color:${DARK};white-space:nowrap">${LINK}</div>`, { fill: SUN, r: -2, z: 7, attrs: A(at, null, -2) });
+reel(`${ghosts([[60, 160, 90, -8], [930, 200, 80, 6], [70, 1760, 90, 10], [900, 1780, 100, -6]])}
+  ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}
+  ${kick('LA COMMU BOOSTZ', .2, 3.8)}
+  ${center(420, 104, 'Rejoins-nous<br><span class="acc">sur Discord.</span>', .4, 3.8)}
+  ${bubble(260, 760, 560, .9, 3.8, -4)}
+  ${center(420, 92, 'Les collectionneurs<br><span class="acc">des 8 TCG.</span>', 4.0, 7.8)}
+  ${discs(4.4, 7.8, 820)}
+  ${center(420, 92, 'Parle de tes cartes<br><span class="acc">avec la commu.</span>', 8.0, 11.2)}
+  ${ALL8.map((g, i) => back(g, 40 + i * 108, 800 + (i % 2) * 50, 200, -12 + i * 3.5, 4, A(8.4 + i * .1, 11.2, -12 + i * 3.5))).join('')}
+  <div class="abs" ${A(11.4, null, 0, 'rise')} style="left:0;top:440px;width:1080px;display:flex;flex-direction:column;align-items:center;gap:30px;z-index:5">${wordmark(120)}
+    <div class="h" style="font-size:80px;text-align:center;line-height:1.05">Le serveur est ouvert.</div>
+    <div class="ui" style="font-size:40px;color:${VSOFT};text-align:center">Rejoins-nous ici :</div></div>
+  ${link(11.8)}
+  <div class="abs mut" ${A(12.2, null, 0, 'fade')} style="left:0;top:1290px;width:1080px;text-align:center;font-weight:600;font-size:36px;z-index:5">Ton compagnon TCG, bientôt sur ton téléphone</div>`, 15);
+</script></body></html>

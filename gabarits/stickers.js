@@ -45,6 +45,8 @@ const ghosts = (list) => list.map(([x, y, w, r]) => `<div class="abs ghost" data
 // place. Place them in empty bands: they never touch text.
 const starPts = (cx, cy, R, r, n) => Array.from({ length: n * 2 }, (_, i) => { const a = Math.PI * i / n - Math.PI / 2, d = i % 2 ? r : R; return `${(cx + d * Math.cos(a)).toFixed(1)},${(cy + d * Math.sin(a)).toFixed(1)}`; }).join(' ');
 const ICONS = {
+  // Two speech bubbles, for the community posts (Discord, 07/10/2026).
+  bulles: `<path d="M12 20 Q12 12 20 12 L62 12 Q70 12 70 20 L70 46 Q70 54 62 54 L34 54 L20 66 L22 54 L20 54 Q12 54 12 46 Z" fill="${VIOLET}"/><path d="M40 44 Q40 38 46 38 L82 38 Q88 38 88 44 L88 68 Q88 74 82 74 L80 74 L82 86 L68 74 L46 74 Q40 74 40 68 Z" fill="${PINK}"/><g fill="${INK}" stroke="none"><circle cx="54" cy="56" r="4"/><circle cx="64" cy="56" r="4"/><circle cx="74" cy="56" r="4"/></g>`,
   citrouille: `<path d="M46 27 L47 11 Q53 7 59 10 L55 27 Z" fill="${DONE}"/><ellipse cx="31" cy="59" rx="21" ry="29" fill="#F58A4E"/><ellipse cx="69" cy="59" rx="21" ry="29" fill="#F58A4E"/><ellipse cx="50" cy="59" rx="21" ry="31" fill="#F58A4E"/>
     <path d="M35 51 L45 51 L40 41 Z M55 51 L65 51 L60 41 Z M33 63 Q50 82 67 63 Q50 72 33 63 Z" fill="${DARK}" stroke="none"/>`,
   fantome: `<path d="M22 88 L22 46 Q22 13 50 13 Q78 13 78 46 L78 88 L68 79 L59 88 L50 79 L41 88 L32 79 Z" fill="${VSOFT}"/>

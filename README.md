@@ -21,6 +21,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-10-16-lancement.mp4` | remplacée le 05/10/2026 par la version stickers ; sa fin y est reprise | 9:16, 1080 × 1920, 21 s, sans son |
 | `images/2026-10-17-sortie-mondes-natals/` | sam. 17/10/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `images/2026-10-20-guide-scelles-pokemon/` | mar. 20/10/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 13 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2026-10-23-discord.mp4` | ven. 23/10/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 17 s, musique originale (style discord), invitation au serveur Discord |
 | `images/2026-10-27-guide-scelles-onepiece/` | mar. 27/10/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
 | `images/2026-11-04-guide-scelles-lorcana/` | mer. 04/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG, plus `story.jpg` et sa story vidéo |
 | `images/2026-11-11-guide-scelles-magic/` | mer. 11/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
