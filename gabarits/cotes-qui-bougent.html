@@ -90,7 +90,7 @@ POSTS.push(['12-recap', `${glows('left:160px;top:300px', 'left:600px;top:900px',
     <span class="ui" style="flex:1;font-size:30px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.nom} <span class="mut" style="font-family:Exo;font-weight:600;font-size:24px">· ${c.set}</span></span>
     <span class="pop" style="font-size:36px;color:${c.evolution > 0 ? UP : DOWN}">${c.evolution > 0 ? '▲' : '▼'} ${pct(c.evolution)}</span></div>`).join('')}</div>
   <div class="abs pop" style="left:0;top:1030px;width:1080px;text-align:center;font-size:52px">Suis tes cotes sur <span class="acc">Boostz.</span></div>
-  <div class="abs mut" style="left:0;top:1105px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:32px">Ton compagnon TCG, bientôt sur ton téléphone</div>
+  <div class="abs mut" style="left:0;top:1105px;width:1080px;text-align:center;font-family:Exo;font-weight:600;font-size:32px">Ton compagnon TCG, ${(window.PUB || '') >= '2027-01-14' ? 'disponible' : 'bientôt'} sur ton téléphone</div>
   <div class="abs" style="left:0;top:1175px;width:1080px;display:flex;justify-content:center">${wordmark(64)}</div>
   <div class="src" style="bottom:24px;font-size:18px">${SRC}</div>`]);
 

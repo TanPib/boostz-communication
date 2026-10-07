@@ -78,9 +78,14 @@ const card = (img, x, y, w, r = 0, z = 2, o = {}) => `<div ${o.attrs || ''} clas
   <img src="${img}" style="width:100%;height:100%;display:block;object-fit:${o.fit || 'cover'};object-position:${o.pos || 'center'}">${o.over || ''}</div>`;
 const back = (game, x, y, w, r = 0, z = 1, attrs = '') => `<div ${attrs} class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;transform:rotate(${r}deg);border:6px solid ${INK};border-radius:${w * .07}px;overflow:hidden;box-shadow:12px 12px 0 ${SHADOW};z-index:${z}"><img src="assets/dos-${game}.svg" style="width:100%;height:100%;display:block;object-fit:cover"></div>`;
 const src = (text) => `<div class="src">${text}</div>`;
+// The closing lines change when the app launches (14/01/2027): a page published after that
+// sets window.PUB to its publication date ('YYYY-MM-DD') before drawing them.
+const launched = () => (window.PUB || '') >= '2027-01-14';
+const TAGLINE = () => `Ton compagnon TCG, ${launched() ? 'disponible' : 'bientôt'} sur ton téléphone`;
+const CALL = () => launched() ? 'Télécharge Boostz, lien en bio' : 'Abonne-toi pour ne rien manquer';
 const closing = (top, size = 100) => `<div class="abs" style="left:0;top:${top}px;width:1080px;display:flex;justify-content:center">${wordmark(size)}</div>
-  <div class="abs mut" style="left:0;top:${top + size * 1.35}px;width:1080px;text-align:center;font-weight:600;font-size:38px">Ton compagnon TCG, bientôt sur ton téléphone</div>
-  <div class="abs ui" style="left:0;top:${top + size * 1.35 + 95}px;width:1080px;text-align:center;font-size:34px;color:${VSOFT}">Abonne-toi pour ne rien manquer</div>`;
+  <div class="abs mut" style="left:0;top:${top + size * 1.35}px;width:1080px;text-align:center;font-weight:600;font-size:38px">${TAGLINE()}</div>
+  <div class="abs ui" style="left:0;top:${top + size * 1.35 + 95}px;width:1080px;text-align:center;font-size:34px;color:${VSOFT}">${CALL()}</div>`;
 const eur = (v) => (Number.isInteger(v) ? String(v) : v.toFixed(2).replace('.', ',')).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' €';
 const usd = (v) => (Number.isInteger(v) ? String(v) : v.toFixed(2).replace('.', ',')).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' $';
 

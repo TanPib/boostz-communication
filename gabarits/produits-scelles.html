@@ -8,6 +8,8 @@
 // a shop shows one, its price on the day. Render one game with:
 //   node rendu.mjs produits-scelles.html#<game> images
 const game = location.hash.slice(1) || 'pokemon';
+// Publication dates; the guides published after the launch close on "disponible".
+window.PUB = { pokemon: '2026-10-23', onepiece: '2026-11-17', lorcana: '2026-12-06', magic: '2026-12-12', starwarsunlimited: '2027-01-07', yugioh: '2027-02-07' }[game];
 // Per game: cover line, the formats [file, name, other name, contents, price, source], the credit line.
 const SHOPS = 'Photos des produits : boutiques citées.';
 const GUIDES = {

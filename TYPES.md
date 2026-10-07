@@ -6,27 +6,27 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 
 | N° | Type | Format | Tendance | État | Dernière publication |
 | --- | --- | --- | --- | --- | --- |
-| 1 | **Analyse de carte** | carrousel, 5 slides | 🔥🔥🔥 | prêt | 22/10/2026 · Méga-Dracaufeu X ex (Pokémon) |
+| 1 | **Analyse de carte** | carrousel, 5 slides | 🔥🔥🔥 | prêt | 26/10/2026 · Méga-Dracaufeu X ex (Pokémon) |
 | 2 | **Les 10 cotes qui bougent** | carrousel, 12 slides | 🔥🔥🔥 | série, le 1er et le 16 du mois | première édition à venir |
-| 3 | **1 chance sur N** | Reel de 22 s, ou carrousel de 5 slides | 🔥🔥🔥 | prêt | 09/11/2026 · enchantée (Lorcana) |
+| 3 | **1 chance sur N** | Reel de 22 s, ou carrousel de 5 slides | 🔥🔥🔥 | prêt | 09/12/2026 · enchantée (Lorcana) |
 | 4 | **Top 10 d'un set** | carrousel, 11 slides | 🔥🔥🔥 à la sortie d'un set | maquette | jamais |
 | 5 | **Même carte, trois langues** | carrousel, 3 à 5 slides | 🔥🔥 | maquette | jamais |
 | 6 | **Devine la note** | carrousel, 2 slides | 🔥🔥 | maquette | jamais |
 | 7 | **Classeur panoramique** | carrousel, 3 slides qui se suivent | 🔥🔥 | maquette | jamais |
-| 8 | **Choisis ton combattant** | Reel, écran de sélection en stickers | 🔥🔥 | prêt | 25/10/2026 · les 8 jeux |
+| 8 | **Choisis ton combattant** | Reel, écran de sélection en stickers | 🔥🔥 | prêt | 09/11/2026 · les 8 jeux |
 | 9 | **Pub Boostz** | image ou Reel court | 🔥 | maquette | jamais |
 | 10 | **Édito** | image, thème clair | 🔥 | maquette | jamais |
 | 11 | **Annonce** | Reel | selon l'actu | prêt | 16/10/2026 · lancement |
-| 12 | **Fonction à la loupe** | Reel ou carrousel | 🔥🔥 | prêt (`fonction-etat-reel.html`) | 15/12/2026 · l'échange |
-| 13 | **Mythe ou réalité** | carrousel, 5 slides | 🔥🔥 | prêt (`mythe-ou-realite.html`) | 24/11/2026 · Tigre spectral (Warcraft) |
+| 12 | **Fonction à la loupe** | Reel ou carrousel | 🔥🔥 | prêt (`fonction-etat-reel.html`) | 19/02/2027 · l'échange |
+| 13 | **Mythe ou réalité** | carrousel, 5 slides | 🔥🔥 | prêt (`mythe-ou-realite.html`) | 01/02/2027 · Tigre spectral (Warcraft) |
 | 14 | **Tu préfères ?** | carrousel, 3 slides | 🔥🔥 | à concevoir | jamais |
 | 15 | **Sortie d'extension** | carrousel ou Reel | 🔥🔥🔥 | prêt (`sortie-*.html`) | 18/12/2026 · FB12 (Dragon Ball) |
 | 16 | **Thème** | Reel | 🔥🔥🔥 le jour J | prêt (`black-friday-reel.html`) | 01/01/2027 · Bonne année |
-| 17 | **Lexique TCG** | carrousel, 6 à 8 slides | 🔥🔥 | prêt | 12/12/2026 · 7 mots |
+| 17 | **Lexique TCG** | carrousel, 6 à 8 slides | 🔥🔥 | prêt | 16/02/2027 · 7 mots |
 | 18 | **Protège ta collection** | carrousel, 5 à 6 slides | 🔥🔥 | prêt | 24/12/2026 · cartes de Noël |
 | 19 | **Repère la contrefaçon** | Reel ou carrousel | 🔥🔥🔥 | prêt | 27/12/2026 · Dracaufeu-ex |
-| 20 | **Erreurs d'impression** | Reel | 🔥🔥🔥 | prêt | 09/12/2026 · dos Magic, Discard |
-| 21 | **Guide des produits scellés** | carrousel | 🔥🔥 | prêt (`produits-scelles.html#<jeu>`) | 02/12/2026 · Yu-Gi-Oh! (un épisode par jeu, depuis le 20/10) |
+| 20 | **Erreurs d'impression** | Reel | 🔥🔥🔥 | prêt | 13/02/2027 · dos Magic, Discard |
+| 21 | **Guide des produits scellés** | carrousel | 🔥🔥 | prêt (`produits-scelles.html#<jeu>`) | 07/02/2027 · Yu-Gi-Oh! (un épisode par jeu, depuis le 20/10) |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -152,36 +152,36 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | --- | --- | --- | --- | --- | --- |
 | ven. 16/10/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Lancement : « boostZ ta collection », style stickers de l'onboarding | les 8 | `videos/2026-10-16-lancement-stickers.mp4` |
 | sam. 17/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Mondes Natals (Homeworlds) est sorti | Star Wars Unlimited | `images/2026-10-17-sortie-mondes-natals/` |
-| mar. 20/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Pokémon | Pokémon | `images/2026-10-20-guide-scelles-pokemon/` |
-| jeu. 22/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-22-analyse-mega-dracaufeu-x-stickers/`, `videos/2026-10-22-story-mega-dracaufeu-x.mp4` |
-| dim. 25/10/2026, 10 h | Instagram (Reel, musique « 8 Bit Breakthrough »), TikTok, Facebook (Reel), story Instagram et Facebook | 8 | Choisis ton combattant : « Tu joues lequel ? » | les 8 | `videos/2026-10-25-choisis-ton-combattant-8s.mp4` |
-| ven. 23/10/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Rejoins le serveur Discord Boostz | les 8 | `videos/2026-10-23-discord.mp4` |
-| mar. 27/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : One Piece | One Piece | `images/2026-10-27-guide-scelles-onepiece/` |
+| ven. 23/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Pokémon | Pokémon | `images/2026-10-23-guide-scelles-pokemon/` |
+| lun. 26/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 1 | Méga-Dracaufeu X ex, Flammes Fantasmagoriques 130/094 | Pokémon | `images/2026-10-26-analyse-mega-dracaufeu-x-stickers/`, `videos/2026-10-26-story-mega-dracaufeu-x.mp4` |
 | sam. 31/10/2026, 18 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | `videos/2026-10-31-halloween.mp4` |
-| mer. 04/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Lorcana | Lorcana | `images/2026-11-04-guide-scelles-lorcana/` |
+| mar. 03/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Rejoins le serveur Discord Boostz | les 8 | `videos/2026-11-03-discord.mp4` |
 | ven. 06/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Règne Delta sort aujourd'hui | Pokémon | `images/2026-11-06-sortie-regne-delta/` |
-| lun. 09/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-11-04-1-chance-sur-96-stickers.mp4` |
-| mer. 11/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Magic | Magic | `images/2026-11-11-guide-scelles-magic/` |
+| lun. 09/11/2026, 10 h | Instagram (Reel, musique « 8 Bit Breakthrough »), TikTok, Facebook (Reel), story Instagram et Facebook | 8 | Choisis ton combattant : « Tu joues lequel ? » | les 8 | `videos/2026-11-09-choisis-ton-combattant-8s.mp4` |
 | jeu. 12/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Cette semaine, deux sorties : Magnificent Maestros et Magic × Star Trek | Yu-Gi-Oh!, Magic | `images/2026-11-12-sorties-maestros-star-trek/` |
 | sam. 14/11/2026, 10 h | Instagram (Reel, musique « Cool »), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta fermée J-14 : teste Boostz avant tout le monde | les 8 | `videos/2026-11-14-beta-dans-2-semaines.mp4` |
-| dim. 15/11/2026, 10 h | Instagram (Reel, musique « Retro Bit Dip »), TikTok, Facebook (Reel), story Instagram et Facebook | 12 | Fonction à la loupe : estime l'état de tes cartes | les 8 | `videos/2026-11-15-fonction-etat.mp4` |
-| jeu. 19/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Star Wars Unlimited | Star Wars Unlimited | `images/2026-11-19-guide-scelles-starwarsunlimited/` |
+| mar. 17/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : One Piece | One Piece | `images/2026-11-17-guide-scelles-onepiece/` |
 | dim. 22/11/2026, 10 h | Instagram (Reel, musique « Soft Kisses »), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta fermée J-6 : samedi prochain, la bêta ouvre | les 8 | `videos/2026-11-22-beta-samedi-prochain.mp4` |
-| mar. 24/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 13 | Mythe ou réalité : une carte à 5 250 $ pour un tigre qui n'existe pas (Tigre spectral) | Warcraft | `images/2026-11-24-mythe-tigre-spectral/`, `videos/2026-11-24-story-tigre-spectral.mp4` |
 | mer. 25/11/2026, 10 h | Instagram (Reel, musique « Make It »), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta fermée J-3 : il te reste 3 jours pour t'inscrire | les 8 | `videos/2026-11-25-beta-j-3.mp4` |
 | ven. 27/11/2026, 10 h | Instagram (Reel, musique « Game Face »), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Black Friday : « Promo ou pas ? » (exemple, prix fictifs) | les 8 | `videos/2026-11-27-black-friday.mp4` |
 | sam. 28/11/2026, 10 h | Instagram (Reel, musique « Check This Out »), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta fermée ouverte : il n'est pas trop tard pour t'inscrire | les 8 | `videos/2026-11-28-beta-ouverte.mp4` |
-| mer. 02/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Yu-Gi-Oh! | Yu-Gi-Oh! | `images/2026-12-02-guide-scelles-yugioh/` |
 | jeu. 03/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 15 | Glorious Victors sort aujourd'hui | Yu-Gi-Oh! | `videos/2026-12-03-glorious-victors.mp4` |
-| mer. 09/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 20 | Erreurs d'impression : Caninos et Tortank à dos Magic, la « Discard » enchantée | Pokémon, Lorcana | `videos/2026-12-09-erreurs-impression.mp4` |
-| sam. 12/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 17 | Lexique TCG : 7 mots | les 8 | `images/2026-12-12-lexique-tcg/` |
-| mar. 15/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 12 | Fonction à la loupe : l'échange | Pokémon | `videos/2026-12-15-fonction-echange.mp4` |
+| dim. 06/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Lorcana | Lorcana | `images/2026-12-06-guide-scelles-lorcana/` |
+| mer. 09/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-12-09-1-chance-sur-96-stickers.mp4` |
+| sam. 12/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Magic | Magic | `images/2026-12-12-guide-scelles-magic/` |
+| mar. 15/12/2026, 10 h | Instagram (Reel, musique « Retro Bit Dip »), TikTok, Facebook (Reel), story Instagram et Facebook | 12 | Fonction à la loupe : estime l'état de tes cartes | les 8 | `videos/2026-12-15-fonction-etat.mp4` |
 | ven. 18/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | FB12 Reach the God sort aujourd'hui | Dragon Ball | `images/2026-12-18-sortie-fb12/` |
 | lun. 21/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Noël : une carte sous le sapin pour chaque budget | Pokémon, Lorcana | `videos/2026-12-21-noel.mp4` |
 | jeu. 24/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 18 | Protège ta collection : 5 gestes | les 8 | `images/2026-12-24-protege-ta-collection/` |
 | dim. 27/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 19 | Repère la contrefaçon : 5 signes | Pokémon | `videos/2026-12-27-contrefacon.mp4` |
 | mer. 30/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 16 | 2026, l'année des records | Pokémon, Magic, One Piece | `images/2026-12-30-records-2026/` |
 | ven. 01/01/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Bonne année 2027 | les 8 | `videos/2027-01-01-bonne-annee.mp4` |
+| jeu. 07/01/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Star Wars Unlimited | Star Wars Unlimited | `images/2027-01-07-guide-scelles-starwarsunlimited/` |
+| lun. 01/02/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 13 | Mythe ou réalité : une carte à 5 250 $ pour un tigre qui n'existe pas (Tigre spectral) | Warcraft | `images/2027-02-01-mythe-tigre-spectral/`, `videos/2027-02-01-story-tigre-spectral.mp4` |
+| dim. 07/02/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : Yu-Gi-Oh! | Yu-Gi-Oh! | `images/2027-02-07-guide-scelles-yugioh/` |
+| sam. 13/02/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 20 | Erreurs d'impression : Caninos et Tortank à dos Magic, la « Discard » enchantée | Pokémon, Lorcana | `videos/2027-02-13-erreurs-impression.mp4` |
+| mar. 16/02/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 17 | Lexique TCG : 7 mots | les 8 | `images/2027-02-16-lexique-tcg/` |
+| ven. 19/02/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 12 | Fonction à la loupe : l'échange | Pokémon | `videos/2027-02-19-fonction-echange.mp4` |
 
 Chaque vidéo porte une musique originale composée en code (`outils/musique.mjs`, mixée vers −18 LUFS par `outils/mixer.sh`), pour TikTok et Facebook ; les Reels Instagram jouent en plus la piste de la bibliothèque Instagram indiquée.
 
