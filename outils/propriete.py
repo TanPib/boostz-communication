@@ -61,6 +61,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2027-03-27': ('M', "Photos des produits : investcollect.com, play-in.com."),
  '2027-03-30': ('P', "Photos des produits : investcollect.com, blazingtail.fr, pokepedia.fr, play-in.com."),
  '2027-04-02': (ALL, ''),
+ '2027-04-05': ('P', "Images des cartes : TCGdex."),
 }
 def note(date):
     ips, credit = POSTS[date]
