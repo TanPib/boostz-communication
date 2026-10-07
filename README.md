@@ -107,6 +107,22 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `images/2027-03-30-guide-scelles-pokemon/` | mar. 30/03/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 15 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-03-30-story-guide-scelles-pokemon.mp4` | mar. 30/03/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-04-02-choisis-ton-combattant-8s.mp4` | ven. 02/04/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 9,8 s, musique originale |
+| `images/2027-04-05-raretes-pokemon/` | lun. 05/04/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
+| `videos/2027-04-05-story-raretes-pokemon.mp4` | lun. 05/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-04-14-raretes-onepiece/` | pas encore programmé (visuels officiels marqués « SAMPLE ») | carrousel 4:5, 12 JPEG |
+| `videos/2027-04-14-story-raretes-onepiece.mp4` | avec son carrousel — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-04-23-raretes-lorcana/` | ven. 23/04/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 10 JPEG |
+| `videos/2027-04-23-story-raretes-lorcana.mp4` | ven. 23/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-05-02-raretes-magic/` | dim. 02/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG |
+| `videos/2027-05-02-story-raretes-magic.mp4` | dim. 02/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-05-11-raretes-yugioh/` | mar. 11/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
+| `videos/2027-05-11-story-raretes-yugioh.mp4` | mar. 11/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-05-20-raretes-dragonball/` | jeu. 20/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
+| `videos/2027-05-20-story-raretes-dragonball.mp4` | jeu. 20/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-05-29-raretes-starwarsunlimited/` | sam. 29/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
+| `videos/2027-05-29-story-raretes-starwarsunlimited.mp4` | sam. 29/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-06-07-raretes-wow/` | pas encore programmé (scans en basse définition) | carrousel 4:5, 7 JPEG |
+| `videos/2027-06-07-story-raretes-wow.mp4` | avec son carrousel — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-04-02-story-choisis-ton-combattant.mp4` | ven. 02/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/couvertures/` | avec chaque Reel | couverture (`videoThumbnailUrl`), dernière image de l'accroche |
 | `images/a-la-une/` | à la main | couvertures des stories à la une, une par type |

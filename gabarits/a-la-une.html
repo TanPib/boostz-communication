@@ -65,6 +65,8 @@ const COVERS = [
   ['24-opening', `<rect x="36" y="14" width="30" height="42" rx="3" fill="${SUN}" transform="rotate(-10 51 35)"/>
     <path d="M14 50 L4 36 L30 30 L40 46 Z" fill="${VSOFT}"/><path d="M86 50 L96 36 L70 30 L60 46 Z" fill="${VSOFT}"/>
     <rect x="14" y="48" width="72" height="40" rx="5" fill="${VIOLET}"/><polygon points="${starPts(82, 18, 9, 4, 5)}" fill="${PINK}"/>`],
+  ['25-raretes', `<rect x="12" y="14" width="46" height="64" rx="5" fill="${BLUE}" transform="rotate(-8 35 46)"/><polygon points="${starPts(25, 58, 10, 4.3, 5)}" fill="${SUN}"/><polygon points="${starPts(42, 30, 10, 4.3, 5)}" fill="${SUN}"/>
+    <circle cx="62" cy="50" r="20" fill="${VSOFT}"/><circle cx="62" cy="50" r="12" fill="${DARK}"/><path d="M76 64 L92 82" stroke-width="10" stroke-linecap="round" fill="none"/>`],
 ];
 carousel(COVERS.map(([id, svg]) => [id, `<svg class="abs" width="640" height="640" viewBox="0 0 100 100" style="left:220px;top:640px;overflow:visible;filter:drop-shadow(22px 22px 0 ${SHADOW})"><g stroke="${INK}" stroke-width="4" stroke-linejoin="round">${svg}</g></svg>`]));
 document.head.insertAdjacentHTML('beforeend', '<style>.p { height: 1920px; }</style>');
