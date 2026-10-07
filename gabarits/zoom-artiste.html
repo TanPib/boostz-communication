@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz zoom artiste</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// "Zoom sur un artiste" (asked on 07/10/2026): who they are, their style, a few of their cards
+// (real scans, credited, never a photo of the artist), their most famous card, an anecdote.
+// Edit the content in place for each edition.
+// Edition 1: Atsuko Nishida, published on 04/02/2027. Facts searched on 07/10/2026:
+// - Bulbapedia and Wikipedia (Atsuko Nishida, Pulseman): Game Freak graphic artist, on Pulseman
+//   (1994) with Satoshi Tajiri and Ken Sugimori; designed Pikachu (a daifuku with ears, cheeks
+//   from squirrels) and Espeon, Umbreon, Leafeon, Glaceon, Sylveon; airbrush, soft palette;
+//   over 400 TCG cards.
+// - Cards, each checked on its scan ("Illus. Atsuko Nishida"), from TCGdex (type-null/PTCG-database):
+//   Évoli 55/82 and Carapuce 68/82 (Team Rocket, 2000, FR), Glaceon 5/100 (Majestic Dawn, 2008, EN),
+//   Pikachu 047/128 (30ᵉ Anniversaire, 2026, FR; the 037 of that set is by Yuu Nishida).
+// - Pikachu Illustrator, 16,492,000 $ at Goldin on 16/02/2026 (Guinness World Records).
+window.PUB = '2027-02-04';
+const G = 'pokemon', SUB = 'Zoom sur un artiste';
+const C = {
+  evoli: 'assets/carte-evoli-base5-55.png', carapuce: 'assets/carte-carapuce-base5-68.png',
+  givrali: 'assets/carte-givrali-dp5-5-en.png', pikachu: 'assets/carte-pikachu-30th-047-me.png',
+  illustrateur: 'assets/record-pikachu-illustrator-carte.jpg',
+};
+const SRC_CARDS = 'Images des cartes : TCGdex, slabfol.io. © Pokémon / Nintendo / Creatures / GAME FREAK.';
+carousel([
+  ['1-couverture', `${ghosts([[80, 1000, 70, -6], [930, 1000, 70, 8]])}${track(0, 1180, .4)}${head('ZOOM SUR UN ARTISTE', G, 'Atsuko Nishida')}
+    ${card(C.evoli, 110, 230, 290, -9, 2)}${card(C.pikachu, 680, 230, 290, 9, 2)}${card(C.givrali, 380, 190, 320, 0, 3)}
+    <div class="abs h" style="left:0;top:690px;width:1080px;text-align:center;font-size:96px">Atsuko Nishida,<br><span class="acc">la mère de Pikachu.</span></div>
+    <div class="abs mut" style="left:0;top:930px;width:1080px;text-align:center;font-weight:600;font-size:34px">Ses Pokémon, son style, ses cartes.</div>
+    <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
+    <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
+  ['2-pikachu', `${ghosts([[100, 1000, 70, -6], [910, 1000, 70, 8]])}${track(1, 1180, .3)}${head('AVANT LES CARTES', G, SUB)}
+    <div class="abs h" style="left:70px;top:170px;font-size:92px">Pikachu,<br><span class="acc">c’est elle.</span></div>
+    <div class="abs ui" style="left:70px;right:70px;top:420px;font-size:38px;line-height:1.4">Graphiste chez <b>Game Freak</b>, elle travaille dès 1994 sur le jeu Pulseman, avec Satoshi Tajiri et Ken Sugimori, les créateurs de Pokémon. Puis elle dessine Pikachu.</div>
+    ${st(70, 690, 940, 250, `<div style="padding:36px 46px;color:${DARK}"><div class="lab" style="font-size:22px;letter-spacing:3px">LE PREMIER CROQUIS</div><div class="ui" style="font-size:36px;line-height:1.35;margin-top:14px">Un daifuku, une pâtisserie japonaise, avec des oreilles. Les joues viennent des écureuils, qui y gardent leurs réserves.</div></div>`, { fill: SUN, r: -1.5, z: 3 })}
+    ${src('Sources : Bulbapedia, Wikipedia (Atsuko Nishida, Pulseman), relevé le 07/10/2026.')}`],
+  ['3-evolitions', `${track(2, 1185, .2)}${head('SES POKÉMON', G, SUB)}
+    ${card(C.givrali, 80, 200, 400, -3, 3)}
+    <div class="abs" style="left:540px;top:200px;width:470px">
+      <div class="h" style="font-size:60px;line-height:1.05">Elle a aussi<br><span class="acc">créé cinq Évolitions.</span></div>
+      <div class="ui" style="font-size:34px;line-height:1.5;margin-top:30px">Mentali, Noctali,<br>Phyllali, Givrali<br>et Nymphali.</div>
+      <div class="ui" style="font-size:30px;line-height:1.35;margin-top:30px;color:${SUN}">Ce Givrali, elle l’a imaginé,<br>puis dessiné sur sa carte.</div>
+      <div class="ui mut" style="font-size:24px;margin-top:14px">Aube Majestueuse (2008), en VO.</div></div>
+    ${src('Sources : Bulbapedia (Atsuko Nishida), TCGdex, relevé le 07/10/2026. ' + SRC_CARDS)}`],
+  ['4-style', `${track(3, 1190, .2)}${head('SON STYLE', G, SUB)}
+    <div class="abs h" style="left:70px;top:170px;font-size:92px">Tout en<br><span class="acc">douceur.</span></div>
+    ${card(C.evoli, 160, 400, 330, -4, 3)}${card(C.carapuce, 590, 420, 330, 4, 3)}
+    <div class="abs ui" style="left:70px;right:70px;top:930px;font-size:36px;line-height:1.35;text-align:center">Aérographe et couleurs pastel :<br>le Pokémon se fond dans son décor.</div>
+    <div class="abs mut" style="left:70px;right:70px;top:1060px;font-weight:600;font-size:28px;text-align:center">Évoli et Carapuce, Team Rocket (2000).</div>
+    ${src('Sources : Bulbapedia (Atsuko Nishida), TCGdex, relevé le 07/10/2026. ' + SRC_CARDS)}`],
+  ['5-aujourd-hui', `${track(4, 1195, .2)}${head('30 ANS PLUS TARD', G, SUB)}
+    <div class="abs h" style="left:70px;top:170px;font-size:84px">Elle dessine<br><span class="acc">toujours Pikachu.</span></div>
+    ${card(C.pikachu, 80, 410, 380, -3, 3)}
+    <div class="abs" style="left:520px;top:420px;width:490px">
+      <div class="ui" style="font-size:32px;line-height:1.35">Pikachu 047/128,<br>set 30ᵉ Anniversaire (2026).</div>
+      <div class="ui mut" style="font-size:28px;line-height:1.35;margin-top:24px">Plus de 400 cartes illustrées<br>depuis les débuts du jeu.</div>
+      ${st(0, 230, 490, 250, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:20px">SA CARTE LA PLUS CHÈRE</div><div class="ui" style="font-size:28px;margin-top:8px">Le Pikachu Illustrateur</div><div class="h" style="font-size:56px;margin-top:6px;white-space:nowrap">${usd(16492000)}</div><div class="ui" style="font-size:20px;margin-top:4px">Goldin, 16/02/2026</div></div>`, { fill: SUN, r: -1.5, z: 3 })}</div>
+    ${src('Sources : Bulbapedia, TCGdex, Guinness World Records, relevé le 07/10/2026. ' + SRC_CARDS)}`],
+  ['6-fin', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8]])}${track(5, 1200, .6)}${head('SUR BOOSTZ', G, SUB)}
+    <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Tu as une carte<br><span class="acc">d’Atsuko Nishida ?</span></div>
+    ${back(G, 330, 470, 180, -8, 2)}${back(G, 560, 470, 180, 7, 2)}
+    ${closing(800)}`],
+]);
+</script></body></html>
