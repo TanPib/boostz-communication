@@ -32,7 +32,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | lun. 09/11 | Reel | 3 1 chance sur N | 1 chance sur 96 d'avoir une enchantée | Lorcana | ✅ programmé (cotes revérifiées le 01/11) |
 | \*jeu. 12/11 | carrousel | 15 Sortie d'extension | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | ✅ programmé |
 | \*sam. 14/11 | Reel | 11 Annonce | Bêta fermée J-14 | les 8 | ✅ programmé |
-| mar. 17/11 | carrousel | 22 L'histoire d'une carte | Le Pikachu Illustrateur : du concours CoroCoro de 1998 au record de 16,49 M\$ | Pokémon | ✅ programmé |
+| mar. 17/11 | carrousel | 25 Les raretés expliquées | Épisode Pokémon : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Pokémon | ✅ programmé |
 | \*sam. 21/11 | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | brouillon dans Metricool, produit par le rappel du 20/11 |
 | \*dim. 22/11 | Reel | 11 Annonce | Bêta fermée J-6 | les 8 | ✅ programmé |
 | \*mer. 25/11 | Reel | 11 Annonce | Bêta fermée J-3 | les 8 | ✅ programmé |
@@ -42,7 +42,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | \*jeu. 03/12 | Reel | 15 Sortie d'extension | Glorious Victors sort aujourd'hui | Yu-Gi-Oh! | ✅ programmé |
 | dim. 06/12 | carrousel | 21 Guide des produits scellés | Épisode : One Piece | One Piece | ✅ programmé |
 | mer. 09/12 | Reel | 12 Fonction à la loupe | Estime l'état de tes cartes | les 8 | ✅ programmé |
-| sam. 12/12 | carrousel | 23 Zoom sur un artiste | Mitsuhiro Arita, l'homme du Dracaufeu | Pokémon | ✅ programmé |
+| sam. 12/12 | carrousel | 25 Les raretés expliquées | Épisode Lorcana : 8 raretés, le vrai scan d’une carte et un zoom sur son repère | Lorcana | ✅ programmé |
 | mar. 15/12 | Reel | 24 Opening | Opening Collect Aura : les notes de nos cartes gradées (vidéo PokePotes montée par Julien Ardid, rebrandée Boostz) | Pokémon | ✅ programmé (Instagram, TikTok, Facebook) |
 | \*ven. 18/12 | carrousel | 15 Sortie d'extension | FB12 Reach the God sort aujourd'hui | Dragon Ball | ✅ programmé |
 | \*lun. 21/12 | Reel | 16 Thème | Noël : une carte sous le sapin pour chaque budget | Pokémon, Lorcana | ✅ programmé (cotes rafraîchies le 15/12) |
@@ -51,46 +51,46 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | \*mer. 30/12 | carrousel | 16 Thème | 2026, l'année des records | Pokémon, Magic, One Piece | ✅ programmé (à compléter le 22/12) |
 | \*ven. 01/01/2027 | Reel | 16 Thème | Bonne année 2027 | les 8 | ✅ programmé |
 | lun. 04/01 | carrousel | 2 Cotes qui bougent | Édition n° 3 : du 16/12 au 01/01 | Magic | brouillon dans Metricool, produit par le rappel du 02/01 |
-| jeu. 07/01 | carrousel | 21 Guide des produits scellés | Épisode : Lorcana | Lorcana | ✅ programmé |
+| jeu. 07/01 | carrousel | 25 Les raretés expliquées | Épisode Yu-Gi-Oh! : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Yu-Gi-Oh! | ✅ programmé |
 | \*dim. 10/01 | Reel | 11 Annonce | « Dans 4 jours. » Compte à rebours | les 8 | à produire (rappel du 05/01) |
 | \*mar. 12/01 | carrousel | 9 Pub Boostz | « Jeudi, tu pourras… » sur de vraies captures de l'appli | Yu-Gi-Oh!, Lorcana, Warcraft | à produire (rappel du 05/01) |
 | \*jeu. 14/01 | Reel | 11 Annonce | **Boostz est disponible.** Les liens des stores en story | les 8 | à produire (rappel du 05/01) |
 | dim. 17/01 | Reel | 12 Fonction à la loupe | Tuto : ajoute ta première carte en 10 s, puis regarde sa cote | Dragon Ball | à produire (rappel du 12/01) |
-| mer. 20/01 | carrousel | 21 Guide des produits scellés | Épisode : Star Wars Unlimited | Star Wars Unlimited | ✅ programmé |
+| mer. 20/01 | carrousel | 25 Les raretés expliquées | Épisode Star Wars Unlimited : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Star Wars Unlimited | ✅ programmé |
 | sam. 23/01 | carrousel | 2 Cotes qui bougent | Édition n° 4 : relevé du 16/01 contre celui du 01/01 | Pokémon | à produire (rappel du 16/01) |
 | \*mar. 26/01 | Reel | 15 Sortie d'extension | Demain : le coffret Saint-Valentin Pokémon (27/01) | Pokémon | à produire (rappel du 16/01) |
 | \*ven. 29/01 | carrousel | 15 Sortie d'extension | Magic Nauctis : avant-premières dès le 29/01, sortie le 05/02 | Magic | à produire (rappel du 16/01) |
 | lun. 01/02 | Reel | 20 Erreurs d'impression | Caninos et Tortank à dos Magic, la carte « Discard » enchantée | Pokémon, Lorcana | ✅ programmé |
-| jeu. 04/02 | carrousel | 23 Zoom sur un artiste | Atsuko Nishida, la créatrice de Pikachu, et ses cartes | Pokémon | ✅ programmé |
+| jeu. 04/02 | carrousel | 25 Les raretés expliquées | Épisode Dragon Ball : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Dragon Ball | ✅ programmé |
 | dim. 07/02 | carrousel | 13 Mythe ou réalité | « Une carte s'est vendue 5 250 \$… pour un tigre qui n'existe pas » | Warcraft | ✅ programmé |
 | mer. 10/02 | carrousel | 2 Cotes qui bougent | Édition n° 5 : du 16/01 au 01/02 | Lorcana | brouillon dans Metricool, produit par le rappel du 02/02 |
 | sam. 13/02 | Reel | 12 Fonction à la loupe | L'échange : la valeur de chaque côté, avec de vraies cotes | Pokémon | ✅ programmé (cotes rafraîchies le 02/02) |
 | mar. 16/02 | carrousel | 23 Zoom sur un artiste | Rebecca Guay, l'aquarelle de Magic (avec son portrait sous licence libre) | Magic | ✅ programmé |
 | ven. 19/02 | carrousel | 21 Guide des produits scellés | Épisode : Yu-Gi-Oh! | Yu-Gi-Oh! | ✅ programmé |
 | lun. 22/02 | Reel | 3 1 chance sur N | La chase d'un set récent : N boosters, le coût de la chasse | One Piece | à produire (rappel du 15/02) |
-| jeu. 25/02 | carrousel | 22 L'histoire d'une carte | Le Pikachu au chapeau de feutre gris : le musée Van Gogh, la cohue, la carte la plus échangée | Pokémon | ✅ programmé |
+| jeu. 25/02 | carrousel | 25 Les raretés expliquées | Épisode Magic : 7 raretés, le vrai scan d’une carte et un zoom sur son repère | Magic | ✅ programmé |
 | dim. 28/02 | carrousel | 17 Lexique TCG | « Ça veut dire quoi ? » | les 8 | ✅ programmé |
 | mer. 03/03 | carrousel | 14 Tu préfères ? | La chase de FB11 contre celle de Magnificent Maestros | Dragon Ball, Yu-Gi-Oh! | brouillon dans Metricool, produit par le rappel du 28/02 |
 | sam. 06/03 | Reel | 8 Choisis ton combattant | Choisis tes encres : les 6 encres de Lorcana, « Tu joues lesquelles ? » | Lorcana | ✅ programmé |
 | mar. 09/03 | carrousel | 5 Même carte, trois langues | Une carte en FR, EN et JP, et l'écart de cote | Pokémon | à produire (rappel du 28/02) |
-| ven. 12/03 | carrousel | 23 Zoom sur un artiste | Christopher Rush, le père du Black Lotus | Magic | ✅ programmé |
+| ven. 12/03 | carrousel | 25 Les raretés expliquées | Épisode One Piece : 10 raretés, le vrai scan d’une carte et un zoom sur son repère | One Piece | ✅ programmé (visuels officiels « SAMPLE », validés par l’utilisateur) |
 | lun. 15/03 | Reel | 22 L'histoire d'une carte | Tyler le Grand Guerrier, en Reel | Yu-Gi-Oh! | ✅ programmé |
 | jeu. 18/03 | carrousel | 23 Zoom sur un artiste | Yuka Morii sculpte ses Pokémon | Pokémon | ✅ programmé |
 | dim. 21/03 | carrousel | 7 Classeur panoramique | Une page de classeur qui se suit sur 3 slides | Star Wars Unlimited | à produire (rappel du 16/03) |
 | mer. 24/03 | Reel | 3 1 chance sur N | 1 chance sur 1 533 d'avoir le Pikachu-ex 276/217 de Héros Transcendants | Pokémon | ✅ programmé (cote rafraîchie le 16/03) |
 | sam. 27/03 | carrousel | 21 Guide des produits scellés | Épisode : Magic | Magic | ✅ programmé |
-| mar. 30/03 | carrousel | 21 Guide des produits scellés | Épisode : Pokémon | Pokémon | ✅ programmé |
+| mar. 30/03 | carrousel | 25 Les raretés expliquées | Épisode Warcraft : 5 raretés, le vrai scan d’une carte et un zoom sur son repère | Warcraft | ✅ programmé (scans en basse définition, validés par l’utilisateur) |
 | ven. 02/04 | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », 8 s (déplacé du 15/12 le 07/10 pour l'opening) | les 8 | ✅ programmé |
-| lun. 05/04 | carrousel | 25 Les raretés expliquées | Épisode Pokémon : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Pokémon | ✅ programmé |
-| mer. 14/04 | carrousel | 25 Les raretés expliquées | Épisode One Piece : 10 raretés, le vrai scan d’une carte et un zoom sur son repère | One Piece | ✅ programmé (visuels officiels « SAMPLE », validés par l’utilisateur) |
-| ven. 23/04 | carrousel | 25 Les raretés expliquées | Épisode Lorcana : 8 raretés, le vrai scan d’une carte et un zoom sur son repère | Lorcana | ✅ programmé |
-| dim. 02/05 | carrousel | 25 Les raretés expliquées | Épisode Magic : 7 raretés, le vrai scan d’une carte et un zoom sur son repère | Magic | ✅ programmé |
-| mar. 11/05 | carrousel | 25 Les raretés expliquées | Épisode Yu-Gi-Oh! : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Yu-Gi-Oh! | ✅ programmé |
-| jeu. 20/05 | carrousel | 25 Les raretés expliquées | Épisode Dragon Ball : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Dragon Ball | ✅ programmé |
-| sam. 29/05 | carrousel | 25 Les raretés expliquées | Épisode Star Wars Unlimited : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Star Wars Unlimited | ✅ programmé |
-| lun. 07/06 | carrousel | 25 Les raretés expliquées | Épisode Warcraft : 5 raretés, le vrai scan d’une carte et un zoom sur son repère | Warcraft | ✅ programmé (scans en basse définition, validés par l’utilisateur) |
+| lun. 05/04 | carrousel | 23 Zoom sur un artiste | Mitsuhiro Arita, l'homme du Dracaufeu | Pokémon | ✅ programmé |
+| mer. 14/04 | carrousel | 21 Guide des produits scellés | Épisode : Lorcana | Lorcana | ✅ programmé |
+| ven. 23/04 | carrousel | 22 L'histoire d'une carte | Le Pikachu Illustrateur : du concours CoroCoro de 1998 au record de 16,49 M\$ | Pokémon | ✅ programmé |
+| dim. 02/05 | carrousel | 23 Zoom sur un artiste | Atsuko Nishida, la créatrice de Pikachu, et ses cartes | Pokémon | ✅ programmé |
+| mar. 11/05 | carrousel | 21 Guide des produits scellés | Épisode : Star Wars Unlimited | Star Wars Unlimited | ✅ programmé |
+| jeu. 20/05 | carrousel | 22 L'histoire d'une carte | Le Pikachu au chapeau de feutre gris : le musée Van Gogh, la cohue, la carte la plus échangée | Pokémon | ✅ programmé |
+| sam. 29/05 | carrousel | 23 Zoom sur un artiste | Christopher Rush, le père du Black Lotus | Magic | ✅ programmé |
+| lun. 07/06 | carrousel | 21 Guide des produits scellés | Épisode : Pokémon | Pokémon | ✅ programmé |
 
-- **Avril à juin : la série « Les raretés expliquées »** (demandée le 07/10/2026), un épisode par jeu tous les 9 jours environ (`gabarits/raretes.html#<jeu>`). Les autres posts d’avril et mai se placent entre deux épisodes, un jour sur trois : le rappel du 16/03 les planifie. One Piece garde les visuels « SAMPLE » de Bandai et Warcraft ses scans en 215 px : validé par l’utilisateur le 07/10.
+- **La série « Les raretés expliquées »** (demandée le 07/10/2026, `gabarits/raretes.html#<jeu>`) est étalée du 17/11 au 30/03, environ un épisode toutes les 2 à 3 semaines, pour varier les types (redemandé le 07/10 : « ventiler au maximum »). Elle a pris les dates de 8 posts sans date imposée (Arita, Pikachu Illustrateur, Nishida, Van Gogh, Rush et 3 guides des scellés), repoussés d’avril à juin. One Piece garde les visuels « SAMPLE » de Bandai et Warcraft ses scans en 215 px : validé par l’utilisateur le 07/10.
 - **Février et mars** : à compléter avec les sorties fixes dès qu'elles sont confirmées (Saint-Valentin le 14/02, Nauctis le 05/02, One Piece OP-19 annoncé au 05/03, Lorcana Into the Inkdark au 1er trimestre 2027) ; un post fixe qui tombe repousse les posts sans date des jours voisins. Avril s'écrit le 16/03.
 - **Les brouillons** (Cotes, Hyperia City, OP18/Icons, Tu préfères ?) sont des posts Instagram « Ne pas publier » à publication automatique coupée : le rappel de leur date les produit, transforme le brouillon en vrai post (`updateScheduledPost`) et crée TikTok, Facebook et la story.
 - **La série des cotes** utilise toujours les deux derniers relevés (le 1er et le 16 de chaque mois) avant sa date ; elle change de jeu à chaque édition.
