@@ -13,7 +13,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 5 | **Même carte, trois langues** | carrousel, 3 à 5 slides | 🔥🔥 | maquette | jamais |
 | 6 | **Devine la note** | carrousel, 2 slides | 🔥🔥 | maquette | jamais |
 | 7 | **Classeur panoramique** | carrousel, 3 slides qui se suivent | 🔥🔥 | maquette | jamais |
-| 8 | **Choisis ton combattant** | Reel, écran de sélection en stickers | 🔥🔥 | prêt | 06/03/2027 · Choisis tes encres (Lorcana) |
+| 8 | **Choisis ton combattant** | Reel, écran de sélection en stickers | 🔥🔥 | prêt | 02/04/2027 · « Tu joues lequel ? » (les 8) |
 | 9 | **Pub Boostz** | image ou Reel court | 🔥 | maquette | jamais |
 | 10 | **Édito** | image, thème clair | 🔥 | maquette | jamais |
 | 11 | **Annonce** | Reel | selon l'actu | prêt | 28/11/2026 · La bêta fermée est ouverte (les 8) |
@@ -29,6 +29,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 21 | **Guide des produits scellés** | carrousel | 🔥🔥 | prêt (`produits-scelles.html#<jeu>`) | 30/03/2027 · Pokémon (un épisode par jeu, depuis le 23/10) |
 | 22 | **L'histoire d'une carte** | carrousel, 6 slides, ou Reel | 🔥🔥🔥 | prêt (`histoire-carte.html`) | 15/03/2027 · Tyler le Grand Guerrier, en Reel (Yu-Gi-Oh!) |
 | 23 | **Zoom sur un artiste** | carrousel, 6 slides | 🔥🔥 | prêt (`zoom-artiste.html`) | 18/03/2027 · Yuka Morii sculpte ses Pokémon (Pokémon) |
+| 24 | **Opening** | Reel, vidéo tournée | 🔥🔥🔥 | une vidéo à nous (ou rebrandée) | 15/12/2026 · Collect Aura, nos cartes gradées (Pokémon) |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -151,6 +152,9 @@ Demandé le 07/10/2026 : d'où vient une carte célèbre, ce qui la rend unique,
 ### 23 · Zoom sur un artiste
 Demandé le 07/10/2026 : qui il ou elle est, son style, 3 ou 4 de ses cartes (vrais scans crédités), sa carte la plus cotée, une anecdote. Sa photo seulement sous licence libre (Wikimedia Commons), en sticker rond près du titre de la slide 2, créditée comme la licence le demande ; jamais une photo de presse ni un visage généré (07/10/2026). Faits : Atsuko Nishida, Mitsuhiro Arita, Yuka Morii (Pokémon), Rebecca Guay, Christopher Rush (Magic). Idée : Kazuki Takahashi (Yu-Gi-Oh!, en hommage).
 
+### 24 · Opening
+Une ouverture filmée (colis de gradation, boosters, display), avec sa voix. Ajouté le 07/10/2026 pour une vidéo de l'ancien compte PokePotes : on garde la voix, on coupe ce qui nomme l'ancien compte, on remplace tout filigrane par celui de Boostz (`filigrane.html`, le @ du réseau) et la fin par l'écran Boostz (`opening-fin.html`). Pas de musique Instagram par-dessus la voix. Créditer le monteur et la société de gradation, tagués dans la légende.
+
 ### News TCG
 Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, record, ban) prend la place du prochain post qui n'est lié à aucune date, dans le format qui lui va le mieux.
 
@@ -177,7 +181,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | dim. 06/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Épisode : One Piece | One Piece | `images/2026-12-06-guide-scelles-onepiece/` |
 | mer. 09/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 12 | Estime l'état de tes cartes | les 8 | `videos/2026-12-09-fonction-etat.mp4` |
 | sam. 12/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 23 | Mitsuhiro Arita, l'homme du Dracaufeu | Pokémon | `images/2026-12-12-zoom-mitsuhiro-arita/` |
-| mar. 15/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 8 | « Tu joues lequel ? », 8 s | les 8 | `videos/2026-12-15-choisis-ton-combattant-8s.mp4` |
+| mar. 15/12/2026, 10 h | Instagram (Reel), TikTok, story Instagram | 24 | Opening Collect Aura : les notes de nos cartes gradées | Pokémon | `videos/2026-12-15-opening-collect-aura.mp4` |
 | ven. 18/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | FB12 Reach the God sort aujourd'hui | Dragon Ball | `images/2026-12-18-sortie-fb12/` |
 | lun. 21/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Noël : une carte sous le sapin pour chaque budget | Pokémon, Lorcana | `videos/2026-12-21-noel.mp4` |
 | jeu. 24/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 18 | Tes cartes de Noël : pochettes, étuis, classeurs, rangement, envoi | les 8 | `images/2026-12-24-protege-ta-collection/` |
@@ -201,6 +205,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | mer. 24/03/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 3 | 1 chance sur 1 533 d'avoir le Pikachu-ex 276/217 de Héros Transcendants | Pokémon | `videos/2027-03-24-1-chance-sur-1533-pikachu.mp4` |
 | sam. 27/03/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Épisode : Magic | Magic | `images/2027-03-27-guide-scelles-magic/` |
 | mar. 30/03/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Épisode : Pokémon | Pokémon | `images/2027-03-30-guide-scelles-pokemon/` |
+| ven. 02/04/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 8 | « Tu joues lequel ? », 8 s | les 8 | `videos/2027-04-02-choisis-ton-combattant-8s.mp4` |
 
 Chaque vidéo porte une musique originale composée en code (`outils/musique.mjs`, mixée vers −18 LUFS par `outils/mixer.sh`), pour TikTok et Facebook ; les Reels Instagram jouent en plus la piste de la bibliothèque Instagram indiquée.
 

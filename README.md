@@ -47,7 +47,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-12-09-fonction-etat.mp4` | mer. 09/12/2026, 10 h — Instagram, TikTok, Facebook, stories | Reel 9:16, 1080 × 1920, 11,8 s, musique originale |
 | `images/2026-12-12-zoom-mitsuhiro-arita/` | sam. 12/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-12-12-story-zoom-mitsuhiro-arita.mp4` | sam. 12/12/2026, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
-| `videos/2026-12-15-choisis-ton-combattant-8s.mp4` | mar. 15/12/2026, 10 h — Instagram, TikTok, Facebook, stories | Reel 9:16, 1080 × 1920, 9,8 s, musique originale |
+| `videos/2026-12-15-opening-collect-aura.mp4` | mar. 15/12/2026, 10 h — Instagram, TikTok, story Instagram | Reel 9:16, 1080 × 1920, 49,8 s, voix d'origine (vidéo PokePotes rebrandée) |
 | `images/2026-12-18-sortie-fb12/` | ven. 18/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 4 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-12-18-story-sortie-fb12.mp4` | ven. 18/12/2026, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
 | `videos/2026-12-21-noel.mp4` | lun. 21/12/2026, 10 h — Instagram, TikTok, Facebook, stories | Reel 9:16, 1080 × 1920, 17,2 s, musique originale |
@@ -86,6 +86,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-03-27-story-guide-scelles-magic.mp4` | sam. 27/03/2027, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
 | `images/2027-03-30-guide-scelles-pokemon/` | mar. 30/03/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 13 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-03-30-story-guide-scelles-pokemon.mp4` | mar. 30/03/2027, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
+| `videos/2027-04-02-choisis-ton-combattant-8s.mp4` | ven. 02/04/2027, 10 h — Instagram, TikTok, Facebook, stories | Reel 9:16, 1080 × 1920, 9,8 s, musique originale |
 | `images/couvertures/` | avec chaque Reel | couverture (`videoThumbnailUrl`), dernière image de l'accroche |
 | `images/a-la-une/` | à la main | couvertures des stories à la une, une par type |
 | `images/brouillon/a-produire.jpg` | jamais : image des brouillons Metricool des posts qui attendent un relevé de cotes | 4:5, « Ne pas publier » |

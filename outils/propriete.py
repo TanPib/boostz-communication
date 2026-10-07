@@ -35,7 +35,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2026-12-06': ('O', "Photos des produits : chocobonplan.com, investcollect.com, espritjeu.com, play-in.com."),
  '2026-12-09': (ALL, ''),
  '2026-12-12': ('P', "Images des cartes : TCGdex."),
- '2026-12-15': (ALL, ''),
+ '2026-12-15': ('P', "Cartes gradées par Collect Aura (@collectaura). Vidéo montée par Julien Ardid."),
  '2026-12-18': ('D', ''),
  '2026-12-21': ('PL', ''),
  '2026-12-24': (ALL, ''),
@@ -60,6 +60,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2027-03-24': ('P', "Image de la carte : TCGdex."),
  '2027-03-27': ('M', "Photos des produits : investcollect.com, play-in.com."),
  '2027-03-30': ('P', "Photos des produits : investcollect.com, blazingtail.fr, pokepedia.fr, play-in.com."),
+ '2027-04-02': (ALL, ''),
 }
 def note(date):
     ips, credit = POSTS[date]

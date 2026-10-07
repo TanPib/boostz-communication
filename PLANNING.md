@@ -1,4 +1,4 @@
-# Planning du 16 octobre 2026 au 30 mars 2027
+# Planning du 16 octobre 2026 au 2 avril 2027
 
 **Bêta fermée : samedi 28 novembre 2026**, sur inscription uniquement (MP, invitation par mail). **Sortie de l'appli : jeudi 14 janvier 2027** (décidés le 06/10/2026). Le premier post (16/10) annonce les deux dates ; janvier est construit autour du lancement.
 
@@ -43,7 +43,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | dim. 06/12 | carrousel | 21 Guide des produits scellés | Épisode : One Piece | One Piece | ✅ programmé |
 | mer. 09/12 | Reel | 12 Fonction à la loupe | Estime l'état de tes cartes | les 8 | ✅ programmé |
 | sam. 12/12 | carrousel | 23 Zoom sur un artiste | Mitsuhiro Arita, l'homme du Dracaufeu | Pokémon | ✅ programmé |
-| mar. 15/12 | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », 8 s | les 8 | ✅ programmé |
+| mar. 15/12 | Reel | 24 Opening | Opening Collect Aura : les notes de nos cartes gradées (vidéo PokePotes montée par Julien Ardid, rebrandée Boostz) | Pokémon | ✅ programmé (Instagram et TikTok) |
 | \*ven. 18/12 | carrousel | 15 Sortie d'extension | FB12 Reach the God sort aujourd'hui | Dragon Ball | ✅ programmé |
 | \*lun. 21/12 | Reel | 16 Thème | Noël : une carte sous le sapin pour chaque budget | Pokémon, Lorcana | ✅ programmé (cotes rafraîchies le 15/12) |
 | \*jeu. 24/12 | carrousel | 18 Protège ta collection | Tes cartes de Noël : pochettes, étuis, classeurs, rangement, envoi | les 8 | ✅ programmé |
@@ -80,6 +80,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | mer. 24/03 | Reel | 3 1 chance sur N | 1 chance sur 1 533 d'avoir le Pikachu-ex 276/217 de Héros Transcendants | Pokémon | ✅ programmé (cote rafraîchie le 16/03) |
 | sam. 27/03 | carrousel | 21 Guide des produits scellés | Épisode : Magic | Magic | ✅ programmé |
 | mar. 30/03 | carrousel | 21 Guide des produits scellés | Épisode : Pokémon | Pokémon | ✅ programmé |
+| ven. 02/04 | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », 8 s (déplacé du 15/12 le 07/10 pour l'opening) | les 8 | ✅ programmé |
 
 - **Février et mars** : à compléter avec les sorties fixes dès qu'elles sont confirmées (Saint-Valentin le 14/02, Nauctis le 05/02, One Piece OP-19 annoncé au 05/03, Lorcana Into the Inkdark au 1er trimestre 2027) ; un post fixe qui tombe repousse les posts sans date des jours voisins. Avril s'écrit le 16/03.
 - **Les brouillons** (Cotes, Hyperia City, OP18/Icons, Tu préfères ?) sont des posts Instagram « Ne pas publier » à publication automatique coupée : le rappel de leur date les produit, transforme le brouillon en vrai post (`updateScheduledPost`) et crée TikTok, Facebook et la story.
@@ -100,8 +101,11 @@ Légendes en brouillon. Les chiffres entre crochets sortent des données le jour
 - **Légende :** « 📈📉 Les 10 cartes Pokémon dont la cote a le plus bougé en deux semaines. La n° 1 a pris [X] % 😮 Enregistre le récap : dans 15 jours, c'est au tour de One Piece. »
 - **Hashtags :** `#pokemontcg #cartespokemon #cotepokemon #collectionpokemon #pokemonfr`
 
-### 4 · Choisis ton combattant — mar. 15/12
-- ✅ Programmé, raccourci à 8 s le 05/10.
+### 4 · Opening Collect Aura — mar. 15/12
+- ✅ Programmé le 07/10 sur Instagram (Reel et story) et TikTok seulement, comme demandé. Vidéo de l'ancien compte PokePotes, montée par Julien Ardid : la voix est gardée jusqu'à « nos futurs contenus », le filigrane TikTok remplacé par celui de Boostz, la fin PokePotes par l'icône de l'appli, des confettis et le balayage vers l'écran de fin (`outils/opening-collect-aura.sh`). Collect Aura et Julien tagués (@collectaura, @ardidjulien sur Instagram, @ardidprod sur TikTok). Pas de musique Instagram : elle couperait la voix.
+
+### Choisis ton combattant — ven. 02/04
+- ✅ Programmé, raccourci à 8 s le 05/10 ; déplacé du 15/12 au 02/04 le 07/10, légende passée à « Télécharge Boostz, lien en bio ».
 
 ### 5 · Hyperia City : les 10 cartes qui valent le plus — mer. 28/10
 - **Déroulé :** couverture « Hyperia City est sorti : ses 10 cartes les plus chères à J+5 », un rang par slide, le récap.
