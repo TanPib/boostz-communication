@@ -65,7 +65,7 @@ EDITIONS['pikachu-illustrateur'] = () => {
 // The other editions share one layout: cover, origin, the card up close, the twist, its value, the end.
 const story = (e) => {
   window.PUB = e.pub;
-  const G = e.game, H = (w) => w * (e.ratio || 1.4);
+  const G = e.game, GC = GAMES[e.game][1], H = (w) => w * (e.ratio || 1.4);
   return [
     ['1-couverture', `${ghosts([[130, 420, 80, -6], [870, 440, 80, 8]])}${track(0, 1170, .4)}${head('L’HISTOIRE D’UNE CARTE', G, e.name)}
       ${card(e.img, 330, 175, 420, -4, 3, { h: Math.min(H(420), 600) })}
@@ -76,23 +76,23 @@ const story = (e) => {
     ['2-origine', `${track(1, 1180, .3)}${head(e.origin.kicker, G, SUB)}
       <div class="abs h" style="left:70px;top:170px;font-size:92px">${e.origin.t[0]}<br><span class="acc">${e.origin.t[1]}</span></div>
       <div class="abs ui" style="left:70px;right:70px;top:420px;font-size:38px;line-height:1.4">${e.origin.body}</div>
-      ${e.origin.stats.map(([n, k], i) => st(70 + i * 320, 700, 300, 260, `<div style="padding:30px 32px"><div class="h" style="font-size:${n.length > 4 ? 64 : 96}px;color:${[SUN, '#F5F2FB', DONE][i]};white-space:nowrap">${n}</div><div class="ui" style="font-size:28px;line-height:1.2;margin-top:6px">${k}</div></div>`, { r: [-3, 2, -2][i], z: 3 })).join('')}
+      ${e.origin.stats.map(([n, k], i) => st(70 + i * 320, 700, 300, 260, `<div style="padding:30px 32px"><div class="h" style="font-size:${n.length > 4 ? 64 : 96}px;color:${[GC, '#F5F2FB', DONE][i]};white-space:nowrap">${n}</div><div class="ui" style="font-size:28px;line-height:1.2;margin-top:6px">${k}</div></div>`, { r: [-3, 2, -2][i], z: 3 })).join('')}
       ${src(e.origin.src)}`],
     ['3-la-carte', `${track(2, 1185, .2)}${head(e.detail.kicker, G, SUB)}
       ${card(e.img, 80, 200, 400, -3, 3, { h: H(400) })}
       <div class="abs" style="left:540px;top:200px;width:470px">
         <div class="h" style="font-size:60px;line-height:1.05">${e.detail.t[0]}<br><span class="acc">${e.detail.t[1]}</span></div>
         <div class="ui" style="font-size:31px;line-height:1.4;margin-top:30px">${e.detail.text}</div>
-        <div class="ui" style="font-size:30px;line-height:1.35;margin-top:30px;color:${SUN}">${e.detail.hl}</div></div>
+        <div class="ui" style="font-size:30px;line-height:1.35;margin-top:30px;color:${GC}">${e.detail.hl}</div></div>
       ${src(e.detail.src)}`],
     ['4-le-tournant', `${ghosts([[100, 990, 70, -6], [910, 990, 70, 8]])}${track(3, 1180, .3)}${head(e.twist.kicker, G, SUB)}
       <div class="abs h" style="left:70px;top:170px;font-size:92px">${e.twist.t[0]}<br><span class="acc">${e.twist.t[1]}</span></div>
       <div class="abs ui" style="left:70px;right:70px;top:420px;font-size:38px;line-height:1.4">${e.twist.body}</div>
-      ${st(70, 660, 940, 280, `<div style="padding:36px 46px;color:${DARK}"><div class="lab" style="font-size:22px;letter-spacing:3px">${e.twist.box[0]}</div><div class="ui" style="font-size:36px;line-height:1.35;margin-top:14px">${e.twist.box[1]}</div></div>`, { fill: SUN, r: -1.5, z: 3 })}
+      ${st(70, 660, 940, 280, `<div style="padding:36px 46px;color:${DARK}"><div class="lab" style="font-size:22px;letter-spacing:3px">${e.twist.box[0]}</div><div class="ui" style="font-size:36px;line-height:1.35;margin-top:14px">${e.twist.box[1]}</div></div>`, { fill: GC, r: -1.5, z: 3 })}
       ${src(e.twist.src)}`],
     ['5-la-cote', `${track(4, 1190, .2)}${head('CE QU’ELLE VAUT', G, SUB)}
       <div class="abs h" style="left:70px;top:170px;font-size:92px">${e.value.t[0]}<br><span class="acc">${e.value.t[1]}</span></div>
-      ${e.value.boxes.map(([lab, big, yellow], i) => st(70, 430 + i * 260, 940, yellow ? 250 : 210, `<div style="padding:${yellow ? 34 : 30}px 46px${yellow ? `;color:${DARK}` : ''}"><div class="lab" style="font-size:22px${yellow ? '' : `;color:${VSOFT}`}">${lab}</div><div class="h" style="font-size:${yellow ? 110 : 96}px;margin-top:10px;white-space:nowrap">${big}</div></div>`, yellow ? { fill: SUN, r: -1.5, z: 3 } : { r: 1, z: 3 })).join('')}
+      ${e.value.boxes.map(([lab, big, yellow], i) => st(70, 430 + i * 260, 940, yellow ? 250 : 210, `<div style="padding:${yellow ? 34 : 30}px 46px${yellow ? `;color:${DARK}` : ''}"><div class="lab" style="font-size:22px${yellow ? '' : `;color:${VSOFT}`}">${lab}</div><div class="h" style="font-size:${yellow ? 110 : 96}px;margin-top:10px;white-space:nowrap">${big}</div></div>`, yellow ? { fill: GC, r: -1.5, z: 3 } : { r: 1, z: 3 })).join('')}
       <div class="abs mut" style="left:70px;right:70px;top:${430 + e.value.boxes.length * 260 + 40}px;font-weight:600;font-size:34px;text-align:center">${e.value.note}</div>
       ${src(e.value.src)}`],
     ['6-fin', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8]])}${track(5, 1200, .6)}${head('SUR BOOSTZ', G, SUB)}
@@ -111,7 +111,7 @@ EDITIONS['tyler'] = () => story({
   img: 'assets/carte-tyler-great-warrior.jpg', ratio: 1.29,
   cover: ['Une seule carte au monde.', 'Et quelle histoire.'], coverSub: 'L’histoire de Tyler le Grand Guerrier.',
   origin: { kicker: '2005', t: ['Le vœu', 'd’un petit garçon.'],
-    body: 'Tyler Gressle, soigné pour un cancer rare du foie, fait un vœu à la fondation <b>Make-A-Wish</b> : avoir sa propre carte Yu-Gi-Oh! Et Konami dit oui.',
+    body: 'Tyler Gressle, soigné pour un cancer rare du foie, demande à la fondation <b>Make-A-Wish</b> sa propre carte Yu-Gi-Oh! Konami la crée pour lui.',
     stats: [['2002', 'le diagnostic<br>de Tyler'], ['2005', 'la carte<br>est créée'], ['1', 'seul exemplaire<br>au monde']],
     src: 'Source : pcagrade.com (l’histoire de Tyler Gressle), relevé le 07/10/2026.' },
   detail: { kicker: 'LA CARTE', t: ['Croquée par', 'le créateur.'],

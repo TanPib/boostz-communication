@@ -73,7 +73,7 @@ const SRC_CARDS = 'Images des cartes : TCGdex, slabfol.io. © Pokémon / Nintend
 // a record or today (optional), the end.
 const zoom = (e) => {
   window.PUB = e.pub;
-  const G = e.game, [c1, c2, c3] = e.cover.cards;
+  const G = e.game, GC = GAMES[e.game][1], [c1, c2, c3] = e.cover.cards;
   const slides = [
     ['1-couverture', `${ghosts([[80, 1000, 70, -6], [930, 1000, 70, 8]])}${track(0, 1180, .4)}${head('ZOOM SUR UN ARTISTE', G, e.name)}
       ${card(c1, 110, 230, 290, -9, 2)}${card(c3, 680, 230, 290, 9, 2)}${card(c2, 380, 190, 320, 0, 3)}
@@ -84,14 +84,14 @@ const zoom = (e) => {
     ['2-avant', `${ghosts([[100, 1000, 70, -6], [910, 1000, 70, 8]])}${track(1, 1180, .3)}${head(e.before.kicker, G, SUB)}
       <div class="abs h" style="left:70px;top:170px;font-size:92px">${e.before.t[0]}<br><span class="acc">${e.before.t[1]}</span></div>
       <div class="abs ui" style="left:70px;right:70px;top:420px;font-size:38px;line-height:1.4">${e.before.body}</div>
-      ${st(70, 690, 940, 250, `<div style="padding:36px 46px;color:${DARK}"><div class="lab" style="font-size:22px;letter-spacing:3px">${e.before.box[0]}</div><div class="ui" style="font-size:34px;line-height:1.35;margin-top:14px">${e.before.box[1]}</div></div>`, { fill: SUN, r: -1.5, z: 3 })}
+      ${st(70, 690, 940, 250, `<div style="padding:36px 46px;color:${DARK}"><div class="lab" style="font-size:22px;letter-spacing:3px">${e.before.box[0]}</div><div class="ui" style="font-size:34px;line-height:1.35;margin-top:14px">${e.before.box[1]}</div></div>`, { fill: GC, r: -1.5, z: 3 })}
       ${src(e.before.src)}`],
     ['3-sa-carte', `${track(2, 1185, .2)}${head(e.sig.kicker, G, SUB)}
       ${card(e.sig.img, 80, 200, 400, -3, 3, e.sig.opt || {})}
       <div class="abs" style="left:540px;top:200px;width:470px">
         <div class="h" style="font-size:60px;line-height:1.05">${e.sig.t[0]}<br><span class="acc">${e.sig.t[1]}</span></div>
         <div class="ui" style="font-size:32px;line-height:1.45;margin-top:30px">${e.sig.text}</div>
-        <div class="ui" style="font-size:30px;line-height:1.35;margin-top:30px;color:${SUN}">${e.sig.hl}</div>
+        <div class="ui" style="font-size:30px;line-height:1.35;margin-top:30px;color:${GC}">${e.sig.hl}</div>
         <div class="ui mut" style="font-size:24px;margin-top:14px">${e.sig.note}</div></div>
       ${src(e.sig.src)}`],
     ['4-style', `${track(3, 1190, .2)}${head('SON STYLE', G, SUB)}
@@ -107,7 +107,7 @@ const zoom = (e) => {
       <div class="abs" style="left:520px;top:420px;width:490px">
         <div class="ui" style="font-size:32px;line-height:1.35">${e.top.text}</div>
         <div class="ui mut" style="font-size:28px;line-height:1.35;margin-top:24px">${e.top.muted}</div>
-        ${st(0, e.top.boxTop || 250, 490, 250, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:20px">${e.top.box[0]}</div><div class="ui" style="font-size:28px;margin-top:8px">${e.top.box[1]}</div><div class="h" style="font-size:${e.top.box[2].length > 12 ? 44 : 56}px;margin-top:6px;white-space:nowrap">${e.top.box[2]}</div><div class="ui" style="font-size:20px;margin-top:4px">${e.top.box[3]}</div></div>`, { fill: SUN, r: -1.5, z: 3 })}</div>
+        ${st(0, e.top.boxTop || 250, 490, 250, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:20px">${e.top.box[0]}</div><div class="ui" style="font-size:28px;margin-top:8px">${e.top.box[1]}</div><div class="h" style="font-size:${e.top.box[2].length > 12 ? 44 : 56}px;margin-top:6px;white-space:nowrap">${e.top.box[2]}</div><div class="ui" style="font-size:20px;margin-top:4px">${e.top.box[3]}</div></div>`, { fill: GC, r: -1.5, z: 3 })}</div>
       ${src(e.top.src)}`]);
   slides.push([`${slides.length + 1}-fin`, `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8]])}${track(5, 1200, .6)}${head('SUR BOOSTZ', G, SUB)}
       <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">${e.end[0]}<br><span class="acc">${e.end[1]}</span></div>
