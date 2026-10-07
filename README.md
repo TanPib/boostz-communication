@@ -47,7 +47,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-12-09-fonction-etat.mp4` | mer. 09/12/2026, 10 h — Instagram, TikTok, Facebook, stories | Reel 9:16, 1080 × 1920, 11,8 s, musique originale |
 | `images/2026-12-12-zoom-mitsuhiro-arita/` | sam. 12/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-12-12-story-zoom-mitsuhiro-arita.mp4` | sam. 12/12/2026, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
-| `videos/2026-12-15-opening-collect-aura.mp4` | mar. 15/12/2026, 10 h — Instagram, TikTok, story Instagram | Reel 9:16, 1080 × 1920, 49,8 s, voix d'origine (vidéo PokePotes rebrandée) |
+| `videos/2026-12-15-opening-collect-aura.mp4` | mar. 15/12/2026, 10 h — Instagram, TikTok, Facebook, stories | Reel 9:16, 1080 × 1920, 49,8 s, voix d'origine (vidéo PokePotes rebrandée) |
 | `images/2026-12-18-sortie-fb12/` | ven. 18/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 4 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-12-18-story-sortie-fb12.mp4` | ven. 18/12/2026, 10 h — story Instagram et Facebook | 9:16, 8 s, musique originale |
 | `videos/2026-12-21-noel.mp4` | lun. 21/12/2026, 10 h — Instagram, TikTok, Facebook, stories | Reel 9:16, 1080 × 1920, 17,2 s, musique originale |

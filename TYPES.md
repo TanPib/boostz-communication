@@ -181,7 +181,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | dim. 06/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Épisode : One Piece | One Piece | `images/2026-12-06-guide-scelles-onepiece/` |
 | mer. 09/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 12 | Estime l'état de tes cartes | les 8 | `videos/2026-12-09-fonction-etat.mp4` |
 | sam. 12/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 23 | Mitsuhiro Arita, l'homme du Dracaufeu | Pokémon | `images/2026-12-12-zoom-mitsuhiro-arita/` |
-| mar. 15/12/2026, 10 h | Instagram (Reel), TikTok, story Instagram | 24 | Opening Collect Aura : les notes de nos cartes gradées | Pokémon | `videos/2026-12-15-opening-collect-aura.mp4` |
+| mar. 15/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 24 | Opening Collect Aura : les notes de nos cartes gradées | Pokémon | `videos/2026-12-15-opening-collect-aura.mp4` |
 | ven. 18/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | FB12 Reach the God sort aujourd'hui | Dragon Ball | `images/2026-12-18-sortie-fb12/` |
 | lun. 21/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Noël : une carte sous le sapin pour chaque budget | Pokémon, Lorcana | `videos/2026-12-21-noel.mp4` |
 | jeu. 24/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 18 | Tes cartes de Noël : pochettes, étuis, classeurs, rangement, envoi | les 8 | `images/2026-12-24-protege-ta-collection/` |

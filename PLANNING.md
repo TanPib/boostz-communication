@@ -43,7 +43,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | dim. 06/12 | carrousel | 21 Guide des produits scellés | Épisode : One Piece | One Piece | ✅ programmé |
 | mer. 09/12 | Reel | 12 Fonction à la loupe | Estime l'état de tes cartes | les 8 | ✅ programmé |
 | sam. 12/12 | carrousel | 23 Zoom sur un artiste | Mitsuhiro Arita, l'homme du Dracaufeu | Pokémon | ✅ programmé |
-| mar. 15/12 | Reel | 24 Opening | Opening Collect Aura : les notes de nos cartes gradées (vidéo PokePotes montée par Julien Ardid, rebrandée Boostz) | Pokémon | ✅ programmé (Instagram et TikTok) |
+| mar. 15/12 | Reel | 24 Opening | Opening Collect Aura : les notes de nos cartes gradées (vidéo PokePotes montée par Julien Ardid, rebrandée Boostz) | Pokémon | ✅ programmé (Instagram, TikTok, Facebook) |
 | \*ven. 18/12 | carrousel | 15 Sortie d'extension | FB12 Reach the God sort aujourd'hui | Dragon Ball | ✅ programmé |
 | \*lun. 21/12 | Reel | 16 Thème | Noël : une carte sous le sapin pour chaque budget | Pokémon, Lorcana | ✅ programmé (cotes rafraîchies le 15/12) |
 | \*jeu. 24/12 | carrousel | 18 Protège ta collection | Tes cartes de Noël : pochettes, étuis, classeurs, rangement, envoi | les 8 | ✅ programmé |
@@ -102,7 +102,7 @@ Légendes en brouillon. Les chiffres entre crochets sortent des données le jour
 - **Hashtags :** `#pokemontcg #cartespokemon #cotepokemon #collectionpokemon #pokemonfr`
 
 ### 4 · Opening Collect Aura — mar. 15/12
-- ✅ Programmé le 07/10 sur Instagram (Reel et story) et TikTok seulement, comme demandé. Vidéo de l'ancien compte PokePotes, montée par Julien Ardid : la voix est gardée jusqu'à « nos futurs contenus », le filigrane TikTok remplacé par celui de Boostz, la fin PokePotes par l'icône de l'appli, des confettis et le balayage vers l'écran de fin (`outils/opening-collect-aura.sh`). Collect Aura et Julien tagués (@collectaura, @ardidjulien sur Instagram, @ardidprod sur TikTok). Pas de musique Instagram : elle couperait la voix. Julien (@ardidjulien) invité en collaborateur du Reel Instagram : il apparaîtra sur son profil s'il accepte.
+- ✅ Programmé le 07/10 sur Instagram (Reel et story), TikTok, puis Facebook (Reel et story) à la demande. Vignette dédiée (`vignette-opening.html`) : l'Ectoplasma ex noté 10 sur un éclat aux couleurs Boostz, « Nos notes sont tombées ! ». Vidéo de l'ancien compte PokePotes, montée par Julien Ardid : la voix est gardée jusqu'à « nos futurs contenus », le filigrane TikTok remplacé par celui de Boostz, la fin PokePotes par l'icône de l'appli, des confettis et le balayage vers l'écran de fin (`outils/opening-collect-aura.sh`). Collect Aura et Julien tagués (@collectaura, @ardidjulien sur Instagram, @ardidprod sur TikTok). Pas de musique Instagram : elle couperait la voix. Julien (@ardidjulien) invité en collaborateur du Reel Instagram : il apparaîtra sur son profil s'il accepte.
 
 ### Choisis ton combattant — ven. 02/04
 - ✅ Programmé, raccourci à 8 s le 05/10 ; déplacé du 15/12 au 02/04 le 07/10, légende passée à « Télécharge Boostz, lien en bio ».
