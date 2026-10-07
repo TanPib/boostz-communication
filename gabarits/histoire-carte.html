@@ -4,7 +4,8 @@
 <script src="posts-emblems.js"></script><script src="stickers.js"></script>
 </head><body><script>
 // "L'histoire d'une carte" (asked on 07/10/2026): where a card comes from, what makes it
-// unique, what it is worth now. Edit the content in place for each edition.
+// unique, what it is worth now. One entry per edition in EDITIONS; render one with
+//   node rendu.mjs histoire-carte.html#<edition> images
 // Edition 1: Pikachu Illustrator, published on 09/11/2026. Facts searched on 07/10/2026:
 // - Bulbapedia (Pokémon Illustrator (TCG)): CoroCoro Comic illustration contest, January 1998,
 //   23 copies for the first contest, 16 more in later contests, 39 in all; art by Atsuko Nishida.
@@ -12,11 +13,16 @@
 //   sale), sold it at Goldin on 16/02/2026 for 16,492,000 $, the only known PSA 10 and the most
 //   expensive trading card ever sold at auction.
 // - Card text: read on the scan, translated from Japanese. Scan: slabfol.io (as in records-2026).
-window.PUB = '2026-11-09';
-const G = 'pokemon', SUB = 'L’histoire d’une carte';
-const IMG = 'assets/record-pikachu-illustrator-carte.jpg';
-const SRC_IMG = 'Image de la carte : slabfol.io. © Pokémon / Nintendo / Creatures / GAME FREAK.';
-carousel([
+const SUB = 'L’histoire d’une carte';
+const EDITIONS = {};
+
+// Edition 1 (custom layout, see the facts above).
+EDITIONS['pikachu-illustrateur'] = () => {
+  window.PUB = '2026-11-09';
+  const G = 'pokemon';
+  const IMG = 'assets/record-pikachu-illustrator-carte.jpg';
+  const SRC_IMG = 'Image de la carte : slabfol.io. © Pokémon / Nintendo / Creatures / GAME FREAK.';
+  return [
   ['1-couverture', `${ghosts([[130, 420, 80, -6], [870, 440, 80, 8]])}${track(0, 1170, .4)}${head('L’HISTOIRE D’UNE CARTE', G, 'Pikachu Illustrateur')}
     ${card(IMG, 330, 175, 420, -4, 3, { h: 574 })}
     <div class="abs h" style="left:0;top:800px;width:1080px;text-align:center;font-size:92px">39 exemplaires.<br><span class="acc">Un record mondial.</span></div>
@@ -53,5 +59,103 @@ carousel([
     <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Et tes cartes,<br><span class="acc">elles ont une histoire ?</span></div>
     ${back(G, 330, 470, 180, -8, 2)}${back(G, 560, 470, 180, 7, 2)}
     ${closing(800)}`],
-]);
+];
+};
+
+// The other editions share one layout: cover, origin, the card up close, the twist, its value, the end.
+const story = (e) => {
+  window.PUB = e.pub;
+  const G = e.game, H = (w) => w * (e.ratio || 1.4);
+  return [
+    ['1-couverture', `${ghosts([[130, 420, 80, -6], [870, 440, 80, 8]])}${track(0, 1170, .4)}${head('L’HISTOIRE D’UNE CARTE', G, e.name)}
+      ${card(e.img, 330, 175, 420, -4, 3, { h: Math.min(H(420), 600) })}
+      <div class="abs h" style="left:0;top:820px;width:1080px;text-align:center;font-size:${Math.max(e.cover[0].length, e.cover[1].length) > 20 ? 76 : 88}px">${e.cover[0]}<br><span class="acc">${e.cover[1]}</span></div>
+      <div class="abs mut" style="left:0;top:1045px;width:1080px;text-align:center;font-weight:600;font-size:34px">${e.coverSub}</div>
+      <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
+      <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
+    ['2-origine', `${track(1, 1180, .3)}${head(e.origin.kicker, G, SUB)}
+      <div class="abs h" style="left:70px;top:170px;font-size:92px">${e.origin.t[0]}<br><span class="acc">${e.origin.t[1]}</span></div>
+      <div class="abs ui" style="left:70px;right:70px;top:420px;font-size:38px;line-height:1.4">${e.origin.body}</div>
+      ${e.origin.stats.map(([n, k], i) => st(70 + i * 320, 700, 300, 260, `<div style="padding:30px 32px"><div class="h" style="font-size:${n.length > 4 ? 64 : 96}px;color:${[SUN, '#F5F2FB', DONE][i]};white-space:nowrap">${n}</div><div class="ui" style="font-size:28px;line-height:1.2;margin-top:6px">${k}</div></div>`, { r: [-3, 2, -2][i], z: 3 })).join('')}
+      ${src(e.origin.src)}`],
+    ['3-la-carte', `${track(2, 1185, .2)}${head(e.detail.kicker, G, SUB)}
+      ${card(e.img, 80, 200, 400, -3, 3, { h: H(400) })}
+      <div class="abs" style="left:540px;top:200px;width:470px">
+        <div class="h" style="font-size:60px;line-height:1.05">${e.detail.t[0]}<br><span class="acc">${e.detail.t[1]}</span></div>
+        <div class="ui" style="font-size:31px;line-height:1.4;margin-top:30px">${e.detail.text}</div>
+        <div class="ui" style="font-size:30px;line-height:1.35;margin-top:30px;color:${SUN}">${e.detail.hl}</div></div>
+      ${src(e.detail.src)}`],
+    ['4-le-tournant', `${ghosts([[100, 990, 70, -6], [910, 990, 70, 8]])}${track(3, 1180, .3)}${head(e.twist.kicker, G, SUB)}
+      <div class="abs h" style="left:70px;top:170px;font-size:92px">${e.twist.t[0]}<br><span class="acc">${e.twist.t[1]}</span></div>
+      <div class="abs ui" style="left:70px;right:70px;top:420px;font-size:38px;line-height:1.4">${e.twist.body}</div>
+      ${st(70, 660, 940, 280, `<div style="padding:36px 46px;color:${DARK}"><div class="lab" style="font-size:22px;letter-spacing:3px">${e.twist.box[0]}</div><div class="ui" style="font-size:36px;line-height:1.35;margin-top:14px">${e.twist.box[1]}</div></div>`, { fill: SUN, r: -1.5, z: 3 })}
+      ${src(e.twist.src)}`],
+    ['5-la-cote', `${track(4, 1190, .2)}${head('CE QU’ELLE VAUT', G, SUB)}
+      <div class="abs h" style="left:70px;top:170px;font-size:92px">${e.value.t[0]}<br><span class="acc">${e.value.t[1]}</span></div>
+      ${e.value.boxes.map(([lab, big, yellow], i) => st(70, 430 + i * 260, 940, yellow ? 250 : 210, `<div style="padding:${yellow ? 34 : 30}px 46px${yellow ? `;color:${DARK}` : ''}"><div class="lab" style="font-size:22px${yellow ? '' : `;color:${VSOFT}`}">${lab}</div><div class="h" style="font-size:${yellow ? 110 : 96}px;margin-top:10px;white-space:nowrap">${big}</div></div>`, yellow ? { fill: SUN, r: -1.5, z: 3 } : { r: 1, z: 3 })).join('')}
+      <div class="abs mut" style="left:70px;right:70px;top:${430 + e.value.boxes.length * 260 + 40}px;font-weight:600;font-size:34px;text-align:center">${e.value.note}</div>
+      ${src(e.value.src)}`],
+    ['6-fin', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8]])}${track(5, 1200, .6)}${head('SUR BOOSTZ', G, SUB)}
+      <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">${e.end[0]}<br><span class="acc">${e.end[1]}</span></div>
+      ${back(G, 330, 470, 180, -8, 2)}${back(G, 560, 470, 180, 7, 2)}
+      ${closing(800)}`],
+  ];
+};
+
+// Tyler le Grand Guerrier. Facts searched on 07/10/2026: pcagrade.com (Tyler Gressle, hepatoblastoma
+// diagnosed in 2002, Make-A-Wish, card made by Konami in 2005, sketches by Kazuki Takahashi after
+// Future Trunks), ygorganization.com (sold on eBay on 29/04/2023, 179 bids, 311,211 $, the most
+// expensive publicly documented Yu-Gi-Oh! sale). Photo of the card (BGS 7): Otaku USA Magazine.
+EDITIONS['tyler'] = () => story({
+  pub: '2026-11-21', game: 'yugioh', name: 'Tyler le Grand Guerrier',
+  img: 'assets/carte-tyler-great-warrior.jpg', ratio: 1.29,
+  cover: ['Une seule carte au monde.', 'Et quelle histoire.'], coverSub: 'L’histoire de Tyler le Grand Guerrier.',
+  origin: { kicker: '2005', t: ['Le vœu', 'd’un petit garçon.'],
+    body: 'Tyler Gressle, soigné pour un cancer rare du foie, fait un vœu à la fondation <b>Make-A-Wish</b> : avoir sa propre carte Yu-Gi-Oh! Et Konami dit oui.',
+    stats: [['2002', 'le diagnostic<br>de Tyler'], ['2005', 'la carte<br>est créée'], ['1', 'seul exemplaire<br>au monde']],
+    src: 'Source : pcagrade.com (l’histoire de Tyler Gressle), relevé le 07/10/2026.' },
+  detail: { kicker: 'LA CARTE', t: ['Croquée par', 'le créateur.'],
+    text: 'Kazuki Takahashi, le créateur de Yu-Gi-Oh!, en fait deux croquis : un guerrier à l’épée, inspiré de Trunks (Dragon Ball).',
+    hl: '3 000 points d’attaque,<br>comme le Dragon Blanc<br>aux Yeux Bleus.',
+    src: 'Sources : pcagrade.com, relevé le 07/10/2026. Photo de la carte : Otaku USA Magazine. © Studio Dice / Shueisha, TV TOKYO, KONAMI.' },
+  twist: { kicker: 'UN GUERRIER', t: ['Une carte', 'pour se battre.'],
+    body: 'Le guerrier affronte l’adversité, comme Tyler face à la maladie. Konami n’en imprime qu’un exemplaire, pour lui.',
+    box: ['LE SAVAIS-TU ?', 'Tyler l’a gardée 18 ans avant de la mettre lui-même aux enchères, en 2023.'],
+    src: 'Sources : pcagrade.com, ygorganization.com, Yahoo News, relevé le 07/10/2026.' },
+  value: { t: ['Vendue par', 'Tyler lui-même.'],
+    boxes: [['29/04/2023 · EBAY · 179 ENCHÈRES', usd(311211), true]],
+    note: 'La vente de Yu-Gi-Oh! la plus chère<br>jamais documentée publiquement.',
+    src: 'Source : ygorganization.com, relevé le 07/10/2026.' },
+  end: ['Et toi, ta carte', 'la plus précieuse ?'],
+});
+
+// Pikachu au chapeau de feutre gris. Facts searched on 07/10/2026: Bulbapedia (SVP 085, Van Gogh
+// Museum 50th anniversary, campaign from 28/09/2023, museum distribution stopped on 14/10/2023 for
+// safety, then a store promotion in the Netherlands with 29,99 € of purchases), PTCG-database (art by
+// Naoyo Kimura), GoCollect and cllct (2,880 public PSA 10 sales in 2025, the most traded Pokémon card;
+// PSA 10 at 740-840 $ in January-June 2025, 2,100 $ high in October 2025; 43,327 PSA 10 graded).
+EDITIONS['pikachu-van-gogh'] = () => story({
+  pub: '2026-11-03', game: 'pokemon', name: 'Pikachu au chapeau de feutre gris',
+  img: 'assets/carte-pikachu-van-gogh-svp-085.png', ratio: 1.395,
+  cover: ['Un Pikachu', 'signé Van Gogh.'], coverSub: 'L’histoire du Pikachu au chapeau de feutre gris.',
+  origin: { kicker: '2023', t: ['Les 50 ans', 'd’un musée.'],
+    body: 'Pour ses 50 ans, le <b>musée Van Gogh</b> d’Amsterdam s’associe à Pokémon. Le cadeau des visiteurs : cette carte, inspirée de l’<i>Autoportrait au chapeau de feutre gris</i>.',
+    stats: [['28/09', 'début de<br>l’opération'], ['14/10', 'arrêt au<br>musée'], ['085', 'son numéro<br>de promo SVP']],
+    src: 'Source : Bulbapedia (Pikachu with Grey Felt Hat), relevé le 07/10/2026.' },
+  detail: { kicker: 'LA CARTE', t: ['Un vrai', 'petit tableau.'],
+    text: 'Illustrée par Naoyo Kimura à la manière de Van Gogh : coups de pinceau épais, ciel qui tourbillonne.',
+    hl: 'Son attaque s’appelle<br>«&nbsp;Pika-Portrait&nbsp;».',
+    src: 'Sources : Bulbapedia, PTCG-database, relevé le 07/10/2026. Image : pokemontcg.io. © Pokémon / Nintendo / Creatures / GAME FREAK.' },
+  twist: { kicker: 'LA COHUE', t: ['Le musée', 'arrête tout.'],
+    body: 'Files d’attente, revendeurs : dès le 14/10/2023, le musée stoppe la distribution, pour la sécurité des visiteurs et du personnel.',
+    box: ['LE SAVAIS-TU ?', 'Elle est revenue plus tard dans les boutiques des Pays-Bas, contre 29,99 € d’achats Pokémon.'],
+    src: 'Source : Bulbapedia (Pikachu with Grey Felt Hat), relevé le 07/10/2026.' },
+  value: { t: ['La carte', 'la plus échangée.'],
+    boxes: [['JANVIER À JUIN 2025 · PSA 10', '740 à 840 $', false], ['OCTOBRE 2025 · PSA 10 · RECORD', usd(2100), true]],
+    note: '2 880 ventes publiques en PSA 10 en 2025,<br>et 43 327 exemplaires notés PSA 10.',
+    src: 'Sources : GoCollect, cllct.com, relevé le 07/10/2026.' },
+  end: ['L’art et les cartes,', 'tu aimes ?'],
+});
+
+carousel(EDITIONS[location.hash.slice(1) || 'pikachu-illustrateur']());
 </script></body></html>

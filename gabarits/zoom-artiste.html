@@ -5,7 +5,7 @@
 </head><body><script>
 // "Zoom sur un artiste" (asked on 07/10/2026): who they are, their style, a few of their cards
 // (real scans, credited, never a photo of the artist), their most famous card, an anecdote.
-// Edit the content in place for each edition.
+// One entry per edition in EDITIONS; render one with node rendu.mjs zoom-artiste.html#<edition> images
 // Edition 1: Atsuko Nishida, published on 04/02/2027. Facts searched on 07/10/2026:
 // - Bulbapedia and Wikipedia (Atsuko Nishida, Pulseman): Game Freak graphic artist, on Pulseman
 //   (1994) with Satoshi Tajiri and Ken Sugimori; designed Pikachu (a daifuku with ears, cheeks
@@ -15,15 +15,20 @@
 //   Évoli 55/82 and Carapuce 68/82 (Team Rocket, 2000, FR), Glaceon 5/100 (Majestic Dawn, 2008, EN),
 //   Pikachu 047/128 (30ᵉ Anniversaire, 2026, FR; the 037 of that set is by Yuu Nishida).
 // - Pikachu Illustrator, 16,492,000 $ at Goldin on 16/02/2026 (Guinness World Records).
-window.PUB = '2027-02-04';
-const G = 'pokemon', SUB = 'Zoom sur un artiste';
+const SUB = 'Zoom sur un artiste';
+const EDITIONS = {};
+
+// Edition 1 (see the facts above).
+EDITIONS['nishida'] = () => {
+  window.PUB = '2027-02-04';
+  const G = 'pokemon';
 const C = {
   evoli: 'assets/carte-evoli-base5-55.png', carapuce: 'assets/carte-carapuce-base5-68.png',
   givrali: 'assets/carte-givrali-dp5-5-en.png', pikachu: 'assets/carte-pikachu-30th-047-me.png',
   illustrateur: 'assets/record-pikachu-illustrator-carte.jpg',
 };
 const SRC_CARDS = 'Images des cartes : TCGdex, slabfol.io. © Pokémon / Nintendo / Creatures / GAME FREAK.';
-carousel([
+  return [
   ['1-couverture', `${ghosts([[80, 1000, 70, -6], [930, 1000, 70, 8]])}${track(0, 1180, .4)}${head('ZOOM SUR UN ARTISTE', G, 'Atsuko Nishida')}
     ${card(C.evoli, 110, 230, 290, -9, 2)}${card(C.pikachu, 680, 230, 290, 9, 2)}${card(C.givrali, 380, 190, 320, 0, 3)}
     <div class="abs h" style="left:0;top:690px;width:1080px;text-align:center;font-size:96px">Atsuko Nishida,<br><span class="acc">la mère de Pikachu.</span></div>
@@ -61,5 +66,169 @@ carousel([
     <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Tu as une carte<br><span class="acc">d’Atsuko Nishida ?</span></div>
     ${back(G, 330, 470, 180, -8, 2)}${back(G, 560, 470, 180, 7, 2)}
     ${closing(800)}`],
-]);
+];
+};
+
+// The other editions share one layout: cover, before the cards, the signature card, the style,
+// a record or today (optional), the end.
+const zoom = (e) => {
+  window.PUB = e.pub;
+  const G = e.game, [c1, c2, c3] = e.cover.cards;
+  const slides = [
+    ['1-couverture', `${ghosts([[80, 1000, 70, -6], [930, 1000, 70, 8]])}${track(0, 1180, .4)}${head('ZOOM SUR UN ARTISTE', G, e.name)}
+      ${card(c1, 110, 230, 290, -9, 2)}${card(c3, 680, 230, 290, 9, 2)}${card(c2, 380, 190, 320, 0, 3)}
+      <div class="abs h" style="left:0;top:690px;width:1080px;text-align:center;font-size:${e.cover.size || 96}px">${e.cover.t[0]}<br><span class="acc">${e.cover.t[1]}</span></div>
+      <div class="abs mut" style="left:0;top:930px;width:1080px;text-align:center;font-weight:600;font-size:34px">${e.cover.sub}</div>
+      <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
+      <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
+    ['2-avant', `${ghosts([[100, 1000, 70, -6], [910, 1000, 70, 8]])}${track(1, 1180, .3)}${head(e.before.kicker, G, SUB)}
+      <div class="abs h" style="left:70px;top:170px;font-size:92px">${e.before.t[0]}<br><span class="acc">${e.before.t[1]}</span></div>
+      <div class="abs ui" style="left:70px;right:70px;top:420px;font-size:38px;line-height:1.4">${e.before.body}</div>
+      ${st(70, 690, 940, 250, `<div style="padding:36px 46px;color:${DARK}"><div class="lab" style="font-size:22px;letter-spacing:3px">${e.before.box[0]}</div><div class="ui" style="font-size:34px;line-height:1.35;margin-top:14px">${e.before.box[1]}</div></div>`, { fill: SUN, r: -1.5, z: 3 })}
+      ${src(e.before.src)}`],
+    ['3-sa-carte', `${track(2, 1185, .2)}${head(e.sig.kicker, G, SUB)}
+      ${card(e.sig.img, 80, 200, 400, -3, 3, e.sig.opt || {})}
+      <div class="abs" style="left:540px;top:200px;width:470px">
+        <div class="h" style="font-size:60px;line-height:1.05">${e.sig.t[0]}<br><span class="acc">${e.sig.t[1]}</span></div>
+        <div class="ui" style="font-size:32px;line-height:1.45;margin-top:30px">${e.sig.text}</div>
+        <div class="ui" style="font-size:30px;line-height:1.35;margin-top:30px;color:${SUN}">${e.sig.hl}</div>
+        <div class="ui mut" style="font-size:24px;margin-top:14px">${e.sig.note}</div></div>
+      ${src(e.sig.src)}`],
+    ['4-style', `${track(3, 1190, .2)}${head('SON STYLE', G, SUB)}
+      <div class="abs h" style="left:70px;top:170px;font-size:92px">${e.style.t[0]}<br><span class="acc">${e.style.t[1]}</span></div>
+      ${card(e.style.cards[0], 160, 400, 330, -4, 3)}${card(e.style.cards[1], 590, 420, 330, 4, 3)}
+      <div class="abs ui" style="left:70px;right:70px;top:930px;font-size:36px;line-height:1.35;text-align:center">${e.style.text}</div>
+      <div class="abs mut" style="left:70px;right:70px;top:1060px;font-weight:600;font-size:28px;text-align:center">${e.style.caption}</div>
+      ${src(e.style.src)}`],
+  ];
+  if (e.top) slides.push(['5-' + e.top.id, `${track(4, 1195, .2)}${head(e.top.kicker, G, SUB)}
+      <div class="abs h" style="left:70px;top:170px;font-size:84px">${e.top.t[0]}<br><span class="acc">${e.top.t[1]}</span></div>
+      ${card(e.top.img, 80, 410, 380, -3, 3, e.top.opt || {})}
+      <div class="abs" style="left:520px;top:420px;width:490px">
+        <div class="ui" style="font-size:32px;line-height:1.35">${e.top.text}</div>
+        <div class="ui mut" style="font-size:28px;line-height:1.35;margin-top:24px">${e.top.muted}</div>
+        ${st(0, e.top.boxTop || 250, 490, 250, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:20px">${e.top.box[0]}</div><div class="ui" style="font-size:28px;margin-top:8px">${e.top.box[1]}</div><div class="h" style="font-size:${e.top.box[2].length > 12 ? 44 : 56}px;margin-top:6px;white-space:nowrap">${e.top.box[2]}</div><div class="ui" style="font-size:20px;margin-top:4px">${e.top.box[3]}</div></div>`, { fill: SUN, r: -1.5, z: 3 })}</div>
+      ${src(e.top.src)}`]);
+  slides.push([`${slides.length + 1}-fin`, `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8]])}${track(5, 1200, .6)}${head('SUR BOOSTZ', G, SUB)}
+      <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">${e.end[0]}<br><span class="acc">${e.end[1]}</span></div>
+      ${back(G, 330, 470, 180, -8, 2)}${back(G, 560, 470, 180, 7, 2)}
+      ${closing(800)}`]);
+  return slides;
+};
+const POKE = '© Pokémon / Nintendo / Creatures / GAME FREAK.', WOTC = '© Wizards of the Coast.';
+
+// Mitsuhiro Arita. Facts searched on 07/10/2026: Bulbapedia and pokemon.com (born 12/01/1970 in
+// Fukuoka, self-taught freelance illustrator, on the TCG from its prototypes with the game sprites as
+// only reference, designed the first six Energy symbols, Base Set Pikachu and Charizard had "a big
+// effect" on his career, watercolour or pastel with outlines early on, vivid colours and light now).
+// Cards checked on their scans: Dracaufeu 4/102 and Pikachu 58/102 (Set de Base, FR), Koraidon 086/128
+// (30ᵉ Anniversaire, 2026, FR), from TCGdex. Record: Japanese "no rarity" Base Set Charizard PSA 10,
+// 1,700,000 $, 03/03/2026 (Sports Illustrated, as in records-2026).
+EDITIONS['arita'] = () => zoom({
+  pub: '2026-12-01', game: 'pokemon', name: 'Mitsuhiro Arita',
+  cover: { cards: ['assets/carte-pikachu-base1-58.png', 'assets/carte-dracaufeu-base1-4.png', 'assets/carte-koraidon-30th-086.png'],
+    t: ['Mitsuhiro Arita,', 'l’homme du Dracaufeu.'], sub: 'Ses débuts, son style, ses cartes.', size: 84 },
+  before: { kicker: 'DÈS LE DÉBUT', t: ['Autodidacte,', 'là avant les jeux.'],
+    body: 'Né en 1970 à Fukuoka, illustrateur indépendant, il a tout appris seul. Il dessine pour le JCC Pokémon dès ses prototypes, avec pour seuls modèles les sprites des jeux.',
+    box: ['LE SAVAIS-TU ?', 'C’est aussi lui qui a dessiné les symboles des six premiers types d’Énergie.'],
+    src: 'Sources : Bulbapedia (Mitsuhiro Arita), pokemon.com, relevé le 07/10/2026.' },
+  sig: { kicker: 'SA CARTE', img: 'assets/carte-dracaufeu-base1-4.png', t: ['Le Dracaufeu', 'du Set de Base.'],
+    text: 'La carte la plus célèbre du monde, c’est la sienne.',
+    hl: 'Avec son Pikachu, elle a eu «&nbsp;un gros effet&nbsp;» sur sa carrière, dit-il.', note: 'Set de Base, en VF.',
+    src: 'Sources : pokemon.com, TCGdex, relevé le 07/10/2026. Images des cartes : TCGdex. ' + POKE },
+  style: { t: ['Du pastel', 'à la lumière.'], cards: ['assets/carte-pikachu-base1-58.png', 'assets/carte-koraidon-30th-086.png'],
+    text: 'Aquarelle et pastel cernés à ses débuts,<br>couleurs vives et jeux de lumière aujourd’hui.',
+    caption: 'Pikachu (Set de Base) et Koraidon (30ᵉ Anniversaire, 2026).',
+    src: 'Sources : Bulbapedia (Mitsuhiro Arita), TCGdex, relevé le 07/10/2026. ' + POKE },
+  top: { id: 'record', kicker: 'UN RECORD', t: ['Son Dracaufeu,', 'version japonaise.'],
+    img: 'assets/record-dracaufeu-sans-rarete.jpg', opt: { pos: '55% 30%' },
+    text: 'Le Dracaufeu du Set de Base japonais de 1996, sans symbole de rareté.', muted: 'Le même dessin que notre Dracaufeu en VF.',
+    box: ['03/03/2026 · PSA 10', 'Dracaufeu «&nbsp;sans rareté&nbsp;»', usd(1700000), 'Source : Sports Illustrated'],
+    src: 'Source : Sports Illustrated, relevé le 06/10/2026. ' + POKE },
+  end: ['Tu as une carte', 'de Mitsuhiro Arita ?'],
+});
+
+// Yuka Morii. Facts searched on 07/10/2026: Bulbapedia (professional clay modeller, Tokyo Zokei
+// University, first card images in Neo Discovery, from 2000; over 200 cards; a clay workshop at the
+// 2023 World Championships), pkmncollectors and collectholo (polymer clay, miniature sets of pebbles,
+// leaves and objects, photographed). Cards checked on their scans: Corayon 37/75, Kabuto 56/75,
+// Amonita 60/75 (Neo Discovery, FR), Hyper Ball 128/128 (30ᵉ Anniversaire, 2026, FR), from TCGdex.
+EDITIONS['morii'] = () => zoom({
+  pub: '2026-12-01', game: 'pokemon', name: 'Yuka Morii',
+  cover: { cards: ['assets/carte-kabuto-neo2-56.png', 'assets/carte-corayon-neo2-37.png', 'assets/carte-amonita-neo2-60.png'],
+    t: ['Yuka Morii', 'sculpte ses Pokémon.'], sub: 'Pas de crayon : de la pâte à modeler.' },
+  before: { kicker: 'SA MÉTHODE', t: ['Elle ne dessine pas :', 'elle modèle.'],
+    body: 'Elle façonne chaque Pokémon en pâte polymère, lui construit un décor miniature avec des cailloux, des feuilles et des objets du quotidien, puis le photographie.',
+    box: ['SON PARCOURS', 'Modeleuse professionnelle, diplômée de l’université Tokyo Zokei. Ses premières cartes paraissent dans Neo Discovery.'],
+    src: 'Sources : Bulbapedia (Yuka Morii), pkmncollectors.com, relevé le 07/10/2026.' },
+  sig: { kicker: 'SA CARTE', img: 'assets/carte-corayon-neo2-37.png', t: ['Un Corayon', 'en vrai.'],
+    text: 'Rien n’est dessiné : ce Corayon est une vraie figurine, prise en photo.',
+    hl: 'On croirait pouvoir le toucher.', note: 'Neo Discovery, en VF.',
+    src: 'Sources : Bulbapedia, TCGdex, relevé le 07/10/2026. Images des cartes : TCGdex. ' + POKE },
+  style: { t: ['Des fossiles', 'presque vivants.'], cards: ['assets/carte-kabuto-neo2-56.png', 'assets/carte-amonita-neo2-60.png'],
+    text: 'Lumière naturelle, matière, vraies ombres :<br>ses Pokémon vivent dans notre monde.',
+    caption: 'Kabuto et Amonita, Neo Discovery.',
+    src: 'Sources : Bulbapedia (Yuka Morii), TCGdex, relevé le 07/10/2026. ' + POKE },
+  top: { id: 'aujourd-hui', kicker: 'AUJOURD’HUI', t: ['Toujours', 'en pâte à modeler.'],
+    img: 'assets/carte-hyper-ball-30th-128.png',
+    text: 'Même les objets : cette Hyper Ball du set 30ᵉ Anniversaire (2026), c’est elle.', muted: 'Plus de 200 cartes illustrées.',
+    box: ['EN 2023', 'Aux Mondiaux, elle anime', 'un atelier', 'de pâte à modeler pour des créateurs.'],
+    src: 'Sources : Bulbapedia (Yuka Morii), TCGdex, relevé le 07/10/2026. ' + POKE },
+  end: ['Tu as une carte', 'de Yuka Morii ?'],
+});
+
+// Rebecca Guay. Facts searched on 07/10/2026: Wikipedia and mtg.wiki (161 pieces for Magic from 1996
+// to 2016, watercolour, a softer palette and gentler moments), magicuntapped.com (in 2002 she said she
+// was told her art was too "feminine" for Legions; Wizards of the Coast said she was not fired).
+// Cards checked on their scans (Scryfall, EN): Priest of Titania (Urza's Saga, 1998), Enchantress's
+// Presence (Onslaught, 2002), Bitterblossom (Morningtide, 2008).
+EDITIONS['guay'] = () => zoom({
+  pub: '2026-12-01', game: 'magic', name: 'Rebecca Guay',
+  cover: { cards: ['assets/carte-priest-of-titania-usg.jpg', 'assets/carte-enchantress-presence-ons.jpg', 'assets/carte-bitterblossom-mor.jpg'],
+    t: ['Rebecca Guay,', 'l’aquarelle de Magic.'], sub: 'Vingt ans de cartes peintes à la main.' },
+  before: { kicker: 'SES DÉBUTS', t: ['161 cartes,', 'de 1996 à 2016.'],
+    body: 'Illustratrice américaine, elle peint pour Magic pendant vingt ans. Ses aquarelles tout en finesse tranchent avec les dragons et les boules de feu de l’époque.',
+    box: ['LE SAVAIS-TU ?', 'En 2002, elle dit qu’on a jugé son style «&nbsp;trop féminin&nbsp;» pour une extension. Wizards of the Coast assure qu’elle n’a jamais été écartée.'],
+    src: 'Sources : Wikipedia (Rebecca Guay), mtg.wiki, magicuntapped.com, relevé le 07/10/2026.' },
+  sig: { kicker: 'SA CARTE', img: 'assets/carte-enchantress-presence-ons.jpg', t: ['Une scène', 'de conte.'],
+    text: 'Une enchanteresse dans les bois, calme, là où on attendait un combat.',
+    hl: 'Enchantress’s Presence,<br>Onslaught (2002).', note: 'En VO.',
+    src: 'Sources : mtg.wiki, Scryfall, relevé le 07/10/2026. Images des cartes : Scryfall. ' + WOTC },
+  style: { t: ['Tout en', 'aquarelle.'], cards: ['assets/carte-priest-of-titania-usg.jpg', 'assets/carte-bitterblossom-mor.jpg'],
+    text: 'Couleurs douces, lignes fines, moments paisibles :<br>l’un des styles les plus reconnaissables du jeu.',
+    caption: 'Priest of Titania (1998) et Bitterblossom (2008), en VO.',
+    src: 'Sources : Wikipedia (Rebecca Guay), Scryfall, relevé le 07/10/2026. ' + WOTC },
+  end: ['Tu as une carte', 'de Rebecca Guay ?'],
+});
+
+// Christopher Rush. Facts searched on 07/10/2026: Wikipedia and mtg.wiki (born 06/04/1965 in Long Beach,
+// California, died 10/02/2016 aged 50; one of the 25 original Magic artists; over 100 cards; designed
+// the mana symbols and coloured the card back with Jesper Myrfors). Cards checked on their scans
+// (Scryfall, EN): Black Lotus and Lightning Bolt (Alpha, 1993), Brainstorm (Ice Age, 1995).
+// Record: Alpha Black Lotus PSA 10, 2,208,000 $, Goldin, 19/09/2026 (ICv2, StarCityGames, as in records-2026).
+EDITIONS['rush'] = () => zoom({
+  pub: '2026-12-01', game: 'magic', name: 'Christopher Rush',
+  cover: { cards: ['assets/carte-lightning-bolt-lea.jpg', 'assets/carte-black-lotus-lea.jpg', 'assets/carte-brainstorm-ice.jpg'],
+    t: ['Christopher Rush,', 'le père du Black Lotus.'], sub: 'Il a dessiné les débuts de Magic.', size: 88 },
+  before: { kicker: 'DÈS 1993', t: ['Un des 25', 'premiers artistes.'],
+    body: 'Né en 1965 en Californie, il fait partie des 25 artistes du tout premier set de Magic. Il illustre plus de 100 cartes.',
+    box: ['LE SAVAIS-TU ?', 'Il a dessiné les symboles de mana, et colorié le dos des cartes Magic avec Jesper Myrfors.'],
+    src: 'Sources : Wikipedia (Christopher Rush), mtg.wiki, relevé le 07/10/2026.' },
+  sig: { kicker: 'SA CARTE', img: 'assets/carte-black-lotus-lea.jpg', t: ['Le Black Lotus,', 'une simple fleur.'],
+    text: 'La carte la plus célèbre de Magic, peinte pour la toute première édition du jeu.',
+    hl: 'Elle donne trois manas,<br>puis disparaît.', note: 'Alpha (1993), en VO.',
+    src: 'Sources : Wikipedia, Scryfall, relevé le 07/10/2026. Images des cartes : Scryfall. ' + WOTC },
+  style: { t: ['Des sorts', 'devenus mythiques.'], cards: ['assets/carte-lightning-bolt-lea.jpg', 'assets/carte-brainstorm-ice.jpg'],
+    text: 'Foudre et Remue-méninges :<br>deux sorts qu’on joue encore, trente ans plus tard.',
+    caption: 'Lightning Bolt (Alpha, 1993) et Brainstorm (Ère glaciaire, 1995), en VO.',
+    src: 'Sources : Wikipedia (Christopher Rush), Scryfall, relevé le 07/10/2026. ' + WOTC },
+  top: { id: 'record', kicker: 'UN RECORD', t: ['Son lotus,', 'à 2,2 millions.'],
+    img: 'assets/record-black-lotus.jpg', opt: { pos: 'center 30%' },
+    text: 'Un Black Lotus de l’édition Alpha, noté PSA 10.', muted: 'Christopher Rush est mort en 2016, à 50 ans.',
+    box: ['19/09/2026 · GOLDIN · PSA 10', 'Black Lotus, Alpha', usd(2208000), 'Sources : ICv2, StarCityGames'],
+    src: 'Sources : ICv2, StarCityGames, Wikipedia, relevé le 06/10/2026. ' + WOTC },
+  end: ['Tu as une carte', 'de Christopher Rush ?'],
+});
+
+carousel(EDITIONS[location.hash.slice(1) || 'nishida']());
 </script></body></html>
