@@ -79,6 +79,15 @@ const HOOKS = {
   'bonneannee': `${deco([['etincelle', 800, 100, 130, 0]])}${kick('BONNE ANNÉE')}<div class="abs h pop" style="left:0;top:380px;width:1080px;text-align:center;font-size:330px;line-height:1"><span class="grad">2027</span></div>
     ${big(760, 'Les 8 TCG,<br><span class="acc">au même endroit.</span>', 104)}
     ${discs(ALL8, 1100, 96, 18)}${mark}`,
+  'encres': `${kick('LORCANA · LES 6 ENCRES', GAMES.lorcana[1])}${big(360, 'Choisis tes<br><span style="color:' + GAMES.lorcana[1] + '">encres.</span>', 124)}
+    <div class="abs pop" style="left:0;top:780px;width:1080px;display:flex;justify-content:center;gap:34px">${['#F4B223', '#A66FD1', '#3DBE6C', '#E8485E', '#3AA9FF', '#A9B2C4'].map((c) => `<svg width="128" height="128" viewBox="0 0 100 100" style="overflow:visible;filter:drop-shadow(7px 7px 0 ${SHADOW})"><polygon points="50,6 90,30 90,70 50,94 10,70 10,30" fill="${c}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/><polygon points="50,6 90,30 50,44 10,30" fill="#fff" opacity=".28"/><polygon points="50,44 50,94 10,70 10,30" fill="#000" opacity=".12"/></svg>`).join('')}</div>
+    ${price(150, 1080, 780, 'Tu joues lesquelles ?', GAMES.lorcana[1], -2, 72)}${mark}`,
+  'tyler': `${kick('YU-GI-OH! · L’HISTOIRE D’UNE CARTE', GAMES.yugioh[1])}${big(360, 'Une seule carte<br><span style="color:' + GAMES.yugioh[1] + '">au monde.</span>', 110)}
+    ${card('assets/carte-tyler-great-warrior.jpg', 350, 640, 380, -3, 3, { h: 490, attrs: 'data-pop="1.06"' })}
+    ${price(240, 1180, 600, usd(311211), GAMES.yugioh[1], 2, 92)}`,
+  'pikachu': `${kick('POKÉMON · 1 CHANCE SUR N', GAMES.pokemon[1])}${big(360, '1 chance<br><span style="color:' + GAMES.pokemon[1] + '">sur 1 533.</span>', 124)}
+    ${card('assets/carte-pikachu-ex-me025-276.png', 350, 650, 380, -3, 3, { h: 522, attrs: 'data-pop="1.06"' })}
+    ${price(260, 1230, 560, eur(830.74), DONE, 3, 92)}`,
 };
 
 const key = location.hash.slice(1);

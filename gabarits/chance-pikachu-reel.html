@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz 1 chance sur 1533</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// 1 chance sur N (24/03/2027): Pikachu-ex, illustration spéciale rare 276/217
+// of Héros Transcendants (ME02.5), art by booota (checked on the scan, TCGdex).
+// Pull rate searched on 07/10/2026: 1 in 1,533 packs (cardcodex.com, cardrake.com,
+// community estimates: The Pokémon Company publishes none). An elite trainer box
+// holds 9 boosters (Poképédia), so 1,533 boosters ≈ 170 boxes. Not pulling it in
+// 1,533 boosters: (1 - 1/1533)^1533 = 36.8 %. Card value: Cardmarket 7-day average,
+// Boostz record of 03/10/2026 (to refresh before publication).
+window.PUB = '2027-03-24';
+const P = GAMES.pokemon[1];
+const S1 = 3.4, S2 = 8, S3 = 11.8, END = 15.8;
+// 170 elite trainer boxes, 17 x 10, landing in a wave.
+const box = (i) => {
+  const x = 69 + (i % 17) * 56, y = 760 + Math.floor(i / 17) * 56;
+  return `<div class="abs" ${A(S1 + .8 + i * .011, S2 - .3, 0, 'fade')} style="left:${x}px;top:${y}px;width:46px;height:46px;border-radius:9px;border:3px solid ${INK};background:#1D1730;overflow:hidden;box-shadow:4px 4px 0 ${SHADOW}"><div style="height:13px;background:${P}"></div></div>`;
+};
+reel(`${ghosts([[920, 330, 80, 6], [700, 110, 70, -8]])}
+  ${reelPath('M-20 1850 C160 1810 300 1900 520 1860 S860 1800 1100 1840')}
+  <div class="abs" ${A(.2, END - .3, 0, 'rise')} style="left:70px;top:150px;display:flex;align-items:center;gap:22px">${emblemDisc('pokemon', 84)}<div><div class="lab" style="font-size:26px;letter-spacing:6px;color:${P}">POKÉMON</div><div class="lab" style="font-size:24px;letter-spacing:5px;color:${VSOFT};margin-top:6px">HÉROS TRANSCENDANTS</div></div></div>
+  <div class="abs h" ${A(.4, S1 - .3, 0, 'rise')} style="left:0;top:330px;width:1080px;text-align:center;font-size:118px">1 chance<br><span style="color:${P}">sur 1 533.</span></div>
+  <div class="abs mut" ${A(.9, S1 - .3, 0, 'rise')} style="left:0;top:600px;width:1080px;text-align:center;font-weight:600;font-size:40px">d’avoir ce Pikachu-ex.</div>
+  ${card('assets/carte-pikachu-ex-me025-276.png', 330, 700, 420, -3, 3, { h: 578, attrs: A(1.2, S1 - .3, -3) })}
+  <div class="abs" ${A(1.6, S1 - .3, 0, 'fade')} style="left:70px;right:70px;top:1340px;text-align:center;font-family:Exo;font-size:24px;color:rgba(255,255,255,.45)">Illustration spéciale rare 276/217, illustrée par booota. Image : TCGdex.</div>
+  <div class="abs h" ${A(S1, S2 - .3, 0, 'rise')} style="left:0;top:330px;width:1080px;text-align:center;font-size:96px">1 533 boosters,</div>
+  <div class="abs h acc" ${A(S1 + .4, S2 - .3, 0, 'rise')} style="left:0;top:450px;width:1080px;text-align:center;font-size:70px">c’est 170 coffrets<br>Dresseur d’élite.</div>
+  ${Array.from({ length: 170 }, (_, i) => box(i)).join('')}
+  <div class="abs mut" ${A(S1 + 2.8, S2 - .3, 0, 'rise')} style="left:0;top:1360px;width:1080px;text-align:center;font-weight:600;font-size:36px">Chaque coffret contient 9 boosters.</div>
+  <div class="abs h" ${A(S2, S3 - .3, 0, 'rise')} style="left:0;top:400px;width:1080px;text-align:center;font-size:90px">Et même après<br>1 533 boosters…</div>
+  ${st(140, 720, 800, 300, `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:${DARK}"><div class="h" style="font-size:150px">37 %</div><div class="ui" style="font-size:36px">de chances de repartir sans</div></div>`, { fill: P, r: -2, z: 4, attrs: A(S2 + .8, S3 - .3, -2) })}
+  <div class="abs mut" ${A(S2 + 1.4, S3 - .3, 0, 'rise')} style="left:0;top:1110px;width:1080px;text-align:center;font-weight:600;font-size:38px">Plus d’une fois sur trois.</div>
+  <div class="abs h" ${A(S3, END - .3, 0, 'rise')} style="left:0;top:330px;width:1080px;text-align:center;font-size:90px">Ou tu l’achètes<br><span style="color:${P}">seule.</span></div>
+  ${card('assets/carte-pikachu-ex-me025-276.png', 130, 640, 380, -4, 3, { h: 523, attrs: A(S3 + .4, END - .3, -4) })}
+  ${st(560, 760, 400, 230, `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:${DARK}"><div class="lab" style="font-size:22px">SA COTE</div><div class="h" style="font-size:84px;margin-top:6px;white-space:nowrap">${eur(830.74)}</div></div>`, { fill: DONE, r: 3, z: 4, attrs: A(S3 + 1, END - .3, 3) })}
+  <div class="abs" ${A(S3 + 1.3, END - .3, 0, 'fade')} style="left:560px;top:1030px;width:400px;text-align:center;font-family:Exo;font-size:24px;line-height:1.4;color:rgba(255,255,255,.55)">Cardmarket, moyenne<br>sur 7 jours, relevé<br>du 03/10/2026</div>
+  <div class="abs" ${A(S1, END - .3, 0, 'fade')} style="left:70px;right:70px;top:1560px;text-align:center;font-family:Exo;font-size:22px;line-height:1.4;color:rgba(255,255,255,.45)">Taux : estimation de la communauté (cardcodex.com, cardrake.com), relevé le 07/10/2026 ;<br>The Pokémon Company ne publie pas ses taux. Contenu du coffret : Poképédia.</div>
+  <div class="abs h" ${A(END, null, 0, 'rise')} style="left:0;top:470px;width:1080px;text-align:center;font-size:88px">Avant d’ouvrir,<br><span style="color:${P}">regarde sa cote.</span></div>
+  <div ${A(END + .5, null, 0, 'rise')} class="abs" style="left:0;top:0;width:1080px;height:1920px">${closing(820, 110)}</div>`, END + 3.6);
+</script></body></html>

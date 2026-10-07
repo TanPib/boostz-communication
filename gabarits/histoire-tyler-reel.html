@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz histoire de Tyler</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// L'histoire d'une carte, in a Reel (15/03/2027): Tyler le Grand Guerrier,
+// the carousel of 03/11/2026 told in five beats under the card itself.
+// Facts searched on 07/10/2026 (as in histoire-carte.html#tyler): pcagrade.com
+// (Tyler Gressle, Make-A-Wish, 2005, Kazuki Takahashi's sketches), ygorganization.com
+// (sold by Tyler on eBay, 29/04/2023, 311,211 $, 179 bids). Photo: Otaku USA Magazine.
+window.PUB = '2027-03-15';
+const Y = GAMES.yugioh[1];
+const STEP = 3.6, T0 = 3;
+const BEATS = [
+  { k: '2005', t: 'Le vœu<br>d’un petit garçon.', b: 'Tyler, soigné pour un cancer rare du foie,<br>demande à Make-A-Wish<br>sa propre carte Yu-Gi-Oh!' },
+  { k: 'LA CARTE', t: 'Croquée par<br>le créateur du jeu.', b: 'Kazuki Takahashi dessine<br>un guerrier à l’épée,<br>3 000 points d’attaque.' },
+  { k: 'UN SEUL EXEMPLAIRE', t: 'Imprimée<br>pour lui seul.', b: 'Konami n’en imprime qu’une.<br>Tyler la garde 18 ans.' },
+  { k: '29/04/2023 · EBAY', t: 'Il la vend<br>lui-même.', price: usd(311211), b: 'après 179 enchères' },
+];
+const beat = (e, i) => {
+  const at = T0 + i * STEP, out = at + STEP - .3;
+  return `<div class="abs lab" ${A(at, out, 0, 'rise')} style="left:0;top:910px;width:1080px;text-align:center;font-size:28px;letter-spacing:7px;color:${Y}">${e.k}</div>
+  <div class="abs h" ${A(at + .2, out, 0, 'rise')} style="left:0;top:970px;width:1080px;text-align:center;font-size:84px">${e.t}</div>
+  ${e.price ? st(240, 1200, 600, 170, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:96px;color:${DARK}">${e.price}</div>`, { fill: Y, r: -2, z: 6, attrs: A(at + .9, out, -2) })
+    + `<div class="abs mut" ${A(at + 1.3, out, 0, 'rise')} style="left:0;top:1400px;width:1080px;text-align:center;font-weight:600;font-size:36px">${e.b}</div>`
+    : `<div class="abs mut" ${A(at + .8, out, 0, 'rise')} style="left:60px;right:60px;top:1205px;text-align:center;font-weight:600;font-size:40px;line-height:1.35">${e.b}</div>`}`;
+};
+const END = T0 + BEATS.length * STEP;
+reel(`${ghosts([[920, 140, 80, 6], [60, 300, 80, -8]])}
+  ${reelPath('M-20 1840 C160 1800 300 1890 520 1850 S860 1790 1100 1830')}
+  <div class="abs" ${A(.2, END - .3, 0, 'rise')} style="left:70px;top:130px;display:flex;align-items:center;gap:22px">${emblemDisc('yugioh', 84)}<div><div class="lab" style="font-size:26px;letter-spacing:6px;color:${Y}">YU-GI-OH!</div><div class="lab" style="font-size:24px;letter-spacing:5px;color:${VSOFT};margin-top:6px">L’HISTOIRE D’UNE CARTE</div></div></div>
+  ${card('assets/carte-tyler-great-warrior.jpg', 330, 270, 420, -3, 3, { h: 542, attrs: A(.4, END - .3, -3) })}
+  <div class="abs h" ${A(.9, T0 - .3, 0, 'rise')} style="left:0;top:930px;width:1080px;text-align:center;font-size:100px">Une seule carte<br><span style="color:${Y}">au monde.</span></div>
+  <div class="abs mut" ${A(1.5, T0 - .3, 0, 'rise')} style="left:0;top:1170px;width:1080px;text-align:center;font-weight:600;font-size:40px">Tyler le Grand Guerrier.</div>
+  ${BEATS.map(beat).join('')}
+  <div class="abs" ${A(T0, END - .3, 0, 'fade')} style="left:70px;right:70px;top:1560px;text-align:center;font-family:Exo;font-size:24px;line-height:1.4;color:rgba(255,255,255,.45)">Sources : pcagrade.com, ygorganization.com, relevé le 07/10/2026.<br>Photo : Otaku USA Magazine. © Studio Dice / Shueisha, TV TOKYO, KONAMI.</div>
+  <div class="abs h" ${A(END, null, 0, 'rise')} style="left:0;top:470px;width:1080px;text-align:center;font-size:88px">Et toi, ta carte<br><span style="color:${Y}">la plus précieuse ?</span></div>
+  <div ${A(END + .5, null, 0, 'rise')} class="abs" style="left:0;top:0;width:1080px;height:1920px">${closing(820, 110)}</div>`, END + 3.6);
+</script></body></html>

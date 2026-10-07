@@ -53,10 +53,13 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2027-02-25': ('P', "Image de la carte : pokemontcg.io."),
  '2027-02-28': ('PML', ''),
  '2027-03-03': ('DY', ''),
+ '2027-03-06': ('L', ''),
  '2027-03-12': ('M', "Images des cartes : Scryfall."),
- '2027-03-15': ('P', "Photos des produits : investcollect.com, blazingtail.fr, pokepedia.fr, play-in.com."),
+ '2027-03-15': ('Y', "Photo de la carte : Otaku USA Magazine."),
  '2027-03-18': ('P', "Images des cartes : TCGdex."),
- '2027-03-21': ('M', "Photos des produits : investcollect.com, play-in.com."),
+ '2027-03-24': ('P', "Image de la carte : TCGdex."),
+ '2027-03-27': ('M', "Photos des produits : investcollect.com, play-in.com."),
+ '2027-03-30': ('P', "Photos des produits : investcollect.com, blazingtail.fr, pokepedia.fr, play-in.com."),
 }
 def note(date):
     ips, credit = POSTS[date]
