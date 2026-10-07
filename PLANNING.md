@@ -82,15 +82,15 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | mar. 30/03 | carrousel | 21 Guide des produits scellés | Épisode : Pokémon | Pokémon | ✅ programmé |
 | ven. 02/04 | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », 8 s (déplacé du 15/12 le 07/10 pour l'opening) | les 8 | ✅ programmé |
 | lun. 05/04 | carrousel | 25 Les raretés expliquées | Épisode Pokémon : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Pokémon | ✅ programmé |
-| mer. 14/04 | carrousel | 25 Les raretés expliquées | Épisode One Piece : 10 raretés, le vrai scan d’une carte et un zoom sur son repère | One Piece | prêt, en attente : visuels officiels marqués « SAMPLE » |
+| mer. 14/04 | carrousel | 25 Les raretés expliquées | Épisode One Piece : 10 raretés, le vrai scan d’une carte et un zoom sur son repère | One Piece | ✅ programmé (visuels officiels « SAMPLE », validés par l’utilisateur) |
 | ven. 23/04 | carrousel | 25 Les raretés expliquées | Épisode Lorcana : 8 raretés, le vrai scan d’une carte et un zoom sur son repère | Lorcana | ✅ programmé |
 | dim. 02/05 | carrousel | 25 Les raretés expliquées | Épisode Magic : 7 raretés, le vrai scan d’une carte et un zoom sur son repère | Magic | ✅ programmé |
 | mar. 11/05 | carrousel | 25 Les raretés expliquées | Épisode Yu-Gi-Oh! : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Yu-Gi-Oh! | ✅ programmé |
 | jeu. 20/05 | carrousel | 25 Les raretés expliquées | Épisode Dragon Ball : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Dragon Ball | ✅ programmé |
 | sam. 29/05 | carrousel | 25 Les raretés expliquées | Épisode Star Wars Unlimited : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Star Wars Unlimited | ✅ programmé |
-| lun. 07/06 | carrousel | 25 Les raretés expliquées | Épisode Warcraft : 5 raretés, le vrai scan d’une carte et un zoom sur son repère | Warcraft | prêt, en attente : scans en basse définition |
+| lun. 07/06 | carrousel | 25 Les raretés expliquées | Épisode Warcraft : 5 raretés, le vrai scan d’une carte et un zoom sur son repère | Warcraft | ✅ programmé (scans en basse définition, validés par l’utilisateur) |
 
-- **Avril à juin : la série « Les raretés expliquées »** (demandée le 07/10/2026), un épisode par jeu tous les 9 jours environ (`gabarits/raretes.html#<jeu>`). Les autres posts d’avril et mai se placent entre deux épisodes, un jour sur trois : le rappel du 16/03 les planifie. One Piece et Warcraft attendent l’avis de l’utilisateur (visuels « SAMPLE » de Bandai, scans Warcraft en 215 px).
+- **Avril à juin : la série « Les raretés expliquées »** (demandée le 07/10/2026), un épisode par jeu tous les 9 jours environ (`gabarits/raretes.html#<jeu>`). Les autres posts d’avril et mai se placent entre deux épisodes, un jour sur trois : le rappel du 16/03 les planifie. One Piece garde les visuels « SAMPLE » de Bandai et Warcraft ses scans en 215 px : validé par l’utilisateur le 07/10.
 - **Février et mars** : à compléter avec les sorties fixes dès qu'elles sont confirmées (Saint-Valentin le 14/02, Nauctis le 05/02, One Piece OP-19 annoncé au 05/03, Lorcana Into the Inkdark au 1er trimestre 2027) ; un post fixe qui tombe repousse les posts sans date des jours voisins. Avril s'écrit le 16/03.
 - **Les brouillons** (Cotes, Hyperia City, OP18/Icons, Tu préfères ?) sont des posts Instagram « Ne pas publier » à publication automatique coupée : le rappel de leur date les produit, transforme le brouillon en vrai post (`updateScheduledPost`) et crée TikTok, Facebook et la story.
 - **La série des cotes** utilise toujours les deux derniers relevés (le 1er et le 16 de chaque mois) avant sa date ; elle change de jeu à chaque édition.

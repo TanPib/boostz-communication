@@ -30,7 +30,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 22 | **L'histoire d'une carte** | carrousel, 6 slides, ou Reel | 🔥🔥🔥 | prêt (`histoire-carte.html`) | 15/03/2027 · Tyler le Grand Guerrier, en Reel (Yu-Gi-Oh!) |
 | 23 | **Zoom sur un artiste** | carrousel, 6 slides | 🔥🔥 | prêt (`zoom-artiste.html`) | 18/03/2027 · Yuka Morii sculpte ses Pokémon (Pokémon) |
 | 24 | **Opening** | Reel, vidéo tournée | 🔥🔥🔥 | une vidéo à nous (ou rebrandée) | 15/12/2026 · Collect Aura, nos cartes gradées (Pokémon) |
-| 25 | **Les raretés expliquées** | carrousel, une slide par rareté | 🔥🔥🔥 | série, un épisode par jeu (`raretes.html#<jeu>`) | 29/05/2027 · Star Wars Unlimited |
+| 25 | **Les raretés expliquées** | carrousel, une slide par rareté | 🔥🔥🔥 | série, un épisode par jeu (`raretes.html#<jeu>`) | 07/06/2027 · World of Warcraft |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -157,7 +157,7 @@ Demandé le 07/10/2026 : qui il ou elle est, son style, 3 ou 4 de ses cartes (vr
 Une ouverture filmée (colis de gradation, boosters, display), avec sa voix. Ajouté le 07/10/2026 pour une vidéo de l'ancien compte PokePotes : on garde la voix, on coupe ce qui nomme l'ancien compte, on remplace tout filigrane par celui de Boostz (`filigrane.html`, le @ du réseau) et la fin par l'écran Boostz (`opening-fin.html`). Pas de musique Instagram par-dessus la voix. Créditer le monteur et la société de gradation, tagués dans la légende.
 
 ### 25 · Les raretés expliquées
-Demandé le 07/10/2026 : pour chaque jeu, chaque rareté avec le vrai scan d’une carte de cette rareté, un zoom découpé dans le même scan sur son repère (symbole, code, lettre, couleur, ou le nom et l’illustration pour Yu-Gi-Oh!), comment la reconnaître, et le taux de tirage seulement quand une source le donne, marqué « estimation ». Listes de cartes : workflows TCGdex et Page (Lorcast, Scryfall, tcgcsv/TCGplayer, RetroTCG). Faits : les 8 jeux (One Piece et Warcraft en attente).
+Demandé le 07/10/2026 : pour chaque jeu, chaque rareté avec le vrai scan d’une carte de cette rareté, un zoom découpé dans le même scan sur son repère (symbole, code, lettre, couleur, ou le nom et l’illustration pour Yu-Gi-Oh!), comment la reconnaître, et le taux de tirage seulement quand une source le donne, marqué « estimation ». Listes de cartes : workflows TCGdex et Page (Lorcast, Scryfall, tcgcsv/TCGplayer, RetroTCG). Faits : les 8 jeux, du 05/04 au 07/06/2027.
 
 ### News TCG
 Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, record, ban) prend la place du prochain post qui n'est lié à aucune date, dans le format qui lui va le mieux.
@@ -211,11 +211,13 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | mar. 30/03/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Épisode : Pokémon | Pokémon | `images/2027-03-30-guide-scelles-pokemon/` |
 | ven. 02/04/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 8 | « Tu joues lequel ? », 8 s | les 8 | `videos/2027-04-02-choisis-ton-combattant-8s.mp4` |
 | lun. 05/04/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Pokémon | Pokémon | `images/2027-04-05-raretes-pokemon/` |
+| mer. 14/04/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : One Piece | One Piece | `images/2027-04-14-raretes-onepiece/` |
 | ven. 23/04/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Lorcana | Lorcana | `images/2027-04-23-raretes-lorcana/` |
 | dim. 02/05/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Magic | Magic | `images/2027-05-02-raretes-magic/` |
 | mar. 11/05/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Yu-Gi-Oh! | Yu-Gi-Oh! | `images/2027-05-11-raretes-yugioh/` |
 | jeu. 20/05/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Dragon Ball | Dragon Ball | `images/2027-05-20-raretes-dragonball/` |
 | sam. 29/05/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Star Wars Unlimited | Star Wars Unlimited | `images/2027-05-29-raretes-starwarsunlimited/` |
+| lun. 07/06/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Warcraft | Warcraft | `images/2027-06-07-raretes-wow/` |
 
 Chaque vidéo porte une musique originale composée en code (`outils/musique.mjs`, mixée vers −18 LUFS par `outils/mixer.sh`), pour TikTok et Facebook ; les Reels Instagram jouent en plus la piste de la bibliothèque Instagram indiquée.
 
