@@ -22,11 +22,15 @@ jobs:
         run: |
           pip install -q faster-whisper
           python3 - <<'PY'
-          import os
+          import os, subprocess
+          import numpy as np
           from faster_whisper import WhisperModel
           f = os.environ['FICHIER']
+          # Decode with ffmpeg: faster-whisper's own decoder breaks on some PyAV releases.
+          raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', f, '-vn', '-ac', '1', '-ar', '16000', '-f', 's16le', '-'], capture_output=True, check=True).stdout
+          audio = np.frombuffer(raw, np.int16).astype(np.float32) / 32768
           model = WhisperModel('medium', device='cpu', compute_type='int8')
-          segments, _ = model.transcribe(f, language='fr', word_timestamps=True)
+          segments, _ = model.transcribe(audio, language='fr', word_timestamps=True)
           with open(f + '.mots.txt', 'w') as out:
               for s in segments:
                   out.write(f'## {s.start:.2f}-{s.end:.2f} {s.text.strip()}\n')
