@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz vignette opening</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Cover of the Collect Aura opening Reel (15/12/2026), asked "une vignette qui
+// claque": the Ectoplasma ex graded 10, held up in the video (frame at 25.8 s,
+// cropped clear of the TikTok mark), on a burst of the brand colours. Everything
+// that matters sits in the 3:4 band (y 240-1680) the profile grid keeps.
+//   node rendu.mjs vignette-opening.html images
+const Y = GAMES.pokemon[1];
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const rays = Array.from({ length: 18 }, (_, i) => {
+  const a = i * 20, c = ['#FF4FA0', '#8B3DFF', '#3AA9FF'][i % 3];
+  return `<polygon points="540,1060 ${540 + 1700 * Math.cos((a - 5) * Math.PI / 180)},${1060 + 1700 * Math.sin((a - 5) * Math.PI / 180)} ${540 + 1700 * Math.cos((a + 5) * Math.PI / 180)},${1060 + 1700 * Math.sin((a + 5) * Math.PI / 180)}" fill="${c}" opacity=".22"/>`;
+}).join('');
+// Confetti only in the side margins and the bottom corners, clear of the text.
+const spots = [[60, 640], [120, 820], [70, 1010], [140, 1200], [990, 660], [930, 860], [1000, 1060], [950, 1250], [210, 1500], [870, 1500], [300, 1600], [780, 1610], [60, 1380], [1010, 1400]];
+const bits = spots.map(([x, y], i) => {
+  const c = ['#FF4FA0', '#8B3DFF', '#3AA9FF', Y, '#5FD3A3', '#F5F2FB'][i % 6], w = 22 + rnd() * 14, round = i % 4 === 0;
+  return `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${round ? w : w * 1.6}px;border-radius:${round ? '50%' : '6px'};background:${c};border:4px solid ${SHADOW};transform:rotate(${rnd() * 180}deg)"></div>`;
+}).join('');
+carousel([['vignette', `<div class="abs" style="left:0;top:0;width:1080px;height:1920px;background:radial-gradient(circle at 50% 55%, #2A1650 0%, #131020 62%)"></div>
+  <svg class="abs" width="1080" height="1920" style="left:0;top:0">${rays}</svg>
+  ${bits}
+  <div class="abs lab" style="left:0;top:262px;width:1080px;text-align:center;font-size:34px;letter-spacing:12px;color:${Y}">OPENING · COLLECT AURA</div>
+  <div class="abs h" style="left:0;top:318px;width:1080px;text-align:center;font-size:128px;line-height:.98;text-shadow:10px 10px 0 ${SHADOW}">Nos notes<br><span style="color:${Y}">sont tombées !</span></div>
+  <div class="abs" style="left:250px;top:610px;width:580px;height:928px;transform:rotate(-4deg);border:10px solid ${INK};border-radius:34px;overflow:hidden;box-shadow:20px 20px 0 ${SHADOW};background:url(assets/opening-ectoplasma.jpg) center/cover"></div>
+  <div class="abs" style="left:700px;top:560px;width:300px;height:300px;border-radius:50%;background:${Y};border:10px solid ${INK};box-shadow:14px 14px 0 ${SHADOW};transform:rotate(12deg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:${DARK}">
+    <div class="h" style="font-size:150px;color:${DARK};line-height:.9;letter-spacing:-4px">10</div><div class="ui" style="font-size:34px;letter-spacing:2px">GEM MINT</div></div>
+  ${st(170, 1440, 740, 150, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:62px;color:${DARK}">6 cartes gradées 👀</div>`, { fill: '#F5F2FB', r: 2, z: 6 })}
+  <div class="abs" style="left:0;top:1660px;width:1080px;display:flex;justify-content:center">${wordmark(60)}</div>`]]);
+document.head.insertAdjacentHTML('beforeend', '<style>.p { height: 1920px; }</style>');
+</script></body></html>
