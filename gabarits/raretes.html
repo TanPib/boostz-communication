@@ -14,8 +14,10 @@ const RARETES = {
     pub: '2027-04-05',
     title: 'Commune, reverse, AR, SIR…',
     set: 'Méga-Évolution',
-    // The marker sits after the card number, bottom left: [x, y, w, h] in a 600 x 825 scan.
-    zoom: [52, 768, 150, 40],
+    // Scan size, and the marker zones to magnify: [x, y, w, h] in scan pixels.
+    // The Pokémon marker sits after the card number, bottom left.
+    size: [600, 825],
+    zooms: [[52, 768, 150, 40]],
     items: [
       ['rar-pk-commune.png', 'Commune', 'Common', 'Un rond noir ●.', 'Carte normale, sans brillance.', null, 'Tarsal 058/132'],
       ['rar-pk-peucommune.png', 'Peu commune', 'Uncommon', 'Un losange noir ◆.', 'Carte normale, sans brillance.', null, 'Caratroc 011/132'],
@@ -31,43 +33,203 @@ const RARETES = {
     sources: 'Sources : Poképédia, Bulbapedia, TCGplayer, relevé le 07/10/2026. Cartes : TCGdex.',
     credit: '© Pokémon / Nintendo / Creatures / GAME FREAK.',
   },
+  lorcana: {
+    pub: '2027-04-23',
+    title: 'Légendaire, enchantée…',
+    size: [674, 940],
+    // The rarity symbol sits bottom centre, between the artist and the copyright.
+    zooms: [[262, 870, 150, 56]],
+    items: [
+      ['rar-lo-commune.avif', 'Commune', 'Common', 'Un rond.', 'Carte normale.', null, 'Isabela Madrigal 3/207'],
+      ['rar-lo-peucommune.avif', 'Peu commune', 'Uncommon', 'Un livre ouvert.', 'Carte normale.', null, 'Coco Lapin 5/207'],
+      ['rar-lo-rare.avif', 'Rare', 'Rare', 'Un triangle bronze.', 'Carte normale.', null, 'Woody 1/207'],
+      ['rar-lo-superrare.avif', 'Super rare', 'Super Rare', 'Un losange argenté.', 'Carte normale.', null, 'Mike Wazowski 18/207'],
+      ['rar-lo-legendaire.avif', 'Légendaire', 'Legendary', 'Un pentagone doré.', 'Carte normale, la plus rare des raretés « classiques ».', '1 booster sur 6', 'Le Seigneur des Ténèbres 22/207'],
+      ['rar-lo-epique.avif', 'Épique', 'Epic · depuis le chapitre 9', 'Un symbole arc-en-ciel.', 'Illustration étendue sans cadre et brillance arc-en-ciel.', '1 par boîte', 'Jasmine 208/207'],
+      ['rar-lo-enchantee.avif', 'Enchantée', 'Enchanted', 'Un hexagone arc-en-ciel.', 'Sans bordure : l’illustration couvre toute la carte, entièrement brillante.', '1 booster sur 100', 'Mike Wazowski 226/207'],
+      ['rar-lo-iconique.avif', 'Iconique', 'Iconic · depuis le chapitre 9', 'Un symbole arc-en-ciel propre.', 'Illustration inédite, dorure en relief : 2 cartes par chapitre.', '1 pour 20 cartons', 'Lilo & Stitch 244/207'],
+    ],
+    rates: 'Taux : estimations de joueurs et de TCGplayer, Ravensburger n’en publie pas.',
+    sources: 'Sources : Ravensburger, TCGplayer, Gameblog, relevé le 07/10/2026. Cartes : Lorcast, chapitre 13 en VO.',
+    credit: '© Disney, édité par Ravensburger.',
+  },
+  magic: {
+    pub: '2027-05-02',
+    title: 'Commune, mythique, showcase…',
+    size: [744, 1040],
+    markLabel: 'LES REPÈRES',
+    // The expansion symbol (its colour gives the rarity) and the letter and number, bottom left.
+    zooms: [[645, 580, 70, 60], [16, 966, 196, 56]],
+    zk: 2,
+    items: [
+      ['rar-mg-commune.png', 'Commune', 'Common', 'Symbole noir, lettre C.', 'Cadre normal.', null, 'Crieur du campus 0004'],
+      ['rar-mg-peucommune.png', 'Peu commune', 'Uncommon', 'Symbole argenté, lettre U.', 'Cadre normal.', null, 'Bruteflore 0124'],
+      ['rar-mg-rare.png', 'Rare', 'Rare', 'Symbole doré, lettre R.', 'Cadre normal. Au moins une rare ou mythique par booster.', null, 'Machinations de Jace 0032'],
+      ['rar-mg-mythique.png', 'Mythique', 'Mythic Rare', 'Symbole rouge-orangé, lettre M.', 'Cadre normal. Elle prend la place de la rare.', '1 rare sur 7', 'Tarmogoyf 0116'],
+      ['rar-mg-sansbordure.png', 'Sans bordure', 'Borderless', 'Numéro hors liste : 0374.', 'L’illustration va jusqu’au bord de la carte.', null, 'Tarmogoyf 0374'],
+      ['rar-mg-showcase.png', 'Showcase', 'Showcase frame', 'Numéro hors liste : 0337.', 'Un cadre spécial, propre à chaque extension.', null, 'Machinations de Jace 0337'],
+      ['rar-mg-terrain.png', 'Terrain plein art', 'Full-art basic land', 'Lettre L (terrain), numéro hors liste : 0382.', 'Un terrain de base dont l’illustration couvre toute la carte.', null, 'Plaine 0382', '', [[632, 880, 66, 56], [16, 966, 196, 56]]],
+    ],
+    rates: 'Taux : proportion annoncée par Wizards of the Coast pour les mythiques, arrondie.',
+    sources: 'Sources : Wizards of the Coast, MTG Wiki, relevé le 07/10/2026. Cartes : Scryfall, Fracture de la réalité en VF.',
+    credit: '© Wizards of the Coast.',
+  },
+  onepiece: {
+    pub: '2027-04-14',
+    title: 'SR, SEC, parallèle…',
+    size: [600, 838],
+    markLabel: 'LE CODE',
+    // The rarity code sits after the card number, bottom right; a parallel adds a star above it.
+    zooms: [[446, 758, 134, 54]],
+    items: [
+      ['rar-op-leader.jpg', 'Leader', 'Leader · L', 'Le code L.', 'Le chef de ton deck : de la vie au lieu d’un coût.', null, 'Shanks OP09-001'],
+      ['rar-op-commune.jpg', 'Commune', 'Common · C', 'Le code C.', 'Carte normale.', null, 'Shachi & Penguin OP09-003'],
+      ['rar-op-peucommune.jpg', 'Peu commune', 'Uncommon · UC', 'Le code UC.', 'Carte normale.', null, 'Building Snake OP09-008'],
+      ['rar-op-rare.jpg', 'Rare', 'Rare · R', 'Le code R.', 'Carte holo.', null, 'Uta OP09-002'],
+      ['rar-op-superrare.jpg', 'Super rare', 'Super Rare · SR', 'Le code SR.', 'Carte holo.', null, 'Shanks OP09-004'],
+      ['rar-op-secrete.jpg', 'Secrète rare', 'Secret Rare · SEC', 'Le code SEC.', 'Le plus haut palier du set : pas garantie dans une boîte.', null, 'Gol D. Roger OP09-118'],
+      ['rar-op-parallele.jpg', 'Parallèle', 'Parallel · « AA »', 'Le même code, avec une ★ au-dessus.', 'Même carte, même texte, nouvelle illustration.', null, 'Uta OP09-002'],
+      ['rar-op-manga.jpg', 'Manga rare', 'Manga Rare', 'Le code, avec une ★ au-dessus.', 'Une planche du manga en fond. Encore plus rare qu’une SEC.', null, 'Gol D. Roger OP09-118'],
+      ['rar-op-sp.jpg', 'SP', 'SP Card', 'Le numéro d’origine de la carte.', 'Une carte d’un ancien set, rééditée avec une nouvelle illustration.', null, 'Rob Lucci OP05-093'],
+      ['rar-op-tresor.jpg', 'Trésor rare', 'Treasure Rare · TR', 'Le code TR.', 'Une illustration exclusive, tirée en très peu d’exemplaires.', null, 'Zoro-Juurou ST18-004'],
+    ],
+    rates: '',
+    sources: 'Sources : Bandai, TCGTalk, Samurai Sword Tokyo, relevé le 07/10/2026. Cartes : visuels officiels en VO (TCGplayer).',
+    credit: '© Eiichiro Oda / Shueisha, Toei Animation, Bandai.',
+  },
+  yugioh: {
+    pub: '2027-05-11',
+    title: 'Super, ultra, secret…',
+    size: [500, 730],
+    markLabel: 'OÙ REGARDER',
+    // Nothing is printed: the rarity shows on the name and on the artwork.
+    zooms: [[20, 28, 310, 62], [58, 128, 384, 96]],
+    items: [
+      ['rar-yg-commune.jpg', 'Commune', 'Common', 'Nom noir ou blanc, sans brillance.', 'Rien ne brille.', null, 'Silver Fang LOB-EN010'],
+      ['rar-yg-rare.jpg', 'Rare', 'Rare', 'Nom argenté.', 'L’illustration ne brille pas.', null, 'Charubin LOB-EN015'],
+      ['rar-yg-super.jpg', 'Super rare', 'Super Rare', 'Nom normal.', 'L’illustration est holo.', null, 'Mystic Piper RA04-EN005'],
+      ['rar-yg-ultra.jpg', 'Ultra rare', 'Ultra Rare', 'Nom doré.', 'Illustration holo.', null, 'Mystic Piper RA04-EN005'],
+      ['rar-yg-secrete.jpg', 'Secret rare', 'Secret Rare', 'Nom arc-en-ciel.', 'Illustration holo à reflets en diagonale.', null, 'Mystic Piper RA04-EN005'],
+      ['rar-yg-ultimate.jpg', 'Ultimate rare', 'Prismatic Ultimate Rare', 'Nom doré.', 'Illustration et contours en relief, à reflets prismatiques.', null, 'Mystic Piper RA04-EN005'],
+      ['rar-yg-collector.jpg', 'Collector’s rare', 'Prismatic Collector’s Rare', 'Reflets arc-en-ciel sur toute la carte.', 'Une texture qui rappelle une empreinte digitale.', null, 'Mystic Piper RA04-EN005'],
+      ['rar-yg-platinum.jpg', 'Platinum secret', 'Platinum Secret Rare', 'Nom platine.', 'Brillance platine éclatée, sur toute la carte.', null, 'Mystic Piper RA04-EN005'],
+      ['rar-yg-quarter.jpg', 'Quarter Century', 'Quarter Century Secret Rare', 'Nom or champagne.', 'Toute la carte brille, logo « 25th » dans le texte.', null, 'Mystic Piper RA04-EN005'],
+    ],
+    rates: '',
+    sources: 'Sources : Konami, Yugipedia, TCGplayer, relevé le 07/10/2026. Cartes : scans TCGplayer en VO.',
+    credit: '© Studio Dice / Shueisha, TV TOKYO, KONAMI.',
+  },
+  dragonball: {
+    pub: '2027-05-20',
+    title: 'SR, SCR, alt-art…',
+    size: [600, 838],
+    markLabel: 'LE CODE',
+    // The rarity code sits under the card number, bottom right; alt arts add one or two stars.
+    zooms: [[494, 734, 106, 54]],
+    items: [
+      ['rar-db-leader.jpg', 'Leader', 'Leader · L', 'Le code L.', 'Le chef de ton deck : il «&nbsp;s’éveille&nbsp;» en se retournant.', null, 'Son Goku FB10-001'],
+      ['rar-db-commune.jpg', 'Commune', 'Common · C', 'Le code C.', 'Carte normale.', null, 'Majin Buu FB10-019'],
+      ['rar-db-peucommune.jpg', 'Peu commune', 'Uncommon · UC', 'Le code UC.', 'Carte normale.', null, 'Vegito FB10-041'],
+      ['rar-db-rare.jpg', 'Rare', 'Rare · R', 'Le code R.', 'Carte normale.', null, 'Son Goku : BR FB10-012'],
+      ['rar-db-superrare.jpg', 'Super rare', 'Super Rare · SR', 'Le code SR.', 'Carte brillante.', null, 'Vegito FB10-040'],
+      ['rar-db-alt.jpg', 'Alt-art', 'Alternate Art · SR★', 'Le code, suivi d’une ★.', 'Même carte, illustration étendue et brillance plus riche.', null, 'Vegito FB10-040'],
+      ['rar-db-secrete.jpg', 'Secrète rare', 'Secret Rare · SCR', 'Le code SCR.', 'Le plus haut palier : 2 par set environ.', null, 'Vegito FB10-121'],
+      ['rar-db-secretealt.jpg', 'Secrète alt-art', 'Secret Rare · SCR★', 'SCR, suivi d’une ★.', 'La secrète, en illustration alternative.', null, 'Vegito FB10-121'],
+      ['rar-db-superalt.jpg', 'Super alt-art', 'Super Alternate Art · SCR★★', 'SCR, suivi de deux ★.', 'Une illustration façon case de manga : la plus recherchée.', '1 à 2 par boîte', 'Vegito FB10-121'],
+    ],
+    rates: 'Taux : estimation d’un revendeur, Bandai n’en publie pas.',
+    sources: 'Sources : Bandai, Neokyo, Geeky Domain, relevé le 07/10/2026. Cartes : scans TCGplayer, set Cross Force en VO.',
+    credit: '© Bird Studio / Shueisha, Toei Animation, Bandai.',
+  },
+  starwarsunlimited: {
+    pub: '2027-05-29',
+    title: 'Hyperspace, showcase…',
+    size: [716, 1000],
+    markLabel: 'LA LETTRE',
+    // The rarity letter sits between the set code and the card number, bottom right.
+    zooms: [[512, 934, 200, 44]],
+    items: [
+      ['rar-sw-commune.jpg', 'Commune', 'Common · C', 'La lettre C, couleur bronze.', 'Carte normale.', null, 'Lepi Lookout 38/264'],
+      ['rar-sw-peucommune.jpg', 'Peu commune', 'Uncommon · U', 'La lettre U.', 'Carte normale.', null, 'Zeb Orrelios 45/264'],
+      ['rar-sw-rare.jpg', 'Rare', 'Rare · R', 'La lettre R.', 'Carte normale.', null, 'Cassian Andor 56/264'],
+      ['rar-sw-legendaire.jpg', 'Légendaire', 'Legendary · L', 'La lettre L, en bleu.', 'Elle prend la place de la rare.', '1 booster sur 8', 'Maul 54/264'],
+      ['rar-sw-speciale.jpg', 'Spéciale', 'Special · S', 'La lettre S.', 'Une rareté à part, hors des cases classiques.', null, 'Han Solo 37/264'],
+      ['rar-sw-hyperspace.jpg', 'Hyperspace', 'Hyperspace', 'Même lettre, numéro hors série.', 'L’illustration s’étend sur toute la carte.', null, 'Maul, numéro 318'],
+      ['rar-sw-showcase.jpg', 'Showcase', 'Showcase · leaders', 'Même lettre, numéro hors série.', 'Un leader à l’illustration alternative et au cadre unique.', '1 booster sur 288', 'Jabba le Hutt, leader', '', { size: [1000, 716], zooms: [[740, 650, 250, 46]] }],
+      ['rar-sw-prestige.jpg', 'Prestige', 'Prestige', 'Même lettre, numéro hors série.', 'Un traitement graphique alternatif d’une carte du set.', null, 'Maul, numéro 815'],
+      ['rar-sw-numerotee.jpg', 'Prestige numérotée', 'Serialized', 'Un numéro d’exemplaire sur la carte : ici 000/250.', 'Tirée à 250 exemplaires, chacun numéroté.', null, 'Maul, numéro 893'],
+    ],
+    rates: 'Taux : chiffres officiels relayés par Vault Games et Cardgamer, arrondis.',
+    sources: 'Sources : Fantasy Flight Games, Vault Games, Cardgamer, relevé le 07/10/2026. Cartes : TCGplayer, A Lawless Time en VO.',
+    credit: '© & ™ Lucasfilm Ltd., édité par Fantasy Flight Games.',
+  },
+  wow: {
+    pub: '2027-06-07',
+    title: 'Commune, épique, loot…',
+    size: [215, 300],
+    markLabel: 'LA COULEUR',
+    // The rarity is the colour of the set name and number, bottom left (the colours of the game's items).
+    zooms: [[38, 279, 96, 15]],
+    zk: 4.3,
+    items: [
+      ['rar-wo-commune.jpg', 'Commune', 'Common', 'Numéro en blanc.', 'Carte normale.', null, 'Zephyr, Fires of Outland'],
+      ['rar-wo-peucommune.jpg', 'Peu commune', 'Uncommon', 'Numéro en vert.', 'Carte normale.', null, 'Kana Nassis, Fires of Outland'],
+      ['rar-wo-rare.jpg', 'Rare', 'Rare', 'Numéro en bleu.', 'Carte normale.', null, 'Tree of Life, Fires of Outland'],
+      ['rar-wo-epique.jpg', 'Épique', 'Epic', 'Numéro en violet.', 'Comme les objets violets du jeu vidéo.', null, 'Prophet Velen, Fires of Outland'],
+      ['rar-wo-loot.jpg', 'Carte Loot', 'Loot card', 'Numéro en bleu : c’est une rare.', 'Elle porte un code à gratter, pour un objet du jeu en ligne : ici, une monture.', '1 booster sur 484', 'Tigre spectral, Fires of Outland'],
+    ],
+    rates: 'Taux : Guinness World Records, pour le Tigre spectral.',
+    sources: 'Sources : Wikipédia, Citizendium, Guinness World Records, relevé le 07/10/2026. Cartes : RetroTCG, en VO. Le jeu n’est plus édité depuis 2013.',
+    credit: '© Blizzard Entertainment.',
+  },
 };
 const g = RARETES[game];
 window.PUB = g.pub;
 const C = GAMES[game][1], N = g.items.length;
-const [zx, zy, zw, zh] = g.zoom;
-const cardImg = (img, x, y, w, r, rev) => {
-  const h = w * 825 / 600;
+const [SW, SH] = g.size;
+const cardImg = (img, x, y, w, r, rev, iw = SW, ih = SH) => {
+  const h = w * ih / iw;
   // Reverse: a sheen everywhere but the artwork window (x 7.8-92.2 %, y 9.7-47.3 % on this layout).
   const sheen = rev ? `<svg class="abs" width="${w}" height="${h}" viewBox="0 0 100 137.5" preserveAspectRatio="none" style="left:0;top:0;mix-blend-mode:screen"><defs><linearGradient id="sh" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".35" stop-color="#9FE8FF" stop-opacity=".85"/><stop offset=".5" stop-color="#FFB8F0" stop-opacity=".9"/><stop offset=".65" stop-color="#FFF3A0" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
     <path fill-rule="evenodd" fill="url(#sh)" d="M0 0H100V137.5H0Z M7.8 13.3H92.2V65H7.8Z"/></svg>` : '';
   return `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;transform:rotate(${r}deg);border:8px solid ${INK};border-radius:${w * .05}px;overflow:hidden;box-shadow:16px 16px 0 ${SHADOW};z-index:3;background:#000"><img src="assets/${img}" style="width:100%;height:100%;display:block">${sheen}</div>`;
 };
-// The zoom: the marker area of the scan, magnified 2.2 times, as a sticker.
-const zoom = (img, x, y) => {
-  const k = 2.8, w = zw * k, h = zh * k;
-  return `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:7px solid ${INK};border-radius:24px;box-shadow:12px 12px 0 ${SHADOW};overflow:hidden;z-index:5;transform:rotate(2deg);background:url(assets/${img}) ${-zx * k}px ${-zy * k}px / ${600 * k}px ${825 * k}px no-repeat"></div>`;
+// The zoom: a marker area of the scan, magnified to 420 px wide at most, as a sticker.
+const zoom = (img, [zx, zy, zw, zh], x, y, iw = SW, ih = SH) => {
+  const k = Math.min(g.zk || 2.8, 420 / zw), w = zw * k, h = zh * k;
+  return `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:7px solid ${INK};border-radius:24px;box-shadow:12px 12px 0 ${SHADOW};overflow:hidden;z-index:5;transform:rotate(2deg);background:url(assets/${img}) ${-zx * k}px ${-zy * k}px / ${iw * k}px ${ih * k}px no-repeat"></div>`;
+};
+// One or two zooms stacked under "LE SYMBOLE"; returns the html and the y where the text can start.
+const zooms = (img, list, iw, ih) => {
+  let y = 410, html = '';
+  for (const z of list) { html += zoom(img, z, 600, y, iw, ih); y += z[3] * Math.min(g.zk || 2.8, 420 / z[2]) + 30; }
+  return [html, y + 4];
 };
 carousel([
   ['1-couverture', `${ghosts([[70, 1080, 80, -6], [930, 1060, 70, 8]])}${track(0, 1180, .4)}${head('LE GUIDE', game, 'Les raretés')}
-    ${cardImg(g.items[0][0], 120, 250, 260, -8)}${cardImg(g.items[5][0], 410, 220, 260, 0)}${cardImg(g.items[8][0], 700, 250, 260, 8)}
+    ${cardImg(g.items[0][0], 120, 250, 260, -8)}${cardImg((g.cover || g.items)[Math.floor(N / 2)][0], 410, 220, 260, 0)}${cardImg(g.items[N - 1][0], 700, 250, 260, 8)}
     <div class="abs h" style="left:0;top:690px;width:1080px;text-align:center;font-size:${g.title.length > 24 ? 80 : 92}px">${g.title}<br><span style="color:${C}">tu t’y retrouves ?</span></div>
     <div class="abs mut" style="left:0;top:930px;width:1080px;text-align:center;font-weight:600;font-size:36px">${N} raretés, et comment les reconnaître.</div>
     <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
     <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
-  ...g.items.map(([img, name, alias, mark, look, rate, card, kind], i) => [`${i + 2}-${img.replace(/^rar-[a-z]+-|\.\w+$/g, '')}`, `${track(i + 1, 335, .1)}${head(`RARETÉ ${i + 1} / ${N}`, game, 'Les raretés expliquées')}
+  ...g.items.map(([img, name, alias, mark, look, rate, card, kind, own], i) => {
+    const o = Array.isArray(own) ? { zooms: own } : (own || {});
+    const [iw, ih] = o.size || [SW, SH];
+    const [zh, ty] = zooms(img, o.zooms || g.zooms, iw, ih);
+    return [`${i + 2}-${img.replace(/^rar-[a-z]+-|\.\w+$/g, '')}`, `${track(i + 1, 335, .1)}${head(`RARETÉ ${i + 1} / ${N}`, game, 'Les raretés expliquées')}
     <div class="abs h" style="left:70px;top:${name.length > 16 ? 168 : 150}px;font-size:${name.length > 16 ? 70 : 100}px;white-space:nowrap">${name}</div>
     <div class="abs ui" style="left:72px;top:262px;font-size:32px;color:${C}">${alias}</div>
-    ${cardImg(img, 60, 360, 480, -2, kind === 'reverse')}
-    <div class="abs lab" style="left:600px;top:372px;font-size:22px;letter-spacing:5px;color:${VSOFT}">LE SYMBOLE</div>
-    ${zoom(img, 600, 410)}
-    <div class="abs ui" style="left:600px;top:540px;width:420px;font-size:34px;line-height:1.25">${mark}</div>
-    <div class="abs lab" style="left:600px;top:690px;font-size:22px;letter-spacing:5px;color:${VSOFT}">LA CARTE</div>
-    <div class="abs" style="left:600px;top:728px;width:420px;font-family:Poppins;font-weight:600;font-size:32px;line-height:1.3">${look}</div>
-    ${rate ? `<div class="abs h" style="left:600px;top:960px;width:420px;font-size:50px;color:${C}">${rate}</div><div class="abs mut" style="left:600px;top:1025px;width:420px;font-size:24px;font-weight:600">environ, estimation</div>` : ''}
-    <div class="abs mut" style="left:60px;top:1040px;width:480px;text-align:center;font-family:Exo;font-weight:600;font-size:24px">${card}${kind === 'reverse' ? '<br>(effet reverse illustré)' : ''}</div>
-    ${src(`${rate ? g.rates + ' ' : ''}${g.sources} ${g.credit}`)}`]),
+    ${iw > ih ? cardImg(img, 40, 400, 520, -2, false, iw, ih) : cardImg(img, 60, 360, 480, -2, kind === 'reverse')}
+    <div class="abs lab" style="left:600px;top:372px;font-size:22px;letter-spacing:5px;color:${VSOFT}">${g.markLabel || 'LE SYMBOLE'}</div>
+    ${zh}
+    <div class="abs ui" style="left:600px;top:${ty}px;width:420px;font-size:34px;line-height:1.25">${mark}</div>
+    <div class="abs lab" style="left:600px;top:${ty + 140}px;font-size:22px;letter-spacing:5px;color:${VSOFT}">LA CARTE</div>
+    <div class="abs" style="left:600px;top:${ty + 178}px;width:420px;font-family:Poppins;font-weight:600;font-size:32px;line-height:1.3">${look}</div>
+    ${rate ? `<div class="abs h" style="left:600px;top:${Math.max(960, ty + 400)}px;width:420px;font-size:50px;color:${C}">${rate}</div><div class="abs mut" style="left:600px;top:${Math.max(1025, ty + 465)}px;width:420px;font-size:24px;font-weight:600">environ, estimation</div>` : ''}
+    <div class="abs mut" style="left:60px;top:${iw > ih ? 400 + 520 * ih / iw + 30 : 360 + 480 * SH / SW + 24}px;width:480px;text-align:center;font-family:Exo;font-weight:600;font-size:24px">${card}${kind === 'reverse' ? '<br>(effet reverse illustré)' : ''}</div>
+    ${src(`${rate ? g.rates + ' ' : ''}${g.sources} ${g.credit}`)}`];
+  }),
   [`${N + 2}-boostz`, `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8], [110, 1120, 70, 4], [920, 1100, 80, -6]])}${track(N + 1, 1200, .6)}${head('SUR BOOSTZ', game, 'Les raretés expliquées')}
     <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Chaque rareté<br><span style="color:${C}">a sa cote.</span></div>
     ${back(game, 330, 470, 180, -8, 2)}${back(game, 560, 470, 180, 7, 2)}
