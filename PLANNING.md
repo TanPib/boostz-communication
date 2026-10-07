@@ -1,4 +1,4 @@
-# Planning du 16 octobre 2026 au 25 février 2027
+# Planning du 16 octobre 2026 au 3 mars 2027
 
 **Bêta fermée : samedi 28 novembre 2026**, sur inscription uniquement (MP, invitation par mail). **Sortie de l'appli : jeudi 14 janvier 2027** (décidés le 06/10/2026). Le premier post (16/10) annonce les deux dates ; janvier est construit autour du lancement.
 
@@ -29,7 +29,7 @@ Réorganisé le 07/10/2026 selon le rythme ci-dessus : les posts sans date ont �
 | \*sam. 31/10, 18 h | Reel | 16 Thème | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | ✅ programmé |
 | mar. 03/11 | Reel | 11 Annonce | Rejoins le serveur Discord Boostz (discord.gg/R54wCGtkr) | les 8 | ✅ programmé |
 | \*ven. 06/11 | carrousel | 15 Sortie d'extension | Règne Delta sort aujourd'hui (ME06) | Pokémon | ✅ programmé |
-| lun. 09/11 | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », 8 s | les 8 | ✅ programmé |
+| lun. 09/11 | carrousel | 22 L'histoire d'une carte | Le Pikachu Illustrateur : du concours CoroCoro de 1998 au record de 16,49 M$ | Pokémon | ✅ programmé |
 | \*jeu. 12/11 | carrousel | 15 Sortie d'extension | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | ✅ programmé |
 | \*sam. 14/11 | Reel | 11 Annonce | Bêta fermée J-14 | les 8 | ✅ programmé |
 | mar. 17/11 | carrousel | 21 Guide des produits scellés | Épisode 2 : One Piece | One Piece | ✅ programmé |
@@ -61,7 +61,7 @@ Réorganisé le 07/10/2026 selon le rythme ci-dessus : les posts sans date ont �
 | \*mar. 26/01 | Reel | 15 Sortie d'extension | Demain : le coffret Saint-Valentin Pokémon (27/01) | Pokémon | à produire (rappel du 16/01) |
 | \*ven. 29/01 | carrousel | 15 Sortie d'extension | Magic Nauctis : avant-premières dès le 29/01, sortie le 05/02 | Magic | à produire (rappel du 16/01) |
 | lun. 01/02 | carrousel | 13 Mythe ou réalité | « Une carte s'est vendue 5 250 \$… pour un tigre qui n'existe pas » | Warcraft | ✅ programmé (fin « disponible ») |
-| jeu. 04/02 | carrousel | 14 Tu préfères ? | La chase de FB11 contre celle de Magnificent Maestros | Dragon Ball, Yu-Gi-Oh! | brouillon dans Metricool, produit par le rappel du 01/02 |
+| jeu. 04/02 | carrousel | 23 Zoom sur un artiste | Atsuko Nishida, la créatrice de Pikachu, et ses cartes | Pokémon | à valider |
 | dim. 07/02 | carrousel | 21 Guide des produits scellés | Épisode 6 : Yu-Gi-Oh! | Yu-Gi-Oh! | ✅ programmé (fin « disponible ») |
 | mer. 10/02 | carrousel | 2 Cotes qui bougent | Édition n° 5 : du 16/01 au 01/02 | Lorcana | brouillon dans Metricool, produit par le rappel du 02/02 |
 | sam. 13/02 | Reel | 20 Erreurs d'impression | Caninos et Tortank à dos Magic, la carte « Discard » enchantée | Pokémon, Lorcana | ✅ programmé (fin « disponible ») |
@@ -69,6 +69,8 @@ Réorganisé le 07/10/2026 selon le rythme ci-dessus : les posts sans date ont �
 | ven. 19/02 | Reel | 12 Fonction à la loupe | L'échange : la valeur de chaque côté, avec de vraies cotes | Pokémon | ✅ programmé (fin « disponible », cotes à rafraîchir) |
 | lun. 22/02 | Reel | 3 1 chance sur N | La chase d'un set récent : N boosters, le coût de la chasse | One Piece | à produire (rappel du 15/02) |
 | jeu. 25/02 | carrousel | 7 Classeur panoramique | Une page de classeur qui se suit sur 3 slides | Star Wars Unlimited | à produire (rappel du 15/02) |
+| dim. 28/02 | Reel | 8 Choisis ton combattant | « Tu joues lequel ? », 8 s (déplacé du 09/11 le 07/10) | les 8 | ✅ programmé |
+| mer. 03/03 | carrousel | 14 Tu préfères ? | La chase de FB11 contre celle de Magnificent Maestros (déplacé du 04/02 le 07/10) | Dragon Ball, Yu-Gi-Oh! | brouillon dans Metricool, produit par le rappel du 28/02 |
 
 - **Février** : à compléter avec les sorties fixes dès qu'elles sont confirmées (Saint-Valentin le 14/02, Nauctis le 05/02, One Piece OP-19 annoncé au 05/03) ; un post fixe qui tombe repousse les posts sans date des jours voisins.
 - **Les brouillons** (Cotes, Hyperia City, OP18/Icons, Tu préfères ?) sont des posts Instagram « Ne pas publier » à publication automatique coupée : le rappel de leur date les produit, transforme le brouillon en vrai post (`updateScheduledPost`) et crée TikTok, Facebook et la story.

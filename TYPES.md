@@ -13,7 +13,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 5 | **Même carte, trois langues** | carrousel, 3 à 5 slides | 🔥🔥 | maquette | jamais |
 | 6 | **Devine la note** | carrousel, 2 slides | 🔥🔥 | maquette | jamais |
 | 7 | **Classeur panoramique** | carrousel, 3 slides qui se suivent | 🔥🔥 | maquette | jamais |
-| 8 | **Choisis ton combattant** | Reel, écran de sélection en stickers | 🔥🔥 | prêt | 09/11/2026 · les 8 jeux |
+| 8 | **Choisis ton combattant** | Reel, écran de sélection en stickers | 🔥🔥 | prêt | 28/02/2027 · les 8 jeux |
 | 9 | **Pub Boostz** | image ou Reel court | 🔥 | maquette | jamais |
 | 10 | **Édito** | image, thème clair | 🔥 | maquette | jamais |
 | 11 | **Annonce** | Reel | selon l'actu | prêt | 16/10/2026 · lancement |
@@ -27,6 +27,8 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 19 | **Repère la contrefaçon** | Reel ou carrousel | 🔥🔥🔥 | prêt | 27/12/2026 · Dracaufeu-ex |
 | 20 | **Erreurs d'impression** | Reel | 🔥🔥🔥 | prêt | 13/02/2027 · dos Magic, Discard |
 | 21 | **Guide des produits scellés** | carrousel | 🔥🔥 | prêt (`produits-scelles.html#<jeu>`) | 07/02/2027 · Yu-Gi-Oh! (un épisode par jeu, depuis le 20/10) |
+| 22 | **L'histoire d'une carte** | carrousel, 6 slides | 🔥🔥🔥 | prêt (`histoire-carte.html`) | 09/11/2026 · Pikachu Illustrateur (Pokémon) |
+| 23 | **Zoom sur un artiste** | carrousel, 6 slides | 🔥🔥 | à créer | jamais |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -143,6 +145,12 @@ Des cartes mal imprimées (cadre décalé, texte manquant, mauvais dos, double i
 Un épisode par jeu (demandé le 07/10/2026) : chaque format scellé (booster, blister, display, coffret, deck de démarrage…) sur une slide, avec sa vraie photo de boutique, ce qu'il contient et, si une boutique l'affiche, son prix du jour. Fait enregistrer. Les produits vendus seulement en VO sont présentés en VO (accepté le 07/10/2026). Chaque épisode sort la semaine d'une sortie de son jeu. Dragon Ball (VO) attend ses photos ; Warcraft n'a pas de photo de produit utilisable (seulement des logos).
 - **Données :** contenus et prix sourcés et datés (éditeur, Poképédia, boutiques) ; les photos des boutiques sont créditées, leurs logos et drapeaux masqués.
 
+### 22 · L'histoire d'une carte
+Demandé le 07/10/2026 : d'où vient une carte célèbre, ce qui la rend unique, ce qu'elle vaut aujourd'hui (ventes sourcées et datées), et une chute. La vraie image de la carte, créditée ; pas de photo de personne (droits). Idées : Tyler le Gardien (Yu-Gi-Oh!), l'Anneau Unique 1/1 (Magic), le Pikachu au chapeau de feutre Van Gogh, le Soldat du Chaos en acier (Yu-Gi-Oh!), le Luffy Gear 5 manga (One Piece).
+
+### 23 · Zoom sur un artiste
+Demandé le 07/10/2026 : qui il ou elle est, son style, 3 ou 4 de ses cartes (vrais scans crédités), sa carte la plus cotée, une anecdote. Ses cartes seulement, jamais sa photo. Idées : Atsuko Nishida, Mitsuhiro Arita, Yuka Morii (Pokémon), Rebecca Guay, Christopher Rush (Magic), Kazuki Takahashi (Yu-Gi-Oh!, en hommage).
+
 ### News TCG
 Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, record, ban) prend la place du prochain post qui n'est lié à aucune date, dans le format qui lui va le mieux.
 
@@ -157,7 +165,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | sam. 31/10/2026, 18 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | `videos/2026-10-31-halloween.mp4` |
 | mar. 03/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Rejoins le serveur Discord Boostz | les 8 | `videos/2026-11-03-discord.mp4` |
 | ven. 06/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Règne Delta sort aujourd'hui | Pokémon | `images/2026-11-06-sortie-regne-delta/` |
-| lun. 09/11/2026, 10 h | Instagram (Reel, musique « 8 Bit Breakthrough »), TikTok, Facebook (Reel), story Instagram et Facebook | 8 | Choisis ton combattant : « Tu joues lequel ? » | les 8 | `videos/2026-11-09-choisis-ton-combattant-8s.mp4` |
+| lun. 09/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 22 | L'histoire du Pikachu Illustrateur | Pokémon | `images/2026-11-09-histoire-pikachu-illustrateur/`, `videos/2026-11-09-story-histoire-pikachu-illustrateur.mp4` |
 | jeu. 12/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Cette semaine, deux sorties : Magnificent Maestros et Magic × Star Trek | Yu-Gi-Oh!, Magic | `images/2026-11-12-sorties-maestros-star-trek/` |
 | sam. 14/11/2026, 10 h | Instagram (Reel, musique « Cool »), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta fermée J-14 : teste Boostz avant tout le monde | les 8 | `videos/2026-11-14-beta-dans-2-semaines.mp4` |
 | mar. 17/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Guide des produits scellés : One Piece | One Piece | `images/2026-11-17-guide-scelles-onepiece/` |
@@ -182,6 +190,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | sam. 13/02/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 20 | Erreurs d'impression : Caninos et Tortank à dos Magic, la « Discard » enchantée | Pokémon, Lorcana | `videos/2027-02-13-erreurs-impression.mp4` |
 | mar. 16/02/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 17 | Lexique TCG : 7 mots | les 8 | `images/2027-02-16-lexique-tcg/` |
 | ven. 19/02/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 12 | Fonction à la loupe : l'échange | Pokémon | `videos/2027-02-19-fonction-echange.mp4` |
+| dim. 28/02/2027, 10 h | Instagram (Reel, musique « 8 Bit Breakthrough »), TikTok, Facebook (Reel), story Instagram et Facebook | 8 | Choisis ton combattant : « Tu joues lequel ? » | les 8 | `videos/2027-02-28-choisis-ton-combattant-8s.mp4` |
 
 Chaque vidéo porte une musique originale composée en code (`outils/musique.mjs`, mixée vers −18 LUFS par `outils/mixer.sh`), pour TikTok et Facebook ; les Reels Instagram jouent en plus la piste de la bibliothèque Instagram indiquée.
 

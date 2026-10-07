@@ -23,7 +23,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2026-10-31': ('MPL', ''),
  '2026-11-03': (ALL, "Logo Discord : © Discord Inc."),
  '2026-11-06': ('P', "Images des cartes : versions japonaises, samuraiswordtokyo.com et serebii.net."),
- '2026-11-09': (ALL, ''),
+ '2026-11-09': ('P', "Image de la carte : slabfol.io."),
  '2026-11-12': ('YMT', ''),
  '2026-11-14': (ALL, ''),
  '2026-11-17': ('O', "Photos des produits : chocobonplan.com, investcollect.com, espritjeu.com, play-in.com."),
@@ -48,6 +48,8 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2027-02-13': ('PLM', "Photos des cartes : CGC, Screen Rant, Fanatics Collect."),
  '2027-02-16': ('PML', ''),
  '2027-02-19': ('P', ''),
+ '2027-02-28': (ALL, ''),
+ '2027-03-03': ('DY', ''),
 }
 def note(date):
     ips, credit = POSTS[date]

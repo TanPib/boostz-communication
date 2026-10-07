@@ -57,6 +57,11 @@ const COVERS = [
   ['21-guide-des-scelles', `<rect x="28" y="12" width="20" height="34" rx="3" fill="${PINK}"/><rect x="50" y="8" width="20" height="38" rx="3" fill="${BLUE}"/>
     <rect x="14" y="40" width="72" height="48" rx="6" fill="${VIOLET}"/><rect x="14" y="40" width="72" height="13" rx="4" fill="${VSOFT}"/>
     <polygon points="${starPts(50, 70, 11, 4.8, 5)}" fill="${SUN}"/>`],
+  ['22-histoire-d-une-carte', `<path d="M50 24 Q30 14 8 20 L8 82 Q30 76 50 86 Z" fill="${VSOFT}"/><path d="M50 24 Q70 14 92 20 L92 82 Q70 76 50 86 Z" fill="${VSOFT}"/>
+    <rect x="58" y="30" width="24" height="34" rx="3" fill="${SUN}" transform="rotate(8 70 47)"/><polygon points="${starPts(29, 50, 10, 4.4, 5)}" fill="${PINK}"/>`],
+  ['23-zoom-artiste', `<rect x="14" y="20" width="56" height="66" rx="5" fill="${BLUE}"/><circle cx="34" cy="42" r="8" fill="${SUN}"/>
+    <path d="M18 80 L36 58 L48 70 L58 60 L66 80 Z" fill="${DONE}"/>
+    <path d="M86 10 L94 18 L60 56 L50 60 L54 50 Z" fill="${PINK}"/>`],
 ];
 carousel(COVERS.map(([id, svg]) => [id, `<svg class="abs" width="640" height="640" viewBox="0 0 100 100" style="left:220px;top:640px;overflow:visible;filter:drop-shadow(22px 22px 0 ${SHADOW})"><g stroke="${INK}" stroke-width="4" stroke-linejoin="round">${svg}</g></svg>`]));
 document.head.insertAdjacentHTML('beforeend', '<style>.p { height: 1920px; }</style>');

@@ -27,7 +27,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-10-31-halloween.mp4` | sam. 31/10/2026, 18 h — Instagram, TikTok, Facebook, stories | 9:16, 15 s, musique originale |
 | `videos/2026-11-03-discord.mp4` | mar. 03/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 17 s, musique originale (style discord), invitation au serveur Discord |
 | `images/2026-11-06-sortie-regne-delta/` | ven. 06/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
-| `videos/2026-11-09-choisis-ton-combattant-8s.mp4` | lun. 09/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 8 s, musique originale |
+| `images/2026-11-09-histoire-pikachu-illustrateur/` | lun. 09/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
 | `images/2026-11-12-sorties-maestros-star-trek/` | jeu. 12/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-11-14-beta-dans-2-semaines.mp4` | sam. 14/11/2026, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 16 s, bêta fermée J-14, musique originale |
 | `images/2026-11-17-guide-scelles-onepiece/` | mar. 17/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
@@ -54,6 +54,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-02-13-erreurs-impression.mp4` | sam. 13/02/2027, 10 h — Instagram, TikTok, Facebook, stories | 9:16, musique originale |
 | `images/2027-02-16-lexique-tcg/` | mar. 16/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-02-19-fonction-echange.mp4` | ven. 19/02/2027, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 12,4 s, musique originale |
+| `videos/2027-02-28-choisis-ton-combattant-8s.mp4` | dim. 28/02/2027, 10 h — Instagram, TikTok, Facebook, stories | 9:16, 1080 × 1920, 8 s, musique originale |
 | `images/brouillon/a-produire.jpg` | jamais : image des brouillons Metricool des posts qui attendent un relevé de cotes | 4:5, « Ne pas publier » |
 
 Les fichiers sont nommés par leur date de publication. Chaque vidéo publiée porte une musique originale, composée en code par `outils/musique.mjs` et mixée bas (`outils/mixer.sh`) : TikTok et Facebook n'ont pas d'API de musique pour les vidéos. Les Reels Instagram reçoivent en plus une piste de la bibliothèque Instagram.
