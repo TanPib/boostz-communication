@@ -9,8 +9,11 @@ window.PUB = '2027-01-01';
 // card per Reel, shown in five held steps from a tiny detail of the real scan
 // to the whole card, each step a level (Légende → Noob); then the name, and
 // the viewer says at which step they found it. Music: the "enquete" style.
-const CARD = ['assets/carte-dragon-blanc-yeux-bleus.jpg', .41, .32, 'yugioh', 'Dragon Blanc aux Yeux Bleus', 'Yu-Gi-Oh!'];
-const STEPS = [['LÉGENDE', 5, '#F5C93B'], ['EXPERT', 3.4, '#C4B5FD'], ['INTERMÉDIAIRE', 2.3, '#35C6BC'], ['DÉBUTANT', 1.5, '#3AA9FF'], ['NOOB', 1, '#F0899A']];
+const CARD = ['assets/carte-dragon-blanc-yeux-bleus.jpg', 0, 0, 'yugioh', 'Dragon Blanc aux Yeux Bleus', 'Yu-Gi-Oh!'];
+// Each step: level, zoom, the point of the scan at the centre of the frame.
+// Start on a corner nobody looks at (asked on 08/10/2026: not the centre of
+// the card, which gives it away), then move towards the subject.
+const STEPS = [['LÉGENDE', 6, '#F5C93B', .23, .6], ['EXPERT', 4, '#C4B5FD', .27, .56], ['INTERMÉDIAIRE', 2.6, '#35C6BC', .34, .52], ['DÉBUTANT', 1.6, '#3AA9FF', .45, .45], ['NOOB', 1, '#F0899A', .5, .5]];
 const S0 = 1.4, HOLD = 2.8, MOVE = .6, STEP = HOLD + MOVE, REV = S0 + STEPS.length * STEP - MOVE, END = REV + 2.6;
 const W = 600, H = 840, X = (1080 - W) / 2, Y = 470, [img, fx, fy, game, name, sub] = CARD;
 const ease = (x) => { x = clamp(x); return x * x * (3 - 2 * x); };
@@ -18,7 +21,7 @@ reel(`${ghosts([[60, 1560, 80, -8], [950, 1580, 70, 7]])}
   <div class="abs lab" style="left:0;top:140px;width:1080px;text-align:center;font-size:28px;color:${VSOFT}" ${A(0, END, 0, 'fade')}>ZOOM MYSTÈRE · 5 ÉTAPES</div>
   <div class="abs h" style="left:0;top:190px;width:1080px;text-align:center;font-size:100px" ${A(0, END, 0, 'rise')}>Tu la trouves<br><span style="color:${SUN}">à quelle étape ?</span></div>
   <div class="abs" style="left:${X}px;top:${Y}px;width:${W}px;height:${H}px;border:8px solid ${INK};border-radius:30px;overflow:hidden;box-shadow:16px 16px 0 ${SHADOW};background:#000;z-index:3" ${A(.2, END, 0, 'fade')}>
-    <img id="im" src="${img}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:${fx * 100}% ${fy * 100}%"></div>
+    <img id="im" src="${img}" style="position:absolute;left:0;top:0;width:${W}px;height:${H}px"></div>
   ${STEPS.map(([lvl, , c], k) => { const s = S0 + k * STEP; return st(250, Y - 50, 580, 100, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:46px;color:${DARK}">Étape ${k + 1} · ${lvl}</div>`, { fill: c, r: k % 2 ? 2 : -2, z: 6, attrs: A(s, s + HOLD, k % 2 ? 2 : -2) }); }).join('')}
   <div class="abs" style="left:0;top:${Y + H + 50}px;width:1080px;display:flex;justify-content:center;gap:22px;z-index:4" ${A(.3, END, 0, 'fade')}>${STEPS.map(([, , c], k) => `<div id="d${k}" style="width:150px;height:22px;border-radius:11px;background:rgba(196,181,253,.15)"></div>`).join('')}</div>
   ${st(170, Y + H - 140, 740, 190, `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:${DARK}"><div class="h" style="font-size:58px">${name}</div><div class="ui" style="font-size:30px">${sub}</div></div>`, { fill: GAMES[game][1], r: -2, z: 6, attrs: A(REV + .1, END, -2) })}
@@ -32,9 +35,13 @@ const base = window.render;
 window.render = (t) => {
   base(t);
   // Held on each step's zoom, then a slow move to the next one.
-  let z = STEPS[0][1];
-  STEPS.forEach(([, zk], k) => { if (k) { const a = S0 + k * STEP - MOVE; z += (zk - STEPS[k - 1][1]) * ease((t - a) / MOVE); } });
-  document.getElementById('im').style.transform = `scale(${z})`;
+  let [, z, , px, py] = STEPS[0];
+  STEPS.forEach(([, zk, , xk, yk], k) => { if (k) { const a = S0 + k * STEP - MOVE, e = ease((t - a) / MOVE), [, zp, , xp, yp] = STEPS[k - 1];
+    z += (zk - zp) * e; px += (xk - xp) * e; py += (yk - yp) * e; } });
+  // The point (px, py) at the centre, the frame never leaving the card.
+  const im = document.getElementById('im'), w = W * z, h = H * z;
+  im.style.width = `${w}px`; im.style.height = `${h}px`;
+  im.style.left = `${Math.min(0, Math.max(W - w, W / 2 - px * w))}px`; im.style.top = `${Math.min(0, Math.max(H - h, H / 2 - py * h))}px`;
   const cur = Math.min(STEPS.length - 1, Math.floor((t - S0) / STEP));
   STEPS.forEach(([, , c], k) => { document.getElementById('d' + k).style.background = t >= S0 && k <= cur ? c : 'rgba(196,181,253,.15)'; });
 };
