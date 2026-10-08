@@ -3,42 +3,52 @@
 <link rel="stylesheet" href="fonts/local.css">
 <script src="posts-emblems.js"></script><script src="stickers.js"></script>
 </head><body><script>
-window.PUB = '2027-02-22';
-// Mockup of "Le classeur à thème": a 9-pocket binder page fills pocket by
-// pocket, one card per game, its price under it, a running total on top.
-// Example prices: the real episode takes them from the records, dated.
-const CARDS = [
-  ['pokemon', 'assets/carte-pikachu-base1-58.png', 'Pikachu', 12],
-  ['onepiece', 'assets/carte-luffy-op05-119.jpg', 'Luffy', 38],
-  ['lorcana', 'assets/carte-elsa-enchantee-tfc-207.avif', 'Elsa', 2900],
-  ['yugioh', 'assets/carte-dragon-blanc-yeux-bleus.jpg', 'Dragon Blanc', 45],
-  ['magic', 'assets/carte-black-lotus-lea.jpg', 'Black Lotus', 24000],
-  ['starwarsunlimited', 'assets/carte-dark-vador-hmw-007.png', 'Dark Vador', 6],
-  ['dragonball', 'assets/carte-son-goku-fb01-139.webp', 'Son Goku', 21],
-  ['wow', 'assets/carte-tigre-spectral.jpg', 'Tigre spectral', 1900],
-];
-const T0 = 2.2, STEP = 1.1;
-const W = 220, H = 308, PX = 140, PY = 450, GX = 34, GY = 62;
-const pos = (i) => [PX + 40 + (i % 3) * (W + GX), PY + 40 + Math.floor(i / 3) * (H + GY)];
-const END = T0 + 9 * STEP + .6;
-const pocket = (i) => { const [x, y] = pos(i); return `<div class="abs" style="left:${x}px;top:${y}px;width:${W}px;height:${H}px;border-radius:14px;background:rgba(196,181,253,.08);border:3px dashed rgba(196,181,253,.3)"></div>`; };
-reel(`${ghosts([[50, 180, 80, -8], [950, 230, 70, 7]])}
-  <div class="abs lab" style="left:0;top:96px;width:1080px;text-align:center;font-size:26px;letter-spacing:6px;color:${VSOFT}" ${A(0, END, 0, 'fade')}>LE CLASSEUR À THÈME · PAGE N°1</div>
-  <div class="abs h" style="left:0;top:150px;width:1080px;text-align:center;font-size:96px" ${A(0, END, 0, 'rise')}>La star de<br>chaque jeu</div>
-  ${st(300, 352, 480, 76, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:34px;color:${DARK}">Total : <span id="tot" style="margin-left:12px">0 €</span></div>`, { fill: SUN, r: -2, z: 6, attrs: A(.6, END) })}
-  <div class="abs" style="left:${PX}px;top:${PY}px;width:800px;height:${3 * H + 2 * GY + 130}px;border-radius:30px;background:#1D1730;border:6px solid ${INK};box-shadow:14px 14px 0 ${SHADOW}" ${A(.3, END, 0, 'fade')}>
-    <div class="abs" style="left:-6px;top:-6px">${Array.from({ length: 9 }, (_, i) => pocket(i).replace(`left:${pos(i)[0]}`, `left:${pos(i)[0] - PX}`).replace(`top:${pos(i)[1]}`, `top:${pos(i)[1] - PY}`)).join('')}</div></div>
-  ${CARDS.map(([g, img, name, v], i) => { const [x, y] = pos(i), at = T0 + i * STEP; return `${card(img, x, y, W, 0, 3, { h: H, attrs: A(at, END, [-2, 1.5, -1, 2, -1.5, 1, -2, 1.5][i]) })}
-    <div class="abs ui" style="left:${x - 20}px;top:${y + H + 8}px;width:${W + 40}px;text-align:center;font-size:36px;color:${GAMES[g][1]};z-index:5" ${A(at + .35, END, 0, 'rise')}>${eur(v)}</div>`; }).join('')}
-  ${(() => { const [x, y] = pos(8); return `<div class="abs h" style="left:${x}px;top:${y + 60}px;width:${W}px;text-align:center;font-size:44px;color:${VSOFT};z-index:4" ${A(T0 + 8 * STEP, END, -3)}>Et toi,<br>tu mets<br>quoi ?</div>`; })()}
-  <div class="abs src" style="left:70px;right:70px;bottom:215px;text-align:center;font-size:24px;color:rgba(255,255,255,.5)" ${A(.3, END, 0, 'fade')}>MAQUETTE · CHIFFRES D'EXEMPLE (le vrai post : cotes Cardmarket et TCGplayer datées)</div>
-  <div class="abs h" style="left:0;top:420px;width:1080px;text-align:center;font-size:84px" ${A(END + .2, null, 0, 'rise')}>Cette page vaut</div>
-  ${st(240, 540, 600, 170, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:100px;color:${DARK}">${eur(CARDS.reduce((a, c) => a + c[3], 0))}</div>`, { fill: SUN, r: -3, z: 6, attrs: A(END + .5, null, -3) })}
-  <div class="abs ui" style="left:0;top:800px;width:1080px;text-align:center;font-size:44px;color:${VSOFT}" ${A(END + 1.1, null, 0, 'rise')}>Ta 9e carte en commentaire 👇</div>
-  <div ${A(END + 1.6, null, 0, 'fade')} class="abs" style="left:0;top:0;width:1080px;height:1920px">${closing(1080)}</div>
-  ${reelPath('M-20 1830 C160 1780 300 1890 520 1840 S860 1760 1100 1820')}`, END + 5);
-// The running total follows the price stickers.
+window.PUB = '2026-12-09';
+// Mockup of "Le classeur à thème": a 9-pocket binder page built for its
+// look, on one theme (here winter), cards from any game chosen for their
+// art. The cards slide into their sleeves one by one under falling snow;
+// the page's value only comes at the very end, small.
+const ICE = '#A8DDF5', WHITE = '#FFFFFF';
+const CARDS = ['hiv-snow-forest.jpg', 'hiv-givrali-v-alt.png', 'hiv-anna.avif', 'hiv-olaf.avif', 'carte-elsa-enchantee-tfc-207.avif',
+  'hiv-trishula.jpg', 'hiv-givrali-vmax-alt.png', 'hiv-snow-island.jpg', 'hiv-lokhlass.png'];
+const T0 = 1.6, STEP = .55, HOLD = T0 + 9 * STEP + .4, END = HOLD + 3.4;
+const W = 236, H = 330, GX = 24, GY = 28, PAD = 36, PW = 3 * W + 2 * GX + 2 * PAD, PH = 3 * H + 2 * GY + 2 * PAD, PX = (1080 - PW) / 2, PY = 500;
+const pos = (i) => [PAD + (i % 3) * (W + GX), PAD + Math.floor(i / 3) * (H + GY)];
+// Sleeves: an empty pocket, then the card, then the sleeve's gloss over it.
+const sleeves = CARDS.map((img, i) => { const [x, y] = pos(i); return `
+  <div class="abs" style="left:${x}px;top:${y}px;width:${W}px;height:${H}px;border-radius:14px;background:rgba(255,255,255,.07);border:3px solid rgba(255,255,255,.25)"></div>
+  <div id="c${i}" class="abs" style="left:${x}px;top:${y}px;width:${W}px;height:${H}px;border-radius:12px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.45);opacity:0"><img src="assets/${img}" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  <div id="g${i}" class="abs" style="left:${x}px;top:${y}px;width:${W}px;height:${H}px;border-radius:14px;overflow:hidden;pointer-events:none"><div id="sh${i}" style="position:absolute;top:-20%;left:-60%;width:40%;height:140%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:rotate(18deg);opacity:0"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18),transparent 40%,transparent 70%,rgba(255,255,255,.1))"></div></div>`; }).join('');
+// Snow on the page's top edge.
+const cap = `<svg class="abs" width="${PW + 40}" height="80" viewBox="0 0 ${PW + 40} 80" style="left:-20px;top:-46px;z-index:4;filter:drop-shadow(6px 6px 0 ${SHADOW})"><path d="M10 64 Q30 30 70 40 Q110 14 160 34 Q210 10 270 30 Q330 8 390 32 Q450 12 510 30 Q570 6 630 30 Q690 14 750 34 Q800 18 ${PW + 30} 60 L${PW + 30} 72 L10 72 Z" fill="${WHITE}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/></svg>`;
+const FLAKES = Array.from({ length: 80 }, (_, i) => { const r = (k) => ((Math.sin(i * 127.1 + k * 311.7) * 43758.5453) % 1 + 1) % 1; return [r(1) * 1080, r(2) * 2000, 4 + r(3) * 10, 40 + r(4) * 70, .35 + r(5) * .55, r(6) * 6]; });
+reel(`<div class="abs" style="left:0;top:0;width:1080px;height:1920px;background:linear-gradient(180deg,#0E1630 0%,#131020 55%,#1B1330 100%)"></div>
+  ${FLAKES.map((_, i) => `<div id="f${i}" class="abs" style="border-radius:50%;background:#fff"></div>`).join('')}
+  ${deco([['sapin', 70, 120, 120, -6], ['etincelle', 900, 150, 100, 10]])}
+  <div class="abs lab" style="left:0;top:170px;width:1080px;text-align:center;font-size:26px;letter-spacing:6px;color:${ICE}" ${A(0, END, 0, 'fade')}>LE CLASSEUR À THÈME · N°1</div>
+  <div class="abs h" style="left:0;top:225px;width:1080px;text-align:center;font-size:150px" ${A(0, END, 0, 'rise')}>Page <span style="color:${ICE}">Hiver</span></div>
+  <div class="abs mut" style="left:0;top:405px;width:1080px;text-align:center;font-weight:600;font-size:34px" ${A(.3, END, 0, 'rise')}>9 cartes, 4 jeux, une seule ambiance.</div>
+  <div id="page" class="abs" style="left:${PX}px;top:${PY}px;width:${PW}px;height:${PH}px;border-radius:30px;background:linear-gradient(160deg,rgba(168,221,245,.22),rgba(29,23,48,.9) 60%);border:6px solid ${INK};box-shadow:16px 16px 0 ${SHADOW};z-index:2" ${A(.4, END, 0, 'fade')}>${cap}${sleeves}</div>
+  <div class="abs src" style="left:70px;right:70px;bottom:150px;text-align:center;font-size:24px;color:rgba(255,255,255,.5)" ${A(.4, END, 0, 'fade')}>MAQUETTE · Cartes : Wizards of the Coast, The Pokémon Company, Disney / Ravensburger, Konami</div>
+  <div class="abs" style="left:0;top:0;width:1080px;height:1920px;background:rgba(11,8,18,.88);z-index:8" ${A(END, null, 0, 'fade')}></div>
+  <div class="abs h" style="left:0;top:330px;width:1080px;text-align:center;font-size:96px;z-index:9" ${A(END + .2, null, 0, 'rise')}>Laquelle tu glisses<br><span style="color:${ICE}">dans ton classeur ?</span></div>
+  <div class="abs ui" style="left:0;top:610px;width:1080px;text-align:center;font-size:40px;color:${VSOFT};z-index:9" ${A(END + .6, null, 0, 'rise')}>Propose le prochain thème en commentaire 👇</div>
+  <div class="abs mut" style="left:0;top:700px;width:1080px;text-align:center;font-weight:600;font-size:32px;z-index:9" ${A(END + .9, null, 0, 'rise')}>Cette page vaut 3 480 € sur Boostz (chiffre d'exemple).</div>
+  <div class="abs" style="left:0;top:0;width:1080px;height:1920px;z-index:9" ${A(END + 1.2, null, 0, 'fade')}>${closing(1050)}</div>`, END + 5);
 const base = window.render;
-window.render = (t) => { base(t); document.getElementById('tot').textContent = eur(CARDS.reduce((a, c, i) => a + (t >= T0 + i * STEP + .35 ? c[3] : 0), 0)); };
+window.render = (t) => {
+  base(t);
+  FLAKES.forEach(([x, y, s, v, o, ph], i) => { const e = document.getElementById('f' + i), yy = ((y + t * v) % 2000) - 40;
+    e.style.cssText = `position:absolute;border-radius:50%;background:#fff;width:${s}px;height:${s}px;opacity:${o};z-index:${s > 10 ? 7 : 1};left:${x + Math.sin(t * .8 + ph) * 18}px;top:${yy}px`; });
+  CARDS.forEach((_, i) => { const at = T0 + i * STEP, p = clamp((t - at) / .4), e = document.getElementById('c' + i);
+    // The card slides down into its sleeve, then the sleeve catches the light.
+    e.style.opacity = clamp(p / .15); e.style.transform = `translateY(${-90 * (1 - out3(p))}px) rotate(${4 * (1 - out3(p)) * (i % 2 ? 1 : -1)}deg)`;
+    const g = clamp((t - at - .35) / .6), sh = document.getElementById('sh' + i);
+    sh.style.opacity = g > 0 && g < 1 ? 1 : 0; sh.style.left = `${-60 + 190 * g}%`; });
+  // A slow push in once the page is full.
+  const z = out3((t - HOLD) / 3);
+  const pg = document.getElementById('page'); pg.style.transform = `${pg.style.transform} scale(${1 + .05 * z})`;
+};
 window.render(0);
 </script></body></html>
