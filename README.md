@@ -34,8 +34,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `images/2026-11-06-sortie-regne-delta/` | ven. 06/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-11-06-story-sortie-regne-delta.mp4` | ven. 06/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-11-09-1-chance-sur-96-clair.mp4` | remplacée le 05/10/2026 par la version stickers | 9:16, 1080 × 1920, 22,6 s, thème clair, sans son |
-| `videos/2026-11-09-1-chance-sur-96-stickers.mp4` | lun. 09/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 24,4 s, musique originale |
-| `videos/2026-11-09-story-1-chance-sur-96.mp4` | lun. 09/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2027-06-01-1-chance-sur-96.mp4` | mar. 01/06/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 24,4 s, musique originale |
+| `videos/2027-06-01-story-1-chance-sur-96.mp4` | mar. 01/06/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-11-12-sorties-maestros-star-trek/` | jeu. 12/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-11-12-story-sorties-maestros-star-trek.mp4` | jeu. 12/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-11-14-beta-dans-2-semaines.mp4` | sam. 14/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 15,8 s, musique originale |
@@ -72,8 +72,10 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-12-30-story-records-2026.mp4` | mer. 30/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-01-01-bonne-annee.mp4` | ven. 01/01/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 11,3 s, musique originale |
 | `videos/2027-01-01-story-bonne-annee.mp4` | ven. 01/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2027-01-07-raretes-yugioh/` | jeu. 07/01/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
-| `videos/2027-01-07-story-raretes-yugioh.mp4` | jeu. 07/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-01-07-details-caches/` | jeu. 07/01/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG |
+| `videos/2027-01-07-story-details-caches.mp4` | jeu. 07/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique originale |
+| `images/2027-05-17-raretes-yugioh/` | lun. 17/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
+| `videos/2027-05-17-story-raretes-yugioh.mp4` | lun. 17/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-05-26-raretes-starwarsunlimited/` | mer. 26/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
 | `videos/2027-01-20-story-raretes-starwarsunlimited.mp4` | mer. 26/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-02-01-erreurs-impression.mp4` | lun. 01/02/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 18,6 s, musique originale |

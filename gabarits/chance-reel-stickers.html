@@ -62,7 +62,7 @@ const wordmark = (size) => `<div style="display:flex;align-items:baseline;transf
   + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
 const displayMark = (size) => `<svg width="${size}" height="${size}" viewBox="0 0 100 100"><path d="M22 36 L38 22 L80 22 L64 36 Z" fill="#F5F2FB"/><path d="M64 36 L80 22 L80 66 L64 80 Z" fill="#C4B5FD"/><rect x="22" y="36" width="42" height="44" rx="5" fill="#7C3AED" stroke="#F5F2FB" stroke-width="4"/><path d="M33 47 H54 V52.5 L42 65 H54 V70.5 H33 V65 L45 52.5 H33 Z" fill="#fff"/></svg>`;
 $('displays').innerHTML = [0, 1, 2, 3].map(() => displayMark(80)).join('');
-$('end3').innerHTML = `<div class="t" style="position:relative;font-size:64px">Avant d’ouvrir,<br><span class="acc">regarde sa cote.</span></div>${wordmark(110)}<div id="endLine" style="text-align:center;font-family:Exo;font-weight:600;font-size:42px;line-height:1.3;color:rgba(255,255,255,.75)">Ton compagnon TCG,<br>bientôt sur ton téléphone</div>`;
+$('end3').innerHTML = `<div class="t" style="position:relative;font-size:64px">Avant d’ouvrir,<br><span class="acc">regarde sa cote.</span></div>${wordmark(110)}<div id="endLine" style="text-align:center;font-family:Exo;font-weight:600;font-size:42px;line-height:1.3;color:rgba(255,255,255,.75)">Ton compagnon TCG,<br>disponible sur ton téléphone</div>`;
 
 // 96 boosters, 8 x 12, each a crimped pack.
 const COLS = 12, PW = 74, PH = 90, GX = 12, GY = 18, X0 = (1080 - (COLS * PW + (COLS - 1) * GX)) / 2, Y0 = 610;

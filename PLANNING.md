@@ -29,7 +29,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | \*sam. 31/10, 18 h | Reel | 16 Thème | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | ✅ programmé |
 | mar. 03/11 | carrousel | 22 L'histoire d'une carte | Tyler le Grand Guerrier : le vœu Make-A-Wish, la carte unique, 311 211 \$ | Yu-Gi-Oh! | ✅ programmé |
 | \*ven. 06/11 | carrousel | 15 Sortie d'extension | Règne Delta sort aujourd'hui (ME06) | Pokémon | ✅ programmé |
-| lun. 09/11 | Reel | 3 1 chance sur N | 1 chance sur 96 d'avoir une enchantée | Lorcana | ✅ programmé (cotes revérifiées le 01/11) |
+| lun. 09/11 | Reel | 30 Zoom mystère | Épisode 1 : une carte en 5 étapes, de Légende à Noob | Lorcana | brouillon dans Metricool, produit par le rappel du 02/11 |
 | \*jeu. 12/11 | carrousel | 15 Sortie d'extension | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | ✅ programmé |
 | \*sam. 14/11 | Reel | 11 Annonce | Bêta fermée J-14 | les 8 | ✅ programmé |
 | mar. 17/11 | carrousel | 25 Les raretés expliquées | Épisode Pokémon : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Pokémon | ✅ programmé |
@@ -51,7 +51,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | \*mer. 30/12 | carrousel | 16 Thème | 2026, l'année des records | Pokémon, Magic, One Piece | ✅ programmé (à compléter le 22/12) |
 | \*ven. 01/01/2027 | Reel | 16 Thème | Bonne année 2027 | les 8 | ✅ programmé |
 | lun. 04/01 | carrousel | 2 Cotes qui bougent | Édition n° 3 : du 16/12 au 01/01 | Magic | brouillon dans Metricool, produit par le rappel du 02/01 |
-| jeu. 07/01 | carrousel | 25 Les raretés expliquées | Épisode Yu-Gi-Oh! : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Yu-Gi-Oh! | ✅ programmé |
+| jeu. 07/01 | carrousel | 31 Le détail caché | Épisode 1 : Pikachu dans Givrali VMAX, les baies d’Ectoplasma VMAX, le chapeau du Pikachu Van Gogh | Pokémon | ✅ programmé |
 | \*dim. 10/01 | Reel | 11 Annonce | « Dans 4 jours. » Compte à rebours | les 8 | à produire (rappel du 05/01) |
 | \*mar. 12/01 | carrousel | 9 Pub Boostz | « Jeudi, tu pourras… » sur de vraies captures de l'appli | Yu-Gi-Oh!, Lorcana, Warcraft | à produire (rappel du 05/01) |
 | \*jeu. 14/01 | Reel | 11 Annonce | **Boostz est disponible.** Les liens des stores en story | les 8 | à produire (rappel du 05/01) |
@@ -95,16 +95,16 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | sam. 08/05 | carrousel | 22 L'histoire d'une carte | Le Pikachu Illustrateur : du concours CoroCoro de 1998 au record de 16,49 M\$ | Pokémon | ✅ programmé (déplacé du 23/04 le 08/10 : un « Plus cher ou moins cher ? » par mois) |
 | mar. 11/05 | carrousel | 21 Guide des produits scellés | Épisode : Star Wars Unlimited | Star Wars Unlimited | ✅ programmé |
 | ven. 14/05 | Reel | 3 1 chance sur N | 1 chance sur 1 533 d'avoir le Pikachu-ex 276/217 de Héros Transcendants | Pokémon | ✅ programmé (déplacé du 24/03 le 08/10 pour les nouvelles séries) |
-| lun. 17/05 | Reel | 30 Zoom mystère | Épisode 1 : une carte en 5 étapes, de Légende à Noob | Lorcana | brouillon dans Metricool, produit par le rappel du 11/05 |
+| lun. 17/05 | carrousel | 25 Les raretés expliquées | Épisode Yu-Gi-Oh! : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Yu-Gi-Oh! | ✅ programmé (déplacé du 07/01 le 08/10 pour le détail caché, fin « disponible ») |
 | jeu. 20/05 | carrousel | 22 L'histoire d'une carte | Le Pikachu au chapeau de feutre gris : le musée Van Gogh, la cohue, la carte la plus échangée | Pokémon | ✅ programmé |
 | dim. 23/05 | Reel | 27 Plus cher ou moins cher ? | Épisode Magic | Magic | brouillon dans Metricool, produit par le rappel du 18/05 |
 | mer. 26/05 | carrousel | 25 Les raretés expliquées | Épisode Star Wars Unlimited : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Star Wars Unlimited | ✅ programmé (déplacé du 20/01 le 08/10 : un « Plus cher ou moins cher ? » par mois) |
 | sam. 29/05 | carrousel | 23 Zoom sur un artiste | Christopher Rush, le père du Black Lotus | Magic | ✅ programmé |
-| mar. 01/06 | carrousel | 31 Le détail caché | Épisode 1 : Pikachu dans Givrali VMAX, les baies d’Ectoplasma VMAX, le chapeau du Pikachu Van Gogh | Pokémon | brouillon dans Metricool, produit par le rappel du 26/05 |
+| mar. 01/06 | Reel | 3 1 chance sur N | 1 chance sur 96 d'avoir une enchantée | Lorcana | ✅ programmé (déplacé du 09/11 le 08/10 pour le zoom mystère, fin « disponible » ; cotes revérifiées par le rappel du 25/05) |
 | ven. 04/06 | Reel | 27 Plus cher ou moins cher ? | Épisode Yu-Gi-Oh! | Yu-Gi-Oh! | brouillon dans Metricool, produit par le rappel du 30/05 |
 | lun. 07/06 | carrousel | 21 Guide des produits scellés | Épisode : Pokémon | Pokémon | ✅ programmé |
 
-- **Les séries du 08/10/2026** (validées par l’utilisateur ce jour-là) : le classeur à thème (n° 26, Reel visuel, une page sur un thème graphique), Plus cher ou moins cher ? (n° 27, à faire revenir souvent : « fais-en plein d’autres »), les types de collectionneurs (n° 28, bonhommes animés) et l’agenda TCG du mois (n° 29, fin de chaque mois, compté comme fixe). Elles ont pris la place de 7 posts sans date, repoussés en avril et mai (Estime l’état, lexique, 1 chance sur N One Piece, mythe du Tigre spectral, Tyler en Reel, guide Magic, Pikachu 1 sur 1 533) ; Plus cher ou moins cher ? revient **une fois par mois** (demandé le 08/10) : 09/12 Pokémon, 20/01 One Piece, 19/02 Dragon Ball, 15/03 Lorcana, 23/04 Star Wars Unlimited, 23/05 Magic, 04/06 Yu-Gi-Oh!, ce qui a repoussé les raretés Star Wars Unlimited au 26/05, le guide Yu-Gi-Oh! au 05/05 et le Pikachu Illustrateur au 08/05. L’agenda de mai se place le 28/04 ou autour. Deux autres séries validées le même jour commencent dans les premiers trous libres : le zoom mystère (n° 30, 17/05) et le détail caché (n° 31, 01/06).
+- **Les séries du 08/10/2026** (validées par l’utilisateur ce jour-là) : le classeur à thème (n° 26, Reel visuel, une page sur un thème graphique), Plus cher ou moins cher ? (n° 27, à faire revenir souvent : « fais-en plein d’autres »), les types de collectionneurs (n° 28, bonhommes animés) et l’agenda TCG du mois (n° 29, fin de chaque mois, compté comme fixe). Elles ont pris la place de 7 posts sans date, repoussés en avril et mai (Estime l’état, lexique, 1 chance sur N One Piece, mythe du Tigre spectral, Tyler en Reel, guide Magic, Pikachu 1 sur 1 533) ; Plus cher ou moins cher ? revient **une fois par mois** (demandé le 08/10) : 09/12 Pokémon, 20/01 One Piece, 19/02 Dragon Ball, 15/03 Lorcana, 23/04 Star Wars Unlimited, 23/05 Magic, 04/06 Yu-Gi-Oh!, ce qui a repoussé les raretés Star Wars Unlimited au 26/05, le guide Yu-Gi-Oh! au 05/05 et le Pikachu Illustrateur au 08/05. L’agenda de mai se place le 28/04 ou autour. Deux autres séries validées le même jour commencent tôt, à la demande de l’utilisateur : le zoom mystère (n° 30) le 09/11 à la place du 1 chance sur 96 (passé au 01/06), et le détail caché (n° 31) le 07/01 à la place des raretés Yu-Gi-Oh! (passées au 17/05).
 - **La série « Les raretés expliquées »** (demandée le 07/10/2026, `gabarits/raretes.html#<jeu>`) est étalée du 17/11 au 30/03, environ un épisode toutes les 2 à 3 semaines, pour varier les types (redemandé le 07/10 : « ventiler au maximum »). Elle a pris les dates de 8 posts sans date imposée (Arita, Pikachu Illustrateur, Nishida, Van Gogh, Rush et 3 guides des scellés), repoussés d’avril à juin. One Piece garde les visuels « SAMPLE » de Bandai et Warcraft ses scans en 215 px : validé par l’utilisateur le 07/10.
 - **Février et mars** : à compléter avec les sorties fixes dès qu'elles sont confirmées (Saint-Valentin le 14/02, Nauctis le 05/02, One Piece OP-19 annoncé au 05/03, Lorcana Into the Inkdark au 1er trimestre 2027) ; un post fixe qui tombe repousse les posts sans date des jours voisins. Avril s'écrit le 16/03.
 - **Les brouillons** (Cotes, Hyperia City, OP18/Icons, Tu préfères ?) sont des posts Instagram « Ne pas publier » à publication automatique coupée : le rappel de leur date les produit, transforme le brouillon en vrai post (`updateScheduledPost`) et crée TikTok, Facebook et la story.
@@ -153,7 +153,7 @@ Légendes en brouillon. Les chiffres entre crochets sortent des données le jour
 - **Légende :** « 🔥 Delta Reign sort aujourd'hui en anglais. Les 3 cartes à chasser, le prix d'un display… et toi, tu ouvres ou tu attends que la cote retombe ? »
 - **Hashtags :** `#pokemontcg #deltareign #megaevolution #cartespokemon #pokemon`
 
-### 9 · 1 chance sur 96 — lun. 09/11
+### 9 · 1 chance sur 96 — mar. 01/06/2027 (déplacé du 09/11)
 - ✅ Programmé le 09/11. Revérifier les cotes des enchantées, qui datent du 25/09.
 
 ### 10 · Vendredi, deux sorties : Magnificent Maestros et Magic × Star Trek — jeu. 12/11

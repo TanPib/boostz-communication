@@ -80,6 +80,7 @@ const STYLES = {
   hiver:       { bpm: 72, prog: ['Fmaj9', 'Am9', 'Dm9', 'Bbmaj9'], lead: 'musicbox', kit: 'brushes', swing: .24, cut: 4600, dust: .5, comp: 'hold' },
   types:       { bpm: 100, prog: ['F', 'C', 'Dm', 'Bb'], lead: 'glock', kit: 'pop', swing: .08, cut: 12000, dust: 0, comp: 'strum', clean: true },
   enquete:     { bpm: 96, prog: ['Am9', 'Fmaj7', 'Dm9', 'E7b9'], lead: 'pizz', kit: 'brushes', swing: .12, cut: 5200, dust: .4, comp: 'sparse', melody: 'enquete' },
+  detail:      { bpm: 82, prog: ['Dmaj9', 'Bm9', 'Em9', 'A13'], lead: 'vibes', kit: 'brushes', swing: .22, cut: 5200, dust: .5, comp: 'arp' },
   records:     { bpm: 86, prog: ['Fmaj9', 'Dm9', 'Gm9', 'C13'], lead: 'rhodes', kit: 'boombap', swing: .2, cut: 5600, dust: .5, comp: 'sparse' },
   beta14:      { bpm: 82, prog: ['Ebmaj9', 'Fm9', 'Gm9', 'Abmaj9'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'arp' },
   beta6:       { bpm: 78, prog: ['Bbmaj9', 'Gm9', 'Cm9', 'F13'], lead: 'felt', kit: 'brushes', swing: .24, cut: 5000, dust: .6, comp: 'hold' },

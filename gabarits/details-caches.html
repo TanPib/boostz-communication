@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="fonts/local.css">
 <script src="posts-emblems.js"></script><script src="stickers.js"></script>
 </head><body><script>
-window.PUB = '2027-01-01';
-// Mockup of "Le détail que tu n'avais jamais vu" (proposed on 08/10/2026):
+window.PUB = '2027-01-07';
+// "Le détail que tu n'avais jamais vu" (approved on 08/10/2026), episode 1:
 // one card per slide, a ring on a detail of the real scan and a magnifier
 // showing it up close, with what it is. Only details visible on the scan or
 // sourced facts.
@@ -30,7 +30,7 @@ const slide = ([id, img, ratio, fx, fy, z, name, set, txt], i) => {
     <div class="abs" style="left:600px;top:760px;width:410px">
       <div class="h" style="font-size:46px;line-height:1.05">${name}</div><div class="ui mut" style="font-size:28px;margin-top:8px">${set}</div></div>
     ${st(70, 960, 940, 230, `<div class="ui" style="display:flex;align-items:center;height:100%;padding:0 44px;font-size:35px;line-height:1.3;font-weight:600;color:${DARK}"><span>${txt}</span></div>`, { fill: C, r: -1, z: 6 })}
-    ${src('MAQUETTE · Images : pokemontcg.io, TCGdex. © Pokémon / Nintendo / Creatures / GAME FREAK.')}`];
+    ${src('Images : pokemontcg.io, TCGdex. © Pokémon / Nintendo / Creatures / GAME FREAK.' + (id === 'van-gogh' ? ' Collaboration Pokémon × musée Van Gogh, 2023.' : ''))}`];
 };
 carousel([
   ['1-couverture', `${ghosts([[90, 300, 80, -6], [930, 280, 80, 8]])}${track(0, 1165, .2)}${head('LE DÉTAIL CACHÉ', 'pokemon')}
@@ -40,7 +40,7 @@ carousel([
       <img src="${DETAILS[0][1]}" style="position:absolute;width:${440 * 3.6}px;left:${150 - .83 * 440 * 3.6}px;top:${150 - .56 * (440 / DETAILS[0][2]) * 3.6}px"></div>
     <div class="abs" style="left:70px;top:1250px">${wordmark(46)}</div><div class="abs ui mut" style="right:70px;top:1258px;font-size:30px">Swipe →</div>`],
   ...DETAILS.map(slide),
-  ['5-fin', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8]])}${track(4, 1200, .6)}${head('LE DÉTAIL CACHÉ', 'pokemon')}
+  ['5-fin', `${ghosts([[110, 600, 80, -6], [900, 610, 90, 8]])}${track(4, 1200, .6)}${head('LE DÉTAIL CACHÉ', 'pokemon')}
     <div class="abs h" style="left:0;top:220px;width:1080px;text-align:center;font-size:92px">Tu connais un autre<br><span style="color:${C}">détail caché ?</span></div>
     <div class="abs ui mut" style="left:0;top:470px;width:1080px;text-align:center;font-size:38px">Dis-le en commentaire, on le met dans le prochain 👇</div>
     ${closing(800)}`],

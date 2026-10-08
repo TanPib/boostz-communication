@@ -8,7 +8,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | --- | --- | --- | --- | --- | --- |
 | 1 | **Analyse de carte** | carrousel, 5 slides | 🔥🔥🔥 | prêt | 26/10/2026 · Méga-Dracaufeu X ex (Pokémon) |
 | 2 | **Les 10 cotes qui bougent** | carrousel, 12 slides | 🔥🔥🔥 | série, le 1er et le 16 du mois | première édition à venir |
-| 3 | **1 chance sur N** | Reel de 22 s, ou carrousel de 5 slides | 🔥🔥🔥 | prêt | 14/05/2027 · Pikachu-ex, 1 sur 1 533 (Pokémon) |
+| 3 | **1 chance sur N** | Reel de 22 s, ou carrousel de 5 slides | 🔥🔥🔥 | prêt | 01/06/2027 · 1 chance sur 96 d'avoir une enchantée (Lorcana) |
 | 4 | **Top 10 d'un set** | carrousel, 11 slides | 🔥🔥🔥 à la sortie d'un set | maquette | jamais |
 | 5 | **Même carte, trois langues** | carrousel, 3 à 5 slides | 🔥🔥 | maquette | jamais |
 | 6 | **Devine la note** | carrousel, 2 slides | 🔥🔥 | maquette | jamais |
@@ -30,13 +30,13 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 22 | **L'histoire d'une carte** | carrousel, 6 slides, ou Reel | 🔥🔥🔥 | prêt (`histoire-carte.html`) | 20/05/2027 · Le Pikachu au chapeau de feutre gris (Pokémon) |
 | 23 | **Zoom sur un artiste** | carrousel, 6 slides | 🔥🔥 | prêt (`zoom-artiste.html`) | 29/05/2027 · Christopher Rush, le père du Black Lotus (Magic) |
 | 24 | **Opening** | Reel, vidéo tournée | 🔥🔥🔥 | une vidéo à nous (ou rebrandée) | 15/12/2026 · Collect Aura, nos cartes gradées (Pokémon) |
-| 25 | **Les raretés expliquées** | carrousel, une slide par rareté | 🔥🔥🔥 | série, un épisode par jeu (`raretes.html#<jeu>`) | 30/03/2027 · World of Warcraft |
+| 25 | **Les raretés expliquées** | carrousel, une slide par rareté | 🔥🔥🔥 | série, un épisode par jeu (`raretes.html#<jeu>`) | 26/05/2027 · Star Wars Unlimited |
 | 26 | **Le classeur à thème** | Reel, 15 s | 🔥🔥🔥 | série (`classeur-theme-reel.html`) | 07/02/2027 · Page Hiver (Magic, Pokémon, Lorcana, Yu-Gi-Oh!) |
 | 27 | **Plus cher ou moins cher ?** | Reel, 25 s, 5 manches | 🔥🔥🔥 | un par mois, un jeu par épisode (`plus-cher-reel.html`) | à venir · 09/12/2026 (Pokémon) |
 | 28 | **Les types de collectionneurs** | Reel animé, 25 s | 🔥🔥🔥 | série (`types-collectionneurs-reel.html`) | 22/02/2027 · 4 types (les 8) |
 | 29 | **L'agenda TCG du mois** | carrousel, 6 slides | 🔥🔥 | fin de chaque mois (`agenda-tcg.html`) | à venir · 28/02/2027 (mars) |
-| 30 | **Zoom mystère** | Reel, 26 s, 5 étapes | 🔥🔥🔥 | série (`zoom-mystere-reel.html`) | à venir · 17/05/2027 |
-| 31 | **Le détail caché** | carrousel, 5 slides | 🔥🔥 | série (`details-caches.html`) | à venir · 01/06/2027 |
+| 30 | **Zoom mystère** | Reel, 26 s, 5 étapes | 🔥🔥🔥 | série (`zoom-mystere-reel.html`) | à venir · 09/11/2026 (Lorcana) |
+| 31 | **Le détail caché** | carrousel, 5 slides | 🔥🔥 | série (`details-caches.html`) | 07/01/2027 · Givrali VMAX, Ectoplasma VMAX, Pikachu Van Gogh (Pokémon) |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -205,7 +205,6 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | sam. 31/10/2026, 18 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | `videos/2026-10-31-halloween.mp4` |
 | mar. 03/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 22 | Tyler le Grand Guerrier : le vœu Make-A-Wish, la carte unique, 311 211 \$ | Yu-Gi-Oh! | `images/2026-11-03-histoire-tyler-grand-guerrier/` |
 | ven. 06/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Règne Delta sort aujourd'hui (ME06) | Pokémon | `images/2026-11-06-sortie-regne-delta/` |
-| lun. 09/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2026-11-09-1-chance-sur-96-stickers.mp4` |
 | jeu. 12/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | `images/2026-11-12-sorties-maestros-star-trek/` |
 | sam. 14/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta fermée J-14 | les 8 | `videos/2026-11-14-beta-dans-2-semaines.mp4` |
 | mar. 17/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Pokémon | Pokémon | `images/2026-11-17-raretes-pokemon/` |
@@ -223,7 +222,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | dim. 27/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 19 | Tes cartes de Noël sont-elles vraies ? | Pokémon | `videos/2026-12-27-contrefacon.mp4` |
 | mer. 30/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 16 | 2026, l'année des records | Pokémon, Magic, One Piece | `images/2026-12-30-records-2026/` |
 | ven. 01/01/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Bonne année 2027 | les 8 | `videos/2027-01-01-bonne-annee.mp4` |
-| jeu. 07/01/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Yu-Gi-Oh! | Yu-Gi-Oh! | `images/2027-01-07-raretes-yugioh/` |
+| jeu. 07/01/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 31 | Le détail caché : Pikachu dans Givrali VMAX, les baies d’Ectoplasma VMAX, le chapeau du Pikachu Van Gogh | Pokémon | `images/2027-01-07-details-caches/` |
 | lun. 01/02/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 20 | Caninos et Tortank à dos Magic, la carte « Discard » enchantée | Pokémon, Lorcana | `videos/2027-02-01-erreurs-impression.mp4` |
 | jeu. 04/02/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Dragon Ball | Dragon Ball | `images/2027-02-04-raretes-dragonball/` |
 | dim. 07/02/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 26 | Page Hiver : 9 cartes enneigées glissées une à une dans le classeur | Magic, Pokémon, Lorcana, Yu-Gi-Oh! | `videos/2027-02-07-classeur-page-hiver.mp4` |
@@ -248,9 +247,11 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | sam. 08/05/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 22 | Le Pikachu Illustrateur : du concours CoroCoro de 1998 au record de 16,49 M\$ | Pokémon | `images/2027-05-08-histoire-pikachu-illustrateur/` |
 | mar. 11/05/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Épisode : Star Wars Unlimited | Star Wars Unlimited | `images/2027-05-11-guide-scelles-starwarsunlimited/` |
 | ven. 14/05/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 3 | 1 chance sur 1 533 d'avoir le Pikachu-ex 276/217 de Héros Transcendants | Pokémon | `videos/2027-05-14-1-chance-sur-1533-pikachu.mp4` |
+| lun. 17/05/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Yu-Gi-Oh! | Yu-Gi-Oh! | `images/2027-05-17-raretes-yugioh/` |
 | jeu. 20/05/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 22 | Le Pikachu au chapeau de feutre gris : le musée Van Gogh, la cohue, la carte la plus échangée | Pokémon | `images/2027-05-20-histoire-pikachu-van-gogh/` |
 | mer. 26/05/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Star Wars Unlimited | Star Wars Unlimited | `images/2027-05-26-raretes-starwarsunlimited/` |
 | sam. 29/05/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 23 | Christopher Rush, le père du Black Lotus | Magic | `images/2027-05-29-zoom-christopher-rush/` |
+| mar. 01/06/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 3 | 1 chance sur 96 d'avoir une enchantée | Lorcana | `videos/2027-06-01-1-chance-sur-96.mp4` |
 | lun. 07/06/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Épisode : Pokémon | Pokémon | `images/2027-06-07-guide-scelles-pokemon/` |
 
 Chaque vidéo porte une musique originale composée en code (`outils/musique.mjs`, mixée vers −18 LUFS par `outils/mixer.sh`), pour TikTok et Facebook ; les Reels Instagram jouent en plus la piste de la bibliothèque Instagram indiquée.
