@@ -34,6 +34,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `images/2026-11-06-sortie-regne-delta/` | ven. 06/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-11-06-story-sortie-regne-delta.mp4` | ven. 06/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-11-09-1-chance-sur-96-clair.mp4` | remplacée le 05/10/2026 par la version stickers | 9:16, 1080 × 1920, 22,6 s, thème clair, sans son |
+| `videos/2026-11-09-zoom-mystere.mp4` | lun. 09/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 28,2 s, musique originale (style enquete) |
+| `videos/2026-11-09-story-zoom-mystere.mp4` | lun. 09/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-06-01-1-chance-sur-96.mp4` | mar. 01/06/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 24,4 s, musique originale |
 | `videos/2027-06-01-story-1-chance-sur-96.mp4` | mar. 01/06/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-11-12-sorties-maestros-star-trek/` | jeu. 12/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |

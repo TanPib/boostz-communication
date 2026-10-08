@@ -3,17 +3,17 @@
 <link rel="stylesheet" href="fonts/local.css">
 <script src="posts-emblems.js"></script><script src="stickers.js"></script>
 </head><body><script>
-window.PUB = '2027-01-01';
-// Mockup of "Zoom mystère" (reworked on 08/10/2026 at the user's request: too
+window.PUB = '2026-11-09';
+// "Zoom mystère" (reworked on 08/10/2026 at the user's request: too
 // fast, and "tu as trouvé à quelle étape ?" like the piano-notes trend): one
 // card per Reel, shown in five held steps from a tiny detail of the real scan
 // to the whole card, each step a level (Légende → Noob); then the name, and
 // the viewer says at which step they found it. Music: the "enquete" style.
-const CARD = ['assets/carte-dragon-blanc-yeux-bleus.jpg', 0, 0, 'yugioh', 'Dragon Blanc aux Yeux Bleus', 'Yu-Gi-Oh!'];
+const CARD = ['assets/zm-mickey-tailleur.avif', 0, 0, 'lorcana', 'Mickey Mouse, Brave Petit Tailleur', 'Lorcana · Premier Chapitre'];
 // Each step: level, zoom, the point of the scan at the centre of the frame.
 // Start on a corner nobody looks at (asked on 08/10/2026: not the centre of
 // the card, which gives it away), then move towards the subject.
-const STEPS = [['LÉGENDE', 6, '#F5C93B', .23, .6], ['EXPERT', 4, '#C4B5FD', .27, .56], ['INTERMÉDIAIRE', 2.6, '#35C6BC', .34, .52], ['DÉBUTANT', 1.6, '#3AA9FF', .45, .45], ['NOOB', 1, '#F0899A', .5, .5]];
+const STEPS = [['LÉGENDE', 4.5, '#F5C93B', .27, .42], ['EXPERT', 3.2, '#C4B5FD', .3, .36], ['INTERMÉDIAIRE', 2.5, '#35C6BC', .36, .3], ['DÉBUTANT', 1.85, '#3AA9FF', .47, .28], ['NOOB', 1, '#F0899A', .5, .5]];
 const S0 = 1.4, HOLD = 2.8, MOVE = .6, STEP = HOLD + MOVE, REV = S0 + STEPS.length * STEP - MOVE, END = REV + 2.6;
 const W = 600, H = 840, X = (1080 - W) / 2, Y = 470, [img, fx, fy, game, name, sub] = CARD;
 const ease = (x) => { x = clamp(x); return x * x * (3 - 2 * x); };
@@ -24,8 +24,8 @@ reel(`${ghosts([[60, 1560, 80, -8], [950, 1580, 70, 7]])}
     <img id="im" src="${img}" style="position:absolute;left:0;top:0;width:${W}px;height:${H}px"></div>
   ${STEPS.map(([lvl, , c], k) => { const s = S0 + k * STEP; return st(250, Y - 50, 580, 100, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:46px;color:${DARK}">Étape ${k + 1} · ${lvl}</div>`, { fill: c, r: k % 2 ? 2 : -2, z: 6, attrs: A(s, s + HOLD, k % 2 ? 2 : -2) }); }).join('')}
   <div class="abs" style="left:0;top:${Y + H + 50}px;width:1080px;display:flex;justify-content:center;gap:22px;z-index:4" ${A(.3, END, 0, 'fade')}>${STEPS.map(([, , c], k) => `<div id="d${k}" style="width:150px;height:22px;border-radius:11px;background:rgba(196,181,253,.15)"></div>`).join('')}</div>
-  ${st(170, Y + H - 140, 740, 190, `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:${DARK}"><div class="h" style="font-size:58px">${name}</div><div class="ui" style="font-size:30px">${sub}</div></div>`, { fill: GAMES[game][1], r: -2, z: 6, attrs: A(REV + .1, END, -2) })}
-  <div class="abs src" style="left:70px;right:70px;bottom:215px;text-align:center;font-size:24px;color:rgba(255,255,255,.5)" ${A(.3, END, 0, 'fade')}>MAQUETTE · Image : YGOPRODeck. © Studio Dice / Shueisha, TV TOKYO, KONAMI</div>
+  ${st(170, Y + H - 140, 740, 190, `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:${DARK}"><div class="h" style="font-size:${name.length > 26 ? 44 : 58}px;white-space:nowrap">${name}</div><div class="ui" style="font-size:30px">${sub}</div></div>`, { fill: GAMES[game][1], r: -2, z: 6, attrs: A(REV + .1, END, -2) })}
+  <div class="abs src" style="left:70px;right:70px;bottom:215px;text-align:center;font-size:24px;color:rgba(255,255,255,.5)" ${A(.3, END, 0, 'fade')}>Image : Lorcast. Disney Lorcana : © Disney, édité par Ravensburger</div>
   <div class="abs h" style="left:0;top:250px;width:1080px;text-align:center;font-size:92px" ${A(END + .1, null, 0, 'rise')}>Tu l’as trouvée<br><span style="color:${SUN}">à quelle étape ?</span></div>
   ${STEPS.map(([lvl, , c], k) => `<div class="abs h" style="left:0;top:${520 + k * 92}px;width:1080px;text-align:center;font-size:56px;color:${c}" ${A(END + .4 + k * .18, null, 0, 'rise')}>${k + 1} · ${lvl}</div>`).join('')}
   <div class="abs ui" style="left:0;top:1010px;width:1080px;text-align:center;font-size:42px;color:${VSOFT}" ${A(END + 1.4, null, 0, 'rise')}>Dis-le en commentaire 👇</div>

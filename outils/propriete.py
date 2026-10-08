@@ -23,7 +23,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2026-10-31': ('MPL', ''),
  '2026-11-03': ('Y', "Photo de la carte : Otaku USA Magazine."),
  '2026-11-06': ('P', "Images des cartes : versions japonaises, samuraiswordtokyo.com et serebii.net."),
- '2026-11-09': ('L', "Image de la carte : Lorcast."),  # Zoom mystère n° 1, the card is picked when produced
+ '2026-11-09': ('L', "Image de la carte : Lorcast."),
  '2027-06-01': ('L', ''),
  '2026-11-12': ('YMT', ''),
  '2026-11-14': (ALL, ''),

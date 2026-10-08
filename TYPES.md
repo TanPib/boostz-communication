@@ -35,7 +35,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 27 | **Plus cher ou moins cher ?** | Reel, 25 s, 5 manches | 🔥🔥🔥 | un par mois, un jeu par épisode (`plus-cher-reel.html`) | à venir · 09/12/2026 (Pokémon) |
 | 28 | **Les types de collectionneurs** | Reel animé, 25 s | 🔥🔥🔥 | série (`types-collectionneurs-reel.html`) | 22/02/2027 · 4 types (les 8) |
 | 29 | **L'agenda TCG du mois** | carrousel, 6 slides | 🔥🔥 | fin de chaque mois (`agenda-tcg.html`) | à venir · 28/02/2027 (mars) |
-| 30 | **Zoom mystère** | Reel, 26 s, 5 étapes | 🔥🔥🔥 | série (`zoom-mystere-reel.html`) | à venir · 09/11/2026 (Lorcana) |
+| 30 | **Zoom mystère** | Reel, 26 s, 5 étapes | 🔥🔥🔥 | série (`zoom-mystere-reel.html`) | 09/11/2026 · Mickey Mouse, Brave Petit Tailleur (Lorcana) |
 | 31 | **Le détail caché** | carrousel, 5 slides | 🔥🔥 | série (`details-caches.html`) | 07/01/2027 · Givrali VMAX, Ectoplasma VMAX, Pikachu Van Gogh (Pokémon) |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
@@ -205,6 +205,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | sam. 31/10/2026, 18 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | `videos/2026-10-31-halloween.mp4` |
 | mar. 03/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 22 | Tyler le Grand Guerrier : le vœu Make-A-Wish, la carte unique, 311 211 \$ | Yu-Gi-Oh! | `images/2026-11-03-histoire-tyler-grand-guerrier/` |
 | ven. 06/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Règne Delta sort aujourd'hui (ME06) | Pokémon | `images/2026-11-06-sortie-regne-delta/` |
+| lun. 09/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 30 | Zoom mystère : Mickey Mouse, Brave Petit Tailleur, « Tu l'as trouvée à quelle étape ? » | Lorcana | `videos/2026-11-09-zoom-mystere.mp4` |
 | jeu. 12/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | `images/2026-11-12-sorties-maestros-star-trek/` |
 | sam. 14/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta fermée J-14 | les 8 | `videos/2026-11-14-beta-dans-2-semaines.mp4` |
 | mar. 17/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Pokémon | Pokémon | `images/2026-11-17-raretes-pokemon/` |

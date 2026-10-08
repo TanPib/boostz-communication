@@ -29,7 +29,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | \*sam. 31/10, 18 h | Reel | 16 Thème | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | ✅ programmé |
 | mar. 03/11 | carrousel | 22 L'histoire d'une carte | Tyler le Grand Guerrier : le vœu Make-A-Wish, la carte unique, 311 211 \$ | Yu-Gi-Oh! | ✅ programmé |
 | \*ven. 06/11 | carrousel | 15 Sortie d'extension | Règne Delta sort aujourd'hui (ME06) | Pokémon | ✅ programmé |
-| lun. 09/11 | Reel | 30 Zoom mystère | Épisode 1 : une carte en 5 étapes, de Légende à Noob | Lorcana | brouillon dans Metricool, produit par le rappel du 02/11 |
+| lun. 09/11 | Reel | 30 Zoom mystère | Épisode 1 : Mickey Mouse, Brave Petit Tailleur, en 5 étapes de Légende à Noob | Lorcana | ✅ programmé |
 | \*jeu. 12/11 | carrousel | 15 Sortie d'extension | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | ✅ programmé |
 | \*sam. 14/11 | Reel | 11 Annonce | Bêta fermée J-14 | les 8 | ✅ programmé |
 | mar. 17/11 | carrousel | 25 Les raretés expliquées | Épisode Pokémon : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Pokémon | ✅ programmé |
