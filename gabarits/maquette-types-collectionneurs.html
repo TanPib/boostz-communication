@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz types de collectionneurs</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+window.PUB = '2026-12-06';
+// Mockup of "Les types de collectionneurs": each type is drawn as a Boostz
+// trading card of our own design (name, rarity, attack, weakness), no
+// licensed character and no face. Humour, so no figures and no source line.
+const ILL = {
+  mint: `<rect x="56" y="18" width="70" height="98" rx="8" fill="${VSOFT}"/><rect x="66" y="30" width="50" height="40" rx="4" fill="${VIOLET}"/><path d="M66 82 H116 M66 94 H104" stroke-width="5"/><circle cx="128" cy="78" r="28" fill="rgba(255,255,255,.25)"/><path d="M148 98 L176 126" stroke-width="12" stroke-linecap="round"/>`,
+  ouvreur: `<path d="M60 40 L140 40 L140 126 L60 126 Z" fill="${GAMES.onepiece[1]}"/><path d="M60 40 L70 26 L82 38 L94 22 L106 36 L118 20 L130 34 L140 24 L140 40 Z" fill="${SUN}"/><rect x="40" y="6" width="44" height="60" rx="5" fill="${VSOFT}" transform="rotate(-24 62 36)"/><rect x="112" y="2" width="44" height="60" rx="5" fill="${GAMES.lorcana[1]}" transform="rotate(20 134 32)"/><circle cx="100" cy="84" r="16" fill="none" stroke-width="5"/>`,
+  scelle: `<path d="M58 30 L142 30 L142 128 L58 128 Z" fill="${BLUE}"/><path d="M58 30 L142 30 M58 128 L142 128" stroke-width="8"/><rect x="74" y="72" width="52" height="40" rx="6" fill="${SUN}"/><path d="M84 72 V60 A16 16 0 0 1 116 60 V72" fill="none" stroke-width="8"/><circle cx="100" cy="90" r="5" fill="${INK}"/>`,
+};
+const TYPES = [
+  ['mint', 'Le Mint-maniaque', 'Ultra rare', VSOFT, 'Toploader immédiat', 'Met la carte sous pochette avant même de l’avoir regardée.', 'le moindre coin blanc'],
+  ['ouvreur', 'L’ouvreur pressé', 'Commune', GAMES.onepiece[1], 'Déchirure express', 'Ouvre ses boosters dans le parking du magasin.', 'le display qui vaut 3 fois plus un an après'],
+  ['scelle', 'Le gardien du scellé', 'Secrète', BLUE, 'Jamais ouvert', 'Achète deux displays, un à ouvrir, un à garder… et n’ouvre aucun des deux.', 'savoir ce qu’il y a dedans'],
+];
+// A 600 x 840 character card; scale it with s.
+const tcard = ([ill, name, rar, c, atk, txt, weak], x, y, r, s = 1) => `<div class="abs" style="left:${x}px;top:${y}px;width:600px;height:840px;transform:rotate(${r}deg) scale(${s});transform-origin:top left;z-index:3">
+  <div style="width:600px;height:840px;border-radius:34px;background:${c};border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW};padding:22px;display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;padding:0 8px"><span class="h" style="font-size:44px;color:${DARK}">${name}</span></div>
+    <div style="height:340px;border-radius:18px;background:#1D1730;border:6px solid ${DARK};display:flex;align-items:center;justify-content:center">
+      <svg width="400" height="280" viewBox="0 0 200 140" style="overflow:visible"><g stroke="${INK}" stroke-width="4" stroke-linejoin="round">${ILL[ill]}</g></svg></div>
+    <div class="lab" style="font-size:22px;color:${DARK};padding:0 8px">RARETÉ : ${rar.toUpperCase()}</div>
+    <div style="flex:1;border-radius:18px;background:rgba(255,255,255,.55);padding:20px 24px;color:${DARK}">
+      <div class="ui" style="font-size:34px">⚡ ${atk}</div>
+      <div style="font-family:Exo;font-weight:600;font-size:28px;line-height:1.3;margin-top:8px">${txt}</div></div>
+    <div style="font-family:Exo;font-weight:700;font-size:25px;color:${DARK};padding:0 8px 4px">Faiblesse : ${weak}</div>
+  </div></div>`;
+const mark = `<div class="abs lab" style="left:70px;bottom:40px;font-size:20px;color:rgba(255,255,255,.4)">MAQUETTE</div>`;
+carousel([
+  ['1-couverture', `${ghosts([[920, 230, 80, 8]])}${track(0, 1165, .22)}${head('LES TYPES DE COLLECTIONNEURS', 'all')}
+    <div class="abs h" style="left:70px;top:190px;width:940px;font-size:118px">Tu es<br><span style="color:${SUN}">lequel ?</span></div>
+    ${tcard(TYPES[1], 90, 560, -8, .62)}${tcard(TYPES[2], 650, 540, 7, .62)}${tcard(TYPES[0], 360, 500, -1, .7)}
+    <div class="abs" style="left:70px;top:1250px">${wordmark(46)}</div><div class="abs ui mut" style="right:70px;top:1258px;font-size:30px">Swipe →</div>`],
+  ...TYPES.map((t, i) => [`${i + 2}-${t[0]}`, `${track(i + 1, 1220, .2)}${head(`TYPE ${i + 1}/6`, 'all')}
+    ${tcard(t, 240, 190, i % 2 ? 2.5 : -2.5, 1)}
+    <div class="abs ui" style="left:0;top:1120px;width:1080px;text-align:center;font-size:40px;color:${VSOFT}">Tu en connais un ? Tague-le 👇</div>${mark}`]),
+  ['5-fin', `${ghosts([[100, 520, 80, -6], [900, 540, 90, 8]])}${track(4, 1200, .6)}${head('LES TYPES DE COLLECTIONNEURS', 'all')}
+    <div class="abs h" style="left:0;top:220px;width:1080px;text-align:center;font-size:86px">Tu es lequel ?<br><span style="color:${SUN}">Dis-le en commentaire.</span></div>
+    <div class="abs ui mut" style="left:0;top:500px;width:1080px;text-align:center;font-size:38px">Et tague celui qui se reconnaît 👇</div>
+    ${closing(800)}`],
+]);
+</script></body></html>

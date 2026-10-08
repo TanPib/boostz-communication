@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz classeur à thème</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+window.PUB = '2027-02-22';
+// Mockup of "Le classeur à thème": a 9-pocket binder page fills pocket by
+// pocket, one card per game, its price under it, a running total on top.
+// Example prices: the real episode takes them from the records, dated.
+const CARDS = [
+  ['pokemon', 'assets/carte-pikachu-base1-58.png', 'Pikachu', 12],
+  ['onepiece', 'assets/carte-luffy-op05-119.jpg', 'Luffy', 38],
+  ['lorcana', 'assets/carte-elsa-enchantee-tfc-207.avif', 'Elsa', 2900],
+  ['yugioh', 'assets/carte-dragon-blanc-yeux-bleus.jpg', 'Dragon Blanc', 45],
+  ['magic', 'assets/carte-black-lotus-lea.jpg', 'Black Lotus', 24000],
+  ['starwarsunlimited', 'assets/carte-dark-vador-hmw-007.png', 'Dark Vador', 6],
+  ['dragonball', 'assets/carte-son-goku-fb01-139.webp', 'Son Goku', 21],
+  ['wow', 'assets/carte-tigre-spectral.jpg', 'Tigre spectral', 1900],
+];
+const T0 = 2.2, STEP = 1.1;
+const W = 220, H = 308, PX = 140, PY = 450, GX = 34, GY = 62;
+const pos = (i) => [PX + 40 + (i % 3) * (W + GX), PY + 40 + Math.floor(i / 3) * (H + GY)];
+const END = T0 + 9 * STEP + .6;
+const pocket = (i) => { const [x, y] = pos(i); return `<div class="abs" style="left:${x}px;top:${y}px;width:${W}px;height:${H}px;border-radius:14px;background:rgba(196,181,253,.08);border:3px dashed rgba(196,181,253,.3)"></div>`; };
+reel(`${ghosts([[50, 180, 80, -8], [950, 230, 70, 7]])}
+  <div class="abs lab" style="left:0;top:96px;width:1080px;text-align:center;font-size:26px;letter-spacing:6px;color:${VSOFT}" ${A(0, END, 0, 'fade')}>LE CLASSEUR À THÈME · PAGE N°1</div>
+  <div class="abs h" style="left:0;top:150px;width:1080px;text-align:center;font-size:96px" ${A(0, END, 0, 'rise')}>La star de<br>chaque jeu</div>
+  ${st(300, 352, 480, 76, `<div class="ui" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:34px;color:${DARK}">Total : <span id="tot" style="margin-left:12px">0 €</span></div>`, { fill: SUN, r: -2, z: 6, attrs: A(.6, END) })}
+  <div class="abs" style="left:${PX}px;top:${PY}px;width:800px;height:${3 * H + 2 * GY + 130}px;border-radius:30px;background:#1D1730;border:6px solid ${INK};box-shadow:14px 14px 0 ${SHADOW}" ${A(.3, END, 0, 'fade')}>
+    <div class="abs" style="left:-6px;top:-6px">${Array.from({ length: 9 }, (_, i) => pocket(i).replace(`left:${pos(i)[0]}`, `left:${pos(i)[0] - PX}`).replace(`top:${pos(i)[1]}`, `top:${pos(i)[1] - PY}`)).join('')}</div></div>
+  ${CARDS.map(([g, img, name, v], i) => { const [x, y] = pos(i), at = T0 + i * STEP; return `${card(img, x, y, W, 0, 3, { h: H, attrs: A(at, END, [-2, 1.5, -1, 2, -1.5, 1, -2, 1.5][i]) })}
+    <div class="abs ui" style="left:${x - 20}px;top:${y + H + 8}px;width:${W + 40}px;text-align:center;font-size:36px;color:${GAMES[g][1]};z-index:5" ${A(at + .35, END, 0, 'rise')}>${eur(v)}</div>`; }).join('')}
+  ${(() => { const [x, y] = pos(8); return `<div class="abs h" style="left:${x}px;top:${y + 60}px;width:${W}px;text-align:center;font-size:44px;color:${VSOFT};z-index:4" ${A(T0 + 8 * STEP, END, -3)}>Et toi,<br>tu mets<br>quoi ?</div>`; })()}
+  <div class="abs src" style="left:70px;right:70px;bottom:215px;text-align:center;font-size:24px;color:rgba(255,255,255,.5)" ${A(.3, END, 0, 'fade')}>MAQUETTE · CHIFFRES D'EXEMPLE (le vrai post : cotes Cardmarket et TCGplayer datées)</div>
+  <div class="abs h" style="left:0;top:420px;width:1080px;text-align:center;font-size:84px" ${A(END + .2, null, 0, 'rise')}>Cette page vaut</div>
+  ${st(240, 540, 600, 170, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:100px;color:${DARK}">${eur(CARDS.reduce((a, c) => a + c[3], 0))}</div>`, { fill: SUN, r: -3, z: 6, attrs: A(END + .5, null, -3) })}
+  <div class="abs ui" style="left:0;top:800px;width:1080px;text-align:center;font-size:44px;color:${VSOFT}" ${A(END + 1.1, null, 0, 'rise')}>Ta 9e carte en commentaire 👇</div>
+  <div ${A(END + 1.6, null, 0, 'fade')} class="abs" style="left:0;top:0;width:1080px;height:1920px">${closing(1080)}</div>
+  ${reelPath('M-20 1830 C160 1780 300 1890 520 1840 S860 1760 1100 1820')}`, END + 5);
+// The running total follows the price stickers.
+const base = window.render;
+window.render = (t) => { base(t); document.getElementById('tot').textContent = eur(CARDS.reduce((a, c, i) => a + (t >= T0 + i * STEP + .35 ? c[3] : 0), 0)); };
+window.render(0);
+</script></body></html>

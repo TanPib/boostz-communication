@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz agenda TCG</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+window.PUB = '2026-10-29';
+// Mockup of "L'agenda TCG du mois": the month's releases of the 8 games,
+// week by week, then the whole month on one calendar to save. Dates from
+// PLANNING.md (checked on 07/10/2026); the real post reconfirms them.
+const EV = [
+  [6, 'pokemon', 'Règne Delta', 'Extension ME06, en anglais', 'assets/sortie-regne-delta.jpg'],
+  [12, 'yugioh', 'Magnificent Maestros', 'Booster, en Europe', 'assets/sortie-magnificent-maestros.webp'],
+  [13, 'magic', 'Magic × Star Trek', 'Set Universes Beyond', 'assets/sortie-magic-star-trek.jpg'],
+  [20, 'onepiece', 'OP18', 'The Dominance of God', null],
+  [20, 'starwarsunlimited', 'Icons 2027 Edition', 'Mini-set', null],
+  [28, 'boostz', 'La bêta Boostz', 'Sur inscription, par MP', null],
+];
+const col = (g) => g === 'boostz' ? VSOFT : GAMES[g][1];
+const visual = (e, x, y) => e[4] ? `<div class="abs" style="left:${x}px;top:${y}px;width:440px;height:248px;border:7px solid ${INK};border-radius:24px;overflow:hidden;box-shadow:14px 14px 0 ${SHADOW};transform:rotate(-2deg)"><img src="${e[4]}" style="width:100%;height:100%;object-fit:cover;display:block"></div>`
+  : `<div class="abs" style="left:${x}px;top:${y}px;width:440px;height:248px;border:7px solid ${INK};border-radius:24px;box-shadow:14px 14px 0 ${SHADOW};transform:rotate(-2deg);background:${col(e[1])};display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px">
+    ${e[1] === 'boostz' ? `<img src="assets/icone-app.png" style="width:130px;height:130px;border-radius:30px">` : emblemSvg(e[1], DARK, 110)}
+    <div class="lab" style="font-size:18px;color:${DARK}">${e[1] === 'boostz' ? '' : 'VISUEL OFFICIEL À VENIR'}</div></div>`;
+const row = (e, y) => `${visual(e, 70, y)}
+  <div class="abs" style="left:560px;top:${y - 6}px;width:460px">
+    <div class="h" style="font-size:76px;color:${col(e[1])}">${e[0]} nov.</div>
+    <div class="lab" style="font-size:22px;color:${col(e[1])};margin-top:6px">${e[1] === 'boostz' ? 'BOOSTZ' : GAMES[e[1]][0]}</div>
+    <div class="h" style="font-size:46px;margin-top:10px">${e[2]}</div>
+    <div class="mut" style="font-weight:600;font-size:30px;margin-top:6px">${e[3]}</div></div>`;
+const WEEKS = [['Semaine 1', 'du 2 au 8', [EV[0]]], ['Semaine 2', 'du 9 au 15', [EV[1], EV[2]]], ['Semaine 3', 'du 16 au 22', [EV[3], EV[4]]], ['Semaine 4', 'du 23 au 30', [EV[5]]]];
+const SRC = src('MAQUETTE · Dates : pokezenith.com, maisondubooster.com, ICv2, tcgalerts.net, relevées le 07/10/2026. Visuels : The Pokémon Company, Konami, Wizards of the Coast.');
+// November 2026 starts on a Sunday; weeks start on Monday.
+const cal = () => { const X = 85, Y = 330, CW = 130, CH = 132; let h = ['L', 'M', 'M', 'J', 'V', 'S', 'D'].map((d, i) => `<div class="abs lab" style="left:${X + i * CW}px;top:${Y}px;width:${CW}px;text-align:center;font-size:26px;color:${VSOFT}">${d}</div>`).join('');
+  for (let d = 1; d <= 30; d++) { const k = d + 5, cx = X + (k % 7) * CW, cy = Y + 50 + Math.floor(k / 7) * CH, ev = EV.filter((e) => e[0] === d);
+    h += `<div class="abs" style="left:${cx + 6}px;top:${cy}px;width:${CW - 12}px;height:${CH - 12}px;border-radius:18px;background:${ev.length ? '#1D1730' : 'rgba(196,181,253,.06)'};${ev.length ? `border:5px solid ${INK};box-shadow:8px 8px 0 ${SHADOW}` : ''}">
+      <div class="ui" style="position:absolute;left:12px;top:6px;font-size:30px;color:${ev.length ? INK : 'rgba(245,242,251,.45)'}">${d}</div>
+      <div style="position:absolute;left:10px;bottom:10px;display:flex;gap:6px">${ev.map((e) => e[1] === 'boostz' ? `<img src="assets/icone-app.png" style="width:44px;height:44px;border-radius:12px">` : `<div style="width:44px;height:44px;border-radius:50%;background:${col(e[1])};display:flex;align-items:center;justify-content:center">${emblemSvg(e[1], DARK, 28)}</div>`).join('')}</div></div>`; }
+  return h; };
+carousel([
+  ['1-couverture', `${ghosts([[90, 560, 70, -6], [930, 540, 70, 8]])}${track(0, 1140, .4)}${head('L’AGENDA TCG', 'all')}
+    <div class="abs h" style="left:0;top:300px;width:1080px;text-align:center;font-size:150px">Novembre</div>
+    <div class="abs h acc" style="left:0;top:480px;width:1080px;text-align:center;font-size:76px">dans les TCG</div>
+    <div class="abs" style="left:0;top:660px;width:1080px;display:flex;justify-content:center;gap:22px">${['pokemon', 'yugioh', 'magic', 'onepiece', 'starwarsunlimited'].map((g) => emblemDisc(g, 110)).join('')}</div>
+    <div class="abs mut" style="left:0;top:850px;width:1080px;text-align:center;font-weight:600;font-size:38px">5 sorties, et une surprise le 28.<br>Enregistre-le pour ne rien rater.</div>
+    <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div><div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`],
+  ...WEEKS.map(([w, d, evs], i) => [`${i + 2}-semaine-${i + 1}`, `${head(`L’AGENDA · ${w.toUpperCase()}`, 'all', d + ' novembre')}
+    ${evs.map((e, j) => row(e, evs.length === 1 ? 470 : 260 + j * 440)).join('')}${SRC}`]),
+  ['6-recap', `${head('L’AGENDA · NOVEMBRE', 'all')}
+    <div class="abs h" style="left:70px;top:180px;font-size:84px">Tout le mois</div>
+    ${cal()}
+    <div class="abs ui" style="left:0;top:1190px;width:1080px;text-align:center;font-size:36px;color:${VSOFT}">Enregistre-le 📌 Et toi, tu attends laquelle ?</div>${SRC}`],
+]);
+</script></body></html>
