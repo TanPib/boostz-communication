@@ -35,6 +35,8 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 27 | **Plus cher ou moins cher ?** | Reel, 25 s, 5 manches | 🔥🔥🔥 | un par mois, un jeu par épisode (`plus-cher-reel.html`) | à venir · 09/12/2026 (Pokémon) |
 | 28 | **Les types de collectionneurs** | Reel animé, 25 s | 🔥🔥🔥 | série (`types-collectionneurs-reel.html`) | 22/02/2027 · 4 types (les 8) |
 | 29 | **L'agenda TCG du mois** | carrousel, 6 slides | 🔥🔥 | fin de chaque mois (`agenda-tcg.html`) | à venir · 28/02/2027 (mars) |
+| 30 | **Zoom mystère** | Reel, 26 s, 5 étapes | 🔥🔥🔥 | série (`zoom-mystere-reel.html`) | à venir · 17/05/2027 |
+| 31 | **Le détail caché** | carrousel, 5 slides | 🔥🔥 | série (`details-caches.html`) | à venir · 01/06/2027 |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -179,6 +181,15 @@ Demandé le 08/10/2026 : un Reel animé avec des bonhommes à nous, inspirés du
 ### 29 · L'agenda TCG du mois
 Validé le 08/10/2026 : tout ce qui sort dans les 8 jeux le mois suivant, une slide par semaine (vraie photo du produit, date, jeu), puis le mois entier sur un calendrier à enregistrer. Posté dans les derniers jours du mois précédent, compté comme un post fixe.
 - **Données :** dates officielles reconfirmées la semaine de production, sources en bas ; un produit sans visuel officiel attend le sien.
+
+### 30 · Zoom mystère
+Validé le 08/10/2026 : une seule carte par Reel, montrée en 5 étapes tenues 2,8 s chacune, de la plus dure à la plus facile (Légende, Expert, Intermédiaire, Débutant, Noob), puis son nom ; fin « Tu l'as trouvée à quelle étape ? », comme la trend des notes de piano. **On part d'un coin anodin de l'illustration** (un bout de fond, une griffe, un pli), jamais du centre ni du visage, et le cadre se rapproche du sujet à chaque étape sans sortir de l'illustration avant l'étape Débutant (demandé le 08/10/2026). Musique : le style `enquete` (pizzicato, mineur, façon Sherlock Holmes).
+- **Il me faut :** un scan en haute définition (pour que l'étape Légende reste nette) d'une carte connue, d'un jeu différent à chaque épisode.
+- **Données :** aucune ; l'image est créditée.
+
+### 31 · Le détail caché
+Validé le 08/10/2026 : « Tu l'avais déjà vu ? », une carte par slide, un cercle sur un détail du vrai scan et une loupe qui le montre en grand, avec ce que c'est. Fin : « Tu connais un autre détail caché ? » pour nourrir les épisodes suivants.
+- **Données :** seulement des détails visibles sur le scan ou des faits sourcés (une référence, une collaboration), cités en bas.
 
 ### News TCG
 Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, record, ban) prend la place du prochain post qui n'est lié à aucune date, dans le format qui lui va le mieux.
