@@ -46,7 +46,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-11-22-story-beta-samedi-prochain.mp4` | dim. 22/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-11-25-beta-j-3.mp4` | mer. 25/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 13,8 s, musique originale |
 | `videos/2026-11-25-story-beta-j-3.mp4` | mer. 25/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2026-11-27-black-friday.mp4` | ven. 27/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 11,8 s, musique originale |
+| `videos/2026-11-27-black-friday.mp4` | ven. 27/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 11,8 s, musique originale (refait le 08/10 pour sa nouvelle date) |
 | `videos/2026-11-27-story-black-friday.mp4` | ven. 27/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-11-28-beta-ouverte.mp4` | sam. 28/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,8 s, musique originale |
 | `videos/2026-11-28-story-beta-ouverte.mp4` | sam. 28/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
@@ -54,8 +54,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-12-03-story-glorious-victors.mp4` | jeu. 03/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-12-06-guide-scelles-onepiece/` | dim. 06/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-12-06-story-guide-scelles-onepiece.mp4` | dim. 06/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2026-12-09-fonction-etat.mp4` | mer. 09/12/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 11,8 s, musique originale |
-| `videos/2026-12-09-story-fonction-etat.mp4` | mer. 09/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2027-04-08-fonction-etat.mp4` | jeu. 08/04/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 11,8 s, musique originale |
+| `videos/2027-04-08-story-fonction-etat.mp4` | jeu. 08/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-12-12-raretes-lorcana/` | sam. 12/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 10 JPEG |
 | `videos/2026-12-12-story-raretes-lorcana.mp4` | sam. 12/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-12-15-opening-collect-aura.mp4` | mar. 15/12/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 49,8 s, voix d'origine (vidéo PokePotes rebrandée) |
@@ -80,8 +80,12 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-02-01-story-erreurs-impression.mp4` | lun. 01/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-02-04-raretes-dragonball/` | jeu. 04/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
 | `videos/2027-02-04-story-raretes-dragonball.mp4` | jeu. 04/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2027-02-07-mythe-tigre-spectral/` | dim. 07/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
-| `videos/2027-02-07-story-tigre-spectral.mp4` | dim. 07/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-04-20-mythe-tigre-spectral/` | mar. 20/04/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2027-04-20-story-tigre-spectral.mp4` | mar. 20/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2027-02-07-classeur-page-hiver.mp4` | dim. 07/02/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 17,1 s, musique originale |
+| `videos/2027-02-07-story-classeur-page-hiver.mp4` | dim. 07/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2027-02-22-types-de-collectionneurs.mp4` | lun. 22/02/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 27,3 s, musique originale |
+| `videos/2027-02-22-story-types-de-collectionneurs.mp4` | lun. 22/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-02-13-fonction-echange.mp4` | sam. 13/02/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,2 s, musique originale |
 | `videos/2027-02-13-story-fonction-echange.mp4` | sam. 13/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-02-16-zoom-rebecca-guay/` | mar. 16/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
@@ -90,20 +94,20 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-02-19-story-guide-scelles-yugioh.mp4` | ven. 19/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-02-25-raretes-magic/` | jeu. 25/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG |
 | `videos/2027-02-25-story-raretes-magic.mp4` | jeu. 25/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2027-02-28-lexique-tcg/` | dim. 28/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG, plus `story.jpg` et sa story vidéo |
-| `videos/2027-02-28-story-lexique-tcg.mp4` | dim. 28/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-04-11-lexique-tcg/` | dim. 11/04/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2027-04-11-story-lexique-tcg.mp4` | dim. 11/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-03-06-choisis-tes-encres-lorcana.mp4` | sam. 06/03/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 15,1 s, musique originale |
 | `videos/2027-03-06-story-choisis-tes-encres-lorcana.mp4` | sam. 06/03/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-03-12-raretes-onepiece/` | ven. 12/03/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 12 JPEG |
 | `videos/2027-03-12-story-raretes-onepiece.mp4` | ven. 12/03/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2027-03-15-histoire-tyler-reel.mp4` | lun. 15/03/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 22,8 s, musique originale |
-| `videos/2027-03-15-story-histoire-tyler-reel.mp4` | lun. 15/03/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2027-04-26-histoire-tyler-reel.mp4` | lun. 26/04/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 22,8 s, musique originale |
+| `videos/2027-04-26-story-histoire-tyler-reel.mp4` | lun. 26/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-03-18-zoom-yuka-morii/` | jeu. 18/03/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-03-18-story-zoom-yuka-morii.mp4` | jeu. 18/03/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2027-03-24-1-chance-sur-1533-pikachu.mp4` | mer. 24/03/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 21,2 s, musique originale |
-| `videos/2027-03-24-story-1-chance-sur-1533-pikachu.mp4` | mer. 24/03/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2027-03-27-guide-scelles-magic/` | sam. 27/03/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
-| `videos/2027-03-27-story-guide-scelles-magic.mp4` | sam. 27/03/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2027-05-14-1-chance-sur-1533-pikachu.mp4` | ven. 14/05/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 21,2 s, musique originale |
+| `videos/2027-05-14-story-1-chance-sur-1533-pikachu.mp4` | ven. 14/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-04-29-guide-scelles-magic/` | jeu. 29/04/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2027-04-29-story-guide-scelles-magic.mp4` | jeu. 29/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-03-30-raretes-wow/` | mar. 30/03/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 7 JPEG |
 | `videos/2027-03-30-story-raretes-wow.mp4` | mar. 30/03/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-04-02-choisis-ton-combattant-8s.mp4` | ven. 02/04/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 9,8 s, musique originale |

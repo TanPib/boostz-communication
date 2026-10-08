@@ -77,6 +77,8 @@ const STYLES = {
   noel:        { bpm: 80, prog: ['Cmaj9', 'Am9', 'Dm9', 'G13'], lead: 'vibes', kit: 'brushes', swing: .2, cut: 5200, dust: .8, comp: 'hold' },
   protege:     { bpm: 76, prog: ['Ebmaj9', 'Gm9', 'Abmaj9', 'Bb69'], lead: 'felt', kit: 'brushes', swing: .24, cut: 4600, dust: .7, comp: 'arp' },
   contrefacon: { bpm: 80, prog: ['Gm9', 'Ebmaj9', 'Cm9', 'D7b9'], lead: 'guitar', kit: 'halftime', swing: .22, cut: 4400, dust: .8, comp: 'hold' },
+  hiver:       { bpm: 72, prog: ['Fmaj9', 'Am9', 'Dm9', 'Bbmaj9'], lead: 'musicbox', kit: 'brushes', swing: .24, cut: 4600, dust: .5, comp: 'hold' },
+  types:       { bpm: 100, prog: ['F', 'C', 'Dm', 'Bb'], lead: 'glock', kit: 'pop', swing: .08, cut: 12000, dust: 0, comp: 'strum', clean: true },
   records:     { bpm: 86, prog: ['Fmaj9', 'Dm9', 'Gm9', 'C13'], lead: 'rhodes', kit: 'boombap', swing: .2, cut: 5600, dust: .5, comp: 'sparse' },
   beta14:      { bpm: 82, prog: ['Ebmaj9', 'Fm9', 'Gm9', 'Abmaj9'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'arp' },
   beta6:       { bpm: 78, prog: ['Bbmaj9', 'Gm9', 'Cm9', 'F13'], lead: 'felt', kit: 'brushes', swing: .24, cut: 5000, dust: .6, comp: 'hold' },

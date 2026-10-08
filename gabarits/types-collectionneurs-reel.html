@@ -3,17 +3,18 @@
 <link rel="stylesheet" href="fonts/local.css">
 <script src="posts-emblems.js"></script><script src="stickers.js"></script>
 </head><body><script>
-window.PUB = '2026-12-06';
-// Mockup of "Les types de collectionneurs" as a Reel: each type is a little
-// sticker-style character acting out its habit (drawn here, no licensed
-// character, no realistic face). Humour, so no figures and no source line.
+window.PUB = '2027-02-22';
+// "Les types de collectionneurs" (asked on 08/10/2026: animated, with little
+// characters "inspiré du style Animal Crossing"): each type is one of our own
+// characters acting out its habit. No licensed character, no realistic face.
+// Humour, so no figures and no source line. Episode 1: four types.
 // Characters in a soft, cosy village-game look: a big round head, a small
 // body, shiny dot eyes, pastel colours, thin outlines a shade darker than the
 // fill, a soft shadow on the ground. Every id is prefixed so a character can
 // be drawn twice.
 const SKIN = '#FCE3CC', SKIN_D = '#E3B08F', WHITE = '#FFFFFF', EYE = '#3A2A2E';
-const C1 = '#B9A6F2', C2 = '#F59A8C', C3 = '#7FB8EE';
-const shade = { [C1]: '#8C76D6', [C2]: '#D9705F', [C3]: '#4F8FCF' };
+const C1 = '#B9A6F2', C2 = '#F59A8C', C3 = '#7FB8EE', C4 = '#8FD9A8';
+const shade = { [C1]: '#8C76D6', [C2]: '#D9705F', [C3]: '#4F8FCF', [C4]: '#5DB07C' };
 const sin = Math.sin, PI = Math.PI;
 const $ = (id) => document.getElementById(id);
 const lerp = (a, b, u) => a + (b - a) * clamp(u);
@@ -39,6 +40,7 @@ const HAIR = {
   brown: `<path d="M74 196 Q62 66 200 60 Q338 66 326 196 Q312 132 262 120 Q250 150 210 138 Q186 156 150 132 Q100 136 74 196 Z" fill="#8A5A3C" ${line('#6A4229')}/>`,
   cap: `<path d="M76 188 Q70 112 110 92 L290 92 Q330 112 324 188 Q300 150 200 146 Q100 150 76 188 Z" fill="#F2B04E" ${line('#C98A2E')}/>
     <path d="M86 136 Q96 50 200 48 Q304 50 314 136 Q200 118 86 136 Z" fill="${C2}" ${line(shade[C2])}/><path d="M298 128 Q336 120 360 136 Q340 150 304 146 Z" fill="${C2}" ${line(shade[C2])}/><circle cx="200" cy="52" r="10" fill="${WHITE}" ${line(shade[C2])}/>`,
+  spiky: `<path d="M74 196 Q66 120 96 96 L92 54 L130 80 L150 36 L178 72 L206 30 L226 72 L258 40 L270 84 L306 62 L304 100 Q334 130 326 196 Q300 140 200 134 Q100 140 74 196 Z" fill="#E08A3C" ${line('#B4672A')}/>`,
   bob: `<path d="M70 230 Q52 70 200 62 Q348 70 330 230 Q320 250 304 246 Q312 160 280 130 Q200 160 120 130 Q88 160 96 246 Q80 250 70 230 Z" fill="#3C3346" ${line('#28212F')}/>`,
 };
 
@@ -54,7 +56,7 @@ const mintAt = (p, lt) => {
   setArm(p, 'L', 152, 330, 122, 412); setArm(p, 'R', 248, 330, hx + 26, hy + 30);
   $(p + 'loupe').setAttribute('transform', `translate(${hx - 62} ${hy - 30})`);
   $(p + 'eyes').setAttribute('transform', `translate(${sweep * .12 - 4} 4)`);
-  const shock = clamp((lt - 2.4) / .2) * (lt < 4.6 ? 1 : 0);
+  const shock = clamp((lt - 2.4) / .2) * (lt < 4.3 ? 1 : 0);
   $(p + 'sweat').setAttribute('opacity', shock);
   $(p + 'sweat').setAttribute('transform', `translate(0 ${shock ? (lt * 30) % 30 : 0})`);
   $(p + 'mouth').setAttribute('d', shock ? 'M190 256 Q200 244 210 256' : 'M188 246 Q200 258 212 246');
@@ -103,17 +105,42 @@ const gardienAt = (p, lt) => {
     e.setAttribute('opacity', lt > .6 ? sin(PI * k) : 0); e.setAttribute('transform', `translate(${318 + i * 26 + sin(lt * 3 + i) * 12} ${440 - k * 150}) scale(${.8 + k * .4})`); });
 };
 
+// 4 · The chase hunter: opens booster after booster for one card, the empty
+// packs pile up beside him, and he gets sadder each time.
+const PILE = [[318, 506, -12], [372, 512, 10], [344, 470, 4], [300, 452, -20], [396, 466, 16], [360, 428, -6], [326, 404, 12]];
+const chasseur = (p) => `${ground}<g id="${p}all">${legs('#4E5D6E')}${torso(C4)}
+  ${PILE.map((_, i) => `<g id="${p}b${i}" opacity="0"><rect x="-30" y="-42" width="60" height="84" rx="6" fill="${['#FFD66B', '#B9A6F2', '#F59A8C', '#7ED8CF', '#FFD66B', '#C9A8F0', '#F59A8C'][i]}" ${line('#8C76D6')}/><path d="M-30 -30 L-18 -42 L-6 -32 L6 -42 L18 -32 L30 -42" fill="none" ${line('#8C76D6')}/></g>`).join('')}
+  <g id="${p}pack"><path d="M156 336 H244 V456 H156 Z" fill="#FFD66B" ${line('#D9A93A')}/><circle cx="200" cy="396" r="20" fill="none" stroke="#C98A2E" stroke-width="6"/><path d="M180 396 H220" stroke="#C98A2E" stroke-width="6"/></g>
+  ${arm(p, 'L', C4)}${arm(p, 'R', C4)}
+  ${face(p, HAIR.spiky)}
+  <path id="${p}tear" d="M140 230 Q148 248 140 256 Q132 248 140 230 Z" fill="#9FD3F5" ${line('#5FA7DA')} opacity="0"/></g>`;
+const chasseurAt = (p, lt) => {
+  // A pack every 0.42 s: ripped, checked, thrown on the pile.
+  const n = PILE.filter((_, i) => lt > .5 + i * .42).length;
+  PILE.forEach(([x, y, r], i) => { const e = $(p + 'b' + i), k = clamp((lt - .5 - i * .42) / .3);
+    e.setAttribute('opacity', k > 0 ? 1 : 0);
+    e.setAttribute('transform', `translate(${lerp(200, x, k)} ${lerp(380, y, k) - sin(PI * k) * 90}) rotate(${r * k})`); });
+  const flick = (lt - .5) % .42 / .42;
+  setArm(p, 'L', 152, 330, 156, 410); setArm(p, 'R', 248, 330, lt > .5 && lt < 3.4 ? lerp(244, 290, sin(PI * flick)) : 244, 410 - (lt > .5 && lt < 3.4 ? sin(PI * flick) * 40 : 0));
+  const sad = clamp(n / PILE.length);
+  $(p + 'mouth').setAttribute('d', `M188 ${250 + 4 * sad} Q200 ${258 - 18 * sad} 212 ${250 + 4 * sad}`);
+  $(p + 'head').setAttribute('transform', `rotate(${-6 * sad} 200 300)`);
+  $(p + 'tear').setAttribute('opacity', lt > 3.4 ? 1 : 0);
+  $(p + 'tear').setAttribute('transform', `translate(0 ${lt > 3.4 ? ((lt - 3.4) * 60) % 40 : 0})`);
+};
+
 const TYPES = [[mint, mintAt, C1, 'Le Mint-maniaque', 'Met sa carte sous pochette avant même de l’avoir regardée.', 'Un coin blanc ?!'],
   [ouvreur, ouvreurAt, C2, 'L’ouvreur pressé', 'Ouvre ses boosters dans le parking du magasin.', 'P'],
-  [gardien, gardienAt, C3, 'Le gardien du scellé', 'Deux displays : un à ouvrir, un à garder… et il n’en ouvre aucun.', 'Pas touche !']];
-const I0 = 2.6, SD = 5.2, E0 = I0 + TYPES.length * SD;
+  [gardien, gardienAt, C3, 'Le gardien du scellé', 'Deux displays : un à ouvrir, un à garder… et il n’en ouvre aucun.', 'Pas touche !'],
+  [chasseur, chasseurAt, C4, 'Le chasseur de chase', '30 boosters pour une seule carte… et toujours pas.', 'Encore un !']];
+const I0 = 2.6, SD = 4.6, E0 = I0 + TYPES.length * SD;
 const fig = (p, x, y, s, inner, attrs = '') => `<svg class="abs" ${attrs} width="${400 * s}" height="${600 * s}" viewBox="0 0 400 600" style="left:${x}px;top:${y}px;overflow:visible;z-index:3">${inner}</svg>`;
 const scene = ([f, , c, name, line, pop], k) => {
   const s = I0 + k * SD, o = s + SD - .15;
   const popper = pop === 'P'
     ? `<div class="abs" style="left:800px;top:520px;z-index:2" ${A(s + .3, o, 6)}><div style="width:150px;height:150px;border-radius:24px;background:${BLUE};border:7px solid ${INK};box-shadow:10px 10px 0 ${SHADOW};display:flex;align-items:center;justify-content:center"><span class="h" style="font-size:110px;color:${WHITE}">P</span></div><div style="width:18px;height:220px;margin:0 auto;background:${INK};border-radius:9px"></div></div>`
-    : st(k ? 640 : 610, k ? 640 : 560, 380, 110, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:52px;color:${DARK}">${pop}</div>`, { fill: k ? PINK : SUN, r: 6, z: 6, attrs: A(s + (k ? 1.6 : 2.45), k ? s + 3.4 : s + 4.6, 6) });
-  return `<div class="abs lab" style="left:0;top:150px;width:1080px;text-align:center;font-size:28px;color:${c}" ${A(s, o, 0, 'fade')}>TYPE ${k + 1}/6</div>
+    : st([610, 0, 640, 680][k], [560, 0, 640, 880][k], 380, 110, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:52px;color:${DARK}">${pop}</div>`, { fill: [SUN, SUN, PINK, C4][k], r: 6, z: 6, attrs: A(s + [2.45, 0, 1.6, 1.4][k], s + [4.3, 0, 3.4, 4.4][k], 6) });
+  return `<div class="abs lab" style="left:0;top:150px;width:1080px;text-align:center;font-size:28px;color:${c}" ${A(s, o, 0, 'fade')}>TYPE ${k + 1}/4</div>
   <div class="abs h" style="left:0;top:210px;width:1080px;text-align:center;font-size:${name.length > 18 ? 96 : 108}px" ${A(s + .05, o, 0, 'rise')}>${name}</div>
   <div class="abs" style="left:0;top:0;width:1080px;height:1920px" ${A(s + .15, o, 0, 'fade')}>${fig('s' + k, 240, 520, 1.5, f('s' + k))}</div>
   ${popper}
@@ -122,20 +149,20 @@ const scene = ([f, , c, name, line, pop], k) => {
 reel(`${ghosts([[60, 420, 80, -8], [950, 380, 70, 7], [70, 1760, 70, 8], [930, 1760, 80, -6]])}
   <div class="abs lab" style="left:0;top:200px;width:1080px;text-align:center;font-size:30px;color:${VSOFT}" ${A(0, I0 - .1, 0, 'fade')}>LES TYPES DE COLLECTIONNEURS</div>
   <div class="abs h" style="left:0;top:270px;width:1080px;text-align:center;font-size:150px" ${A(0, I0 - .1, 0, 'rise')}>Tu es<br><span style="color:${SUN}">lequel ?</span></div>
-  ${TYPES.map(([f], i) => `<div class="abs" style="left:0;top:0;width:1080px;height:1920px" ${A(.3 + i * .2, I0 - .1, 0, 'rise')}>${fig('i' + i, 60 + i * 330, 860, .85, f('i' + i))}</div>`).join('')}
+  ${TYPES.map(([f], i) => `<div class="abs" style="left:0;top:0;width:1080px;height:1920px" ${A(.3 + i * .2, I0 - .1, 0, 'rise')}>${fig('i' + i, 40 + i * 250, 900, .65, f('i' + i))}</div>`).join('')}
   ${TYPES.map(scene).join('')}
   <div class="abs h" style="left:0;top:230px;width:1080px;text-align:center;font-size:104px" ${A(E0, null, 0, 'rise')}>Et toi,<br><span style="color:${SUN}">tu es lequel ?</span></div>
   <div class="abs ui" style="left:0;top:500px;width:1080px;text-align:center;font-size:44px;color:${VSOFT}" ${A(E0 + .4, null, 0, 'rise')}>Tague celui qui se reconnaît 👇</div>
-  ${TYPES.map(([f], i) => `<div class="abs" style="left:0;top:0;width:1080px;height:1920px" ${A(E0 + .2 + i * .15, null, 0)}>${fig('e' + i, 90 + i * 310, 640, .75, f('e' + i))}</div>`).join('')}
+  ${TYPES.map(([f], i) => `<div class="abs" style="left:0;top:0;width:1080px;height:1920px" ${A(E0 + .2 + i * .15, null, 0)}>${fig('e' + i, 50 + i * 245, 660, .6, f('e' + i))}</div>`).join('')}
   <div ${A(E0 + .9, null, 0, 'fade')} class="abs" style="left:0;top:0;width:1080px;height:1920px">${closing(1200)}</div>
-  <div class="abs lab" style="left:0;top:1830px;width:1080px;text-align:center;font-size:20px;color:rgba(255,255,255,.4)">MAQUETTE</div>`, E0 + 4.5);
+`, E0 + 4.5);
 const base = window.render;
 window.render = (t) => {
   base(t);
   TYPES.forEach(([, at], k) => {
     at('s' + k, clamp((t - I0 - k * SD) / SD) * SD);
     // Intro and end: the three idle, with a little bounce.
-    at('i' + k, 0.3 + k); at('e' + k, 0.3 + k);
+    const idle = [.3, 1, .9, 3.3][k]; at('i' + k, idle); at('e' + k, idle);
     $('i' + k + 'all').setAttribute('transform', `translate(0 ${-Math.abs(sin(t * 3 + k)) * 20})`);
     $('e' + k + 'all').setAttribute('transform', `translate(0 ${-Math.abs(sin(t * 3 + k)) * 20})`);
   });

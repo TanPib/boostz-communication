@@ -3,11 +3,13 @@
 <link rel="stylesheet" href="fonts/local.css">
 <script src="posts-emblems.js"></script><script src="stickers.js"></script>
 </head><body><script>
-window.PUB = '2026-12-09';
-// Mockup of "Le classeur à thème": a 9-pocket binder page built for its
-// look, on one theme (here winter), cards from any game chosen for their
-// art. The cards slide into their sleeves one by one under falling snow;
-// the page's value only comes at the very end, small.
+window.PUB = '2027-02-07';
+// "Le classeur à thème": a 9-pocket binder page built for its look, on one
+// theme, with real cards from any game chosen for their art (asked on
+// 08/10/2026: "beaucoup plus centré sur le visuel", winter, Halloween,
+// flowers, the sea...). The cards slide into their sleeves one by one; the
+// background and the falling particles carry the theme. No prices: the post
+// is about the look. Episode 1: winter (07/02/2027).
 const ICE = '#A8DDF5', WHITE = '#FFFFFF';
 const CARDS = ['hiv-snow-forest.jpg', 'hiv-givrali-v-alt.png', 'hiv-anna.avif', 'hiv-olaf.avif', 'carte-elsa-enchantee-tfc-207.avif',
   'hiv-trishula.jpg', 'hiv-givrali-vmax-alt.png', 'hiv-snow-island.jpg', 'hiv-lokhlass.png'];
@@ -25,16 +27,16 @@ const cap = `<svg class="abs" width="${PW + 40}" height="80" viewBox="0 0 ${PW +
 const FLAKES = Array.from({ length: 80 }, (_, i) => { const r = (k) => ((Math.sin(i * 127.1 + k * 311.7) * 43758.5453) % 1 + 1) % 1; return [r(1) * 1080, r(2) * 2000, 4 + r(3) * 10, 40 + r(4) * 70, .35 + r(5) * .55, r(6) * 6]; });
 reel(`<div class="abs" style="left:0;top:0;width:1080px;height:1920px;background:linear-gradient(180deg,#0E1630 0%,#131020 55%,#1B1330 100%)"></div>
   ${FLAKES.map((_, i) => `<div id="f${i}" class="abs" style="border-radius:50%;background:#fff"></div>`).join('')}
-  ${deco([['sapin', 70, 120, 120, -6], ['etincelle', 900, 150, 100, 10]])}
+  ${deco([['flocon', 70, 120, 120, -6], ['etincelle', 900, 150, 100, 10]])}
   <div class="abs lab" style="left:0;top:170px;width:1080px;text-align:center;font-size:26px;letter-spacing:6px;color:${ICE}" ${A(0, END, 0, 'fade')}>LE CLASSEUR À THÈME · N°1</div>
   <div class="abs h" style="left:0;top:225px;width:1080px;text-align:center;font-size:150px" ${A(0, END, 0, 'rise')}>Page <span style="color:${ICE}">Hiver</span></div>
   <div class="abs mut" style="left:0;top:405px;width:1080px;text-align:center;font-weight:600;font-size:34px" ${A(.3, END, 0, 'rise')}>9 cartes, 4 jeux, une seule ambiance.</div>
   <div id="page" class="abs" style="left:${PX}px;top:${PY}px;width:${PW}px;height:${PH}px;border-radius:30px;background:linear-gradient(160deg,rgba(168,221,245,.22),rgba(29,23,48,.9) 60%);border:6px solid ${INK};box-shadow:16px 16px 0 ${SHADOW};z-index:2" ${A(.4, END, 0, 'fade')}>${cap}${sleeves}</div>
-  <div class="abs src" style="left:70px;right:70px;bottom:150px;text-align:center;font-size:24px;color:rgba(255,255,255,.5)" ${A(.4, END, 0, 'fade')}>MAQUETTE · Cartes : Wizards of the Coast, The Pokémon Company, Disney / Ravensburger, Konami</div>
+  <div class="abs src" style="left:70px;right:70px;bottom:150px;text-align:center;font-size:24px;color:rgba(255,255,255,.5)" ${A(.4, END, 0, 'fade')}>Cartes : Magic (Kaldheim), Pokémon (Évolution Céleste, 151), Disney Lorcana, Yu-Gi-Oh!. Images : Scryfall, pokemontcg.io, Lorcast, YGOPRODeck.</div>
   <div class="abs" style="left:0;top:0;width:1080px;height:1920px;background:rgba(11,8,18,.88);z-index:8" ${A(END, null, 0, 'fade')}></div>
   <div class="abs h" style="left:0;top:330px;width:1080px;text-align:center;font-size:96px;z-index:9" ${A(END + .2, null, 0, 'rise')}>Laquelle tu glisses<br><span style="color:${ICE}">dans ton classeur ?</span></div>
   <div class="abs ui" style="left:0;top:610px;width:1080px;text-align:center;font-size:40px;color:${VSOFT};z-index:9" ${A(END + .6, null, 0, 'rise')}>Propose le prochain thème en commentaire 👇</div>
-  <div class="abs mut" style="left:0;top:700px;width:1080px;text-align:center;font-weight:600;font-size:32px;z-index:9" ${A(END + .9, null, 0, 'rise')}>Cette page vaut 3 480 € sur Boostz (chiffre d'exemple).</div>
+  <div class="abs mut" style="left:0;top:700px;width:1080px;text-align:center;font-weight:600;font-size:32px;z-index:9" ${A(END + .9, null, 0, 'rise')}>Et ta collection, elle est rangée comment ?</div>
   <div class="abs" style="left:0;top:0;width:1080px;height:1920px;z-index:9" ${A(END + 1.2, null, 0, 'fade')}>${closing(1050)}</div>`, END + 5);
 const base = window.render;
 window.render = (t) => {

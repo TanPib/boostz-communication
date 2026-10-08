@@ -59,6 +59,9 @@ const ICONS = {
   etincelle: `<polygon points="${starPts(44, 56, 36, 10, 4)}" fill="${SUN}"/><polygon points="${starPts(80, 20, 14, 4, 4)}" fill="${BLUE}"/><circle cx="18" cy="20" r="6" fill="${PINK}"/>`,
   etiquette: `<path d="M8 50 L34 20 L88 20 Q92 20 92 24 L92 76 Q92 80 88 80 L34 80 Z" fill="${PINK}"/><circle cx="30" cy="50" r="6" fill="#131020"/>
     <text x="64" y="64" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="40" fill="${DARK}" stroke="none">%</text>`,
+  // A snowflake, for winter posts that are not about Christmas (07/02/2027 binder page).
+  flocon: `<g fill="#A8DDF5">${[0, 60, 120].map((a) => `<rect x="44" y="8" width="12" height="84" rx="6" transform="rotate(${a} 50 50)"/>`).join('')}</g>
+    <g fill="none" stroke-width="5">${[0, 60, 120, 180, 240, 300].map((a) => `<path d="M38 22 L50 32 L62 22" transform="rotate(${a} 50 50)"/>`).join('')}</g><circle cx="50" cy="50" r="9" fill="#FFFFFF"/>`,
 };
 const deco = (list) => list.map(([name, x, y, size, r = 0]) => `<svg class="abs deco" data-r="${r}" width="${size}" height="${size}" viewBox="0 0 100 100" style="left:${x}px;top:${y}px;overflow:visible;transform:rotate(${r}deg);filter:drop-shadow(8px 8px 0 ${SHADOW});z-index:1"><g stroke="${INK}" stroke-width="5" stroke-linejoin="round">${ICONS[name]}</g></svg>`).join('');
 // The dashed path runs across the slides of a carousel. On each slide, y puts
