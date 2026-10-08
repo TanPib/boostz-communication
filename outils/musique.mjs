@@ -79,6 +79,7 @@ const STYLES = {
   contrefacon: { bpm: 80, prog: ['Gm9', 'Ebmaj9', 'Cm9', 'D7b9'], lead: 'guitar', kit: 'halftime', swing: .22, cut: 4400, dust: .8, comp: 'hold' },
   hiver:       { bpm: 72, prog: ['Fmaj9', 'Am9', 'Dm9', 'Bbmaj9'], lead: 'musicbox', kit: 'brushes', swing: .24, cut: 4600, dust: .5, comp: 'hold' },
   types:       { bpm: 100, prog: ['F', 'C', 'Dm', 'Bb'], lead: 'glock', kit: 'pop', swing: .08, cut: 12000, dust: 0, comp: 'strum', clean: true },
+  enquete:     { bpm: 96, prog: ['Am9', 'Fmaj7', 'Dm9', 'E7b9'], lead: 'pizz', kit: 'brushes', swing: .12, cut: 5200, dust: .4, comp: 'sparse', melody: 'enquete' },
   records:     { bpm: 86, prog: ['Fmaj9', 'Dm9', 'Gm9', 'C13'], lead: 'rhodes', kit: 'boombap', swing: .2, cut: 5600, dust: .5, comp: 'sparse' },
   beta14:      { bpm: 82, prog: ['Ebmaj9', 'Fm9', 'Gm9', 'Abmaj9'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'arp' },
   beta6:       { bpm: 78, prog: ['Bbmaj9', 'Gm9', 'Cm9', 'F13'], lead: 'felt', kit: 'brushes', swing: .24, cut: 5000, dust: .6, comp: 'hold' },
@@ -158,7 +159,14 @@ const glock = (f, len, vel) => { // glockenspiel: a bright bar with its inharmon
     b[i] = vel * Math.min(1, t / .002) * (Math.sin(2 * Math.PI * f * t) * Math.exp(-t * 2.4) + .35 * Math.sin(2 * Math.PI * f * 2.76 * t) * Math.exp(-t * 7) + .12 * Math.sin(2 * Math.PI * f * 5.4 * t) * Math.exp(-t * 14)); }
   return lowpass(b, 7000);
 };
-const LEAD = { rhodes, felt, guitar, vibes, musicbox, chip, glock };
+const pizz = (f, len, vel) => { // plucked strings, short and woody, for the detective track (08/10/2026)
+  const n = Math.floor(Math.min(len + .35, .6) * SR), b = new Float32Array(n), p = Math.max(2, Math.round(SR / f)), ring = new Float32Array(p);
+  for (let i = 0; i < p; i++) ring[i] = rnd() * .7;
+  let j = 0;
+  for (let i = 0; i < n; i++) { const next = (j + 1) % p, v = ring[j]; ring[j] = .488 * (v + ring[next]); j = next; b[i] = vel * v * Math.exp(-i / SR * 5); }
+  return lowpass(highpass(b, 120), 3200);
+};
+const LEAD = { rhodes, felt, guitar, vibes, musicbox, chip, glock, pizz };
 // A ukulele string: a short, bright Karplus-Strong pluck.
 const uke = (f, vel) => {
   const n = Math.floor(.9 * SR), b = new Float32Array(n), p = Math.max(2, Math.round(SR / f)), ring = new Float32Array(p);
@@ -171,6 +179,13 @@ const uke = (f, vel) => {
 // phrase (06/10/2026: the launch track sounded aimless): per chord bar, a list of
 // [16th step, MIDI note, length in 16ths]; the second phrase answers the first.
 const MELODIES = {
+  // Sneaky minor pizzicato with chromatic steps down, a detective's tiptoe (asked on 08/10/2026: "mode enquête / Sherlock Holmes").
+  enquete: [
+    [[0, 69, 1], [3, 72, 1], [6, 76, 1], [8, 75, 1], [10, 74, 1], [12, 72, 2]],
+    [[0, 72, 1], [3, 77, 1], [6, 76, 1], [8, 74, 1], [10, 72, 1], [12, 69, 2]],
+    [[0, 74, 1], [3, 77, 1], [6, 81, 1], [8, 80, 1], [10, 79, 1], [12, 77, 2]],
+    [[0, 76, 1], [2, 77, 1], [4, 76, 1], [6, 75, 1], [8, 76, 3], [12, 71, 1], [14, 68, 1]],
+  ],
   lancement: [
     [[0, 76, 2], [2, 79, 2], [4, 79, 2], [6, 81, 2], [8, 79, 4], [12, 76, 2], [14, 74, 2]],
     [[0, 74, 2], [2, 79, 2], [4, 79, 2], [6, 83, 2], [8, 83, 3], [11, 81, 1], [12, 79, 4]],
@@ -182,7 +197,7 @@ const MELODIES = {
     [[0, 77, 2], [2, 81, 2], [4, 84, 2], [6, 83, 2], [8, 84, 6]],
   ],
 };
-const keys = S.lead === 'guitar' || S.lead === 'chip' || S.lead === 'musicbox' ? rhodes : LEAD[S.lead]; // who plays the chords
+const keys = S.lead === 'guitar' || S.lead === 'chip' || S.lead === 'musicbox' || S.lead === 'pizz' ? rhodes : LEAD[S.lead]; // who plays the chords
 const bassNote = (f, len, vel) => { // round upright-ish bass, a little slide into the note
   const n = Math.floor((len + .25) * SR), b = new Float32Array(n); let ph = 0;
   for (let i = 0; i < n; i++) { const t = i / SR; ph += 2 * Math.PI * f * (1 - .03 * Math.exp(-t * 30)) / SR;

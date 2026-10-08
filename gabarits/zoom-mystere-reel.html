@@ -4,46 +4,39 @@
 <script src="posts-emblems.js"></script><script src="stickers.js"></script>
 </head><body><script>
 window.PUB = '2027-01-01';
-// Mockup of "Zoom mystère" (proposed on 08/10/2026): each round starts on a
-// detail of a real card scan, very close, and slowly pulls back while a
-// countdown runs; then the card is named. Comment with your score.
-const ROUNDS = [
-  ['assets/carte-dracaufeu-base1-4.png', .72, .38, 'pokemon', 'Dracaufeu', 'Set de base, 1999'],
-  ['assets/carte-black-lotus-lea.jpg', .5, .3, 'magic', 'Black Lotus', 'Alpha, 1993'],
-  ['assets/carte-elsa-enchantee-tfc-207.avif', .62, .2, 'lorcana', 'Elsa, Esprit de l’Hiver', 'Premier Chapitre, enchantée'],
-];
-const S0 = 1.2, RD = 6.2, ZOOM = 4.6, END = S0 + ROUNDS.length * RD;
-const W = 600, H = 840, X = (1080 - W) / 2, Y = 520;
-reel(`${ghosts([[60, 1500, 80, -8], [950, 1520, 70, 7]])}
-  <div class="abs lab" style="left:0;top:150px;width:1080px;text-align:center;font-size:28px;color:${VSOFT}" ${A(0, END, 0, 'fade')}>ZOOM MYSTÈRE</div>
-  <div class="abs h" style="left:0;top:190px;width:1080px;text-align:center;font-size:100px" ${A(0, END, 0, 'rise')}>Devine<br><span style="color:${SUN}">la carte.</span></div>
-  <div id="win" class="abs" style="left:${X}px;top:${Y}px;width:${W}px;height:${H}px;border:8px solid ${INK};border-radius:30px;overflow:hidden;box-shadow:16px 16px 0 ${SHADOW};background:#000;z-index:3" ${A(.2, END, 0, 'fade')}>
-    ${ROUNDS.map(([img], k) => `<img id="im${k}" src="${img}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0">`).join('')}</div>
-  <div id="bar" class="abs" style="left:${X}px;top:${Y + H + 40}px;height:22px;border-radius:11px;background:${SUN};z-index:3"></div>
-  <div class="abs" style="left:${X}px;top:${Y + H + 40}px;width:${W}px;height:22px;border-radius:11px;background:rgba(196,181,253,.15)" ${A(.2, END, 0, 'fade')}></div>
-  ${ROUNDS.map(([, , , g, name, sub], k) => { const s = S0 + k * RD; return `
-  <div class="abs lab" style="left:0;top:${Y - 52}px;width:1080px;text-align:center;font-size:26px;color:${GAMES[g][1]}" ${A(s, s + RD - .1, 0, 'fade')}>MANCHE ${k + 1}/3</div>
-  ${st(170, Y + H - 120, 740, 190, `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:${DARK}"><div class="h" style="font-size:${name.length > 16 ? 58 : 74}px">${name}</div><div class="ui" style="font-size:30px">${GAMES[g][0].replace(/^./, (c) => c)} · ${sub}</div></div>`, { fill: GAMES[g][1], r: -2, z: 6, attrs: A(s + ZOOM + .1, s + RD - .1, -2) })}`; }).join('')}
-  <div id="count" class="abs h" style="left:0;top:${Y + H + 80}px;width:1080px;text-align:center;font-size:64px;color:${SUN}"></div>
-  <div class="abs src" style="left:70px;right:70px;bottom:215px;text-align:center;font-size:24px;color:rgba(255,255,255,.5)" ${A(.3, END, 0, 'fade')}>MAQUETTE · Images : TCGdex, Scryfall, Lorcast</div>
-  <div class="abs h" style="left:0;top:520px;width:1080px;text-align:center;font-size:96px" ${A(END + .1, null, 0, 'rise')}>Tu en as trouvé<br><span style="color:${SUN}">combien ?</span></div>
-  <div class="abs ui" style="left:0;top:800px;width:1080px;text-align:center;font-size:44px;color:${VSOFT}" ${A(END + .5, null, 0, 'rise')}>Ton score sur 3 en commentaire 👇</div>
-  <div ${A(END + 1, null, 0, 'fade')} class="abs" style="left:0;top:0;width:1080px;height:1920px">${closing(1100)}</div>
-  ${reelPath('M-20 1830 C160 1780 300 1890 520 1840 S860 1760 1100 1820')}`, END + 4.5);
+// Mockup of "Zoom mystère" (reworked on 08/10/2026 at the user's request: too
+// fast, and "tu as trouvé à quelle étape ?" like the piano-notes trend): one
+// card per Reel, shown in five held steps from a tiny detail of the real scan
+// to the whole card, each step a level (Légende → Noob); then the name, and
+// the viewer says at which step they found it. Music: the "enquete" style.
+const CARD = ['assets/carte-dragon-blanc-yeux-bleus.jpg', .41, .32, 'yugioh', 'Dragon Blanc aux Yeux Bleus', 'Yu-Gi-Oh!'];
+const STEPS = [['LÉGENDE', 5, '#F5C93B'], ['EXPERT', 3.4, '#C4B5FD'], ['INTERMÉDIAIRE', 2.3, '#35C6BC'], ['DÉBUTANT', 1.5, '#3AA9FF'], ['NOOB', 1, '#F0899A']];
+const S0 = 1.4, HOLD = 2.8, MOVE = .6, STEP = HOLD + MOVE, REV = S0 + STEPS.length * STEP - MOVE, END = REV + 2.6;
+const W = 600, H = 840, X = (1080 - W) / 2, Y = 470, [img, fx, fy, game, name, sub] = CARD;
+const ease = (x) => { x = clamp(x); return x * x * (3 - 2 * x); };
+reel(`${ghosts([[60, 1560, 80, -8], [950, 1580, 70, 7]])}
+  <div class="abs lab" style="left:0;top:140px;width:1080px;text-align:center;font-size:28px;color:${VSOFT}" ${A(0, END, 0, 'fade')}>ZOOM MYSTÈRE · 5 ÉTAPES</div>
+  <div class="abs h" style="left:0;top:190px;width:1080px;text-align:center;font-size:100px" ${A(0, END, 0, 'rise')}>Tu la trouves<br><span style="color:${SUN}">à quelle étape ?</span></div>
+  <div class="abs" style="left:${X}px;top:${Y}px;width:${W}px;height:${H}px;border:8px solid ${INK};border-radius:30px;overflow:hidden;box-shadow:16px 16px 0 ${SHADOW};background:#000;z-index:3" ${A(.2, END, 0, 'fade')}>
+    <img id="im" src="${img}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:${fx * 100}% ${fy * 100}%"></div>
+  ${STEPS.map(([lvl, , c], k) => { const s = S0 + k * STEP; return st(250, Y - 50, 580, 100, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:46px;color:${DARK}">Étape ${k + 1} · ${lvl}</div>`, { fill: c, r: k % 2 ? 2 : -2, z: 6, attrs: A(s, s + HOLD, k % 2 ? 2 : -2) }); }).join('')}
+  <div class="abs" style="left:0;top:${Y + H + 50}px;width:1080px;display:flex;justify-content:center;gap:22px;z-index:4" ${A(.3, END, 0, 'fade')}>${STEPS.map(([, , c], k) => `<div id="d${k}" style="width:150px;height:22px;border-radius:11px;background:rgba(196,181,253,.15)"></div>`).join('')}</div>
+  ${st(170, Y + H - 140, 740, 190, `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:${DARK}"><div class="h" style="font-size:58px">${name}</div><div class="ui" style="font-size:30px">${sub}</div></div>`, { fill: GAMES[game][1], r: -2, z: 6, attrs: A(REV + .1, END, -2) })}
+  <div class="abs src" style="left:70px;right:70px;bottom:215px;text-align:center;font-size:24px;color:rgba(255,255,255,.5)" ${A(.3, END, 0, 'fade')}>MAQUETTE · Image : YGOPRODeck. © Studio Dice / Shueisha, TV TOKYO, KONAMI</div>
+  <div class="abs h" style="left:0;top:250px;width:1080px;text-align:center;font-size:92px" ${A(END + .1, null, 0, 'rise')}>Tu l’as trouvée<br><span style="color:${SUN}">à quelle étape ?</span></div>
+  ${STEPS.map(([lvl, , c], k) => `<div class="abs h" style="left:0;top:${520 + k * 92}px;width:1080px;text-align:center;font-size:56px;color:${c}" ${A(END + .4 + k * .18, null, 0, 'rise')}>${k + 1} · ${lvl}</div>`).join('')}
+  <div class="abs ui" style="left:0;top:1010px;width:1080px;text-align:center;font-size:42px;color:${VSOFT}" ${A(END + 1.4, null, 0, 'rise')}>Dis-le en commentaire 👇</div>
+  <div ${A(END + 1.8, null, 0, 'fade')} class="abs" style="left:0;top:0;width:1080px;height:1920px">${closing(1220, 90)}</div>
+  ${reelPath('M-20 1830 C160 1780 300 1890 520 1840 S860 1760 1100 1820')}`, END + 6);
 const base = window.render;
 window.render = (t) => {
   base(t);
-  const k = Math.min(ROUNDS.length - 1, Math.max(0, Math.floor((t - S0) / RD))), lt = t - S0 - k * RD;
-  ROUNDS.forEach(([, fx, fy], i) => {
-    const im = document.getElementById('im' + i), on = i === k && t >= S0 && t < END;
-    im.style.opacity = on ? 1 : 0;
-    // From 6x on the detail down to the whole card: slow at first, then faster.
-    const u = clamp(lt / ZOOM), s = on ? 1 + 5 * Math.pow(1 - u, 2.2) : 1;
-    im.style.transformOrigin = `${fx * 100}% ${fy * 100}%`; im.style.transform = `scale(${s})`;
-  });
-  const left = t >= S0 && t < END ? clamp(1 - lt / ZOOM) : 0;
-  document.getElementById('bar').style.width = `${W * left}px`;
-  document.getElementById('count').textContent = left > 0 ? Math.ceil(left * 5) : '';
+  // Held on each step's zoom, then a slow move to the next one.
+  let z = STEPS[0][1];
+  STEPS.forEach(([, zk], k) => { if (k) { const a = S0 + k * STEP - MOVE; z += (zk - STEPS[k - 1][1]) * ease((t - a) / MOVE); } });
+  document.getElementById('im').style.transform = `scale(${z})`;
+  const cur = Math.min(STEPS.length - 1, Math.floor((t - S0) / STEP));
+  STEPS.forEach(([, , c], k) => { document.getElementById('d' + k).style.background = t >= S0 && k <= cur ? c : 'rgba(196,181,253,.15)'; });
 };
 window.render(0);
 </script></body></html>
