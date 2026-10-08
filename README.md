@@ -74,8 +74,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-01-01-story-bonne-annee.mp4` | ven. 01/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-01-07-raretes-yugioh/` | jeu. 07/01/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
 | `videos/2027-01-07-story-raretes-yugioh.mp4` | jeu. 07/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2027-01-20-raretes-starwarsunlimited/` | mer. 20/01/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
-| `videos/2027-01-20-story-raretes-starwarsunlimited.mp4` | mer. 20/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-05-26-raretes-starwarsunlimited/` | mer. 26/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
+| `videos/2027-01-20-story-raretes-starwarsunlimited.mp4` | mer. 26/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-02-01-erreurs-impression.mp4` | lun. 01/02/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 18,6 s, musique originale |
 | `videos/2027-02-01-story-erreurs-impression.mp4` | lun. 01/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-02-04-raretes-dragonball/` | jeu. 04/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
@@ -90,8 +90,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-02-13-story-fonction-echange.mp4` | sam. 13/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-02-16-zoom-rebecca-guay/` | mar. 16/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-02-16-story-zoom-rebecca-guay.mp4` | mar. 16/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2027-02-19-guide-scelles-yugioh/` | ven. 19/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
-| `videos/2027-02-19-story-guide-scelles-yugioh.mp4` | ven. 19/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-05-05-guide-scelles-yugioh/` | mer. 05/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2027-02-19-story-guide-scelles-yugioh.mp4` | mer. 05/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-02-25-raretes-magic/` | jeu. 25/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG |
 | `videos/2027-02-25-story-raretes-magic.mp4` | jeu. 25/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-04-11-lexique-tcg/` | dim. 11/04/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG, plus `story.jpg` et sa story vidéo |
@@ -116,8 +116,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-04-05-story-zoom-mitsuhiro-arita.mp4` | lun. 05/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-04-14-guide-scelles-lorcana/` | mer. 14/04/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-04-14-story-guide-scelles-lorcana.mp4` | mer. 14/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2027-04-23-histoire-pikachu-illustrateur/` | ven. 23/04/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
-| `videos/2027-04-23-story-histoire-pikachu-illustrateur.mp4` | ven. 23/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-05-08-histoire-pikachu-illustrateur/` | sam. 08/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2027-04-23-story-histoire-pikachu-illustrateur.mp4` | sam. 08/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-05-02-zoom-atsuko-nishida/` | dim. 02/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-05-02-story-zoom-atsuko-nishida.mp4` | dim. 02/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-05-11-guide-scelles-starwarsunlimited/` | mar. 11/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |

@@ -26,7 +26,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2026-11-09': ('L', ''),
  '2026-11-12': ('YMT', ''),
  '2026-11-14': (ALL, ''),
- '2027-04-23': ('P', "Image de la carte : slabfol.io."),
+ '2027-05-08': ('P', "Image de la carte : slabfol.io."),
  '2026-11-22': (ALL, ''),
  '2026-11-25': (ALL, ''),
  '2026-11-27': (ALL, ''),
@@ -49,7 +49,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2027-04-20': ('W', "Image de la carte : Category One Games."),
  '2027-02-13': ('P', ''),
  '2027-02-16': ('M', "Images des cartes : Scryfall. Photo de Rebecca Guay : © Luigi Novi / Wikimedia Commons, CC BY 3.0."),
- '2027-02-19': ('Y', "Photos des produits : play-in.com, investcollect.com."),
+ '2027-05-05': ('Y', "Photos des produits : play-in.com, investcollect.com."),
  '2027-05-20': ('P', "Image de la carte : pokemontcg.io."),
  '2027-04-11': ('PML', ''),
  '2027-03-03': ('DY', ''),
@@ -67,9 +67,14 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2027-02-25': ('M', "Images des cartes : Scryfall."),
  '2027-01-07': ('Y', "Images des cartes : TCGplayer."),
  '2027-02-04': ('D', "Images des cartes : TCGplayer."),
- '2027-01-20': ('S', "Images des cartes : TCGplayer."),
+ '2027-05-26': ('S', "Images des cartes : TCGplayer."),
  '2027-02-07': ('PLMY', "Images des cartes : Scryfall, pokemontcg.io, Lorcast, YGOPRODeck."),
  '2027-02-22': ('', "Personnages et dessins : Boostz."),
+ '2027-01-20': ('O', ''),  # Plus cher ou moins cher ?: add the image credits when produced
+ '2027-02-19': ('D', ''),  # Plus cher ou moins cher ?: add the image credits when produced
+ '2027-04-23': ('S', ''),  # Plus cher ou moins cher ?: add the image credits when produced
+ '2027-05-23': ('M', ''),  # Plus cher ou moins cher ?: add the image credits when produced
+ '2027-06-04': ('Y', ''),  # Plus cher ou moins cher ?: add the image credits when produced
  '2027-03-30': ('W', "Images des cartes : RetroTCG."),
 }
 def note(date):

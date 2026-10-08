@@ -56,7 +56,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | \*mar. 12/01 | carrousel | 9 Pub Boostz | « Jeudi, tu pourras… » sur de vraies captures de l'appli | Yu-Gi-Oh!, Lorcana, Warcraft | à produire (rappel du 05/01) |
 | \*jeu. 14/01 | Reel | 11 Annonce | **Boostz est disponible.** Les liens des stores en story | les 8 | à produire (rappel du 05/01) |
 | dim. 17/01 | Reel | 12 Fonction à la loupe | Tuto : ajoute ta première carte en 10 s, puis regarde sa cote | Dragon Ball | à produire (rappel du 12/01) |
-| mer. 20/01 | carrousel | 25 Les raretés expliquées | Épisode Star Wars Unlimited : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Star Wars Unlimited | ✅ programmé |
+| mer. 20/01 | Reel | 27 Plus cher ou moins cher ? | Épisode One Piece | One Piece | à produire (rappel du 15/01) |
 | sam. 23/01 | carrousel | 2 Cotes qui bougent | Édition n° 4 : relevé du 16/01 contre celui du 01/01 | Pokémon | à produire (rappel du 16/01) |
 | \*mar. 26/01 | Reel | 15 Sortie d'extension | Demain : le coffret Saint-Valentin Pokémon (27/01) | Pokémon | à produire (rappel du 16/01) |
 | \*ven. 29/01 | carrousel | 15 Sortie d'extension | Magic Nauctis : avant-premières dès le 29/01, sortie le 05/02 | Magic | à produire (rappel du 16/01) |
@@ -66,7 +66,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | mer. 10/02 | carrousel | 2 Cotes qui bougent | Édition n° 5 : du 16/01 au 01/02 | Lorcana | brouillon dans Metricool, produit par le rappel du 02/02 |
 | sam. 13/02 | Reel | 12 Fonction à la loupe | L'échange : la valeur de chaque côté, avec de vraies cotes | Pokémon | ✅ programmé (cotes rafraîchies le 02/02) |
 | mar. 16/02 | carrousel | 23 Zoom sur un artiste | Rebecca Guay, l'aquarelle de Magic (avec son portrait sous licence libre) | Magic | ✅ programmé |
-| ven. 19/02 | carrousel | 21 Guide des produits scellés | Épisode : Yu-Gi-Oh! | Yu-Gi-Oh! | ✅ programmé |
+| ven. 19/02 | Reel | 27 Plus cher ou moins cher ? | Épisode Dragon Ball | Dragon Ball | à produire (rappel du 14/02) |
 | lun. 22/02 | Reel | 28 Les types de collectionneurs | Le Mint-maniaque, l'ouvreur pressé, le gardien du scellé, le chasseur de chase, en bonhommes animés | les 8 | ✅ programmé |
 | jeu. 25/02 | carrousel | 25 Les raretés expliquées | Épisode Magic : 7 raretés, le vrai scan d’une carte et un zoom sur son repère | Magic | ✅ programmé |
 | \*dim. 28/02 | carrousel | 29 L'agenda TCG du mois | Mars dans les TCG : les sorties des 8 jeux, semaine par semaine | les 8 | à produire (rappel du 23/02) |
@@ -87,17 +87,22 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | mer. 14/04 | carrousel | 21 Guide des produits scellés | Épisode : Lorcana | Lorcana | ✅ programmé |
 | sam. 17/04 | Reel | 3 1 chance sur N | La chase d'un set récent : N boosters, le coût de la chasse | One Piece | à produire (rappel du 10/04) |
 | mar. 20/04 | carrousel | 13 Mythe ou réalité | « Une carte s'est vendue 5 250 \$… pour un tigre qui n'existe pas » | Warcraft | ✅ programmé (déplacé du 07/02 le 08/10 pour les nouvelles séries) |
-| ven. 23/04 | carrousel | 22 L'histoire d'une carte | Le Pikachu Illustrateur : du concours CoroCoro de 1998 au record de 16,49 M\$ | Pokémon | ✅ programmé |
+| ven. 23/04 | Reel | 27 Plus cher ou moins cher ? | Épisode Star Wars Unlimited | Star Wars Unlimited | à produire (rappel du 18/04) |
 | lun. 26/04 | Reel | 22 L'histoire d'une carte | Tyler le Grand Guerrier, en Reel | Yu-Gi-Oh! | ✅ programmé (déplacé du 15/03 le 08/10 pour les nouvelles séries) |
 | jeu. 29/04 | carrousel | 21 Guide des produits scellés | Épisode : Magic | Magic | ✅ programmé (déplacé du 27/03 le 08/10 pour les nouvelles séries) |
 | dim. 02/05 | carrousel | 23 Zoom sur un artiste | Atsuko Nishida, la créatrice de Pikachu, et ses cartes | Pokémon | ✅ programmé |
+| mer. 05/05 | carrousel | 21 Guide des produits scellés | Épisode : Yu-Gi-Oh! | Yu-Gi-Oh! | ✅ programmé (déplacé du 19/02 le 08/10 : un « Plus cher ou moins cher ? » par mois) |
+| sam. 08/05 | carrousel | 22 L'histoire d'une carte | Le Pikachu Illustrateur : du concours CoroCoro de 1998 au record de 16,49 M\$ | Pokémon | ✅ programmé (déplacé du 23/04 le 08/10 : un « Plus cher ou moins cher ? » par mois) |
 | mar. 11/05 | carrousel | 21 Guide des produits scellés | Épisode : Star Wars Unlimited | Star Wars Unlimited | ✅ programmé |
 | ven. 14/05 | Reel | 3 1 chance sur N | 1 chance sur 1 533 d'avoir le Pikachu-ex 276/217 de Héros Transcendants | Pokémon | ✅ programmé (déplacé du 24/03 le 08/10 pour les nouvelles séries) |
 | jeu. 20/05 | carrousel | 22 L'histoire d'une carte | Le Pikachu au chapeau de feutre gris : le musée Van Gogh, la cohue, la carte la plus échangée | Pokémon | ✅ programmé |
+| dim. 23/05 | Reel | 27 Plus cher ou moins cher ? | Épisode Magic | Magic | à produire (rappel du 18/05) |
+| mer. 26/05 | carrousel | 25 Les raretés expliquées | Épisode Star Wars Unlimited : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Star Wars Unlimited | ✅ programmé (déplacé du 20/01 le 08/10 : un « Plus cher ou moins cher ? » par mois) |
 | sam. 29/05 | carrousel | 23 Zoom sur un artiste | Christopher Rush, le père du Black Lotus | Magic | ✅ programmé |
+| ven. 04/06 | Reel | 27 Plus cher ou moins cher ? | Épisode Yu-Gi-Oh! | Yu-Gi-Oh! | à produire (rappel du 30/05) |
 | lun. 07/06 | carrousel | 21 Guide des produits scellés | Épisode : Pokémon | Pokémon | ✅ programmé |
 
-- **Les séries du 08/10/2026** (validées par l’utilisateur ce jour-là) : le classeur à thème (n° 26, Reel visuel, une page sur un thème graphique), Plus cher ou moins cher ? (n° 27, à faire revenir souvent : « fais-en plein d’autres »), les types de collectionneurs (n° 28, bonhommes animés) et l’agenda TCG du mois (n° 29, fin de chaque mois, compté comme fixe). Elles ont pris la place de 7 posts sans date, repoussés en avril et mai (Estime l’état, lexique, 1 chance sur N One Piece, mythe du Tigre spectral, Tyler en Reel, guide Magic, Pikachu 1 sur 1 533) ; le planning d’avril (écrit le 16/03) ajoute un épisode de Plus cher ou moins cher ? toutes les deux à trois semaines et l’agenda de mai le 28/04 ou autour.
+- **Les séries du 08/10/2026** (validées par l’utilisateur ce jour-là) : le classeur à thème (n° 26, Reel visuel, une page sur un thème graphique), Plus cher ou moins cher ? (n° 27, à faire revenir souvent : « fais-en plein d’autres »), les types de collectionneurs (n° 28, bonhommes animés) et l’agenda TCG du mois (n° 29, fin de chaque mois, compté comme fixe). Elles ont pris la place de 7 posts sans date, repoussés en avril et mai (Estime l’état, lexique, 1 chance sur N One Piece, mythe du Tigre spectral, Tyler en Reel, guide Magic, Pikachu 1 sur 1 533) ; Plus cher ou moins cher ? revient **une fois par mois** (demandé le 08/10) : 09/12 Pokémon, 20/01 One Piece, 19/02 Dragon Ball, 15/03 Lorcana, 23/04 Star Wars Unlimited, 23/05 Magic, 04/06 Yu-Gi-Oh!, ce qui a repoussé les raretés Star Wars Unlimited au 26/05, le guide Yu-Gi-Oh! au 05/05 et le Pikachu Illustrateur au 08/05. L’agenda de mai se place le 28/04 ou autour.
 - **La série « Les raretés expliquées »** (demandée le 07/10/2026, `gabarits/raretes.html#<jeu>`) est étalée du 17/11 au 30/03, environ un épisode toutes les 2 à 3 semaines, pour varier les types (redemandé le 07/10 : « ventiler au maximum »). Elle a pris les dates de 8 posts sans date imposée (Arita, Pikachu Illustrateur, Nishida, Van Gogh, Rush et 3 guides des scellés), repoussés d’avril à juin. One Piece garde les visuels « SAMPLE » de Bandai et Warcraft ses scans en 215 px : validé par l’utilisateur le 07/10.
 - **Février et mars** : à compléter avec les sorties fixes dès qu'elles sont confirmées (Saint-Valentin le 14/02, Nauctis le 05/02, One Piece OP-19 annoncé au 05/03, Lorcana Into the Inkdark au 1er trimestre 2027) ; un post fixe qui tombe repousse les posts sans date des jours voisins. Avril s'écrit le 16/03.
 - **Les brouillons** (Cotes, Hyperia City, OP18/Icons, Tu préfères ?) sont des posts Instagram « Ne pas publier » à publication automatique coupée : le rappel de leur date les produit, transforme le brouillon en vrai post (`updateScheduledPost`) et crée TikTok, Facebook et la story.
