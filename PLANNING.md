@@ -1,6 +1,6 @@
 # Planning du 16 octobre 2026 au 7 juin 2027
 
-**Bêta fermée : samedi 28 novembre 2026**, sur inscription uniquement (MP, invitation par mail). **Sortie de l'appli : jeudi 14 janvier 2027** (décidés le 06/10/2026). Le premier post (16/10) annonce les deux dates ; janvier est construit autour du lancement.
+**Bêta Android : samedi 14 novembre 2026** (test fermé Google Play, décidé le 13/10/2026 à la place de la bêta sur MP du 28/11) : pré-inscription dès maintenant sur boostz.fr/beta, les inscrits reçoivent l'invitation par mail le 14. **Sortie de l'appli : jeudi 14 janvier 2027** (décidée le 06/10/2026). Le premier post (16/10) annonce les deux dates ; janvier est construit autour du lancement.
 
 **Le rythme** (décidé le 07/10/2026, remplace « un post tous les 3 jours sans interruption ») :
 - **Les posts fixes restent à leur date** : sorties d'extension, temps forts (Halloween, Black Friday, Noël, nouvel an, Saint-Valentin), bêta et lancement. Ils sont marqués \* dans le calendrier.
@@ -30,14 +30,13 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | mar. 03/11 | carrousel | 22 L'histoire d'une carte | Tyler le Grand Guerrier : le vœu Make-A-Wish, la carte unique, 311 211 \$ | Yu-Gi-Oh! | ✅ programmé |
 | \*ven. 06/11 | carrousel | 15 Sortie d'extension | Règne Delta sort aujourd'hui (ME06) | Pokémon | ✅ programmé |
 | lun. 09/11 | Reel | 30 Zoom mystère | Épisode 1 : Mickey Mouse, Brave Petit Tailleur, en 5 étapes de Légende à Noob | Lorcana | ✅ programmé |
+| \*mer. 11/11 | Reel | 11 Annonce | Bêta Android J-3 : pré-inscris-toi sur boostz.fr/beta | les 8 | ✅ programmé |
 | \*jeu. 12/11 | carrousel | 15 Sortie d'extension | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | ✅ programmé |
-| \*sam. 14/11 | Reel | 11 Annonce | Bêta fermée J-14 | les 8 | ✅ programmé |
+| \*sam. 14/11 | Reel | 11 Annonce | La bêta Android est ouverte (visuel du site) | les 8 | ✅ programmé |
 | mar. 17/11 | carrousel | 25 Les raretés expliquées | Épisode Pokémon : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Pokémon | ✅ programmé |
 | \*sam. 21/11 | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | brouillon dans Metricool, produit par le rappel du 20/11 |
-| \*dim. 22/11 | Reel | 11 Annonce | Bêta fermée J-6 | les 8 | ✅ programmé |
-| \*mer. 25/11 | Reel | 11 Annonce | Bêta fermée J-3 | les 8 | ✅ programmé |
+| \*dim. 22/11 | Reel | 11 Annonce | Rejoins la bêta en trois étapes | les 8 | ✅ programmé |
 | \*ven. 27/11 | Reel | 16 Thème | Black Friday : « Promo ou pas ? » | les 8 | ✅ programmé |
-| \*sam. 28/11 | Reel | 11 Annonce | La bêta fermée est ouverte | les 8 | ✅ programmé |
 | mar. 01/12 | carrousel | 2 Cotes qui bougent | Édition n° 2 : du 16/11 au 30/11 | One Piece | brouillon dans Metricool, produit par le rappel du 29/11 |
 | \*jeu. 03/12 | Reel | 15 Sortie d'extension | Glorious Victors sort aujourd'hui | Yu-Gi-Oh! | ✅ programmé |
 | dim. 06/12 | carrousel | 21 Guide des produits scellés | Épisode : One Piece | One Piece | ✅ programmé |
