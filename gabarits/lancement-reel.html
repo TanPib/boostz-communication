@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz lancement</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// The countdown to the launch of Thursday 14/01/2027 (asked on 13/10/2026: the
+// plan had a single countdown post): J-31 (14/12), J-4 (10/01), J-1 (13/01) and
+// the day itself (14/01). Each entry sets window.PUB so closing() says
+// "bientôt" before the launch and "disponible" from 14/01.
+// Render one with: node rendu.mjs lancement-reel.html#<entry> video
+// No figures: the features named are the app's own.
+const key = location.hash.slice(1) || 'j31';
+const PUBS = { j31: '2026-12-14', j4: '2027-01-10', j1: '2027-01-13', jour: '2027-01-14' };
+window.PUB = PUBS[key];
+const center = (top, size, html, at, out, kind = 'rise') => `<div class="abs h" ${A(at, out, 0, kind)} style="left:60px;right:60px;top:${top}px;text-align:center;font-size:${size}px;z-index:5">${html}</div>`;
+const kick = (text, at, out) => `<div class="abs lab" ${A(at, out, 0, 'fade')} style="left:0;top:330px;width:1080px;text-align:center;font-size:30px;letter-spacing:8px;color:${PINK};z-index:5">${text}</div>`;
+const huge = (html, at, out, top = 360, size = 300) => `<div class="abs h" ${A(at, out, -3)} style="left:0;top:${top}px;width:1080px;text-align:center;font-size:${size}px;line-height:1;z-index:5"><span class="grad">${html}</span></div>`;
+const tag = (x, y, w, text, fill, r, at, out, size = 76) => st(x, y, w, 170, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:${size}px;color:${DARK};white-space:nowrap">${text}</div>`, { fill, r, z: 6, attrs: A(at, out, r) });
+const icon = (x, y, d, at, out, r = -3) => `<div class="abs" ${A(at, out, r)} style="left:${x}px;top:${y}px;width:${d}px;height:${d}px;border-radius:${d * .22}px;overflow:hidden;border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW};z-index:6"><img src="assets/icone-app.png" style="width:100%;height:100%;display:block"></div>`;
+const discs = (y, d, at, out) => ALL8.map((g, i) => `<div class="abs" ${A(at + i * .12, out, 0)} style="left:${90 + (i % 4) * 235}px;top:${y + Math.floor(i / 4) * (d + 50)}px;width:${d}px;z-index:6">${emblemDisc(g, d)}</div>`).join('');
+// What the app does, its own features.
+const FEAT = [['Ta collection', 'pokemon'], ['Ta cote FR · EN · JP', 'onepiece'], ['L’état de tes cartes', 'lorcana'], ['L’échange', 'magic']];
+const feats = (at, out) => FEAT.map(([t, g], i) => st(i % 2 ? 560 : 90, 760 + Math.floor(i / 2) * 230, 430, 180,
+  `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;height:100%">${emblemDisc(g, 70)}<div class="ui" style="font-size:36px;text-align:center">${t}</div></div>`,
+  { r: [-3, 2, 2, -2][i], z: 6, attrs: A(at + i * .45, out, [-3, 2, 2, -2][i]) })).join('');
+const backs = (at, out, y = 900) => ALL8.map((g, i) => back(g, 45 + i * 112, y + (i % 2) * 40, 170, -10 + i * 3, 4, A(at + i * .12, out, -10 + i * 3))).join('');
+// The end card: wordmark, tagline and call from closing(), plus one line of the day.
+const end = (at, line) => `<div class="abs" ${A(at, null, 0, 'rise')} style="left:0;top:0;width:1080px;height:1920px;z-index:5">${closing(620, 120)}
+  <div class="abs h" style="left:60px;right:60px;top:1060px;text-align:center;font-size:52px;line-height:1.2">${line}</div></div>`;
+
+const ENTRIES = {
+  j31: [`${kick('SORTIE DE BOOSTZ', .2, 4.2)}${huge('J-31', .3, 4.2)}
+    ${center(720, 76, 'Dans un mois,<br>Boostz sort.', 1, 4.2)}
+    ${tag(220, 1000, 640, 'Jeudi 14 janvier', SUN, -3, 1.7, 4.2)}
+    ${center(400, 86, 'Les 8 TCG,<br><span class="acc">une seule app.</span>', 4.4, 8.4)}
+    ${icon(420, 690, 240, 4.8, 8.4)}${discs(1060, 150, 5.4, 8.4)}
+    ${end(8.6, 'En attendant, la bêta Android :<br><span class="acc">boostz.fr/beta</span>')}`, 12.5],
+  j4: [`${kick('SORTIE DE BOOSTZ', .2, 4.2)}${huge('J-4', .3, 4.2)}
+    ${center(720, 76, 'Jeudi, Boostz sort.', 1, 4.2)}${backs(1.6, 4.2)}
+    ${center(420, 86, 'Jeudi, <span class="acc">tu pourras…</span>', 4.4, 8.6)}
+    ${feats(4.9, 8.6)}
+    ${end(8.8, 'Jeudi 14 janvier<br><span class="acc">sur Android et iPhone</span>')}`, 12.5],
+  j1: [`${kick('SORTIE DE BOOSTZ', .2, 4.6)}${huge('Demain.', .3, 4.6, 380, 230)}
+    ${icon(420, 700, 240, 1, 4.6)}
+    ${tag(220, 1060, 640, 'Jeudi 14 janvier', SUN, 3, 1.6, 4.6)}
+    ${end(4.8, 'Sur Android et iPhone')}`, 8.5],
+  jour: [`${kick('C’EST LE JOUR J', .2, 4.4)}${huge('Boostz est<br>disponible.', .3, 4.4, 380, 150)}
+    ${icon(420, 760, 240, 1, 4.4)}
+    ${tag(190, 1110, 700, 'Android et iPhone', DONE, -3, 1.6, 4.4, 70)}
+    ${center(400, 86, 'Les 8 TCG,<br><span class="acc">une seule app.</span>', 4.6, 8.4)}
+    ${discs(760, 150, 4.9, 8.4)}
+    ${end(8.6, 'Merci d’avoir attendu avec nous.')}`, 12.5],
+};
+const [html, total] = ENTRIES[key];
+reel(`${ghosts([[60, 160, 90, -8], [930, 200, 80, 6], [70, 1760, 90, 10], [900, 1780, 100, -6]])}
+  ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}${html}`, total);
+</script></body></html>

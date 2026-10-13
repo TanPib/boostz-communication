@@ -42,6 +42,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | dim. 06/12 | carrousel | 21 Guide des produits scellés | Épisode : One Piece | One Piece | ✅ programmé |
 | mer. 09/12 | Reel | 27 Plus cher ou moins cher ? | Épisode Pokémon : 5 manches, deux cartes, laquelle vaut le plus ? | Pokémon | brouillon dans Metricool, produit par le rappel du 04/12 |
 | sam. 12/12 | carrousel | 25 Les raretés expliquées | Épisode Lorcana : 8 raretés, le vrai scan d’une carte et un zoom sur son repère | Lorcana | ✅ programmé |
+| \*lun. 14/12 | Reel | 11 Annonce | Lancement J-31 : « Dans un mois, Boostz sort » | les 8 | ✅ programmé |
 | mar. 15/12 | Reel | 24 Opening | Opening Collect Aura : les notes de nos cartes gradées (vidéo PokePotes montée par Julien Ardid, rebrandée Boostz) | Pokémon | ✅ programmé (Instagram, TikTok, Facebook) |
 | \*ven. 18/12 | carrousel | 15 Sortie d'extension | FB12 Reach the God sort aujourd'hui | Dragon Ball | ✅ programmé |
 | \*lun. 21/12 | Reel | 16 Thème | Noël : une carte sous le sapin pour chaque budget | Pokémon, Lorcana | ✅ programmé (cotes rafraîchies le 15/12) |
@@ -51,9 +52,11 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | \*ven. 01/01/2027 | Reel | 16 Thème | Bonne année 2027 | les 8 | ✅ programmé |
 | lun. 04/01 | carrousel | 2 Cotes qui bougent | Édition n° 3 : du 16/12 au 01/01 | Magic | brouillon dans Metricool, produit par le rappel du 02/01 |
 | jeu. 07/01 | carrousel | 31 Le détail caché | Épisode 1 : Pikachu dans Givrali VMAX, les baies d’Ectoplasma VMAX, le chapeau du Pikachu Van Gogh | Pokémon | ✅ programmé |
-| \*dim. 10/01 | Reel | 11 Annonce | « Dans 4 jours. » Compte à rebours | les 8 | à produire (rappel du 05/01) |
+| \*dim. 10/01 | Reel | 11 Annonce | Lancement J-4 : « Jeudi, tu pourras… » | les 8 | ✅ programmé |
 | \*mar. 12/01 | carrousel | 9 Pub Boostz | « Jeudi, tu pourras… » sur de vraies captures de l'appli | Yu-Gi-Oh!, Lorcana, Warcraft | à produire (rappel du 05/01) |
-| \*jeu. 14/01 | Reel | 11 Annonce | **Boostz est disponible.** Les liens des stores en story | les 8 | à produire (rappel du 05/01) |
+| \*mer. 13/01, 18 h | Reel | 11 Annonce | Lancement J-1 : « Demain. » | les 8 | ✅ programmé |
+| \*jeu. 14/01 | Reel | 11 Annonce | **Boostz est disponible.** Liens des stores à ajouter (rappel du 05/01) | les 8 | ✅ programmé, légende à compléter avec les liens des stores |
+| \*ven. 15/01 | carrousel | 11 Annonce | Merci : ce que disent les testeurs de la bêta Android | les 8 | brouillon dans Metricool, produit par le rappel du 05/01 (avis à récolter pendant la bêta) |
 | dim. 17/01 | Reel | 12 Fonction à la loupe | Tuto : ajoute ta première carte en 10 s, puis regarde sa cote | Dragon Ball | à produire (rappel du 12/01) |
 | mer. 20/01 | Reel | 27 Plus cher ou moins cher ? | Épisode One Piece | One Piece | brouillon dans Metricool, produit par le rappel du 15/01 |
 | sam. 23/01 | carrousel | 2 Cotes qui bougent | Édition n° 4 : relevé du 16/01 contre celui du 01/01 | Pokémon | à produire (rappel du 16/01) |

@@ -78,6 +78,10 @@ const STYLES = {
   protege:     { bpm: 76, prog: ['Ebmaj9', 'Gm9', 'Abmaj9', 'Bb69'], lead: 'felt', kit: 'brushes', swing: .24, cut: 4600, dust: .7, comp: 'arp' },
   contrefacon: { bpm: 80, prog: ['Gm9', 'Ebmaj9', 'Cm9', 'D7b9'], lead: 'guitar', kit: 'halftime', swing: .22, cut: 4400, dust: .8, comp: 'hold' },
   hiver:       { bpm: 72, prog: ['Fmaj9', 'Am9', 'Dm9', 'Bbmaj9'], lead: 'musicbox', kit: 'brushes', swing: .24, cut: 4600, dust: .5, comp: 'hold' },
+  // The launch countdown (2026-12 / 2027-01): clean and cheerful like the launch Reel, one feel each.
+  moisrestant: { bpm: 92, prog: ['G', 'D', 'Em', 'C'], lead: 'vibes', kit: 'pop', swing: .08, cut: 12000, dust: 0, comp: 'strum', clean: true },
+  compte:      { bpm: 100, prog: ['D', 'A', 'Bm', 'G'], lead: 'glock', kit: 'pop', swing: .06, cut: 12500, dust: 0, comp: 'arp', clean: true },
+  veille:      { bpm: 90, prog: ['Am', 'F', 'C', 'G'], lead: 'glock', kit: 'pop', swing: .08, cut: 12000, dust: 0, comp: 'hold', clean: true },
   types:       { bpm: 100, prog: ['F', 'C', 'Dm', 'Bb'], lead: 'glock', kit: 'pop', swing: .08, cut: 12000, dust: 0, comp: 'strum', clean: true },
   enquete:     { bpm: 96, prog: ['Am9', 'Fmaj7', 'Dm9', 'E7b9'], lead: 'pizz', kit: 'brushes', swing: .12, cut: 5200, dust: .4, comp: 'sparse', melody: 'enquete' },
   detail:      { bpm: 82, prog: ['Dmaj9', 'Bm9', 'Em9', 'A13'], lead: 'vibes', kit: 'brushes', swing: .22, cut: 5200, dust: .5, comp: 'arp' },
