@@ -80,7 +80,7 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-01-10-story-lancement-j-4.mp4` | dim. 10/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-01-13-lancement-j-1.mp4` | mer. 13/01/2027, 18 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 10,3 s, musique originale |
 | `videos/2027-01-13-story-lancement-j-1.mp4` | mer. 13/01/2027, 18 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2027-01-14-boostz-disponible.mp4` | jeu. 14/01/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,3 s, musique originale |
+| `videos/2027-01-14-boostz-disponible.mp4` | jeu. 14/01/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 26,3 s, ouverture de booster, musique du premier Reel |
 | `videos/2027-01-14-story-boostz-disponible.mp4` | jeu. 14/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-05-17-raretes-yugioh/` | lun. 17/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
 | `videos/2027-05-17-story-raretes-yugioh.mp4` | lun. 17/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
