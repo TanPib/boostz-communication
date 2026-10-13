@@ -215,6 +215,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | jeu. 03/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 15 | Glorious Victors sort aujourd'hui | Yu-Gi-Oh! | `videos/2026-12-03-glorious-victors.mp4` |
 | dim. 06/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Épisode : One Piece | One Piece | `images/2026-12-06-guide-scelles-onepiece/` |
 | sam. 12/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Lorcana | Lorcana | `images/2026-12-12-raretes-lorcana/` |
+| lun. 14/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Lancement J-31 : « Dans un mois, Boostz sort » | les 8 | `videos/2026-12-14-lancement-j-31.mp4` |
 | mar. 15/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 24 | Opening Collect Aura : les notes de nos cartes gradées | Pokémon | `videos/2026-12-15-opening-collect-aura.mp4` |
 | ven. 18/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | FB12 Reach the God sort aujourd'hui | Dragon Ball | `images/2026-12-18-sortie-fb12/` |
 | lun. 21/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Noël : une carte sous le sapin pour chaque budget | Pokémon, Lorcana | `videos/2026-12-21-noel.mp4` |
@@ -223,6 +224,9 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | mer. 30/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 16 | 2026, l'année des records | Pokémon, Magic, One Piece | `images/2026-12-30-records-2026/` |
 | ven. 01/01/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Bonne année 2027 | les 8 | `videos/2027-01-01-bonne-annee.mp4` |
 | jeu. 07/01/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 31 | Le détail caché : Pikachu dans Givrali VMAX, les baies d’Ectoplasma VMAX, le chapeau du Pikachu Van Gogh | Pokémon | `images/2027-01-07-details-caches/` |
+| dim. 10/01/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Lancement J-4 : « Jeudi, tu pourras… » | les 8 | `videos/2027-01-10-lancement-j-4.mp4` |
+| mer. 13/01/2027, 18 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Lancement J-1 : « Demain. » | les 8 | `videos/2027-01-13-lancement-j-1.mp4` |
+| jeu. 14/01/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Boostz est disponible | les 8 | `videos/2027-01-14-boostz-disponible.mp4` |
 | lun. 01/02/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 20 | Caninos et Tortank à dos Magic, la carte « Discard » enchantée | Pokémon, Lorcana | `videos/2027-02-01-erreurs-impression.mp4` |
 | jeu. 04/02/2027, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Dragon Ball | Dragon Ball | `images/2027-02-04-raretes-dragonball/` |
 | dim. 07/02/2027, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 26 | Page Hiver : 9 cartes enneigées glissées une à une dans le classeur | Magic, Pokémon, Lorcana, Yu-Gi-Oh! | `videos/2027-02-07-classeur-page-hiver.mp4` |
