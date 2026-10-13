@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz lancement jour J</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// The launch-day Reel (Thursday 14/01/2027), rebuilt on 13/10/2026 because
+// the first version was "trop simple": a Boostz booster shakes through a
+// 3-2-1 countdown, tears open in a flash, the real card of each of the 8 games
+// bursts out in a fan with confetti, then four feature beats on real cards,
+// a thank-you to the Android beta testers, and the stores.
+// Render with: node rendu.mjs lancement-jour-reel.html video
+window.PUB = '2027-01-14';
+const CARDS = { pokemon: 'carte-dracaufeu-ex-sv035-199.jpg', onepiece: 'carte-luffy-op05-119-p1-jp.png', lorcana: 'carte-elsa-enchantee-tfc-207.avif', yugioh: 'carte-dragon-blanc-yeux-bleus.jpg',
+  magic: 'carte-valgavoth-dsk-407.jpg', starwarsunlimited: 'carte-luke-skywalker-sor-005.png', dragonball: 'carte-son-goku-fb01-139-p1.webp', wow: 'carte-tigre-spectral.jpg' };
+const TEAR = 3.2, TOTAL = 24.5;
+const center = (top, size, html, at, out, kind = 'rise') => `<div class="abs h" ${A(at, out, 0, kind)} style="left:60px;right:60px;top:${top}px;text-align:center;font-size:${size}px;z-index:7">${html}</div>`;
+const tag = (x, y, w, text, fill, r, at, out, size = 70) => st(x, y, w, 160, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:${size}px;color:${DARK};white-space:nowrap">${text}</div>`, { fill, r, z: 8, attrs: A(at, out, r) });
+const cardImg = (g, w, h) => `<div style="width:${w}px;height:${h}px;border:6px solid ${INK};border-radius:${w * .07}px;overflow:hidden;box-shadow:12px 12px 0 ${SHADOW};background:#000"><img src="assets/${CARDS[g]}" style="width:100%;height:100%;object-fit:cover;display:block"></div>`;
+
+// The countdown above the booster.
+const counts = [3, 2, 1].map((n, i) => `<div id="n${i}" class="abs h" style="left:0;top:220px;width:1080px;text-align:center;font-size:300px;line-height:1;z-index:7;opacity:0"><span class="grad">${n}</span></div>`).join('');
+// The Boostz booster: a foil pack in the brand gradient, its top strip tears off.
+const PX = 310, PY = 640, PW = 460, PH = 680;
+const pack = `<div id="pack" class="abs" style="left:${PX}px;top:${PY}px;width:${PW}px;height:${PH}px;z-index:6;transform-origin:50% 80%">
+  <div class="abs" style="left:0;top:96px;width:${PW}px;height:${PH - 96}px;border-radius:0 0 40px 40px;border:8px solid ${INK};border-top:none;background:linear-gradient(160deg,#FF4FA0 0%,#8B3DFF 55%,#3AA9FF 100%);box-shadow:16px 16px 0 ${SHADOW};overflow:hidden">
+    <div class="abs" style="left:-60px;top:-40px;width:200px;height:900px;background:rgba(255,255,255,.18);transform:rotate(18deg)"></div>
+    <div class="abs" style="left:34px;top:120px;width:${PW - 84}px;height:150px;border-radius:30px;background:${DARK};border:5px solid ${INK};display:flex;align-items:center;justify-content:center">${wordmark(96)}</div>
+    <div class="abs lab" style="left:0;top:300px;width:${PW - 16}px;text-align:center;font-size:30px;letter-spacing:8px;color:#fff">LES 8 TCG</div>
+    <div class="abs" style="left:0;top:380px;width:${PW - 16}px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:0 40px">${ALL8.map((g) => emblemDisc(g, 70)).join('')}</div>
+  </div>
+  <div id="packTop" class="abs" style="left:0;top:0;width:${PW}px;height:104px;border-radius:40px 40px 0 0;border:8px solid ${INK};background:linear-gradient(160deg,#FF4FA0,#B23DFF);box-shadow:16px 0 0 ${SHADOW};transform-origin:20% 100%">
+    <div class="abs lab" style="left:0;top:30px;width:${PW - 16}px;text-align:center;font-size:24px;letter-spacing:6px;color:#fff">BOOSTER · 14.01.2027</div>
+  </div></div>`;
+// The 8 real cards, in a fan once out of the pack.
+const CW = 230, CH = 322;
+const FAN = ALL8.map((g, i) => { const a = (-30 + i * (60 / 7)) * Math.PI / 180; return [540 + 680 * Math.sin(a) - CW / 2, 1260 - 680 * Math.cos(a) - CH / 2, a * 180 / Math.PI]; });
+const cards = ALL8.map((g, i) => `<div id="k${i}" class="abs" style="left:0;top:0;z-index:${5 + (i < 4 ? i : 7 - i)};opacity:0">${cardImg(g, CW, CH)}</div>`).join('');
+const flash = `<div id="flash" class="abs" style="left:0;top:0;width:1080px;height:1920px;z-index:20;opacity:0;background:radial-gradient(circle at 50% 42%, #fff 0%, #FFE9F6 30%, rgba(139,61,255,.6) 60%, rgba(19,16,32,0) 85%)"></div>`;
+// Confetti, two bursts, seeded so every render is identical.
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const CONF_COLORS = ['#FF4FA0', '#8B3DFF', '#3AA9FF', SUN, DONE, '#F2706C', INK];
+const confetti = (burst, n, x0, y0, t0) => Array.from({ length: n }, (_, i) => ({ id: `cf${burst}-${i}`, x0, y0, t0: t0 + rnd() * .12, vx: (rnd() - .5) * 1900, vy: -700 - rnd() * 1400, spin: (rnd() - .5) * 1400, w: 16 + rnd() * 18, h: 10 + rnd() * 10, c: CONF_COLORS[i % CONF_COLORS.length] }));
+const CONF = [...confetti(0, 80, 540, 760, TEAR + .05), ...confetti(1, 70, 540, 640, 20.0)];
+const confHtml = CONF.map((c) => `<div id="${c.id}" class="abs" style="left:0;top:0;width:${c.w}px;height:${c.h}px;background:${c.c};border-radius:3px;opacity:0;z-index:15"></div>`).join('');
+
+// Four feature beats, each on a real card sliding through.
+const BEATS = [['Range ta<br><span class="acc">collection.</span>', 'pokemon'], ['Suis ta cote<br><span class="acc">FR · EN · JP.</span>', 'onepiece'],
+  ['Estime l’état<br><span class="acc">de tes cartes.</span>', 'lorcana'], ['Échange avec<br><span class="acc">les collectionneurs.</span>', 'magic']];
+const B0 = 9.7, BL = 1.65;
+const beats = BEATS.map(([t, g], i) => `${center(330, 96, t, B0 + i * BL, B0 + (i + 1) * BL - .25)}
+  <div id="b${i}" class="abs" style="left:${540 - 210}px;top:700px;z-index:6;opacity:0">${cardImg(g, 420, 588)}</div>`).join('');
+const flags = `<div class="abs" ${A(B0 + BL + .3, B0 + 2 * BL - .25, 0)} style="left:0;top:1360px;width:1080px;display:flex;justify-content:center;gap:40px;z-index:8">${['fr', 'en', 'ja'].map((f) => `<img src="assets/drapeau-${f}.svg" style="width:120px;height:80px;border:5px solid ${INK};border-radius:12px;box-shadow:8px 8px 0 ${SHADOW}">`).join('')}</div>`;
+
+const T1 = B0 + 4 * BL + .2; // the thank-you
+const thanks = `${center(520, 100, 'Merci aux testeurs<br><span class="acc">de la bêta Android.</span>', T1, 19.6)}
+  <div class="abs" style="left:0;top:880px;width:1080px;display:flex;justify-content:center;gap:16px;z-index:7">${ALL8.map((g, i) => `<div ${A(T1 + .4 + i * .1, 19.6, 0)}>${emblemDisc(g, 96)}</div>`).join('')}</div>
+  ${center(1100, 54, 'Et à toi qui nous suis<br>depuis le début.', T1 + 1.2, 19.6)}`;
+const finale = `<div class="abs" ${A(19.9, null, 0, 'rise')} style="left:0;top:0;width:1080px;height:1920px;z-index:7">${closing(500, 140)}</div>
+  ${tag(110, 1000, 410, 'Google Play', DONE, -3, 20.4, null, 62)}${tag(560, 1000, 410, 'App Store', VSOFT, 3, 20.6, null, 62)}
+  ${center(1240, 46, 'Android et iPhone', 21, null)}`;
+
+reel(`${ghosts([[60, 160, 90, -8], [930, 200, 80, 6], [70, 1760, 90, 10], [900, 1780, 100, -6]])}
+  ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}
+  ${counts}${pack}${cards}
+  ${center(1000, 150, '<span class="grad">Boostz est<br>disponible.</span>', TEAR + 1.3, 9.1, 'stick')}
+  ${tag(190, 1340, 700, 'Android et iPhone', DONE, -3, TEAR + 1.9, 9.1)}
+  <div class="src" ${A(TEAR + 1.4, 16.2, 0, 'fade')} style="z-index:9">Cartes : © The Pokémon Company, Bandai, Disney / Ravensburger, Konami, Wizards of the Coast, Lucasfilm / Fantasy Flight Games, Blizzard Entertainment.</div>
+  ${beats}${flags}${thanks}${finale}${confHtml}${flash}`, TOTAL);
+
+const $ = (id) => document.getElementById(id);
+const base = window.render;
+window.render = (t) => {
+  base(t);
+  // 3, 2, 1: each number pops in and fades before the next.
+  [0, 1, 2].forEach((i) => { const p = t - (i + .1); const el = $('n' + i);
+    el.style.opacity = p < 0 || p > 1 ? 0 : Math.min(1, p / .08) * (1 - clamp((p - .75) / .25));
+    el.style.transform = `scale(${1.5 - .5 * out3(p / .3)})`; });
+  // The booster shakes harder at each tick, then drops away once torn.
+  const amp = t < TEAR ? 1.5 + 2.5 * t : 0;
+  const tick = [0, 1, 2].reduce((s, i) => s + Math.exp(-Math.max(0, t - (i + .1)) * 9) * (t >= i + .1 ? 1 : 0), 0);
+  const drop = out3((t - TEAR - .45) / .7);
+  $('pack').style.transform = `translateY(${1300 * drop * drop}px) rotate(${Math.sin(t * 38) * amp + 14 * drop}deg) scale(${1 + .06 * tick})`;
+  $('pack').style.opacity = 1 - clamp((t - TEAR - .9) / .3);
+  const tp = out3((t - TEAR) / .6);
+  $('packTop').style.transform = `translate(${-380 * tp}px, ${-620 * tp}px) rotate(${-70 * tp}deg)`;
+  $('packTop').style.opacity = 1 - clamp((t - TEAR - .4) / .25);
+  // The flash of the tear.
+  const f = t - TEAR; $('flash').style.opacity = f < 0 ? 0 : f < .08 ? f / .08 * .95 : .95 * (1 - out3((f - .08) / .6));
+  // The cards burst out of the pack into the fan, float, then fly off the top.
+  FAN.forEach(([x, y, r], i) => { const el = $('k' + i), s0 = TEAR + .04 + i * .05, p = backEase((t - s0) / .75), q = out3((t - s0) / .75);
+    const leave = out3((t - 9 - i * .04) / .5);
+    if (t < s0) { el.style.opacity = 0; return; }
+    const sx = 540 - CW / 2, sy = PY + 120;
+    const cx = sx + (x - sx) * p, cy = sy + (y - sy) * p + Math.sin(t * 2 + i) * 6 * q - 1100 * leave;
+    el.style.opacity = clamp((t - s0) / .1);
+    el.style.transform = `translate(${cx}px, ${cy}px) rotate(${r * q + (1 - q) * 30 * (i % 2 ? 1 : -1)}deg) scale(${.35 + .65 * q})`; });
+  // The feature cards slide in from the right and out to the left.
+  BEATS.forEach((_, i) => { const el = $('b' + i), a = B0 + i * BL, inn = out3((t - a) / .45), outp = out3((t - a - BL + .3) / .35);
+    el.style.opacity = t < a ? 0 : 1 - outp;
+    el.style.transform = `translateX(${700 * (1 - inn) - 800 * outp}px) rotate(${(i % 2 ? 5 : -5) + 12 * (1 - inn)}deg) scale(${1 + .03 * Math.sin((t - a) * 3)})`; });
+  // Confetti under gravity.
+  for (const c of CONF) { const el = $(c.id), d = t - c.t0;
+    if (d < 0 || d > 3.2) { el.style.opacity = 0; continue; }
+    const x = c.x0 + c.vx * d * .55, y = c.y0 + c.vy * d + 1500 * d * d;
+    el.style.opacity = 1 - clamp((d - 2.5) / .7);
+    el.style.transform = `translate(${x}px, ${y}px) rotate(${c.spin * d}deg) scaleX(${Math.cos(d * 9 + c.spin)})`; }
+};
+window.render(0);
+</script></body></html>
