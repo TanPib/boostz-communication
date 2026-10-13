@@ -6,7 +6,7 @@ This repo is **public on purpose**: Metricool fetches each image and video from 
 
 ## Autonomy
 
-On 05/10/2026 the user gave standing approval for every action in this work: producing, scheduling, moving and replacing Metricool posts, and changing the communication site. Do not ask before acting; report what was done. `PLANNING.md` is the approved plan to produce, in date order. Start with its "À reprendre" section when there is one.
+On 05/10/2026 the user gave standing approval for every action in this work: producing, scheduling, moving and replacing Metricool posts, and changing the communication site. Do not ask before acting; report what was done. `PLANNING.md` is the approved plan to produce, in date order. Metricool is on a paid plan since 13/10/2026: the free plan's 20 published posts a month per network no longer limit the plan. Start with its "À reprendre" section when there is one.
 
 ## "Fais-moi une publication"
 
