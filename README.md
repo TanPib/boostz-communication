@@ -40,18 +40,16 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-06-01-story-1-chance-sur-96.mp4` | mar. 01/06/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-11-12-sorties-maestros-star-trek/` | jeu. 12/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-11-12-story-sorties-maestros-star-trek.mp4` | jeu. 12/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2026-11-14-beta-dans-2-semaines.mp4` | sam. 14/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 15,8 s, musique originale |
-| `videos/2026-11-14-story-beta-dans-2-semaines.mp4` | sam. 14/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2026-11-11-beta-j-3.mp4` | mer. 11/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,3 s, musique originale |
+| `videos/2026-11-11-story-beta-j-3.mp4` | mer. 11/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2026-11-14-beta-android-ouverte.mp4` | sam. 14/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 9,8 s, musique originale |
+| `videos/2026-11-14-story-beta-android-ouverte.mp4` | sam. 14/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-11-17-raretes-pokemon/` | mar. 17/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
 | `videos/2026-11-17-story-raretes-pokemon.mp4` | mar. 17/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2026-11-22-beta-samedi-prochain.mp4` | dim. 22/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 13,8 s, musique originale |
-| `videos/2026-11-22-story-beta-samedi-prochain.mp4` | dim. 22/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2026-11-25-beta-j-3.mp4` | mer. 25/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 13,8 s, musique originale |
-| `videos/2026-11-25-story-beta-j-3.mp4` | mer. 25/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2026-11-22-beta-rejoindre.mp4` | dim. 22/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 13,3 s, musique originale |
+| `videos/2026-11-22-story-beta-rejoindre.mp4` | dim. 22/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-11-27-black-friday.mp4` | ven. 27/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 11,8 s, musique originale (refait le 08/10 pour sa nouvelle date) |
 | `videos/2026-11-27-story-black-friday.mp4` | ven. 27/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2026-11-28-beta-ouverte.mp4` | sam. 28/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,8 s, musique originale |
-| `videos/2026-11-28-story-beta-ouverte.mp4` | sam. 28/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-12-03-glorious-victors.mp4` | jeu. 03/12/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 16,3 s, musique originale |
 | `videos/2026-12-03-story-glorious-victors.mp4` | jeu. 03/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-12-06-guide-scelles-onepiece/` | dim. 06/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |

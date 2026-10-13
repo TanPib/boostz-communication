@@ -16,7 +16,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 8 | **Choisis ton combattant** | Reel, écran de sélection en stickers | 🔥🔥 | prêt | 02/04/2027 · « Tu joues lequel ? » (les 8) |
 | 9 | **Pub Boostz** | image ou Reel court | 🔥 | maquette | jamais |
 | 10 | **Édito** | image, thème clair | 🔥 | maquette | jamais |
-| 11 | **Annonce** | Reel | selon l'actu | prêt | 28/11/2026 · La bêta fermée est ouverte (les 8) |
+| 11 | **Annonce** | Reel | selon l'actu | prêt | 22/11/2026 · Rejoins la bêta Android en trois étapes (les 8) |
 | 12 | **Fonction à la loupe** | Reel ou carrousel | 🔥🔥 | prêt (`fonction-etat-reel.html`) | 08/04/2027 · Estime l'état (les 8) |
 | 13 | **Mythe ou réalité** | carrousel, 5 slides | 🔥🔥 | prêt (`mythe-ou-realite.html`) | 20/04/2027 · Tigre spectral (Warcraft) |
 | 14 | **Tu préfères ?** | carrousel, 3 slides | 🔥🔥 | à concevoir | jamais |
@@ -207,12 +207,11 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | ven. 06/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Règne Delta sort aujourd'hui (ME06) | Pokémon | `images/2026-11-06-sortie-regne-delta/` |
 | lun. 09/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 30 | Zoom mystère : Mickey Mouse, Brave Petit Tailleur, « Tu l'as trouvée à quelle étape ? » | Lorcana | `videos/2026-11-09-zoom-mystere.mp4` |
 | jeu. 12/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | `images/2026-11-12-sorties-maestros-star-trek/` |
-| sam. 14/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta fermée J-14 | les 8 | `videos/2026-11-14-beta-dans-2-semaines.mp4` |
+| mer. 11/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta Android J-3 : pré-inscription sur boostz.fr/beta | les 8 | `videos/2026-11-11-beta-j-3.mp4` |
+| sam. 14/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | La bêta Android est ouverte | les 8 | `videos/2026-11-14-beta-android-ouverte.mp4` |
 | mar. 17/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Pokémon | Pokémon | `images/2026-11-17-raretes-pokemon/` |
-| dim. 22/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta fermée J-6 | les 8 | `videos/2026-11-22-beta-samedi-prochain.mp4` |
-| mer. 25/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta fermée J-3 | les 8 | `videos/2026-11-25-beta-j-3.mp4` |
+| dim. 22/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Rejoins la bêta Android en trois étapes | les 8 | `videos/2026-11-22-beta-rejoindre.mp4` |
 | ven. 27/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Black Friday : « Promo ou pas ? » | les 8 | `videos/2026-11-27-black-friday.mp4` |
-| sam. 28/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | La bêta fermée est ouverte | les 8 | `videos/2026-11-28-beta-ouverte.mp4` |
 | jeu. 03/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 15 | Glorious Victors sort aujourd'hui | Yu-Gi-Oh! | `videos/2026-12-03-glorious-victors.mp4` |
 | dim. 06/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Épisode : One Piece | One Piece | `images/2026-12-06-guide-scelles-onepiece/` |
 | sam. 12/12/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Lorcana | Lorcana | `images/2026-12-12-raretes-lorcana/` |
