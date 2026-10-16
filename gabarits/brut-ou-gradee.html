@@ -3,52 +3,62 @@
 <link rel="stylesheet" href="fonts/local.css">
 <script src="posts-emblems.js"></script><script src="stickers.js"></script>
 </head><body><script>
-// "Brute ou gradée ?" (proposed on 16/10/2026, after double.holo x pokelytics):
-// one card per slide, its raw price next to its PSA 10 price and the
-// multiplier. Raw: Cardmarket 30-day average from the Boostz record. PSA 10:
-// real, dated eBay sales gathered by hand (no source of ours gives them); a
-// card without such sales is marked as an example.
+// "Brute ou gradée ?" (proposed on 16/10/2026, after double.holo x pokelytics;
+// every grading company the app knows, asked the same day): one card, its raw
+// price, then what it is asked graded at each company with listings.
+// Raw: Cardmarket 30-day average from the Boostz record. Graded: median asking
+// price of the eBay listings in the app's own marketplace cache
+// (MarketplaceListing, matched on the card number in the title, French prints
+// only), with the number of listings: asking prices, not sales, and said so.
 window.PUB = window.PUB || '2026-12-12';
 const GAME = 'pokemon', GC = GAMES[GAME][1];
-const SET = 'Flammes Fantasmagoriques';
-// [id, name, rarity, raw 30-day average, PSA 10 low, PSA 10 high, PSA 10 source or null = example]
-const CARDS = [
-  ['me02-130', 'Méga-Dracaufeu X-ex', 'Méga Hyper Rare', 257.93, 1230, 2640, 'ventes eBay de septembre 2026'],
-  ['me02-125', 'Méga-Dracaufeu X-ex', 'Illustration spéciale rare', 731.09, 2600, 2600, null],
-];
-const x = (v) => '×' + (Math.round(v * 10) / 10).toString().replace('.', ',');
-const range = (a, b) => a === b ? `${Math.round(a).toLocaleString('fr-FR')} €` : `${a.toLocaleString('fr-FR')} à ${b.toLocaleString('fr-FR')} €`;
+const C = {
+  img: 'assets/carte-dracaufeu-ex-sv035-199.jpg', name: 'Dracaufeu-ex', set: '151', num: '199/165', rar: 'Illustration spéciale rare',
+  raw: 398.11, rawSrc: 'Cardmarket via TCGdex, prix de vente moyen sur 30 jours, relevé Boostz du 16/10/2026',
+  // [company, grade, median asking price, listings], eBay FR from 05/09 to 15/10/2026.
+  graded: [['PSA', '10', 2299, 1], ['CCC', '10', 1349, 1], ['CCC', '9,5', 560, 3], ['PCA', '9,5', 466, 20], ['Collect Aura', '9,5', 435, 1], ['PSA', '9', 499, 1]],
+  gradedSrc: 'eBay France, médiane des prix demandés dans les annonces vues par Boostz du 05/09 au 15/10/2026 (cartes françaises), nombre d’annonces indiqué'
+};
+const mult = (v) => '×' + (Math.round(v / C.raw * 10) / 10).toString().replace('.', ',');
+const euros = (v) => Math.round(v).toLocaleString('fr-FR') + ' €';
 // A graded slab: the card under a clear case, a label band with the grade.
-const slab = (id, X, Y, w, r) => `<div class="abs" style="left:${X}px;top:${Y}px;width:${w}px;height:${w * 1.72}px;transform:rotate(${r}deg);border-radius:${w * .06}px;background:rgba(255,255,255,.12);border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW};z-index:3">
+const slab = (X, Y, w, r, grade = '10') => `<div class="abs" style="left:${X}px;top:${Y}px;width:${w}px;height:${w * 1.72}px;transform:rotate(${r}deg);border-radius:${w * .06}px;background:rgba(255,255,255,.12);border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW};z-index:3">
   <div class="abs" style="left:${w * .06}px;top:${w * .05}px;width:${w * .88 - 16}px;height:${w * .24}px;border-radius:${w * .03}px;background:#F5F2FB;display:flex;align-items:center;justify-content:space-between;padding:0 ${w * .05}px;color:${DARK}">
-    <div class="lab" style="font-size:${w * .055}px;letter-spacing:1px;line-height:1.2">GEM MINT</div><div class="h" style="font-size:${w * .13}px">10</div></div>
-  <div class="abs" style="left:${w * .08}px;top:${w * .36}px;width:${w * .84 - 16}px;height:${(w * .84 - 16) * 1.4}px;border-radius:${w * .03}px;overflow:hidden"><img src="assets/mur-${id}.png" style="width:100%;height:100%;object-fit:cover;display:block"></div></div>`;
+    <div class="lab" style="font-size:${w * .055}px;letter-spacing:1px;line-height:1.2">GEM MINT</div><div class="h" style="font-size:${w * .13}px">${grade}</div></div>
+  <div class="abs" style="left:${w * .08}px;top:${w * .36}px;width:${w * .84 - 16}px;height:${(w * .84 - 16) * 1.4}px;border-radius:${w * .03}px;overflow:hidden"><img src="${C.img}" style="width:100%;height:100%;object-fit:cover;display:block"></div></div>`;
 const SLIDES = [];
 
-// 1 - Cover: the same card raw and graded, the question.
-SLIDES.push(['1-couverture', `${head('BRUTE OU GRADÉE ?', GAME, SET)}
+// 1 - Cover: the card raw and graded, the question.
+SLIDES.push(['1-couverture', `${head('BRUTE OU GRADÉE ?', GAME, C.set)}
   <div class="abs h" style="left:0;top:160px;width:1080px;text-align:center;font-size:100px">Brute ou<br><span style="color:${GC}">gradée ?</span></div>
-  ${card(`assets/mur-${CARDS[0][0]}.png`, 140, 480, 340, -8)}${slab(CARDS[0][0], 560, 420, 380, 6)}
-  <div class="abs mut" style="left:0;top:1135px;width:1080px;text-align:center;font-weight:600;font-size:36px">La même carte, deux prix très différents</div>
+  ${card(C.img, 140, 480, 340, -8)}${slab(560, 420, 380, 6)}
+  <div class="abs mut" style="left:0;top:1135px;width:1080px;text-align:center;font-weight:600;font-size:36px">Ce que vaut la même carte chez chaque société</div>
   <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div><div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`]);
 
-// 2 and on - One card: raw on the left, PSA 10 on the right, the multiplier.
-CARDS.forEach(([id, name, rar, raw, lo, hi, src], i) => {
-  const mock = !src;
-  SLIDES.push([`${i + 2}-${id}`, `${mock ? `<div class="abs lab" style="left:0;top:118px;width:1080px;text-align:center;font-size:24px;letter-spacing:5px;color:${PINK};z-index:6">MAQUETTE · PSA 10 D’EXEMPLE</div>` : ''}${head('BRUTE OU GRADÉE ?', GAME, SET)}
-    <div class="abs h" style="left:0;top:160px;width:1080px;text-align:center;font-size:66px">${name}</div>
-    <div class="abs mut" style="left:0;top:240px;width:1080px;text-align:center;font-weight:600;font-size:28px">${rar}</div>
-    ${card(`assets/mur-${id}.png`, 110, 330, 340, -4)}${slab(id, 600, 300, 330, 4)}
-    ${st(70, 930, 440, 210, `<div style="padding:28px 34px"><div class="lab mut" style="font-size:22px">BRUTE</div><div class="h" style="font-size:72px;margin-top:6px;white-space:nowrap">${Math.round(raw)} €</div></div>`, { r: -2, z: 4 })}
-    ${st(570, 930, 440, 210, `<div style="padding:28px 34px;color:${DARK}"><div class="lab" style="font-size:22px">PSA 10</div><div class="h" style="font-size:${lo === hi ? 72 : 50}px;margin-top:${lo === hi ? 6 : 18}px;white-space:nowrap">${range(lo, hi)}</div></div>`, { fill: GC, r: 2, z: 4 })}
-    ${disc(440, 660, 200, DONE, `<div style="text-align:center;color:${DARK}"><div class="h" style="font-size:${lo === hi ? 70 : 46}px;line-height:1">${lo === hi ? x(lo / raw) : x(lo / raw) + '<br>à ' + x(hi / raw)}</div></div>`, -6)}
-    <div class="src">${mock ? 'MAQUETTE : prix PSA 10 d’exemple. ' : ''}Brute : Cardmarket via TCGdex, prix de vente moyen sur 30 jours, relevé Boostz du 16/10/2026.${src ? ` PSA 10 : ${src}, 1 € = 1,135 $.` : ''}</div>`]);
-});
+// 2 - The raw price.
+SLIDES.push(['2-brute', `${track(1, 1240, .25)}${head('BRUTE OU GRADÉE ?', GAME, C.set)}
+  ${card(C.img, 70, 180, 460, -3)}
+  <div class="abs" style="left:590px;top:220px;width:420px"><div class="h" style="font-size:64px">${C.name}</div>
+    <div class="mut" style="font-weight:600;font-size:28px;margin-top:12px;line-height:1.35">${C.set} · ${C.num}<br>${C.rar}</div></div>
+  ${st(590, 520, 420, 250, `<div style="padding:30px 36px"><div class="lab mut" style="font-size:22px">BRUTE</div><div class="h" style="font-size:96px;margin-top:6px;white-space:nowrap">${euros(C.raw)}</div><div class="ui mut" style="font-size:24px">prix moyen, 30 jours</div></div>`, { r: 2, z: 4 })}
+  <div class="abs h" style="left:0;top:960px;width:1080px;text-align:center;font-size:62px">Et gradée ?<br><span style="color:${GC}">Ça dépend de qui.</span></div>
+  <div class="src">${C.rawSrc}.</div>`]);
 
-// Last - The question, and the app's condition scan.
-SLIDES.push([`${CARDS.length + 2}-fin`, `${ghosts([[90, 300, 80, -6], [900, 360, 90, 8], [100, 1150, 70, 4], [910, 1150, 80, -6]])}${track(3, 760, .6)}
-  <div class="abs h" style="left:0;top:200px;width:1080px;text-align:center;font-size:96px">Tu la fais<br><span style="color:${GC}">grader ?</span></div>
-  <div class="abs mut" style="left:0;top:440px;width:1080px;text-align:center;font-weight:600;font-size:34px;line-height:1.4">Avant d’envoyer, estime son état<br>avec le scan de Boostz.</div>
+// 3 - Every company with listings: grade, asking price, multiplier, listings.
+SLIDES.push(['3-societes', `${head('BRUTE OU GRADÉE ?', GAME, C.set)}
+  <div class="abs h" style="left:70px;top:150px;font-size:60px">Gradée, chez chaque société</div>
+  <div class="abs mut" style="left:70px;top:226px;font-weight:600;font-size:28px">Brute : ${euros(C.raw)} · prix demandés sur eBay France</div>
+  ${st(70, 300, 940, 860, `<div style="padding:16px 36px">${C.graded.map(([co, g, p, n], i) => `<div style="display:flex;align-items:center;gap:24px;height:136px;${i < C.graded.length - 1 ? 'border-bottom:2px solid rgba(255,255,255,.08)' : ''}">
+    <div style="width:330px"><div class="h" style="font-size:46px;white-space:nowrap">${co} <span style="color:${GC}">${g}</span></div><div class="ui mut" style="font-size:22px;margin-top:4px">${n} annonce${n > 1 ? 's' : ''}</div></div>
+    <div class="h" style="flex:1;font-size:54px;text-align:right;white-space:nowrap">${euros(p)}</div>
+    <div class="h" style="width:150px;height:84px;border-radius:24px;background:${p / C.raw >= 2 ? DONE : 'rgba(255,255,255,.1)'};color:${p / C.raw >= 2 ? DARK : INK};border:4px solid ${INK};display:flex;align-items:center;justify-content:center;font-size:40px">${mult(p)}</div></div>`).join('')}</div>`, { z: 3 })}
+  <div class="src">${C.gradedSrc}. Brute : ${C.rawSrc}.</div>`]);
+
+// 4 - The lesson, then the app's condition scan.
+const best = C.graded[0], fr = C.graded.find(([co]) => co === 'PCA');
+SLIDES.push(['4-fin', `${ghosts([[90, 300, 80, -6], [900, 360, 90, 8], [100, 1150, 70, 4], [910, 1150, 80, -6]])}${track(3, 760, .6)}
+  <div class="abs h" style="left:0;top:170px;width:1080px;text-align:center;font-size:80px">${best[0]} ${best[1]} : <span style="color:${GC}">${mult(best[2])}</span><br>${fr[0]} ${fr[1]} : <span style="color:${GC}">${mult(fr[2])}</span></div>
+  <div class="abs mut" style="left:0;top:400px;width:1080px;text-align:center;font-weight:600;font-size:34px;line-height:1.4">Avant d’envoyer ta carte, estime son état<br>avec le scan de Boostz.</div>
   ${closing(800, 110)}`]);
 
 carousel(SLIDES);
