@@ -37,10 +37,10 @@ const head = (kicker) => `<div class="abs lab" style="left:70px;top:66px;font-si
   <div class="abs" style="right:70px;top:46px;display:flex;align-items:center;gap:20px;z-index:5"><div style="text-align:right"><div class="lab" style="font-size:21px;letter-spacing:5px;color:#F5C93B">POKÉMON</div><div style="font-weight:600;font-size:24px;color:rgba(245,242,251,.75);margin-top:2px">Flammes Fantasmagoriques</div></div>
   <div style="width:76px;height:76px;border-radius:50%;background:#F5C93B;border:5px solid #F5F2FB;box-shadow:8px 8px 0 ${SHADOW};display:flex;align-items:center;justify-content:center">${emblemSvg('pokemon', DARK, 44)}</div></div>`;
 const euro = (v) => v.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' €';
-// Cardmarket via TCGdex, as recorded by the price workflow on 03/10/2026 (donnees/cotes/pokemon/2026-10-03.json, me02-130).
-const CM = { avg7: 279.11, avg30: 265.69, trend: 268.43, low: 180 };
-const SRC_COTE = 'Cardmarket via TCGdex, relevé Boostz du 03/10/2026 (plus bas = annonce la moins chère, tous états). PSA 10 : ventes eBay de septembre 2026, 1 € = 1,135 $.';
-const SRC_TAUX = 'Taux : TCGplayer, 1 Méga Hyper Rare pour 1 260 boosters. Display de 36 boosters ≈ 250 €, prix publics FR. Cardmarket via TCGdex, relevé Boostz du 03/10/2026.';
+// Cardmarket via TCGdex, as recorded by the price workflow on 16/10/2026 (donnees/cotes/pokemon/2026-10-16.json, me02-130).
+const CM = { avg7: 236.77, avg30: 257.93, trend: 205.48, low: 159.99 };
+const SRC_COTE = 'Cardmarket via TCGdex, relevé Boostz du 16/10/2026 (plus bas = annonce la moins chère, tous états). PSA 10 : ventes eBay de septembre 2026, 1 € = 1,135 $.';
+const SRC_TAUX = 'Taux : TCGplayer, 1 Méga Hyper Rare pour 1 260 boosters. Display de 36 boosters ≈ 250 €, prix publics FR. Cardmarket via TCGdex, relevé Boostz du 16/10/2026.';
 const TIMES = Math.round(8750 / CM.avg30);
 const SRC_VERDICT = `${TIMES} × : ≈ 8 750 € de boosters ÷ ${euro(CM.avg30)}. 1 chance sur 3 : 37 % de ne pas l’avoir après 1 260 boosters.`;
 const POSTS = [];
