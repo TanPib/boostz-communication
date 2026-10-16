@@ -19,6 +19,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2026-10-16': (ALL, ''),
  '2026-10-17': ('S', "Illustration et cartes : starwarsunlimited.com et swu-db.com."),
  '2026-10-23': (ALL, "Logo Discord : © Discord Inc."),
+ '2026-10-20': ('P', "Images des cartes : TCGdex, pokemontcg.io."),
  '2026-10-26': ('P', ''),
  '2026-10-31': ('MPL', ''),
  '2026-11-03': ('Y', "Photo de la carte : Otaku USA Magazine."),
