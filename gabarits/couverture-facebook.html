@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz couverture Facebook</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Facebook Page cover proposals (asked on 16/10/2026). Facebook shows the
+// cover at 820 x 312 on a computer and 640 x 360 on a phone, so the file is
+// 1640 x 924 (16:9, twice the phone size): the phone sees all of it, the
+// computer crops a centred 1640 x 624 band (y 150 to 774). Everything that
+// matters stays in that band, clear of the bottom-left corner where the
+// profile picture sits. Render: node rendu.mjs couverture-facebook.html images
+document.head.insertAdjacentHTML('beforeend', `<style>.p { width: 1640px; height: 924px; }</style>`);
+const W = 1640, H = 924;
+const GRADIENT = 'linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%)';
+const CARDS = { pokemon: 'carte-dracaufeu-ex-sv035-199.jpg', onepiece: 'carte-luffy-op05-119-p1-jp.png', lorcana: 'carte-elsa-enchantee-tfc-207.avif', yugioh: 'carte-dragon-blanc-yeux-bleus.jpg',
+  magic: 'carte-valgavoth-dsk-407.jpg', starwarsunlimited: 'carte-luke-skywalker-sor-005.png', dragonball: 'carte-son-goku-fb01-139-p1.webp', wow: 'carte-tigre-spectral.jpg' };
+const LINE = 'Ton compagnon TCG';
+const SUB = 'Collection · Cotes FR EN JP · État · Échanges';
+const bg = (fill) => `<div class="abs" style="inset:0;background:${fill}"></div>`;
+const text = (x, y, w, html, size, o = '') => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;font-size:${size}px;${o}">${html}</div>`;
+const emblemRow = (x, y, d, gap) => `<div class="abs" style="left:${x}px;top:${y}px;display:flex;gap:${gap}px">${ALL8.map((g) => emblemDisc(g, d)).join('')}</div>`;
+const fan = (cx, cy, w, spread, radius, games = ALL8) => games.map((g, i) => {
+  const a = (i - (games.length - 1) / 2) * spread, rad = a * Math.PI / 180;
+  return card(`assets/${CARDS[g]}`, cx + Math.sin(rad) * radius - w / 2, cy - Math.cos(rad) * radius + radius - w * .7, w, a, 2 + i);
+}).join('');
+const S = [];
+
+// 1 - The wordmark alone, centred, on the dark table with ghost cards.
+S.push(['01-wordmark', `${ghosts([[90, 230, 120, -8], [1440, 260, 130, 9], [300, 560, 90, 6], [1250, 560, 100, -6]])}
+  <div class="abs" style="left:0;top:330px;width:${W}px;display:flex;justify-content:center">${wordmark(200)}</div>
+  ${text(0, 580, W, LINE, 52, 'text-align:center;font-weight:600;color:#C9C3D9')}`]);
+
+// 2 - The 8 real cards in a fan on the right, the wordmark on the left.
+S.push(['02-eventail', `${fan(1130, 480, 180, 8.5, 760)}
+  <div class="abs" style="left:560px;top:250px;z-index:20">${''}</div>
+  <div class="abs" style="left:110px;top:300px;z-index:20">${wordmark(150)}</div>
+  ${text(115, 500, 640, `${LINE}<br><span style="color:${'#C4B5FD'}">8 TCG, une seule appli</span>`, 46, 'font-weight:700;line-height:1.3;z-index:20')}`]);
+
+// 3 - White wordmark on the brand gradient.
+S.push(['03-degrade', `${bg(GRADIENT)}
+  <div class="abs" style="left:-120px;top:120px;width:260px;height:900px;background:rgba(255,255,255,.12);transform:rotate(18deg)"></div>
+  <div class="abs" style="left:1380px;top:-80px;width:200px;height:900px;background:rgba(255,255,255,.1);transform:rotate(18deg)"></div>
+  <div class="abs" style="left:0;top:320px;width:${W}px;display:flex;justify-content:center;filter:drop-shadow(14px 14px 0 rgba(11,8,18,.35))">${wordmark(200).replace('word grad', 'word').replace('color:transparent', 'color:#fff')}</div>
+  ${text(0, 575, W, LINE + ' · 8 jeux, une seule appli', 50, 'text-align:center;font-weight:700;color:#fff')}`]);
+
+// 4 - The 8 game emblems in a row under the wordmark.
+S.push(['04-emblemes', `${ghosts([[80, 200, 110, -8], [1460, 220, 110, 8]])}
+  <div class="abs" style="left:0;top:220px;width:${W}px;display:flex;justify-content:center">${wordmark(150)}</div>
+  ${text(0, 410, W, '8 TCG, une seule appli', 50, 'text-align:center;font-weight:700;color:#C9C3D9')}
+  ${emblemRow((W - (8 * 120 + 7 * 34)) / 2, 520, 120, 34)}`]);
+
+// 5 - The app's card backs scattered, the wordmark on a sticker.
+S.push(['05-dos', `${ALL8.map((g, i) => back(g, 60 + i * 200 + (i % 2) * 20, i % 2 ? 470 : 150, 210, (i % 3 - 1) * 9, 1)).join('')}
+  ${st(420, 300, 800, 330, `<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px">${wordmark(140)}<div style="font-size:42px;font-weight:600;color:#C9C3D9">${LINE}</div></div>`, { fill: '#1B1330', r: -2, z: 10 })}`]);
+
+// 6 - A binder page: 3 x 3 pockets of real cards, the wordmark beside it.
+S.push(['06-classeur', `${st(880, 200, 600, 550, `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:22px;height:100%">${['pokemon', 'lorcana', 'onepiece', 'magic', 'dragonball', 'yugioh', 'starwarsunlimited', 'wow', 'pokemon'].map((g, i) => i === 8 ? `<div style="border:4px dashed rgba(255,255,255,.25);border-radius:14px"></div>` : `<div style="border-radius:12px;overflow:hidden;border:4px solid ${INK}"><img src="assets/${CARDS[g]}" style="width:100%;height:100%;object-fit:cover;display:block"></div>`).join('')}</div>`, { fill: '#1B1330', r: 3, z: 3 })}
+  <div class="abs" style="left:120px;top:290px">${wordmark(140)}</div>
+  ${text(125, 480, 660, 'Range ta collection.<br><span style="color:#C4B5FD">Il manque toujours une carte.</span>', 48, 'font-weight:700;line-height:1.3')}`]);
+
+// 7 - The Boostz booster of the launch Reel, cards bursting out.
+const pack = (x, y, w, r) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.45}px;transform:rotate(${r}deg);z-index:5">
+  <div class="abs" style="left:0;top:${w * .22}px;width:${w}px;height:${w * 1.23}px;border-radius:0 0 ${w * .1}px ${w * .1}px;border:10px solid ${INK};border-top:none;background:${GRADIENT};box-shadow:20px 20px 0 ${SHADOW};overflow:hidden;display:flex;align-items:center;justify-content:center">
+    <div class="abs" style="left:-60px;top:-40px;width:110px;height:700px;background:rgba(255,255,255,.18);transform:rotate(18deg)"></div>
+    <div style="background:#131020;border:6px solid ${INK};border-radius:22px;padding:14px 22px">${wordmark(w * .2)}</div></div>
+  <div class="abs" style="left:0;top:0;width:${w}px;height:${w * .25}px;border-radius:${w * .1}px ${w * .1}px 0 0;border:10px solid ${INK};background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.22) 0 14px, transparent 14px 28px), linear-gradient(160deg,#FF4FA0,#B23DFF)"></div></div>`;
+S.push(['07-booster', `${card(`assets/${CARDS.pokemon}`, 1040, 230, 180, -16, 2)}${card(`assets/${CARDS.lorcana}`, 1330, 260, 180, 14, 2)}${card(`assets/${CARDS.onepiece}`, 1175, 180, 180, 2, 3)}
+  ${pack(1125, 360, 270, -6)}
+  <div class="abs" style="left:150px;top:300px">${wordmark(150)}</div>
+  ${text(155, 500, 760, 'Ouvre, range, suis la cote.<br><span style="color:#C4B5FD">' + LINE + '</span>', 48, 'font-weight:700;line-height:1.3')}`]);
+
+// 8 - The four things the app does, as plain coloured text under the wordmark.
+const verbs = [['Range', '#F5C93B'], ['Suis la cote', '#35C6BC'], ['Estime l’état', '#F2706C'], ['Échange', '#B189E8']];
+S.push(['08-fonctions', `${ghosts([[70, 190, 110, -8], [1470, 200, 110, 8], [70, 560, 90, 5], [1480, 560, 90, -5]])}
+  <div class="abs" style="left:0;top:220px;width:${W}px;display:flex;justify-content:center">${wordmark(150)}</div>
+  <div class="abs h" style="left:0;top:450px;width:${W}px;display:flex;justify-content:center;gap:60px;font-size:62px">${verbs.map(([v, c]) => `<span style="color:${c}">${v}</span>`).join('<span style="color:rgba(255,255,255,.3)">·</span>')}</div>
+  ${text(0, 580, W, '8 TCG, une seule appli', 40, 'text-align:center;font-weight:600;color:#A8A2B8')}`]);
+
+// 9 - Light theme: white table, purple accent, cards on the right.
+S.push(['09-clair', `${bg('linear-gradient(180deg,#FFFFFF,#F6F4FA)')}
+  ${card(`assets/${CARDS.magic}`, 1050, 230, 200, -10, 2)}${card(`assets/${CARDS.dragonball}`, 1350, 250, 200, 10, 2)}${card(`assets/${CARDS.pokemon}`, 1190, 180, 220, 0, 3)}
+  <div class="abs" style="left:150px;top:290px">${wordmark(150).replace('color:#fff', 'color:#131020')}</div>
+  ${text(155, 490, 860, `${LINE}<br><span style="color:#7C3AED">8 TCG, une seule appli</span>`, 48, 'font-weight:700;line-height:1.3;color:#131020')}`]);
+
+// 10 - The dashed path of the posts linking a row of cards, wordmark above.
+const row = ['pokemon', 'onepiece', 'lorcana', 'yugioh', 'magic', 'starwarsunlimited', 'dragonball', 'wow'];
+S.push(['10-chemin', `<svg class="abs" width="${W}" height="${H}" style="left:0;top:0"><path d="M -40 640 C 260 520, 420 760, 700 640 S 1140 520, 1680 650" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>
+  <div class="abs" style="left:0;top:180px;width:${W}px;display:flex;justify-content:center">${wordmark(130)}</div>
+  ${text(0, 350, W, LINE + ' · 8 jeux, une seule appli', 44, 'text-align:center;font-weight:600;color:#C9C3D9')}
+  ${row.map((g, i) => card(`assets/${CARDS[g]}`, 470 + i * 112, 470 + (i % 2) * 24, 120, (i % 2 ? 6 : -6), 3 + i)).join('')}`]);
+
+// 11 - Big statement: "8 TCG. 1 appli." with the emblems as stickers.
+S.push(['11-8tcg', `${bg(`radial-gradient(circle at 70% 40%, #2A1B4A, #131020 60%)`)}
+  <div class="abs h" style="left:140px;top:250px;font-size:170px;line-height:1"><span style="color:#fff">8 TCG.</span><br><span class="grad">1 appli.</span></div>
+  <div class="abs" style="left:1000px;top:230px;display:grid;grid-template-columns:repeat(4,110px);gap:30px">${ALL8.map((g) => emblemDisc(g, 110)).join('')}</div>
+  <div class="abs" style="left:1040px;top:560px">${wordmark(90)}</div>`]);
+
+// 12 - The gradient Z of the profile picture, big and cropped on the right.
+S.push(['12-grand-z', `${ghosts([[640, 190, 80, -8], [720, 660, 80, 6]])}
+  <div class="abs word grad" style="left:1020px;top:-120px;font-size:1040px;line-height:1;transform:skewX(-8deg);opacity:.95">Z</div>
+  <div class="abs" style="left:150px;top:300px">${wordmark(150)}</div>
+  ${text(155, 500, 900, `${LINE}<br><span style="color:#C4B5FD">Collection, cotes, état, échanges</span>`, 44, 'font-weight:700;line-height:1.35')}`]);
+
+carousel(S);
+</script></body></html>
