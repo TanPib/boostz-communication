@@ -1,0 +1,343 @@
+{
+ "debut": "2026-10-03",
+ "fin": "2026-10-16",
+ "mode": "Prix de vente moyen sur 7 jours, d'un relevé à l'autre",
+ "seuil_eur": 10.0,
+ "candidates": 1701,
+ "mouvements": [
+  {
+   "id": "pl3-20",
+   "nom": "Dracaufeu G",
+   "set": "Vainqueurs Suprêmes",
+   "numero": "20",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/pl/pl3/20",
+   "avant": 13.77,
+   "apres": 337.91,
+   "evolution": 2354.0
+  },
+  {
+   "id": "xy12-34",
+   "nom": "Léviator",
+   "set": "Évolutions",
+   "numero": "34",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/xy/xy12/34",
+   "avant": 10.99,
+   "apres": 200,
+   "evolution": 1719.8
+  },
+  {
+   "id": "ecard1-47",
+   "nom": "Aligatueur",
+   "set": "Expedition",
+   "numero": "47",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard1/47",
+   "avant": 42.83,
+   "apres": 676.67,
+   "evolution": 1479.9
+  },
+  {
+   "id": "ecard1-46",
+   "nom": "Aligatueur",
+   "set": "Expedition",
+   "numero": "46",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard1/46",
+   "avant": 42.83,
+   "apres": 676.67,
+   "evolution": 1479.9
+  },
+  {
+   "id": "ecard1-12",
+   "nom": "Aligatueur",
+   "set": "Expedition",
+   "numero": "12",
+   "rarete": "Holo Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard1/12",
+   "avant": 42.83,
+   "apres": 676.67,
+   "evolution": 1479.9
+  },
+  {
+   "id": "xy10-79",
+   "nom": "Lugia TURBO",
+   "set": "Impact des Destins",
+   "numero": "79",
+   "rarete": "Ultra Rare",
+   "image": "https://assets.tcgdex.net/fr/xy/xy10/79",
+   "avant": 16.01,
+   "apres": 212.01,
+   "evolution": 1224.2
+  },
+  {
+   "id": "pop1-17",
+   "nom": "Tyranocif ex",
+   "set": "POP Série 1",
+   "numero": "17",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/pop/pop1/17",
+   "avant": 24.84,
+   "apres": 273.76,
+   "evolution": 1002.1
+  },
+  {
+   "id": "ecard1-10",
+   "nom": "Triopikeur",
+   "set": "Expedition",
+   "numero": "10",
+   "rarete": "Holo Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard1/10",
+   "avant": 20.07,
+   "apres": 220.04,
+   "evolution": 996.4
+  },
+  {
+   "id": "ecard1-44",
+   "nom": "Triopikeur",
+   "set": "Expedition",
+   "numero": "44",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard1/44",
+   "avant": 20.07,
+   "apres": 220.04,
+   "evolution": 996.4
+  },
+  {
+   "id": "ecard2-H08",
+   "nom": "Entei",
+   "set": "Aquapolis",
+   "numero": "H08",
+   "rarete": "Holo Rare",
+   "image": null,
+   "avant": 12.43,
+   "apres": 131.32,
+   "evolution": 956.5
+  }
+ ],
+ "hausses": [
+  {
+   "id": "pl3-20",
+   "nom": "Dracaufeu G",
+   "set": "Vainqueurs Suprêmes",
+   "numero": "20",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/pl/pl3/20",
+   "avant": 13.77,
+   "apres": 337.91,
+   "evolution": 2354.0
+  },
+  {
+   "id": "xy12-34",
+   "nom": "Léviator",
+   "set": "Évolutions",
+   "numero": "34",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/xy/xy12/34",
+   "avant": 10.99,
+   "apres": 200,
+   "evolution": 1719.8
+  },
+  {
+   "id": "ecard1-47",
+   "nom": "Aligatueur",
+   "set": "Expedition",
+   "numero": "47",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard1/47",
+   "avant": 42.83,
+   "apres": 676.67,
+   "evolution": 1479.9
+  },
+  {
+   "id": "ecard1-46",
+   "nom": "Aligatueur",
+   "set": "Expedition",
+   "numero": "46",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard1/46",
+   "avant": 42.83,
+   "apres": 676.67,
+   "evolution": 1479.9
+  },
+  {
+   "id": "ecard1-12",
+   "nom": "Aligatueur",
+   "set": "Expedition",
+   "numero": "12",
+   "rarete": "Holo Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard1/12",
+   "avant": 42.83,
+   "apres": 676.67,
+   "evolution": 1479.9
+  },
+  {
+   "id": "xy10-79",
+   "nom": "Lugia TURBO",
+   "set": "Impact des Destins",
+   "numero": "79",
+   "rarete": "Ultra Rare",
+   "image": "https://assets.tcgdex.net/fr/xy/xy10/79",
+   "avant": 16.01,
+   "apres": 212.01,
+   "evolution": 1224.2
+  },
+  {
+   "id": "pop1-17",
+   "nom": "Tyranocif ex",
+   "set": "POP Série 1",
+   "numero": "17",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/pop/pop1/17",
+   "avant": 24.84,
+   "apres": 273.76,
+   "evolution": 1002.1
+  },
+  {
+   "id": "ecard1-10",
+   "nom": "Triopikeur",
+   "set": "Expedition",
+   "numero": "10",
+   "rarete": "Holo Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard1/10",
+   "avant": 20.07,
+   "apres": 220.04,
+   "evolution": 996.4
+  },
+  {
+   "id": "ecard1-44",
+   "nom": "Triopikeur",
+   "set": "Expedition",
+   "numero": "44",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard1/44",
+   "avant": 20.07,
+   "apres": 220.04,
+   "evolution": 996.4
+  },
+  {
+   "id": "ecard2-H08",
+   "nom": "Entei",
+   "set": "Aquapolis",
+   "numero": "H08",
+   "rarete": "Holo Rare",
+   "image": null,
+   "avant": 12.43,
+   "apres": 131.32,
+   "evolution": 956.5
+  }
+ ],
+ "baisses": [
+  {
+   "id": "ex10-29",
+   "nom": "Lugia",
+   "set": "EX Forces Cachées",
+   "numero": "29",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ex/ex10/29",
+   "avant": 134.93,
+   "apres": 12.54,
+   "evolution": -90.7
+  },
+  {
+   "id": "base5-8",
+   "nom": "Léviator obscur",
+   "set": "Team Rocket",
+   "numero": "8",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base5/8",
+   "avant": 366.63,
+   "apres": 36.72,
+   "evolution": -90.0
+  },
+  {
+   "id": "base5-25",
+   "nom": "Léviator obscur",
+   "set": "Team Rocket",
+   "numero": "25",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base5/25",
+   "avant": 366.63,
+   "apres": 36.72,
+   "evolution": -90.0
+  },
+  {
+   "id": "xy7-96",
+   "nom": "PrimoKyogre EX",
+   "set": "Origines Antiques",
+   "numero": "96",
+   "rarete": "Magnifique rare",
+   "image": "https://assets.tcgdex.net/fr/xy/xy7/96",
+   "avant": 1539.99,
+   "apres": 166.7,
+   "evolution": -89.2
+  },
+  {
+   "id": "base3-12",
+   "nom": "Sulfura",
+   "set": "Fossile",
+   "numero": "12",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/12",
+   "avant": 325.56,
+   "apres": 49.19,
+   "evolution": -84.9
+  },
+  {
+   "id": "base3-27",
+   "nom": "Sulfura",
+   "set": "Fossile",
+   "numero": "27",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/27",
+   "avant": 325.56,
+   "apres": 49.19,
+   "evolution": -84.9
+  },
+  {
+   "id": "ecard2-H29",
+   "nom": "Noctali",
+   "set": "Aquapolis",
+   "numero": "H29",
+   "rarete": "Holo Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard2/H29",
+   "avant": 439.33,
+   "apres": 79,
+   "evolution": -82.0
+  },
+  {
+   "id": "ex11-7",
+   "nom": "Voltali δ",
+   "set": "EX Espèces Delta",
+   "numero": "7",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ex/ex11/7",
+   "avant": 298.34,
+   "apres": 59.19,
+   "evolution": -80.2
+  },
+  {
+   "id": "ex1-96",
+   "nom": "Leveinard ex",
+   "set": "EX Rubis & Saphir",
+   "numero": "96",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ex/ex1/96",
+   "avant": 148.13,
+   "apres": 35.45,
+   "evolution": -76.1
+  },
+  {
+   "id": "base1-4",
+   "nom": "Dracaufeu",
+   "set": "Set de Base",
+   "numero": "4",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base1/4",
+   "avant": 1693.86,
+   "apres": 423.4,
+   "evolution": -75.0
+  }
+ ]
+}

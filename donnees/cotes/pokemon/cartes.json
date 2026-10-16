@@ -636,6 +636,13 @@ null
 "Sans Rareté",
 null
 ],
+"2018sm-fr-25": [
+"Rocabot",
+"Collection McDonald's 2018",
+"25",
+"Sans Rareté",
+null
+],
 "2018sm-fr-29": [
 "Airmure",
 "Collection McDonald's 2018",
@@ -692,6 +699,20 @@ null
 "Sans Rareté",
 null
 ],
+"2018sm-fr-38": [
+"Passerouge",
+"Collection McDonald's 2018",
+"38",
+"Sans Rareté",
+null
+],
+"2018sm-fr-39": [
+"Passerouge",
+"Collection McDonald's 2018",
+"39",
+"Sans Rareté",
+null
+],
 "2018sm-fr-4": [
 "Salamèche",
 "Collection McDonald's 2018",
@@ -731,6 +752,13 @@ null
 "Goupix d'Alola",
 "Collection McDonald's 2018",
 "9",
+"Sans Rareté",
+null
+],
+"2019sm-fr-10": [
+"Magmar",
+"Collection McDonald's 2019",
+"10",
 "Sans Rareté",
 null
 ],
@@ -776,6 +804,13 @@ null
 "Sans Rareté",
 null
 ],
+"2019sm-fr-21": [
+"Raichu d'Alola",
+"Collection McDonald's 2019",
+"21",
+"Sans Rareté",
+null
+],
 "2019sm-fr-26": [
 "Électhor",
 "Collection McDonald's 2019",
@@ -783,10 +818,24 @@ null
 "Sans Rareté",
 null
 ],
+"2019sm-fr-29": [
+"Onix",
+"Collection McDonald's 2019",
+"29",
+"Sans Rareté",
+null
+],
 "2019sm-fr-30": [
 "Osselait",
 "Collection McDonald's 2019",
 "30",
+"Sans Rareté",
+null
+],
+"2019sm-fr-38": [
+"Leveinard",
+"Collection McDonald's 2019",
+"38",
 "Sans Rareté",
 null
 ],
@@ -822,6 +871,13 @@ null
 "Queulorior",
 "Collection McDonald's 2022",
 "15",
+"Sans Rareté",
+null
+],
+"2022swsh-3": [
+"Tournicoton",
+"Collection McDonald's 2022",
+"3",
 "Sans Rareté",
 null
 ],
@@ -1203,6 +1259,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/base/base1/51"
 ],
+"base1-52": [
+"Machoc",
+"Set de Base",
+"52",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base1/52"
+],
 "base1-53": [
 "Magnéti",
 "Set de Base",
@@ -1258,6 +1321,13 @@ null
 "6",
 "Rare",
 "https://assets.tcgdex.net/fr/base/base1/6"
+],
+"base1-60": [
+"Ponyta",
+"Set de Base",
+"60",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base1/60"
 ],
 "base1-61": [
 "Rattata",
@@ -1448,6 +1518,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/base/base1/86"
 ],
+"base1-87": [
+"Pokédex",
+"Set de Base",
+"87",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/base/base1/87"
+],
 "base1-88": [
 "Professeur Chen",
 "Set de Base",
@@ -1468,6 +1545,20 @@ null
 "9",
 "Rare",
 "https://assets.tcgdex.net/fr/base/base1/9"
+],
+"base1-91": [
+"Léo",
+"Set de Base",
+"91",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base1/91"
+],
+"base1-92": [
+"Suppression d'Énergie",
+"Set de Base",
+"92",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base1/92"
 ],
 "base1-93": [
 "Rafale de vent",
@@ -1797,6 +1888,13 @@ null
 "47",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/base/base2/47"
+],
+"base2-48": [
+"Boustiflor",
+"Jungle",
+"48",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/base/base2/48"
 ],
 "base2-49": [
 "Chétiflor",
@@ -2211,6 +2309,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/base/base3/45"
 ],
+"base3-47": [
+"Racaillou",
+"Fossile",
+"47",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base3/47"
+],
 "base3-5": [
 "Ectoplasma",
 "Fossile",
@@ -2610,6 +2715,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/base/base5/51"
 ],
+"base5-52": [
+"Taupiqueur",
+"Team Rocket",
+"52",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base5/52"
+],
 "base5-53": [
 "Minidraco",
 "Team Rocket",
@@ -2631,12 +2743,26 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/base/base5/55"
 ],
+"base5-56": [
+"Abo",
+"Team Rocket",
+"56",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base5/56"
+],
 "base5-57": [
 "Tadmorv",
 "Team Rocket",
 "57",
 "Commune",
 "https://assets.tcgdex.net/fr/base/base5/57"
+],
+"base5-58": [
+"Smogo",
+"Team Rocket",
+"58",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base5/58"
 ],
 "base5-59": [
 "Machoc",
@@ -2659,12 +2785,33 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/base/base5/62"
 ],
+"base5-63": [
+"Mystherbe",
+"Team Rocket",
+"63",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base5/63"
+],
+"base5-64": [
+"Ponyta",
+"Team Rocket",
+"64",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base5/64"
+],
 "base5-65": [
 "Psykokwak",
 "Team Rocket",
 "65",
 "Commune",
 "https://assets.tcgdex.net/fr/base/base5/65"
+],
+"base5-66": [
+"Rattata",
+"Team Rocket",
+"66",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base5/66"
 ],
 "base5-67": [
 "Ramoloss",
@@ -2679,6 +2826,13 @@ null
 "68",
 "Commune",
 "https://assets.tcgdex.net/fr/base/base5/68"
+],
+"base5-69": [
+"Voltorbe",
+"Team Rocket",
+"69",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base5/69"
 ],
 "base5-7": [
 "Nosferalto obscur",
@@ -2750,6 +2904,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/base/base5/78"
 ],
+"base5-79": [
+"Bonne nuit, les petits !",
+"Team Rocket",
+"79",
+"Commune",
+"https://assets.tcgdex.net/fr/base/base5/79"
+],
 "base5-8": [
 "Léviator obscur",
 "Team Rocket",
@@ -2763,6 +2924,13 @@ null
 "80",
 "Rare",
 "https://assets.tcgdex.net/fr/base/base5/80"
+],
+"base5-81": [
+"Énergie guérisseuse",
+"Team Rocket",
+"81",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/base/base5/81"
 ],
 "base5-82": [
 "Énergie potion",
@@ -2785,6 +2953,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/base/base5/9"
 ],
+"bw1-10": [
+"Fragilady",
+"Noir & Blanc",
+"10",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw1/10"
+],
 "bw1-105": [
 "Énergie Plante",
 "Noir & Blanc",
@@ -2798,6 +2973,13 @@ null
 "106",
 "Commune",
 "https://assets.tcgdex.net/fr/bw/bw1/106"
+],
+"bw1-107": [
+"Énergie Eau",
+"Noir & Blanc",
+"107",
+"Commune",
+"https://assets.tcgdex.net/fr/bw/bw1/107"
 ],
 "bw1-108": [
 "Énergie Électrique",
@@ -2911,6 +3093,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw1/5"
 ],
+"bw1-54": [
+"Brutapode",
+"Noir & Blanc",
+"54",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw1/54"
+],
 "bw1-57": [
 "Symbios",
 "Noir & Blanc",
@@ -2952,6 +3141,13 @@ null
 "86",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw1/86"
+],
+"bw1-89": [
+"Pashmilla",
+"Noir & Blanc",
+"89",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw1/89"
 ],
 "bw10-10": [
 "Genesect",
@@ -3016,6 +3212,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw10/16"
 ],
+"bw10-17": [
+"Lokhlass",
+"Explosion Plasma",
+"17",
+"Commune",
+"https://assets.tcgdex.net/fr/bw/bw10/17"
+],
 "bw10-20": [
 "Suicune",
 "Explosion Plasma",
@@ -3029,6 +3232,13 @@ null
 "23",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw10/23"
+],
+"bw10-26": [
+"Blizzaroi",
+"Explosion Plasma",
+"26",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw10/26"
 ],
 "bw10-28": [
 "Mégapagos",
@@ -3072,12 +3282,33 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw10/4"
 ],
+"bw10-40": [
+"Mushana",
+"Explosion Plasma",
+"40",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw10/40"
+],
 "bw10-41": [
 "Cryptéro",
 "Explosion Plasma",
 "41",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw10/41"
+],
+"bw10-43": [
+"Méios",
+"Explosion Plasma",
+"43",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw10/43"
+],
+"bw10-44": [
+"Symbios",
+"Explosion Plasma",
+"44",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw10/44"
 ],
 "bw10-46": [
 "Golemastoc",
@@ -3121,6 +3352,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw10/56"
 ],
+"bw10-58": [
+"Galegon",
+"Explosion Plasma",
+"58",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw10/58"
+],
 "bw10-64": [
 "Drattak",
 "Explosion Plasma",
@@ -3149,6 +3387,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/bw/bw10/77"
 ],
+"bw10-8": [
+"Limaspeed",
+"Explosion Plasma",
+"8",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw10/8"
+],
 "bw10-83": [
 "Attrape-Pokémon",
 "Explosion Plasma",
@@ -3169,6 +3414,13 @@ null
 "87",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/bw/bw10/87"
+],
+"bw10-90": [
+"Hyper Ball",
+"Explosion Plasma",
+"90",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw10/90"
 ],
 "bw10-92": [
 "Impulsion G",
@@ -3268,6 +3520,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw2/57"
 ],
+"bw2-62": [
+"Crocorible",
+"Pouvoirs Émergents",
+"62",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw2/62"
+],
 "bw2-63": [
 "Terrakium",
 "Pouvoirs Émergents",
@@ -3281,6 +3540,13 @@ null
 "67",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw2/67"
+],
+"bw2-7": [
+"Manternel",
+"Pouvoirs Émergents",
+"7",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw2/7"
 ],
 "bw2-72": [
 "Noacier",
@@ -3309,6 +3575,13 @@ null
 "77",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw2/77"
+],
+"bw2-8": [
+"Manternel",
+"Pouvoirs Émergents",
+"8",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw2/8"
 ],
 "bw2-82": [
 "Déflaisan",
@@ -3366,6 +3639,13 @@ null
 "Magnifique rare",
 "https://assets.tcgdex.net/fr/bw/bw3/102"
 ],
+"bw3-12": [
+"Limaspeed",
+"Nobles Victoires",
+"12",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw3/12"
+],
 "bw3-13": [
 "Viridium",
 "Nobles Victoires",
@@ -3386,6 +3666,13 @@ null
 "15",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw3/15"
+],
+"bw3-21": [
+"Pyrax",
+"Nobles Victoires",
+"21",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw3/21"
 ],
 "bw3-24": [
 "Crapustule",
@@ -3442,6 +3729,13 @@ null
 "34",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw3/34"
+],
+"bw3-36": [
+"Zéblitz",
+"Nobles Victoires",
+"36",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw3/36"
 ],
 "bw3-40": [
 "Lampéroie",
@@ -3674,6 +3968,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw4/20"
 ],
+"bw4-21": [
+"Reshiram",
+"Destinées Futures",
+"21",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw4/21"
+],
 "bw4-25": [
 "Lokhlass",
 "Destinées Futures",
@@ -3744,6 +4045,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw4/50"
 ],
+"bw4-53": [
+"Grotadmorv",
+"Destinées Futures",
+"53",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw4/53"
+],
 "bw4-57": [
 "Gardevoir",
 "Destinées Futures",
@@ -3779,12 +4087,26 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw4/64"
 ],
+"bw4-68": [
+"Shaofouine",
+"Destinées Futures",
+"68",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw4/68"
+],
 "bw4-72": [
 "Tengalice",
 "Destinées Futures",
 "72",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw4/72"
+],
+"bw4-74": [
+"Baggaïd",
+"Destinées Futures",
+"74",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw4/74"
 ],
 "bw4-79": [
 "Grodoudou",
@@ -3814,6 +4136,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw4/85"
 ],
+"bw4-88": [
+"Masse Ball",
+"Destinées Futures",
+"88",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw4/88"
+],
 "bw4-89": [
 "Niveau Ball",
 "Destinées Futures",
@@ -3842,12 +4171,26 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/bw/bw5/100"
 ],
+"bw5-102": [
+"Hyper Ball",
+"Explorateurs Obscurs",
+"102",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw5/102"
+],
 "bw5-109": [
 "Gardevoir",
 "Explorateurs Obscurs",
 "109",
 "Magnifique rare",
 "https://assets.tcgdex.net/fr/bw/bw5/109"
+],
+"bw5-11": [
+"Limaspeed",
+"Explorateurs Obscurs",
+"11",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw5/11"
 ],
 "bw5-110": [
 "Aéroptéryx",
@@ -3890,6 +4233,13 @@ null
 "22",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw5/22"
+],
+"bw5-23": [
+"Ramoloss",
+"Explorateurs Obscurs",
+"23",
+"Commune",
+"https://assets.tcgdex.net/fr/bw/bw5/23"
 ],
 "bw5-25": [
 "Aquali",
@@ -3981,6 +4331,13 @@ null
 "5",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw5/5"
+],
+"bw5-52": [
+"Tutankafer",
+"Explorateurs Obscurs",
+"52",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw5/52"
 ],
 "bw5-53": [
 "Ptéra",
@@ -4220,6 +4577,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw6/3"
 ],
+"bw6-38": [
+"Wattouat",
+"Dragons Éxaltés",
+"38",
+"Commune",
+"https://assets.tcgdex.net/fr/bw/bw6/38"
+],
 "bw6-40": [
 "Pharamp",
 "Dragons Éxaltés",
@@ -4394,6 +4758,13 @@ null
 "105",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/bw/bw7/105"
+],
+"bw7-106": [
+"Miaouss",
+"Frontières Franchies",
+"106",
+"Commune",
+"https://assets.tcgdex.net/fr/bw/bw7/106"
 ],
 "bw7-108": [
 "Métamorph",
@@ -4773,6 +5144,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/bw/bw8/118"
 ],
+"bw8-121": [
+"Huile",
+"Tempète Plasma",
+"121",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw8/121"
+],
 "bw8-123": [
 "Laser Hypnotoxique",
 "Tempète Plasma",
@@ -4878,6 +5256,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw8/34"
 ],
+"bw8-39": [
+"Moyade",
+"Tempète Plasma",
+"39",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw8/39"
+],
 "bw8-41": [
 "Polagriffe",
 "Tempète Plasma",
@@ -4906,6 +5291,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/bw/bw8/50"
 ],
+"bw8-51": [
+"Mygavolt",
+"Tempète Plasma",
+"51",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw8/51"
+],
 "bw8-55": [
 "Nostenfer",
 "Tempète Plasma",
@@ -4933,6 +5325,27 @@ null
 "62",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw8/62"
+],
+"bw8-63": [
+"Miamiasme",
+"Tempète Plasma",
+"63",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/bw/bw8/63"
+],
+"bw8-64": [
+"Miamiasme",
+"Tempète Plasma",
+"64",
+"Commune",
+"https://assets.tcgdex.net/fr/bw/bw8/64"
+],
+"bw8-65": [
+"Miamiasme",
+"Tempète Plasma",
+"65",
+"Commune",
+"https://assets.tcgdex.net/fr/bw/bw8/65"
 ],
 "bw8-66": [
 "Miasmax",
@@ -4997,6 +5410,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw8/84"
 ],
+"bw8-86": [
+"Baggaïd",
+"Tempète Plasma",
+"86",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw8/86"
+],
 "bw8-87": [
 "Airmure",
 "Tempète Plasma",
@@ -5024,6 +5444,13 @@ null
 "92",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/bw/bw8/92"
+],
+"bw8-94": [
+"Drakkarmin",
+"Tempète Plasma",
+"94",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw8/94"
 ],
 "bw8-97": [
 "Mélofée",
@@ -5172,6 +5599,20 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw9/23"
 ],
+"bw9-26": [
+"Crapustule",
+"Glaciation Plasma",
+"26",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw9/26"
+],
+"bw9-29": [
+"Sorbouboul",
+"Glaciation Plasma",
+"29",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw9/29"
+],
 "bw9-3": [
 "Dardargnan",
 "Glaciation Plasma",
@@ -5185,6 +5626,13 @@ null
 "31",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw9/31"
+],
+"bw9-33": [
+"Électrode",
+"Glaciation Plasma",
+"33",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw9/33"
 ],
 "bw9-34": [
 "Voltali",
@@ -5213,6 +5661,13 @@ null
 "42",
 "Rare",
 "https://assets.tcgdex.net/fr/bw/bw9/42"
+],
+"bw9-46": [
+"Grotadmorv",
+"Glaciation Plasma",
+"46",
+"Rare",
+"https://assets.tcgdex.net/fr/bw/bw9/46"
 ],
 "bw9-47": [
 "M. Mime",
@@ -5410,6 +5865,20 @@ null
 "Holo Rare",
 "https://assets.tcgdex.net/fr/swsh/cel25/11"
 ],
+"cel25-16": [
+"Zacian V",
+"Célébrations",
+"16",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/cel25/16"
+],
+"cel25-18": [
+"Zamazenta V",
+"Célébrations",
+"18",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/cel25/18"
+],
 "cel25-24": [
 "Recherches Professorales (Professeur Chen)",
 "Célébrations",
@@ -5423,6 +5892,13 @@ null
 "25",
 "Magnifique rare",
 null
+],
+"cel25-3": [
+"Kyogre",
+"Célébrations",
+"3",
+"Rare",
+"https://assets.tcgdex.net/fr/swsh/cel25/3"
 ],
 "cel25-5": [
 "Pikachu",
@@ -5935,6 +6411,13 @@ null
 "Commune",
 null
 ],
+"col1-57": [
+"Tygnon",
+"L'appel des Légendes",
+"57",
+"Commune",
+null
+],
 "col1-6": [
 "Groudon",
 "L'appel des Légendes",
@@ -5968,6 +6451,13 @@ null
 "L'appel des Légendes",
 "7",
 "Holo Rare",
+null
+],
+"col1-73": [
+"Teddiursa",
+"L'appel des Légendes",
+"73",
+"Commune",
 null
 ],
 "col1-74": [
@@ -6376,6 +6866,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/xy/dc1/9"
 ],
+"det1-1": [
+"Bulbizarre",
+"Détective Pikachu",
+"1",
+"Commune",
+null
+],
 "det1-10": [
 "Détective Pikachu",
 "Détective Pikachu",
@@ -6425,6 +6922,13 @@ null
 "Rare",
 null
 ],
+"det1-4": [
+"Salamèche",
+"Détective Pikachu",
+"4",
+"Commune",
+null
+],
 "det1-5": [
 "Dracaufeu",
 "Détective Pikachu",
@@ -6467,6 +6971,13 @@ null
 "Rare Holo",
 null
 ],
+"dp1-106": [
+"Restauration d'énergie",
+"Diamant & Perle",
+"106",
+"Peu Commune",
+null
+],
 "dp1-11": [
 "Palkia",
 "Diamant & Perle",
@@ -6502,11 +7013,25 @@ null
 "Rare Holo LV.X",
 null
 ],
+"dp1-129": [
+"Énergie Obscurité",
+"Diamant & Perle",
+"129",
+"Commune",
+null
+],
 "dp1-13": [
 "Roserade",
 "Diamant & Perle",
 "13",
 "Rare Holo",
+null
+],
+"dp1-130": [
+"Énergie Métal",
+"Diamant & Perle",
+"130",
+"Commune",
 null
 ],
 "dp1-14": [
@@ -6541,6 +7066,13 @@ null
 "Azumarill",
 "Diamant & Perle",
 "18",
+"Rare",
+null
+],
+"dp1-19": [
+"Charmillon",
+"Diamant & Perle",
+"19",
 "Rare",
 null
 ],
@@ -6593,10 +7125,24 @@ null
 "Rare",
 null
 ],
+"dp1-26": [
+"Mustéflott",
+"Diamant & Perle",
+"26",
+"Rare",
+null
+],
 "dp1-27": [
 "Ectoplasma",
 "Diamant & Perle",
 "27",
+"Rare",
+null
+],
+"dp1-29": [
+"Hippodocus",
+"Diamant & Perle",
+"29",
 "Rare",
 null
 ],
@@ -6691,6 +7237,13 @@ null
 "Peu Commune",
 null
 ],
+"dp1-45": [
+"Ceriflor",
+"Diamant & Perle",
+"45",
+"Peu Commune",
+null
+],
 "dp1-48": [
 "Élekid",
 "Diamant & Perle",
@@ -6754,6 +7307,13 @@ null
 "Commune",
 null
 ],
+"dp1-75": [
+"Ceribou",
+"Diamant & Perle",
+"75",
+"Commune",
+null
+],
 "dp1-76": [
 "Ouisticram",
 "Diamant & Perle",
@@ -6782,6 +7342,13 @@ null
 "Commune",
 null
 ],
+"dp1-83": [
+"Chaglam",
+"Diamant & Perle",
+"83",
+"Commune",
+null
+],
 "dp1-88": [
 "Marill",
 "Diamant & Perle",
@@ -6794,6 +7361,13 @@ null
 "Diamant & Perle",
 "9",
 "Rare Holo",
+null
+],
+"dp1-92": [
+"Onix",
+"Diamant & Perle",
+"92",
+"Commune",
 null
 ],
 "dp2-1": [
@@ -6814,6 +7388,13 @@ null
 "Kaiminus",
 "Trésors Mystérieux",
 "106",
+"Commune",
+null
+],
+"dp2-107": [
+"Goupix",
+"Trésors Mystérieux",
+"107",
 "Commune",
 null
 ],
@@ -6971,6 +7552,13 @@ null
 "Rare Holo",
 null
 ],
+"dp2-30": [
+"M. Mime",
+"Trésors Mystérieux",
+"30",
+"Rare",
+null
+],
 "dp2-31": [
 "Nidoqueen",
 "Trésors Mystérieux",
@@ -7003,6 +7591,13 @@ null
 "Simularbre",
 "Trésors Mystérieux",
 "35",
+"Rare",
+null
+],
+"dp2-36": [
+"Coatox",
+"Trésors Mystérieux",
+"36",
 "Rare",
 null
 ],
@@ -7145,6 +7740,13 @@ null
 "100",
 "Commune",
 "https://assets.tcgdex.net/fr/dp/dp3/100"
+],
+"dp3-103": [
+"Rattata",
+"Merveilles Secrètes",
+"103",
+"Commune",
+"https://assets.tcgdex.net/fr/dp/dp3/103"
 ],
 "dp3-11": [
 "Cotovol",
@@ -7307,6 +7909,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/dp/dp3/30"
 ],
+"dp3-31": [
+"Maganon",
+"Merveilles Secrètes",
+"31",
+"Rare",
+"https://assets.tcgdex.net/fr/dp/dp3/31"
+],
 "dp3-32": [
 "Négapi",
 "Merveilles Secrètes",
@@ -7341,6 +7950,13 @@ null
 "36",
 "Rare",
 "https://assets.tcgdex.net/fr/dp/dp3/36"
+],
+"dp3-37": [
+"Sharpedo",
+"Merveilles Secrètes",
+"37",
+"Rare",
+"https://assets.tcgdex.net/fr/dp/dp3/37"
 ],
 "dp3-38": [
 "Héliatronc",
@@ -7397,6 +8013,13 @@ null
 "58",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/dp/dp3/58"
+],
+"dp3-59": [
+"Scarabrute",
+"Merveilles Secrètes",
+"59",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/dp/dp3/59"
 ],
 "dp3-6": [
 "Gallame",
@@ -7671,6 +8294,13 @@ null
 "Rare Holo",
 null
 ],
+"dp4-54": [
+"Flagadoss",
+"Duels au Sommets",
+"54",
+"Peu Commune",
+null
+],
 "dp4-6": [
 "Porygon-Z",
 "Duels au Sommets",
@@ -7724,6 +8354,13 @@ null
 "Ramoloss",
 "Duels au Sommets",
 "82",
+"Commune",
+null
+],
+"dp4-89": [
+"Poussifeu",
+"Duels au Sommets",
+"89",
 "Commune",
 null
 ],
@@ -7930,6 +8567,13 @@ null
 "Peu Commune",
 null
 ],
+"dp5-45": [
+"Raichu",
+"Aube Majestueuse",
+"45",
+"Peu Commune",
+null
+],
 "dp5-5": [
 "Givrali",
 "Aube Majestueuse",
@@ -8063,6 +8707,13 @@ null
 "Rare Holo",
 null
 ],
+"dp6-101": [
+"Kapoera",
+"Éveil des Légendes",
+"101",
+"Commune",
+null
+],
 "dp6-107": [
 "Feuforêve",
 "Éveil des Légendes",
@@ -8075,6 +8726,20 @@ null
 "Éveil des Légendes",
 "11",
 "Rare Holo",
+null
+],
+"dp6-111": [
+"Mystherbe",
+"Éveil des Légendes",
+"111",
+"Commune",
+null
+],
+"dp6-112": [
+"Mystherbe",
+"Éveil des Légendes",
+"112",
+"Commune",
 null
 ],
 "dp6-12": [
@@ -8406,6 +9071,13 @@ null
 "Peu Commune",
 null
 ],
+"dp6-53": [
+"Grodrive",
+"Éveil des Légendes",
+"53",
+"Peu Commune",
+null
+],
 "dp6-55": [
 "Scorvol",
 "Éveil des Légendes",
@@ -8453,6 +9125,13 @@ null
 "Éveil des Légendes",
 "9",
 "Rare Holo",
+null
+],
+"dp6-91": [
+"Minidraco",
+"Éveil des Légendes",
+"91",
+"Commune",
 null
 ],
 "dp7-1": [
@@ -8515,6 +9194,13 @@ null
 "Ceriflor",
 "Tempête",
 "14",
+"Rare",
+null
+],
+"dp7-16": [
+"Grodrive",
+"Tempête",
+"16",
 "Rare",
 null
 ],
@@ -8679,6 +9365,13 @@ null
 "Peu Commune",
 null
 ],
+"dp7-51": [
+"Airmure",
+"Tempête",
+"51",
+"Peu Commune",
+null
+],
 "dp7-56": [
 "Ceribou",
 "Tempête",
@@ -8711,6 +9404,13 @@ null
 "Skelénox",
 "Tempête",
 "60",
+"Commune",
+null
+],
+"dp7-62": [
+"Fantominus",
+"Tempête",
+"62",
 "Commune",
 null
 ],
@@ -9364,6 +10064,13 @@ null
 "152",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ecard/ecard1/152"
+],
+"ecard1-155": [
+"Lait Meumeu",
+"Expedition",
+"155",
+"Commune",
+"https://assets.tcgdex.net/fr/ecard/ecard1/155"
 ],
 "ecard1-157": [
 "Transfert",
@@ -10372,6 +11079,13 @@ null
 "14",
 "Rare",
 "https://assets.tcgdex.net/fr/ecard/ecard2/14"
+],
+"ecard2-140": [
+"Cube d'eau 01",
+"Aquapolis",
+"140",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ecard/ecard2/140"
 ],
 "ecard2-141": [
 "Garde faiblesse",
@@ -11416,6 +12130,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex1/17"
 ],
+"ex1-18": [
+"Tarinor",
+"EX Rubis & Saphir",
+"18",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex1/18"
+],
 "ex1-19": [
 "Bekipan",
 "EX Rubis & Saphir",
@@ -11675,6 +12396,20 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex1/60"
 ],
+"ex1-61": [
+"Chamallot",
+"EX Rubis & Saphir",
+"61",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex1/61"
+],
+"ex1-62": [
+"Phanpy",
+"EX Rubis & Saphir",
+"62",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex1/62"
+],
 "ex1-63": [
 "Medhyena",
 "EX Rubis & Saphir",
@@ -11695,6 +12430,20 @@ null
 "65",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex1/65"
+],
+"ex1-66": [
+"Tarsal",
+"EX Rubis & Saphir",
+"66",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex1/66"
+],
+"ex1-67": [
+"Tarsal",
+"EX Rubis & Saphir",
+"67",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex1/67"
 ],
 "ex1-68": [
 "Tarsal",
@@ -11730,6 +12479,13 @@ null
 "76",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex1/76"
+],
+"ex1-78": [
+"Chenipotte",
+"EX Rubis & Saphir",
+"78",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex1/78"
 ],
 "ex1-8": [
 "Hariyama",
@@ -12102,6 +12858,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex10/37"
 ],
+"ex10-38": [
+"Crocrodil",
+"EX Forces Cachées",
+"38",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex10/38"
+],
 "ex10-4": [
 "Aligatueur",
 "EX Forces Cachées",
@@ -12179,12 +12942,40 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex10/50"
 ],
+"ex10-53": [
+"Mélofée",
+"EX Forces Cachées",
+"53",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex10/53"
+],
 "ex10-55": [
 "Evoli",
 "EX Forces Cachées",
 "55",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex10/55"
+],
+"ex10-56": [
+"Lainergie",
+"EX Forces Cachées",
+"56",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex10/56"
+],
+"ex10-57": [
+"Scorplane",
+"EX Forces Cachées",
+"57",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex10/57"
+],
+"ex10-58": [
+"Ortide",
+"EX Forces Cachées",
+"58",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex10/58"
 ],
 "ex10-6": [
 "Foretress",
@@ -12207,12 +12998,33 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex10/7"
 ],
+"ex10-70": [
+"Ymphect",
+"EX Forces Cachées",
+"70",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex10/70"
+],
+"ex10-78": [
+"Kaiminus",
+"EX Forces Cachées",
+"78",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex10/78"
+],
 "ex10-8": [
 "Voltali",
 "EX Forces Cachées",
 "8",
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex10/8"
+],
+"ex10-80": [
+"Poudre maléfique",
+"EX Forces Cachées",
+"80",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex10/80"
 ],
 "ex10-82": [
 "Suppression d'Énergie 2",
@@ -12241,6 +13053,13 @@ null
 "88",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex10/88"
+],
+"ex10-89": [
+"Méthode d'entraînement du Prof. Orme",
+"EX Forces Cachées",
+"89",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex10/89"
 ],
 "ex10-9": [
 "Méganium",
@@ -12529,6 +13348,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex11/31"
 ],
+"ex11-33": [
+"Smogogo",
+"EX Espèces Delta",
+"33",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex11/33"
+],
 "ex11-34": [
 "Morphéo",
 "EX Espèces Delta",
@@ -12697,6 +13523,20 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex11/56"
 ],
+"ex11-57": [
+"Draby δ",
+"EX Espèces Delta",
+"57",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex11/57"
+],
+"ex11-58": [
+"Draby δ",
+"EX Espèces Delta",
+"58",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex11/58"
+],
 "ex11-6": [
 "Gardevoir δ",
 "EX Espèces Delta",
@@ -12809,6 +13649,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex11/8"
 ],
+"ex11-81": [
+"Tarsal",
+"EX Espèces Delta",
+"81",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex11/81"
+],
 "ex11-82": [
 "Sabelette",
 "EX Espèces Delta",
@@ -12822,6 +13669,20 @@ null
 "83",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex11/83"
+],
+"ex11-84": [
+"Stari",
+"EX Espèces Delta",
+"84",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex11/84"
+],
+"ex11-88": [
+"Nosferapti",
+"EX Espèces Delta",
+"88",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex11/88"
 ],
 "ex11-9": [
 "Latios δ",
@@ -13075,6 +13936,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex12/38"
 ],
+"ex12-39": [
+"Machopeur",
+"EX Créateurs de légendes",
+"39",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex12/39"
+],
 "ex12-4": [
 "Delcatty",
 "EX Créateurs de légendes",
@@ -13095,6 +13963,13 @@ null
 "41",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex12/41"
+],
+"ex12-42": [
+"Rosélia",
+"EX Créateurs de légendes",
+"42",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex12/42"
 ],
 "ex12-44": [
 "Saquedeneu",
@@ -13117,12 +13992,33 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex12/5"
 ],
+"ex12-54": [
+"Tadmorv",
+"EX Créateurs de légendes",
+"54",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex12/54"
+],
 "ex12-55": [
 "Caninos",
 "EX Créateurs de légendes",
 "55",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex12/55"
+],
+"ex12-56": [
+"Lilia",
+"EX Créateurs de légendes",
+"56",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex12/56"
+],
+"ex12-57": [
+"Machoc",
+"EX Créateurs de légendes",
+"57",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex12/57"
 ],
 "ex12-58": [
 "Magby",
@@ -13172,6 +14068,13 @@ null
 "72",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex12/72"
+],
+"ex12-73": [
+"Travailleur de terrain",
+"EX Créateurs de légendes",
+"73",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex12/73"
 ],
 "ex12-75": [
 "Souche géante",
@@ -13453,6 +14356,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex13/24"
 ],
+"ex13-25": [
+"Tarinor",
+"EX Fantômes Holon",
+"25",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex13/25"
+],
 "ex13-26": [
 "Rayquaza δ",
 "EX Fantômes Holon",
@@ -13649,6 +14559,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex13/60"
 ],
+"ex13-66": [
+"Hypotrempe δ",
+"EX Fantômes Holon",
+"66",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex13/66"
+],
 "ex13-67": [
 "Kabuto δ",
 "EX Fantômes Holon",
@@ -13718,6 +14635,13 @@ null
 "81",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex13/81"
+],
+"ex13-83": [
+"Poussifeu",
+"EX Fantômes Holon",
+"83",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex13/83"
 ],
 "ex13-9": [
 "Kabutops δ",
@@ -13880,6 +14804,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex14/24"
 ],
+"ex14-25": [
+"Charmina",
+"EX Gardiens de Cristal",
+"25",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex14/25"
+],
 "ex14-26": [
 "Bekipan δ",
 "EX Gardiens de Cristal",
@@ -13943,6 +14874,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex14/35"
 ],
+"ex14-36": [
+"Galegon",
+"EX Gardiens de Cristal",
+"36",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex14/36"
+],
 "ex14-37": [
 "Lombre",
 "EX Gardiens de Cristal",
@@ -13963,6 +14901,13 @@ null
 "4",
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex14/4"
+],
+"ex14-40": [
+"Polichombr",
+"EX Gardiens de Cristal",
+"40",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex14/40"
 ],
 "ex14-41": [
 "Skitty",
@@ -13999,6 +14944,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex14/46"
 ],
+"ex14-47": [
+"Cacnea",
+"EX Gardiens de Cristal",
+"47",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex14/47"
+],
 "ex14-48": [
 "Salamèche",
 "EX Gardiens de Cristal",
@@ -14033,6 +14985,13 @@ null
 "55",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex14/55"
+],
+"ex14-56": [
+"Méditikka",
+"EX Gardiens de Cristal",
+"56",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex14/56"
 ],
 "ex14-57": [
 "Gobou",
@@ -14090,12 +15049,26 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex14/68"
 ],
+"ex14-69": [
+"Chuchmur",
+"EX Gardiens de Cristal",
+"69",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex14/69"
+],
 "ex14-7": [
 "Lovdisc",
 "EX Gardiens de Cristal",
 "7",
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex14/7"
+],
+"ex14-71": [
+"Entretien de Leo",
+"EX Gardiens de Cristal",
+"71",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex14/71"
 ],
 "ex14-72": [
 "Naufragé",
@@ -14125,6 +15098,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex14/76"
 ],
+"ex14-78": [
+"Double boule",
+"EX Gardiens de Cristal",
+"78",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex14/78"
+],
 "ex14-79": [
 "Cercle Holon",
 "EX Gardiens de Cristal",
@@ -14145,6 +15125,20 @@ null
 "80",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex14/80"
+],
+"ex14-82": [
+"Poké Balle",
+"EX Gardiens de Cristal",
+"82",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex14/82"
+],
+"ex14-84": [
+"Point d'échange",
+"EX Gardiens de Cristal",
+"84",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex14/84"
 ],
 "ex14-85": [
 "Tempête",
@@ -14496,6 +15490,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex15/46"
 ],
+"ex15-49": [
+"Barpau δ",
+"EX Île des Dragons",
+"49",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex15/49"
+],
 "ex15-5": [
 "Milobellus δ",
 "EX Île des Dragons",
@@ -14510,12 +15511,26 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex15/50"
 ],
+"ex15-54": [
+"Wattouat δ",
+"EX Île des Dragons",
+"54",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex15/54"
+],
 "ex15-6": [
 "Nidoking δ",
 "EX Île des Dragons",
 "6",
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex15/6"
+],
+"ex15-60": [
+"Tarsal",
+"EX Île des Dragons",
+"60",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex15/60"
 ],
 "ex15-64": [
 "Lippouti δ",
@@ -14565,6 +15580,13 @@ null
 "76",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex15/76"
+],
+"ex15-77": [
+"Le projet de M. Rochard",
+"EX Île des Dragons",
+"77",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex15/77"
 ],
 "ex15-78": [
 "Canne",
@@ -14923,6 +15945,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex16/38"
 ],
+"ex16-39": [
+"Drackhaus",
+"EX Gardiens du Pouvoir",
+"39",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex16/39"
+],
 "ex16-4": [
 "Branette",
 "EX Gardiens du Pouvoir",
@@ -14936,6 +15965,13 @@ null
 "40",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex16/40"
+],
+"ex16-42": [
+"Galekid",
+"EX Gardiens du Pouvoir",
+"42",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex16/42"
 ],
 "ex16-48": [
 "Salamèche",
@@ -14951,12 +15987,26 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex16/5"
 ],
+"ex16-56": [
+"Amonita",
+"EX Gardiens du Pouvoir",
+"56",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex16/56"
+],
 "ex16-57": [
 "Pikachu",
 "EX Gardiens du Pouvoir",
 "57",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex16/57"
+],
+"ex16-59": [
+"Tarsal",
+"EX Gardiens du Pouvoir",
+"59",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex16/59"
 ],
 "ex16-6": [
 "Dracaufeu",
@@ -15189,6 +16239,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex2/17"
 ],
+"ex2-18": [
+"Kecleon",
+"EX Tempête de sable",
+"18",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex2/18"
+],
 "ex2-19": [
 "Amonistar",
 "EX Tempête de sable",
@@ -15209,6 +16266,13 @@ null
 "20",
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex2/20"
+],
+"ex2-21": [
+"Sablaireau",
+"EX Tempête de sable",
+"21",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex2/21"
 ],
 "ex2-22": [
 "Tengalice",
@@ -15399,6 +16463,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex2/47"
 ],
+"ex2-48": [
+"Pifeuil",
+"EX Tempête de sable",
+"48",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/48"
+],
 "ex2-49": [
 "Pifeuil",
 "EX Tempête de sable",
@@ -15455,6 +16526,20 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex2/55"
 ],
+"ex2-56": [
+"Galekid",
+"EX Tempête de sable",
+"56",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/56"
+],
+"ex2-58": [
+"Cacnea",
+"EX Tempête de sable",
+"58",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/58"
+],
 "ex2-59": [
 "Héricendre",
 "EX Tempête de sable",
@@ -15483,6 +16568,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex2/63"
 ],
+"ex2-64": [
+"Abo",
+"EX Tempête de sable",
+"64",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/64"
+],
 "ex2-65": [
 "Caninos",
 "EX Tempête de sable",
@@ -15497,12 +16589,33 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex2/66"
 ],
+"ex2-69": [
+"Natu",
+"EX Tempête de sable",
+"69",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/69"
+],
 "ex2-7": [
 "Ludicolo",
 "EX Tempête de sable",
 "7",
 "Holo Rare",
 "https://assets.tcgdex.net/fr/ex/ex2/7"
+],
+"ex2-70": [
+"Amonita",
+"EX Tempête de sable",
+"70",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/70"
+],
+"ex2-71": [
+"Onix",
+"EX Tempête de sable",
+"71",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/71"
 ],
 "ex2-72": [
 "Pikachu",
@@ -15546,6 +16659,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex2/82"
 ],
+"ex2-87": [
+"Annette surfe sur le net",
+"EX Tempête de sable",
+"87",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/87"
+],
 "ex2-88": [
 "Super bonbon",
 "EX Tempête de sable",
@@ -15553,12 +16673,33 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex2/88"
 ],
+"ex2-89": [
+"Timmy au dressage",
+"EX Tempête de sable",
+"89",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/89"
+],
 "ex2-9": [
 "Mysdibule",
 "EX Tempête de sable",
 "9",
 "Holo Rare",
 "https://assets.tcgdex.net/fr/ex/ex2/9"
+],
+"ex2-90": [
+"Fossile griffe",
+"EX Tempête de sable",
+"90",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/90"
+],
+"ex2-91": [
+"Mystérieux fossile",
+"EX Tempête de sable",
+"91",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex2/91"
 ],
 "ex2-93": [
 "Énergies multiples",
@@ -15644,6 +16785,13 @@ null
 "Holo Rare",
 "https://assets.tcgdex.net/fr/ex/ex3/12"
 ],
+"ex3-13": [
+"Colhomard",
+"EX Dragon",
+"13",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex3/13"
+],
 "ex3-14": [
 "Draco",
 "EX Dragon",
@@ -15693,6 +16841,13 @@ null
 "Holo Rare",
 "https://assets.tcgdex.net/fr/ex/ex3/2"
 ],
+"ex3-20": [
+"Drackhaus",
+"EX Dragon",
+"20",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex3/20"
+],
 "ex3-21": [
 "Airmure",
 "EX Dragon",
@@ -15713,6 +16868,13 @@ null
 "23",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex3/23"
+],
+"ex3-24": [
+"Camérupt",
+"EX Dragon",
+"24",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex3/24"
 ],
 "ex3-25": [
 "Galifeu",
@@ -15819,6 +16981,13 @@ null
 "Holo Rare",
 "https://assets.tcgdex.net/fr/ex/ex3/4"
 ],
+"ex3-40": [
+"Hypocéan",
+"EX Dragon",
+"40",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex3/40"
+],
 "ex3-41": [
 "Drackhaus",
 "EX Dragon",
@@ -15903,6 +17072,27 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex3/54"
 ],
+"ex3-55": [
+"Racaillou",
+"EX Dragon",
+"55",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex3/55"
+],
+"ex3-56": [
+"Racaillou",
+"EX Dragon",
+"56",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex3/56"
+],
+"ex3-57": [
+"Tadmorv",
+"EX Dragon",
+"57",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex3/57"
+],
 "ex3-59": [
 "Malosse",
 "EX Dragon",
@@ -15952,12 +17142,33 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex3/65"
 ],
+"ex3-66": [
+"Ningale",
+"EX Dragon",
+"66",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex3/66"
+],
+"ex3-68": [
+"Ningale",
+"EX Dragon",
+"68",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex3/68"
+],
 "ex3-7": [
 "Négapi",
 "EX Dragon",
 "7",
 "Holo Rare",
 "https://assets.tcgdex.net/fr/ex/ex3/7"
+],
+"ex3-74": [
+"Spoink",
+"EX Dragon",
+"74",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex3/74"
 ],
 "ex3-77": [
 "Poussifeu",
@@ -16155,6 +17366,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex4/17"
 ],
+"ex4-18": [
+"Sharpedo de Team Aqua",
+"EX Team Magma vs Team Aqua",
+"18",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex4/18"
+],
 "ex4-19": [
 "Camerupt de Team Magma",
 "EX Team Magma vs Team Aqua",
@@ -16175,6 +17393,13 @@ null
 "20",
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex4/20"
+],
+"ex4-21": [
+"Grahyena de Team Magma",
+"EX Team Magma vs Team Aqua",
+"21",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex4/21"
 ],
 "ex4-22": [
 "Rhinoféros de Team Magma",
@@ -16365,6 +17590,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex4/47"
 ],
+"ex4-48": [
+"Carvanha de Team Aqua",
+"EX Team Magma vs Team Aqua",
+"48",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex4/48"
+],
 "ex4-49": [
 "Loupio de Team Aqua",
 "EX Team Magma vs Team Aqua",
@@ -16421,6 +17653,20 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex4/55"
 ],
+"ex4-56": [
+"Obalie de Team Aqua",
+"EX Team Magma vs Team Aqua",
+"56",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex4/56"
+],
+"ex4-58": [
+"Galekid de Team Magma",
+"EX Team Magma vs Team Aqua",
+"58",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex4/58"
+],
 "ex4-59": [
 "Galekid de Team Magma",
 "EX Team Magma vs Team Aqua",
@@ -16449,6 +17695,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex4/63"
 ],
+"ex4-64": [
+"Chamallot de Team Magma",
+"EX Team Magma vs Team Aqua",
+"64",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex4/64"
+],
 "ex4-65": [
 "Medhyena de Team Magma",
 "EX Team Magma vs Team Aqua",
@@ -16463,12 +17716,33 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex4/66"
 ],
+"ex4-69": [
+"Manipulateur de Team Aqua",
+"EX Team Magma vs Team Aqua",
+"69",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex4/69"
+],
 "ex4-7": [
 "Galeking de Team Magma",
 "EX Team Magma vs Team Aqua",
 "7",
 "Holo Rare",
 "https://assets.tcgdex.net/fr/ex/ex4/7"
+],
+"ex4-70": [
+"Manipulateur de Team Magma",
+"EX Team Magma vs Team Aqua",
+"70",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex4/70"
+],
+"ex4-71": [
+"Arthur",
+"EX Team Magma vs Team Aqua",
+"71",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex4/71"
 ],
 "ex4-72": [
 "Double boule",
@@ -16512,12 +17786,26 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex4/82"
 ],
+"ex4-87": [
+"Énergie Magma",
+"EX Team Magma vs Team Aqua",
+"87",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex4/87"
+],
 "ex4-88": [
 "Double Énergie Multicolore",
 "EX Team Magma vs Team Aqua",
 "88",
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex4/88"
+],
+"ex4-89": [
+"Brasegali ex",
+"EX Team Magma vs Team Aqua",
+"89",
+"Rare",
+"https://assets.tcgdex.net/fr/ex/ex4/89"
 ],
 "ex4-9": [
 "Groudon de Team Magma",
@@ -16771,6 +18059,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex5/32"
 ],
+"ex5-34": [
+"Oniglali",
+"EX Légendes Oubliées",
+"34",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex5/34"
+],
 "ex5-35": [
 "Ortide",
 "EX Légendes Oubliées",
@@ -16903,6 +18198,20 @@ null
 "51",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex5/51"
+],
+"ex5-55": [
+"Germignon",
+"EX Légendes Oubliées",
+"55",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex5/55"
+],
+"ex5-59": [
+"Héricendre",
+"EX Légendes Oubliées",
+"59",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex5/59"
 ],
 "ex5-6": [
 "Brouhabam",
@@ -17457,6 +18766,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex6/44"
 ],
+"ex6-45": [
+"Roucoups",
+"EX Rouge Feu & Vert Feuille",
+"45",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex6/45"
+],
 "ex6-46": [
 "Têtarte",
 "EX Rouge Feu & Vert Feuille",
@@ -17569,6 +18885,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex6/60"
 ],
+"ex6-61": [
+"Taupikeur",
+"EX Rouge Feu & Vert Feuille",
+"61",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex6/61"
+],
 "ex6-63": [
 "Fantominus",
 "EX Rouge Feu & Vert Feuille",
@@ -17618,6 +18941,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex6/71"
 ],
+"ex6-72": [
+"Paras",
+"EX Rouge Feu & Vert Feuille",
+"72",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex6/72"
+],
 "ex6-74": [
 "Pikachu",
 "EX Rouge Feu & Vert Feuille",
@@ -17653,6 +18983,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex6/80"
 ],
+"ex6-81": [
+"Piafabec",
+"EX Rouge Feu & Vert Feuille",
+"81",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex6/81"
+],
 "ex6-82": [
 "Carapuce",
 "EX Rouge Feu & Vert Feuille",
@@ -17680,6 +19017,13 @@ null
 "85",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex6/85"
+],
+"ex6-88": [
+"Le réseau de Cileo",
+"EX Rouge Feu & Vert Feuille",
+"88",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex6/88"
 ],
 "ex6-9": [
 "Nidoqueen",
@@ -18045,6 +19389,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex8/45"
 ],
+"ex8-46": [
+"Armulys",
+"EX Deoxys",
+"46",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex8/46"
+],
 "ex8-47": [
 "Solaroc",
 "EX Deoxys",
@@ -18094,6 +19445,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex8/56"
 ],
+"ex8-59": [
+"Dynavolt",
+"EX Deoxys",
+"59",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex8/59"
+],
 "ex8-6": [
 "Colhomard",
 "EX Deoxys",
@@ -18135,6 +19493,20 @@ null
 "70",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex8/70"
+],
+"ex8-73": [
+"Parecool",
+"EX Deoxys",
+"73",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex8/73"
+],
+"ex8-77": [
+"Stari",
+"EX Deoxys",
+"77",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex8/77"
 ],
 "ex8-79": [
 "Tylton",
@@ -18184,6 +19556,13 @@ null
 "9",
 "Rare",
 "https://assets.tcgdex.net/fr/ex/ex8/9"
+],
+"ex8-90": [
+"La découverte du Professeur Kosmo",
+"EX Deoxys",
+"90",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/ex/ex8/90"
 ],
 "ex8-91": [
 "Centre spatial",
@@ -18507,6 +19886,27 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/ex/ex9/42"
 ],
+"ex9-43": [
+"Balbuto",
+"EX Émeraude",
+"43",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex9/43"
+],
+"ex9-46": [
+"Skelénox",
+"EX Émeraude",
+"46",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex9/46"
+],
+"ex9-48": [
+"Dynavolt",
+"EX Émeraude",
+"48",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex9/48"
+],
 "ex9-5": [
 "Groudon",
 "EX Émeraude",
@@ -18549,12 +19949,26 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex9/60"
 ],
+"ex9-61": [
+"Tarsal",
+"EX Émeraude",
+"61",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex9/61"
+],
 "ex9-63": [
 "Balignon",
 "EX Émeraude",
 "63",
 "Commune",
 "https://assets.tcgdex.net/fr/ex/ex9/63"
+],
+"ex9-65": [
+"Spoink",
+"EX Émeraude",
+"65",
+"Commune",
+"https://assets.tcgdex.net/fr/ex/ex9/65"
 ],
 "ex9-69": [
 "Poussifeu",
@@ -19011,6 +20425,13 @@ null
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/g1/29"
 ],
+"g1-34": [
+"Spectrum",
+"Générations",
+"34",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/g1/34"
+],
 "g1-35": [
 "Ectoplasma",
 "Générations",
@@ -19045,6 +20466,13 @@ null
 "46",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/g1/46"
+],
+"g1-47": [
+"Kicklee",
+"Générations",
+"47",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/g1/47"
 ],
 "g1-5": [
 "Papilusion",
@@ -19150,6 +20578,13 @@ null
 "RC19",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/xy/g1/RC19"
+],
+"g1-RC2": [
+"Balignon",
+"Générations",
+"RC2",
+"Commune",
+"https://assets.tcgdex.net/fr/xy/g1/RC2"
 ],
 "g1-RC20": [
 "Cupcanaille",
@@ -19304,6 +20739,13 @@ null
 "105",
 "Rare Prime",
 "https://assets.tcgdex.net/fr/hgss/hgss1/105"
+],
+"hgss1-106": [
+"Leuphorie",
+"HeartGold SoulSilver",
+"106",
+"Rare Prime",
+"https://assets.tcgdex.net/fr/hgss/hgss1/106"
 ],
 "hgss1-107": [
 "Donphan",
@@ -19473,6 +20915,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/hgss/hgss1/17"
 ],
+"hgss1-18": [
+"Noadkoko",
+"HeartGold SoulSilver",
+"18",
+"Rare",
+"https://assets.tcgdex.net/fr/hgss/hgss1/18"
+],
 "hgss1-2": [
 "Azumarill",
 "HeartGold SoulSilver",
@@ -19571,6 +21020,20 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/hgss/hgss1/34"
 ],
+"hgss1-36": [
+"Leuphorie",
+"HeartGold SoulSilver",
+"36",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/hgss/hgss1/36"
+],
+"hgss1-37": [
+"Corayon",
+"HeartGold SoulSilver",
+"37",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/hgss/hgss1/37"
+],
 "hgss1-38": [
 "Crocodil",
 "HeartGold SoulSilver",
@@ -19634,6 +21097,13 @@ null
 "Holo Rare",
 "https://assets.tcgdex.net/fr/hgss/hgss1/5"
 ],
+"hgss1-50": [
+"Qwilfish",
+"HeartGold SoulSilver",
+"50",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/hgss/hgss1/50"
+],
 "hgss1-53": [
 "Staross",
 "HeartGold SoulSilver",
@@ -19661,6 +21131,13 @@ null
 "56",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/hgss/hgss1/56"
+],
+"hgss1-58": [
+"Leveinard",
+"HeartGold SoulSilver",
+"58",
+"Commune",
+"https://assets.tcgdex.net/fr/hgss/hgss1/58"
 ],
 "hgss1-6": [
 "Cotovol",
@@ -19795,6 +21272,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/hgss/hgss2/15"
 ],
+"hgss2-16": [
+"Mustéflott",
+"Déchaînement",
+"16",
+"Rare",
+"https://assets.tcgdex.net/fr/hgss/hgss2/16"
+],
 "hgss2-17": [
 "Hyporoi",
 "Déchaînement",
@@ -19899,6 +21383,13 @@ null
 "36",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/hgss/hgss2/36"
+],
+"hgss2-37": [
+"Tetarte",
+"Déchaînement",
+"37",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/hgss/hgss2/37"
 ],
 "hgss2-4": [
 "Métalosse",
@@ -20145,6 +21636,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/hgss/hgss3/20"
 ],
+"hgss3-22": [
+"Tropius",
+"Indomptable",
+"22",
+"Rare",
+"https://assets.tcgdex.net/fr/hgss/hgss3/22"
+],
 "hgss3-23": [
 "Apireine",
 "Indomptable",
@@ -20298,6 +21796,13 @@ null
 "7",
 "Holo Rare",
 "https://assets.tcgdex.net/fr/hgss/hgss3/7"
+],
+"hgss3-70": [
+"Togepi",
+"Indomptable",
+"70",
+"Commune",
+"https://assets.tcgdex.net/fr/hgss/hgss3/70"
 ],
 "hgss3-71": [
 "Tour Cendrée",
@@ -20565,6 +22070,13 @@ null
 "Holo Rare",
 "https://assets.tcgdex.net/fr/hgss/hgss4/3"
 ],
+"hgss4-30": [
+"Sharpedo",
+"Triomphant",
+"30",
+"Rare",
+"https://assets.tcgdex.net/fr/hgss/hgss4/30"
+],
 "hgss4-31": [
 "Wailord",
 "Triomphant",
@@ -20642,6 +22154,13 @@ null
 "Holo Rare",
 "https://assets.tcgdex.net/fr/hgss/hgss4/7"
 ],
+"hgss4-72": [
+"Ponyta",
+"Triomphant",
+"72",
+"Commune",
+"https://assets.tcgdex.net/fr/hgss/hgss4/72"
+],
 "hgss4-74": [
 "Psykokwak",
 "Triomphant",
@@ -20656,12 +22175,26 @@ null
 "Holo Rare",
 "https://assets.tcgdex.net/fr/hgss/hgss4/8"
 ],
+"hgss4-87": [
+"Bras indésirable",
+"Triomphant",
+"87",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/hgss/hgss4/87"
+],
 "hgss4-88": [
 "Détecteur",
 "Triomphant",
 "88",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/hgss/hgss4/88"
+],
+"hgss4-89": [
+"Jumelles",
+"Triomphant",
+"89",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/hgss/hgss4/89"
 ],
 "hgss4-9": [
 "Solaroc",
@@ -21629,6 +23162,13 @@ null
 "Double rare",
 "https://assets.tcgdex.net/fr/me/me02.5/113"
 ],
+"me02.5-121": [
+"Koraidon-ex",
+"Héros Transcendants",
+"121",
+"Double rare",
+"https://assets.tcgdex.net/fr/me/me02.5/121"
+],
 "me02.5-125": [
 "Méga-Ectoplasma-ex",
 "Héros Transcendants",
@@ -22174,6 +23714,13 @@ null
 "295",
 "Méga Hyper Rare",
 "https://assets.tcgdex.net/fr/me/me02.5/295"
+],
+"me03-021": [
+"Méga-Staross-ex",
+"Équilibre Parfait",
+"021",
+"Double rare",
+"https://assets.tcgdex.net/fr/me/me03/021"
 ],
 "me03-062": [
 "Miaouss-ex",
@@ -23519,12 +25066,33 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/neo/neo1/106"
 ],
+"neo1-107": [
+"Énergie Feu",
+"Neo Genesis",
+"107",
+"Commune",
+"https://assets.tcgdex.net/fr/neo/neo1/107"
+],
+"neo1-108": [
+"Énergie Plante",
+"Neo Genesis",
+"108",
+"Commune",
+"https://assets.tcgdex.net/fr/neo/neo1/108"
+],
 "neo1-11": [
 "Méganium",
 "Neo Genesis",
 "11",
 "Rare",
 "https://assets.tcgdex.net/fr/neo/neo1/11"
+],
+"neo1-110": [
+"Énergie Psy",
+"Neo Genesis",
+"110",
+"Commune",
+"https://assets.tcgdex.net/fr/neo/neo1/110"
 ],
 "neo1-12": [
 "Pichu",
@@ -23722,6 +25290,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/neo/neo1/37"
 ],
+"neo1-38": [
+"Lanturn",
+"Neo Genesis",
+"38",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/neo/neo1/38"
+],
 "neo1-39": [
 "Coxyclaque",
 "Neo Genesis",
@@ -23819,6 +25394,13 @@ null
 "51",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/neo/neo1/51"
+],
+"neo1-52": [
+"Xatu",
+"Neo Genesis",
+"52",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/neo/neo1/52"
 ],
 "neo1-53": [
 "Germignon",
@@ -23918,12 +25500,33 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/neo/neo1/70"
 ],
+"neo1-71": [
+"Fouinette",
+"Neo Genesis",
+"71",
+"Commune",
+"https://assets.tcgdex.net/fr/neo/neo1/71"
+],
+"neo1-72": [
+"Caratroc",
+"Neo Genesis",
+"72",
+"Commune",
+"https://assets.tcgdex.net/fr/neo/neo1/72"
+],
 "neo1-73": [
 "Ramoloss",
 "Neo Genesis",
 "73",
 "Commune",
 "https://assets.tcgdex.net/fr/neo/neo1/73"
+],
+"neo1-74": [
+"Snubbull",
+"Neo Genesis",
+"74",
+"Commune",
+"https://assets.tcgdex.net/fr/neo/neo1/74"
 ],
 "neo1-77": [
 "Simularbre",
@@ -24050,6 +25653,13 @@ null
 "94",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/neo/neo1/94"
+],
+"neo1-95": [
+"Nouveau Pokédex",
+"Neo Genesis",
+"95",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/neo/neo1/95"
 ],
 "neo1-96": [
 "Professeur Orme",
@@ -24709,6 +26319,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/neo/neo3/40"
 ],
+"neo3-42": [
+"Loupio",
+"Neo Revelation",
+"42",
+"Commune",
+"https://assets.tcgdex.net/fr/neo/neo3/42"
+],
 "neo3-43": [
 "Canarticho",
 "Neo Revelation",
@@ -24800,12 +26417,26 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/neo/neo3/57"
 ],
+"neo3-59": [
+"Nosferapti",
+"Neo Revelation",
+"59",
+"Commune",
+"https://assets.tcgdex.net/fr/neo/neo3/59"
+],
 "neo3-6": [
 "Entei",
 "Neo Revelation",
 "6",
 "Rare",
 "https://assets.tcgdex.net/fr/neo/neo3/6"
+],
+"neo3-60": [
+"Baie ballon",
+"Neo Revelation",
+"60",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/neo/neo3/60"
 ],
 "neo3-61": [
 "Champ de guérison",
@@ -25493,6 +27124,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/neo/neo4/8"
 ],
+"neo4-80": [
+"Rémoraid",
+"Neo Destiny",
+"80",
+"Commune",
+"https://assets.tcgdex.net/fr/neo/neo4/80"
+],
 "neo4-83": [
 "Tournegrin",
 "Neo Destiny",
@@ -25969,6 +27607,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/pl/pl1/65"
 ],
+"pl1-66": [
+"Mangriff",
+"Platine",
+"66",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/pl/pl1/66"
+],
 "pl1-7": [
 "Dialga G",
 "Platine",
@@ -26298,6 +27943,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/pl/pl2/31"
 ],
+"pl2-32": [
+"Rhinastoc 4 Niv. 55",
+"Rivaux Émergeants",
+"32",
+"Rare",
+"https://assets.tcgdex.net/fr/pl/pl2/32"
+],
 "pl2-33": [
 "Ronflex Niv. 37",
 "Rivaux Émergeants",
@@ -26375,6 +28027,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/pl/pl2/45"
 ],
+"pl2-46": [
+"Mackogneur GL Niv. 64",
+"Rivaux Émergeants",
+"46",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/pl/pl2/46"
+],
 "pl2-5": [
 "Flygon Niv. 65",
 "Rivaux Émergeants",
@@ -26395,6 +28054,13 @@ null
 "52",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/pl/pl2/52"
+],
+"pl2-59": [
+"Evoli Niv. 10",
+"Rivaux Émergeants",
+"59",
+"Commune",
+"https://assets.tcgdex.net/fr/pl/pl2/59"
 ],
 "pl2-6": [
 "Momartik GL Niv. 44",
@@ -26451,6 +28117,13 @@ null
 "9",
 "Holo Rare",
 "https://assets.tcgdex.net/fr/pl/pl2/9"
+],
+"pl2-96": [
+"Radar SP Invention G-109 de Team Galaxie",
+"Rivaux Émergeants",
+"96",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/pl/pl2/96"
 ],
 "pl2-RT1": [
 "Motisma Hélice Niv. 46",
@@ -26921,6 +28594,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/pl/pl3/50"
 ],
+"pl3-55": [
+"Ceriflor",
+"Vainqueurs Suprêmes",
+"55",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/pl/pl3/55"
+],
 "pl3-56": [
 "Dracolosse FB",
 "Vainqueurs Suprêmes",
@@ -26962,6 +28642,13 @@ null
 "62",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/pl/pl3/62"
+],
+"pl3-66": [
+"Élecsprint G",
+"Vainqueurs Suprêmes",
+"66",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/pl/pl3/66"
 ],
 "pl3-67": [
 "Flobio",
@@ -28076,6 +29763,13 @@ null,
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm1/56"
 ],
+"sm1-58": [
+"Grotadmorv d’Alola",
+"Soleil et Lune",
+"58",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm1/58"
+],
 "sm1-61": [
 "Mentali GX",
 "Soleil et Lune",
@@ -28103,6 +29797,13 @@ null,
 "89",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm1/89"
+],
+"sm1-93": [
+"Rubombelle",
+"Soleil et Lune",
+"93",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm1/93"
 ],
 "sm1-96": [
 "Dracolosse",
@@ -28132,6 +29833,13 @@ null,
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm10/103"
 ],
+"sm10-105": [
+"Crabominable",
+"Alliance Infaillible",
+"105",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm10/105"
+],
 "sm10-106": [
 "Ama-Ama",
 "Alliance Infaillible",
@@ -28153,6 +29861,13 @@ null,
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm10/109"
 ],
+"sm10-11": [
+"Aéromite",
+"Alliance Infaillible",
+"11",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm10/11"
+],
 "sm10-111": [
 "Sharpedo",
 "Alliance Infaillible",
@@ -28166,6 +29881,13 @@ null,
 "112",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm10/112"
+],
+"sm10-116": [
+"Crocorible",
+"Alliance Infaillible",
+"116",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm10/116"
 ],
 "sm10-117": [
 "Amphinobi",
@@ -28229,6 +29951,13 @@ null,
 "133",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm10/133"
+],
+"sm10-134": [
+"Rondoudou",
+"Alliance Infaillible",
+"134",
+"Commune",
+"https://assets.tcgdex.net/fr/sm/sm10/134"
 ],
 "sm10-135": [
 "Grodoudou",
@@ -28299,6 +30028,13 @@ null,
 "163",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm10/163"
+],
+"sm10-17": [
+"Bouldeneu",
+"Alliance Infaillible",
+"17",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm10/17"
 ],
 "sm10-18": [
 "Larvibule",
@@ -28629,6 +30365,13 @@ null,
 "Magnifique rare",
 "https://assets.tcgdex.net/fr/sm/sm10/234"
 ],
+"sm10-31": [
+"Malamandre",
+"Alliance Infaillible",
+"31",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm10/31"
+],
 "sm10-32": [
 "Pierroteknik",
 "Alliance Infaillible",
@@ -28657,6 +30400,13 @@ null,
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm10/43"
 ],
+"sm10-47": [
+"Krabboss",
+"Alliance Infaillible",
+"47",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm10/47"
+],
 "sm10-50": [
 "Kyurem",
 "Alliance Infaillible",
@@ -28677,6 +30427,13 @@ null,
 "54",
 "Commune",
 "https://assets.tcgdex.net/fr/sm/sm10/54"
+],
+"sm10-55": [
+"Raichu",
+"Alliance Infaillible",
+"55",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm10/55"
 ],
 "sm10-57": [
 "Dedenne GX",
@@ -28852,6 +30609,13 @@ null
 "139",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm11/139"
+],
+"sm11-14": [
+"Gaulet",
+"Harmonie des Esprits",
+"14",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm11/14"
 ],
 "sm11-140": [
 "Hoopa",
@@ -29336,6 +31100,13 @@ null
 "Rare",
 null
 ],
+"sm11-66": [
+"Ohmassacre",
+"Harmonie des Esprits",
+"66",
+"Rare",
+null
+],
 "sm11-69": [
 "Tokorico",
 "Harmonie des Esprits",
@@ -29441,11 +31212,25 @@ null
 "Ultra Rare",
 null
 ],
+"sm115-17": [
+"Lokhlass",
+"Destinées Occultes",
+"17",
+"Rare",
+null
+],
 "sm115-18": [
 "Aquali",
 "Destinées Occultes",
 "18",
 "Rare",
+null
+],
+"sm115-19": [
+"Pikachu",
+"Destinées Occultes",
+"19",
+"Commune",
 null
 ],
 "sm115-20": [
@@ -29459,6 +31244,13 @@ null
 "Électrode",
 "Destinées Occultes",
 "22",
+"Rare",
+null
+],
+"sm115-23": [
+"Voltali",
+"Destinées Occultes",
+"23",
 "Rare",
 null
 ],
@@ -29749,6 +31541,13 @@ null
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm12/184"
 ],
+"sm12-186": [
+"Jujube et Zhuman",
+"Éclipse Cosmique",
+"186",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm12/186"
+],
 "sm12-189": [
 "Cynthia et Percila",
 "Éclipse Cosmique",
@@ -29763,12 +31562,33 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/sm/sm12/193"
 ],
+"sm12-198": [
+"Barbara et Néphie",
+"Éclipse Cosmique",
+"198",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm12/198"
+],
+"sm12-199": [
+"Ondine et Olga",
+"Éclipse Cosmique",
+"199",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm12/199"
+],
 "sm12-20": [
 "Archéduc",
 "Éclipse Cosmique",
 "20",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm12/20"
+],
+"sm12-202": [
+"Red et Blue",
+"Éclipse Cosmique",
+"202",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm12/202"
 ],
 "sm12-204": [
 "Écho",
@@ -30267,6 +32087,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/sm/sm12/54"
 ],
+"sm12-56": [
+"Pingoléon",
+"Éclipse Cosmique",
+"56",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm12/56"
+],
 "sm12-61": [
 "Kyurem Noir",
 "Éclipse Cosmique",
@@ -30344,6 +32171,20 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm12/88"
 ],
+"sm12-90": [
+"Golemastoc",
+"Éclipse Cosmique",
+"90",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm12/90"
+],
+"sm12-94": [
+"Desséliande",
+"Éclipse Cosmique",
+"94",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm12/94"
+],
 "sm12-95": [
 "Plumeline GX",
 "Éclipse Cosmique",
@@ -30364,6 +32205,13 @@ null
 "97",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm12/97"
+],
+"sm2-10": [
+"Victini",
+"Gardiens Ascendants",
+"10",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm2/10"
 ],
 "sm2-100": [
 "Ékaïser GX",
@@ -30694,6 +32542,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm2/25"
 ],
+"sm2-30": [
+"Wailord",
+"Gardiens Ascendants",
+"30",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm2/30"
+],
 "sm2-38": [
 "Froussardine GX",
 "Gardiens Ascendants",
@@ -30714,6 +32569,13 @@ null
 "47",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm2/47"
+],
+"sm2-5": [
+"Fragilady",
+"Gardiens Ascendants",
+"5",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm2/5"
 ],
 "sm2-57": [
 "Prédastérie GX",
@@ -30750,6 +32612,20 @@ null
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm2/74"
 ],
+"sm2-76": [
+"Bourrinos",
+"Gardiens Ascendants",
+"76",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm2/76"
+],
+"sm2-81": [
+"Absol",
+"Gardiens Ascendants",
+"81",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm2/81"
+],
 "sm2-85": [
 "Métalosse GX",
 "Gardiens Ascendants",
@@ -30770,6 +32646,13 @@ null
 "100",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm3/100"
+],
+"sm3-105": [
+"Porygon-Z",
+"Ombres Ardentes",
+"105",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm3/105"
 ],
 "sm3-115": [
 "Guzma",
@@ -31128,6 +33011,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm3/41"
 ],
+"sm3-62": [
+"Trépassable",
+"Ombres Ardentes",
+"62",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm3/62"
+],
 "sm3-63": [
 "Necrozma GX",
 "Ombres Ardentes",
@@ -31141,6 +33031,20 @@ null
 "64",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm3/64"
+],
+"sm3-75": [
+"Lougaroc",
+"Ombres Ardentes",
+"75",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm3/75"
+],
+"sm3-76": [
+"Lougaroc",
+"Ombres Ardentes",
+"76",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm3/76"
 ],
 "sm3-80": [
 "Marshadow GX",
@@ -31170,6 +33074,13 @@ null
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm3/93"
 ],
+"sm3-98": [
+"Lampignon",
+"Ombres Ardentes",
+"98",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm3/98"
+],
 "sm3-99": [
 "Bruyverne GX",
 "Ombres Ardentes",
@@ -31189,6 +33100,13 @@ null
 "Légendes Brillantes",
 "14",
 "Rare",
+null
+],
+"sm3.5-16": [
+"Matoufeu",
+"Légendes Brillantes",
+"16",
+"Commune",
 null
 ],
 "sm3.5-25": [
@@ -31273,6 +33191,13 @@ null
 "Légendes Brillantes",
 "57",
 "Ultra Rare",
+null
+],
+"sm3.5-69": [
+"Double Énergie Incolore",
+"Légendes Brillantes",
+"69",
+"Peu Commune",
 null
 ],
 "sm3.5-71": [
@@ -31912,6 +33837,13 @@ null
 "Magnifique rare",
 "https://assets.tcgdex.net/fr/sm/sm5/173"
 ],
+"sm5-19": [
+"Maganon",
+"Ultra-Prisme",
+"19",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm5/19"
+],
 "sm5-23": [
 "Simiabraz",
 "Ultra-Prisme",
@@ -31940,6 +33872,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm5/41"
 ],
+"sm5-48": [
+"Luxray",
+"Ultra-Prisme",
+"48",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm5/48"
+],
 "sm5-58": [
 "Giratina ◇",
 "Ultra-Prisme",
@@ -31947,12 +33886,26 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm5/58"
 ],
+"sm5-59": [
+"Cresselia",
+"Ultra-Prisme",
+"59",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm5/59"
+],
 "sm5-63": [
 "Necrozma Ailes de l’Aurore GX",
 "Ultra-Prisme",
 "63",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm5/63"
+],
+"sm5-65": [
+"Charkos",
+"Ultra-Prisme",
+"65",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm5/65"
 ],
 "sm5-67": [
 "Lucario",
@@ -32297,6 +34250,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm6/39"
 ],
+"sm6-45": [
+"Mistigrix",
+"Lumière Interdite",
+"45",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm6/45"
+],
 "sm6-56": [
 "Mandrillon GX",
 "Lumière Interdite",
@@ -32317,6 +34277,13 @@ null
 "62",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm6/62"
+],
+"sm6-64": [
+"Coatox",
+"Lumière Interdite",
+"64",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm6/64"
 ],
 "sm6-68": [
 "Ptyranidur",
@@ -32352,6 +34319,13 @@ null
 "74",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm6/74"
+],
+"sm6-76": [
+"Lougaroc",
+"Lumière Interdite",
+"76",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm6/76"
 ],
 "sm6-77": [
 "Mouscoto",
@@ -32415,6 +34389,13 @@ null
 "90",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm6/90"
+],
+"sm6-94": [
+"Muplodocus",
+"Lumière Interdite",
+"94",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm6/94"
 ],
 "sm6-95": [
 "Ultra-Necrozma GX",
@@ -32513,6 +34494,13 @@ null
 "14",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm7/14"
+],
+"sm7-151": [
+"Énergie Multicolore",
+"Tempête Céleste",
+"151",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm7/151"
 ],
 "sm7-152": [
 "Tengalice GX",
@@ -32759,6 +34747,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm7/38"
 ],
+"sm7-44": [
+"Lovdisc",
+"Tempête Céleste",
+"44",
+"Commune",
+"https://assets.tcgdex.net/fr/sm/sm7/44"
+],
 "sm7-46": [
 "Kyogre",
 "Tempête Céleste",
@@ -32779,6 +34774,13 @@ null
 "53",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/sm/sm7/53"
+],
+"sm7-54": [
+"Négapi",
+"Tempête Céleste",
+"54",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm7/54"
 ],
 "sm7-56": [
 "M. Mime GX",
@@ -32976,6 +34978,20 @@ null
 "Rare",
 null
 ],
+"sm7.5-33": [
+"Trioxhydre",
+"Majesté Des Dragons",
+"33",
+"Rare",
+null
+],
+"sm7.5-36": [
+"Draco",
+"Majesté Des Dragons",
+"36",
+"Peu Commune",
+null
+],
 "sm7.5-37": [
 "Dracolosse GX",
 "Majesté Des Dragons",
@@ -33044,6 +35060,13 @@ null
 "Majesté Des Dragons",
 "6",
 "Rare",
+null
+],
+"sm7.5-62": [
+"Bouée d’Échange",
+"Majesté Des Dragons",
+"62",
+"Peu Commune",
 null
 ],
 "sm7.5-65": [
@@ -33340,6 +35363,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm8/151"
 ],
+"sm8-152": [
+"Leveinard",
+"Tonnerre Perdu",
+"152",
+"Commune",
+"https://assets.tcgdex.net/fr/sm/sm8/152"
+],
 "sm8-153": [
 "Leuphorie",
 "Tonnerre Perdu",
@@ -33368,6 +35398,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm8/157"
 ],
+"sm8-158": [
+"Écrémeuh",
+"Tonnerre Perdu",
+"158",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm8/158"
+],
 "sm8-159": [
 "Lugia GX",
 "Tonnerre Perdu",
@@ -33389,6 +35426,13 @@ null
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm8/17"
 ],
+"sm8-172": [
+"Électropuissance",
+"Tonnerre Perdu",
+"172",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm8/172"
+],
 "sm8-178": [
 "Usine Thermique ◇",
 "Tonnerre Perdu",
@@ -33409,6 +35453,13 @@ null
 "182",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm8/182"
+],
+"sm8-187": [
+"Filet Ball",
+"Tonnerre Perdu",
+"187",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm8/187"
 ],
 "sm8-19": [
 "Celebi ◇",
@@ -33458,6 +35509,13 @@ null
 "199",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm8/199"
+],
+"sm8-20": [
+"Arcko",
+"Tonnerre Perdu",
+"20",
+"Commune",
+"https://assets.tcgdex.net/fr/sm/sm8/20"
 ],
 "sm8-200": [
 "Suicune GX",
@@ -33746,6 +35804,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm8/38"
 ],
+"sm8-41": [
+"Feurisson",
+"Tonnerre Perdu",
+"41",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm8/41"
+],
 "sm8-42": [
 "Typhlosion",
 "Tonnerre Perdu",
@@ -33844,6 +35909,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm8/63"
 ],
+"sm8-66": [
+"Otarlette",
+"Tonnerre Perdu",
+"66",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm8/66"
+],
 "sm8-67": [
 "Oratoria",
 "Tonnerre Perdu",
@@ -33857,6 +35929,20 @@ null
 "7",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/sm/sm8/7"
+],
+"sm8-75": [
+"Wattouat",
+"Tonnerre Perdu",
+"75",
+"Commune",
+"https://assets.tcgdex.net/fr/sm/sm8/75"
+],
+"sm8-76": [
+"Wattouat",
+"Tonnerre Perdu",
+"76",
+"Commune",
+"https://assets.tcgdex.net/fr/sm/sm8/76"
 ],
 "sm8-78": [
 "Pharamp",
@@ -33878,6 +35964,13 @@ null
 "8",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm8/8"
+],
+"sm8-80": [
+"Pachirisu",
+"Tonnerre Perdu",
+"80",
+"Commune",
+"https://assets.tcgdex.net/fr/sm/sm8/80"
 ],
 "sm8-85": [
 "Tokorico",
@@ -33920,6 +36013,13 @@ null
 "92",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm8/92"
+],
+"sm8-93": [
+"Qulbutoké",
+"Tonnerre Perdu",
+"93",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm8/93"
 ],
 "sm8-95": [
 "Munja",
@@ -34299,6 +36399,20 @@ null
 "Magnifique rare",
 "https://assets.tcgdex.net/fr/sm/sm9/196"
 ],
+"sm9-22": [
+"Carapuce",
+"Duo de Choc",
+"22",
+"Commune",
+"https://assets.tcgdex.net/fr/sm/sm9/22"
+],
+"sm9-23": [
+"Carapuce",
+"Duo de Choc",
+"23",
+"Commune",
+"https://assets.tcgdex.net/fr/sm/sm9/23"
+],
 "sm9-25": [
 "Tortank",
 "Duo de Choc",
@@ -34334,12 +36448,26 @@ null
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm9/33"
 ],
+"sm9-37": [
+"Grolem d’Alola",
+"Duo de Choc",
+"37",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm9/37"
+],
 "sm9-39": [
 "Électrode",
 "Duo de Choc",
 "39",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm9/39"
+],
+"sm9-4": [
+"Coconfort",
+"Duo de Choc",
+"4",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/sm/sm9/4"
 ],
 "sm9-40": [
 "Électhor",
@@ -34354,6 +36482,13 @@ null
 "43",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/sm/sm9/43"
+],
+"sm9-5": [
+"Dardargnan",
+"Duo de Choc",
+"5",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm9/5"
 ],
 "sm9-52": [
 "Zeraora",
@@ -34445,6 +36580,13 @@ null
 "91",
 "Rare",
 "https://assets.tcgdex.net/fr/sm/sm9/91"
+],
+"sm9-94": [
+"Pandarbare",
+"Duo de Choc",
+"94",
+"Rare",
+"https://assets.tcgdex.net/fr/sm/sm9/94"
 ],
 "sm9-95": [
 "Yveltal",
@@ -34905,6 +37047,13 @@ null
 "Suicune",
 "Promo SM",
 "SM149",
+"Promo",
+null
+],
+"smp-SM15": [
+"Zygarde",
+"Promo SM",
+"SM15",
 "Promo",
 null
 ],
@@ -35769,6 +37918,13 @@ null
 "Promo",
 null
 ],
+"smp-SM43": [
+"Miaouss d’Alola",
+"Promo SM",
+"SM43",
+"Promo",
+null
+],
 "smp-SM44": [
 "Togedemaru",
 "Promo SM",
@@ -36098,6 +38254,13 @@ null
 "Promo",
 null
 ],
+"smp-SM93": [
+"Marshadow",
+"Promo SM",
+"SM93",
+"Promo",
+null
+],
 "smp-SM94": [
 "Motisma Lavage",
 "Promo SM",
@@ -36140,6 +38303,13 @@ null
 "Promo",
 null
 ],
+"sv01-019": [
+"Filentrappe-ex",
+"Écarlate et Violet",
+"019",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv01/019"
+],
 "sv01-032": [
 "Arcanin-ex",
 "Écarlate et Violet",
@@ -36160,6 +38330,13 @@ null
 "081",
 "Double rare",
 "https://assets.tcgdex.net/fr/sv/sv01/081"
+],
+"sv01-125": [
+"Koraidon-ex",
+"Écarlate et Violet",
+"125",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv01/125"
 ],
 "sv01-199": [
 "Tissenboule",
@@ -36594,6 +38771,20 @@ null
 "052",
 "Double rare",
 "https://assets.tcgdex.net/fr/sv/sv02/052"
+],
+"sv02-060": [
+"Glaivodo",
+"Évolutions à Paldea",
+"060",
+"Rare",
+"https://assets.tcgdex.net/fr/sv/sv02/060"
+],
+"sv02-061": [
+"Baojian-ex",
+"Évolutions à Paldea",
+"061",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv02/061"
 ],
 "sv02-063": [
 "Pikachu-ex",
@@ -37966,6 +40157,13 @@ null
 "207",
 "Hyper rare",
 "https://assets.tcgdex.net/fr/sv/sv03.5/207"
+],
+"sv04-038": [
+"Carchacrok-ex",
+"Faille Paradoxe",
+"038",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv04/038"
 ],
 "sv04-058": [
 "Mewtwo-ex",
@@ -39640,6 +41838,13 @@ null
 "Double rare",
 "https://assets.tcgdex.net/fr/sv/sv05/123"
 ],
+"sv05-129": [
+"Deusolourdo",
+"Forces Temporelles",
+"129",
+"Rare",
+"https://assets.tcgdex.net/fr/sv/sv05/129"
+],
 "sv05-152": [
 "Cape Héroïque",
 "Forces Temporelles",
@@ -40094,6 +42299,13 @@ null
 "064",
 "Double rare",
 "https://assets.tcgdex.net/fr/sv/sv06/064"
+],
+"sv06-094": [
+"Hurle-Queue-ex",
+"Mascarade Crépusculaire",
+"094",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv06/094"
 ],
 "sv06-106": [
 "Amphinobi-ex",
@@ -41075,6 +43287,13 @@ null
 "Double rare",
 "https://assets.tcgdex.net/fr/sv/sv08/036"
 ],
+"sv08-042": [
+"Milobellus-ex",
+"Étincelles Déferlantes",
+"042",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv08/042"
+],
 "sv08-050": [
 "Coiffeton",
 "Étincelles Déferlantes",
@@ -41110,6 +43329,13 @@ null
 "Double rare",
 "https://assets.tcgdex.net/fr/sv/sv08/106"
 ],
+"sv08-119": [
+"Trioxhydre-ex",
+"Étincelles Déferlantes",
+"119",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv08/119"
+],
 "sv08-129": [
 "Duralugon",
 "Étincelles Déferlantes",
@@ -41144,6 +43370,13 @@ null
 "161",
 "Rare",
 "https://assets.tcgdex.net/fr/sv/sv08/161"
+],
+"sv08-162": [
+"Amulette de l'Espoir",
+"Étincelles Déferlantes",
+"162",
+"HIGH-TECH rare",
+"https://assets.tcgdex.net/fr/sv/sv08/162"
 ],
 "sv08-164": [
 "Mixeur Brillant",
@@ -41635,6 +43868,13 @@ null
 "Double rare",
 "https://assets.tcgdex.net/fr/sv/sv08.5/014"
 ],
+"sv08.5-017": [
+"Ogerpon Masque du Fourneau-ex",
+"Évolutions Prismatiques",
+"017",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv08.5/017"
+],
 "sv08.5-023": [
 "Aquali-ex",
 "Évolutions Prismatiques",
@@ -41684,6 +43924,13 @@ null
 "Double rare",
 "https://assets.tcgdex.net/fr/sv/sv08.5/041"
 ],
+"sv08.5-051": [
+"Lucario-ex",
+"Évolutions Prismatiques",
+"051",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv08.5/051"
+],
 "sv08.5-058": [
 "Ogerpon Masque de la Pierre-ex",
 "Évolutions Prismatiques",
@@ -41732,6 +43979,13 @@ null
 "082",
 "Double rare",
 "https://assets.tcgdex.net/fr/sv/sv08.5/082"
+],
+"sv08.5-092": [
+"Terapagos-ex",
+"Évolutions Prismatiques",
+"092",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv08.5/092"
 ],
 "sv08.5-117": [
 "Ceinture Maximale",
@@ -42047,6 +44301,13 @@ null
 "120",
 "Commune",
 "https://assets.tcgdex.net/fr/sv/sv09/120"
+],
+"sv09-121": [
+"Deusolourdo-ex",
+"Aventures Ensemble",
+"121",
+"Double rare",
+"https://assets.tcgdex.net/fr/sv/sv09/121"
 ],
 "sv09-160": [
 "Maracachi",
@@ -44183,6 +46444,13 @@ null
 "Promo",
 "https://assets.tcgdex.net/fr/sv/svp/049"
 ],
+"svp-050": [
+"Alakazam-ex",
+"SVP Black Star Promos",
+"050",
+"Promo",
+"https://assets.tcgdex.net/fr/sv/svp/050"
+],
 "svp-051": [
 "Ronflex",
 "SVP Black Star Promos",
@@ -44351,6 +46619,13 @@ null
 "Promo",
 "https://assets.tcgdex.net/fr/sv/svp/082"
 ],
+"svp-083": [
+"Canarbello",
+"SVP Black Star Promos",
+"083",
+"Promo",
+"https://assets.tcgdex.net/fr/sv/svp/083"
+],
 "svp-084": [
 "Palmaval-ex",
 "SVP Black Star Promos",
@@ -44413,6 +46688,13 @@ null
 "094",
 "Promo",
 "https://assets.tcgdex.net/fr/sv/svp/094"
+],
+"svp-095": [
+"Mélo",
+"SVP Black Star Promos",
+"095",
+"Promo",
+"https://assets.tcgdex.net/fr/sv/svp/095"
 ],
 "svp-097": [
 "Flotte-Mèche",
@@ -44624,6 +46906,13 @@ null
 "Promo",
 "https://assets.tcgdex.net/fr/sv/svp/143"
 ],
+"svp-144": [
+"Feu-Perçant-ex",
+"SVP Black Star Promos",
+"144",
+"Promo",
+"https://assets.tcgdex.net/fr/sv/svp/144"
+],
 "svp-145": [
 "Ire-Foudre-ex",
 "SVP Black Star Promos",
@@ -44637,6 +46926,13 @@ null
 "146",
 "Promo",
 "https://assets.tcgdex.net/fr/sv/svp/146"
+],
+"svp-147": [
+"Roc-de-Fer-ex",
+"SVP Black Star Promos",
+"147",
+"Promo",
+"https://assets.tcgdex.net/fr/sv/svp/147"
 ],
 "svp-148": [
 "Miraidon",
@@ -44687,6 +46983,13 @@ null
 "Promo",
 "https://assets.tcgdex.net/fr/sv/svp/155"
 ],
+"svp-156": [
+"Maraiste",
+"SVP Black Star Promos",
+"156",
+"Promo",
+"https://assets.tcgdex.net/fr/sv/svp/156"
+],
 "svp-157": [
 "Électhor",
 "SVP Black Star Promos",
@@ -44707,6 +47010,13 @@ null
 "159",
 "Promo",
 "https://assets.tcgdex.net/fr/sv/svp/159"
+],
+"svp-160": [
+"Tapatoès-ex",
+"SVP Black Star Promos",
+"160",
+"Promo",
+"https://assets.tcgdex.net/fr/sv/svp/160"
 ],
 "svp-161": [
 "Dracaufeu-ex",
@@ -45079,6 +47389,13 @@ null
 "Holo Rare VMAX",
 "https://assets.tcgdex.net/fr/swsh/swsh1/116"
 ],
+"swsh1-119": [
+"Ixon de Galar",
+"Épée et Bouclier",
+"119",
+"Holo Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh1/119"
+],
 "swsh1-120": [
 "Ténéfix V",
 "Épée et Bouclier",
@@ -45155,6 +47472,13 @@ null
 "155",
 "Holo Rare V",
 "https://assets.tcgdex.net/fr/swsh/swsh1/155"
+],
+"swsh1-169": [
+"Rosemary",
+"Épée et Bouclier",
+"169",
+"Holo Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh1/169"
 ],
 "swsh1-187": [
 "Sinistrail V",
@@ -45408,6 +47732,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/swsh/swsh1/59"
 ],
+"swsh1-64": [
+"Beldeneige",
+"Épée et Bouclier",
+"64",
+"Holo Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh1/64"
+],
 "swsh1-65": [
 "Pikachu",
 "Épée et Bouclier",
@@ -45527,6 +47858,13 @@ null
 "Radieux Rare",
 "https://assets.tcgdex.net/fr/swsh/swsh10/046"
 ],
+"swsh10-049": [
+"M. Glaquette de Galar V",
+"Astres Radieux",
+"049",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh10/049"
+],
 "swsh10-050": [
 "Luxray V",
 "Astres Radieux",
@@ -45583,6 +47921,13 @@ null
 "Holo Rare VSTAR",
 "https://assets.tcgdex.net/fr/swsh/swsh10/084"
 ],
+"swsh10-087": [
+"Hachécateur V",
+"Astres Radieux",
+"087",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh10/087"
+],
 "swsh10-094": [
 "Farfurex de Hisui V",
 "Astres Radieux",
@@ -45638,6 +47983,20 @@ null
 "117",
 "Holo Rare V",
 "https://assets.tcgdex.net/fr/swsh/swsh10/117"
+],
+"swsh10-133": [
+"Gouroutan V",
+"Astres Radieux",
+"133",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh10/133"
+],
+"swsh10-134": [
+"Cerbyllin V",
+"Astres Radieux",
+"134",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh10/134"
 ],
 "swsh10-160": [
 "Dardargnan V",
@@ -47690,6 +50049,20 @@ null
 "Holo Rare V",
 "https://assets.tcgdex.net/fr/swsh/swsh12.5/108"
 ],
+"swsh12.5-109": [
+"Ronflex",
+"Zénith Suprême",
+"109",
+"Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh12.5/109"
+],
+"swsh12.5-113": [
+"Regigigas V",
+"Zénith Suprême",
+"113",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh12.5/113"
+],
 "swsh12.5-114": [
 "Regigigas VSTAR",
 "Zénith Suprême",
@@ -48558,6 +50931,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/swsh/swsh2/139"
 ],
+"swsh2-140": [
+"Zamazenta",
+"Clash des Rebelles",
+"140",
+"Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh2/140"
+],
 "swsh2-141": [
 "Ronflex",
 "Clash des Rebelles",
@@ -48852,6 +51232,13 @@ null
 "Magnifique rare",
 "https://assets.tcgdex.net/fr/swsh/swsh2/209"
 ],
+"swsh2-23": [
+"Dratatin",
+"Clash des Rebelles",
+"23",
+"Holo Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh2/23"
+],
 "swsh2-26": [
 "Feunard V",
 "Clash des Rebelles",
@@ -48914,6 +51301,13 @@ null
 "55",
 "Holo Rare V",
 "https://assets.tcgdex.net/fr/swsh/swsh2/55"
+],
+"swsh2-62": [
+"Luxray",
+"Clash des Rebelles",
+"62",
+"Holo Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh2/62"
 ],
 "swsh2-67": [
 "Fulgudog V",
@@ -49027,6 +51421,13 @@ null
 "Holo Rare VMAX",
 "https://assets.tcgdex.net/fr/swsh/swsh3/119"
 ],
+"swsh3-127": [
+"Cliticlic",
+"Ténèbres Embrasées",
+"127",
+"Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh3/127"
+],
 "swsh3-128": [
 "Limonde de Galar V",
 "Ténèbres Embrasées",
@@ -49047,6 +51448,13 @@ null
 "144",
 "Holo Rare VMAX",
 "https://assets.tcgdex.net/fr/swsh/swsh3/144"
+],
+"swsh3-176": [
+"Énergie Colorless Puissance",
+"Ténèbres Embrasées",
+"176",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/swsh/swsh3/176"
 ],
 "swsh3-177": [
 "Papilusion V",
@@ -49251,6 +51659,13 @@ null
 "Holo Rare V",
 "https://assets.tcgdex.net/fr/swsh/swsh3/21"
 ],
+"swsh3-33": [
+"Scolocendre V",
+"Ténèbres Embrasées",
+"33",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh3/33"
+],
 "swsh3-34": [
 "Scolocendre VMAX",
 "Ténèbres Embrasées",
@@ -49398,6 +51813,13 @@ null
 "Holo Rare V",
 "https://assets.tcgdex.net/fr/swsh/swsh3.5/27"
 ],
+"swsh3.5-32": [
+"Krakos V",
+"La Voie du Maître",
+"32",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh3.5/32"
+],
 "swsh3.5-47": [
 "Duralugon V",
 "La Voie du Maître",
@@ -49524,6 +51946,13 @@ null
 "Magnifique",
 "https://assets.tcgdex.net/fr/swsh/swsh4/119"
 ],
+"swsh4-126": [
+"Exagide V",
+"Voltage Éclatant",
+"126",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh4/126"
+],
 "swsh4-127": [
 "Exagide VMAX",
 "Voltage Éclatant",
@@ -49552,6 +51981,13 @@ null
 "Magnifique",
 "https://assets.tcgdex.net/fr/swsh/swsh4/138"
 ],
+"swsh4-140": [
+"Togekiss V",
+"Voltage Éclatant",
+"140",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh4/140"
+],
 "swsh4-141": [
 "Togekiss VMAX",
 "Voltage Éclatant",
@@ -49565,6 +52001,13 @@ null
 "15",
 "Holo Rare",
 "https://assets.tcgdex.net/fr/swsh/swsh4/15"
+],
+"swsh4-16": [
+"Genesect",
+"Voltage Éclatant",
+"16",
+"Holo Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh4/16"
 ],
 "swsh4-166": [
 "Astronelle V",
@@ -49838,6 +52281,13 @@ null
 "21",
 "Holo Rare VMAX",
 "https://assets.tcgdex.net/fr/swsh/swsh4/21"
+],
+"swsh4-22": [
+"Zarude V",
+"Voltage Éclatant",
+"22",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh4/22"
 ],
 "swsh4-25": [
 "Dracaufeu",
@@ -51337,6 +53787,13 @@ null
 "Holo Rare VMAX",
 "https://assets.tcgdex.net/fr/swsh/swsh5/88"
 ],
+"swsh5-96": [
+"Démolosse",
+"Styles de combat",
+"96",
+"Holo Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh5/96"
+],
 "swsh5-97": [
 "Tyranocif V",
 "Styles de combat",
@@ -51371,6 +53828,13 @@ null
 "113",
 "Holo Rare VMAX",
 "https://assets.tcgdex.net/fr/swsh/swsh6/113"
+],
+"swsh6-115": [
+"Tauros",
+"Règne de Glace",
+"115",
+"Holo Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh6/115"
 ],
 "swsh6-119": [
 "Leuphorie V",
@@ -51931,6 +54395,20 @@ null
 "40",
 "Holo Rare",
 "https://assets.tcgdex.net/fr/swsh/swsh6/40"
+],
+"swsh6-44": [
+"Shifours Mille Poings",
+"Règne de Glace",
+"44",
+"Holo Rare",
+"https://assets.tcgdex.net/fr/swsh/swsh6/44"
+],
+"swsh6-45": [
+"Sylveroy Cavalier du Froid V",
+"Règne de Glace",
+"45",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh6/45"
 ],
 "swsh6-46": [
 "Sylveroy Cavalier du Froid VMAX",
@@ -52723,6 +55201,13 @@ null
 "Holo Rare",
 "https://assets.tcgdex.net/fr/swsh/swsh7/80"
 ],
+"swsh7-83": [
+"Charmina V",
+"Évolution Céleste",
+"83",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh7/83"
+],
 "swsh7-91": [
 "Lougaroc V",
 "Évolution Céleste",
@@ -52750,6 +55235,13 @@ null
 "95",
 "Holo Rare VMAX",
 "https://assets.tcgdex.net/fr/swsh/swsh7/95"
+],
+"swsh8-103": [
+"Fulgudog V",
+"Poing de Fusion",
+"103",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh8/103"
 ],
 "swsh8-104": [
 "Fulgudog VMAX",
@@ -52820,6 +55312,13 @@ null
 "201",
 "Holo Rare V",
 "https://assets.tcgdex.net/fr/swsh/swsh8/201"
+],
+"swsh8-21": [
+"Sucreine V",
+"Poing de Fusion",
+"21",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh8/21"
 ],
 "swsh8-218": [
 "Rongrigou VMAX",
@@ -52939,6 +55438,13 @@ null
 "259",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/swsh/swsh8/259"
+],
+"swsh8-26": [
+"Dratatin V",
+"Poing de Fusion",
+"26",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh8/26"
 ],
 "swsh8-260": [
 "Éclat d'Inezia",
@@ -53115,6 +55621,13 @@ null
 "Magnifique rare",
 "https://assets.tcgdex.net/fr/swsh/swsh8/284"
 ],
+"swsh8-39": [
+"Lugulabre V",
+"Poing de Fusion",
+"39",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh8/39"
+],
 "swsh8-40": [
 "Lugulabre VMAX",
 "Poing de Fusion",
@@ -53143,6 +55656,13 @@ null
 "Holo Rare V",
 "https://assets.tcgdex.net/fr/swsh/swsh8/73"
 ],
+"swsh8-78": [
+"Lézargus V",
+"Poing de Fusion",
+"78",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh8/78"
+],
 "swsh8-79": [
 "Lézargus VMAX",
 "Poing de Fusion",
@@ -53156,6 +55676,13 @@ null
 "86",
 "Holo Rare V",
 "https://assets.tcgdex.net/fr/swsh/swsh8/86"
+],
+"swsh9-013": [
+"Shaymin V",
+"Stars Étincelantes",
+"013",
+"Holo Rare V",
+"https://assets.tcgdex.net/fr/swsh/swsh9/013"
 ],
 "swsh9-014": [
 "Shaymin VSTAR",
@@ -54067,6 +56594,13 @@ null
 "Promo",
 "https://assets.tcgdex.net/fr/swsh/swshp/SWSH046"
 ],
+"swshp-SWSH047": [
+"Torgamord",
+"Promo SWSH",
+"SWSH047",
+"Promo",
+"https://assets.tcgdex.net/fr/swsh/swshp/SWSH047"
+],
 "swshp-SWSH050": [
 "Dracaufeu V",
 "Promo SWSH",
@@ -54095,6 +56629,13 @@ null
 "Promo",
 "https://assets.tcgdex.net/fr/swsh/swshp/SWSH053"
 ],
+"swshp-SWSH054": [
+"Monthracite",
+"Promo SWSH",
+"SWSH054",
+"Promo",
+"https://assets.tcgdex.net/fr/swsh/swshp/SWSH054"
+],
 "swshp-SWSH055": [
 "Sorcilence V",
 "Promo SWSH",
@@ -54122,6 +56663,13 @@ null
 "SWSH058",
 "Promo",
 "https://assets.tcgdex.net/fr/swsh/swshp/SWSH058"
+],
+"swshp-SWSH059": [
+"Ixon de Galar",
+"Promo SWSH",
+"SWSH059",
+"Promo",
+"https://assets.tcgdex.net/fr/swsh/swshp/SWSH059"
 ],
 "swshp-SWSH060": [
 "Duralugon",
@@ -54480,6 +57028,13 @@ null
 "Promo",
 "https://assets.tcgdex.net/fr/swsh/swshp/SWSH116"
 ],
+"swshp-SWSH117": [
+"Phanpy",
+"Promo SWSH",
+"SWSH117",
+"Promo",
+"https://assets.tcgdex.net/fr/swsh/swshp/SWSH117"
+],
 "swshp-SWSH118": [
 "Évoli",
 "Promo SWSH",
@@ -54493,6 +57048,13 @@ null
 "SWSH119",
 "Promo",
 "https://assets.tcgdex.net/fr/swsh/swshp/SWSH119"
+],
+"swshp-SWSH120": [
+"Rosemary",
+"Promo SWSH",
+"SWSH120",
+"Promo",
+"https://assets.tcgdex.net/fr/swsh/swshp/SWSH120"
 ],
 "swshp-SWSH121": [
 "Rosemary",
@@ -55229,6 +57791,13 @@ null
 "Promo",
 "https://assets.tcgdex.net/fr/swsh/swshp/SWSH236"
 ],
+"swshp-SWSH237": [
+"Typhlosion de Hisui V",
+"Promo SWSH",
+"SWSH237",
+"Promo",
+"https://assets.tcgdex.net/fr/swsh/swshp/SWSH237"
+],
 "swshp-SWSH238": [
 "Archéduc de Hisui V",
 "Promo SWSH",
@@ -55432,6 +58001,13 @@ null
 "Promo",
 "https://assets.tcgdex.net/fr/swsh/swshp/SWSH272"
 ],
+"swshp-SWSH274": [
+"Kranidos",
+"Promo SWSH",
+"SWSH274",
+"Promo",
+"https://assets.tcgdex.net/fr/swsh/swshp/SWSH274"
+],
 "swshp-SWSH275": [
 "Manaphy",
 "Promo SWSH",
@@ -55621,6 +58197,13 @@ null
 "Sans Rareté",
 null
 ],
+"tk-dp-l-8": [
+"Recherche d'énergie",
+"DP Kit dresseur (Lucario)",
+"8",
+"Sans Rareté",
+null
+],
 "tk-dp-l-9": [
 "Potion",
 "DP Kit dresseur (Lucario)",
@@ -55632,6 +58215,13 @@ null
 "Manaphy",
 "DP Kit dresseur (Manaphy)",
 "4",
+"Sans Rareté",
+null
+],
+"tk-dp-m-8": [
+"Kaiminus",
+"DP Kit dresseur (Manaphy)",
+"8",
 "Sans Rareté",
 null
 ],
@@ -55950,6 +58540,13 @@ null
 "Sans Rareté",
 "https://assets.tcgdex.net/fr/xy/xy0/12"
 ],
+"xy0-13": [
+"Croâporal",
+"Bienvenue à Kalos",
+"13",
+"Sans Rareté",
+"https://assets.tcgdex.net/fr/xy/xy0/13"
+],
 "xy0-14": [
 "Amphinobi",
 "Bienvenue à Kalos",
@@ -56097,6 +58694,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy1/100"
 ],
+"xy1-103": [
+"Hélédelle",
+"XY",
+"103",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy1/103"
+],
 "xy1-109": [
 "Ponchien",
 "XY",
@@ -56125,6 +58729,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/xy/xy1/13"
 ],
+"xy1-130": [
+"Double Énergie Incolore",
+"XY",
+"130",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy1/130"
+],
 "xy1-14": [
 "Blindépique",
 "XY",
@@ -56152,6 +58763,13 @@ null
 "143",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/xy1/143"
+],
+"xy1-144": [
+"Yveltal EX",
+"XY",
+"144",
+"Ultra Rare",
+"https://assets.tcgdex.net/fr/xy/xy1/144"
 ],
 "xy1-145": [
 "Airmure EX",
@@ -56279,6 +58897,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy1/73"
 ],
+"xy1-78": [
+"Yveltal",
+"XY",
+"78",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy1/78"
+],
 "xy1-79": [
 "Yveltal EX",
 "XY",
@@ -56328,6 +58953,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy1/93"
 ],
+"xy1-95": [
+"Cupcanaille",
+"XY",
+"95",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy1/95"
+],
 "xy1-96": [
 "Xerneas",
 "XY",
@@ -56355,6 +58987,13 @@ null
 "105a",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/xy10/105a"
+],
+"xy10-114": [
+"Double Énergie Incolore",
+"Impact des Destins",
+"114",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy10/114"
 ],
 "xy10-115": [
 "Énergie Renforcée",
@@ -56460,6 +59099,13 @@ null
 "29",
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy10/29"
+],
+"xy10-39": [
+"Kabutops",
+"Impact des Destins",
+"39",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy10/39"
 ],
 "xy10-43": [
 "Regirock EX",
@@ -56678,6 +59324,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy11/15"
 ],
+"xy11-20": [
+"Simiabraz",
+"Offensive Vapeur",
+"20",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy11/20"
+],
 "xy11-21": [
 "Flambusard TURBO",
 "Offensive Vapeur",
@@ -56789,6 +59442,13 @@ null
 "67",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/xy11/67"
+],
+"xy11-74": [
+"Cobaltium",
+"Offensive Vapeur",
+"74",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy11/74"
 ],
 "xy11-75": [
 "Magearna EX",
@@ -57133,6 +59793,13 @@ null
 "Commune",
 "https://assets.tcgdex.net/fr/xy/xy12/99"
 ],
+"xy2-1": [
+"Chenipan",
+"Étincelles",
+"1",
+"Commune",
+"https://assets.tcgdex.net/fr/xy/xy2/1"
+],
 "xy2-100": [
 "Dracaufeu EX",
 "Étincelles",
@@ -57189,6 +59856,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy2/20"
 ],
+"xy2-23": [
+"Milobellus",
+"Étincelles",
+"23",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy2/23"
+],
 "xy2-3": [
 "Papilusion",
 "Étincelles",
@@ -57216,6 +59890,13 @@ null
 "37",
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy2/37"
+],
+"xy2-40": [
+"Noctunoir",
+"Étincelles",
+"40",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy2/40"
 ],
 "xy2-41": [
 "Coatox EX",
@@ -57258,6 +59939,13 @@ null
 "7",
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy2/7"
+],
+"xy2-70": [
+"Drakkarmin",
+"Étincelles",
+"70",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy2/70"
 ],
 "xy2-71": [
 "Kravarech",
@@ -57314,6 +60002,27 @@ null
 "88a",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/xy/xy2/88a"
+],
+"xy2-96": [
+"Cendre Sacrée",
+"Étincelles",
+"96",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy2/96"
+],
+"xy3-103": [
+"Phyto-Énergie",
+"Poings Furieux",
+"103",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy3/103"
+],
+"xy3-104": [
+"Énergie Renforcée",
+"Poings Furieux",
+"104",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy3/104"
 ],
 "xy3-105": [
 "Scarhino EX",
@@ -57511,6 +60220,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy3/72"
 ],
+"xy3-73": [
+"Trousselin",
+"Poings Furieux",
+"73",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy3/73"
+],
 "xy3-74": [
 "Dracolosse EX",
 "Poings Furieux",
@@ -57679,6 +60395,13 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy4/45"
 ],
+"xy4-47": [
+"Scorvol",
+"Vigueur Spectrale",
+"47",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy4/47"
+],
 "xy4-50": [
 "Gigalithe",
 "Vigueur Spectrale",
@@ -57741,6 +60464,13 @@ null
 "69",
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy4/69"
+],
+"xy4-70": [
+"Dedenne",
+"Vigueur Spectrale",
+"70",
+"Commune",
+"https://assets.tcgdex.net/fr/xy/xy4/70"
 ],
 "xy4-71": [
 "Diancie",
@@ -57917,6 +60647,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/xy/xy5/143"
 ],
+"xy5-144": [
+"Énergie Merveille",
+"Primo-Choc",
+"144",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy5/144"
+],
 "xy5-145": [
 "Desséliande EX",
 "Primo-Choc",
@@ -58085,12 +60822,40 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy5/44"
 ],
+"xy5-45": [
+"Obalie",
+"Primo-Choc",
+"45",
+"Commune",
+"https://assets.tcgdex.net/fr/xy/xy5/45"
+],
+"xy5-46": [
+"Obalie",
+"Primo-Choc",
+"46",
+"Commune",
+"https://assets.tcgdex.net/fr/xy/xy5/46"
+],
 "xy5-50": [
 "Serpang",
 "Primo-Choc",
 "50",
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy5/50"
+],
+"xy5-51": [
+"Rosabyss",
+"Primo-Choc",
+"51",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy5/51"
+],
+"xy5-52": [
+"Rosabyss",
+"Primo-Choc",
+"52",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy5/52"
 ],
 "xy5-53": [
 "Kyogre",
@@ -58133,6 +60898,13 @@ null
 "65",
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy5/65"
+],
+"xy5-72": [
+"Tentacruel",
+"Primo-Choc",
+"72",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy5/72"
 ],
 "xy5-8": [
 "Jungko",
@@ -58253,6 +61025,13 @@ null
 "Magnifique rare",
 "https://assets.tcgdex.net/fr/xy/xy6/109"
 ],
+"xy6-11": [
+"Munja",
+"Ciel Rugissant",
+"11",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy6/11"
+],
 "xy6-110": [
 "Cherche VS",
 "Ciel Rugissant",
@@ -58280,6 +61059,13 @@ null
 "20",
 "Commune",
 "https://assets.tcgdex.net/fr/xy/xy6/20"
+],
+"xy6-22": [
+"Électrode",
+"Ciel Rugissant",
+"22",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy6/22"
 ],
 "xy6-23": [
 "Électhor",
@@ -58350,6 +61136,13 @@ null
 "5",
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy6/5"
+],
+"xy6-50": [
+"Draco",
+"Ciel Rugissant",
+"50",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy6/50"
 ],
 "xy6-51": [
 "Dracolosse",
@@ -58561,6 +61354,13 @@ null
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/xy7/28"
 ],
+"xy7-3": [
+"Rafflesia",
+"Origines Antiques",
+"3",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy7/3"
+],
 "xy7-30": [
 "Zarbi",
 "Origines Antiques",
@@ -58588,6 +61388,20 @@ null
 "37",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/xy7/37"
+],
+"xy7-38": [
+"Axoloto",
+"Origines Antiques",
+"38",
+"Commune",
+"https://assets.tcgdex.net/fr/xy/xy7/38"
+],
+"xy7-39": [
+"Maraiste",
+"Origines Antiques",
+"39",
+"Commune",
+"https://assets.tcgdex.net/fr/xy/xy7/39"
 ],
 "xy7-4": [
 "Joliflor",
@@ -58638,12 +61452,26 @@ null
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy7/60"
 ],
+"xy7-65": [
+"Porygon2",
+"Origines Antiques",
+"65",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy7/65"
+],
 "xy7-68": [
 "Lugia EX",
 "Origines Antiques",
 "68",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/xy7/68"
+],
+"xy7-69": [
+"Top Dresseur",
+"Origines Antiques",
+"69",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy7/69"
 ],
 "xy7-7": [
 "Jungko EX",
@@ -58792,12 +61620,33 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/xy/xy8/10"
 ],
+"xy8-102": [
+"Floette",
+"Impulsion Turbo",
+"102",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy8/102"
+],
+"xy8-103": [
+"Florges",
+"Impulsion Turbo",
+"103",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy8/103"
+],
 "xy8-104": [
 "Florges TURBO",
 "Impulsion Turbo",
 "104",
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/xy8/104"
+],
+"xy8-106": [
+"Cocotine",
+"Impulsion Turbo",
+"106",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy8/106"
 ],
 "xy8-107": [
 "Xerneas",
@@ -58861,6 +61710,13 @@ null
 "140",
 "Peu Commune",
 "https://assets.tcgdex.net/fr/xy/xy8/140"
+],
+"xy8-142": [
+"Lien Spirituel Démolosse",
+"Impulsion Turbo",
+"142",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy8/142"
 ],
 "xy8-144": [
 "Lien Spirituel Mewtwo",
@@ -58960,6 +61816,13 @@ null
 "Magnifique rare",
 "https://assets.tcgdex.net/fr/xy/xy8/164"
 ],
+"xy8-18": [
+"Héricendre",
+"Impulsion Turbo",
+"18",
+"Commune",
+"https://assets.tcgdex.net/fr/xy/xy8/18"
+],
 "xy8-20": [
 "Typhlosion",
 "Impulsion Turbo",
@@ -59016,12 +61879,26 @@ null
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/xy8/50"
 ],
+"xy8-54": [
+"Magnézone",
+"Impulsion Turbo",
+"54",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy8/54"
+],
 "xy8-55": [
 "Raikou",
 "Impulsion Turbo",
 "55",
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy8/55"
+],
+"xy8-57": [
+"Dedenne",
+"Impulsion Turbo",
+"57",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy8/57"
 ],
 "xy8-60": [
 "Ectoplasma",
@@ -59121,6 +61998,13 @@ null
 "Peu Commune",
 "https://assets.tcgdex.net/fr/xy/xy9/102"
 ],
+"xy9-11": [
+"Arcanin",
+"Rupture Turbo",
+"11",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy9/11"
+],
 "xy9-114": [
 "Léviator EX",
 "Rupture Turbo",
@@ -59212,6 +62096,13 @@ null
 "Ultra Rare",
 "https://assets.tcgdex.net/fr/xy/xy9/26"
 ],
+"xy9-28": [
+"Lokhlass",
+"Rupture Turbo",
+"28",
+"Peu Commune",
+"https://assets.tcgdex.net/fr/xy/xy9/28"
+],
 "xy9-3": [
 "Méganium",
 "Rupture Turbo",
@@ -59281,6 +62172,13 @@ null
 "57",
 "Rare",
 "https://assets.tcgdex.net/fr/xy/xy9/57"
+],
+"xy9-62": [
+"Exagide",
+"Rupture Turbo",
+"62",
+"Rare",
+"https://assets.tcgdex.net/fr/xy/xy9/62"
 ],
 "xy9-66": [
 "Desséliande TURBO",
