@@ -200,6 +200,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | --- | --- | --- | --- | --- | --- |
 | ven. 16/10/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Lancement : « boostZ ta collection » | les 8 | `videos/2026-10-16-lancement-stickers.mp4` |
 | sam. 17/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Mondes Natals (Homeworlds) est sorti le 09/10 | Star Wars Unlimited | `images/2026-10-17-sortie-mondes-natals/` |
+| mar. 20/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story Instagram et Facebook | 2 | Les 10 cotes qui bougent n° 1 : Brasegali FB NIV.X +123,1 % (moyennes 30 jours du 03/10 et du 16/10) | Pokémon | `images/2026-10-20-cotes-qui-bougent-1/` |
 | ven. 23/10/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Rejoins le serveur Discord Boostz (discord.gg/R54wCGtkr) | les 8 | `videos/2026-10-23-discord.mp4` |
 | lun. 26/10/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 1 | Méga-Dracaufeu X ex | Pokémon | `images/2026-10-26-analyse-mega-dracaufeu-x-stickers/` |
 | sam. 31/10/2026, 18 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | `videos/2026-10-31-halloween.mp4` |

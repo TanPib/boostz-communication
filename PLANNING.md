@@ -22,7 +22,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | --- | --- | --- | --- | --- | --- |
 | \*ven. 16/10 | Reel | 11 Annonce | Lancement : « boostZ ta collection » | les 8 | ✅ programmé |
 | \*sam. 17/10 | carrousel | 15 Sortie d'extension | Mondes Natals (Homeworlds) est sorti le 09/10 | Star Wars Unlimited | ✅ programmé |
-| mar. 20/10 | carrousel | 2 Cotes qui bougent | Édition n° 1 : relevés du 03/10 au 16/10 | Pokémon | brouillon dans Metricool, produit par le rappel du 16/10 |
+| mar. 20/10 | carrousel | 2 Cotes qui bougent | Édition n° 1 : moyennes 30 jours du 03/10 et du 16/10, Brasegali FB NIV.X en tête (+123,1 %) | Pokémon | ✅ programmé le 16/10 |
 | ven. 23/10 | Reel | 11 Annonce | Rejoins le serveur Discord Boostz (discord.gg/R54wCGtkr) | les 8 | ✅ programmé |
 | lun. 26/10 | carrousel | 1 Analyse de carte | Méga-Dracaufeu X ex | Pokémon | ✅ programmé (chiffres rafraîchis le 16/10) |
 | \*mer. 28/10 | carrousel | 15 Sortie d'extension | Hyperia City (chapitre 14, sorti le 23/10) : les 10 cartes qui valent le plus | Lorcana | brouillon dans Metricool, produit par le rappel du 26/10 |

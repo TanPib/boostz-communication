@@ -22,6 +22,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-10-16-story-lancement.mp4` | ven. 16/10/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-10-17-sortie-mondes-natals/` | sam. 17/10/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-10-17-story-sortie-mondes-natals.mp4` | sam. 17/10/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2026-10-20-cotes-qui-bougent-1/` | mar. 20/10/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 12 JPEG 1080 × 1350 |
+| `videos/2026-10-20-story-cotes-qui-bougent-1.mp4` | mar. 20/10/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique originale |
 | `videos/2026-10-23-discord.mp4` | ven. 23/10/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 20,2 s, musique originale |
 | `videos/2026-10-23-story-discord.mp4` | ven. 23/10/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-10-26-analyse-mega-dracaufeu-x-stickers/` | lun. 26/10/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
