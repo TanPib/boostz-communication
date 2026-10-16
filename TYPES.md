@@ -61,7 +61,7 @@ Une carte précise, de la couverture au verdict : « elle vaut combien ? », sa 
 Les 10 cartes Pokémon dont la cote a le plus évolué en 15 jours : une couverture, un compte à rebours du 10e au 1er (la carte, son prix avant et après, la hausse ou la baisse), puis un récap à enregistrer.
 - **Rythme :** le 1er et le 16 de chaque mois. Le relevé tourne tout seul sur GitHub ces jours-là (`.github/workflows/cotes.yml`) et compare au relevé précédent.
 - **Il me faut :** rien, le classement sort du relevé.
-- **Données :** le prix de vente moyen sur 7 jours de Cardmarket, relevé par Boostz pour toutes les cartes Pokémon via TCGdex (`donnees/cotes/pokemon/`). Une carte entre au classement si elle vaut plus de 10 € et si la tendance Cardmarket va dans le même sens, ce qui écarte une vente isolée.
+- **Données :** le prix de vente moyen sur 30 jours de Cardmarket, relevé par Boostz pour toutes les cartes Pokémon via TCGdex (`donnees/cotes/pokemon/`). Une carte entre au classement si elle vaut plus de 10 €, si ses quatre indicateurs (moyennes 7 et 30 jours, tendance, annonce la moins chère) vont dans le même sens et si aucune vente isolée ne dépasse trois fois la moyenne (depuis le 16/10/2026 : la moyenne 7 jours se laissait gonfler par une seule carte gradée vendue sur Cardmarket). Les cartes qui partagent une fiche Cardmarket sont écartées.
 - **Gabarit :** `gabarits/cotes-qui-bougent.html`
 - **Met en avant :** le suivi de cote.
 

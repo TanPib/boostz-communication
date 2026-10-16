@@ -102,16 +102,28 @@ def top():
     b = load(end)
     if older:
         start, a = older[-1], load(older[-1])
-        mode = 'Prix de vente moyen sur 7 jours, d\'un relevé à l\'autre'
-        pairs = {cid: (a[cid][1], b[cid][1], a[cid][3], b[cid][3]) for cid in set(a) & set(b)}
+        # The 30-day average sale price, not the 7-day one (16/10/2026): on old
+        # cards a single graded copy sold on Cardmarket (7 500 EUR for a card listed
+        # at 80) is enough to multiply the 7-day average, and it made eight of the
+        # first ten "movers". The 30-day average is the steadiest of the four figures.
+        mode = 'Prix de vente moyen sur 30 jours, d\'un relevé à l\'autre'
+        pairs = {cid: (a[cid][2], b[cid][2], a[cid][3], b[cid][3]) for cid in set(a) & set(b)}
     else:
         # One snapshot only: compare the last 7 days with the last 30 days of the same record.
         start = None
         mode = 'Aperçu : prix de vente moyen des 7 derniers jours, comparé à celui des 30 derniers jours'
         pairs = {cid: (p[2], p[1], p[2], p[3]) for cid, p in b.items()}
+    # Several card ids can point at one Cardmarket product (a holo, its reverse,
+    # another print): their figures are then identical to the cent, and nobody can
+    # tell which card actually moved. Such groups are left out.
+    seen = {}
+    for cid, p in b.items():
+        seen.setdefault(tuple(p), []).append(cid)
+    shared = {cid for group in seen.values() if len(group) > 1 for cid in group}
+    num = lambda *v: all(isinstance(x, (int, float)) and x > 0 for x in v)
     rows = []
     for cid, (v0, v1, t0, t1) in pairs.items():
-        if not all(isinstance(v, (int, float)) for v in (v0, v1, t0, t1)):
+        if cid in shared or not num(v0, v1, t0, t1):
             continue
         if v0 < FLOOR_EUR or v1 < FLOOR_EUR:
             continue
@@ -119,6 +131,20 @@ def top():
         # average but not the trend, and that is exactly the false mover to drop.
         if (v1 - v0) * (t1 - t0) <= 0:
             continue
+        if older:
+            A, B = a[cid], b[cid]
+            if not num(*A, *B):
+                continue
+            # All four figures (1-day is too thin to count) move the same way:
+            # 7-day and 30-day averages, trend and cheapest listing. A real move
+            # lifts or drops the floor of the market too.
+            moves = [B[i] - A[i] for i in (1, 2, 3, 4)]
+            if not (all(m > 0 for m in moves) or all(m < 0 for m in moves)):
+                continue
+            # No isolated sale: neither the last day nor the last week may be
+            # over three times the 30-day average, and no near-zero sale either.
+            if max(A[0], A[1]) > 3 * A[2] or max(B[0], B[1]) > 3 * B[2] or min(A[0], B[0]) < A[2] / 10:
+                continue
         m = meta.get(cid, [None] * 5)
         rows.append({'id': cid, 'nom': m[0], 'set': m[1], 'numero': m[2], 'rarete': m[3], 'image': m[4],
                      'avant': v0, 'apres': v1, 'evolution': round((v1 - v0) / v0 * 100, 1)})

@@ -9,6 +9,10 @@ on:
     # hors de l'heure pile évite la file d'attente de GitHub.
     - cron: '17 5 1,16 * *'
   workflow_dispatch:
+    inputs:
+      etape:
+        description: 'releve (relevé du jour puis classement) ou top (classement seul, sur les relevés déjà enregistrés)'
+        default: releve
 permissions:
   contents: write
 concurrency: cotes
@@ -18,7 +22,8 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
-      - run: python3 outils/cotes.py releve
+      - if: github.event_name == 'schedule' || inputs.etape != 'top'
+        run: python3 outils/cotes.py releve
       - run: python3 outils/cotes.py top
       - name: Enregistrer
         run: |
