@@ -84,10 +84,12 @@ S.push(['09-clair', `${bg('linear-gradient(180deg,#FFFFFF,#F6F4FA)')}
 
 // 10 - The dashed path of the posts linking a row of cards, wordmark above.
 const row = ['pokemon', 'onepiece', 'lorcana', 'yugioh', 'magic', 'starwarsunlimited', 'dragonball', 'wow'];
-S.push(['10-chemin', `<svg class="abs" width="${W}" height="${H}" style="left:0;top:0"><path d="M -40 640 C 260 520, 420 760, 700 640 S 1140 520, 1680 650" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>
-  <div class="abs" style="left:0;top:180px;width:${W}px;display:flex;justify-content:center">${wordmark(130)}</div>
-  ${text(0, 350, W, LINE + ' · 8 jeux, une seule appli', 44, 'text-align:center;font-weight:600;color:#C9C3D9')}
-  ${row.map((g, i) => card(`assets/${CARDS[g]}`, 470 + i * 112, 470 + (i % 2) * 24, 120, (i % 2 ? 6 : -6), 3 + i)).join('')}`]);
+S.push(['10-chemin', `<svg class="abs" width="${W}" height="${H}" style="left:0;top:0"><path d="M -40 700 C 300 610, 520 790, 820 700 S 1320 610, 1680 705" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="14" stroke-dasharray="26 36" stroke-linecap="round"/></svg>
+  <div class="abs" style="left:0;top:168px;width:${W}px;display:flex;justify-content:center">${wordmark(120)}</div>
+  ${text(0, 318, W, LINE + ' · 8 jeux, une seule appli', 42, 'text-align:center;font-weight:600;color:#C9C3D9')}
+  ${row.map((g, i) => card(`assets/${CARDS[g]}`, 328 + i * 122, 396 + (i % 2) * 18, 130, (i % 2 ? 6 : -6), 3 + i)).join('')}`]);
+// Phones put the profile picture over the bottom centre (from y 620 down,
+// seen on 16/10/2026), computers crop below y 774: only the path goes there.
 
 // 11 - Big statement: "8 TCG. 1 appli." with the emblems as stickers.
 S.push(['11-8tcg', `${bg(`radial-gradient(circle at 70% 40%, #2A1B4A, #131020 60%)`)}
