@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz mur des prix</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// "Le mur des prix" (proposed on 16/10/2026, after gorilla.tcg's "Top 60"): the
+// 15 most expensive cards of one set on a single dense slide made to be saved,
+// then a zoom on the top 3. Figures: Cardmarket 30-day average sale price from
+// the Boostz record (donnees/cotes/pokemon/<date>.json); scans from TCGdex
+// fetched by the Image workflow into assets/mur-<id>.png.
+window.PUB = window.PUB || '2026-11-04';
+const GAME = 'pokemon', GC = GAMES[GAME][1];
+const SET = 'Flammes Fantasmagoriques', DAY = '16/10/2026';
+// [id, name, number, rarity, 30-day average, cheapest listing, trend], record of 16/10/2026.
+const CARDS = [
+  ['me02-125', 'Méga-Dracaufeu X-ex', '125', 'Illustration spéciale rare', 731.09, 350, 642.41],
+  ['me02-130', 'Méga-Dracaufeu X-ex', '130', 'Méga Hyper Rare', 257.93, 159.99, 205.48],
+  ['me02-109', 'Méga-Dracaufeu X-ex', '109', 'Ultra Rare', 23.5, 10, 22.87],
+  ['me02-106', 'Miaouss', '106', 'Illustration rare', 19.84, 8, 16.51],
+  ['me02-127', 'Méga-Sharpedo-ex', '127', 'Illustration spéciale rare', 19.26, 12, 18.29],
+  ['me02-129', 'Aurore', '129', 'Illustration spéciale rare', 15.64, 8.8, 14.58],
+  ['me02-128', 'Méga-Lockpin-ex', '128', 'Illustration spéciale rare', 13.15, 7.9, 11.44],
+  ['me02-126', 'Motisma-ex', '126', 'Illustration spéciale rare', 12.36, 8.89, 11.84],
+  ['me02-098', 'Tiplouf', '098', 'Illustration rare', 11.34, 3.2, 10.13],
+  ['me02-105', 'Grodoudou', '105', 'Illustration rare', 4.79, 0.94, 4.15],
+  ['me02-118', 'Aurore', '118', 'Ultra Rare', 4.39, 2.3, 4.07],
+  ['me02-097', 'Lamantine', '097', 'Illustration rare', 3.44, 0.88, 3.26],
+  ['me02-101', 'Libégon', '101', 'Illustration rare', 3.14, 0.89, 2.82],
+  ['me02-013', 'Méga-Dracaufeu X-ex', '013', 'Double rare', 2.93, 1, 2.62],
+  ['me02-100', 'Zacian', '100', 'Illustration rare', 2.75, 0.75, 2.81],
+];
+const SRC = `Cardmarket via TCGdex, prix de vente moyen sur 30 jours, relevé Boostz du ${DAY}. Images : TCGdex.`;
+const img = (id) => `assets/mur-${id}.png`;
+const short = (v) => v >= 100 ? Math.round(v) + ' €' : eur(v);
+const SLIDES = [];
+
+// 1 - The wall: 15 cards, 5 x 3, each with its rank and its price.
+const CW = 172, CH = 240, GX = 24;
+SLIDES.push(['1-mur', `${head('LE MUR DES PRIX', GAME, SET)}
+  <div class="abs h" style="left:70px;top:140px;font-size:70px">Les 15 cartes<br><span style="color:${GC}">les plus chères</span></div>
+  ${CARDS.map(([id, , , , avg], i) => { const x = 62 + (i % 5) * (CW + GX), y = 310 + Math.floor(i / 5) * 300;
+    return `<div class="abs h" style="left:${x}px;top:${y}px;width:${CW}px;text-align:center;font-size:36px;white-space:nowrap">${short(avg)}</div>
+      ${card(img(id), x, y + 52, CW, 0, 2, { h: CH })}
+      <div class="abs h" style="left:${x + CW - 70}px;top:${y + 52 + CH - 64}px;width:70px;height:56px;border-radius:16px;background:${GC};color:${DARK};border:4px solid ${INK};font-size:32px;display:flex;align-items:center;justify-content:center;z-index:4">#${i + 1}</div>`; }).join('')}
+  <div class="src" style="bottom:22px">${SRC}</div>`]);
+
+// 2 to 4 - The top 3, one by one.
+CARDS.slice(0, 3).forEach(([id, name, num, rar, avg, low, trend], i) => {
+  SLIDES.push([`${i + 2}-rang-${i + 1}`, `${track(i + 1, 1000, .4)}${head('LE TOP 3', GAME, SET)}
+    ${card(img(id), 70, 180, 450, -3)}
+    ${disc(590, 190, 180, GC, `<div class="h" style="font-size:96px;color:${DARK}">#${i + 1}</div>`, 6)}
+    <div class="abs" style="left:590px;top:410px;width:420px"><div class="h" style="font-size:52px">${name}</div>
+      <div class="mut" style="font-weight:600;font-size:28px;margin-top:10px;line-height:1.3">n° ${num} · ${rar}</div></div>
+    ${st(70, 860, 940, 300, `<div style="display:flex;height:100%;align-items:center;justify-content:space-around;padding:0 30px">
+      ${[['MOYENNE 30 JOURS', avg, INK], ['ANNONCE LA MOINS CHÈRE', low, PINK], ['TENDANCE', trend, DONE]].map(([k, v, c]) => `<div style="text-align:center"><div class="lab mut" style="font-size:19px;letter-spacing:2px">${k}</div><div class="h" style="font-size:${k.startsWith('MOY') ? 70 : 52}px;margin-top:10px;color:${c};white-space:nowrap">${eur(v)}</div></div>`).join('')}</div>`, { r: -1, z: 3 })}
+    <div class="src">${SRC}</div>`]);
+});
+
+// 5 - Boostz.
+SLIDES.push(['5-fin', `${ghosts([[90, 300, 80, -6], [900, 360, 90, 8], [100, 1150, 70, 4], [910, 1150, 80, -6]])}${track(4, 760, .6)}
+  <div class="abs h" style="left:0;top:220px;width:1080px;text-align:center;font-size:100px">Elle est dans<br><span style="color:${GC}">ton classeur ?</span></div>
+  <div class="abs mut" style="left:0;top:470px;width:1080px;text-align:center;font-weight:600;font-size:36px">Dis-nous laquelle en commentaire</div>
+  ${closing(820, 110)}`]);
+
+carousel(SLIDES);
+</script></body></html>
