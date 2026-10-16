@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz logo profil</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Profile picture proposals for Instagram, TikTok and Facebook (asked on
+// 16/10/2026: the app icon in a purple disc reads small and flat). Each is a
+// 1080 x 1080 square whose content stays inside the circle the networks crop
+// it to; render with: node rendu.mjs logo-profil.html images
+document.head.insertAdjacentHTML('beforeend', `<style>.p { width: 1080px; height: 1080px; }</style>`);
+const GRADIENT = 'linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%)';
+// The wordmark's Z: Outfit 800, slanted, with its three ghost Zs behind.
+const bigZ = (size, fill, ghosts = [['#3AA9FF', -0.2, .25], ['#8B3DFF', -0.13, .4], ['#FF4FA0', -0.065, .6]], shadow = '') => `<div style="position:relative;transform:skewX(-8deg);display:inline-block">
+  ${ghosts.map(([c, l, o]) => `<span class="word" style="position:absolute;top:0;left:${l * size}px;font-size:${size}px;color:${c};opacity:${o}">Z</span>`).join('')}
+  <span class="word ${fill === 'grad' ? 'grad' : ''}" style="position:relative;font-size:${size}px;${fill === 'grad' ? '' : `color:${fill};`}${shadow}">Z</span></div>`;
+const mid = (html, dy = 0) => `<div class="abs" style="left:0;top:${dy}px;width:1080px;height:1080px;display:flex;align-items:center;justify-content:center">${html}</div>`;
+const pcard = (x, y, w, r, bg, inner = '') => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border-radius:${w * .12}px;background:${bg};border:14px solid ${INK};box-shadow:22px 22px 0 ${SHADOW};transform:rotate(${r}deg);display:flex;align-items:center;justify-content:center">${inner}</div>`;
+
+carousel([
+  // 1 - The gradient Z alone, on the dark table of the posts.
+  ['1-z-degrade', `<div class="abs" style="inset:0;background:#131020"></div>${mid(bigZ(760, 'grad'), -40)}`],
+  // 2 - A white Z on the brand gradient: the most visible in a feed.
+  ['2-z-blanc', `<div class="abs" style="inset:0;background:${GRADIENT}"></div>${mid(bigZ(760, '#fff', [['#fff', -0.2, .14], ['#fff', -0.13, .22], ['#fff', -0.065, .32]], `text-shadow:22px 22px 0 rgba(11,8,18,.45);`), -40)}`],
+  // 3 - The Z as one of the posts' stickers: white outline, hard shadow.
+  ['3-sticker', `<div class="abs" style="inset:0;background:#131020"></div>
+    <div class="abs" style="left:205px;top:205px;width:670px;height:670px;border-radius:150px;background:${GRADIENT};border:22px solid ${INK};box-shadow:30px 30px 0 ${SHADOW};transform:rotate(-7deg);display:flex;align-items:center;justify-content:center">${bigZ(500, '#fff', [['#fff', -0.2, .14], ['#fff', -0.13, .22], ['#fff', -0.065, .32]])}</div>`],
+  // 4 - The app icon's cards, larger, in the brand colours.
+  ['4-cartes', `<div class="abs" style="inset:0;background:#131020"></div>
+    ${pcard(210, 300, 340, -16, '#FF4FA0')}${pcard(530, 300, 340, 16, '#3AA9FF')}
+    ${pcard(370, 230, 360, 0, '#8B3DFF', bigZ(300, '#fff', []))}`],
+  // 5 - A Boostz booster, the pack of the launch Reel.
+  ['5-booster', `<div class="abs" style="inset:0;background:#131020"></div>
+    <div class="abs" style="left:300px;top:150px;width:480px;height:780px;transform:rotate(-8deg)">
+      <div class="abs" style="left:0;top:110px;width:480px;height:670px;border-radius:0 0 50px 50px;border:16px solid ${INK};border-top:none;background:${GRADIENT};box-shadow:26px 26px 0 ${SHADOW};overflow:hidden;display:flex;align-items:center;justify-content:center">
+        <div class="abs" style="left:-80px;top:-60px;width:180px;height:900px;background:rgba(255,255,255,.18);transform:rotate(18deg)"></div>
+        ${bigZ(420, '#fff', [['#fff', -0.2, .14], ['#fff', -0.13, .22], ['#fff', -0.065, .32]])}</div>
+      <div class="abs" style="left:0;top:0;width:480px;height:124px;border-radius:50px 50px 0 0;border:16px solid ${INK};background:linear-gradient(160deg,#FF4FA0,#B23DFF);background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.22) 0 18px, transparent 18px 36px), linear-gradient(160deg,#FF4FA0,#B23DFF)"></div>
+    </div>`],
+]);
+</script></body></html>
