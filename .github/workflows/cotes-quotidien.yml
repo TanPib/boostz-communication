@@ -1,0 +1,27 @@
+# Relevé quotidien des cotes Cardmarket d'une extension Pokémon qui vient de
+# sortir, du jour de sa sortie à un mois après (QUOTIDIEN dans outils/cotes.py).
+# Sert la série « Un mois après la sortie » (voir TYPES.md). Hors de la fenêtre,
+# le script ne fait rien. Lancement manuel : Actions > Cotes quotidiennes.
+name: Cotes quotidiennes
+on:
+  schedule:
+    # 05:23 UTC, juste après les chiffres de la veille, à l'écart du relevé du 1er et du 16.
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: cotes
+jobs:
+  quotidien:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 outils/cotes.py quotidien
+      - name: Enregistrer
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add donnees/cotes
+          git diff --cached --quiet || git commit -q -m "Relevé quotidien des cotes du $(date -u +%d/%m/%Y)"
+          git pull -q --rebase && git push -q

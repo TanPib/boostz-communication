@@ -171,5 +171,42 @@ def top():
         print(f"{r['evolution']:+7.1f} %  {r['avant']:8.2f} -> {r['apres']:8.2f}  {r['nom']} ({r['set']} {r['numero']})")
 
 
+# "Un mois après la sortie" needs one point a day for a new set, from its
+# release day to a month later (see gabarits/un-mois-apres.html). One set at a
+# time: the daily workflow runs every day, and this window decides whether it
+# records anything. The set is found by its French name, since TCGdex only
+# adds it around release day.
+QUOTIDIEN = {'nom': 'Règne Delta', 'du': '2026-11-06', 'au': '2026-12-06'}
+
+
+def quotidien():
+    today = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    if not QUOTIDIEN['du'] <= today <= QUOTIDIEN['au']:
+        print('outside', QUOTIDIEN, 'nothing to record')
+        return
+    sets = get(f'{API}/sets') or []
+    match = [s for s in sets if s.get('name', '').casefold() == QUOTIDIEN['nom'].casefold()]
+    if not match:
+        # Not an error: before TCGdex lists the set, there is nothing to record yet.
+        print('set not on TCGdex yet:', QUOTIDIEN['nom'])
+        return
+    sid = match[0]['id']
+    ids = [c['id'] for c in (get(f'{API}/sets/{sid}') or {}).get('cards', [])]
+    snap, meta = {}, {}
+    with concurrent.futures.ThreadPoolExecutor(8) as pool:
+        for cid, res in pool.map(card, ids):
+            if res:
+                snap[cid], meta[cid] = res
+    out = os.path.join(DIR, 'quotidien', sid)
+    os.makedirs(out, exist_ok=True)
+    with open(os.path.join(out, f'{today}.json'), 'w', encoding='utf-8') as f:
+        json.dump({'date': today, 'set': sid, 'nom': QUOTIDIEN['nom'], 'source': 'Cardmarket, via TCGdex',
+                   'champs': ['avg1', 'avg7', 'avg30', 'trend', 'low'], 'cartes': snap},
+                  f, ensure_ascii=False, separators=(',', ':'), sort_keys=True)
+    with open(os.path.join(out, 'cartes.json'), 'w', encoding='utf-8') as f:
+        json.dump(meta, f, ensure_ascii=False, indent=0, sort_keys=True)
+    print(sid, len(ids), 'cards,', sum(1 for p in snap.values() if p[0] is not None), 'with a price')
+
+
 if __name__ == '__main__':
-    {'releve': releve, 'top': top}[sys.argv[1]]()
+    {'releve': releve, 'top': top, 'quotidien': quotidien}[sys.argv[1]]()

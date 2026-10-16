@@ -33,7 +33,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2026-11-22': (ALL, ''),
  '2026-11-27': (ALL, ''),
  '2026-12-03': ('Y', ''),
- '2026-12-06': ('O', "Photos des produits : chocobonplan.com, investcollect.com, espritjeu.com, play-in.com."),
+ '2027-02-16': ('O', "Photos des produits : chocobonplan.com, investcollect.com, espritjeu.com, play-in.com."),
  '2027-04-08': (ALL, ''),
  '2027-04-05': ('P', "Images des cartes : TCGdex."),
  '2026-12-15': ('P', "Cartes gradées par Collect Aura (@collectaura). Vidéo montée par Julien Ardid."),
@@ -47,13 +47,13 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2027-01-10': (ALL, ''),
  '2027-01-13': (ALL, ''),
  '2027-01-14': (ALL, ''),
- '2027-04-14': ('L', "Photos des produits : investcollect.com, play-in.com, espritjeu.com, ludum.fr."),
- '2027-05-11': ('S', "Photos des produits : investcollect.com, play-in.com."),
+ '2027-06-19': ('L', "Photos des produits : investcollect.com, play-in.com, espritjeu.com, ludum.fr."),
+ '2027-06-13': ('S', "Photos des produits : investcollect.com, play-in.com."),
  '2027-02-01': ('PLM', "Photos des cartes : CGC, Screen Rant, Fanatics Collect."),
  '2027-05-02': ('P', "Images des cartes : TCGdex, slabfol.io."),
  '2027-04-20': ('W', "Image de la carte : Category One Games."),
  '2027-02-13': ('P', ''),
- '2027-02-16': ('M', "Images des cartes : Scryfall. Photo de Rebecca Guay : © Luigi Novi / Wikimedia Commons, CC BY 3.0."),
+ '2027-06-16': ('M', "Images des cartes : Scryfall. Photo de Rebecca Guay : © Luigi Novi / Wikimedia Commons, CC BY 3.0."),
  '2027-05-05': ('Y', "Photos des produits : play-in.com, investcollect.com."),
  '2027-05-20': ('P', "Image de la carte : pokemontcg.io."),
  '2027-04-11': ('PML', ''),
@@ -76,7 +76,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2027-02-07': ('PLMY', "Images des cartes : Scryfall, pokemontcg.io, Lorcast, YGOPRODeck."),
  '2027-02-22': ('', "Personnages et dessins : Boostz."),
  '2027-01-20': ('O', ''),  # Plus cher ou moins cher ?: add the image credits when produced
- '2027-02-19': ('D', ''),  # Plus cher ou moins cher ?: add the image credits when produced
+ '2027-02-19': ('P', ''),  # Plus cher ou moins cher ?: add the image credits when produced
  '2027-04-23': ('S', ''),  # Plus cher ou moins cher ?: add the image credits when produced
  '2027-05-23': ('M', ''),  # Plus cher ou moins cher ?: add the image credits when produced
  '2027-06-04': ('Y', ''),  # Plus cher ou moins cher ?: add the image credits when produced
