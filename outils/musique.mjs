@@ -82,6 +82,7 @@ const STYLES = {
   moisrestant: { bpm: 92, prog: ['G', 'D', 'Em', 'C'], lead: 'vibes', kit: 'pop', swing: .08, cut: 12000, dust: 0, comp: 'strum', clean: true },
   compte:      { bpm: 100, prog: ['D', 'A', 'Bm', 'G'], lead: 'glock', kit: 'pop', swing: .06, cut: 12500, dust: 0, comp: 'arp', clean: true },
   veille:      { bpm: 90, prog: ['Am', 'F', 'C', 'G'], lead: 'glock', kit: 'pop', swing: .08, cut: 12000, dust: 0, comp: 'hold', clean: true },
+  cotes:       { bpm: 86, prog: ['Bbmaj9', 'Dm9', 'Gm9', 'C13'], lead: 'vibes', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'arp' },
   types:       { bpm: 100, prog: ['F', 'C', 'Dm', 'Bb'], lead: 'glock', kit: 'pop', swing: .08, cut: 12000, dust: 0, comp: 'strum', clean: true },
   enquete:     { bpm: 96, prog: ['Am9', 'Fmaj7', 'Dm9', 'E7b9'], lead: 'pizz', kit: 'brushes', swing: .12, cut: 5200, dust: .4, comp: 'sparse', melody: 'enquete' },
   detail:      { bpm: 82, prog: ['Dmaj9', 'Bm9', 'Em9', 'A13'], lead: 'vibes', kit: 'brushes', swing: .22, cut: 5200, dust: .5, comp: 'arp' },

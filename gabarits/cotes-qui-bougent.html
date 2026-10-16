@@ -24,7 +24,11 @@ const PERIOD = T.debut ? `du ${day(T.debut)} au ${day(T.fin)}` : `au ${day(T.fin
 const SRC = T.debut
   ? `Cardmarket via TCGdex, prix de vente moyen sur 30 jours, relevés Boostz du ${day(T.debut)} et du ${day(T.fin)}/${T.fin.slice(0, 4)}. Cartes à plus de ${T.seuil_eur} € dont les quatre indicateurs Cardmarket vont dans le même sens, sans vente isolée.`
   : `Cardmarket via TCGdex au ${day(T.fin)}/${T.fin.slice(0, 4)} : prix de vente moyen des 7 derniers jours comparé à celui des 30 derniers jours. Cartes à plus de ${T.seuil_eur} €.`;
-const img = (c) => `../donnees/cotes/pokemon/images/${c.id}.png`;
+// TCGdex has no scan for some cards: the Image workflow fetches the English
+// scan from pokemontcg.io into assets/cote-<id>.png, credited in the source line.
+const EXTRA = { 'col1-3': 'cote-col1-3.png', 'col1-12': 'cote-col1-12.png', 'cel25cc-CC022': 'cote-cel25cc-cc022.png' };
+const img = (c) => EXTRA[c.id] ? `assets/${EXTRA[c.id]}` : `../donnees/cotes/pokemon/images/${c.id}.png`;
+const IMGSRC = T.mouvements.some((c) => EXTRA[c.id]) ? ' Images : TCGdex, pokemontcg.io.' : ' Images : TCGdex.';
 const fit = (s, big, small, max) => s.length > max ? small : big;
 const RANKED = T.mouvements;
 const SLIDES = [];
@@ -59,7 +63,7 @@ RANKED.map((c, i) => [c, i + 1]).reverse().forEach(([c, rank], k) => {
       </div>
       <div style="display:flex;align-items:baseline;gap:24px;margin-top:-6px"><span class="h" style="font-size:84px;color:${col}">${c.evolution > 0 ? '▲' : '▼'} ${pct(c.evolution)}</span><span class="ui mut" style="font-size:32px">${delta > 0 ? '+' : '−'}${euro(Math.abs(delta))}</span></div>
     </div>`, { r: -1, z: 3 })}
-    <div class="src">${SRC}</div>`]);
+    <div class="src">${SRC}${IMGSRC}</div>`]);
 });
 
 // 12 - The whole list on one slide (the one people save), then Boostz.
@@ -70,8 +74,8 @@ SLIDES.push(['12-recap', `${head('LE RÉCAP', GAME, 'Cotes Cardmarket')}
     <span class="h" style="width:56px;font-size:40px;color:${GC}">${i + 1}</span>
     <span class="ui" style="flex:1;font-size:29px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.nom} <span class="mut" style="font-weight:600;font-size:23px">· ${c.set}</span></span>
     <span class="h" style="font-size:36px;color:${c.evolution > 0 ? UP : DOWN}">${c.evolution > 0 ? '▲' : '▼'} ${pct(c.evolution)}</span></div>`).join('')}</div>`, { z: 3 })}
-  ${closing(1040, 64)}
-  <div class="src" style="bottom:20px;font-size:17px">${SRC}</div>`]);
+  ${closing(1012, 60)}
+  <div class="src" style="bottom:20px;font-size:17px">${SRC}${IMGSRC}</div>`]);
 
 carousel(SLIDES);
 </script></body></html>
