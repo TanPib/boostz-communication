@@ -54,8 +54,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-11-27-story-black-friday.mp4` | ven. 27/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-12-03-glorious-victors.mp4` | jeu. 03/12/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 16,3 s, musique originale |
 | `videos/2026-12-03-story-glorious-victors.mp4` | jeu. 03/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2026-12-06-guide-scelles-onepiece/` | dim. 06/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
-| `videos/2026-12-06-story-guide-scelles-onepiece.mp4` | dim. 06/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-02-16-guide-scelles-onepiece/` | mar. 16/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2027-02-16-story-guide-scelles-onepiece.mp4` | mar. 16/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-04-08-fonction-etat.mp4` | jeu. 08/04/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 11,8 s, musique originale |
 | `videos/2027-04-08-story-fonction-etat.mp4` | jeu. 08/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-12-12-raretes-lorcana/` | sam. 12/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 10 JPEG |
@@ -100,8 +100,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-02-22-story-types-de-collectionneurs.mp4` | lun. 22/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-02-13-fonction-echange.mp4` | sam. 13/02/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,2 s, musique originale |
 | `videos/2027-02-13-story-fonction-echange.mp4` | sam. 13/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2027-02-16-zoom-rebecca-guay/` | mar. 16/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
-| `videos/2027-02-16-story-zoom-rebecca-guay.mp4` | mar. 16/02/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-06-16-zoom-rebecca-guay/` | mer. 16/06/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2027-06-16-story-zoom-rebecca-guay.mp4` | mer. 16/06/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-05-05-guide-scelles-yugioh/` | mer. 05/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-02-19-story-guide-scelles-yugioh.mp4` | mer. 05/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-02-25-raretes-magic/` | jeu. 25/02/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG |
@@ -126,14 +126,14 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-04-02-story-choisis-ton-combattant.mp4` | ven. 02/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-04-05-zoom-mitsuhiro-arita/` | lun. 05/04/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-04-05-story-zoom-mitsuhiro-arita.mp4` | lun. 05/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2027-04-14-guide-scelles-lorcana/` | mer. 14/04/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG, plus `story.jpg` et sa story vidéo |
-| `videos/2027-04-14-story-guide-scelles-lorcana.mp4` | mer. 14/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-06-19-guide-scelles-lorcana/` | sam. 19/06/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 9 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2027-06-19-story-guide-scelles-lorcana.mp4` | sam. 19/06/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-05-08-histoire-pikachu-illustrateur/` | sam. 08/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-04-23-story-histoire-pikachu-illustrateur.mp4` | sam. 08/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-05-02-zoom-atsuko-nishida/` | dim. 02/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-05-02-story-zoom-atsuko-nishida.mp4` | dim. 02/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `images/2027-05-11-guide-scelles-starwarsunlimited/` | mar. 11/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
-| `videos/2027-05-11-story-guide-scelles-starwarsunlimited.mp4` | mar. 11/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2027-06-13-guide-scelles-starwarsunlimited/` | dim. 13/06/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 8 JPEG, plus `story.jpg` et sa story vidéo |
+| `videos/2027-06-13-story-guide-scelles-starwarsunlimited.mp4` | dim. 13/06/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-05-20-histoire-pikachu-van-gogh/` | jeu. 20/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2027-05-20-story-histoire-pikachu-van-gogh.mp4` | jeu. 20/05/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-05-29-zoom-christopher-rush/` | sam. 29/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |

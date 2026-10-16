@@ -1,4 +1,4 @@
-# Planning du 16 octobre 2026 au 7 juin 2027
+# Planning du 16 octobre 2026 au 22 juin 2027
 
 **Bêta Android : samedi 14 novembre 2026** (test fermé Google Play, décidé le 13/10/2026 à la place de la bêta sur MP du 28/11) : pré-inscription dès maintenant sur boostz.fr/beta, les inscrits reçoivent l'invitation par mail le 14. **Sortie de l'appli : jeudi 14 janvier 2027** (décidée le 06/10/2026). Le premier post (16/10) annonce les deux dates ; janvier est construit autour du lancement.
 
@@ -36,11 +36,12 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | mar. 17/11 | carrousel | 25 Les raretés expliquées | Épisode Pokémon : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Pokémon | ✅ programmé |
 | \*sam. 21/11 | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | brouillon dans Metricool, produit par le rappel du 20/11 |
 | \*dim. 22/11 | Reel | 11 Annonce | Rejoins la bêta en trois étapes | les 8 | ✅ programmé |
+| mer. 25/11 | carrousel | 32 Le mur des prix | N° 1 : les 15 cartes les plus chères de Flammes Fantasmagoriques (relevé du 16/11) | Pokémon | brouillon dans Metricool, produit par le rappel du 18/11 |
 | \*ven. 27/11 | Reel | 16 Thème | Black Friday : « Promo ou pas ? » | les 8 | ✅ programmé |
 | mar. 01/12 | carrousel | 2 Cotes qui bougent | Édition n° 2 : du 16/11 au 30/11 | One Piece | brouillon dans Metricool, produit par le rappel du 29/11 |
 | \*jeu. 03/12 | Reel | 15 Sortie d'extension | Glorious Victors sort aujourd'hui | Yu-Gi-Oh! | ✅ programmé |
-| dim. 06/12 | carrousel | 21 Guide des produits scellés | Épisode : One Piece | One Piece | ✅ programmé |
-| mer. 09/12 | Reel | 27 Plus cher ou moins cher ? | Épisode Pokémon : 5 manches, deux cartes, laquelle vaut le plus ? | Pokémon | brouillon dans Metricool, produit par le rappel du 04/12 |
+| dim. 06/12 | carrousel | 33 Un mois après la sortie | N° 1 : Règne Delta, la courbe jour par jour de ses chase cards (relevé quotidien du 06/11 au 05/12) | Pokémon | brouillon dans Metricool, produit par le rappel du 05/12 (démarrage du relevé vérifié le 07/11) |
+| mer. 09/12 | Reel | 27 Plus cher ou moins cher ? | Épisode Dragon Ball : 5 manches, deux cartes, laquelle vaut le plus ? (échangé avec le 19/02 le 16/10) | Dragon Ball | brouillon dans Metricool, produit par le rappel du 04/12 |
 | sam. 12/12 | carrousel | 25 Les raretés expliquées | Épisode Lorcana : 8 raretés, le vrai scan d’une carte et un zoom sur son repère | Lorcana | ✅ programmé |
 | \*lun. 14/12 | Reel | 11 Annonce | Lancement J-31 : « Dans un mois, Boostz sort » | les 8 | ✅ programmé |
 | mar. 15/12 | Reel | 24 Opening | Opening Collect Aura : les notes de nos cartes gradées (vidéo PokePotes montée par Julien Ardid, rebrandée Boostz) | Pokémon | ✅ programmé (Instagram, TikTok, Facebook) |
@@ -57,7 +58,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | \*mer. 13/01, 18 h | Reel | 11 Annonce | Lancement J-1 : « Demain. » | les 8 | ✅ programmé |
 | \*jeu. 14/01 | Reel | 11 Annonce | **Boostz est disponible.** Liens des stores à ajouter (rappel du 05/01) | les 8 | ✅ programmé, légende à compléter avec les liens des stores |
 | \*ven. 15/01 | carrousel | 11 Annonce | Merci : ce que disent les testeurs de la bêta Android | les 8 | brouillon dans Metricool, produit par le rappel du 05/01 (avis à récolter pendant la bêta) |
-| dim. 17/01 | Reel | 12 Fonction à la loupe | Tuto : ajoute ta première carte en 10 s, puis regarde sa cote | Dragon Ball | à produire (rappel du 12/01) |
+| dim. 17/01 | carrousel | 34 Brute ou gradée ? | N° 1 : Dracaufeu-ex 199/165 (151), brute contre gradée chez chaque société | Pokémon | brouillon dans Metricool, produit par le rappel du 12/01 |
 | mer. 20/01 | Reel | 27 Plus cher ou moins cher ? | Épisode One Piece | One Piece | brouillon dans Metricool, produit par le rappel du 15/01 |
 | sam. 23/01 | carrousel | 2 Cotes qui bougent | Édition n° 4 : relevé du 16/01 contre celui du 01/01 | Pokémon | à produire (rappel du 16/01) |
 | \*mar. 26/01 | Reel | 15 Sortie d'extension | Demain : le coffret Saint-Valentin Pokémon (27/01) | Pokémon | à produire (rappel du 16/01) |
@@ -67,8 +68,8 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | dim. 07/02 | Reel | 26 Le classeur à thème | Page Hiver : 9 cartes enneigées de 4 jeux glissées une à une sous la neige | Magic, Pokémon, Lorcana, Yu-Gi-Oh! | ✅ programmé |
 | mer. 10/02 | carrousel | 2 Cotes qui bougent | Édition n° 5 : du 16/01 au 01/02 | Lorcana | brouillon dans Metricool, produit par le rappel du 02/02 |
 | sam. 13/02 | Reel | 12 Fonction à la loupe | L'échange : la valeur de chaque côté, avec de vraies cotes | Pokémon | ✅ programmé (cotes rafraîchies le 02/02) |
-| mar. 16/02 | carrousel | 23 Zoom sur un artiste | Rebecca Guay, l'aquarelle de Magic (avec son portrait sous licence libre) | Magic | ✅ programmé |
-| ven. 19/02 | Reel | 27 Plus cher ou moins cher ? | Épisode Dragon Ball | Dragon Ball | brouillon dans Metricool, produit par le rappel du 14/02 |
+| mar. 16/02 | carrousel | 21 Guide des produits scellés | Épisode : One Piece | One Piece | ✅ programmé (déplacé du 06/12 le 16/10, fin « disponible ») |
+| ven. 19/02 | Reel | 27 Plus cher ou moins cher ? | Épisode Pokémon (échangé avec le 09/12 le 16/10) | Pokémon | brouillon dans Metricool, produit par le rappel du 14/02 |
 | lun. 22/02 | Reel | 28 Les types de collectionneurs | Le Mint-maniaque, l'ouvreur pressé, le gardien du scellé, le chasseur de chase, en bonhommes animés | les 8 | ✅ programmé |
 | jeu. 25/02 | carrousel | 25 Les raretés expliquées | Épisode Magic : 7 raretés, le vrai scan d’une carte et un zoom sur son repère | Magic | ✅ programmé |
 | \*dim. 28/02 | carrousel | 29 L'agenda TCG du mois | Mars dans les TCG : les sorties des 8 jeux, semaine par semaine | les 8 | brouillon dans Metricool, produit par le rappel du 23/02 |
@@ -78,7 +79,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | ven. 12/03 | carrousel | 25 Les raretés expliquées | Épisode One Piece : 10 raretés, le vrai scan d’une carte et un zoom sur son repère | One Piece | ✅ programmé (visuels officiels « SAMPLE », validés par l’utilisateur) |
 | lun. 15/03 | Reel | 27 Plus cher ou moins cher ? | Épisode Lorcana | Lorcana | brouillon dans Metricool, produit par le rappel du 10/03 |
 | jeu. 18/03 | carrousel | 23 Zoom sur un artiste | Yuka Morii sculpte ses Pokémon | Pokémon | ✅ programmé |
-| dim. 21/03 | carrousel | 7 Classeur panoramique | Une page de classeur qui se suit sur 3 slides | Star Wars Unlimited | à produire (rappel du 16/03) |
+| dim. 21/03 | carrousel | 34 Brute ou gradée ? | N° 2 | One Piece | brouillon dans Metricool, produit par le rappel du 16/03 |
 | mer. 24/03 | Reel | 26 Le classeur à thème | Page Printemps : des fleurs dans les 8 jeux | plusieurs | brouillon dans Metricool, produit par le rappel du 10/03 |
 | \*sam. 27/03 | carrousel | 29 L'agenda TCG du mois | Avril dans les TCG | les 8 | brouillon dans Metricool, produit par le rappel du 22/03 |
 | mar. 30/03 | carrousel | 25 Les raretés expliquées | Épisode Warcraft : 5 raretés, le vrai scan d’une carte et un zoom sur son repère | Warcraft | ✅ programmé (scans en basse définition, validés par l’utilisateur) |
@@ -86,7 +87,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | lun. 05/04 | carrousel | 23 Zoom sur un artiste | Mitsuhiro Arita, l'homme du Dracaufeu | Pokémon | ✅ programmé |
 | jeu. 08/04 | Reel | 12 Fonction à la loupe | Estime l'état de tes cartes | les 8 | ✅ programmé (déplacé du 09/12 le 08/10 pour « Plus cher ou moins cher ? », fin « disponible ») |
 | dim. 11/04 | carrousel | 17 Lexique TCG | « Ça veut dire quoi ? » | les 8 | ✅ programmé (déplacé du 28/02 le 08/10 pour les nouvelles séries) |
-| mer. 14/04 | carrousel | 21 Guide des produits scellés | Épisode : Lorcana | Lorcana | ✅ programmé |
+| mer. 14/04 | carrousel | 34 Brute ou gradée ? | N° 3 | Magic | brouillon dans Metricool, produit par le rappel du 09/04 |
 | sam. 17/04 | Reel | 3 1 chance sur N | La chase d'un set récent : N boosters, le coût de la chasse | One Piece | brouillon dans Metricool, produit par le rappel du 10/04 |
 | mar. 20/04 | carrousel | 13 Mythe ou réalité | « Une carte s'est vendue 5 250 \$… pour un tigre qui n'existe pas » | Warcraft | ✅ programmé (déplacé du 07/02 le 08/10 pour les nouvelles séries) |
 | ven. 23/04 | Reel | 27 Plus cher ou moins cher ? | Épisode Star Wars Unlimited | Star Wars Unlimited | brouillon dans Metricool, produit par le rappel du 18/04 |
@@ -95,7 +96,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | dim. 02/05 | carrousel | 23 Zoom sur un artiste | Atsuko Nishida, la créatrice de Pikachu, et ses cartes | Pokémon | ✅ programmé |
 | mer. 05/05 | carrousel | 21 Guide des produits scellés | Épisode : Yu-Gi-Oh! | Yu-Gi-Oh! | ✅ programmé (déplacé du 19/02 le 08/10 : un « Plus cher ou moins cher ? » par mois) |
 | sam. 08/05 | carrousel | 22 L'histoire d'une carte | Le Pikachu Illustrateur : du concours CoroCoro de 1998 au record de 16,49 M\$ | Pokémon | ✅ programmé (déplacé du 23/04 le 08/10 : un « Plus cher ou moins cher ? » par mois) |
-| mar. 11/05 | carrousel | 21 Guide des produits scellés | Épisode : Star Wars Unlimited | Star Wars Unlimited | ✅ programmé |
+| mar. 11/05 | carrousel | 34 Brute ou gradée ? | N° 4 | Lorcana | brouillon dans Metricool, produit par le rappel du 06/05 |
 | ven. 14/05 | Reel | 3 1 chance sur N | 1 chance sur 1 533 d'avoir le Pikachu-ex 276/217 de Héros Transcendants | Pokémon | ✅ programmé (déplacé du 24/03 le 08/10 pour les nouvelles séries) |
 | lun. 17/05 | carrousel | 25 Les raretés expliquées | Épisode Yu-Gi-Oh! : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Yu-Gi-Oh! | ✅ programmé (déplacé du 07/01 le 08/10 pour le détail caché, fin « disponible ») |
 | jeu. 20/05 | carrousel | 22 L'histoire d'une carte | Le Pikachu au chapeau de feutre gris : le musée Van Gogh, la cohue, la carte la plus échangée | Pokémon | ✅ programmé |
@@ -105,7 +106,13 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | mar. 01/06 | Reel | 3 1 chance sur N | 1 chance sur 96 d'avoir une enchantée | Lorcana | ✅ programmé (déplacé du 09/11 le 08/10 pour le zoom mystère, fin « disponible » ; cotes revérifiées par le rappel du 25/05) |
 | ven. 04/06 | Reel | 27 Plus cher ou moins cher ? | Épisode Yu-Gi-Oh! | Yu-Gi-Oh! | brouillon dans Metricool, produit par le rappel du 30/05 |
 | lun. 07/06 | carrousel | 21 Guide des produits scellés | Épisode : Pokémon | Pokémon | ✅ programmé |
+| jeu. 10/06 | Reel | 12 Fonction à la loupe | Tuto : ajoute ta première carte en 10 s, puis regarde sa cote (déplacé du 17/01 le 16/10) | Dragon Ball | à produire (rappel du 05/06) |
+| dim. 13/06 | carrousel | 21 Guide des produits scellés | Épisode : Star Wars Unlimited (déplacé du 11/05 le 16/10) | Star Wars Unlimited | ✅ programmé |
+| mer. 16/06 | carrousel | 23 Zoom sur un artiste | Rebecca Guay, l'aquarelle de Magic (déplacé du 16/02 le 16/10) | Magic | ✅ programmé |
+| sam. 19/06 | carrousel | 21 Guide des produits scellés | Épisode : Lorcana (déplacé du 14/04 le 16/10) | Lorcana | ✅ programmé |
+| mar. 22/06 | carrousel | 7 Classeur panoramique | Une page de classeur qui se suit sur 3 slides (déplacé du 21/03 le 16/10) | Star Wars Unlimited | à produire (rappel du 16/03) |
 
+- **Les trois formats du 16/10/2026** (validés par l’utilisateur ce jour-là, d’après des posts d’autres comptes) : le mur des prix (n° 32), un mois après la sortie (n° 33) et brute ou gradée ? (n° 34, un épisode par mois). Novembre et la mi-décembre étant pleins de posts fixes, le mur des prix prend le 25/11 (la place libérée par l’ancienne bêta) et brute ou gradée ? commence le 17/01. Pour leur faire de la place : le guide One Piece passe du 06/12 au 16/02 (dernière slide refaite en « disponible »), « Plus cher ou moins cher ? » échange Pokémon (19/02) et Dragon Ball (09/12) pour ne pas suivre « Un mois après » Pokémon, et cinq posts sans date partent en juin (tuto, guides SWU et Lorcana, Rebecca Guay, panoramique). Juin est à rééquilibrer avec des Reels quand il sera écrit (rappel du 16/03).
 - **Les séries du 08/10/2026** (validées par l’utilisateur ce jour-là) : le classeur à thème (n° 26, Reel visuel, une page sur un thème graphique), Plus cher ou moins cher ? (n° 27, à faire revenir souvent : « fais-en plein d’autres »), les types de collectionneurs (n° 28, bonhommes animés) et l’agenda TCG du mois (n° 29, fin de chaque mois, compté comme fixe). Elles ont pris la place de 7 posts sans date, repoussés en avril et mai (Estime l’état, lexique, 1 chance sur N One Piece, mythe du Tigre spectral, Tyler en Reel, guide Magic, Pikachu 1 sur 1 533) ; Plus cher ou moins cher ? revient **une fois par mois** (demandé le 08/10) : 09/12 Pokémon, 20/01 One Piece, 19/02 Dragon Ball, 15/03 Lorcana, 23/04 Star Wars Unlimited, 23/05 Magic, 04/06 Yu-Gi-Oh!, ce qui a repoussé les raretés Star Wars Unlimited au 26/05, le guide Yu-Gi-Oh! au 05/05 et le Pikachu Illustrateur au 08/05. L’agenda de mai se place le 28/04 ou autour. Deux autres séries validées le même jour commencent tôt, à la demande de l’utilisateur : le zoom mystère (n° 30) le 09/11 à la place du 1 chance sur 96 (passé au 01/06), et le détail caché (n° 31) le 07/01 à la place des raretés Yu-Gi-Oh! (passées au 17/05).
 - **La série « Les raretés expliquées »** (demandée le 07/10/2026, `gabarits/raretes.html#<jeu>`) est étalée du 17/11 au 30/03, environ un épisode toutes les 2 à 3 semaines, pour varier les types (redemandé le 07/10 : « ventiler au maximum »). Elle a pris les dates de 8 posts sans date imposée (Arita, Pikachu Illustrateur, Nishida, Van Gogh, Rush et 3 guides des scellés), repoussés d’avril à juin. One Piece garde les visuels « SAMPLE » de Bandai et Warcraft ses scans en 215 px : validé par l’utilisateur le 07/10.
 - **Février et mars** : à compléter avec les sorties fixes dès qu'elles sont confirmées (Saint-Valentin le 14/02, Nauctis le 05/02, One Piece OP-19 annoncé au 05/03, Lorcana Into the Inkdark au 1er trimestre 2027) ; un post fixe qui tombe repousse les posts sans date des jours voisins. Avril s'écrit le 16/03.
