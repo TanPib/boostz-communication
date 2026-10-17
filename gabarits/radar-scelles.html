@@ -17,19 +17,19 @@ const MOCK = true;
 const LINE = 'Coffrets Dresseur d’élite', SUBLINE = 'Écarlate et Violet';
 const D0 = '17/10', D1 = '16/11';
 // [TCGplayer productId, short name, price at D0, price at D1] in US dollars.
+// D0: the real record of 17/10/2026. D1: EXAMPLE figures until the 16/11 record.
 const P = [
-  [0, '151', 400, 424],
-  [0, 'Flammes Obsidiennes', 190, 190],
-  [0, 'Évolutions à Paldea', 187, 180],
-  [0, 'Écarlate et Violet', 180, 162],
-  [0, 'Écarlate et Violet (rouge)', 175, 166],
-  [0, 'Forces Temporelles', 170, 170],
-];
-const img = (id) => `assets/scelle-${id}.jpg`;
-const usd = (v) => Math.round(v).toLocaleString('fr-FR') + ' $';
+  [503313, '151', 496.87, 521.7],
+  [528040, 'Destinées de Paldea', 431.83, 410.2],
+  [501264, 'Flammes Obsidiennes', 272.32, 272.3],
+  [493974, 'Évolutions à Paldea', 214.66, 228.4],
+  [593355, 'Évolutions Prismatiques', 126.1, 109.7],
+  [557350, 'Couronne Stellaire', 160.01, 166.4],
+];const img = (id) => `assets/scelle-${id}.jpg`;
+const dol = (v) => Math.round(v).toLocaleString('fr-FR') + ' $';
 const pct = (a, b) => { const v = (b - a) / a * 100; return Math.abs(v) < .5 ? '0 %' : (v > 0 ? '+' : '−') + Math.abs(v).toFixed(1).replace('.', ',') + ' %'; };
 const col = (a, b) => Math.abs(b - a) / a < .005 ? '#C9C3D9' : b > a ? UP : DOWN;
-const SRC = MOCK ? 'MAQUETTE · CHIFFRES D’EXEMPLE. Version réelle : prix de marché TCGplayer (éditions anglaises, en dollars) des relevés Boostz du ' + D0 + ' et du ' + D1 + '.'
+const SRC = MOCK ? `MAQUETTE · prix du ${D0} réels (TCGplayer, prix de marché, éditions anglaises, en dollars, relevé Boostz), prix du ${D1} D’EXEMPLE en attendant le relevé. Photos : TCGplayer.`
   : `TCGplayer, prix de marché (éditions anglaises, en dollars), relevés Boostz du ${D0} et du ${D1}/2026. Photos : TCGplayer.`;
 const mock = MOCK ? `<div class="abs lab" style="left:0;top:118px;width:1080px;text-align:center;font-size:24px;letter-spacing:5px;color:${PINK};z-index:6">MAQUETTE · CHIFFRES D’EXEMPLE</div>` : '';
 // A sealed product: its photo on a white tile, like a shop shelf.
@@ -42,21 +42,21 @@ const S = [];
 S.push(['1-couverture', `${mock}${head('LE RADAR DES SCELLÉS', GAME, SUBLINE)}
   <div class="abs h" style="left:0;top:170px;width:1080px;text-align:center;font-size:92px">Le radar<br><span style="color:${GC}">des scellés</span></div>
   <div class="abs mut" style="left:0;top:400px;width:1080px;text-align:center;font-weight:600;font-size:36px">${LINE} · du ${D0} au ${D1}</div>
-  ${box(P[1][0], 110, 540, 380, 380, -8, 2)}${box(P[2][0], 590, 540, 380, 380, 8, 2)}${box(P[0][0], 330, 500, 420, 420, 0, 4)}
-  ${st(680, 470, 290, 110, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:54px;color:${DARK}">${pct(up.a, up.b)}</div>`, { fill: UP, r: 7, z: 5 })}
+  ${box(P[1][0], 70, 560, 420, 420, -8, 2)}${box(P[2][0], 590, 560, 420, 420, 8, 2)}${box(P[0][0], 290, 510, 500, 500, 0, 4)}
+  ${st(700, 470, 290, 110, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:54px;color:${DARK}">${pct(up.a, up.b)}</div>`, { fill: UP, r: 7, z: 5 })}
   <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div><div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`]);
 
 // 2 - The grid to save: six boxes, price now, move, price before.
 S.push(['2-grille', `${mock}${head('LE RADAR DES SCELLÉS', GAME, SUBLINE)}
   <div class="abs h" style="left:70px;top:150px;font-size:58px">${LINE}</div>
   <div class="abs mut" style="left:70px;top:226px;font-weight:600;font-size:28px">Prix du ${D1}, et l’écart depuis le ${D0}</div>
-  ${P.map(([id, n, a, b], i) => { const x = 70 + (i % 3) * 320, y = 300 + Math.floor(i / 3) * 450;
-    return `${box(id, x, y, 290, 250, 0, 3)}
-      <div class="abs" style="left:${x}px;top:${y + 268}px;width:290px;text-align:center">
+  ${P.map(([id, n, a, b], i) => { const x = 70 + (i % 3) * 320, y = 290 + Math.floor(i / 3) * 480;
+    return `${box(id, x, y, 290, 290, 0, 3)}
+      <div class="abs" style="left:${x}px;top:${y + 306}px;width:290px;text-align:center">
         <div class="ui mut" style="font-size:22px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${n}</div>
-        <div class="h" style="font-size:54px;margin-top:4px">${usd(b)}</div>
+        <div class="h" style="font-size:54px;margin-top:4px">${dol(b)}</div>
         <div class="h" style="font-size:36px;color:${col(a, b)}">${pct(a, b)}</div>
-        <div class="ui mut" style="font-size:20px">avant : ${usd(a)}</div></div>`; }).join('')}
+        <div class="ui mut" style="font-size:20px">avant : ${dol(a)}</div></div>`; }).join('')}
   <div class="src">${SRC}</div>`]);
 
 // 3 and 4 - The biggest rise and the biggest fall: two records, a two-point line.
@@ -66,14 +66,14 @@ S.push(['2-grille', `${mock}${head('LE RADAR DES SCELLÉS', GAME, SUBLINE)}
     ${box(m.id, 190, 190, 700, 560, i ? 3 : -3, 3)}
     <div class="abs h" style="left:0;top:800px;width:1080px;text-align:center;font-size:58px">${m.n}</div>
     ${st(70, 900, 940, 270, `<div style="display:flex;align-items:center;justify-content:space-between;height:100%;padding:0 46px">
-      <div><div class="lab mut" style="font-size:22px;letter-spacing:3px">LE ${D0}</div><div class="h" style="font-size:60px;margin-top:6px">${usd(m.a)}</div></div>
+      <div><div class="lab mut" style="font-size:22px;letter-spacing:3px">LE ${D0}</div><div class="h" style="font-size:60px;margin-top:6px">${dol(m.a)}</div></div>
       <svg width="230" height="190" viewBox="0 0 250 190"><line x1="20" y1="${y0}" x2="230" y2="${y1}" stroke="${c}" stroke-width="9" stroke-linecap="round"/><circle cx="20" cy="${y0}" r="14" fill="#1D1730" stroke="${INK}" stroke-width="6"/><circle cx="230" cy="${y1}" r="16" fill="${c}" stroke="${INK}" stroke-width="6"/></svg>
-      <div style="text-align:right"><div class="lab mut" style="font-size:22px;letter-spacing:3px">LE ${D1}</div><div class="h" style="font-size:60px;margin-top:6px;color:${c}">${usd(m.b)}</div><div class="h" style="font-size:40px;color:${c}">${pct(m.a, m.b)}</div></div></div>`, { r: -1, z: 4 })}
+      <div style="text-align:right"><div class="lab mut" style="font-size:22px;letter-spacing:3px">LE ${D1}</div><div class="h" style="font-size:60px;margin-top:6px;color:${c}">${dol(m.b)}</div><div class="h" style="font-size:40px;color:${c}">${pct(m.a, m.b)}</div></div></div>`, { r: -1, z: 4 })}
     <div class="src">${SRC}</div>`]);
 });
 
 // 5 - The question, then Boostz.
-S.push(['5-fin', `${ghosts([[90, 300, 80, -6], [900, 360, 90, 8], [100, 1150, 70, 4], [910, 1150, 80, -6]])}${track(4, 760, .6)}
+S.push(['5-fin', `${ghosts([[70, 590, 80, -6], [930, 590, 80, 8], [100, 1150, 70, 4], [910, 1150, 80, -6]])}${track(4, 760, .6)}
   <div class="abs h" style="left:0;top:210px;width:1080px;text-align:center;font-size:96px">Tu l’ouvres<br><span style="color:${GC}">ou tu le gardes ?</span></div>
   <div class="abs mut" style="left:0;top:460px;width:1080px;text-align:center;font-weight:600;font-size:36px;line-height:1.4">Tes scellés aussi ont une cote :<br>suis-la sur Boostz.</div>
   ${closing(820, 110)}`]);
