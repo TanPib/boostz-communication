@@ -1,5 +1,6 @@
 # Relevé des cotes Cardmarket de toutes les cartes Pokémon, le 1er et le 16 de
-# chaque mois, et top des plus fortes évolutions depuis le relevé précédent.
+# chaque mois, et top des plus fortes évolutions depuis le relevé précédent ;
+# relevé des prix TCGplayer des scellés des 8 jeux (outils/scelles.py).
 # Sert la série « Les 10 cotes qui bougent » (voir TYPES.md). Lancement manuel
 # possible : Actions > Cotes > Run workflow.
 name: Cotes
@@ -11,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       etape:
-        description: 'releve (relevé du jour puis classement) ou top (classement seul, sur les relevés déjà enregistrés)'
+        description: 'releve (relevé des cartes et des scellés, puis classement), top (classement seul) ou scelles (relevé des scellés seul)'
         default: releve
 permissions:
   contents: write
@@ -22,13 +23,20 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
-      - if: github.event_name == 'schedule' || inputs.etape != 'top'
+      - if: github.event_name == 'schedule' || inputs.etape == 'releve'
         run: python3 outils/cotes.py releve
-      - run: python3 outils/cotes.py top
+      - if: github.event_name == 'schedule' || inputs.etape != 'scelles'
+        run: python3 outils/cotes.py top
+      # Sealed products for « Le radar des scellés »: a failure here must not
+      # lose the card record above, which is committed either way.
+      - if: github.event_name == 'schedule' || inputs.etape != 'top'
+        continue-on-error: true
+        run: python3 outils/scelles.py releve
       - name: Enregistrer
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add donnees/cotes
-          git diff --cached --quiet || git commit -q -m "Relevé des cotes Pokémon du $(date -u +%d/%m/%Y)"
+          if [ -d donnees/scelles ]; then git add donnees/scelles; fi
+          git diff --cached --quiet || git commit -q -m "Relevé des cotes du $(date -u +%d/%m/%Y)"
           git pull -q --rebase && git push -q
