@@ -37,9 +37,10 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 29 | **L'agenda TCG du mois** | carrousel, 6 slides | 🔥🔥 | fin de chaque mois (`agenda-tcg.html`) | à venir · 28/02/2027 (mars) |
 | 30 | **Zoom mystère** | Reel, 26 s, 5 étapes | 🔥🔥🔥 | série (`zoom-mystere-reel.html`) | 09/11/2026 · Mickey Mouse, Brave Petit Tailleur (Lorcana) |
 | 31 | **Le détail caché** | carrousel, 5 slides | 🔥🔥 | série (`details-caches.html`) | 07/01/2027 · Givrali VMAX, Ectoplasma VMAX, Pikachu Van Gogh (Pokémon) |
-| 32 | **Le mur des prix** | carrousel, 5 slides | 🔥🔥🔥 | série (`mur-des-prix.html`) | à venir · 25/11/2026, Flammes Fantasmagoriques (Pokémon) |
+| 32 | **Le mur des prix** | carrousel, 5 slides | 🔥🔥🔥 | série (`mur-des-prix.html`) | à venir · 09/03/2027, un set Pokémon récent |
 | 33 | **Un mois après la sortie** | carrousel, 4 à 6 slides | 🔥🔥🔥 | série (`un-mois-apres.html`, relevé quotidien) | à venir · 06/12/2026, Règne Delta (Pokémon) |
 | 34 | **Brute ou gradée ?** | carrousel, 4 slides | 🔥🔥 | série mensuelle (`brut-ou-gradee.html`) | à venir · 17/01/2027, Dracaufeu-ex 199/165 (Pokémon) |
+| 35 | **Le radar des scellés** | carrousel, 5 slides | 🔥🔥🔥 | série, toutes les 3 ou 4 semaines (`radar-scelles.html`) | à venir · 25/11/2026, coffrets Dresseur d’élite (Pokémon) |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -205,6 +206,10 @@ Validé le 16/10/2026 (inspiré du « One month later » de pricecharting) : les
 ### 34 · Brute ou gradée ?
 Validé le 16/10/2026 (inspiré de double.holo × pokelytics, avec toutes les sociétés de gradation de l'appli, pas seulement PSA) : une carte, son prix brute, puis ce qu'elle vaut gradée chez chaque société (PSA, CGC, Beckett, PCA, CCC, Collect Aura…) avec le multiplicateur, et le scan d'état de Boostz en fin. Un épisode par mois, un jeu différent à chaque fois.
 - **Données :** brute = cote Cardmarket datée. Gradée = médiane des prix **demandés** des annonces eBay vues par l'appli (`MarketplaceListing`, lu en lecture seule : les annonces seulement, jamais les tables des membres), filtrées sur le numéro de la carte dans le titre ; une ligne société/note n'apparaît qu'avec **au moins 3 annonces** (choisi le 16/10). PSA, CGC et Beckett sont complétés par des ventes publiques datées et sourcées quand le cache n'en a pas assez. Le slide dit toujours ce qui est demandé et ce qui est vendu, et le nombre d'annonces.
+
+### 35 · Le radar des scellés
+Validé le 17/10/2026 (inspiré de l’« ETB watch » de spacetcg.fr) : six scellés d’une même gamme (les ETB Pokémon, les displays One Piece, les Trésors Lorcana…) en grille, avec leur prix et l’écart depuis le relevé d’un mois avant, puis la plus forte hausse et la plus forte baisse, et « Tu l’ouvres ou tu le gardes ? ». Un jeu différent à chaque épisode.
+- **Données :** le prix de marché TCGplayer (éditions anglaises, en dollars) de `donnees/scelles/<date>.json`, écrit par `outils/scelles.py` le 1er et le 16 avec le relevé des cartes ; `python3 outils/scelles.py ecarts <jeu>` liste les écarts. Un écart se calcule toujours entre deux vrais relevés, datés en bas de chaque slide. L’édition française s’ajoute seulement avec au moins 3 annonces eBay France du cache de l’appli (prix demandés, et dit comme tel). Vraies photos des produits (TCGplayer, workflow Image).
 
 ### News TCG
 Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, record, ban) prend la place du prochain post qui n'est lié à aucune date, dans le format qui lui va le mieux.
