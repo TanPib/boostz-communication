@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz icones achats</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Google Play icons of the in-app products (asked on 20/10/2026), the same
+// frame as the Pass icon (logo-pass.html): 512 x 512, the drawing kept in the
+// central circle because Play previews the icon inside a hexagon. The five
+// Boosties packs grow from a handful of coins to a treasure; the three
+// analysis packs show one, three or ten cards under the scan. Products and
+// amounts: boostz-mobile server/src/config/economy.js. The coin is the app's
+// own (icons.js: #FCD34D -> #D97706 and BOOSTIE_B_PATH).
+// Render: node rendu.mjs icones-achats.html images
+const FOND = 'linear-gradient(160deg, #2A1052, #160730)';
+const FRAME = { boosties: ['#FCD34D', '#D97706', '#FDE68A', '#B45309'], analyse: ['#C4B5FD', '#7C3AED', '#DDD6FE', '#5B21B6'] };
+const B = 'M39.9 25.2 Q39.9 22.4 42.7 22.4 L44.3 22.4 Q47.1 22.4 47.1 25.2 L47.1 39.9 Q49.9 37.8 53.6 37.8 Q59.4 37.8 63.1 41.9 Q66.8 46 66.8 52.9 Q66.8 59.8 63.1 63.9 Q59.4 68 53.6 68 Q49.6 68 46.8 65.6 L46.8 65.7 Q46.6 68 44 68 L42.7 68 Q39.9 68 39.9 65.2 Z M53.2 44.4 Q50.1 44.4 48.2 46.7 Q46.3 49 46.3 52.9 Q46.3 56.8 48.2 59.1 Q50.1 61.4 53.2 61.4 Q56.3 61.4 58.2 59.1 Q60.1 56.8 60.1 52.9 Q60.1 49 58.2 46.7 Q56.3 44.4 53.2 44.4 Z';
+const DEFS = `<defs>
+  <linearGradient id="coin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FCD34D"/><stop offset="1" stop-color="#D97706"/></linearGradient>
+  <linearGradient id="bois" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#5B21B6"/></linearGradient>
+  <linearGradient id="carte" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs>`;
+// A Boostie coin of radius r at (x, y), in a 100-unit drawing.
+const coin = (x, y, r) => `<g transform="translate(${x - r} ${y - r}) scale(${r / 50})"><circle cx="50" cy="50" r="45" fill="url(#coin)" stroke="#fff" stroke-width="5"/><circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="3"/><path d="${B}" fill="#fff"/></g>`;
+const spark = (x, y, s, c = '#FDE68A') => `<path d="M${x} ${y - s} L${x + s * .3} ${y - s * .3} L${x + s} ${y} L${x + s * .3} ${y + s * .3} L${x} ${y + s} L${x - s * .3} ${y + s * .3} L${x - s} ${y} L${x - s * .3} ${y - s * .3} Z" fill="${c}"/>`;
+// A chest: body, lid, gold bands and lock.
+const chest = (x, y, w, h, open = false) => `<g stroke="#fff" stroke-width="2.4" stroke-linejoin="round">
+  <rect x="${x}" y="${y + h * .38}" width="${w}" height="${h * .62}" rx="4" fill="url(#bois)"/>
+  ${open ? `<path d="M${x + 2} ${y + h * .38} L${x + w * .12} ${y} L${x + w * .88} ${y} L${x + w - 2} ${y + h * .38} Z" fill="#4C1D95"/>`
+    : `<path d="M${x} ${y + h * .4} Q${x} ${y} ${x + w * .5} ${y} Q${x + w} ${y} ${x + w} ${y + h * .4} Z" fill="url(#bois)"/>`}
+  <rect x="${x + w * .14}" y="${y + (open ? h * .38 : 0)}" width="${w * .1}" height="${open ? h * .62 : h}" fill="url(#coin)" stroke-width="1.6"/>
+  <rect x="${x + w * .76}" y="${y + (open ? h * .38 : 0)}" width="${w * .1}" height="${open ? h * .62 : h}" fill="url(#coin)" stroke-width="1.6"/>
+  <rect x="${x + w * .42}" y="${y + h * .3}" width="${w * .16}" height="${h * .24}" rx="2" fill="url(#coin)" stroke-width="1.6"/></g>`;
+const crown = (x, y, w) => `<path d="M${x} ${y + w * .5} L${x + w * .08} ${y + w * .12} L${x + w * .3} ${y + w * .32} L${x + w * .5} ${y} L${x + w * .7} ${y + w * .32} L${x + w * .92} ${y + w * .12} L${x + w} ${y + w * .5} Z" fill="url(#coin)" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>`;
+const gem = (x, y, s, c) => `<path d="M${x - s} ${y} L${x - s * .5} ${y - s * .7} L${x + s * .5} ${y - s * .7} L${x + s} ${y} L${x} ${y + s} Z" fill="${c}" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>`;
+// The corner brackets and the line of the app's condition scan.
+const brackets = (x, y, w, h, c = '#FDE68A') => { const k = w * .18; return `<g fill="none" stroke="${c}" stroke-width="4" stroke-linecap="round">
+  <path d="M${x} ${y + k} V${y} H${x + k}"/><path d="M${x + w - k} ${y} H${x + w} V${y + k}"/>
+  <path d="M${x} ${y + h - k} V${y + h} H${x + k}"/><path d="M${x + w - k} ${y + h} H${x + w} V${y + h - k}"/></g>
+  <line x1="${x + 4}" y1="${y + h * .55}" x2="${x + w - 4}" y2="${y + h * .55}" stroke="${c}" stroke-width="3" opacity=".9"/>`; };
+const zMark = (cx, cy, s) => `<path d="M${cx - s} ${cy - s * 1.1} H${cx + s} V${cy - s * .55} L${cx - s * .15} ${cy + s * .55} H${cx + s} V${cy + s * 1.1} H${cx - s} V${cy + s * .55} L${cx + s * .15} ${cy - s * .55} H${cx - s} Z" fill="#fff"/>`;
+
+const BOOSTIES = [
+  ['bz-boosties-poignee', '800', `${coin(36, 58, 17)}${coin(64, 58, 17)}${coin(50, 40, 19)}${spark(80, 24, 6)}`],
+  ['bz-boosties-bourse', '2 510', `<path d="M36 34 Q30 28 36 24 L64 24 Q70 28 64 34 Q84 48 80 70 Q78 82 50 82 Q22 82 20 70 Q16 48 36 34 Z" fill="url(#bois)" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/>
+    <path d="M34 34 Q50 39 66 34" fill="none" stroke="url(#coin)" stroke-width="4" stroke-linecap="round"/>${coin(50, 60, 15)}${coin(78, 76, 10)}${spark(84, 26, 6)}`],
+  ['bz-boosties-coffre', '6 030', `${coin(41, 28, 10)}${coin(59, 28, 10)}${coin(50, 20, 10)}${chest(18, 36, 64, 46)}${spark(86, 22, 6)}`],
+  ['bz-boosties-malle', '14 070', `${crown(32, 8, 36)}${chest(12, 34, 76, 52)}${coin(18, 84, 9)}${coin(82, 84, 9)}${spark(88, 20, 6)}`],
+  ['bz-boosties-tresor', '40 200', `<path d="M24 44 Q50 22 76 44 Z" fill="url(#coin)" stroke="#fff" stroke-width="2.4"/>${coin(36, 36, 9)}${coin(50, 30, 10)}${coin(64, 36, 9)}
+    ${chest(14, 34, 72, 50, true)}${gem(28, 84, 8, '#35C6BC')}${gem(72, 84, 8, '#FF4FA0')}${spark(14, 22, 6)}${spark(88, 16, 7)}${spark(84, 44, 4, '#fff')}`],
+];
+const ANALYSES = [
+  ['bz-analysis-1', '×1', `<g transform="rotate(-6 50 52)"><rect x="32" y="24" width="36" height="50" rx="5" fill="url(#carte)" stroke="#fff" stroke-width="2.4"/>${zMark(50, 49, 9)}</g>${brackets(22, 16, 56, 66)}`],
+  ['bz-analysis-3', '×3', `<g transform="rotate(-16 50 92)"><rect x="32" y="26" width="34" height="48" rx="5" fill="rgba(196,181,253,.35)" stroke="#fff" stroke-width="2"/></g>
+    <g transform="rotate(16 50 92)"><rect x="34" y="26" width="34" height="48" rx="5" fill="rgba(196,181,253,.6)" stroke="#fff" stroke-width="2"/></g>
+    <rect x="33" y="24" width="34" height="48" rx="5" fill="url(#carte)" stroke="#fff" stroke-width="2.4"/>${zMark(50, 48, 8.5)}${brackets(18, 14, 64, 66)}`],
+  ['bz-analysis-10', '×10', `${[5, 4, 3, 2, 1].map((k) => `<rect x="${33 + k * 2.2}" y="${24 - k * 2.2}" width="34" height="48" rx="5" fill="rgba(196,181,253,${.9 - k * .14})" stroke="#fff" stroke-width="1.6"/>`).join('')}
+    <rect x="33" y="24" width="34" height="48" rx="5" fill="url(#carte)" stroke="#fff" stroke-width="2.4"/>${zMark(50, 48, 8.5)}${brackets(16, 6, 76, 76)}`],
+];
+const label = (t, c) => `<span style="font-family:Outfit;font-weight:800;font-size:72px;line-height:1;letter-spacing:1px;background:${c};-webkit-background-clip:text;background-clip:text;color:transparent">${t}</span>`;
+const icon = (frame, art, txt, textFill) => `<div class="abs" style="inset:0;background:${FOND}"></div>
+  <div class="abs" style="inset:22px;border-radius:96px;padding:6px;background:linear-gradient(135deg, ${frame.join(', ')})"><div style="width:100%;height:100%;border-radius:90px;background:${FOND}"></div></div>
+  <svg class="abs" width="230" height="230" viewBox="0 0 100 100" style="left:141px;top:96px;overflow:visible;filter:drop-shadow(8px 8px 0 rgba(0,0,0,.35))">${DEFS}${art}</svg>
+  <div class="abs" style="left:0;top:318px;width:512px;text-align:center">${label(txt, textFill)}</div>`;
+document.head.insertAdjacentHTML('beforeend', '<style>.p { width: 512px; height: 512px; }</style>');
+carousel([
+  ...BOOSTIES.map(([id, n, art]) => [id, icon(FRAME.boosties, art, n, 'linear-gradient(180deg, #FFF6D8 0%, #FCD34D 45%, #D97706 100%)')]),
+  ...ANALYSES.map(([id, n, art]) => [id, icon(FRAME.analyse, art, n, 'linear-gradient(180deg, #FFFFFF 0%, #DDD6FE 45%, #A78BFA 100%)')]),
+]);
+</script></body></html>
