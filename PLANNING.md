@@ -1,6 +1,6 @@
 # Planning du 16 octobre 2026 au 22 juin 2027
 
-**Bêta Android : samedi 14 novembre 2026** (test fermé Google Play, décidé le 13/10/2026 à la place de la bêta sur MP du 28/11) : pré-inscription dès maintenant sur boostz.fr/beta, les inscrits reçoivent l'invitation par mail le 14. **Sortie de l'appli : jeudi 14 janvier 2027** (décidée le 06/10/2026). Le premier post (16/10) annonce les deux dates ; janvier est construit autour du lancement.
+**Bêta BoostZ : samedi 14 novembre 2026, sur Android et sur iPhone** (Android en test fermé Google Play, décidé le 13/10/2026 ; iPhone par TestFlight, ajouté le 20/10/2026) : pré-inscription Android dès maintenant sur boostz.fr/beta, invitation par mail le 14 ; sur iPhone, le lien TestFlight arrive sur boostz.fr/beta le 14, jamais dans un post. **Sortie de l'appli : jeudi 14 janvier 2027** (décidée le 06/10/2026), sur Android et iPhone. Le premier post (16/10) annonce les deux dates ; janvier est construit autour du lancement. Depuis le 20/10, le nom s'écrit « BoostZ » partout.
 
 **Le rythme** (décidé le 07/10/2026, remplace « un post tous les 3 jours sans interruption ») :
 - **Les posts fixes restent à leur date** : sorties d'extension, temps forts (Halloween, Black Friday, Noël, nouvel an, Saint-Valentin), bêta et lancement. Ils sont marqués \* dans le calendrier.
@@ -30,12 +30,12 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | mar. 03/11 | carrousel | 22 L'histoire d'une carte | Tyler le Grand Guerrier : le vœu Make-A-Wish, la carte unique, 311 211 \$ | Yu-Gi-Oh! | ✅ programmé |
 | \*ven. 06/11 | carrousel | 15 Sortie d'extension | Règne Delta sort aujourd'hui (ME06) | Pokémon | ✅ programmé |
 | lun. 09/11 | Reel | 30 Zoom mystère | Épisode 1 : Mickey Mouse, Brave Petit Tailleur, en 5 étapes de Légende à Noob | Lorcana | ✅ programmé |
-| \*mer. 11/11 | Reel | 11 Annonce | Bêta Android J-3 : pré-inscris-toi sur boostz.fr/beta | les 8 | ✅ programmé |
+| \*mer. 11/11 | Reel | 11 Annonce | Bêta J-3, sur Android et iPhone (refait le 20/10) | les 8 | ✅ programmé |
 | \*jeu. 12/11 | carrousel | 15 Sortie d'extension | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | ✅ programmé |
-| \*sam. 14/11 | Reel | 11 Annonce | La bêta Android est ouverte (visuel du site) | les 8 | ✅ programmé |
+| \*sam. 14/11 | Reel | 11 Annonce | La bêta est ouverte, sur Android et iPhone (refait le 20/10) | les 8 | ✅ programmé |
 | mar. 17/11 | carrousel | 25 Les raretés expliquées | Épisode Pokémon : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Pokémon | ✅ programmé |
 | \*sam. 21/11 | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | brouillon dans Metricool, produit par le rappel du 20/11 |
-| \*dim. 22/11 | Reel | 11 Annonce | Rejoins la bêta en trois étapes | les 8 | ✅ programmé |
+| \*dim. 22/11 | Reel | 11 Annonce | Rejoins la bêta, sur Android (3 étapes) et iPhone (TestFlight), refait le 20/10 | les 8 | ✅ programmé |
 | mer. 25/11 | carrousel | 35 Le radar des scellés | N° 1 : les coffrets Dresseur d’élite Écarlate et Violet, prix TCGplayer du 17/10 au 16/11, deux jours avant le Black Friday | Pokémon | brouillon dans Metricool, produit par le rappel du 18/11 |
 | \*ven. 27/11 | Reel | 16 Thème | Black Friday : « Promo ou pas ? » | les 8 | ✅ programmé |
 | mar. 01/12 | carrousel | 2 Cotes qui bougent | Édition n° 2 : du 16/11 au 30/11 | One Piece | brouillon dans Metricool, produit par le rappel du 29/11 |
@@ -57,7 +57,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | \*mar. 12/01 | carrousel | 9 Pub Boostz | « Jeudi, tu pourras… » sur de vraies captures de l'appli | Yu-Gi-Oh!, Lorcana, Warcraft | à produire (rappel du 05/01) |
 | \*mer. 13/01, 18 h | Reel | 11 Annonce | Lancement J-1 : « Demain. » | les 8 | ✅ programmé |
 | \*jeu. 14/01 | Reel | 11 Annonce | **Boostz est disponible.** Liens des stores à ajouter (rappel du 05/01) | les 8 | ✅ programmé, légende à compléter avec les liens des stores |
-| \*ven. 15/01 | carrousel | 11 Annonce | Merci : ce que disent les testeurs de la bêta Android | les 8 | brouillon dans Metricool, produit par le rappel du 05/01 (avis à récolter pendant la bêta) |
+| \*ven. 15/01 | carrousel | 11 Annonce | Merci : ce que disent les testeurs de la bêta | les 8 | brouillon dans Metricool, produit par le rappel du 05/01 (avis à récolter pendant la bêta) |
 | dim. 17/01 | carrousel | 34 Brute ou gradée ? | N° 1 : Dracaufeu-ex 199/165 (151), brute contre gradée chez chaque société | Pokémon | brouillon dans Metricool, produit par le rappel du 12/01 |
 | mer. 20/01 | Reel | 27 Plus cher ou moins cher ? | Épisode One Piece | One Piece | brouillon dans Metricool, produit par le rappel du 15/01 |
 | sam. 23/01 | carrousel | 2 Cotes qui bougent | Édition n° 4 : relevé du 16/01 contre celui du 01/01 | Pokémon | à produire (rappel du 16/01) |
