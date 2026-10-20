@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Boostz logo Pass</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// The Boostz Pass logo for Google Play (asked on 20/10/2026): the wordmark the
+// app's top bar shows to a subscriber, "boost" + the card-fan Z + "pass" in
+// gold, drawn from the app's own sources (BoostZFanLogo.js for the fan in its
+// settled pose, lib/passWordmark.js and components/pass/PassVisuals.js for the
+// gold and the Pass purple). Three files: a 512 x 512 icon (Play's icon size),
+// a 1024 x 500 banner (Play's feature graphic size) and the lockup alone on a
+// transparent background. Render: node rendu.mjs logo-pass.html images
+const FOND = 'linear-gradient(160deg, #2A1052, #160730)';
+const OR = ['#F5C542', '#B98410', '#F7DA8C', '#9A6A0B'];
+const GOLD_TEXT = 'linear-gradient(180deg, #FFF6D8 0%, #F5C542 45%, #C99418 100%)';
+// The fan, dark palette of BoostZFanLogo.js, settled at -14 / +14 degrees.
+const fan = (s) => `<svg width="${s}" height="${s}" viewBox="0 0 100 100" style="display:block;overflow:visible">
+  <defs><linearGradient id="f${s}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs>
+  <rect x="31" y="24" width="38" height="54" rx="7" fill="rgba(196,181,253,.22)" transform="rotate(-14 50 95)"/>
+  <rect x="31" y="21" width="38" height="54" rx="7" fill="rgba(196,181,253,.5)"/>
+  <g transform="rotate(14 50 95)"><rect x="31" y="18" width="38" height="54" rx="7" fill="url(#f${s})"/>
+  <path d="M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z" fill="#fff"/></g>
+  <polygon points="84,10 86.5,17 84,24 81.5,17" fill="#F5C542"/><polygon points="77,17 84,14.5 91,17 84,19.5" fill="#F5C542"/></svg>`;
+const word = (t, size, style) => `<span style="font-family:Outfit;font-weight:800;font-size:${size}px;letter-spacing:${size * .012}px;line-height:1;${style}">${t}</span>`;
+const gold = (t, size) => word(t, size, `background:${GOLD_TEXT};-webkit-background-clip:text;background-clip:text;color:transparent`);
+// The top bar's lockup: "boost", the fan (its left margin pulled in like the
+// compact variant), "pass" glued on with the same gap (passRaccord, 0.085).
+const lockup = (size) => `<div style="display:flex;align-items:center">${word('boost', size, 'color:#fff')}
+  <div style="margin-left:${-size * .2}px;margin-right:${-size * .14}px;margin-top:${size * .12}px">${fan(size * 1.25)}</div>${gold('pass', size)}</div>`;
+document.head.insertAdjacentHTML('beforeend', `<style>
+  #icone { width: 512px; height: 512px; } #banniere { width: 1024px; height: 500px; } #seul { width: 1200px; height: 400px; background: transparent !important; }
+</style>`);
+carousel([
+  // Icon: the fan on the Pass purple inside the gold frame, "PASS" under it.
+  ['icone', `<div class="abs" style="inset:0;background:${FOND}"></div>
+    <div class="abs" style="inset:22px;border-radius:96px;padding:6px;background:linear-gradient(135deg, ${OR.join(', ')})"><div style="width:100%;height:100%;border-radius:90px;background:${FOND}"></div></div>
+    <div class="abs" style="left:96px;top:58px">${fan(320)}</div>
+    <div class="abs" style="left:0;top:368px;width:512px;text-align:center">${gold('pass', 104)}</div>`],
+  // Banner: the full lockup centred.
+  ['banniere', `<div class="abs" style="inset:0;background:${FOND}"></div>
+    <div class="abs" style="inset:18px;border-radius:40px;padding:4px;background:linear-gradient(135deg, ${OR.join(', ')})"><div style="width:100%;height:100%;border-radius:36px;background:${FOND}"></div></div>
+    <div class="abs" style="left:0;top:0;width:1024px;height:500px;display:flex;align-items:center;justify-content:center">${lockup(150)}</div>`],
+  // The lockup alone, transparent, for any other use.
+  ['seul', `<div class="abs" style="left:0;top:0;width:1200px;height:400px;display:flex;align-items:center;justify-content:center">${lockup(170)}</div>`],
+].map(([id, html]) => [id, html]));
+document.querySelectorAll('.p').forEach((p, i) => { p.id = ['icone', 'banniere', 'seul'][i]; });
+</script></body></html>
