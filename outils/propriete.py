@@ -74,7 +74,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2027-02-04': ('D', "Images des cartes : TCGplayer."),
  '2027-05-26': ('S', "Images des cartes : TCGplayer."),
  '2027-02-07': ('PLMY', "Images des cartes : Scryfall, pokemontcg.io, Lorcast, YGOPRODeck."),
- '2027-02-22': ('', "Personnages et dessins : Boostz."),
+ '2027-02-22': ('', "Personnages et dessins : BoostZ."),
  '2027-01-20': ('O', ''),  # Plus cher ou moins cher ?: add the image credits when produced
  '2027-02-19': ('P', ''),  # Plus cher ou moins cher ?: add the image credits when produced
  '2027-04-23': ('S', ''),  # Plus cher ou moins cher ?: add the image credits when produced
@@ -87,7 +87,7 @@ def note(date):
     ips, credit = POSTS[date]
     lines = ["©️ Propriété intellectuelle"] + [IP[k] for k in ips]
     if credit: lines.append(credit)
-    lines.append("Les noms et les illustrations des cartes appartiennent à leurs ayants droit. Boostz est une application indépendante, ni affiliée ni approuvée par ces sociétés.")
+    lines.append("Les noms et les illustrations des cartes appartiennent à leurs ayants droit. BoostZ est une application indépendante, ni affiliée ni approuvée par ces sociétés.")
     return "\n".join(lines)
 if __name__ == '__main__':
     import sys; print(note(sys.argv[1]))

@@ -85,7 +85,7 @@ const src = (text) => `<div class="src">${text}</div>`;
 // sets window.PUB to its publication date ('YYYY-MM-DD') before drawing them.
 const launched = () => (window.PUB || '') >= '2027-01-14';
 const TAGLINE = () => `Ton compagnon TCG, ${launched() ? 'disponible' : 'bientôt'} sur ton téléphone`;
-const CALL = () => launched() ? 'Télécharge Boostz, lien en bio' : 'Abonne-toi pour ne rien manquer';
+const CALL = () => launched() ? 'Télécharge BoostZ, lien en bio' : 'Abonne-toi pour ne rien manquer';
 const closing = (top, size = 100) => `<div class="abs" style="left:0;top:${top}px;width:1080px;display:flex;justify-content:center">${wordmark(size)}</div>
   <div class="abs mut" style="left:0;top:${top + size * 1.35}px;width:1080px;text-align:center;font-weight:600;font-size:38px">${TAGLINE()}</div>
   <div class="abs ui" style="left:0;top:${top + size * 1.35 + 95}px;width:1080px;text-align:center;font-size:34px;color:${VSOFT}">${CALL()}</div>`;
