@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ icone anneau</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Profile picture, second round (asked on 22/10/2026): keep the app icon as it
+// is (assets/icone-app.png: violet #7C3AED, the white Z card fanned over two
+// pale cards) and work only the inner rim of the round crop and the gradient
+// of the ground. 1080 x 1080; the networks crop it to the inscribed circle,
+// so every ring is drawn just inside radius 540.
+document.head.insertAdjacentHTML('beforeend', '<style>.p { width: 1080px; height: 1080px; }</style>');
+const V = '#7C3AED';
+const Z = 'M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z';
+// The app icon's fan, unchanged: same cards, same white, same placement.
+const FAN = `<svg class="abs" width="1080" height="1080" viewBox="0 0 100 100" style="left:0;top:0">
+  <g transform="translate(50.5 50) scale(.66) translate(-50 -50)">
+  <rect x="31" y="24" width="38" height="54" rx="7" fill="rgba(255,255,255,.3)" transform="rotate(-14 50 95)"/>
+  <rect x="31" y="21" width="38" height="54" rx="7" fill="rgba(255,255,255,.62)"/>
+  <g transform="rotate(14 50 95)"><rect x="31" y="18" width="38" height="54" rx="7" fill="#fff"/><path d="${Z}" fill="${V}"/></g></g></svg>`;
+const ground = (fill) => `<div class="abs" style="inset:0;background:${fill}"></div>`;
+// A ring centred on the crop: radius r, width w, stroke paint (colour or gradient id), options.
+let n = 0;
+const ring = (r, w, paint, o = {}) => { const id = 'r' + n++;
+  const defs = Array.isArray(paint) ? `<defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1">${paint.map((c, i) => `<stop offset="${i / (paint.length - 1)}" stop-color="${c}"/>`).join('')}</linearGradient></defs>` : '';
+  const stroke = Array.isArray(paint) ? `url(#${id})` : paint;
+  return `<svg class="abs" width="1080" height="1080" style="left:0;top:0;${o.glow ? `filter:drop-shadow(0 0 ${o.glow}px ${o.glowColor || '#fff'})` : ''}">${defs}
+    <circle cx="540" cy="540" r="${r}" fill="none" stroke="${stroke}" stroke-width="${w}" ${o.dash ? `stroke-dasharray="${o.dash}" stroke-linecap="round"` : ''} ${o.arc ? `stroke-dasharray="${2 * Math.PI * r * o.arc} 9999" stroke-linecap="round" transform="rotate(${o.rot || -90} 540 540)"` : ''} opacity="${o.op || 1}"/></svg>`; };
+// A conic ring (holographic or the 8 game colours), as a masked div.
+const conic = (r, w, stops) => `<div class="abs" style="left:${540 - r - w / 2}px;top:${540 - r - w / 2}px;width:${2 * r + w}px;height:${2 * r + w}px;border-radius:50%;background:conic-gradient(${stops});-webkit-mask:radial-gradient(circle, transparent ${r - w / 2}px, #000 ${r - w / 2 + 1}px)"></div>`;
+const GAME8 = ['#F5C93B', '#F2706C', '#35C6BC', '#B189E8', '#C0A183', '#A9B2C4', '#F58A4E', '#58A6DD'];
+const segs = GAME8.map((c, i) => `${c} ${i * 45}deg ${(i + 1) * 45}deg`).join(', ');
+const BRAND = ['#FF4FA0', '#8B3DFF', '#3AA9FF'];
+const dots = (r, d, colors) => colors.map((c, i) => { const a = (i / colors.length) * 2 * Math.PI - Math.PI / 2;
+  return `<div class="abs" style="left:${540 + r * Math.cos(a) - d / 2}px;top:${540 + r * Math.sin(a) - d / 2}px;width:${d}px;height:${d}px;border-radius:50%;background:${c};border:5px solid #fff"></div>`; }).join('');
+const lin = (a, cs) => `linear-gradient(${a}deg, ${cs.join(', ')})`;
+const rad = (cs) => `radial-gradient(circle at 50% 42%, ${cs.join(', ')})`;
+const S = [];
+const add = (id, g, extra) => S.push([id, ground(g) + FAN + extra]);
+
+add('00-actuel', V, '');
+add('01-anneau-blanc-fin', V, ring(505, 14, '#fff'));
+add('02-anneau-blanc-epais', V, ring(498, 34, '#fff'));
+add('03-anneau-degrade', V, ring(500, 36, BRAND));
+add('04-anneau-or', V, ring(500, 30, ['#FFF6D8', '#F5C542', '#C99418', '#F7DA8C']));
+add('05-double', V, ring(512, 16, BRAND) + ring(482, 8, '#fff', { op: .9 }));
+add('06-pointilles', V, ring(500, 16, 'rgba(255,255,255,.85)', { dash: '30 34' }));
+add('07-neon', V, ring(500, 16, '#fff', { glow: 24, glowColor: '#C4B5FD' }));
+add('08-fond-lumineux', rad(['#9B5CFF', V + ' 55%', '#5B21B6']), ring(500, 30, BRAND));
+add('09-fond-violet-rose', lin(135, ['#8B3DFF', '#7C3AED', '#C2187A']), ring(505, 16, '#fff'));
+add('10-fond-violet-bleu', lin(135, ['#9B5CFF', '#7C3AED', '#3A6BFF']), ring(500, 30, BRAND));
+add('11-arc', V, ring(500, 30, 'rgba(255,255,255,.18)') + ring(500, 30, BRAND, { arc: .72, rot: -200 }));
+add('12-holo', V, conic(500, 34, '#7CFFCB, #3AA9FF, #B57BFF, #FF6FD8, #FFE66D, #7CFFCB'));
+add('13-huit-jeux', V, conic(500, 34, segs));
+add('14-sticker', V, ring(510, 20, '#131020') + ring(490, 18, '#fff'));
+add('15-reflet', `linear-gradient(160deg, rgba(255,255,255,.18) 0 30%, transparent 30% 100%), ${V}`, ring(505, 14, '#fff'));
+add('16-fond-sombre-anneau-vif', rad(['#8B3DFF', '#5B21B6 60%', '#2A1052']), ring(500, 36, BRAND, { glow: 20, glowColor: '#FF4FA0' }));
+add('17-fond-degrade-marque', lin(135, ['#C34BFF', V, '#4F7BFF']), ring(505, 14, '#fff'));
+add('18-points-jeux', V, ring(470, 6, 'rgba(255,255,255,.35)') + dots(470, 46, GAME8));
+add('19-anneau-rose', V, ring(500, 30, '#FF4FA0'));
+add('20-anneau-jaune', V, ring(500, 30, '#F5C93B'));
+add('21-fond-vignette', rad(['#8F55FF', V + ' 60%', '#4C1D95']), ring(505, 16, '#fff', { op: .9 }));
+add('22-double-degrade', lin(135, ['#9B5CFF', V, '#5B21B6']), ring(512, 22, BRAND) + ring(484, 6, 'rgba(255,255,255,.7)'));
+
+carousel(S);
+</script></body></html>
