@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ icone contour</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Profile picture, third round (asked on 22/10/2026: « plus original sur le
+// contour, plus travaillé »). The app icon stays as it is in the middle; the
+// rim is drawn from the app's own world: cards, booster crimps, the Boostie
+// coin's edge, the scan's brackets, the 8 games, sparks and comets.
+document.head.insertAdjacentHTML('beforeend', '<style>.p { width: 1080px; height: 1080px; }</style>');
+const V = '#7C3AED', C = 540;
+const Z = 'M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z';
+const FAN = (k = .6) => `<svg class="abs" width="1080" height="1080" viewBox="0 0 100 100" style="left:0;top:0">
+  <g transform="translate(50.5 50) scale(${k}) translate(-50 -50)">
+  <rect x="31" y="24" width="38" height="54" rx="7" fill="rgba(255,255,255,.3)" transform="rotate(-14 50 95)"/>
+  <rect x="31" y="21" width="38" height="54" rx="7" fill="rgba(255,255,255,.62)"/>
+  <g transform="rotate(14 50 95)"><rect x="31" y="18" width="38" height="54" rx="7" fill="#fff"/><path d="${Z}" fill="${V}"/></g></g></svg>`;
+const BRAND = ['#FF4FA0', '#8B3DFF', '#3AA9FF'];
+const GAME8 = ['#F5C93B', '#F2706C', '#35C6BC', '#B189E8', '#C0A183', '#A9B2C4', '#F58A4E', '#58A6DD'];
+const KEYS = ['pokemon', 'onepiece', 'lorcana', 'yugioh', 'magic', 'starwarsunlimited', 'dragonball', 'wow'];
+let uid = 0;
+const grad = (cs, x2 = 1, y2 = 1) => { const id = 'g' + uid++; return [id, `<linearGradient id="${id}" x1="0" y1="0" x2="${x2}" y2="${y2}">${cs.map((c, i) => `<stop offset="${i / (cs.length - 1)}" stop-color="${c}"/>`).join('')}</linearGradient>`]; };
+const svg = (inner, defs = '', style = '') => `<svg class="abs" width="1080" height="1080" style="left:0;top:0;overflow:visible;${style}"><defs>${defs}</defs>${inner}</svg>`;
+const polar = (r, a) => [C + r * Math.cos(a), C + r * Math.sin(a)];
+const around = (n, f, off = -Math.PI / 2) => Array.from({ length: n }, (_, i) => f(off + i * 2 * Math.PI / n, i)).join('');
+const spark = (x, y, s, c) => `<path d="M${x} ${y - s} L${x + s * .28} ${y - s * .28} L${x + s} ${y} L${x + s * .28} ${y + s * .28} L${x} ${y + s} L${x - s * .28} ${y + s * .28} L${x - s} ${y} L${x - s * .28} ${y - s * .28} Z" fill="${c}"/>`;
+const ground = (f = V) => `<div class="abs" style="inset:0;background:${f}"></div>`;
+const S = [];
+const add = (id, html, k) => S.push([id, html + FAN(k)]);
+
+// 1 - A crown of small cards, each in a game's colour, white edged.
+add('01-couronne-cartes', ground() + svg(around(16, (a, i) => { const [x, y] = polar(472, a);
+  return `<g transform="translate(${x} ${y}) rotate(${a * 180 / Math.PI + 90})"><rect x="-26" y="-37" width="52" height="74" rx="9" fill="${GAME8[i % 8]}" stroke="#fff" stroke-width="6"/></g>`; })), .56);
+// 2 - The app's card backs in a ring, tilted like a fanned deck.
+add('02-dos-de-cartes', ground() + svg(around(14, (a, i) => { const [x, y] = polar(470, a);
+  return `<g transform="translate(${x} ${y}) rotate(${a * 180 / Math.PI + 90 + 18})"><rect x="-30" y="-42" width="60" height="84" rx="10" fill="#4C1D95" stroke="#fff" stroke-width="5"/><path d="M-12 -14 H12 V-6 L-3 8 H12 V16 H-12 V8 L3 -6 H-12 Z" fill="#C4B5FD"/></g>`; })), .56);
+// 3 - Booster crimp: a serrated gold edge, like the top of a pack.
+add('03-bord-de-booster', ground() + (() => { const [id, d] = grad(['#FFF6D8', '#F5C542', '#C99418']); const n = 72, pts = [];
+  for (let i = 0; i < n * 2; i++) { const a = i * Math.PI / n, r = i % 2 ? 500 : 532; pts.push(polar(r, a).map((v) => v.toFixed(1)).join(',')); }
+  return svg(`<polygon points="${pts.join(' ')}" fill="url(#${id})"/><circle cx="540" cy="540" r="480" fill="${V}"/>`, d); })(), .6);
+// 4 - The Boostie coin's reeded edge, in gold, with a polished rim.
+add('04-tranche-de-piece', ground() + (() => { const [id, d] = grad(['#FDE68A', '#F59E0B', '#B45309', '#FCD34D']);
+  return svg(`<circle cx="540" cy="540" r="506" fill="none" stroke="url(#${id})" stroke-width="56"/>${around(120, (a) => { const [x1, y1] = polar(480, a), [x2, y2] = polar(532, a); return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(120,53,15,.45)" stroke-width="5"/>`; })}<circle cx="540" cy="540" r="476" fill="none" stroke="#fff" stroke-width="6"/>`, d); })(), .6);
+// 5 - The condition scan: four brackets around the icon and a scan line.
+add('05-scan', ground() + svg(`<circle cx="540" cy="540" r="505" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="10"/>${[0, 1, 2, 3].map((q) => `<path d="${(() => { const a0 = -Math.PI / 4 + q * Math.PI / 2 - .32, a1 = a0 + .64; const [x0, y0] = polar(505, a0), [x1, y1] = polar(505, a1); return `M${x0} ${y0} A505 505 0 0 1 ${x1} ${y1}`; })()}" fill="none" stroke="#FDE68A" stroke-width="30" stroke-linecap="round"/>`).join('')}
+  <circle cx="540" cy="540" r="455" fill="none" stroke="rgba(253,230,138,.55)" stroke-width="6" stroke-dasharray="4 26" stroke-linecap="round"/>`), .58);
+// 6 - The 8 game emblems as white stickers on a gradient band.
+add('06-emblemes', ground() + (() => { const [id, d] = grad(BRAND); return svg(`<circle cx="540" cy="540" r="492" fill="none" stroke="url(#${id})" stroke-width="90"/>`, d); })() +
+  KEYS.map((g, i) => { const a = -Math.PI / 2 + Math.PI / 8 + i * Math.PI / 4, [x, y] = polar(478, a); return `<div class="abs" style="left:${x - 52}px;top:${y - 52}px">${emblemDisc(g, 104)}</div>`; }).join(''), .56);
+// 7 - Two comets chasing each other around the rim.
+add('07-cometes', ground('radial-gradient(circle at 50% 45%, #8F55FF, #7C3AED 55%, #5B21B6)') + (() => { const [a, da] = grad(['rgba(255,79,160,0)', '#FF4FA0'], 1, 0), [b, db] = grad(['rgba(58,169,255,0)', '#3AA9FF'], 0, 1);
+  const arc = (a0, a1, id, w) => { const [x0, y0] = polar(500, a0), [x1, y1] = polar(500, a1); return `<path d="M${x0} ${y0} A500 500 0 0 1 ${x1} ${y1}" fill="none" stroke="url(#${id})" stroke-width="${w}" stroke-linecap="round"/>`; };
+  const [hx, hy] = polar(500, -.2), [kx, ky] = polar(500, Math.PI - .2);
+  return svg(arc(-2.6, -.2, a, 34) + arc(Math.PI - 2.6, Math.PI - .2, b, 34) + `<circle cx="${hx}" cy="${hy}" r="30" fill="#fff"/><circle cx="${kx}" cy="${ky}" r="30" fill="#fff"/>` + spark(hx + 10, hy - 50, 30, '#FDE68A'), da + db, 'filter:drop-shadow(0 0 16px rgba(255,255,255,.5))'); })(), .6);
+// 8 - A ring of sparks, big and small, in gold and white.
+add('08-etincelles', ground() + svg(around(18, (a, i) => { const [x, y] = polar(488, a); return spark(x, y, i % 3 ? 22 : 44, i % 3 ? '#fff' : '#FDE68A'); })), .6);
+// 9 - The posts' dashed path around the rim, with three card stickers on it.
+add('09-chemin', ground() + svg(`<circle cx="540" cy="540" r="490" fill="none" stroke="rgba(196,181,253,.85)" stroke-width="18" stroke-dasharray="40 40" stroke-linecap="round"/>` +
+  [[-.9, '#F5C93B'], [1.4, '#35C6BC'], [3.1, '#FF4FA0']].map(([a, c]) => { const [x, y] = polar(490, a); return `<g transform="translate(${x} ${y}) rotate(${a * 57.3 + 90})"><rect x="-36" y="-50" width="72" height="100" rx="12" fill="${c}" stroke="#fff" stroke-width="7"/></g>`; }).join('')), .58);
+// 10 - Rarity ring: segments from common to secret rare, separated by gaps.
+add('10-raretes', ground() + (() => { const cols = ['#A9B2C4', '#5FD3A3', '#3AA9FF', '#B189E8', '#FF4FA0', '#F5C93B']; return svg(cols.map((c, i) => { const a0 = -Math.PI / 2 + i * Math.PI / 3 + .07, a1 = a0 + Math.PI / 3 - .14, [x0, y0] = polar(500, a0), [x1, y1] = polar(500, a1);
+  return `<path d="M${x0} ${y0} A500 500 0 0 1 ${x1} ${y1}" fill="none" stroke="${c}" stroke-width="40" stroke-linecap="round"/>`; }).join('')); })(), .6);
+// 11 - Holographic foil with glints.
+add('11-foil', ground() + `<div class="abs" style="left:10px;top:10px;width:1060px;height:1060px;border-radius:50%;background:conic-gradient(#7CFFCB, #3AA9FF, #B57BFF, #FF6FD8, #FFE66D, #7CFFCB);-webkit-mask:radial-gradient(circle, transparent 462px, #000 463px)"></div>` +
+  svg(around(6, (a, i) => { const [x, y] = polar(500, a + .3); return spark(x, y, i % 2 ? 26 : 40, '#fff'); })), .6);
+// 12 - Confetti: a band of small coloured pieces.
+add('12-confettis', ground() + svg((() => { let s = '', seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  for (let i = 0; i < 220; i++) { const a = rnd() * 2 * Math.PI, r = 445 + rnd() * 70, [x, y] = polar(r, a), c = [...GAME8, '#fff', '#FF4FA0'][Math.floor(rnd() * 10)];
+    s += rnd() < .5 ? `<rect x="${x - 9}" y="${y - 5}" width="18" height="10" rx="3" fill="${c}" transform="rotate(${rnd() * 180} ${x} ${y})"/>` : `<circle cx="${x}" cy="${y}" r="${5 + rnd() * 5}" fill="${c}"/>`; } return s; })()), .6);
+// 13 - Die-cut sticker: a white scalloped edge with a hard shadow.
+add('13-sticker-festonne', ground('#2A1052') + svg(`<g style="filter:drop-shadow(14px 14px 0 rgba(0,0,0,.45))">${around(36, (a) => { const [x, y] = polar(488, a); return `<circle cx="${x}" cy="${y}" r="44" fill="#fff"/>`; })}<circle cx="540" cy="540" r="488" fill="#fff"/></g><circle cx="540" cy="540" r="462" fill="${V}"/>`), .58);
+// 14 - Spinner: two offset arcs, pink and blue, with gaps.
+add('14-double-arc', ground() + svg((() => { const arc = (r, a0, a1, c, w) => { const [x0, y0] = polar(r, a0), [x1, y1] = polar(r, a1); return `<path d="M${x0} ${y0} A${r} ${r} 0 1 1 ${x1} ${y1}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`; };
+  return arc(512, -1.2, 3.6, '#FF4FA0', 24) + arc(476, 1.9, 0.6 + 2 * Math.PI - .1, '#3AA9FF', 24); })(), 'filter:drop-shadow(0 0 12px rgba(255,255,255,.35))'), .58);
+// 15 - A circular line of text, « BOOSTZ · 8 TCG », as a textured band.
+add('15-texte', ground() + svg(`<path id="tp" d="M540 540 m-468 0 a468 468 0 1 1 936 0 a468 468 0 1 1 -936 0" fill="none"/><circle cx="540" cy="540" r="468" fill="none" stroke="#5B21B6" stroke-width="96"/>
+  <text font-family="Outfit" font-weight="800" font-size="62" letter-spacing="12" fill="#fff"><textPath href="#tp">BOOSTZ · 8 TCG · TON COMPAGNON · BOOSTZ · 8 TCG · TON COMPAGNON · </textPath></text>`), .52);
+// 16 - The 8 game colours as interlocking card corners (a stained-glass rim).
+add('16-vitrail', ground() + svg(GAME8.map((c, i) => { const a0 = -Math.PI / 2 + i * Math.PI / 4, a1 = a0 + Math.PI / 4, p = (r, a) => polar(r, a).join(' ');
+  return `<path d="M${p(530, a0)} A530 530 0 0 1 ${p(530, a1)} L${p(452, a1)} A452 452 0 0 0 ${p(452, a0)} Z" fill="${c}" stroke="#fff" stroke-width="8" stroke-linejoin="round"/>`; }).join('')), .58);
+// 17 - A gold Pass frame with four small gems at the cardinal points.
+add('17-cadre-pass', ground('linear-gradient(160deg, #8B3DFF, #7C3AED, #5B21B6)') + (() => { const [id, d] = grad(['#F5C542', '#B98410', '#F7DA8C', '#9A6A0B']);
+  return svg(`<circle cx="540" cy="540" r="502" fill="none" stroke="url(#${id})" stroke-width="40"/><circle cx="540" cy="540" r="474" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="4"/>` +
+    around(4, (a, i) => { const [x, y] = polar(470, a); return `<path d="M${x} ${y - 40} L${x + 32} ${y} L${x} ${y + 40} L${x - 32} ${y} Z" fill="${['#FF4FA0', '#35C6BC', '#3AA9FF', '#F5C93B'][i]}" stroke="#fff" stroke-width="6"/>`; }), d); })(), .58);
+// 18 - Speed: tapering gradient streaks swirling around, the « boost ».
+add('18-tourbillon', ground() + svg(around(6, (a, i) => { const [x0, y0] = polar(505, a), [x1, y1] = polar(505, a + .75); const [id, d] = grad([BRAND[i % 3], 'rgba(255,255,255,0)'], 0, 1);
+  return `<defs>${d}</defs><path d="M${x0} ${y0} A505 505 0 0 1 ${x1} ${y1}" fill="none" stroke="${BRAND[i % 3]}" stroke-width="${30 - i % 2 * 12}" stroke-linecap="round" opacity=".95"/>`; })), .6);
+// 19 - Mini booster packs all around, foil stripes on top.
+add('19-boosters', ground() + svg(around(12, (a, i) => { const [x, y] = polar(470, a);
+  return `<g transform="translate(${x} ${y}) rotate(${a * 57.3 + 90})"><rect x="-28" y="-42" width="56" height="84" rx="6" fill="${BRAND[i % 3]}" stroke="#fff" stroke-width="5"/><rect x="-28" y="-42" width="56" height="16" fill="rgba(255,255,255,.55)"/></g>`; })), .56);
+// 20 - Pixel ring: a retro 8-bit rim in the brand colours.
+add('20-pixels', ground() + svg((() => { let s = ''; for (let gx = 0; gx < 1080; gx += 36) for (let gy = 0; gy < 1080; gy += 36) { const d = Math.hypot(gx + 18 - C, gy + 18 - C);
+  if (d > 452 && d < 530) s += `<rect x="${gx + 2}" y="${gy + 2}" width="32" height="32" fill="${BRAND[(Math.floor(gx / 36) + Math.floor(gy / 36)) % 3]}"/>`; } return s; })()), .58);
+// 21 - Card stack edge: the rim drawn as the side of a deck, thin coloured layers.
+add('21-tranche-de-deck', ground() + svg(Array.from({ length: 7 }, (_, i) => `<circle cx="540" cy="540" r="${530 - i * 11}" fill="none" stroke="${i % 2 ? '#fff' : ['#FF4FA0', '#8B3DFF', '#3AA9FF', '#F5C93B'][i / 2]}" stroke-width="9"/>`).join('')), .58);
+// 22 - Light ring with sunburst rays just inside.
+add('22-rayons', ground() + svg(around(48, (a, i) => { const [x0, y0] = polar(430, a), [x1, y1] = polar(520, a); return `<line x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}" stroke="${i % 2 ? 'rgba(255,255,255,.55)' : '#FDE68A'}" stroke-width="${i % 2 ? 6 : 12}" stroke-linecap="round"/>`; }) + `<circle cx="540" cy="540" r="520" fill="none" stroke="#fff" stroke-width="10"/>`), .56);
+
+carousel(S);
+</script></body></html>
