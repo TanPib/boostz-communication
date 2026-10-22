@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ icone scene</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Profile picture, fourth round (asked on 22/10/2026): rings around the icon
+// read as an image pasted around an image, so each proposal is one scene where
+// the ground and the fanned cards belong together (light, depth, material),
+// and the fan itself may change. 1080 x 1080, kept inside the inscribed circle.
+// Render: node rendu.mjs icone-scene.html images
+document.head.insertAdjacentHTML('beforeend', '<style>.p { width: 1080px; height: 1080px; }</style>');
+const V = '#7C3AED';
+const ZP = 'M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z';
+const GAME8 = ['#F5C93B', '#F2706C', '#35C6BC', '#B189E8', '#C0A183', '#A9B2C4', '#F58A4E', '#58A6DD'];
+const R = (x, y, rot) => `<rect x="31" y="${y}" width="38" height="54" rx="7"${rot ? ` transform="rotate(${rot} 50 95)"` : ''}`;
+// The app icon's fan in its 100-unit drawing, centred on (cx, cy) at scale s.
+// fills: back, middle, front; attrs: extra attributes per card; over: drawn on
+// the front card under the Z; zAttrs: the Z's paint.
+const fan = (o = {}) => { const { s = 7.2, cx = 540, cy = 540, fills = ['rgba(255,255,255,.3)', 'rgba(255,255,255,.62)', '#fff'],
+  attrs = ['', '', ''], over = '', z = `fill="${V}"`, tilt = 0, g = '' } = o;
+  return `<g ${g}><g transform="translate(${cx} ${cy}) scale(${s}) rotate(${tilt} 50.5 50) translate(-50.5 -50)">
+    ${R(31, 24, -14)} fill="${fills[0]}" ${attrs[0]}/>${R(31, 21)} fill="${fills[1]}" ${attrs[1]}/>
+    <g transform="rotate(14 50 95)">${R(31, 18)} fill="${fills[2]}" ${attrs[2]}/>${over}<path d="${ZP}" ${z}/></g></g></g>`; };
+let n = 0; const uid = () => 'u' + n++;
+const lin = (stops, x1 = 0, y1 = 0, x2 = 1, y2 = 1) => { const id = uid();
+  return [id, `<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${stops.map((c, i) => `<stop offset="${i / (stops.length - 1)}" stop-color="${c}"/>`).join('')}</linearGradient>`]; };
+const radial = (stops, cx = .5, cy = .5, r = .7) => { const id = uid();
+  return [id, `<radialGradient id="${id}" cx="${cx}" cy="${cy}" r="${r}">${stops.map(([o, c, a = 1]) => `<stop offset="${o}" stop-color="${c}" stop-opacity="${a}"/>`).join('')}</radialGradient>`]; };
+const blur = (sd) => { const id = uid(); return [id, `<filter id="${id}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${sd}"/></filter>`]; };
+const shadow = (dx, dy, sd, c, a) => { const id = uid(); return [id, `<filter id="${id}" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="${dx}" dy="${dy}" stdDeviation="${sd}" flood-color="${c}" flood-opacity="${a}"/></filter>`]; };
+const svg = (defs, body) => `<svg class="abs" width="1080" height="1080" viewBox="0 0 1080 1080" style="left:0;top:0"><defs>${defs.join('')}</defs>${body}</svg>`;
+const spark = (x, y, s, c = '#fff', op = 1) => `<path d="M${x} ${y - s} Q${x} ${y} ${x + s} ${y} Q${x} ${y} ${x} ${y + s} Q${x} ${y} ${x - s} ${y} Q${x} ${y} ${x} ${y - s} Z" fill="${c}" opacity="${op}"/>`;
+const seeded = (seed) => () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+const S = [];
+const add = (id, html) => S.push([id, html]);
+
+// 1 - Booster opening: light bursts from behind the fan.
+{ const [bg, dbg] = radial([[0, '#B98AFF'], [.35, V], [.75, '#3B137A'], [1, '#1A0838']]); const [gl, dgl] = blur(70); const [sh, dsh] = shadow(0, 24, 30, '#1A0838', .55);
+  const rays = Array.from({ length: 18 }, (_, i) => { const a = i * Math.PI / 9, w = .07; return `<path d="M540 540 L${540 + 900 * Math.cos(a - w)} ${540 + 900 * Math.sin(a - w)} L${540 + 900 * Math.cos(a + w)} ${540 + 900 * Math.sin(a + w)} Z" fill="#fff" opacity="${i % 2 ? .07 : .13}"/>`; }).join('');
+  add('01-ouverture', svg([dbg, dgl, dsh], `<rect width="1080" height="1080" fill="url(#${bg})"/>${rays}<circle cx="540" cy="520" r="250" fill="#F3E8FF" opacity=".55" filter="url(#${gl})"/>
+    ${fan({ s: 7.6, fills: ['#FF6FB5', '#6FB8FF', '#fff'], g: `filter="url(#${sh})"` })}
+    ${spark(250, 330, 34)}${spark(820, 290, 26)}${spark(850, 760, 38)}${spark(230, 760, 22, '#FDE68A')}${spark(760, 180, 14, '#FDE68A')}`)); }
+
+// 2 - Holo card under a spotlight.
+{ const [bg, dbg] = radial([[0, '#4A1F8F'], [.55, '#1E0B3D'], [1, '#07040E']], .5, .45); const [ho, dho] = lin(['#FFC8F0', '#C9B8FF', '#9FE0FF', '#BFFFE0', '#FFF1A8', '#FFC8F0']);
+  const [shine, dsh] = lin(['rgba(255,255,255,0)', 'rgba(255,255,255,0)', 'rgba(255,255,255,.85)', 'rgba(255,255,255,0)', 'rgba(255,255,255,0)'], 0, 0, 1, .6);
+  const [gl, dgl] = blur(80);
+  add('02-holo', svg([dbg, dho, dsh, dgl], `<rect width="1080" height="1080" fill="url(#${bg})"/><circle cx="540" cy="520" r="300" fill="${V}" opacity=".8" filter="url(#${gl})"/>
+    ${fan({ s: 7.6, fills: ['rgba(196,181,253,.35)', 'rgba(196,181,253,.6)', `url(#${ho})`], over: `${R(31, 18)} fill="url(#${shine})"/>` })}
+    ${spark(270, 300, 30, '#C9B8FF')}${spark(830, 780, 34, '#9FE0FF')}${spark(800, 260, 16)}`)); }
+
+// 3 - Mesh gradient and frosted glass cards.
+{ const [b, db] = blur(110); const [sh, dsh] = shadow(0, 30, 40, '#2A1052', .45);
+  add('03-verre', svg([db, dsh], `<rect width="1080" height="1080" fill="${V}"/><g filter="url(#${b})"><circle cx="260" cy="280" r="330" fill="#FF4FA0"/><circle cx="840" cy="820" r="340" fill="#3AA9FF"/>
+    <circle cx="860" cy="230" r="240" fill="#B57BFF"/><circle cx="230" cy="860" r="260" fill="#4C1D95"/></g>
+    ${fan({ s: 7.6, fills: ['rgba(255,255,255,.22)', 'rgba(255,255,255,.4)', '#fff'], attrs: ['stroke="rgba(255,255,255,.75)" stroke-width=".7"', 'stroke="rgba(255,255,255,.8)" stroke-width=".7"', ''], g: `filter="url(#${sh})"` })}`)); }
+
+// 4 - Flat long shadow to the bottom right.
+{ const [bg, dbg] = lin(['#8B4BF5', '#7C3AED', '#6A2BD6']); const sh = '#5B21B6';
+  const trail = Array.from({ length: 110 }, (_, i) => fan({ s: 7.4, cx: 540 + i * 5, cy: 540 + i * 5, fills: [sh, sh, sh], z: `fill="${sh}"` })).reverse().join('');
+  add('04-ombre-longue', svg([dbg], `<rect width="1080" height="1080" fill="url(#${bg})"/>${trail}${fan({ s: 7.4 })}`)); }
+
+// 5 - Neon outlines on the dark.
+{ const [bg, dbg] = radial([[0, '#2A0F55'], [1, '#07040E']], .5, .5, .65); const [br, dbr] = lin(['#FF4FA0', '#8B3DFF', '#3AA9FF']);
+  const glow = uid(); const dgl = `<filter id="${glow}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
+  add('05-neon', svg([dbg, dbr, dgl], `<rect width="1080" height="1080" fill="url(#${bg})"/>
+    ${fan({ s: 7.4, fills: ['rgba(255,79,160,.08)', 'rgba(58,169,255,.08)', 'rgba(139,61,255,.25)'], attrs: ['stroke="#FF4FA0" stroke-width="1.6"', 'stroke="#3AA9FF" stroke-width="1.6"', 'stroke="#fff" stroke-width="2"'], z: 'fill="#fff"', g: `filter="url(#${glow})"` })}`)); }
+
+// 6 - The fan blown up, filling the round.
+{ const [bg, dbg] = lin(['#A66BFF', '#7C3AED', '#4C1D95'], 0, 0, .6, 1); const [sh, dsh] = shadow(10, 22, 24, '#1A0838', .5);
+  add('06-geant', svg([dbg, dsh], `<rect width="1080" height="1080" fill="url(#${bg})"/>${fan({ s: 10.6, cy: 560, fills: ['#FF4FA0', '#3AA9FF', '#fff'], g: `filter="url(#${sh})"` })}`)); }
+
+// 7 - Our post style: halftone on the brand gradient, white outlines, hard shadow.
+{ const [bg, dbg] = lin(['#FF4FA0', '#8B3DFF', '#3AA9FF']); const pat = uid(); const [m, dm] = radial([[0, '#000'], [.45, '#000'], [1, '#fff']], .5, .5, .72); const mask = uid();
+  const [sh, dsh] = shadow(20, 20, 0, '#1A0838', .55);
+  add('07-sticker-trame', svg([dbg, dm, `<pattern id="${pat}" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="17" cy="17" r="7" fill="#fff"/></pattern><mask id="${mask}"><rect width="1080" height="1080" fill="url(#${m})"/></mask>`, dsh],
+    `<rect width="1080" height="1080" fill="url(#${bg})"/><rect width="1080" height="1080" fill="url(#${pat})" opacity=".22" mask="url(#${mask})"/>
+    ${fan({ s: 7.4, fills: ['#F5C93B', '#35C6BC', '#fff'], attrs: ['stroke="#fff" stroke-width="2.2"', 'stroke="#fff" stroke-width="2.2"', 'stroke="#fff" stroke-width="2.2"'], g: `filter="url(#${sh})"` })}`)); }
+
+// 8 - On stage: a beam from above, a glowing floor, the fan floating.
+{ const [bg, dbg] = lin(['#8B3DFF', '#5B21B6', '#1E0B3D'], 0, 0, 0, 1); const [beam, dbe] = lin(['rgba(255,255,255,.35)', 'rgba(255,255,255,0)'], 0, 0, 0, 1); const [gl, dgl] = blur(30); const [gl2, dgl2] = blur(14);
+  add('08-scene', svg([dbg, dbe, dgl, dgl2], `<rect width="1080" height="1080" fill="url(#${bg})"/><path d="M420 0 H660 L900 900 H180 Z" fill="url(#${beam})"/>
+    <ellipse cx="540" cy="850" rx="320" ry="62" fill="#C4B5FD" opacity=".75" filter="url(#${gl})"/><ellipse cx="540" cy="850" rx="200" ry="26" fill="#2A1052" opacity=".55" filter="url(#${gl2})"/>
+    ${fan({ s: 7, cy: 470 })}${spark(250, 640, 22, '#FDE68A')}${spark(830, 620, 28)}`)); }
+
+// 9 - Rosette: the 8 game colours as cards behind the Z card.
+{ const [bg, dbg] = radial([[0, '#8F55FF'], [1, '#3B137A']], .5, .5, .7); const [sh, dsh] = shadow(0, 16, 22, '#1A0838', .5); const [sh2, dsh2] = shadow(8, 10, 10, '#1A0838', .35);
+  const petals = GAME8.map((c, i) => `<rect x="460" y="70" width="160" height="230" rx="26" fill="${c}" stroke="#fff" stroke-width="10" transform="rotate(${i * 45 + 22.5} 540 540)"/>`).join('');
+  add('09-rosace', svg([dbg, dsh, dsh2], `<rect width="1080" height="1080" fill="url(#${bg})"/><g filter="url(#${sh2})">${petals}</g><circle cx="540" cy="540" r="300" fill="${V}"/>
+    ${fan({ s: 6.2, fills: ['#DDD6FE', '#EDE9FE', '#fff'], g: `filter="url(#${sh})"` })}`)); }
+
+// 10 - Speed: the fan rushing forward with trails, the « boost ».
+{ const [bg, dbg] = lin(['#FF4FA0', '#8B3DFF', '#4C1D95'], 0, 0, 1, 1); const [tr, dtr] = lin(['rgba(255,255,255,0)', 'rgba(255,255,255,.75)'], 0, 0, 1, 0); const [sh, dsh] = shadow(0, 20, 26, '#1A0838', .5);
+  const lines = [[300, 120, 380, 16], [380, 80, 440, 22], [470, 140, 420, 14], [560, 60, 470, 24], [650, 110, 420, 16], [740, 170, 360, 12]].map(([y, x, w, h]) => `<rect x="${x}" y="${y - h / 2}" width="${w}" height="${h}" rx="${h / 2}" fill="url(#${tr})"/>`).join('');
+  add('10-vitesse', svg([dbg, dtr, dsh], `<rect width="1080" height="1080" fill="url(#${bg})"/>${lines}${fan({ s: 7.4, cx: 590, tilt: 8, fills: ['rgba(255,255,255,.35)', 'rgba(255,255,255,.65)', '#fff'], g: `filter="url(#${sh})"` })}`)); }
+
+// 11 - Retro sunburst in violets, the fan with a hard shadow.
+{ const wedges = Array.from({ length: 24 }, (_, i) => { const a0 = i * Math.PI / 12, a1 = a0 + Math.PI / 12; return `<path d="M540 540 L${540 + 900 * Math.cos(a0)} ${540 + 900 * Math.sin(a0)} L${540 + 900 * Math.cos(a1)} ${540 + 900 * Math.sin(a1)} Z" fill="${i % 2 ? '#7C3AED' : '#8D4FF3'}"/>`; }).join('');
+  const [v, dv] = radial([[0, '#fff', .35], [.4, '#fff', 0], [.85, '#2A1052', 0], [1, '#2A1052', .5]], .5, .5, .72); const [sh, dsh] = shadow(18, 18, 0, '#3B137A', .9);
+  add('11-soleil', svg([dv, dsh], `${wedges}<rect width="1080" height="1080" fill="url(#${v})"/>${fan({ s: 7.4, fills: ['#C4B5FD', '#DDD6FE', '#fff'], g: `filter="url(#${sh})"` })}`)); }
+
+// 12 - Galaxy: deep space, nebulae, stars, the cards glowing.
+{ const [bg, dbg] = radial([[0, '#3B1477'], [.6, '#160730'], [1, '#05020C']], .5, .45, .75); const [b, db] = blur(90); const [gl, dgl] = shadow(0, 0, 40, '#C4B5FD', .9);
+  const rnd = seeded(11); let stars = ''; for (let i = 0; i < 140; i++) stars += `<circle cx="${rnd() * 1080}" cy="${rnd() * 1080}" r="${1.5 + rnd() * 3.5}" fill="#fff" opacity="${.3 + rnd() * .7}"/>`;
+  add('12-galaxie', svg([dbg, db, dgl], `<rect width="1080" height="1080" fill="url(#${bg})"/><g filter="url(#${b})" opacity=".6"><ellipse cx="330" cy="380" rx="300" ry="170" fill="#FF4FA0" transform="rotate(-30 330 380)"/><ellipse cx="760" cy="720" rx="320" ry="160" fill="#3AA9FF" transform="rotate(-30 760 720)"/></g>
+    ${stars}${spark(230, 260, 30)}${spark(860, 300, 20)}${spark(820, 860, 26)}${fan({ s: 7.2, g: `filter="url(#${gl})"` })}`)); }
+
+// 13 - Inverted: the Z card in the brand gradient, white Z, on the dark.
+{ const [bg, dbg] = radial([[0, '#2E1260'], [1, '#0B0812']], .5, .5, .7); const [br, dbr] = lin(['#FF4FA0', '#8B3DFF', '#3AA9FF']); const [gl, dgl] = blur(90);
+  add('13-carte-degrade', svg([dbg, dbr, dgl], `<rect width="1080" height="1080" fill="url(#${bg})"/><circle cx="470" cy="460" r="220" fill="#FF4FA0" opacity=".45" filter="url(#${gl})"/><circle cx="640" cy="640" r="220" fill="#3AA9FF" opacity=".45" filter="url(#${gl})"/>
+    ${fan({ s: 7.6, fills: ['rgba(255,255,255,.18)', 'rgba(255,255,255,.36)', `url(#${br})`], z: 'fill="#fff"' })}`)); }
+
+// 14 - A hand of cards: four game colours fanned under the Z card.
+{ const [bg, dbg] = lin(['#9B5CFF', '#7C3AED', '#5B21B6']); const [sh, dsh] = shadow(6, 14, 16, '#1A0838', .45);
+  const hand = [[-34, '#F5C93B'], [34, '#58A6DD'], [-17, '#35C6BC'], [17, '#F2706C']].map(([a, c]) => `<rect x="31" y="20" width="38" height="54" rx="7" fill="${c}" stroke="#fff" stroke-width="1.6" transform="rotate(${a} 50 100)"/>`).join('');
+  add('14-main', svg([dbg, dsh], `<rect width="1080" height="1080" fill="url(#${bg})"/><g filter="url(#${sh})"><g transform="translate(540 560) scale(7) translate(-50 -50)">${hand}
+    <rect x="31" y="20" width="38" height="54" rx="7" fill="#fff"/><path d="${ZP}" fill="${V}" transform="translate(0 2)"/></g></g>`)); }
+
+// 15 - Thickness: each card a solid slab with its edge showing.
+{ const [bg, dbg] = lin(['#9257F7', '#7C3AED', '#5B21B6']); const [sh, dsh] = shadow(0, 30, 30, '#1A0838', .5);
+  const slab = (k, fill, edge) => Array.from({ length: 9 }, (_, i) => `<g transform="translate(${(i - 9) * .28} ${(9 - i) * .28})">${k(edge)}</g>`).join('') + k(fill);
+  const back = (f) => `${R(31, 24, -14)} fill="${f}"/>`, mid = (f) => `${R(31, 21)} fill="${f}"/>`, front = (f) => `<g transform="rotate(14 50 95)">${R(31, 18)} fill="${f}"/></g>`;
+  add('15-epaisseur', svg([dbg, dsh], `<rect width="1080" height="1080" fill="url(#${bg})"/><g filter="url(#${sh})"><g transform="translate(560 530) scale(7.4) translate(-50.5 -50)">
+    ${slab(back, '#C4B5FD', '#8B5CF6')}${slab(mid, '#E4DCFF', '#A78BFA')}${slab(front, '#fff', '#C4B5FD')}<g transform="rotate(14 50 95)"><path d="${ZP}" fill="${V}"/></g></g></g>`)); }
+
+// 16 - Waves of the brand colours rising under the fan.
+{ const [bg, dbg] = lin(['#8B4BF5', '#6D28D9'], 0, 0, 0, 1); const [sh, dsh] = shadow(0, 20, 24, '#1A0838', .4);
+  const wave = (y, a, c, ph) => { let d = `M0 1080 L0 ${y}`; for (let x = 0; x <= 1080; x += 20) d += ` L${x} ${y + a * Math.sin(x / 170 + ph)}`; return `<path d="${d} L1080 1080 Z" fill="${c}"/>`; };
+  add('16-vagues', svg([dbg, dsh], `<rect width="1080" height="1080" fill="url(#${bg})"/>${wave(700, 34, '#FF4FA0', 0)}${wave(770, 30, '#B57BFF', 2)}${wave(850, 28, '#3AA9FF', 4)}${wave(930, 22, '#4C1D95', 1)}
+    ${fan({ s: 6.8, cy: 470, g: `filter="url(#${sh})"` })}`)); }
+
+// 17 - Out of the booster: the cards rise from a torn foil pack.
+{ const [bg, dbg] = radial([[0, '#A673FF'], [.6, V], [1, '#3B137A']], .5, .35, .8); const [pk, dpk] = lin(['#E9E2FF', '#A78BFA', '#6D28D9', '#C4B5FD'], 0, 0, 1, .4); const [gl, dgl] = blur(60);
+  const teeth = Array.from({ length: 21 }, (_, i) => `${250 + i * 29} ${i % 2 ? 640 : 616}`).join(' L');
+  add('17-booster', svg([dbg, dpk, dgl], `<rect width="1080" height="1080" fill="url(#${bg})"/><circle cx="540" cy="460" r="260" fill="#F3E8FF" opacity=".5" filter="url(#${gl})"/>
+    ${fan({ s: 6.8, cy: 440 })}<path d="M250 616 L${teeth} L830 640 L830 1080 L250 1080 Z" fill="url(#${pk})" stroke="#fff" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M300 700 L420 1080 M380 700 L500 1080" stroke="#fff" stroke-width="18" opacity=".25"/>${spark(260, 330, 30)}${spark(830, 300, 24, '#FDE68A')}${spark(850, 520, 16)}`)); }
+
+// 18 - The Z in relief: a long shadow cut into the white card.
+{ const [b, db] = blur(110); const [sh, dsh] = shadow(0, 26, 34, '#1A0838', .45); const clip = uid();
+  const zs = Array.from({ length: 40 }, (_, i) => `<path d="${ZP}" fill="#DDD6FE" transform="translate(${i * .35} ${i * .35})"/>`).join('');
+  add('18-z-relief', svg([db, dsh, `<clipPath id="${clip}">${R(31, 18)}/></clipPath>`], `<rect width="1080" height="1080" fill="${V}"/><g filter="url(#${b})"><circle cx="280" cy="300" r="300" fill="#FF4FA0" opacity=".8"/><circle cx="820" cy="800" r="320" fill="#3AA9FF" opacity=".8"/></g>
+    ${fan({ s: 7.6, fills: ['rgba(255,255,255,.3)', 'rgba(255,255,255,.6)', '#fff'], over: `<g clip-path="url(#${clip})">${zs}</g>`, g: `filter="url(#${sh})"` })}`)); }
+
+carousel(S);
+</script></body></html>
