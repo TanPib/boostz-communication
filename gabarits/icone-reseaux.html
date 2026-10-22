@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ icone reseaux</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Profile picture proposals (asked on 22/10/2026: the app icon in a purple disc
+// is « trop neutre », keep the same look but make it stand out). The card fan
+// with the Z of BoostZFanLogo.js, settled at -14 / +14 degrees, on brighter
+// grounds, outlines and lights. 1080 x 1080, everything inside the circle the
+// networks crop it to. Render: node rendu.mjs icone-reseaux.html images
+document.head.insertAdjacentHTML('beforeend', '<style>.p { width: 1080px; height: 1080px; }</style>');
+const GRAD = ['#FF4FA0', '#8B3DFF', '#3AA9FF'];
+const Z = 'M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z';
+let uid = 0;
+// The fan. o: back, mid (fills), front ([from, to]), z (Z colour), line (outline colour or null), lw, shadow, spark.
+const fan = (size, o = {}) => { const id = 'g' + uid++;
+  const f = o.front || ['#A78BFA', '#7C3AED'], line = o.line === undefined ? '#FFFFFF' : o.line, lw = o.lw || 3;
+  const stroke = line ? `stroke="${line}" stroke-width="${lw}" stroke-linejoin="round"` : '';
+  return `<svg width="${size}" height="${size}" viewBox="0 0 100 100" style="display:block;overflow:visible;${o.shadow ? `filter:drop-shadow(${o.shadow})` : ''}">
+  <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1">${f.map((c, i) => `<stop offset="${i / (f.length - 1)}" stop-color="${c}"/>`).join('')}</linearGradient></defs>
+  <rect x="31" y="24" width="38" height="54" rx="7" fill="${o.back || 'rgba(196,181,253,.35)'}" ${stroke} transform="rotate(-14 50 95)"/>
+  <rect x="31" y="21" width="38" height="54" rx="7" fill="${o.mid || 'rgba(196,181,253,.65)'}" ${stroke}/>
+  <g transform="rotate(14 50 95)"><rect x="31" y="18" width="38" height="54" rx="7" fill="url(#${id})" ${stroke}/><path d="${Z}" fill="${o.z || '#fff'}"/></g>
+  ${o.spark === false ? '' : `<polygon points="84,8 86.8,16 84,24 81.2,16" fill="${o.spark || '#FDE68A'}"/><polygon points="76,16 84,13.2 92,16 84,18.8" fill="${o.spark || '#FDE68A'}"/>`}</svg>`; };
+const at = (html, dx = 0, dy = 0) => `<div class="abs" style="inset:0;display:flex;align-items:center;justify-content:center;transform:translate(${dx}px,${dy}px)">${html}</div>`;
+const bg = (fill) => `<div class="abs" style="inset:0;background:${fill}"></div>`;
+const lin = (a, cs) => `linear-gradient(${a}deg, ${cs.join(', ')})`;
+const DARK_BG = '#131020';
+const sunburst = (c1, c2, n = 24) => `repeating-conic-gradient(from 0deg at 50% 52%, ${c1} 0deg ${360 / n / 2}deg, ${c2} ${360 / n / 2}deg ${360 / n}deg)`;
+const S = [];
+const add = (id, html) => S.push([id, html]);
+
+// 1 - The brand gradient behind white cards.
+add('01-degrade', bg(lin(135, GRAD)) + at(fan(800, { back: 'rgba(255,255,255,.35)', mid: 'rgba(255,255,255,.7)', front: ['#FFFFFF', '#F1EAFF'], z: '#8B3DFF', line: null, shadow: '18px 18px 0 rgba(11,8,18,.35)' }), -10, 30));
+// 2 - Pokémon yellow ground, violet fan with a hard shadow.
+add('02-jaune', bg('#F5C93B') + at(fan(800, { back: '#C4B5FD', mid: '#A78BFA', line: '#131020', lw: 3.5, spark: '#FF4FA0', shadow: '16px 16px 0 #131020' }), -10, 30));
+// 3 - Gold front card, the Pass colours.
+add('03-or', bg(lin(160, ['#2A1052', '#160730'])) + at(fan(800, { back: 'rgba(196,181,253,.3)', mid: 'rgba(196,181,253,.6)', front: ['#FFF6D8', '#F5C542', '#C99418'], z: '#2A1052', line: null, spark: '#F5C542' }), -10, 30));
+// 4 - Neon: dark ground, the fan glowing in the brand gradient.
+add('04-neon', bg(`radial-gradient(circle at 50% 50%, #2A1B4A, ${DARK_BG} 70%)`) + at(fan(780, { back: 'transparent', mid: 'transparent', front: GRAD, line: '#FF4FA0', lw: 2.6, shadow: '0 0 40px #8B3DFF' }), -10, 30));
+// 5 - Sunset: pink to orange.
+add('05-coucher', bg(lin(135, ['#FF4FA0', '#FF8A3D', '#FFD23F'])) + at(fan(800, { back: 'rgba(255,255,255,.4)', mid: 'rgba(255,255,255,.7)', front: ['#8B3DFF', '#5B21B6'], line: '#fff', shadow: '16px 16px 0 rgba(11,8,18,.3)' }), -10, 30));
+// 6 - Sticker: thick white outline and hard shadow on the gradient.
+add('06-sticker', bg(lin(135, GRAD)) + at(fan(800, { back: '#C4B5FD', mid: '#A78BFA', front: ['#8B3DFF', '#5B21B6'], line: '#fff', lw: 5, shadow: '20px 20px 0 #131020' }), -10, 30));
+// 7 - One big Z card, tilted, on the dark table.
+add('07-carte-seule', bg(DARK_BG) + at(`<svg width="760" height="760" viewBox="0 0 100 100" style="overflow:visible;filter:drop-shadow(22px 22px 0 rgba(0,0,0,.5))"><defs><linearGradient id="c7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF4FA0"/><stop offset=".55" stop-color="#8B3DFF"/><stop offset="1" stop-color="#3AA9FF"/></linearGradient></defs><g transform="rotate(10 50 50)"><rect x="22" y="10" width="56" height="80" rx="10" fill="url(#c7)" stroke="#fff" stroke-width="4"/><g transform="translate(50 50) scale(1.55) translate(-50 -43.75)"><path d="${Z}" fill="#fff"/></g></g></svg>`));
+// 8 - Three game colours: Pokémon, Lorcana, One Piece behind the Z.
+add('08-trois-jeux', bg(DARK_BG) + at(fan(800, { back: '#35C6BC', mid: '#F5C93B', front: ['#FF4FA0', '#8B3DFF'], line: '#fff', lw: 3.5, shadow: '16px 16px 0 rgba(0,0,0,.5)' }), -10, 30));
+// 9 - Cyan to violet ground.
+add('09-cyan', bg(lin(135, ['#3AE7FF', '#3AA9FF', '#8B3DFF'])) + at(fan(800, { back: 'rgba(255,255,255,.4)', mid: 'rgba(255,255,255,.75)', front: ['#131020', '#2A1B4A'], z: '#3AE7FF', line: '#fff', shadow: '16px 16px 0 rgba(11,8,18,.3)' }), -10, 30));
+// 10 - A gradient ring, like a story ring that never goes away.
+add('10-anneau', bg(lin(135, GRAD)) + `<div class="abs" style="left:70px;top:70px;width:940px;height:940px;border-radius:50%;background:${DARK_BG}"></div>` + at(fan(680, { shadow: '0 0 30px rgba(139,61,255,.6)' }), -8, 26));
+// 11 - Sunburst: rays behind the fan.
+add('11-rayons', bg(sunburst('#8B3DFF', '#A35BFF')) + at(fan(800, { back: '#FDE68A', mid: '#F5C93B', front: ['#FF4FA0', '#C2187A'], line: '#fff', lw: 4, shadow: '18px 18px 0 rgba(19,16,32,.55)' }), -10, 30));
+// 12 - Holographic front card.
+add('12-holo', bg(DARK_BG) + at(fan(800, { back: 'rgba(196,181,253,.3)', mid: 'rgba(196,181,253,.6)', front: ['#7CFFCB', '#3AA9FF', '#B57BFF', '#FF6FD8', '#FFE66D'], z: '#131020', line: '#fff', shadow: '0 0 36px rgba(255,111,216,.55)' }), -10, 30));
+// 13 - Green "up" ground, dark fan.
+add('13-vert', bg('#5FD3A3') + at(fan(800, { back: '#2A1B4A', mid: '#1B1330', front: ['#8B3DFF', '#5B21B6'], line: '#fff', lw: 3.5, spark: '#131020', shadow: '16px 16px 0 #131020' }), -10, 30));
+// 14 - Pink ground, white cards, violet Z.
+add('14-rose', bg('#FF4FA0') + at(fan(800, { back: 'rgba(255,255,255,.45)', mid: 'rgba(255,255,255,.75)', front: ['#FFFFFF', '#FFE3F1'], z: '#8B3DFF', line: '#131020', lw: 3, spark: '#FDE68A', shadow: '16px 16px 0 #131020' }), -10, 30));
+// 15 - Halftone dots behind, comic style.
+add('15-trame', bg(`radial-gradient(circle, rgba(255,255,255,.22) 22%, transparent 24%) 0 0/48px 48px, ${lin(135, GRAD)}`) + at(fan(800, { back: '#C4B5FD', mid: '#A78BFA', front: ['#131020', '#2A1B4A'], line: '#fff', lw: 4, shadow: '18px 18px 0 #131020' }), -10, 30));
+// 16 - Speed lines: the "boost".
+add('16-vitesse', bg(DARK_BG) + [0, 1, 2, 3, 4].map((i) => `<div class="abs" style="left:${60 + i * 18}px;top:${330 + i * 95}px;width:${300 - i * 30}px;height:26px;border-radius:13px;background:${GRAD[i % 3]}"></div>`).join('') + at(fan(760, { shadow: '16px 16px 0 rgba(0,0,0,.5)' }), 60, 30));
+// 17 - A lightning bolt behind the cards.
+add('17-eclair', bg(lin(160, ['#2A1052', '#131020'])) + `<svg class="abs" width="1080" height="1080" viewBox="0 0 100 100" style="left:0;top:0"><path d="M58 4 L30 52 L48 52 L38 96 L72 40 L53 40 L64 4 Z" fill="#F5C93B" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>` + at(fan(640, { shadow: '14px 14px 0 rgba(0,0,0,.55)' }), -20, 60));
+// 18 - Light: white ground, violet fan, pink shadow.
+add('18-clair', bg('#FFFFFF') + at(fan(800, { back: '#E9DFFD', mid: '#C4B5FD', front: ['#8B3DFF', '#5B21B6'], line: '#131020', lw: 3, spark: '#FF4FA0', shadow: '18px 18px 0 #FF4FA0' }), -10, 30));
+// 19 - The gradient Z alone, glowing, cards as outlines behind.
+add('19-z-lumineux', bg(DARK_BG) + at(fan(800, { back: 'transparent', mid: 'transparent', front: ['transparent', 'transparent'], z: 'transparent', line: 'rgba(196,181,253,.6)', lw: 2.4, spark: false }), -10, 30) + at(`<span class="word grad" style="font-size:520px;line-height:1;transform:skewX(-8deg);filter:drop-shadow(0 0 30px #8B3DFF)">Z</span>`, 0, -10));
+// 20 - The Z card bursting out of a BoostZ booster.
+add('20-booster', bg(lin(135, GRAD)) + `<div class="abs" style="left:290px;top:470px;width:500px;height:470px;border-radius:0 0 60px 60px;background:#131020;border:14px solid #fff;border-top:none;box-shadow:20px 20px 0 rgba(11,8,18,.35)"></div>
+  <div class="abs" style="left:280px;top:440px;width:520px;height:70px;background:repeating-linear-gradient(90deg,#fff 0 30px,transparent 30px 60px)"></div>` + at(fan(620, { back: '#FDE68A', mid: '#F5C93B', line: '#fff', lw: 4 }), 0, -120));
+// 21 - Violet ground with the fan in yellow and pink.
+add('21-violet-pop', bg('#8B3DFF') + at(fan(800, { back: '#FF4FA0', mid: '#F5C93B', front: ['#FFFFFF', '#F1EAFF'], z: '#8B3DFF', line: '#131020', lw: 3.5, spark: '#FDE68A', shadow: '16px 16px 0 #131020' }), -10, 30));
+// 22 - Night blue ground, cyan and pink neon cards.
+add('22-nuit', bg(`radial-gradient(circle at 50% 40%, #1E2A6B, #0B0812 75%)`) + at(fan(800, { back: '#3AA9FF', mid: '#FF4FA0', front: ['#8B3DFF', '#5B21B6'], line: '#fff', lw: 3, shadow: '0 0 40px rgba(58,169,255,.7)' }), -10, 30));
+
+carousel(S);
+</script></body></html>
