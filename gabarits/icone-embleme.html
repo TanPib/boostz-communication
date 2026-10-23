@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ icone embleme</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Profile picture, fifth round (asked on 23/10/2026, with the user's former
+// Poke Potes badge as the bar for quality): illustrated emblems where frame,
+// scene and name are drawn as one piece, in a short palette with grain.
+// 1080 x 1080, everything inside the inscribed circle.
+// Render: node rendu.mjs icone-embleme.html images
+document.head.insertAdjacentHTML('beforeend', '<style>.p { width: 1080px; height: 1080px; } .lab { font-family: Outfit; font-weight: 800; letter-spacing: .32em; text-align: center; }</style>');
+const V = '#7C3AED', NAVY = '#1B1235', CREAM = '#F4EADB', ROSE = '#FF7FAF';
+const ZP = 'M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z';
+const GAME8 = ['#F5C93B', '#F2706C', '#35C6BC', '#B189E8', '#C0A183', '#A9B2C4', '#F58A4E', '#58A6DD'];
+let n = 0; const uid = () => 'e' + n++;
+const lin = (stops, x1 = 0, y1 = 0, x2 = 1, y2 = 1) => { const id = uid();
+  return [id, `<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${stops.map((c, i) => `<stop offset="${i / (stops.length - 1)}" stop-color="${c}"/>`).join('')}</linearGradient>`]; };
+const radial = (stops, cx = .5, cy = .5, r = .6) => { const id = uid();
+  return [id, `<radialGradient id="${id}" cx="${cx}" cy="${cy}" r="${r}">${stops.map(([o, c, a = 1]) => `<stop offset="${o}" stop-color="${c}" stop-opacity="${a}"/>`).join('')}</radialGradient>`]; };
+const blur = (sd) => { const id = uid(); return [id, `<filter id="${id}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${sd}"/></filter>`]; };
+const hard = (dx, dy, c, a = 1) => { const id = uid(); return [id, `<filter id="${id}" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="${dx}" dy="${dy}" stdDeviation="0" flood-color="${c}" flood-opacity="${a}"/></filter>`]; };
+const svg = (defs, body) => `<svg class="abs" width="1080" height="1080" viewBox="0 0 1080 1080" style="left:0;top:0;overflow:visible"><defs>${defs.join('')}</defs>${body}</svg>`;
+const polar = (r, a, c = 540) => [c + r * Math.cos(a), c + r * Math.sin(a)];
+const seeded = (seed) => () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+const spark = (x, y, s, c = CREAM, op = 1) => `<path d="M${x} ${y - s} Q${x} ${y} ${x + s} ${y} Q${x} ${y} ${x} ${y + s} Q${x} ${y} ${x - s} ${y} Q${x} ${y} ${x} ${y - s} Z" fill="${c}" opacity="${op}"/>`;
+// A card of width w centred on (cx, cy), rotated rot, with the Z when z is set.
+const zc = (cx, cy, w, rot, o = {}) => { const { fill = '#fff', z, stroke, sw = 0, extra = '' } = o, k = w / 38;
+  return `<g transform="translate(${cx} ${cy}) rotate(${rot}) scale(${k}) translate(-50 -45)"><rect x="31" y="18" width="38" height="54" rx="7" fill="${fill}" ${stroke ? `stroke="${stroke}" stroke-width="${sw / k}" stroke-linejoin="round"` : ''}/>${extra}${z ? `<path d="${ZP}" fill="${z}"/>` : ''}</g>`; };
+// The app's fan of three, the Z card in front, around (cx, cy).
+const fan = (cx, cy, w, o = {}) => { const { fills = ['rgba(255,255,255,.35)', 'rgba(255,255,255,.65)', '#fff'], z = V, stroke, sw = 0, rot = 0 } = o;
+  const d = w * .36; const rr = rot * Math.PI / 180;
+  const at = (dx, dy) => [cx + dx * Math.cos(rr) - dy * Math.sin(rr), cy + dx * Math.sin(rr) + dy * Math.cos(rr)];
+  const [x0, y0] = at(-d, w * .12), [x1, y1] = at(0, 0), [x2, y2] = at(d, -w * .06);
+  return zc(x0, y0, w, rot - 14, { fill: fills[0], stroke, sw }) + zc(x1, y1, w, rot, { fill: fills[1], stroke, sw }) + zc(x2, y2, w, rot + 14, { fill: fills[2], z, stroke, sw }); };
+// Film grain over the whole emblem, and the wordmark in any colour.
+const GRAIN = (op = .09, seed = 3) => { const id = uid(); return `<svg class="abs" width="1080" height="1080" style="left:0;top:0;mix-blend-mode:overlay;opacity:${op}"><filter id="${id}"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="${seed}"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.2"/></filter><rect width="1080" height="1080" filter="url(#${id})"/></svg>`; };
+const word = (top, size, color = '#fff', shadow = '') => `<div class="abs" style="left:0;top:${top}px;width:1080px;display:flex;justify-content:center;${shadow ? `filter:drop-shadow(${shadow})` : ''}">${wordmark(size).replace('color:#fff', 'color:' + color)}</div>`;
+const lab = (top, size, color, text, ls = '.32em') => `<div class="abs lab" style="left:0;top:${top}px;width:1080px;font-size:${size}px;color:${color};letter-spacing:${ls}">${text}</div>`;
+const S = [];
+const add = (id, html) => S.push([id, html]);
+
+// 1 - Tourbillon: energy blades whirl around a dark badge; inside, the fan
+// rises out of a halo with a trail of booster smoke, the name under it.
+{ const [halo, dh] = lin(['#FF4FA0', '#8B3DFF', '#3AA9FF'], 0, 0, 1, 1); const [sm, dsm] = blur(6); const [gl, dgl] = blur(40);
+  const P = (r, a) => polar(r, a).map((v) => v.toFixed(1)).join(' ');
+  const hook = (a, k, fill) => `<path d="M${P(522, a - .05 * k)} Q${P(505, a + .3 * k)} ${P(392 + 30 * (1 - k), a + .55 * k)} Q${P(462, a + .2 * k)} ${P(486, a + .06 * k)} Z" fill="${fill}"/>`;
+  const blades = Array.from({ length: 16 }, (_, i) => hook(i * Math.PI / 8, i % 2 ? .75 : 1, CREAM)).join('');
+  const smoke = [0, 1, 2].map((i) => `<path d="M${640 + i * 6} ${330 + i * 20} C${720} ${300 + i * 26} ${760} ${380 + i * 14} ${720 + i * 10} ${440 + i * 12} C${690} ${480} ${740} ${520} ${790 - i * 18} ${500 + i * 8}" fill="none" stroke="${CREAM}" stroke-width="${10 - i * 3}" stroke-linecap="round" opacity="${.75 - i * .2}"/>`).join('');
+  add('01-tourbillon', svg([dh, dsm, dgl], `<rect width="1080" height="1080" fill="#120B24"/><circle cx="540" cy="540" r="535" fill="${NAVY}"/>
+      <circle cx="540" cy="540" r="452" fill="none" stroke="${ROSE}" stroke-width="26" opacity=".9"/><circle cx="540" cy="540" r="428" fill="none" stroke="#6B3FB0" stroke-width="12"/>
+      <circle cx="540" cy="540" r="410" fill="${NAVY}"/>${blades}
+      <circle cx="540" cy="372" r="150" fill="url(#${dh.match(/id="(\w+)"/)[1]})"/><circle cx="540" cy="372" r="150" fill="none" stroke="${CREAM}" stroke-width="10"/>
+      <circle cx="540" cy="372" r="190" fill="#8B3DFF" opacity=".35" filter="url(#${gl})"/>
+      ${fan(530, 380, 150, { fills: ['#C4B5FD', '#E4DCFF', '#fff'], stroke: NAVY, sw: 9 })}
+      ${spark(360, 250, 26)}${spark(705, 230, 20)}${spark(740, 290, 12)}${spark(330, 470, 12)}`)
+    + word(540, 150, CREAM) + lab(752, 34, CREAM, 'COMPAGNON TCG') + GRAIN(.1)); }
+
+// 2 - Écusson: an esports crest, cards spread as wings, a ribbon across.
+{ const [sh, dsh] = lin(['#3B1A78', '#1E0B3D']); const [gold, dg] = lin(['#FFE9A8', '#F5C542', '#B98410', '#F7DA8C']); const [bg, dbg] = radial([[0, '#5B2BB0'], [1, '#160730']], .5, .45, .7);
+  const [hs, dhs] = hard(0, 14, '#0B0518', .55);
+  const shield = 'M540 205 C640 205 730 185 800 160 C812 330 800 470 780 560 C740 760 640 860 540 930 C440 860 340 760 300 560 C280 470 268 330 280 160 C350 185 440 205 540 205 Z';
+  const wing = (s) => [0, 1, 2].map((i) => zc(540 + s * (300 + i * 42), 430 + i * 40, 120, s * (28 + i * 16), { fill: GAME8[(s > 0 ? 4 : 0) + i], stroke: CREAM, sw: 8 })).join('');
+  const ribbon = `<path d="M210 700 L300 680 L300 790 L210 810 L245 745 Z" fill="#B02A6F"/><path d="M870 700 L780 680 L780 790 L870 810 L835 745 Z" fill="#B02A6F"/>
+      <path d="M270 660 Q540 700 810 660 L810 770 Q540 810 270 770 Z" fill="#FF4FA0" stroke="${CREAM}" stroke-width="8"/>`;
+  add('02-ecusson', svg([dbg, dsh, dg, dhs], `<rect width="1080" height="1080" fill="url(#${dbg.match(/id="(\w+)"/)[1]})"/>
+      <g filter="url(#${dhs.match(/id="(\w+)"/)[1]})">${wing(-1)}${wing(1)}<path d="${shield}" fill="url(#${dsh.match(/id="(\w+)"/)[1]})" stroke="url(#${dg.match(/id="(\w+)"/)[1]})" stroke-width="20" stroke-linejoin="round"/></g>
+      <path d="${shield}" fill="none" stroke="${CREAM}" stroke-width="4" opacity=".5" transform="translate(540 545) scale(.92) translate(-540 -545)"/>
+      ${fan(540, 330, 130, { fills: ['#C4B5FD', '#E4DCFF', '#fff'], stroke: CREAM, sw: 6 })}
+      ${ribbon}${[470, 540, 610].map((x, i) => spark(x, 860 - (i === 1 ? 14 : 0), i === 1 ? 26 : 18, '#F5C542')).join('')}`)
+    + word(468, 120, '#fff') + lab(693, 44, '#fff', 'COMPAGNON TCG', '.14em') + GRAIN(.08)); }
+
+// 3 - Coucher de soleil rétro: the Z card stands on the horizon in front of a
+// striped sun, a neon grid runs to the viewer, the name over the grid.
+{ const [sky, dsky] = lin(['#2A1052', '#6D28D9', '#FF4FA0', '#FF9A5C'], 0, 0, 0, 1); const [sun, dsun] = lin(['#FFE66D', '#FF9A5C', '#FF4FA0'], 0, 0, 0, 1);
+  const clip = uid(); const sid = dsky.match(/id="(\w+)"/)[1], uid2 = dsun.match(/id="(\w+)"/)[1]; const [hs, dhs] = hard(10, 10, NAVY);
+  const cuts = [0, 1, 2, 3, 4].map((i) => `<rect x="290" y="${560 + i * 24}" width="500" height="${4 + i * 3}" fill="${'#FF6F8F'}"/>`).join('');
+  const grid = Array.from({ length: 15 }, (_, i) => `<line x1="540" y1="680" x2="${540 + (i - 7) * 170}" y2="1080" stroke="#FF4FA0" stroke-width="4" opacity=".8"/>`).join('')
+    + [700, 735, 785, 855, 950].map((y) => `<line x1="0" y1="${y}" x2="1080" y2="${y}" stroke="#FF4FA0" stroke-width="4" opacity=".8"/>`).join('');
+  add('03-retro', svg([dsky, dsun, `<clipPath id="${clip}"><circle cx="540" cy="540" r="470"/></clipPath>`, dhs], `<rect width="1080" height="1080" fill="${NAVY}"/><circle cx="540" cy="540" r="535" fill="${CREAM}"/><circle cx="540" cy="540" r="498" fill="${NAVY}"/>
+      <g clip-path="url(#${clip})"><rect width="1080" height="680" fill="url(#${sid})"/><circle cx="540" cy="560" r="250" fill="url(#${uid2})"/>${cuts}
+      <rect y="680" width="1080" height="400" fill="#160730"/>${grid}
+      ${spark(250, 260, 18)}${spark(830, 220, 24)}${spark(800, 380, 12)}${spark(300, 420, 10)}
+      <g filter="url(#${dhs.match(/id="(\w+)"/)[1]})">${zc(540, 470, 230, -8, { fill: NAVY, z: CREAM, stroke: CREAM, sw: 10 })}</g></g>`)
+    + word(750, 140, CREAM, `8px 8px 0 #FF4FA0`) + GRAIN(.1)); }
+
+// 4 - Portail: cards in the 8 game colours spiral into a vortex, the Z card
+// bursts out of its eye towards the viewer.
+{ const [bg, dbg] = radial([[0, '#3B1477'], [.5, '#1A0838'], [1, '#07040E']], .5, .45, .7); const [gl, dgl] = blur(30); const [glow, dglow] = blur(60);
+  let spiral = ''; for (let i = 0; i < 40; i++) { const t = i / 40, a = t * 4.2 * Math.PI, r = 430 * Math.pow(1 - t, 1.1) + 40, [x, y] = polar(r, a, 540);
+    spiral += zc(x, y - 20, 16 + 58 * (1 - t), a * 180 / Math.PI + 90, { fill: GAME8[i % 8], stroke: '#fff', sw: 3 }); }
+  const arms = [0, 1, 2].map((k) => { let d = ''; for (let i = 0; i <= 60; i++) { const t = i / 60, a = t * 3.2 * Math.PI + k * 2.1, r = 450 * (1 - t) + 30, [x, y] = polar(r, a); d += `${i ? 'L' : 'M'}${x.toFixed(1)} ${(y - 20).toFixed(1)}`; }
+    return `<path d="${d}" fill="none" stroke="${['#FF4FA0', '#8B3DFF', '#3AA9FF'][k]}" stroke-width="22" stroke-linecap="round" opacity=".55"/>`; }).join('');
+  add('04-portail', svg([dbg, dgl, dglow], `<rect width="1080" height="1080" fill="url(#${dbg.match(/id="(\w+)"/)[1]})"/><g filter="url(#${dgl.match(/id="(\w+)"/)[1]})">${arms}</g>${spiral}
+      <circle cx="540" cy="520" r="170" fill="#C4B5FD" opacity=".7" filter="url(#${dglow.match(/id="(\w+)"/)[1]})"/>
+      ${zc(540, 470, 250, 10, { fill: '#fff', z: V, stroke: NAVY, sw: 12 })}
+      <rect x="150" y="720" width="780" height="210" rx="105" fill="#07040E" opacity=".9" filter="url(#${dgl.match(/id="(\w+)"/)[1]})"/>`)
+    + word(735, 140, '#fff') + GRAIN(.08)); }
+
+// 5 - Sceau holo: a serrated holographic seal, a ring of text, the fan inside.
+{ const [holo, dho] = lin(['#FFC8F0', '#C9B8FF', '#9FE0FF', '#BFFFE0', '#FFF1A8', '#FFC8F0'], 0, 0, 1, 1); const [core, dco] = radial([[0, '#9B5CFF'], [1, '#3B137A']], .5, .4, .6);
+  const pts = Array.from({ length: 96 }, (_, i) => polar(i % 2 ? 505 : 535, i * Math.PI / 48 - Math.PI / 2).map((v) => v.toFixed(1)).join(',')).join(' ');
+  const tp = uid(); const [hs, dhs] = hard(0, 10, '#0B0518', .5);
+  add('05-sceau', svg([dho, dco, `<path id="${tp}" d="M540 540 m-388 0 a388 388 0 1 1 776 0 a388 388 0 1 1 -776 0"/>`, dhs], `<rect width="1080" height="1080" fill="${NAVY}"/>
+      <polygon points="${pts}" fill="url(#${dho.match(/id="(\w+)"/)[1]})"/>
+      ${Array.from({ length: 12 }, (_, i) => { const a = i * Math.PI / 6; const [x, y] = polar(470, a); return `<line x1="540" y1="540" x2="${x}" y2="${y}" stroke="#fff" stroke-width="40" opacity=".18"/>`; }).join('')}
+      <circle cx="540" cy="540" r="455" fill="${NAVY}"/><circle cx="540" cy="540" r="455" fill="none" stroke="#fff" stroke-width="6"/>
+      <text font-family="Outfit" font-weight="800" font-size="52" fill="${CREAM}"><textPath href="#${tp}" startOffset="0" textLength="2400" lengthAdjust="spacing">LE COMPAGNON DES COLLECTIONNEURS ✦ 8 TCG ✦ </textPath></text>
+      <circle cx="540" cy="540" r="320" fill="url(#${dco.match(/id="(\w+)"/)[1]})" stroke="url(#${dho.match(/id="(\w+)"/)[1]})" stroke-width="14"/>
+      <g filter="url(#${dhs.match(/id="(\w+)"/)[1]})">${fan(530, 450, 150, { fills: ['#C4B5FD', '#E4DCFF', '#fff'], stroke: NAVY, sw: 8 })}</g>
+      ${spark(395, 340, 20)}${spark(700, 330, 14)}`)
+    + word(600, 100, '#fff') + GRAIN(.08)); }
+
+// 6 - Mascotte: the Z card comes alive, waving, a booster under its arm.
+{ const [bg, dbg] = radial([[0, '#9B5CFF'], [1, '#4C1D95']], .5, .45, .65); const [hs, dhs] = hard(12, 12, '#2A1052', .8); const O = NAVY;
+  const rays = Array.from({ length: 20 }, (_, i) => { const a0 = i * Math.PI / 10, a1 = a0 + Math.PI / 20, [x0, y0] = polar(900, a0, 540), [x1, y1] = polar(900, a1, 540); return `<path d="M540 470 L${x0} ${y0} L${x1} ${y1} Z" fill="#fff" opacity=".07"/>`; }).join('');
+  const body = `<g transform="rotate(-6 540 470)">
+      <path d="M430 690 Q420 770 395 800" stroke="${O}" stroke-width="22" fill="none" stroke-linecap="round"/><path d="M650 690 Q665 770 690 800" stroke="${O}" stroke-width="22" fill="none" stroke-linecap="round"/>
+      <ellipse cx="380" cy="808" rx="58" ry="28" fill="#FF4FA0" stroke="${O}" stroke-width="10"/><ellipse cx="705" cy="808" rx="58" ry="28" fill="#FF4FA0" stroke="${O}" stroke-width="10"/>
+      <path d="M690 440 Q790 400 800 290" stroke="${O}" stroke-width="22" fill="none" stroke-linecap="round"/><circle cx="802" cy="270" r="36" fill="#fff" stroke="${O}" stroke-width="10"/>
+      <path d="M392 470 Q320 520 330 600" stroke="${O}" stroke-width="22" fill="none" stroke-linecap="round"/>
+      <rect x="390" y="230" width="300" height="470" rx="56" fill="#fff" stroke="${O}" stroke-width="14"/>
+      <ellipse cx="490" cy="350" rx="26" ry="34" fill="${O}"/><ellipse cx="590" cy="350" rx="26" ry="34" fill="${O}"/><circle cx="499" cy="338" r="9" fill="#fff"/><circle cx="599" cy="338" r="9" fill="#fff"/>
+      <ellipse cx="452" cy="405" rx="24" ry="13" fill="${ROSE}" opacity=".8"/><ellipse cx="628" cy="405" rx="24" ry="13" fill="${ROSE}" opacity=".8"/>
+      <path d="M515 400 Q540 425 565 400" stroke="${O}" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="${ZP}" fill="${V}" transform="translate(540 560) scale(6.2) translate(-50 -43.75)"/>
+      <g transform="translate(268 560) rotate(-12)"><path d="M0 12 L8 0 L16 12 L24 0 L32 12 L40 0 L48 12 L56 0 L64 12 L72 0 L80 12 L80 140 L0 140 Z" fill="#35C6BC" stroke="${O}" stroke-width="10" stroke-linejoin="round"/><path d="M26 60 h28 v10 l-18 22 h18 v10 h-28 v-10 l18 -22 h-18 Z" fill="#fff"/></g></g>`;
+  add('06-mascotte', svg([dbg, dhs], `<rect width="1080" height="1080" fill="url(#${dbg.match(/id="(\w+)"/)[1]})"/>${rays}<circle cx="540" cy="540" r="505" fill="none" stroke="${CREAM}" stroke-width="22"/>
+      <g filter="url(#${dhs.match(/id="(\w+)"/)[1]})">${body}</g>${spark(250, 300, 26)}${spark(860, 470, 20)}${spark(300, 220, 12)}`)
+    + word(845, 110, '#fff', `6px 6px 0 ${NAVY}`) + GRAIN(.08)); }
+
+// 7 - Carte légendaire: the emblem is itself a rare card, gold frame, name
+// bar, the fan as its art, a holo burst and a rarity star.
+{ const [gold, dg] = lin(['#FFF1C2', '#F5C542', '#B98410', '#FBE29A', '#C99418']); const [art, da] = radial([[0, '#C4B5FD'], [.5, '#8B3DFF'], [1, '#3B137A']], .5, .5, .7);
+  const [holo, dho] = lin(['rgba(255,200,240,.0)', 'rgba(159,224,255,.55)', 'rgba(255,241,168,.0)', 'rgba(255,200,240,.5)', 'rgba(191,255,224,0)'], 0, 0, 1, 1); const [spot, dsp] = radial([[0, '#5B2BB0'], [1, '#0B0518']], .5, .45, .6);
+  const [hs, dhs] = hard(0, 18, '#05020C', .6); const clip = uid(); const gid = dg.match(/id="(\w+)"/)[1];
+  const burst = Array.from({ length: 16 }, (_, i) => { const a0 = i * Math.PI / 8, a1 = a0 + Math.PI / 16, [x0, y0] = polar(400, a0, 0), [x1, y1] = polar(400, a1, 0); return `<path d="M540 530 l${x0} ${y0} L${540 + x1} ${530 + y1} Z" fill="#fff" opacity=".14"/>`; }).join('');
+  add('07-carte-legendaire', svg([dg, da, dho, dsp, dhs, `<clipPath id="${clip}"><rect x="352" y="300" width="376" height="420" rx="16"/></clipPath>`], `<rect width="1080" height="1080" fill="url(#${dsp.match(/id="(\w+)"/)[1]})"/>
+      ${spark(230, 330, 30, '#F5C542')}${spark(860, 300, 22)}${spark(830, 760, 30, '#F5C542')}${spark(250, 760, 18)}
+      <g filter="url(#${dhs.match(/id="(\w+)"/)[1]})" transform="rotate(-5 540 540)">
+      <rect x="310" y="130" width="460" height="820" rx="40" fill="url(#${gid})"/><rect x="332" y="152" width="416" height="776" rx="28" fill="${NAVY}"/>
+      <rect x="352" y="300" width="376" height="420" rx="16" fill="url(#${da.match(/id="(\w+)"/)[1]})"/>
+      <g clip-path="url(#${clip})">${burst}${fan(540, 510, 150, { fills: ['#C4B5FD', '#E4DCFF', '#fff'], stroke: NAVY, sw: 8 })}<rect x="352" y="300" width="376" height="420" fill="url(#${dho.match(/id="(\w+)"/)[1]})"/></g>
+      <rect x="352" y="300" width="376" height="420" rx="16" fill="none" stroke="url(#${gid})" stroke-width="8"/>
+      <rect x="352" y="742" width="376" height="140" rx="14" fill="#2A1052"/>
+      <text x="540" y="796" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="30" letter-spacing="6" fill="${CREAM}">COMPAGNON TCG</text>
+      <text x="540" y="850" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="26" letter-spacing="3" fill="#C4B5FD">8 JEUX · 1 APPLI</text>
+      <polygon points="${Array.from({ length: 10 }, (_, i) => polar(i % 2 ? 14 : 32, i * Math.PI / 5 - Math.PI / 2, 0).map((v, j) => (v + (j ? 905 : 540)).toFixed(1)).join(',')).join(' ')}" fill="url(#${gid})"/></g>`)
+    + `<div class="abs" style="left:0;top:172px;width:1080px;display:flex;justify-content:center;transform:rotate(-5deg)">${wordmark(92)}</div>` + GRAIN(.08)); }
+
+// 8 - Écusson brodé: an embroidered patch, satin border with its stitches,
+// twill ground, the fan and the name in thread.
+{ const tw = uid(); const [hs, dhs] = hard(0, 12, '#0B0518', .5); const stitch = (r, c, w = 5) => `<circle cx="540" cy="540" r="${r}" fill="none" stroke="${c}" stroke-width="${w}" stroke-dasharray="16 10" stroke-linecap="round"/>`;
+  const thread = uid();
+  add('08-brode', svg([`<pattern id="${tw}" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="14" height="14" fill="#6D28D9"/><rect width="7" height="14" fill="#7C3AED"/></pattern>`, dhs,
+      `<filter id="${thread}"><feTurbulence type="fractalNoise" baseFrequency=".02 .9" numOctaves="2" seed="5"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .5 0"/><feComposite in2="SourceGraphic" operator="in"/><feBlend in="SourceGraphic" mode="multiply"/></filter>`],
+      `<rect width="1080" height="1080" fill="#160730"/><g filter="url(#${dhs.match(/id="(\w+)"/)[1]})"><circle cx="540" cy="540" r="528" fill="${NAVY}"/></g>
+      <circle cx="540" cy="540" r="500" fill="none" stroke="#FF4FA0" stroke-width="44" filter="url(#${thread})"/>${stitch(522, CREAM)}${stitch(478, CREAM)}
+      <circle cx="540" cy="540" r="474" fill="url(#${tw})"/>${stitch(440, 'rgba(255,255,255,.35)', 4)}
+      <g filter="url(#${thread})">${fan(530, 400, 170, { fills: ['#3AA9FF', '#FF4FA0', '#fff'], stroke: CREAM, sw: 10 })}</g>
+      ${spark(330, 300, 22)}${spark(745, 270, 16)}${spark(760, 520, 12)}`)
+    + word(570, 140, CREAM, `0 6px 0 ${NAVY}`) + lab(780, 34, CREAM, 'COMPAGNON TCG') + GRAIN(.12)); }
+
+carousel(S);
+</script></body></html>
