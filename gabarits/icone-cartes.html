@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ icone cartes</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Profile picture, eighth round (asked on 23/10/2026, « une cinquantaine »): the
+// direction the user approved, rims and grounds drawn from the world of cards
+// (boosters, spreads of the app's card backs, foils, collector accessories,
+// card frames, patterns, energy). The app's fan stays in the middle, no words.
+// 1080 x 1080, everything inside the inscribed circle.
+// Render: node rendu.mjs icone-cartes.html images
+document.head.insertAdjacentHTML('beforeend', '<style>.p { width: 1080px; height: 1080px; } .lab { font-family: Outfit; font-weight: 800; letter-spacing: .32em; text-align: center; }</style>');
+const V = '#7C3AED', NAVY = '#1B1235', CREAM = '#F4EADB', ROSE = '#FF7FAF';
+const ZP = 'M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z';
+const GAME8 = ['#F5C93B', '#F2706C', '#35C6BC', '#B189E8', '#C0A183', '#A9B2C4', '#F58A4E', '#58A6DD'];
+let n = 0; const uid = () => 'e' + n++;
+const lin = (stops, x1 = 0, y1 = 0, x2 = 1, y2 = 1) => { const id = uid();
+  return [id, `<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${stops.map((c, i) => `<stop offset="${i / (stops.length - 1)}" stop-color="${c}"/>`).join('')}</linearGradient>`]; };
+const radial = (stops, cx = .5, cy = .5, r = .6) => { const id = uid();
+  return [id, `<radialGradient id="${id}" cx="${cx}" cy="${cy}" r="${r}">${stops.map(([o, c, a = 1]) => `<stop offset="${o}" stop-color="${c}" stop-opacity="${a}"/>`).join('')}</radialGradient>`]; };
+const blur = (sd) => { const id = uid(); return [id, `<filter id="${id}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${sd}"/></filter>`]; };
+const hard = (dx, dy, c, a = 1) => { const id = uid(); return [id, `<filter id="${id}" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="${dx}" dy="${dy}" stdDeviation="0" flood-color="${c}" flood-opacity="${a}"/></filter>`]; };
+const svg = (defs, body) => `<svg class="abs" width="1080" height="1080" viewBox="0 0 1080 1080" style="left:0;top:0;overflow:visible"><defs>${defs.join('')}</defs>${body}</svg>`;
+const polar = (r, a, c = 540) => [c + r * Math.cos(a), c + r * Math.sin(a)];
+const seeded = (seed) => () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+const spark = (x, y, s, c = CREAM, op = 1) => `<path d="M${x} ${y - s} Q${x} ${y} ${x + s} ${y} Q${x} ${y} ${x} ${y + s} Q${x} ${y} ${x - s} ${y} Q${x} ${y} ${x} ${y - s} Z" fill="${c}" opacity="${op}"/>`;
+// A card of width w centred on (cx, cy), rotated rot, with the Z when z is set.
+const zc = (cx, cy, w, rot, o = {}) => { const { fill = '#fff', z, stroke, sw = 0, extra = '' } = o, k = w / 38;
+  return `<g transform="translate(${cx} ${cy}) rotate(${rot}) scale(${k}) translate(-50 -45)"><rect x="31" y="18" width="38" height="54" rx="7" fill="${fill}" ${stroke ? `stroke="${stroke}" stroke-width="${sw / k}" stroke-linejoin="round"` : ''}/>${extra}${z ? `<path d="${ZP}" fill="${z}"/>` : ''}</g>`; };
+// The app's fan of three, the Z card in front, around (cx, cy).
+const fan = (cx, cy, w, o = {}) => { const { fills = ['rgba(255,255,255,.35)', 'rgba(255,255,255,.65)', '#fff'], z = V, stroke, sw = 0, rot = 0 } = o;
+  const d = w * .36; const rr = rot * Math.PI / 180;
+  const at = (dx, dy) => [cx + dx * Math.cos(rr) - dy * Math.sin(rr), cy + dx * Math.sin(rr) + dy * Math.cos(rr)];
+  const [x0, y0] = at(-d, w * .12), [x1, y1] = at(0, 0), [x2, y2] = at(d, -w * .06);
+  return zc(x0, y0, w, rot - 14, { fill: fills[0], stroke, sw }) + zc(x1, y1, w, rot, { fill: fills[1], stroke, sw }) + zc(x2, y2, w, rot + 14, { fill: fills[2], z, stroke, sw }); };
+// Film grain over the whole emblem, and the wordmark in any colour.
+const GRAIN = (op = .09, seed = 3) => { const id = uid(); return `<svg class="abs" width="1080" height="1080" style="left:0;top:0;mix-blend-mode:overlay;opacity:${op}"><filter id="${id}"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="${seed}"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.2"/></filter><rect width="1080" height="1080" filter="url(#${id})"/></svg>`; };
+const word = (top, size, color = '#fff', shadow = '') => `<div class="abs" style="left:0;top:${top}px;width:1080px;display:flex;justify-content:center;${shadow ? `filter:drop-shadow(${shadow})` : ''}">${wordmark(size).replace('color:#fff', 'color:' + color)}</div>`;
+const lab = (top, size, color, text, ls = '.32em') => `<div class="abs lab" style="left:0;top:${top}px;width:1080px;font-size:${size}px;color:${color};letter-spacing:${ls}">${text}</div>`;
+const S = [];
+
+const add = (id, html) => S.push([id, html]);
+const idOf = (d) => d.match(/id="(\w+)"/)[1];
+const P = (r, a) => polar(r, a).map((v) => v.toFixed(1)).join(' ');
+// Tapered hooks sweeping from the rim into the badge.
+const hooks = (count, fill, rOut = 522, rIn = 392) => Array.from({ length: count }, (_, i) => { const a = i * 2 * Math.PI / count, k = i % 2 ? .75 : 1;
+  return `<path d="M${P(rOut, a - .05 * k)} Q${P(rOut - 17, a + .3 * k)} ${P(rIn + 30 * (1 - k), a + .55 * k)} Q${P(rOut - 60, a + .2 * k)} ${P(rOut - 36, a + .06 * k)} Z" fill="${fill}"/>`; }).join('');
+const LOGO = (o = {}) => { const [sh, d] = hard(0, 0, '#000', 0); const [soft, ds] = (() => { const id = uid(); return [id, `<filter id="${id}" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0B0518" flood-opacity="${o.shadow ?? .45}"/></filter>`]; })();
+  return [ds, `<g filter="url(#${soft})">${fan(528, 548, o.w || 240, { fills: o.fills || ['rgba(255,255,255,.35)', 'rgba(255,255,255,.65)', '#fff'], stroke: o.stroke, sw: o.sw || 0 })}</g>`]; };
+const halo = (r, stops) => { const [h, d] = radial(stops, .5, .5, .5); return [d, `<circle cx="540" cy="540" r="${r}" fill="url(#${idOf(d)})"/>`]; };
+
+const KEYS8 = ['pokemon', 'yugioh', 'onepiece', 'lorcana', 'magic', 'starwarsunlimited', 'dragonball', 'wow'];
+const glowDisc = (r, stops) => { const [d] = [radial(stops, .5, .5, .5)]; return [d[1], `<circle cx="540" cy="540" r="${r}" fill="url(#${d[0]})"/>`]; };
+
+const soft = (dx, dy, sd, a = .5, c = '#0B0518') => { const id = uid(); return [id, `<filter id="${id}" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="${dx}" dy="${dy}" stdDeviation="${sd}" flood-color="${c}" flood-opacity="${a}"/></filter>`]; };
+const pt = (r, a) => P(r, a).replace(' ', ',');
+const BG = (c) => `<rect width="1080" height="1080" fill="${c}"/>`;
+// One of the app's card backs, white border, centred on (x, y).
+const bk = (x, y, w, rot, key, attrs = '') => { const h = w * 1.383, b = w * .045;
+  return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(1)})" ${attrs}><rect x="${-w / 2 - b}" y="${-h / 2 - b}" width="${w + 2 * b}" height="${h + 2 * b}" rx="${w * .1}" fill="#fff"/><image href="assets/dos-${key}.svg" x="${-w / 2}" y="${-h / 2}" width="${w}" height="${h}" preserveAspectRatio="none"/></g>`; };
+// A sealed booster: foil body, crimped ends, a sparkle card on the front (a
+// Z would read as an N on the packs turned sideways).
+const pack = (x, y, w, rot, grad, attrs = '') => { const h = w * 1.6, c = w * .13, t = 9;
+  const zig = (y0, dir) => Array.from({ length: t * 2 + 1 }, (_, i) => `${(-w / 2 + i * w / (t * 2)).toFixed(1)},${(y0 + (i % 2 ? dir * c * .45 : 0)).toFixed(1)}`).join(' ');
+  return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(1)})" ${attrs}>
+    <polygon points="${-w / 2},${-h / 2 + c} ${zig(-h / 2, -1).split(' ').reverse().join(' ')} ${w / 2},${-h / 2 + c}" fill="url(#${grad})" opacity=".85"/>
+    <polygon points="${-w / 2},${h / 2 - c} ${zig(h / 2, 1)} ${w / 2},${h / 2 - c}" fill="url(#${grad})" opacity=".85"/>
+    <rect x="${-w / 2}" y="${-h / 2 + c}" width="${w}" height="${h - 2 * c}" fill="url(#${grad})"/>
+    <rect x="${-w / 2}" y="${-h / 2 + c}" width="${w}" height="${h - 2 * c}" fill="none" stroke="#fff" stroke-width="${w * .025}" opacity=".6"/>
+    <path d="M${-w * .3} ${-h / 2 + c} L${-w * .05} ${h / 2 - c}" stroke="#fff" stroke-width="${w * .12}" opacity=".18"/>
+    <rect x="${-w * .22}" y="${-w * .3}" width="${w * .44}" height="${w * .6}" rx="${w * .07}" fill="#fff"/>${spark(0, 0, w * .16, V)}</g>`; };
+const FOILS = { violet: ['#F1EBFF', '#A78BFA', '#6D28D9', '#C4B5FD'], argent: ['#FFFFFF', '#C5C9D6', '#6F7489', '#E4E6EE'], or: ['#FFF3C4', '#F5C542', '#A36F0A', '#FBE29A'],
+  rose: ['#FFE0EF', '#FF6FB5', '#B0236A', '#FFB3D6'], bleu: ['#E0F2FF', '#58A6DD', '#1E5FA8', '#A6D8FF'], holo: ['#FFC8F0', '#9FE0FF', '#BFFFE0', '#FFF1A8', '#C9B8FF'] };
+const foil = (name, defs) => { const [id, d] = lin(FOILS[name]); defs.push(d); return id; };
+const S2 = (id, defs, body, grain = .08) => add(id, svg(defs, body) + GRAIN(grain));
+const LG = (o) => LOGO(o);
+
+// ---- Boosters torn open, seen from above ----
+const torn = (id, pal, o = {}) => { const [dl, logo] = LG({ shadow: .55 }); const rnd = seeded(o.seed || 5); const defs = [dl]; let flaps = '', lips = '';
+  const [dg, g] = glowDisc(o.rIn ? o.rIn + 40 : 430, o.inside || [[0, '#B98AFF'], [.55, '#7C3AED'], [1, '#2A1052']]); defs.push(dg); const [sb, dsb] = blur(18); defs.push(dsb);
+  const [shn, dsh] = lin(['rgba(255,255,255,0)', 'rgba(255,255,255,.35)', 'rgba(255,255,255,0)', 'rgba(255,255,255,0)', 'rgba(255,255,255,.25)', 'rgba(255,255,255,0)']); defs.push(dsh);
+  const N = o.N || 14, rIn = o.rIn || 392;
+  for (let i = 0; i < N; i++) { const a0 = i * 2 * Math.PI / N, a1 = a0 + 2 * Math.PI / N, am = (a0 + a1) / 2, inner = [];
+    for (let j = 0; j <= 8; j++) inner.push(pt(rIn + rnd() * 22 + (j % 2 ? 12 : 0), a0 + (a1 - a0) * j / 8));
+    const cs = typeof pal === 'function' ? pal(i) : (i % 2 ? pal[0] : pal[1]); const gid = uid(), [x0, y0] = polar(rIn + 8, am), [x1, y1] = polar(545, am);
+    defs.push(`<linearGradient id="${gid}" gradientUnits="userSpaceOnUse" x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}">${cs.map((c, k) => `<stop offset="${[0, .18, .55, 1][k]}" stop-color="${c}"/>`).join('')}</linearGradient>`);
+    flaps += `<polygon points="${inner.join(' ')} ${pt(600, a1)} ${pt(600, a0)}" fill="url(#${gid})"/><line x1="${polar(rIn + 12, a0)[0]}" y1="${polar(rIn + 12, a0)[1]}" x2="${polar(560, a0)[0]}" y2="${polar(560, a0)[1]}" stroke="#1E0B3D" stroke-width="4" opacity=".5"/>`
+      + [0, 1, 2, 3].map(() => { const t = a0 + (a1 - a0) * (.15 + rnd() * .7), r0 = rIn + 28 + rnd() * 30; return `<path d="M${P(r0, t)} L${P(r0 + 40 + rnd() * 30, t + (rnd() - .5) * .12)} L${P(560, t + (rnd() - .5) * .1)}" fill="none" stroke="${rnd() < .5 ? '#fff' : '#1E0B3D'}" stroke-width="${2 + rnd() * 3}" opacity="${.15 + rnd() * .2}"/>`; }).join('');
+    lips += `<polyline points="${inner.join(' ')}" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round" opacity=".85"/>`; }
+  S2(id, defs, `${BG('#2A1052')}${g}<circle cx="540" cy="540" r="${rIn + 13}" fill="none" stroke="#0B0518" stroke-width="40" opacity=".55" filter="url(#${idOf(dsb)})"/>${o.extra || ''}
+    ${logo}${flaps}<rect width="1080" height="1080" fill="url(#${idOf(dsh)})" style="mix-blend-mode:screen"/>${lips}${o.sparks === false ? '' : spark(360, 330, 22) + spark(735, 300, 16) + spark(770, 720, 12)}`); };
+const VIO = [['#F7F3FF', '#C4B5FD', '#7C3AED', '#4C1D95'], ['#E4DCFF', '#A78BFA', '#5B21B6', '#3B137A']];
+torn('01-booster-violet', VIO);
+torn('02-booster-argent', [['#FFFFFF', '#D9DCE6', '#8A90A6', '#4A4F63'], ['#F2F3F7', '#C5C9D6', '#71778C', '#3A3E50']], { seed: 8 });
+torn('03-booster-or', [['#FFF6D8', '#F5C542', '#B98410', '#6B4A06'], ['#FFEFC2', '#E9B53A', '#9A6A0B', '#5A3D05']], { seed: 11 });
+torn('04-booster-holo', (i) => [['#FFE3F6', '#FF9AD5', '#B0408A', '#5A1E52'], ['#E3F6FF', '#8FD3FF', '#2F7FC0', '#173E6B'], ['#E9FFF3', '#9CF2C8', '#2E9E78', '#145040'], ['#FFF9DD', '#FFE27A', '#B9902A', '#5E4612'], ['#EEE6FF', '#B9A2FF', '#6B4BC8', '#33246A']][i % 5], { seed: 3 });
+torn('05-booster-rose', [['#FFE3F0', '#FF8FC1', '#D6337F', '#7A1446'], ['#FFD3E8', '#FF6FB0', '#B82468', '#5E0F37']], { seed: 17, inside: [[0, '#5B2BB0'], [.6, '#2A1052'], [1, '#12081F']] });
+torn('06-booster-grand-ouvert', VIO, { N: 18, rIn: 330, seed: 21 });
+
+// 07 - The heat-sealed crimp of a booster as the rim, its ridges catching light.
+{ const [dl, logo] = LG(); const defs = [dl]; const fid = foil('violet', defs); const [dg, g] = glowDisc(470, [[0, '#9B5CFF'], [1, '#4C1D95']]); defs.push(dg);
+  const ridges = Array.from({ length: 120 }, (_, i) => { const a0 = i * Math.PI / 60, a1 = a0 + Math.PI / 120; return `<polygon points="${pt(470, a0)} ${pt(540, a0)} ${pt(540, a1)} ${pt(470, a1)}" fill="${i % 2 ? '#D9DCE6' : '#A9AFC0'}"/>`; }).join('');
+  const [sh, dsh] = lin(['rgba(255,255,255,.55)', 'rgba(255,255,255,0)', 'rgba(255,255,255,0)', 'rgba(255,255,255,.4)']); defs.push(dsh); const [sb, dsb] = blur(14); defs.push(dsb);
+  const teeth = Array.from({ length: 144 }, (_, i) => pt(i % 2 ? 462 : 474, i * Math.PI / 72)).join(' ');
+  S2('07-soudure-booster', defs, `${BG(NAVY)}${ridges}<circle cx="540" cy="540" r="505" fill="url(#${idOf(dsh)})" opacity=".8" style="mix-blend-mode:screen"/><polygon points="${teeth}" fill="url(#${fid})"/>${g}
+    <circle cx="540" cy="540" r="452" fill="none" stroke="#0B0518" stroke-width="20" opacity=".4" filter="url(#${idOf(dsb)})"/>${logo}${spark(350, 340, 20)}${spark(740, 320, 15)}`); }
+
+// ---- Spreads of the app's card backs ----
+const spreadBg = (defs) => { const [dg, g] = glowDisc(420, [[0, '#9B5CFF'], [.7, '#5B21B6'], [1, '#2A1052']]); defs.push(dg); return g; };
+const ring = (N, r, w, tilt, keys, f, phase = 0) => Array.from({ length: N }, (_, i) => { const a = i * 2 * Math.PI / N - Math.PI / 2 + phase, [x, y] = polar(r, a); return bk(x, y, w, a * 180 / Math.PI + 90 + tilt, keys[i % keys.length], `filter="url(#${f})"`); }).join('');
+const spread = (id, o) => { const [dl, logo] = LG({ shadow: .6 }); const defs = [dl]; const [f, df] = soft(-6, 0, 7, .55); defs.push(df); const [sb, dsb] = blur(16); defs.push(dsb);
+  S2(id, defs, `${BG('#160730')}${spreadBg(defs)}${o.body(f)}<circle cx="540" cy="540" r="${o.inner || 366}" fill="none" stroke="#0B0518" stroke-width="30" opacity=".5" filter="url(#${idOf(dsb)})"/>${logo}`, .07); };
+spread('08-eventail-8-jeux', { body: (f) => ring(34, 452, 124, 12, KEYS8, f) });
+spread('09-eventail-grandes-cartes', { inner: 330, body: (f) => ring(22, 445, 170, 14, KEYS8, f) });
+spread('10-eventail-double', { inner: 330, body: (f) => ring(40, 480, 110, 12, KEYS8, f) + ring(30, 395, 96, 18, [...KEYS8].reverse(), f, .1) });
+spread('11-eventail-boostz', { body: (f) => ring(34, 452, 124, 12, ['boostz'], f) });
+spread('12-eventail-battu', { body: (f) => ring(30, 450, 124, 38, KEYS8, f) });
+spread('13-eventail-spirale', { inner: 330, body: (f) => Array.from({ length: 46 }, (_, i) => { const t = i / 46, a = t * 2 * Math.PI - Math.PI / 2, r = 500 - t * 120, w = 140 - t * 60, [x, y] = polar(r, a); return bk(x, y, w, a * 180 / Math.PI + 90 + 14, KEYS8[i % 8], `filter="url(#${f})"`); }).join('') });
+spread('14-petales', { inner: 340, body: (f) => Array.from({ length: 12 }, (_, i) => { const a = i * Math.PI / 6 - Math.PI / 2, [x, y] = polar(470, a); return bk(x, y, 190, a * 180 / Math.PI + 90, KEYS8[i % 8], `filter="url(#${f})"`); }).join('') });
+
+// 15 - An orbit of cards: a tilted ring passing behind and in front of the fan.
+{ const [dl, logo] = LG({ shadow: .6 }); const defs = [dl]; const [f, df] = soft(0, 8, 8, .5); defs.push(df); const g = spreadBg(defs);
+  const pos = Array.from({ length: 22 }, (_, i) => { const t = i * 2 * Math.PI / 22, x = 470 * Math.cos(t), y = 300 * Math.sin(t), c = Math.cos(-.12), s = Math.sin(-.12); return { x: 540 + x * c - y * s, y: 540 + x * s + y * c, d: Math.sin(t), i }; });
+  const draw = (p) => bk(p.x, p.y, 70 + 40 * (p.d + 1) / 2, -20 + p.d * 10, KEYS8[p.i % 8], `filter="url(#${f})" opacity="${.55 + .45 * (p.d + 1) / 2}"`);
+  S2('15-orbite', defs, `${BG('#12081F')}${g}${pos.filter((p) => p.d < 0).sort((a, b) => a.d - b.d).map(draw).join('')}${logo}${pos.filter((p) => p.d >= 0).sort((a, b) => a.d - b.d).map(draw).join('')}
+    <circle cx="540" cy="540" r="528" fill="none" stroke="#C4B5FD" stroke-width="6" opacity=".5"/>`); }
+
+// 16-19 - Cards in motion around the rim.
+const motion = (id, place, o = {}) => { const [dl, logo] = LG({ shadow: .6 }); const defs = [dl]; const [f, df] = soft(0, 10, 10, .5); defs.push(df); const [b, db] = blur(4); defs.push(db); const g = spreadBg(defs);
+  const rnd = seeded(o.seed || 4); S2(id, defs, `${BG('#12081F')}${g}${place(rnd, f, idOf(db))}${logo}`, .07); };
+motion('16-pluie-de-cartes', (rnd, f, b) => Array.from({ length: 30 }, (_, i) => { const a = rnd() * 2 * Math.PI, r = 380 + rnd() * 160, [x, y] = polar(r, a), w = 50 + rnd() * 70; return bk(x, y, w, rnd() * 360, KEYS8[i % 8], `filter="url(#${rnd() < .3 ? b : f})"`); }).join(''));
+motion('17-tornade', (rnd, f) => { let s = ''; for (let k = 0; k < 3; k++) s += `<path d="M${P(520, k * 2.1)} A520 520 0 0 1 ${P(520, k * 2.1 + 1.4)}" fill="none" stroke="${['#FF4FA0', '#B57BFF', '#3AA9FF'][k]}" stroke-width="10" opacity=".5" stroke-linecap="round"/>`;
+  return s + Array.from({ length: 30 }, (_, i) => { const t = i / 30, a = t * 2 * Math.PI, r = 420 + 90 * Math.sin(t * 6), [x, y] = polar(r, a), w = 60 + 50 * rnd(); return `<path d="M${P(r, a - .25)} A${r} ${r} 0 0 1 ${P(r, a - .04)}" stroke="#fff" stroke-width="${w * .3}" opacity=".12" fill="none" stroke-linecap="round"/>` + bk(x, y, w, a * 180 / Math.PI + 60, KEYS8[i % 8], `filter="url(#${f})"`); }).join(''); }, { seed: 9 });
+motion('18-explosion', (rnd, f) => Array.from({ length: 34 }, (_, i) => { const a = rnd() * 2 * Math.PI, r = 340 + rnd() * 210, [x, y] = polar(r, a), w = 40 + (r - 340) * .45; return `<line x1="${polar(r - 120, a)[0]}" y1="${polar(r - 120, a)[1]}" x2="${x}" y2="${y}" stroke="#fff" stroke-width="${w * .2}" opacity=".14" stroke-linecap="round"/>` + bk(x, y, w, a * 180 / Math.PI + 90 + (rnd() - .5) * 60, KEYS8[i % 8], `filter="url(#${f})"`); }).join(''), { seed: 14 });
+motion('19-tunnel', (rnd, f) => [0, 1, 2, 3].map((k) => { const r = 505 - k * 52, w = 92 - k * 16, N = Math.round(2 * Math.PI * r / (w * .9)); return Array.from({ length: N }, (_, i) => { const a = i * 2 * Math.PI / N + k * .2, [x, y] = polar(r, a); return bk(x, y, w, a * 180 / Math.PI + 90, KEYS8[(i + k) % 8], `opacity="${1 - k * .2}"`); }).join(''); }).reverse().join(''));
+
+// 20 - A mosaic of the 8 backs as the ground, a gloss rim.
+{ const [dl, logo] = LG({ shadow: .7 }); const defs = [dl]; const [vg, dvg] = radial([[0, '#12081F', .92], [.45, '#2A1052', .75], [1, '#2A1052', .2]], .5, .5, .5); defs.push(dvg);
+  let tiles = ''; for (let r = 0; r < 7; r++) for (let c = 0; c < 8; c++) tiles += bk(c * 150 + (r % 2) * 75 - 20, r * 200 - 40, 128, 0, KEYS8[(r * 3 + c) % 8]);
+  S2('20-mosaique-de-dos', defs, `${BG(NAVY)}${tiles}<circle cx="540" cy="540" r="540" fill="url(#${idOf(dvg)})"/><circle cx="540" cy="540" r="522" fill="none" stroke="#fff" stroke-width="10" opacity=".8"/>${logo}`); }
+
+// ---- Holo foils and collector's capsules ----
+const cosmos = (seed, n = 260) => { const rnd = seeded(seed); let s = ''; for (let i = 0; i < n; i++) { const x = rnd() * 1080, y = rnd() * 1080, c = ['#fff', '#FFC8F0', '#9FE0FF', '#FFF1A8'][Math.floor(rnd() * 4)];
+  s += rnd() < .12 ? spark(x, y, 6 + rnd() * 8, c, .8) : `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(2 + rnd() * 6).toFixed(1)}" fill="${c}" opacity="${(.25 + rnd() * .5).toFixed(2)}"/>`; } return s; };
+const holoDef = (defs, k = .22) => { const id = uid(); defs.push(`<linearGradient id="${id}" x1="0" y1="0" x2="${k}" y2="${k}" spreadMethod="reflect"><stop offset="0" stop-color="#FF8FD8"/><stop offset=".25" stop-color="#9FE0FF"/><stop offset=".5" stop-color="#BFFFE0"/><stop offset=".75" stop-color="#FFF1A8"/><stop offset="1" stop-color="#C9B8FF"/></linearGradient>`); return id; };
+const arc = (r, a0, a1) => `M${P(r, a0)} A${r} ${r} 0 0 1 ${P(r, a1)}`;
+const capsule = (id, ground, ringPaint, o = {}) => { const [dl, logo] = LG(); const defs = [dl]; const [sb, dsb] = blur(14); const [hb, dhb] = blur(5); defs.push(dsb, dhb);
+  S2(id, defs, `${BG(NAVY)}${ground(defs)}${ringPaint(defs)}<circle cx="540" cy="540" r="462" fill="none" stroke="#0B0518" stroke-width="26" opacity=".35" filter="url(#${idOf(dsb)})"/>
+    <circle cx="540" cy="540" r="531" fill="none" stroke="#fff" stroke-width="4" opacity="${o.edge ?? .75}"/><circle cx="540" cy="540" r="465" fill="none" stroke="#fff" stroke-width="4" opacity="${o.edge ?? .6}"/>
+    <path d="${arc(498, 3.45, 4.75)}" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round" opacity=".55" filter="url(#${idOf(dhb)})"/><path d="${arc(498, .35, 1.15)}" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".25" filter="url(#${idOf(dhb)})"/>${logo}`, .06); };
+const holoGround = (seed) => (defs) => { const [bg, dbg] = radial([[0, '#8F55FF'], [1, '#3B137A']], .5, .45, .65); defs.push(dbg); const h = holoDef(defs); return `<rect width="1080" height="1080" fill="url(#${idOf(dbg)})"/><rect width="1080" height="1080" fill="url(#${h})" opacity=".32" style="mix-blend-mode:screen"/>${cosmos(seed)}`; };
+capsule('21-capsule-holo', holoGround(9), () => `<circle cx="540" cy="540" r="498" fill="none" stroke="#fff" stroke-width="66" opacity=".1"/>`);
+capsule('22-capsule-noire', (defs) => { const [bg, dbg] = radial([[0, '#5B2BB0'], [1, '#1E0B3D']], .5, .45, .6); defs.push(dbg); return `<rect width="1080" height="1080" fill="url(#${idOf(dbg)})"/>`; }, () => `<circle cx="540" cy="540" r="498" fill="none" stroke="#07040E" stroke-width="66" opacity=".85"/>`, { edge: .45 });
+capsule('23-capsule-or', holoGround(15), (defs) => { const [g, dg] = lin(['#FFF3C4', '#F5C542', '#A36F0A', '#FBE29A', '#C99418']); defs.push(dg); return `<circle cx="540" cy="540" r="498" fill="none" stroke="url(#${idOf(dg)})" stroke-width="66"/>`; }, { edge: .5 });
+// 24 - Cosmos holo across the whole ground, a bevelled rim.
+const bevel = (defs, c1 = '#3B137A', c2 = '#12081F') => { const [bv, dbv] = lin([c1, c2], 0, 0, 0, 1); defs.push(dbv); return [`<circle cx="540" cy="540" r="535" fill="url(#${idOf(dbv)})"/>`, `<circle cx="540" cy="540" r="481" fill="none" stroke="#C4B5FD" stroke-width="5" opacity=".7"/><path d="${arc(510, 3.6, 5.8)}" fill="none" stroke="#fff" stroke-width="6" opacity=".25" stroke-linecap="round"/>`]; };
+const inner = (defs, ground) => { const clip = uid(); defs.push(`<clipPath id="${clip}"><circle cx="540" cy="540" r="480"/></clipPath>`); return `<g clip-path="url(#${clip})">${ground}</g>`; };
+{ const [dl, logo] = LG(); const defs = [dl]; const [b0, b1] = bevel(defs); S2('24-cosmos-holo', defs, `${BG(NAVY)}${b0}${inner(defs, holoGround(31)(defs))}${b1}${logo}`, .06); }
+// 25 - Reverse holo: a grid of glittering diamonds over the whole ground.
+{ const [dl, logo] = LG(); const defs = [dl]; const [b0, b1] = bevel(defs); const h = holoDef(defs, .3); const pat = uid();
+  defs.push(`<pattern id="${pat}" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect x="12" y="12" width="16" height="16" fill="#fff"/></pattern>`); const mk = uid(); defs.push(`<mask id="${mk}"><rect width="1080" height="1080" fill="url(#${pat})"/></mask>`);
+  S2('25-reverse-holo', defs, `${BG(NAVY)}${b0}${inner(defs, `${BG('#6D28D9')}<rect width="1080" height="1080" fill="url(#${h})" mask="url(#${mk})" opacity=".55"/>`)}${b1}${logo}`, .06); }
+// 26-27 - Cracked ice and prism: faceted foil in a ring.
+const facets = (id, colour, o = {}) => { const [dl, logo] = LG(); const defs = [dl]; const rnd = seeded(o.seed || 2); const [dg, g] = glowDisc(340, [[0, '#9B5CFF'], [1, '#3B137A']]); defs.push(dg);
+  const R = [330, 380, 430, 480, 545], A = 40; const pts = R.map((r, k) => Array.from({ length: A }, (_, i) => polar(r + (k && k < 4 ? (rnd() - .5) * 26 : 0), (i + (o.prism ? (k % 2) * .5 : (rnd() - .5) * .6)) * 2 * Math.PI / A)));
+  let s = ''; for (let k = 0; k < R.length - 1; k++) for (let i = 0; i < A; i++) { const a = pts[k][i], b = pts[k][(i + 1) % A], c = pts[k + 1][i], d = pts[k + 1][(i + 1) % A];
+    [[a, b, d], [a, d, c]].forEach((tri, t) => { s += `<polygon points="${tri.map((p) => p.map((v) => v.toFixed(1)).join(',')).join(' ')}" fill="${colour(rnd, k, i, t)}" stroke="#fff" stroke-width="2" stroke-opacity=".35"/>`; }); }
+  S2(id, defs, `${BG('#2A1052')}${s}${g}<circle cx="540" cy="540" r="330" fill="none" stroke="#fff" stroke-width="5" opacity=".6"/>${logo}`, .06); };
+const ICE = ['#FFC8F0', '#9FE0FF', '#BFFFE0', '#FFF1A8', '#C9B8FF', '#E4DCFF', '#A78BFA'];
+facets('26-glace-brisee', (rnd) => ICE[Math.floor(rnd() * ICE.length)]);
+facets('27-prisme', (rnd, k, i, t) => ['#C4B5FD', '#8B5CF6', '#6D28D9', '#A78BFA', '#4C1D95', '#DDD6FE'][(k + i + t * 3) % 6], { prism: true });
+// 28 - A star foil: a pattern of holo stars fading in from the rim.
+{ const [dl, logo] = LG(); const defs = [dl]; const [b0, b1] = bevel(defs); const h = holoDef(defs, .25); const pat = uid(), mk = uid(); const [m, dm] = radial([[0, '#000'], [.45, '#000'], [1, '#fff']], .5, .5, .5); defs.push(dm);
+  defs.push(`<pattern id="${pat}" width="70" height="70" patternUnits="userSpaceOnUse"><polygon points="${starPts(35, 35, 18, 7, 5)}" fill="#fff"/><polygon points="${starPts(0, 0, 8, 3, 5)}" fill="#fff"/><polygon points="${starPts(70, 70, 8, 3, 5)}" fill="#fff"/></pattern><mask id="${mk}"><rect width="1080" height="1080" fill="url(#${pat})"/></mask>`);
+  const mk2 = uid(); defs.push(`<mask id="${mk2}"><circle cx="540" cy="540" r="480" fill="url(#${idOf(dm)})"/></mask>`);
+  S2('28-etoiles-holo', defs, `${BG(NAVY)}${b0}${inner(defs, `${BG('#5B21B6')}<g mask="url(#${mk2})"><rect width="1080" height="1080" fill="url(#${h})" mask="url(#${mk})" opacity=".8"/></g>`)}${b1}${logo}`, .06); }
+// 29 - Rainbow foil rings, like the shimmer of a holo seen at an angle.
+{ const [dl, logo] = LG(); const defs = [dl]; const [b0, b1] = bevel(defs); const cols = ['#FF8FD8', '#C9B8FF', '#9FE0FF', '#BFFFE0', '#FFF1A8'];
+  const rings = Array.from({ length: 40 }, (_, i) => `<circle cx="540" cy="540" r="${300 + i * 4.6}" fill="none" stroke="${cols[i % 5]}" stroke-width="4" opacity="${.15 + .5 * i / 40}"/>`).join('');
+  const [dg, g] = glowDisc(330, [[0, '#9B5CFF'], [1, '#5B21B6']]); defs.push(dg);
+  S2('29-arc-en-ciel', defs, `${BG(NAVY)}${b0}${inner(defs, `${BG('#4C1D95')}${rings}${g}`)}${b1}${logo}`, .06); }
+
+// ---- The collector's things ----
+// 30 - A binder page: pockets with backs inside, the plastic catching light.
+{ const [dl, logo] = LG({ shadow: .7 }); const defs = [dl]; const [gl, dgl] = lin(['rgba(255,255,255,.28)', 'rgba(255,255,255,0)', 'rgba(255,255,255,0)', 'rgba(255,255,255,.12)']); defs.push(dgl); const [vg, dvg] = radial([[0, '#12081F', .97], [.55, '#12081F', .8], [1, '#12081F', .1]], .5, .5, .5); defs.push(dvg);
+  let cells = ''; for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) { const x = 60 + c * 250, y = 0 + r * 300; cells += `<rect x="${x - 112}" y="${y - 140}" width="224" height="290" rx="10" fill="#2A1052"/>${bk(x, y + 4, 180, 0, KEYS8[(r * 4 + c) % 8])}<rect x="${x - 112}" y="${y - 140}" width="224" height="290" rx="10" fill="url(#${idOf(dgl)})" stroke="#fff" stroke-opacity=".35" stroke-width="3"/>`; }
+  S2('30-classeur', defs, `${BG('#1E0B3D')}<g transform="translate(70 120)">${cells}</g><circle cx="540" cy="540" r="540" fill="url(#${idOf(dvg)})"/><circle cx="540" cy="540" r="520" fill="none" stroke="#0B0518" stroke-width="30"/><circle cx="540" cy="540" r="503" fill="none" stroke="#C4B5FD" stroke-width="3" opacity=".6"/>${logo}`); }
+// 31 - A playmat: stitched rubber edge, the zones of a game on the cloth.
+{ const [dl, logo] = LG(); const defs = [dl]; const [bg, dbg] = radial([[0, '#7C3AED'], [1, '#3B137A']], .5, .5, .6); defs.push(dbg);
+  const zones = [[150, 330], [150, 590], [860, 330], [860, 590], [400, 150], [680, 150], [400, 860], [680, 860]].map(([x, y]) => `<rect x="${x - 62}" y="${y - 86}" width="124" height="172" rx="12" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="14 10" opacity=".3"/>`).join('');
+  S2('31-tapis-de-jeu', defs, `${BG('#0B0518')}<circle cx="540" cy="540" r="512" fill="url(#${idOf(dbg)})"/>${zones}<circle cx="540" cy="540" r="512" fill="none" stroke="#12081F" stroke-width="22"/><circle cx="540" cy="540" r="512" fill="none" stroke="#C4B5FD" stroke-width="5" stroke-dasharray="12 9"/>${logo}`, .14); }
+// 32 - An open box seen from above: its walls in perspective round the fan.
+{ const [dl, logo] = LG({ shadow: .6 }); const defs = [dl]; const [w, dw] = lin(['#C4B5FD', '#7C3AED', '#3B137A'], 0, 0, 0, 1); defs.push(dw); const [fl, dfl] = radial([[0, '#8F55FF'], [1, '#4C1D95']], .5, .5, .6); defs.push(dfl); const [sb, dsb] = blur(18); defs.push(dsb);
+  S2('32-coffret-ouvert', defs, `${BG(NAVY)}<circle cx="540" cy="540" r="536" fill="#ECE6FF"/><circle cx="540" cy="540" r="512" fill="url(#${idOf(dw)})"/><circle cx="540" cy="560" r="440" fill="url(#${idOf(dfl)})"/>
+    <circle cx="540" cy="560" r="440" fill="none" stroke="#0B0518" stroke-width="40" opacity=".45" filter="url(#${idOf(dsb)})"/>${logo}`); }
+// 33-34 - Sealed boosters round the fan.
+{ const [dl, logo] = LG({ shadow: .6 }); const defs = [dl]; const [f, df] = soft(0, 8, 8, .5); defs.push(df); const g = spreadBg(defs); const names = ['violet', 'rose', 'bleu', 'or', 'argent'];
+  const ids = names.map((nm) => foil(nm, defs));
+  S2('33-couronne-de-boosters', defs, `${BG('#12081F')}${g}${Array.from({ length: 12 }, (_, i) => { const a = i * Math.PI / 6 - Math.PI / 2, [x, y] = polar(450, a); return pack(x, y, 115, a * 180 / Math.PI + 90, ids[i % 5], `filter="url(#${f})"`); }).join('')}${logo}`);
+  const rnd = seeded(6);
+  S2('34-boosters-en-vrac', defs, `${BG('#12081F')}${g}${Array.from({ length: 11 }, (_, i) => { const a = i * 2 * Math.PI / 11 + rnd() * .3, [x, y] = polar(430 + rnd() * 60, a); return pack(x, y, 100 + rnd() * 40, rnd() * 360, ids[i % 5], `filter="url(#${f})"`); }).join('')}${logo}`); }
+
+// ---- Card frames ----
+// 35 - An ornate gold frame round an art window.
+{ const [dl, logo] = LG(); const defs = [dl]; const [gd, dgd] = lin(['#FFF3C4', '#F5C542', '#A36F0A', '#FBE29A', '#C99418']); defs.push(dgd); const [art, dart] = radial([[0, '#A673FF'], [.6, V], [1, '#2A1052']], .5, .45, .6); defs.push(dart); const G = `url(#${idOf(dgd)})`;
+  const curls = Array.from({ length: 16 }, (_, i) => { const a = i * Math.PI / 8, [x, y] = polar(452, a), d = a * 180 / Math.PI + 90; return `<g transform="translate(${x} ${y}) rotate(${d})"><path d="M-46 0 C-46 -22 -18 -22 -18 -6 C-18 4 -30 4 -30 -4 M46 0 C46 -22 18 -22 18 -6 C18 4 30 4 30 -4" fill="none" stroke="${G}" stroke-width="7" stroke-linecap="round"/><circle r="9" fill="${G}"/></g>`; }).join('');
+  S2('35-cadre-dore', defs, `${BG(NAVY)}<circle cx="540" cy="540" r="530" fill="${NAVY}"/><circle cx="540" cy="540" r="500" fill="none" stroke="${G}" stroke-width="40"/><circle cx="540" cy="540" r="476" fill="none" stroke="#0B0518" stroke-width="5" opacity=".6"/>
+    <circle cx="540" cy="540" r="425" fill="url(#${idOf(dart)})" stroke="${G}" stroke-width="10"/>${curls}${logo}`); }
+// 36-38 - Card borders: vintage yellow, modern silver, full-art holo.
+const border = (id, paint, defs0 = []) => { const [dl, logo] = LG(); const defs = [dl, ...defs0]; const [art, dart] = radial([[0, '#A673FF'], [.6, V], [1, '#3B137A']], .5, .45, .6); defs.push(dart); const [sb, dsb] = blur(12); defs.push(dsb);
+  S2(id, defs, `${BG(NAVY)}<circle cx="540" cy="540" r="536" fill="${paint}"/><circle cx="540" cy="540" r="520" fill="none" stroke="#fff" stroke-width="5" opacity=".45"/><circle cx="540" cy="540" r="446" fill="url(#${idOf(dart)})"/>
+    <circle cx="540" cy="540" r="446" fill="none" stroke="#0B0518" stroke-width="22" opacity=".45" filter="url(#${idOf(dsb)})"/><circle cx="540" cy="540" r="448" fill="none" stroke="#0B0518" stroke-width="4" opacity=".35"/>${logo}`); };
+{ const [y, dy] = lin(['#FFE27A', '#F5C93B', '#D9A514', '#FCE38A']); border('36-bordure-jaune', `url(#${idOf(dy)})`, [dy]); }
+{ const [s, ds] = lin(['#FFFFFF', '#C5C9D6', '#8A90A6', '#E4E6EE', '#A9AFC0']); border('37-bordure-argent', `url(#${idOf(ds)})`, [ds]); }
+{ const d = []; const h = holoDef(d, .18); border('38-bordure-holo', `url(#${h})`, d); }
+// 39 - A monogram band: the Z and dots repeated in gold on the night.
+{ const [dl, logo] = LG(); const defs = [dl]; const [gd, dgd] = lin(['#FFF3C4', '#F5C542', '#B98410']); defs.push(dgd); const [art, dart] = radial([[0, '#9B5CFF'], [1, '#4C1D95']], .5, .45, .6); defs.push(dart);
+  const mono = Array.from({ length: 24 }, (_, i) => { const a = i * Math.PI / 12, [x, y] = polar(487, a), [x2, y2] = polar(487, a + Math.PI / 24); return `<path d="${ZP}" fill="url(#${idOf(dgd)})" transform="translate(${x} ${y}) rotate(${a * 180 / Math.PI + 90}) scale(1.5) translate(-50 -43.75)"/><circle cx="${x2}" cy="${y2}" r="5" fill="#F5C542"/>`; }).join('');
+  S2('39-monogramme', defs, `${BG(NAVY)}<circle cx="540" cy="540" r="536" fill="#1E0B3D"/>${mono}<circle cx="540" cy="540" r="530" fill="none" stroke="#F5C542" stroke-width="4" opacity=".7"/><circle cx="540" cy="540" r="446" fill="url(#${idOf(dart)})" stroke="#F5C542" stroke-width="6"/>${logo}`); }
+
+// ---- Patterns ----
+const patterned = (id, patBody, o = {}) => { const [dl, logo] = LG(); const defs = [dl]; const pat = uid(), mask = uid(); const [bg, dbg] = radial([[0, '#8B4BF5'], [1, '#5B21B6']], .5, .45, .65); defs.push(dbg);
+  const [m, dm] = radial([[0, '#000'], [o.from || .55, '#000'], [1, '#fff']], .5, .5, .5); defs.push(dm); const [b0, b1] = bevel(defs);
+  defs.push(`<pattern id="${pat}" width="${o.w || 90}" height="${o.h || 110}" patternUnits="userSpaceOnUse" patternTransform="rotate(${o.rot ?? -16})">${patBody}</pattern><mask id="${mask}"><circle cx="540" cy="540" r="480" fill="url(#${idOf(dm)})"/></mask>`);
+  S2(id, defs, `${BG(NAVY)}${b0}<circle cx="540" cy="540" r="480" fill="url(#${idOf(dbg)})"/><rect width="1080" height="1080" fill="url(#${pat})" mask="url(#${mask})" opacity="${o.op || .55}"/>${b1}${logo}`, .07); };
+patterned('40-motif-cartes', `<rect x="18" y="14" width="54" height="76" rx="9" fill="none" stroke="#fff" stroke-width="4" opacity=".5"/><rect x="63" y="69" width="27" height="38" rx="5" fill="#fff" opacity=".22"/>`);
+patterned('41-motif-cartes-empilees', `<rect x="10" y="20" width="50" height="70" rx="8" fill="#4C1D95" stroke="#C4B5FD" stroke-width="3"/><rect x="22" y="12" width="50" height="70" rx="8" fill="#6D28D9" stroke="#C4B5FD" stroke-width="3"/><rect x="34" y="4" width="50" height="70" rx="8" fill="#8B5CF6" stroke="#fff" stroke-width="3"/>`, { w: 100, h: 100, rot: 0, op: .7, from: .5 });
+patterned('42-motif-z', `<path d="${ZP}" fill="#fff" opacity=".5" transform="translate(-14 -10)"/><circle cx="70" cy="80" r="4" fill="#fff" opacity=".5"/>`, { w: 80, h: 90, rot: -20 });
+
+// ---- Energy ----
+const streaks = (id, cols, o = {}) => { const [dl, logo] = LG(); const defs = [dl]; const [bg, dbg] = radial(o.bg || [[0, '#A673FF'], [.42, '#4C1D95'], [1, '#12081F']], .5, .5, .55); const [gl, dgl] = blur(50); const [vg, dvg] = radial([[0, '#0B0518', 0], [.82, '#0B0518', 0], [1, '#0B0518', .75]], .5, .5, .5); defs.push(dbg, dgl, dvg);
+  const rnd = seeded(o.seed || 13); let s = ''; for (let i = 0; i < 170; i++) { const a = rnd() * 2 * Math.PI, r0 = 250 + rnd() * 190, len = 70 + rnd() * 230, w = 2 + rnd() * 7, c = cols[Math.floor(rnd() * cols.length)], r1 = r0 + len;
+    s += `<polygon points="${pt(r0, a)} ${pt(r1, a - w / r1)} ${pt(r1, a + w / r1)}" fill="${c}" opacity="${(.3 + rnd() * .5).toFixed(2)}"/>`; }
+  S2(id, defs, `<rect width="1080" height="1080" fill="url(#${idOf(dbg)})"/>${s}<circle cx="540" cy="540" r="260" fill="${o.glow || '#C4B5FD'}" opacity=".35" filter="url(#${idOf(dgl)})"/><circle cx="540" cy="540" r="540" fill="url(#${idOf(dvg)})"/>${o.rim || ''}${logo}`, .07); };
+streaks('43-boost', ['#FF4FA0', '#B57BFF', '#3AA9FF', '#fff']);
+streaks('44-boost-rose-bleu', ['#FF4FA0', '#3AA9FF'], { seed: 23, rim: `<circle cx="540" cy="540" r="526" fill="none" stroke="#fff" stroke-width="6" opacity=".5"/>` });
+streaks('45-boost-dore', ['#FFE27A', '#F5C542', '#fff'], { seed: 29, glow: '#FFE9A8', bg: [[0, '#8F55FF'], [.42, '#3B137A'], [1, '#0B0518']] });
+// 46 - Pack-opening light: golden rays behind the fan, a fine gold rim.
+{ const [dl, logo] = LG(); const defs = [dl]; const [bg, dbg] = radial([[0, '#9B5CFF'], [.5, '#4C1D95'], [1, '#12081F']], .5, .5, .55); const [gl, dgl] = blur(60); defs.push(dbg, dgl);
+  const rays = Array.from({ length: 20 }, (_, i) => { const a = i * Math.PI / 10, w = .06 + (i % 3) * .02; return `<polygon points="540,540 ${pt(560, a - w)} ${pt(560, a + w)}" fill="#FFE27A" opacity="${i % 2 ? .1 : .2}"/>`; }).join('');
+  S2('46-lumiere-doree', defs, `<rect width="1080" height="1080" fill="url(#${idOf(dbg)})"/>${rays}<circle cx="540" cy="540" r="240" fill="#FFE9A8" opacity=".4" filter="url(#${idOf(dgl)})"/><circle cx="540" cy="540" r="524" fill="none" stroke="#F5C542" stroke-width="8"/><circle cx="540" cy="540" r="508" fill="none" stroke="#F5C542" stroke-width="2" opacity=".6"/>${logo}${spark(330, 330, 22, '#FFE27A')}${spark(760, 740, 18, '#FFE27A')}`); }
+// 47 - The app's condition scan: a measuring grid and its scanning ring.
+{ const [dl, logo] = LG(); const defs = [dl]; const pat = uid(); const [bg, dbg] = radial([[0, '#7C3AED'], [1, '#2A1052']], .5, .5, .6); defs.push(dbg, `<pattern id="${pat}" width="54" height="54" patternUnits="userSpaceOnUse"><path d="M54 0 H0 V54" fill="none" stroke="#C4B5FD" stroke-width="2" opacity=".25"/></pattern>`);
+  const ticks = Array.from({ length: 120 }, (_, i) => { const a = i * Math.PI / 60; return `<line x1="${polar(470, a)[0]}" y1="${polar(470, a)[1]}" x2="${polar(i % 10 ? 482 : 498, a)[0]}" y2="${polar(i % 10 ? 482 : 498, a)[1]}" stroke="#FDE68A" stroke-width="${i % 10 ? 2 : 5}" opacity=".85"/>`; }).join('');
+  S2('47-scan', defs, `${BG('#12081F')}<circle cx="540" cy="540" r="530" fill="url(#${idOf(dbg)})"/><circle cx="540" cy="540" r="460" fill="url(#${pat})"/>${ticks}
+    ${[0, 1, 2, 3].map((q) => `<path d="${arc(515, q * Math.PI / 2 - .5, q * Math.PI / 2 + .5)}" fill="none" stroke="#FDE68A" stroke-width="12" stroke-linecap="round"/>`).join('')}<circle cx="540" cy="540" r="460" fill="none" stroke="#FDE68A" stroke-width="3" opacity=".5"/>${logo}`); }
+// 48 - The edge of a deck: sleeves of the 8 game colours stacked to the rim.
+{ const [dl, logo] = LG(); const defs = [dl]; const [art, dart] = radial([[0, '#9B5CFF'], [1, '#4C1D95']], .5, .45, .6); defs.push(dart);
+  const bands = GAME8.map((c, i) => `<circle cx="540" cy="540" r="${530 - i * 12}" fill="none" stroke="${c}" stroke-width="10"/><circle cx="540" cy="540" r="${535 - i * 12}" fill="none" stroke="#fff" stroke-width="2" opacity=".5"/>`).join('');
+  S2('48-tranche-de-deck', defs, `${BG(NAVY)}<circle cx="540" cy="540" r="538" fill="#0B0518"/>${bands}<circle cx="540" cy="540" r="432" fill="url(#${idOf(dart)})"/><path d="${arc(480, 3.6, 5.6)}" fill="none" stroke="#fff" stroke-width="14" opacity=".2" stroke-linecap="round"/>${logo}`); }
+// 49 - A hoard of Boosties: the app's coins heaped round the rim.
+{ const [dl, logo] = LG({ shadow: .6 }); const defs = [dl]; const B = 'M39.9 25.2 Q39.9 22.4 42.7 22.4 L44.3 22.4 Q47.1 22.4 47.1 25.2 L47.1 39.9 Q49.9 37.8 53.6 37.8 Q59.4 37.8 63.1 41.9 Q66.8 46 66.8 52.9 Q66.8 59.8 63.1 63.9 Q59.4 68 53.6 68 Q49.6 68 46.8 65.6 L46.8 65.7 Q46.6 68 44 68 L42.7 68 Q39.9 68 39.9 65.2 Z M53.2 44.4 Q50.1 44.4 48.2 46.7 Q46.3 49 46.3 52.9 Q46.3 56.8 48.2 59.1 Q50.1 61.4 53.2 61.4 Q56.3 61.4 58.2 59.1 Q60.1 56.8 60.1 52.9 Q60.1 49 58.2 46.7 Q56.3 44.4 53.2 44.4 Z';
+  const [cg, dcg] = lin(['#FCD34D', '#D97706']); const [f, df] = soft(4, 8, 6, .5); defs.push(dcg, df); const rnd = seeded(12); const g = spreadBg(defs);
+  const coin = (x, y, r, rot) => `<g transform="translate(${x - r} ${y - r}) scale(${r / 50}) rotate(${rot} 50 50)" filter="url(#${f})"><circle cx="50" cy="50" r="45" fill="url(#${idOf(dcg)})" stroke="#fff" stroke-width="5"/><circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="3"/><path d="${B}" fill="#fff"/></g>`;
+  S2('49-tresor-de-boosties', defs, `${BG('#12081F')}${g}${Array.from({ length: 40 }, (_, i) => { const a = i * 2 * Math.PI / 40 + rnd() * .1, [x, y] = polar(440 + rnd() * 70, a); return coin(x, y, 46 + rnd() * 22, (rnd() - .5) * 50); }).join('')}${logo}`); }
+// 50 - The BoostZ card back blown up as the ground, a white card border as the rim.
+{ const [dl, logo] = LG({ shadow: .7 }); const defs = [dl]; const [vg, dvg] = radial([[0, '#12081F', .55], [.6, '#12081F', .2], [1, '#12081F', 0]], .5, .5, .5); const [sb, dsb] = blur(14); defs.push(dvg, dsb);
+  S2('50-dos-boostz-geant', defs, `${BG(NAVY)}<image href="assets/dos-boostz.svg" x="-60" y="-290" width="1200" height="1660" preserveAspectRatio="none"/><circle cx="540" cy="540" r="540" fill="url(#${idOf(dvg)})"/>
+    <circle cx="540" cy="540" r="512" fill="none" stroke="#fff" stroke-width="36"/><circle cx="540" cy="540" r="492" fill="none" stroke="#0B0518" stroke-width="14" opacity=".35" filter="url(#${idOf(dsb)})"/>${logo}`); }
+
+carousel(S);
+</script></body></html>
