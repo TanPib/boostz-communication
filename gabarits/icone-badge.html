@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ icone badge</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Profile picture, sixth round (asked on 23/10/2026): no words, the app's fan
+// in the middle, and the work goes into the rim and the ground, drawn as one
+// badge in the spirit of the « Tourbillon » emblem, nothing far-fetched.
+// 1080 x 1080, everything inside the inscribed circle.
+// Render: node rendu.mjs icone-badge.html images
+document.head.insertAdjacentHTML('beforeend', '<style>.p { width: 1080px; height: 1080px; } .lab { font-family: Outfit; font-weight: 800; letter-spacing: .32em; text-align: center; }</style>');
+const V = '#7C3AED', NAVY = '#1B1235', CREAM = '#F4EADB', ROSE = '#FF7FAF';
+const ZP = 'M39.5 31.5 H60.5 V37.5 L48.5 50 H60.5 V56 H39.5 V50 L51.5 37.5 H39.5 Z';
+const GAME8 = ['#F5C93B', '#F2706C', '#35C6BC', '#B189E8', '#C0A183', '#A9B2C4', '#F58A4E', '#58A6DD'];
+let n = 0; const uid = () => 'e' + n++;
+const lin = (stops, x1 = 0, y1 = 0, x2 = 1, y2 = 1) => { const id = uid();
+  return [id, `<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${stops.map((c, i) => `<stop offset="${i / (stops.length - 1)}" stop-color="${c}"/>`).join('')}</linearGradient>`]; };
+const radial = (stops, cx = .5, cy = .5, r = .6) => { const id = uid();
+  return [id, `<radialGradient id="${id}" cx="${cx}" cy="${cy}" r="${r}">${stops.map(([o, c, a = 1]) => `<stop offset="${o}" stop-color="${c}" stop-opacity="${a}"/>`).join('')}</radialGradient>`]; };
+const blur = (sd) => { const id = uid(); return [id, `<filter id="${id}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="${sd}"/></filter>`]; };
+const hard = (dx, dy, c, a = 1) => { const id = uid(); return [id, `<filter id="${id}" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="${dx}" dy="${dy}" stdDeviation="0" flood-color="${c}" flood-opacity="${a}"/></filter>`]; };
+const svg = (defs, body) => `<svg class="abs" width="1080" height="1080" viewBox="0 0 1080 1080" style="left:0;top:0;overflow:visible"><defs>${defs.join('')}</defs>${body}</svg>`;
+const polar = (r, a, c = 540) => [c + r * Math.cos(a), c + r * Math.sin(a)];
+const seeded = (seed) => () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+const spark = (x, y, s, c = CREAM, op = 1) => `<path d="M${x} ${y - s} Q${x} ${y} ${x + s} ${y} Q${x} ${y} ${x} ${y + s} Q${x} ${y} ${x - s} ${y} Q${x} ${y} ${x} ${y - s} Z" fill="${c}" opacity="${op}"/>`;
+// A card of width w centred on (cx, cy), rotated rot, with the Z when z is set.
+const zc = (cx, cy, w, rot, o = {}) => { const { fill = '#fff', z, stroke, sw = 0, extra = '' } = o, k = w / 38;
+  return `<g transform="translate(${cx} ${cy}) rotate(${rot}) scale(${k}) translate(-50 -45)"><rect x="31" y="18" width="38" height="54" rx="7" fill="${fill}" ${stroke ? `stroke="${stroke}" stroke-width="${sw / k}" stroke-linejoin="round"` : ''}/>${extra}${z ? `<path d="${ZP}" fill="${z}"/>` : ''}</g>`; };
+// The app's fan of three, the Z card in front, around (cx, cy).
+const fan = (cx, cy, w, o = {}) => { const { fills = ['rgba(255,255,255,.35)', 'rgba(255,255,255,.65)', '#fff'], z = V, stroke, sw = 0, rot = 0 } = o;
+  const d = w * .36; const rr = rot * Math.PI / 180;
+  const at = (dx, dy) => [cx + dx * Math.cos(rr) - dy * Math.sin(rr), cy + dx * Math.sin(rr) + dy * Math.cos(rr)];
+  const [x0, y0] = at(-d, w * .12), [x1, y1] = at(0, 0), [x2, y2] = at(d, -w * .06);
+  return zc(x0, y0, w, rot - 14, { fill: fills[0], stroke, sw }) + zc(x1, y1, w, rot, { fill: fills[1], stroke, sw }) + zc(x2, y2, w, rot + 14, { fill: fills[2], z, stroke, sw }); };
+// Film grain over the whole emblem, and the wordmark in any colour.
+const GRAIN = (op = .09, seed = 3) => { const id = uid(); return `<svg class="abs" width="1080" height="1080" style="left:0;top:0;mix-blend-mode:overlay;opacity:${op}"><filter id="${id}"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="${seed}"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.2"/></filter><rect width="1080" height="1080" filter="url(#${id})"/></svg>`; };
+const word = (top, size, color = '#fff', shadow = '') => `<div class="abs" style="left:0;top:${top}px;width:1080px;display:flex;justify-content:center;${shadow ? `filter:drop-shadow(${shadow})` : ''}">${wordmark(size).replace('color:#fff', 'color:' + color)}</div>`;
+const lab = (top, size, color, text, ls = '.32em') => `<div class="abs lab" style="left:0;top:${top}px;width:1080px;font-size:${size}px;color:${color};letter-spacing:${ls}">${text}</div>`;
+const S = [];
+
+const add = (id, html) => S.push([id, html]);
+const idOf = (d) => d.match(/id="(\w+)"/)[1];
+const P = (r, a) => polar(r, a).map((v) => v.toFixed(1)).join(' ');
+// Tapered hooks sweeping from the rim into the badge.
+const hooks = (count, fill, rOut = 522, rIn = 392) => Array.from({ length: count }, (_, i) => { const a = i * 2 * Math.PI / count, k = i % 2 ? .75 : 1;
+  return `<path d="M${P(rOut, a - .05 * k)} Q${P(rOut - 17, a + .3 * k)} ${P(rIn + 30 * (1 - k), a + .55 * k)} Q${P(rOut - 60, a + .2 * k)} ${P(rOut - 36, a + .06 * k)} Z" fill="${fill}"/>`; }).join('');
+const LOGO = (o = {}) => { const [sh, d] = hard(0, 0, '#000', 0); const [soft, ds] = (() => { const id = uid(); return [id, `<filter id="${id}" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0B0518" flood-opacity="${o.shadow ?? .45}"/></filter>`]; })();
+  return [ds, `<g filter="url(#${soft})">${fan(528, 548, o.w || 240, { fills: o.fills || ['rgba(255,255,255,.35)', 'rgba(255,255,255,.65)', '#fff'], stroke: o.stroke, sw: o.sw || 0 })}</g>`]; };
+const halo = (r, stops) => { const [h, d] = radial(stops, .5, .5, .5); return [d, `<circle cx="540" cy="540" r="${r}" fill="url(#${idOf(d)})"/>`]; };
+
+// 1 - Tourbillon de nuit: cream hooks over a rose ring, a violet halo inside.
+{ const [dl, logo] = LOGO(); const [dh, h] = halo(400, [[0, '#9B5CFF'], [.55, '#5B21B6'], [1, NAVY]]);
+  add('01-tourbillon-nuit', svg([dl, dh], `<rect width="1080" height="1080" fill="#120B24"/><circle cx="540" cy="540" r="535" fill="${NAVY}"/>
+    <circle cx="540" cy="540" r="452" fill="none" stroke="${ROSE}" stroke-width="26"/><circle cx="540" cy="540" r="428" fill="none" stroke="#6B3FB0" stroke-width="12"/>
+    <circle cx="540" cy="540" r="414" fill="${NAVY}"/>${h}${hooks(16, CREAM)}${logo}${spark(345, 330, 24)}${spark(745, 300, 18)}${spark(760, 760, 14)}`) + GRAIN(.1)); }
+
+// 2 - Tourbillon violet: the same whirl in white on the app's violet.
+{ const [dl, logo] = LOGO(); const [br, dbr] = lin(['#FF4FA0', '#8B3DFF', '#3AA9FF']); const [dh, h] = halo(420, [[0, '#9B5CFF'], [1, '#6D28D9']]);
+  add('02-tourbillon-violet', svg([dl, dbr, dh], `<rect width="1080" height="1080" fill="#4C1D95"/><circle cx="540" cy="540" r="535" fill="#5B21B6"/>
+    <circle cx="540" cy="540" r="452" fill="none" stroke="url(#${idOf(dbr)})" stroke-width="26"/><circle cx="540" cy="540" r="420" fill="#6D28D9"/>${h}${hooks(16, '#fff')}${logo}${spark(345, 330, 22)}${spark(750, 310, 16)}`) + GRAIN(.09)); }
+
+// 3 - Lames dégradées: the hooks carry the brand gradient on the night.
+{ const [dl, logo] = LOGO(); const id = uid(); const dbr = `<linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1080" y2="1080"><stop offset="0" stop-color="#FF4FA0"/><stop offset=".5" stop-color="#8B3DFF"/><stop offset="1" stop-color="#3AA9FF"/></linearGradient>`;
+  const [dh, h] = halo(390, [[0, '#4A1F8F'], [1, NAVY]]);
+  add('03-lames-degradees', svg([dl, dbr, dh], `<rect width="1080" height="1080" fill="#0E0920"/><circle cx="540" cy="540" r="535" fill="${NAVY}"/>
+    <circle cx="540" cy="540" r="448" fill="none" stroke="${CREAM}" stroke-width="8"/><circle cx="540" cy="540" r="425" fill="none" stroke="${CREAM}" stroke-width="3" opacity=".5"/>${h}${hooks(18, `url(#${id})`)}${logo}${spark(350, 330, 22)}${spark(740, 300, 16)}`) + GRAIN(.1)); }
+
+// 4 - Ondes: ripples spread from the cards to a cream rim.
+{ const [dl, logo] = LOGO(); const [bg, dbg] = radial([[0, '#A06BFF'], [.5, V], [1, '#3B137A']], .5, .5, .55);
+  const rip = [250, 300, 345, 385, 420, 450].map((r, i) => `<circle cx="540" cy="540" r="${r}" fill="none" stroke="#fff" stroke-width="${10 - i}" opacity="${.24 - i * .025}"/>`).join('');
+  add('04-ondes', svg([dl, dbg], `<rect width="1080" height="1080" fill="${NAVY}"/><circle cx="540" cy="540" r="535" fill="${NAVY}"/><circle cx="540" cy="540" r="505" fill="url(#${idOf(dbg)})"/>
+    ${rip}<circle cx="540" cy="540" r="505" fill="none" stroke="${CREAM}" stroke-width="18"/><circle cx="540" cy="540" r="480" fill="none" stroke="${ROSE}" stroke-width="5"/>${logo}`) + GRAIN(.09)); }
+
+// 5 - Rayons: light from behind the cards, a cream rim with its ticks.
+{ const [dl, logo] = LOGO(); const [bg, dbg] = radial([[0, '#B98AFF'], [.4, V], [1, '#2A1052']], .5, .5, .55); const [gl, dgl] = blur(60);
+  const rays = Array.from({ length: 16 }, (_, i) => { const a = i * Math.PI / 8, w = .08; return `<path d="M540 540 L${P(520, a - w)} L${P(520, a + w)} Z" fill="#fff" opacity="${i % 2 ? .06 : .12}"/>`; }).join('');
+  const ticks = Array.from({ length: 48 }, (_, i) => { const a = i * Math.PI / 24; return `<line x1="${polar(468, a)[0]}" y1="${polar(468, a)[1]}" x2="${polar(i % 4 ? 478 : 488, a)[0]}" y2="${polar(i % 4 ? 478 : 488, a)[1]}" stroke="${CREAM}" stroke-width="${i % 4 ? 3 : 6}" stroke-linecap="round"/>`; }).join('');
+  add('05-rayons', svg([dl, dbg, dgl], `<rect width="1080" height="1080" fill="${NAVY}"/><circle cx="540" cy="540" r="535" fill="${NAVY}"/><circle cx="540" cy="540" r="500" fill="url(#${idOf(dbg)})"/>${rays}
+    <circle cx="540" cy="540" r="230" fill="#F3E8FF" opacity=".35" filter="url(#${idOf(dgl)})"/>${ticks}<circle cx="540" cy="540" r="505" fill="none" stroke="${CREAM}" stroke-width="16"/>${logo}${spark(330, 360, 20)}${spark(760, 330, 16)}`) + GRAIN(.09)); }
+
+// 6 - Sceau holo: a serrated holographic edge around a violet core.
+{ const [dl, logo] = LOGO(); const [ho, dho] = lin(['#FFC8F0', '#C9B8FF', '#9FE0FF', '#BFFFE0', '#FFF1A8', '#FFC8F0']); const [core, dco] = radial([[0, '#9B5CFF'], [1, '#3B137A']], .5, .45, .6);
+  const pts = Array.from({ length: 96 }, (_, i) => P(i % 2 ? 505 : 535, i * Math.PI / 48 - Math.PI / 2).replace(' ', ',')).join(' ');
+  add('06-sceau-holo', svg([dl, dho, dco], `<rect width="1080" height="1080" fill="${NAVY}"/><polygon points="${pts}" fill="url(#${idOf(dho)})"/>
+    <circle cx="540" cy="540" r="470" fill="${NAVY}"/><circle cx="540" cy="540" r="440" fill="url(#${idOf(dco)})" stroke="url(#${idOf(dho)})" stroke-width="12"/>${logo}${spark(340, 340, 22)}${spark(750, 320, 16)}`) + GRAIN(.08)); }
+
+// 7 - Brodé: an embroidered patch, satin border and stitches, twill ground.
+{ const [dl, logo] = LOGO({ fills: ['#3AA9FF', '#FF4FA0', '#fff'], stroke: CREAM, sw: 10 }); const tw = uid(), thread = uid(); const [hs, dhs] = hard(0, 12, '#0B0518', .5);
+  const stitch = (r, c, w = 5) => `<circle cx="540" cy="540" r="${r}" fill="none" stroke="${c}" stroke-width="${w}" stroke-dasharray="16 10" stroke-linecap="round"/>`;
+  add('07-brode', svg([dl, dhs, `<pattern id="${tw}" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="14" height="14" fill="#6D28D9"/><rect width="7" height="14" fill="#7C3AED"/></pattern>`,
+      `<filter id="${thread}"><feTurbulence type="fractalNoise" baseFrequency=".02 .9" numOctaves="2" seed="5"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .5 0"/><feComposite in2="SourceGraphic" operator="in"/><feBlend in="SourceGraphic" mode="multiply"/></filter>`],
+    `<rect width="1080" height="1080" fill="#160730"/><circle cx="540" cy="540" r="530" fill="${NAVY}"/><circle cx="540" cy="540" r="500" fill="none" stroke="#FF4FA0" stroke-width="44" filter="url(#${thread})"/>${stitch(522, CREAM)}${stitch(478, CREAM)}
+    <circle cx="540" cy="540" r="474" fill="url(#${tw})"/>${stitch(440, 'rgba(255,255,255,.35)', 4)}${logo}`) + GRAIN(.12)); }
+
+// 8 - Rétro: a cream rim, a striped sun and a neon grid behind the cards.
+{ const [dl, logo] = LOGO({ fills: ['#C4B5FD', '#E4DCFF', '#fff'], shadow: .6 }); const [sky, dsky] = lin(['#2A1052', '#6D28D9', '#FF4FA0', '#FF9A5C'], 0, 0, 0, 1); const [sun, dsun] = lin(['#FFE66D', '#FF9A5C', '#FF4FA0'], 0, 0, 0, 1); const clip = uid();
+  const cuts = [0, 1, 2, 3, 4].map((i) => `<rect x="280" y="${620 + i * 22}" width="520" height="${4 + i * 3}" fill="#FF6F8F"/>`).join('');
+  const grid = Array.from({ length: 15 }, (_, i) => `<line x1="540" y1="740" x2="${540 + (i - 7) * 170}" y2="1080" stroke="#FF4FA0" stroke-width="4" opacity=".8"/>`).join('') + [760, 795, 845, 915, 1010].map((y) => `<line x1="0" y1="${y}" x2="1080" y2="${y}" stroke="#FF4FA0" stroke-width="4" opacity=".8"/>`).join('');
+  add('08-retro', svg([dl, dsky, dsun, `<clipPath id="${clip}"><circle cx="540" cy="540" r="490"/></clipPath>`], `<rect width="1080" height="1080" fill="${NAVY}"/><circle cx="540" cy="540" r="535" fill="${CREAM}"/><circle cx="540" cy="540" r="508" fill="${NAVY}"/>
+    <g clip-path="url(#${clip})"><rect width="1080" height="740" fill="url(#${idOf(dsky)})"/><circle cx="540" cy="600" r="270" fill="url(#${idOf(dsun)})"/>${cuts}<rect y="740" width="1080" height="340" fill="#160730"/>${grid}
+    ${spark(250, 300, 18)}${spark(830, 260, 22)}</g>${logo}`) + GRAIN(.1)); }
+
+// 9 - Nuit étoilée: two comets sweep along the rim of a starry night.
+{ const [dl, logo] = LOGO(); const [bg, dbg] = radial([[0, '#4A1F8F'], [.6, '#1E0B3D'], [1, '#0B0518']], .5, .45, .6);
+  const comet = (a0, len, c, w) => { let d = ''; const N = 40; for (let i = 0; i <= N; i++) d += `${i ? 'L' : 'M'}${P(470, a0 + len * i / N)}`; const g = uid();
+    return [`<linearGradient id="${g}" gradientUnits="userSpaceOnUse" x1="${polar(470, a0)[0]}" y1="${polar(470, a0)[1]}" x2="${polar(470, a0 + len)[0]}" y2="${polar(470, a0 + len)[1]}"><stop offset="0" stop-color="${c}" stop-opacity="0"/><stop offset="1" stop-color="${c}"/></linearGradient>`,
+      `<path d="${d}" fill="none" stroke="url(#${g})" stroke-width="${w}" stroke-linecap="round"/><circle cx="${polar(470, a0 + len)[0]}" cy="${polar(470, a0 + len)[1]}" r="${w * .9}" fill="#fff"/>`]; };
+  const [g1, c1] = comet(-2.6, 2.2, '#FF4FA0', 22), [g2, c2] = comet(.55, 2.2, '#3AA9FF', 22);
+  const rnd = seeded(21); let stars = ''; for (let i = 0; i < 90; i++) { const r = 60 + rnd() * 380, a = rnd() * 2 * Math.PI, [x, y] = polar(r, a); stars += `<circle cx="${x}" cy="${y}" r="${1.5 + rnd() * 3}" fill="#fff" opacity="${.25 + rnd() * .6}"/>`; }
+  add('09-nuit-etoilee', svg([dl, dbg, g1, g2], `<rect width="1080" height="1080" fill="#0B0518"/><circle cx="540" cy="540" r="535" fill="url(#${idOf(dbg)})"/>${stars}
+    <circle cx="540" cy="540" r="470" fill="none" stroke="#fff" stroke-width="3" opacity=".18"/>${c1}${c2}<circle cx="540" cy="540" r="522" fill="none" stroke="${CREAM}" stroke-width="10"/>${logo}${spark(330, 330, 24)}${spark(770, 700, 18)}`) + GRAIN(.09)); }
+
+// 10 - Bord de booster: a crimped cream edge around a foil band.
+{ const [dl, logo] = LOGO(); const [foil, df] = lin(['#E9E2FF', '#A78BFA', '#6D28D9', '#C4B5FD', '#8B5CF6']); const [core, dco] = radial([[0, '#9B5CFF'], [1, '#4C1D95']], .5, .45, .6);
+  const crimp = (r1, r2, nT) => Array.from({ length: nT * 2 }, (_, i) => P(i % 2 ? r2 : r1, i * Math.PI / nT).replace(' ', ',')).join(' ');
+  add('10-bord-booster', svg([dl, df, dco], `<rect width="1080" height="1080" fill="${NAVY}"/><polygon points="${crimp(536, 508, 72)}" fill="${CREAM}"/><circle cx="540" cy="540" r="500" fill="url(#${idOf(df)})"/>
+    ${Array.from({ length: 10 }, (_, i) => `<line x1="${polar(500, i * .63)[0]}" y1="${polar(500, i * .63)[1]}" x2="${polar(420, i * .63 + .12)[0]}" y2="${polar(420, i * .63 + .12)[1]}" stroke="#fff" stroke-width="14" opacity=".22" stroke-linecap="round"/>`).join('')}
+    <circle cx="540" cy="540" r="430" fill="url(#${idOf(dco)})" stroke="${CREAM}" stroke-width="10"/>${logo}${spark(345, 345, 20)}${spark(745, 320, 15)}`) + GRAIN(.09)); }
+
+carousel(S);
+</script></body></html>
