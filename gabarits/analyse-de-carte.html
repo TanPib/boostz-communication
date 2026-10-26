@@ -39,8 +39,8 @@ const head = (kicker) => `<div class="abs lab" style="left:70px;top:66px;font-si
 const euro = (v) => v.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' €';
 // Cardmarket via TCGdex, as recorded by the price workflow on 16/10/2026 (donnees/cotes/pokemon/2026-10-16.json, me02-130).
 const CM = { avg7: 236.77, avg30: 257.93, trend: 205.48, low: 159.99 };
-const SRC_COTE = 'Cardmarket via TCGdex, relevé Boostz du 16/10/2026 (plus bas = annonce la moins chère, tous états). PSA 10 : ventes eBay de septembre 2026, 1 € = 1,135 $.';
-const SRC_TAUX = 'Taux : TCGplayer, 1 Méga Hyper Rare pour 1 260 boosters. Display de 36 boosters ≈ 250 €, prix publics FR. Cardmarket via TCGdex, relevé Boostz du 16/10/2026.';
+const SRC_COTE = 'Cardmarket via TCGdex, relevé BoostZ du 16/10/2026 (plus bas = annonce la moins chère, tous états). PSA 10 : ventes eBay de septembre 2026, 1 € = 1,135 $.';
+const SRC_TAUX = 'Taux : TCGplayer, 1 Méga Hyper Rare pour 1 260 boosters. Display de 36 boosters ≈ 250 €, prix publics FR. Cardmarket via TCGdex, relevé BoostZ du 16/10/2026.';
 const TIMES = Math.round(8750 / CM.avg30);
 const SRC_VERDICT = `${TIMES} × : ≈ 8 750 € de boosters ÷ ${euro(CM.avg30)}. 1 chance sur 3 : 37 % de ne pas l’avoir après 1 260 boosters.`;
 const POSTS = [];
@@ -82,9 +82,9 @@ POSTS.push(['a4-le-verdict', `${ghosts([[80, 520, 80, -6], [920, 1100, 80, 6]])}
   <div class="abs" style="left:110px;top:960px;width:860px;text-align:center;font-weight:600;font-size:38px;line-height:1.4;color:rgba(245,242,251,.85)">L’ouvrir te coûterait ${TIMES} fois son prix,<br>et même après 1 260 boosters, tu aurais<br><b class="ui" style="color:#fff">1 chance sur 3 de repartir sans.</b></div>
   <div class="src">${SRC_VERDICT}</div>`]);
 
-// 5 - Follow it on Boostz.
+// 5 - Follow it on BoostZ.
 POSTS.push(['a5-suis-sa-cote', `${ghosts([[90, 300, 80, -6], [900, 360, 90, 8], [100, 1215, 70, 4], [910, 1215, 80, -6]])}${track(4)}
-  <div class="abs h" style="left:0;top:170px;width:1080px;text-align:center;font-size:104px">Suis sa cote<br><span class="acc">sur Boostz.</span></div>
+  <div class="abs h" style="left:0;top:170px;width:1080px;text-align:center;font-size:104px">Suis sa cote<br><span class="acc">sur BoostZ.</span></div>
   ${card(380, 450, 320, -3)}
   <div class="abs" style="left:0;top:1000px;width:1080px;display:flex;justify-content:center">${wordmark(100)}</div>
   <div class="abs mut" style="left:0;top:1135px;width:1080px;text-align:center;font-weight:600;font-size:38px">Ton compagnon TCG, bientôt sur ton téléphone</div>`]);
