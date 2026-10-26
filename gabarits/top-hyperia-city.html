@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ top Hyperia City</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// "Hyperia City : les 10 cartes qui valent le plus" (PLANNING n° 5, 28/10/2026):
+// a cover, the countdown from 10th to 1st, a recap to save. A Lorcana post, so
+// the filled blocks take Lorcana's colour.
+// Prices: TCGplayer market price of the English edition, via tcgcsv (build of
+// 25/10/2026 20:05 UTC), recorded by `outils/scelles.py set lorcana Hyperia
+// City` in donnees/sets/lorcana-hyperia-city-2026-10-26.json. Lorcast, mirrored
+// by rarebox-data, still listed the set without its enchanted and iconic cards,
+// which are the whole top 10. Scans: TCGplayer, fetched by the Image workflow.
+// French subtitles of chapter 14 were not published anywhere we could check, so
+// a card is named by its French character name, its rarity and its number.
+window.PUB = '2026-10-28';
+const GAME = 'lorcana', GC = GAMES[GAME][1];
+const TOP = [
+  ['Mickey Mouse', 'Iconique', '241/204', 2400.98, 'carte-hyperia-241-mickey.jpg'],
+  ['Cendrillon', 'Iconique', '242/204', 1035.72, 'carte-hyperia-242-cendrillon.jpg'],
+  ['Ariel', 'Enchantée', '236/204', 396.48, 'carte-hyperia-236-ariel.jpg'],
+  ['Belle', 'Enchantée', '230/204', 287.15, 'carte-hyperia-230-belle.jpg'],
+  ['Max', 'Enchantée', '229/204', 251.28, 'carte-hyperia-229-max.jpg'],
+  ['Raiponce', 'Enchantée', '226/204', 198.59, 'carte-hyperia-226-raiponce.jpg'],
+  ['Aurore', 'Enchantée', '223/204', 184.62, 'carte-hyperia-223-aurore.jpg'],
+  ['Marie', 'Enchantée', '238/204', 179.69, 'carte-hyperia-238-marie.jpg'],
+  ['Remember Me', 'Enchantée<br>chanson de Coco', '225/204', 165.77, 'carte-hyperia-225-ne-m-oublie-pas.jpg'],
+  ['Mulan', 'Enchantée', '234/204', 140.39, 'carte-hyperia-234-mulan.jpg']
+].map(([nom, rarete, numero, prix, img]) => ({ nom, rarete, numero, prix, img: 'assets/' + img }));
+const SRC = 'Prix du marché TCGplayer (ventes récentes), édition anglaise, au 25/10/2026, via tcgcsv. Images : TCGplayer.';
+const SLIDES = [];
+
+// 1 - Cover: the top three stuck on, the title.
+SLIDES.push(['01-couverture', `${ghosts([[80, 1110, 80, -6], [930, 1080, 80, 8]])}${track(0, 1180, .5)}${head('SORTIE D’EXTENSION', GAME, 'Chapitre 14')}
+  <div class="abs h" style="left:0;top:170px;width:1080px;text-align:center;font-size:92px">Hyperia City</div>
+  <div class="abs h" style="left:0;top:285px;width:1080px;text-align:center;font-size:58px;color:${GC}">les 10 cartes qui valent le plus</div>
+  <div class="abs mut" style="left:0;top:378px;width:1080px;text-align:center;font-weight:600;font-size:34px">deux jours après la sortie, au 25/10</div>
+  ${card(TOP[2].img, 130, 500, 290, -10)}${card(TOP[1].img, 660, 500, 290, 10)}${card(TOP[0].img, 380, 460, 320, 0, 3)}
+  <div class="abs" style="left:70px;top:1240px">${wordmark(46)}</div>
+  <div class="abs ui mut" style="right:70px;top:1248px;font-size:30px">Swipe →</div>`]);
+
+// 2 to 11 - The countdown, 10th to 1st.
+TOP.map((c, i) => [c, i + 1]).reverse().forEach(([c, rank], k) => {
+  SLIDES.push([`${String(12 - rank).padStart(2, '0')}-rang-${rank}`, `${track(k + 1, 1150, .35)}${head('HYPERIA CITY · TOP 10', GAME, 'Prix TCGplayer')}
+    ${card(c.img, 70, 190, 560, -3)}
+    ${disc(700, 210, 230, GC, `<div class="h" style="font-size:140px;color:${DARK};line-height:1">${rank}</div>`, 6)}
+    <div class="abs" style="left:680px;top:500px;width:340px">
+      <div class="h" style="font-size:${c.nom.length > 10 ? 50 : 62}px;line-height:1.05">${c.nom}</div>
+      <div class="mut" style="font-weight:600;font-size:28px;margin-top:14px;line-height:1.35">${c.rarete}<br>n° ${c.numero}</div>
+    </div>
+    ${st(660, 830, 360, 140, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:${c.prix >= 1000 ? 56 : 72}px;color:${DARK}">${usd(c.prix)}</div>`, { fill: GC, r: -3, z: 4 })}
+    <div class="src">${SRC}</div>`]);
+});
+
+// 12 - The whole list on one slide (the one people save), then BoostZ.
+SLIDES.push(['12-recap', `${head('LE RÉCAP', GAME, 'Prix TCGplayer')}
+  <div class="abs h" style="left:70px;top:150px;font-size:64px">Hyperia City : le top 10</div>
+  <div class="abs mut" style="left:70px;top:232px;font-weight:600;font-size:30px">Lorcana · chapitre 14 · au 25/10/2026</div>
+  ${st(70, 300, 940, 700, `<div style="padding:18px 34px">${TOP.map((c, i) => `<div style="display:flex;align-items:center;gap:22px;height:66px;${i < 9 ? 'border-bottom:2px solid rgba(255,255,255,.08)' : ''}">
+    <span class="h" style="width:56px;font-size:40px;color:${GC}">${i + 1}</span>
+    <span class="ui" style="flex:1;font-size:29px;white-space:nowrap">${c.nom} <span class="mut" style="font-weight:600;font-size:23px">· ${c.rarete.split('<br>')[0]} · ${c.numero}</span></span>
+    <span class="h" style="font-size:36px;color:${GC}">${usd(c.prix)}</span></div>`).join('')}</div>`, { z: 3 })}
+  ${closing(1012, 60)}
+  <div class="src" style="bottom:20px;font-size:17px">${SRC}</div>`]);
+
+carousel(SLIDES);
+</script></body></html>

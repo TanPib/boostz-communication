@@ -45,6 +45,7 @@ const STYLES = {
   discord: { bpm: 90, prog: ['Fmaj9', 'Am9', 'Dm9', 'G13'], lead: 'vibes', kit: 'bounce', swing: .16, cut: 6000, dust: .4, comp: 'arp' },
   combattant:  { bpm: 88, prog: ['Cmaj9', 'A7b9', 'Dm9', 'G13'], lead: 'chip', kit: 'boombap', swing: .18, cut: 5600, dust: .5, comp: 'sparse' },
   lorcana:     { bpm: 76, prog: ['Dmaj9', 'Bm9', 'Gmaj9', 'A13'], lead: 'musicbox', kit: 'brushes', swing: .2, cut: 4800, dust: .7, comp: 'hold' },
+  hyperia:     { bpm: 82, prog: ['Abmaj9', 'Fm9', 'Dbmaj9', 'Eb13'], lead: 'vibes', kit: 'brushes', swing: .22, cut: 5200, dust: .5 },
   etat:        { bpm: 80, prog: ['Ebmaj9', 'Cm9', 'Fm9', 'Bb13'], lead: 'felt', kit: 'boombap', swing: .24, cut: 4600, dust: .7, comp: 'arp' },
   blackfriday: { bpm: 86, prog: ['Am9', 'D9', 'Gmaj9', 'Cmaj9'], lead: 'guitar', kit: 'boombap', swing: .2, cut: 5400, dust: .5, comp: 'sparse' },
   dracaufeu:   { bpm: 78, prog: ['Em9', 'Cmaj9', 'Am9', 'B7b9'], lead: 'rhodes', kit: 'halftime', swing: .2, cut: 4800, dust: .6, comp: 'hold' },
