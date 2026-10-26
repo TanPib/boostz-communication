@@ -3,6 +3,7 @@
 
     python3 outils/scelles.py releve           # one record of today's prices
     python3 outils/scelles.py ecarts <game>    # the moves between the last two records
+    python3 outils/scelles.py set <game> <name> # every card of one set, every printing
 
 Why this exists: "Le radar des scellés" (TYPES.md, type 35) shows how sealed
 products moved over a month, and no free source keeps that history. tcgcsv.com
@@ -118,8 +119,42 @@ def ecarts(game, n=15):
         print(f'{r[0]:+7.1f} %  {r[1]:8.2f} -> {r[2]:8.2f} $  {r[3]} ({r[4]}) #{r[5]}')
 
 
+def set_cards(game, words):
+    """Every card of the sets whose name contains `words`, each printing with
+    its market and low price, for the posts on one set (« Sortie d'extension »).
+    Lorcast, mirrored by rarebox-data, lists a new Lorcana set without its
+    enchanted cards for a while, and those are the ones that cost the most."""
+    today = datetime.datetime.now(datetime.timezone.utc).date()
+    build = get(f'{BASE.rsplit("/", 1)[0]}/last-updated.txt')
+    out = []
+    for cat in CATEGORIES[game]:
+        for g in (get(f'{BASE}/{cat}/groups') or {}).get('results', []):
+            if words.lower() not in g.get('name', '').lower():
+                continue
+            products = {p['productId']: p for p in (get(f'{BASE}/{cat}/{g["groupId"]}/products') or {}).get('results', []) if is_card(p)}
+            for r in (get(f'{BASE}/{cat}/{g["groupId"]}/prices') or {}).get('results', []):
+                p = products.get(r.get('productId'))
+                if not p or r.get('marketPrice') is None:
+                    continue
+                ext = {d.get('name'): d.get('value') for d in p.get('extendedData') or []}
+                out.append({'id': p['productId'], 'nom': p.get('name'), 'set': g.get('name'), 'numero': ext.get('Number'), 'rarete': ext.get('Rarity'),
+                            'version': r.get('subTypeName'), 'market': r.get('marketPrice'), 'low': r.get('lowPrice'), 'image': p.get('imageUrl')})
+    if not out:
+        sys.exit(f'no priced card for {game} « {words} »')
+    out.sort(key=lambda c: -c['market'])
+    slug = ''.join(ch if ch.isalnum() else '-' for ch in words.lower()).strip('-')
+    os.makedirs(os.path.join('donnees', 'sets'), exist_ok=True)
+    with open(os.path.join('donnees', 'sets', f'{game}-{slug}-{today.isoformat()}.json'), 'w', encoding='utf-8') as f:
+        json.dump({'date': today.isoformat(), 'source': 'TCGplayer market price, via tcgcsv.com', 'devise': 'USD', 'build': (build or '').strip(), 'cartes': out},
+                  f, ensure_ascii=False, indent=0)
+    for c in out[:15]:
+        print(f'{c["market"]:9.2f} $  {c["nom"]} #{c["numero"]} {c["rarete"]} ({c["version"]})')
+
+
 if __name__ == '__main__':
     if sys.argv[1] == 'releve':
         releve()
+    elif sys.argv[1] == 'set':
+        set_cards(sys.argv[2], ' '.join(sys.argv[3:]))
     else:
         ecarts(sys.argv[2])
