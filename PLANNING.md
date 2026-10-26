@@ -25,8 +25,8 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | mar. 20/10 | carrousel | 2 Cotes qui bougent | Édition n° 1 : moyennes 30 jours du 03/10 et du 16/10, Brasegali FB NIV.X en tête (+123,1 %) | Pokémon | ✅ programmé le 16/10 |
 | ven. 23/10 | Reel | 11 Annonce | Rejoins le serveur Discord Boostz (discord.gg/R54wCGtkr) | les 8 | ✅ programmé |
 | lun. 26/10 | carrousel | 1 Analyse de carte | Méga-Dracaufeu X ex | Pokémon | ✅ programmé (chiffres rafraîchis le 16/10) |
-| \*mer. 28/10 | carrousel | 15 Sortie d'extension | Hyperia City (chapitre 14, sorti le 23/10) : les 10 cartes qui valent le plus | Lorcana | brouillon dans Metricool, produit par le rappel du 26/10 |
-| \*sam. 31/10, 18 h | Reel | 16 Thème | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | ✅ programmé |
+| \*mer. 28/10 | carrousel | 15 Sortie d'extension | Hyperia City (chapitre 14, sorti le 23/10) : les 10 cartes qui valent le plus | Lorcana | ✅ programmé le 26/10 (cotes TCGplayer au 25/10) |
+| \*sam. 31/10, 18 h | Reel | 16 Thème | Halloween : 3 cartes qui font peur… surtout à ton portefeuille | Magic, Pokémon, Lorcana | ✅ programmé, cotes rafraîchies le 26/10 |
 | mar. 03/11 | carrousel | 22 L'histoire d'une carte | Tyler le Grand Guerrier : le vœu Make-A-Wish, la carte unique, 311 211 \$ | Yu-Gi-Oh! | ✅ programmé |
 | \*ven. 06/11 | carrousel | 15 Sortie d'extension | Règne Delta sort aujourd'hui (ME06) | Pokémon | ✅ programmé |
 | lun. 09/11 | Reel | 30 Zoom mystère | Épisode 1 : Mickey Mouse, Brave Petit Tailleur, en 5 étapes de Légende à Noob | Lorcana | ✅ programmé |
@@ -145,10 +145,12 @@ Légendes en brouillon. Les chiffres entre crochets sortent des données le jour
 ### 5 · Hyperia City : les 10 cartes qui valent le plus — mer. 28/10
 - **Déroulé :** couverture « Hyperia City est sorti : ses 10 cartes les plus chères à J+5 », un rang par slide, le récap.
 - **Données :** cotes TCGplayer de Lorcast (via `rarebox-data`), converties en euros et datées.
+- ✅ Programmé le 26/10 sur Instagram, TikTok, Facebook et en story. Lorcast (via `rarebox-data`) n'avait pas encore les enchantées ni les iconiques, qui font tout le top 10 : cotes prises sur TCGplayer via tcgcsv (`outils/scelles.py set lorcana Hyperia City`, étape `set` du workflow Cotes), au 25/10, en dollars comme les autres cotes TCGplayer. Les sous-titres français du chapitre 14 n'étant publiés nulle part de vérifiable, chaque carte est nommée par son personnage, sa rareté et son numéro.
 - **Légende :** « Chapitre 14 sorti, les prix tombent 👀 Voici les 10 cartes d'Hyperia City qui valent le plus pour l'instant. Tu as pull laquelle ? »
 - **Hashtags :** `#disneylorcana #lorcana #lorcanafr #hyperiacity #tcgcollection`
 
 ### 6 · Halloween : une carte qui fait peur par jeu — sam. 31/10, 18 h
+- ✅ Cotes rafraîchies le 26/10 : Ectoplasma VMAX 925,05 € (moyenne 30 jours, relevé du 16/10, contre 832,63 €), Valgavoth 303,02 $ (25/10), Maléfique 840 $ (inchangé). Vidéo refaite et remplacée dans les posts Instagram, TikTok et Facebook ; la story montre la couverture sans cote, elle reste.
 - **Déroulé (Reel, ~12 s) :** cinq cartes « monstres » en stickers, une par jeu, chacune avec sa cote : un Pokémon Spectre, une créature d'horreur Magic, un pirate fantôme One Piece, une méchante Disney Lorcana, un monstre Démon Yu-Gi-Oh!. Fin « Joyeux Halloween 🎃 ».
 - **Données :** relevé Cardmarket (Pokémon), `rarebox-data` (Magic, One Piece, Lorcana), relevé tcgcsv (Yu-Gi-Oh!, s'il est branché à temps ; sinon 4 jeux).
 - **Légende :** « 🎃 Cinq cartes qui font peur… surtout à ton portefeuille. Laquelle tu mettrais dans ton classeur ce soir ? »
@@ -211,4 +213,12 @@ Relevées le 05/10/2026, toutes reconfirmées le 07/10/2026 (Hyperia City : avan
 - Dragon Ball Fusion World FB11 le 16/10 ([db-fusionworld.com](https://db-fusionworld.com/en/articles/bandai-next-plan-report-upcoming-dragon-ball-super-fusion-world-releases)).
 - Lorcana Hyperia City le 23/10, One Piece EB05 le 30/10, Pokémon Delta Reign le 06/11, Magic × Star Trek le 13/11, OP18 le 20/11 ([pokezenith](https://www.pokezenith.com/content/51-calendrier-sorties-tcg-2026), [Maison du Booster](https://maisondubooster.com/pages/calendrier-sorties-tcg)).
 - Yu-Gi-Oh! Magnificent Maestros le 13/11 ([ICv2](https://icv2.com/articles/news/view/63153/new-yu-gi-oh-tcg-booster-set-revealed)).
+
+Veille du 26/10/2026, rien qui déplace un post :
+- One Piece EB05 (Heroines Edition vol. 2) le 30/10 en anglais, OP18 le 20/11 ; Mihawk OP14-020 interdit depuis le 12/10 ([Samurai Sword Tokyo](https://samuraiswordtokyo.com/blogs/news/one-piece-card-game-news-october-november-2026-calendar)).
+- Yu-Gi-Oh! : Magnificent Maestros le 13/11 (ICv2) ou le 12/11 (Yugipedia) ; Immortal Phoenix le 31/10 au Japon ([ICv2](https://icv2.com/articles/news/view/63062/konami-unveils-magnificent-maestros-yu-gi-oh-tcg), [YGOrganization](https://ygorganization.com/yu-gi-oh-official-card-game-times-october-2026-general-information/)).
+- Pokémon : coffret de combat 30th Celebration (Mentali-ex et Noctali-ex) le 30/10, Binder Collections et ex Tins le 04/12 ([OTIA](https://otia.com/news/pokemon-tcg-october-2026-releases-30th-celebration), [ICv2](https://icv2.com/print/article/63260)).
+- Lorcana : Hyperia City sorti le 23/10, les gouttes d'encre en nouvelle mécanique ([ICv2](https://icv2.com/articles/news/view/63037/ravensburger-unveils-disney-lorcana-hyperia-city)).
+- Magic : Star Trek le 13/11 confirmé par les calendriers ; Star Wars Unlimited : Icons 2027 le 20/11, Legacy of Skywalker en 2027 ([egamers](https://egamers.io/fantasy-flight-puts-legacy-of-skywalker-on-the-star-wars-unlimited-roadmap-for-2027/)).
+- Dragon Ball : FB12 Reach the God annoncé pour l'hiver ; Warcraft : rien de neuf (jeu arrêté en 2013).
 - Star Wars Unlimited : Homeworlds en octobre, Icons 2027 Edition le 20/11 ([ICv2](https://icv2.com/articles/news/view/61111/fantasy-flight-reveals-2026-star-wars-unlimited-releases), [tcgalerts](https://www.tcgalerts.net/star-wars/calendar/)).

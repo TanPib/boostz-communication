@@ -29,6 +29,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `images/2026-10-26-analyse-mega-dracaufeu-x-stickers/` | lun. 26/10/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG, plus `story.jpg` et sa story vidéo |
 | `images/2026-10-26-analyse-mega-dracaufeu-x/` | remplacé le 05/10/2026 par la version stickers | carrousel 4:5, 5 JPEG |
 | `videos/2026-10-26-story-mega-dracaufeu-x.mp4` | lun. 26/10/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2026-10-28-top-hyperia-city/` | mer. 28/10/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 12 JPEG 1080 × 1350 |
+| `videos/2026-10-28-story-top-hyperia-city.mp4` | mer. 28/10/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique originale |
 | `videos/2026-10-31-halloween.mp4` | sam. 31/10/2026, 18 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 17,2 s, musique originale |
 | `videos/2026-10-31-story-halloween.mp4` | sam. 31/10/2026, 18 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-11-03-histoire-tyler-grand-guerrier/` | mar. 03/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 6 JPEG, plus `story.jpg` et sa story vidéo |
