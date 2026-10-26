@@ -5,13 +5,13 @@
 </head><body><script>
 // Halloween: three cards that are scary... mostly for your wallet. Each card
 // lands as a sticker with its price, its source and its date.
-// Prices: Cardmarket 30-day average from our record of 03/10/2026 (Pokémon);
-// TCGplayer market price via Scryfall and Lorcast, mirrored by
-// novaoc/rarebox-data on 05/10/2026 (Magic, Lorcana).
+// Prices, refreshed on 26/10/2026: Cardmarket 30-day average from our record
+// of 16/10/2026 (Pokémon); TCGplayer market price via Scryfall and Lorcast,
+// mirrored by novaoc/rarebox-data on 25/10/2026 (Magic, Lorcana).
 const CARDS = [
-  { game: 'magic', img: 'assets/carte-valgavoth-dsk-407.jpg', name: 'Valgavoth,<br>dévoreur de terreur', set: 'Duskmourn : la Maison de l’horreur · n° 407', price: usd(303.91), src: 'TCGplayer (via Scryfall), 05/10/2026' },
-  { game: 'pokemon', img: 'assets/carte-ectoplasma-vmax-swsh8-271.jpg', name: 'Ectoplasma VMAX', set: 'Poing de Fusion · 271/264', price: eur(832.63), src: 'Cardmarket, moyenne 30 jours, 03/10/2026' },
-  { game: 'lorcana', img: 'assets/carte-malefique-p1-5.avif', name: 'Maléfique,<br>dragon monstrueux', set: 'Promo D23 Expo · 5/P1', price: usd(840), src: 'TCGplayer (via Lorcast), 05/10/2026' },
+  { game: 'magic', img: 'assets/carte-valgavoth-dsk-407.jpg', name: 'Valgavoth,<br>dévoreur de terreur', set: 'Duskmourn : la Maison de l’horreur · n° 407', price: usd(303.02), src: 'TCGplayer (via Scryfall), 25/10/2026' },
+  { game: 'pokemon', img: 'assets/carte-ectoplasma-vmax-swsh8-271.jpg', name: 'Ectoplasma VMAX', set: 'Poing de Fusion · 271/264', price: eur(925.05), src: 'Cardmarket, moyenne 30 jours, 16/10/2026' },
+  { game: 'lorcana', img: 'assets/carte-malefique-p1-5.avif', name: 'Maléfique,<br>dragon monstrueux', set: 'Promo D23 Expo · 5/P1', price: usd(840), src: 'TCGplayer (via Lorcast), 25/10/2026' },
 ];
 const T0 = 2.6, STEP = 3.2;
 const scene = (c, i) => {
