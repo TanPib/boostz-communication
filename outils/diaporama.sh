@@ -29,7 +29,7 @@ while [ $k -lt $n ]; do
   prev=x$k; k=$((k + 1))
 done
 # shellcheck disable=SC2086
-ffmpeg -loglevel error -y $inputs -filter_complex "${graph%;}" -map "[$prev]" \
+ffmpeg -nostdin -loglevel error -y $inputs -filter_complex "${graph%;}" -map "[$prev]" \
   -c:v libx264 -pix_fmt yuv420p -profile:v high -crf 20 -r 30 "$tmp/silent.mp4"
 sh "$(dirname "$0")/mixer.sh" "$tmp/silent.mp4" "$style" "$out" > /dev/null
 rm -rf "$tmp"
