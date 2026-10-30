@@ -180,8 +180,8 @@ Légendes en brouillon. Les chiffres entre crochets sortent des données le jour
 - **Hashtags :** `#yugioh #mtg #magicthegathering #startrek #tcg`
 
 ### 11 · Fonction à la loupe : estime l'état de tes cartes — jeu. 08/04/2027 (déplacé du 09/12)
-- **Déroulé (Reel, ~10 s) :** la carte au scan (recto, verso), les quatre critères en stickers (coins, bords, surface, centrage), la note estimée, « Trois analyses offertes tous les 30 jours ». Valeurs d'exemple, comme la vidéo de lancement ; une pré-estimation, pas une note officielle.
-- **Légende :** « Avant de l'envoyer en gradation, demande à Boostz ce qu'il en pense 🔎 »
+- **Déroulé (Reel, ~10 s), à refaire (voir « À reprendre ») :** la carte au scan, recto et verso ; la pré-estimation et son bulletin « Jusqu'à 9 » sur un arc de 1 à 10 ; la case « aucune valeur auprès de PSA, PCA, CGC… » ; « Valider et mettre à jour l'état » ; « 3 pré-estimations par 30 jours glissants ». Valeurs d'exemple ; jamais « note », « grade » ni « IA ».
+- **Légende :** « Avant de l'envoyer en gradation, demande à BoostZ ce qu'il en pense 🔎 » (corrigée le 30/10 : « 3 pré-estimations par 30 jours glissants », « rien d'officiel »)
 - **Hashtags :** `#gradingcards #psa #tcgcollection #cartesacollectionner #collectionneur`
 
 ### 12 · Les 10 cotes qui bougent, n° 3, Magic — lun. 04/01
