@@ -2,6 +2,10 @@
 
 **Bêta BoostZ : samedi 14 novembre 2026, sur Android et sur iPhone** (Android en test fermé Google Play, décidé le 13/10/2026 ; iPhone par TestFlight, ajouté le 20/10/2026) : pré-inscription Android dès maintenant sur boostz.fr/beta, invitation par mail le 14 ; sur iPhone, le lien TestFlight arrive sur boostz.fr/beta le 14, jamais dans un post. **Sortie de l'appli : jeudi 14 janvier 2027** (décidée le 06/10/2026), sur Android et iPhone. Le premier post (16/10) annonce les deux dates ; janvier est construit autour du lancement. Depuis le 20/10, le nom s'écrit « BoostZ » partout.
 
+## À reprendre
+
+- **Reel « Estime l'état de tes cartes » du 08/04/2027** (`gabarits/fonction-etat-reel.html`, son accroche, sa story) : à refaire dès que le nouveau parcours de l'appli (code du 29/10/2026) est en production. Il montre encore une « Note estimée 9,5 », les sous-notes par critère et « 3 analyses offertes », et sa couverture « PSA 10 ou pas ? » suggère une prédiction PSA. Le nouveau : pré-estimation recto et verso, bulletin « Jusqu'à 9 » sur un arc de 1 à 10, la case « aucune valeur auprès de PSA, PCA, CGC… », « Valider et mettre à jour l'état » ; 3 pré-estimations par 30 jours glissants sans Pass, 15 avec. Demander à TanPib des captures du nouveau parcours.
+
 **Le rythme** (décidé le 07/10/2026, remplace « un post tous les 3 jours sans interruption ») :
 - **Les posts fixes restent à leur date** : sorties d'extension, temps forts (Halloween, Black Friday, Noël, nouvel an, Saint-Valentin), bêta et lancement. Ils sont marqués \* dans le calendrier.
 - **Les autres posts tombent un jour sur trois.**
