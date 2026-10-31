@@ -50,8 +50,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-11-14-story-beta-android-ouverte.mp4` | sam. 14/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-11-17-raretes-pokemon/` | mar. 17/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
 | `videos/2026-11-17-story-raretes-pokemon.mp4` | mar. 17/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2026-11-22-beta-rejoindre.mp4` | dim. 22/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 13,3 s, musique originale |
-| `videos/2026-11-22-story-beta-rejoindre.mp4` | dim. 22/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2026-11-22-beta-rejoindre-v2.mp4` | dim. 22/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,8 s, musique originale |
+| `videos/2026-11-22-story-beta-rejoindre-v2.mp4` | dim. 22/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-11-27-black-friday.mp4` | ven. 27/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 11,8 s, musique originale (refait le 08/10 pour sa nouvelle date) |
 | `videos/2026-11-27-story-black-friday.mp4` | ven. 27/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-12-03-glorious-victors.mp4` | jeu. 03/12/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 16,3 s, musique originale |
@@ -62,9 +62,9 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-04-08-story-fonction-etat.mp4` | jeu. 08/04/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-12-12-raretes-lorcana/` | sam. 12/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 10 JPEG |
 | `videos/2026-12-12-story-raretes-lorcana.mp4` | sam. 12/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2026-12-14-lancement-j-31.mp4` | lun. 14/12/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,3 s, musique originale |
-| `videos/2026-12-14-story-lancement-j-31.mp4` | lun. 14/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2026-12-15-opening-collect-aura.mp4` | mar. 15/12/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 49,8 s, voix d'origine (vidéo PokePotes rebrandée) |
+| `videos/2026-12-14-lancement-j-31-v2.mp4` | lun. 14/12/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,3 s, musique originale |
+| `videos/2026-12-14-story-lancement-j-31-v2.mp4` | lun. 14/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2026-12-15-opening-collect-aura-v2.mp4` | mar. 15/12/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 49,8 s, voix d'origine (vidéo PokePotes rebrandée) |
 | `videos/2026-12-15-story-opening-collect-aura.mp4` | mar. 15/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-12-18-sortie-fb12/` | ven. 18/12/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 4 JPEG, plus `story.jpg` et sa story vidéo |
 | `videos/2026-12-18-story-sortie-fb12.mp4` | ven. 18/12/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
@@ -82,8 +82,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2027-01-07-story-details-caches.mp4` | jeu. 07/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique originale |
 | `videos/2027-01-10-lancement-j-4.mp4` | dim. 10/01/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,3 s, musique originale |
 | `videos/2027-01-10-story-lancement-j-4.mp4` | dim. 10/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
-| `videos/2027-01-13-lancement-j-1.mp4` | mer. 13/01/2027, 18 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 10,3 s, musique originale |
-| `videos/2027-01-13-story-lancement-j-1.mp4` | mer. 13/01/2027, 18 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2027-01-13-lancement-j-1-v2.mp4` | mer. 13/01/2027, 18 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 10,3 s, musique originale |
+| `videos/2027-01-13-story-lancement-j-1-v2.mp4` | mer. 13/01/2027, 18 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2027-01-14-boostz-disponible.mp4` | jeu. 14/01/2027, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 26,3 s, ouverture de booster, musique du premier Reel |
 | `videos/2027-01-14-story-boostz-disponible.mp4` | jeu. 14/01/2027, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2027-05-17-raretes-yugioh/` | lun. 17/05/2027, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
