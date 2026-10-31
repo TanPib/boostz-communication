@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ demo produit</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #fff; }
+  .abs { position: absolute; }
+  .t { font-family: Sora; font-weight: 600; line-height: 1.18; letter-spacing: -1px; text-align: center; }
+  .hl { display: inline-block; padding: 0 18px 6px; margin: 4px 0; border-radius: 10px; }
+  .ui { font-family: Poppins; font-weight: 700; }
+  .word { font-family: Outfit; font-weight: 800; line-height: 1; }
+  .grad { background: linear-gradient(135deg, #FF4FA0 0%, #8B3DFF 55%, #3AA9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .scr { position: absolute; inset: 0; background: #131020; color: #F5F2FB; font-family: Poppins; overflow: hidden; }
+  .row { display: flex; align-items: center; }
+</style></head><body>
+<div id="stage" class="abs" style="left:0;top:0;width:1080px;height:1920px"></div>
+<script>
+// A product demo in the manner of LegalPlace's "Lancez-vous" ad (shown by the
+// user on 31/10/2026): one gesture per shot, a title with one word in a filled
+// block, a tilted phone showing the app, plain grounds that alternate, flying
+// coins with motion blur. First draft: the screens are redrawn from the app's
+// look, not screenshots, and every figure is an example (said on screen).
+// Deterministic: window.render(t) draws the frame at t seconds.
+const V = '#7C3AED', PINK = '#FF4FA0', CREAM = '#F1EADF', INK = '#1B1330', NIGHT = '#241046', DONE = '#5FD3A3', SUN = '#FCD34D', VSOFT = '#C4B5FD';
+const clamp = (x) => Math.max(0, Math.min(1, x));
+const out3 = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const inOut = (x) => { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const $ = (id) => document.getElementById(id);
+const wordmark = (size, ink = '#fff') => `<div style="display:flex;align-items:baseline;transform:skewX(-8deg)"><span class="word" style="font-size:${size}px;color:${ink}">boost</span><span style="position:relative;display:inline-block">`
+  + [['#3AA9FF', -0.59, .12], ['#8B3DFF', -0.39, .2], ['#FF4FA0', -0.185, .3]].map(([c, l, o]) => `<span class="word" style="font-size:${size}px;position:absolute;top:0;left:${l * size}px;color:${c};opacity:${o}">Z</span>`).join('')
+  + `<span class="word grad" style="font-size:${size}px;position:relative;color:transparent">Z</span></span></div>`;
+// The app's Boostie coin (icons.js), as a flying 3D-ish coin.
+const B = 'M39.9 25.2 Q39.9 22.4 42.7 22.4 L44.3 22.4 Q47.1 22.4 47.1 25.2 L47.1 39.9 Q49.9 37.8 53.6 37.8 Q59.4 37.8 63.1 41.9 Q66.8 46 66.8 52.9 Q66.8 59.8 63.1 63.9 Q59.4 68 53.6 68 Q49.6 68 46.8 65.6 L46.8 65.7 Q46.6 68 44 68 L42.7 68 Q39.9 68 39.9 65.2 Z M53.2 44.4 Q50.1 44.4 48.2 46.7 Q46.3 49 46.3 52.9 Q46.3 56.8 48.2 59.1 Q50.1 61.4 53.2 61.4 Q56.3 61.4 58.2 59.1 Q60.1 56.8 60.1 52.9 Q60.1 49 58.2 46.7 Q56.3 44.4 53.2 44.4 Z';
+const coin = (id) => `<svg id="${id}" class="abs" width="200" height="200" viewBox="0 0 100 100" style="left:0;top:0;opacity:0;z-index:6"><defs><radialGradient id="g${id}" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#FFF1B8"/><stop offset=".45" stop-color="#FCD34D"/><stop offset="1" stop-color="#C77A06"/></radialGradient></defs>
+  <circle cx="50" cy="54" r="44" fill="#9A5B04"/><circle cx="50" cy="50" r="44" fill="url(#g${id})"/><circle cx="50" cy="50" r="35" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"/><path d="${B}" fill="#fff" transform="translate(3 -2) scale(.94)"/></svg>`;
+const card = (img, w, r = 0, extra = '') => `<div style="width:${w}px;height:${w * 1.395}px;border-radius:${w * .05}px;overflow:hidden;transform:rotate(${r}deg);box-shadow:0 10px 24px rgba(0,0,0,.45);${extra}"><img src="assets/${img}" style="width:100%;height:100%;object-fit:cover;display:block"></div>`;
+const bar = (title) => `<div class="row" style="padding:96px 34px 0;justify-content:space-between"><div style="font-weight:700;font-size:34px">${title}</div><div style="width:46px;height:46px;border-radius:50%;background:#2A2140"></div></div>`;
+const EX = `<div style="position:absolute;left:0;right:0;bottom:26px;text-align:center;font-size:17px;letter-spacing:2px;color:rgba(245,242,251,.45)">MAQUETTE · CHIFFRES D'EXEMPLE</div>`;
+
+// The app screens, drawn after the app's dark theme.
+const SCREENS = {
+  scan: `<div class="scr">${bar('Ajouter une carte')}
+    <div style="position:absolute;left:60px;top:230px;width:400px;height:560px;border-radius:30px;background:#0A0812;overflow:hidden">
+      <div id="scancard" style="position:absolute;left:70px;top:70px">${card('carte-dracaufeu-base1-4.png', 260, -4)}</div>
+      ${[[18, 18, '0 0'], [342, 18, '0 0'], [18, 502, '0 0'], [342, 502, '0 0']].map(([x, y], i) => `<div style="position:absolute;left:${x}px;top:${y}px;width:40px;height:40px;border-color:${SUN};border-style:solid;border-width:${[i < 2 ? 6 : 0, i % 2 ? 6 : 0, i >= 2 ? 6 : 0, i % 2 ? 0 : 6].join('px ')}px"></div>`).join('')}
+      <div id="scanline" style="position:absolute;left:30px;right:30px;top:120px;height:5px;background:${SUN};box-shadow:0 0 20px ${SUN}"></div></div>
+    <div id="found" style="position:absolute;left:34px;right:34px;top:830px;padding:24px 28px;border-radius:26px;background:#1D1730;opacity:0">
+      <div style="font-size:20px;color:${VSOFT};letter-spacing:2px">POKÉMON · SET DE BASE</div>
+      <div style="font-weight:700;font-size:32px;margin-top:6px">Dracaufeu · 4/102</div><div style="font-weight:700;font-size:24px;color:${DONE};margin-top:4px">✓ Ajoutée à ta collection</div></div>${EX}</div>`,
+  cote: `<div class="scr">${bar('Dracaufeu')}
+    <div style="position:absolute;left:34px;top:190px">${card('carte-dracaufeu-base1-4.png', 200, -3)}</div>
+    <div style="position:absolute;left:270px;top:205px;right:30px"><div style="font-size:20px;color:${VSOFT};letter-spacing:2px">COTE MOYENNE</div><div id="cotev" style="font-weight:800;font-family:Outfit;font-size:50px;margin-top:4px;white-space:nowrap">0 €</div><div style="font-weight:700;font-size:24px;color:${DONE}">▲ +8,2 % en 30 jours</div></div>
+    <div style="position:absolute;left:34px;right:34px;top:520px;height:300px;border-radius:26px;background:#1D1730;padding:26px">
+      <svg width="388" height="240" viewBox="0 0 388 240"><path d="M0 200 L388 200" stroke="#2E2645" stroke-width="2"/><path id="curve" d="M0 180 L55 170 L110 176 L165 150 L220 140 L275 118 L330 96 L388 70" fill="none" stroke="${V}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg></div>
+    <div style="position:absolute;left:34px;right:34px;top:850px" class="row">${['FR', 'EN', 'JP'].map((l, i) => `<div style="flex:1;margin-right:${i < 2 ? 14 : 0}px;padding:18px 0;border-radius:20px;background:${i ? '#1D1730' : V};text-align:center;font-weight:700;font-size:24px">${l}</div>`).join('')}</div>${EX}</div>`,
+  alerte: `<div class="scr">${bar('Mes alertes')}
+    ${[['carte-dracaufeu-base1-4.png', 'Dracaufeu', 'sous 300 €'], ['carte-ectoplasma-vmax-swsh8-271.jpg', 'Ectoplasma VMAX', 'sous 900 €'], ['carte-elsa-p1-19.jpg', 'Elsa', 'sous 30 €'], ['carte-hyperia-241-mickey.jpg', 'Mickey Mouse', 'sous 2 000 €']].map(([img, n, c], i) => `
+    <div class="row" style="position:absolute;left:34px;right:34px;top:${220 + i * 150}px;height:130px;padding:0 22px;border-radius:24px;background:#1D1730">${card(img, 70)}<div style="margin-left:24px;flex:1"><div style="font-weight:700;font-size:28px">${n}</div><div style="font-size:22px;color:#A8A2B8">${c}</div></div><div style="width:64px;height:36px;border-radius:18px;background:${i === 3 ? '#3A3350' : DONE}"></div></div>`).join('')}
+    <div id="notif" style="position:absolute;left:20px;right:20px;top:-200px;padding:22px 26px;border-radius:28px;background:#F5F2FB;color:${INK};box-shadow:0 14px 30px rgba(0,0,0,.5)" class="row">
+      <div style="width:70px;height:70px;border-radius:18px;background:${V};display:flex;align-items:center;justify-content:center;flex:none">${wordmark(26)}</div>
+      <div style="margin-left:20px"><div style="font-weight:700;font-size:25px">Alerte de prix</div><div style="font-size:22px;line-height:1.3">Dracaufeu est passé sous 300 €</div></div></div>${EX}</div>`,
+  etat: `<div class="scr">${bar('Pré-estimation')}
+    <div style="position:absolute;left:60px;top:190px" class="row"><div>${card('carte-dracaufeu-base1-4.png', 180, -3)}</div><div style="margin-left:30px;width:180px;height:251px;border-radius:9px;overflow:hidden;transform:rotate(3deg);box-shadow:0 10px 24px rgba(0,0,0,.45)"><img src="assets/dos-pokemon.svg" style="width:100%;height:100%;object-fit:cover"></div></div>
+    <div style="position:absolute;left:34px;right:34px;top:500px;height:330px;border-radius:26px;background:#1D1730;text-align:center">
+      <svg width="420" height="230" viewBox="0 0 420 230" style="margin-top:20px"><path d="M40 210 A170 170 0 0 1 380 210" fill="none" stroke="#2E2645" stroke-width="26" stroke-linecap="round"/>
+        <path id="arc" d="M40 210 A170 170 0 0 1 380 210" fill="none" stroke="${DONE}" stroke-width="26" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+        <text x="40" y="226" fill="#A8A2B8" font-family="Poppins" font-size="22" text-anchor="middle">1</text><text x="380" y="226" fill="#A8A2B8" font-family="Poppins" font-size="22" text-anchor="middle">10</text>
+        <text x="210" y="170" fill="#F5F2FB" font-family="Outfit" font-weight="800" font-size="30" text-anchor="middle">Bulletin</text><text id="bull" x="210" y="214" fill="${DONE}" font-family="Outfit" font-weight="800" font-size="40" text-anchor="middle" opacity="0">Jusqu'à 9</text></svg></div>
+    <div style="position:absolute;left:34px;right:34px;top:850px;font-size:19px;line-height:1.4;color:#A8A2B8;text-align:center">Pré-estimation sans valeur auprès de PSA, PCA, CGC…</div>
+    <div style="position:absolute;left:34px;right:34px;top:930px;padding:20px 0;border-radius:22px;background:${V};text-align:center;font-weight:700;font-size:26px">Valider et mettre à jour l'état</div>${EX}</div>`,
+  echange: `<div class="scr">${bar('Échange')}
+    <div style="position:absolute;left:34px;right:34px;top:200px;text-align:center;font-size:24px;color:#A8A2B8">Proposition de <b style="color:#F5F2FB">Léa</b></div>
+    <div id="ex1" style="position:absolute;left:44px;top:280px">${card('carte-givrali-ex-sv085-150.jpg', 190, -5)}</div>
+    <div id="ex2" style="position:absolute;right:44px;top:280px">${card('carte-hyperia-236-ariel.jpg', 190, 5)}</div>
+    <div id="swap" style="position:absolute;left:215px;top:400px;width:90px;height:90px;border-radius:50%;background:${PINK};display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700">⇄</div>
+    <div style="position:absolute;left:34px;right:34px;top:590px;padding:24px;border-radius:24px;background:#1D1730;font-size:22px;line-height:1.5">Cotes proches : l'échange est équilibré.<br><span style="color:#A8A2B8">Les deux cartes sont dans vos listes.</span></div>
+    <div id="accept" style="position:absolute;left:34px;right:34px;top:800px;padding:22px 0;border-radius:22px;background:${DONE};color:${INK};text-align:center;font-weight:700;font-size:28px">Accepter l'échange</div>${EX}</div>`
+};
+
+// The shots: ground, title (the filled word in its block), screen, phone tilt.
+const SHOTS = [
+  { bg: CREAM, ink: INK, blk: V, bt: '#fff', title: '<span class="hl">Ajoute</span><br>tes cartes', screen: 'scan', tilt: -8 },
+  { bg: '#FFFFFF', ink: INK, blk: V, bt: '#fff', title: 'Suis leur<br><span class="hl">cote</span>', screen: 'cote', tilt: 7 },
+  { bg: NIGHT, ink: '#fff', blk: PINK, bt: '#fff', title: 'Reçois une<br><span class="hl">alerte</span> de prix', screen: 'alerte', tilt: -7 },
+  { bg: CREAM, ink: INK, blk: V, bt: '#fff', title: 'Estime leur<br><span class="hl">état</span>', screen: 'etat', tilt: 8 },
+  { bg: '#FFFFFF', ink: INK, blk: V, bt: '#fff', title: '<span class="hl">Échange</span> avec<br>les collectionneurs', screen: 'echange', tilt: -7 }
+];
+const T0 = 2.6, D = 3.7, END = T0 + SHOTS.length * D, TOTAL = END + 4.2;
+
+let html = `<div id="bg" class="abs" style="inset:0;background:#fff"></div>
+  <div id="brand" class="abs" style="left:0;top:80px;width:1080px;display:flex;justify-content:center;z-index:5">${wordmark(52, INK)}</div>
+  <div id="intro" class="abs t" style="left:0;top:690px;width:1080px;font-size:104px;color:${INK}">Ta collection TCG<br><span class="hl" style="background:${V};color:#fff">en 5 gestes</span></div>`;
+SHOTS.forEach((s, i) => {
+  html += `<div id="ti${i}" class="abs t" style="left:0;top:230px;width:1080px;font-size:92px;color:${s.ink};opacity:0;z-index:3">${s.title.replace(/class="hl"/g, `class="hl" style="background:${s.blk};color:${s.bt}"`)}</div>
+  <div id="ph${i}" class="abs" style="left:280px;top:680px;width:520px;height:1100px;opacity:0;z-index:2">
+    <div style="position:absolute;inset:0;border-radius:84px;background:#0A0A0F;box-shadow:0 40px 80px rgba(20,10,40,.35), inset 0 0 0 3px #3A3A44"></div>
+    <div style="position:absolute;left:16px;top:16px;right:16px;bottom:16px;border-radius:70px;overflow:hidden">${SCREENS[s.screen]}</div>
+    <div style="position:absolute;left:190px;top:34px;width:140px;height:40px;border-radius:20px;background:#000"></div></div>`;
+});
+html += `<div id="end" class="abs" style="left:0;top:560px;width:1080px;opacity:0">
+    <div class="t" style="font-size:96px;color:${INK}">BoostZ rend<br>la collection<br><span class="hl" style="background:${V};color:#fff">facile.</span></div>
+    <div style="display:flex;justify-content:center;margin-top:90px">${wordmark(140, INK)}</div>
+    <div class="t" style="font-size:40px;color:#5A5470;margin-top:40px;letter-spacing:0">Bêta le 14 novembre sur Android et iPhone<br><b style="color:${V}">boostz.fr/beta</b></div></div>`;
+html += [0, 1, 2, 3, 4, 5].map((i) => coin('c' + i)).join('');
+$('stage').innerHTML = html;
+
+// Coins sweep across at each cut, blurred by their speed (the ad's gold coins).
+const COINS = [[.4, 1, 820, -90, 120, 1.1], [T0 + D - .35, -1, 1500, 900, 200, .9], [T0 + 2 * D - .35, 1, 300, 1700, 900, 1.2], [T0 + 3 * D - .35, -1, 1350, 150, 400, .8], [T0 + 4 * D - .35, 1, 600, 1600, 1250, 1], [END - .3, -1, 900, 980, 300, 1.3]];
+function coins(t) {
+  COINS.forEach(([t0, dir, y0, y1, x0, s], i) => {
+    const el = $('c' + i), p = (t - t0) / .9;
+    if (p < 0 || p > 1) { el.style.opacity = 0; return; }
+    const e = inOut(p), x = dir > 0 ? -250 + 1580 * e : 1330 - 1580 * e, y = y0 + (y1 - y0) * e;
+    const speed = Math.sin(Math.PI * p);
+    el.style.opacity = 1;
+    el.style.transform = `translate(${x}px,${y}px) rotate(${720 * e * dir}deg) scale(${s}) scaleX(${1 - .35 * speed})`;
+    el.style.filter = `blur(${10 * speed}px)`;
+  });
+}
+
+window.TOTAL = TOTAL;
+window.render = (t) => {
+  // Intro: the wordmark, then the promise.
+  const ip = out3((t - .2) / .5) * (1 - out3((t - T0 + .45) / .4));
+  $('intro').style.opacity = ip; $('intro').style.transform = `translateY(${40 * (1 - out3((t - .2) / .5))}px)`;
+  $('intro').style.filter = `blur(${12 * out3((t - T0 + .45) / .4)}px)`;
+  let bg = '#FFFFFF', brandInk = INK;
+  SHOTS.forEach((s, i) => {
+    const a = T0 + i * D, b = a + D, ti = $('ti' + i), ph = $('ph' + i);
+    if (t < a - .1 || t > b + .1) { ti.style.opacity = 0; ph.style.opacity = 0; return; }
+    if (t >= a) { bg = s.bg; brandInk = s.ink; }
+    const pin = out3((t - a) / .55), pout = out3((t - b + .4) / .4);
+    // The title slides in, the cut whips it away with a motion blur.
+    ti.style.opacity = pin * (1 - pout);
+    ti.style.transform = `translateX(${(1 - pin) * 120 * (i % 2 ? 1 : -1) - pout * 300 * (i % 2 ? -1 : 1)}px)`;
+    ti.style.filter = `blur(${14 * (pout + (1 - pin) * .6)}px)`;
+    // The phone rises and settles on its tilt, then drifts slowly.
+    const pp = out3((t - a - .15) / .7), drift = (t - a) / D;
+    ph.style.opacity = clamp((t - a - .1) / .25) * (1 - pout);
+    ph.style.transform = `perspective(2200px) translateY(${(1 - pp) * 700 - 20 * drift}px) rotateY(${s.tilt * 1.6 * (1 - .3 * drift)}deg) rotate(${s.tilt * pp}deg) scale(${1.14 + .04 * drift})`;
+    ph.style.filter = `blur(${10 * pout}px)`;
+    const k = t - a;
+    if (s.screen === 'scan') { $('scanline').style.top = `${60 + 440 * ((k * .8) % 1)}px`; $('found').style.opacity = out3((k - 1.8) / .4); }
+    if (s.screen === 'cote') { $('curve').style.strokeDashoffset = 1 - out3((k - .6) / 1.4); $('cotev').textContent = (312.4 * out3((k - .5) / 1.3)).toFixed(2).replace('.', ',') + ' €'; }
+    if (s.screen === 'alerte') { $('notif').style.top = `${-200 + 290 * out3((k - 1.2) / .5)}px`; }
+    if (s.screen === 'etat') { $('arc').style.strokeDashoffset = 1 - .88 * out3((k - .6) / 1.4); $('bull').setAttribute('opacity', out3((k - 1.7) / .4)); }
+    if (s.screen === 'echange') { const sw = out3((k - 1) / .6); $('swap').style.transform = `rotate(${180 * sw}deg)`; $('accept').style.transform = `scale(${1 + .06 * Math.sin(Math.PI * clamp((k - 2) / .5))})`; }
+  });
+  // The end: the line, the wordmark, the beta.
+  const ep = out3((t - END - .1) / .6);
+  if (t >= END) { bg = '#FFFFFF'; brandInk = INK; }
+  $('end').style.opacity = ep; $('end').style.transform = `translateY(${50 * (1 - ep)}px)`;
+  $('brand').style.opacity = t < END ? 1 : 1 - ep;
+  $('bg').style.background = bg;
+  $('brand').innerHTML = wordmark(52, brandInk);
+  coins(t);
+};
+window.render(0);
+</script></body></html>
