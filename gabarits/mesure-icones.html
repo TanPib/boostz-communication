@@ -1,0 +1,21 @@
+<!doctype html><html><body><script>
+const R='../';
+const IM={actuelle:R+'gabarits/assets/icone-app.png', p01:R+'images/icone-reseaux/halo/01-flottantes.jpg', p06:R+'images/icone-reseaux/halo/06-grande-carte.jpg'};
+const lin=c=>{c/=255;return c<=.04045?c/12.92:((c+.055)/1.055)**2.4};
+const L=(r,g,b)=>.2126*lin(r)+.7152*lin(g)+.0722*lin(b);
+const cr=(a,b)=>(Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+window.run=async()=>{const out={};for(const[k,u]of Object.entries(IM)){const img=new Image();img.src=u;await img.decode();
+ const N=540,c=document.createElement('canvas');c.width=c.height=N;const x=c.getContext('2d');x.drawImage(img,0,0,N,N);const d=x.getImageData(0,0,N,N).data;
+ let ring=[],sat=0,ns=0,rows=new Set(),cols=new Set();
+ for(let j=0;j<N;j++)for(let i=0;i<N;i++){const dx=i-N/2+.5,dy=j-N/2+.5,r=Math.hypot(dx,dy)/(N/2);if(r>1)continue;const p=(j*N+i)*4,R_=d[p],G=d[p+1],B=d[p+2];const l=L(R_,G,B);
+  if(r>.92)ring.push(l);const mx=Math.max(R_,G,B),mn=Math.min(R_,G,B);sat+=mx?(mx-mn)/mx:0;ns++;
+  if(l>.6){rows.add(j);cols.add(i);} }
+ const ringL=ring.reduce((a,b)=>a+b,0)/ring.length;
+ // gist: 8x8 downsample luminance RMS contrast inside circle
+ const g=document.createElement('canvas');g.width=g.height=8;const gx=g.getContext('2d');gx.imageSmoothingQuality='high';gx.drawImage(c,0,0,8,8);const gd=gx.getImageData(0,0,8,8).data;let ls=[];for(let j=0;j<8;j++)for(let i=0;i<8;i++){if(Math.hypot(i-3.5,j-3.5)>4)continue;const p=(j*8+i)*4;ls.push(L(gd[p],gd[p+1],gd[p+2]));}
+ const m=ls.reduce((a,b)=>a+b,0)/ls.length,rms=Math.sqrt(ls.reduce((a,b)=>a+(b-m)**2,0)/ls.length);
+ // central bright element: height/width as fraction of diameter
+ const rr=[...rows].sort((a,b)=>a-b),cc=[...cols].sort((a,b)=>a-b);
+ out[k]={ringLum:+ringL.toFixed(4),contrastVsBlack:+cr(ringL,0).toFixed(2),contrastVsWhite:+cr(ringL,1).toFixed(2),meanSat:+(sat/ns).toFixed(2),gistRMS:+rms.toFixed(3),meanLum:+m.toFixed(3),brightH:+((rr.at(-1)-rr[0])/N).toFixed(2),brightW:+((cc.at(-1)-cc[0])/N).toFixed(2)};}
+ return out;};
+</script></body></html>
