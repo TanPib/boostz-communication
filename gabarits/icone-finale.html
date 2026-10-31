@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ icone finale</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// The final icon (31/10/2026), n° 15 of icone-fantomes.html, in the layers
+// the app and the sites need: the full square, the Android foreground on
+// transparent (k from the safe zone), its monochrome silhouette (the Z in
+// black, turned into holes by the ffmpeg step in LISEZMOI.md) and the ground alone.
+// Render with outils/icone-couches.mjs, not rendu.mjs (it needs transparency);
+// the exports and their sizes are listed in images/icone-reseaux/finale/LISEZMOI.md.
+//
+// From icone-fantomes.html:
+// Fifteenth round (31/10/2026): the user liked n° 28 of icone-evolution.html
+// (plain violet Z, the wordmark's coloured ghost Zs, soft shadow) as much as
+// n° 19 and asked for « quelque chose entre les deux », about ten. Render:
+// node rendu.mjs icone-fantomes.html images
+//
+// From icone-z.html:
+// Fourteenth round (31/10/2026): the user validated n° 19 of
+// icone-evolution.html (larger symbol, glowing ground, thick Z) and asked to
+// rethink the Z itself, « au moins une quinzaine ». Same composition, the Z
+// redrawn twenty ways, in plain violet (the user does not want it filled with
+// the gradient). Render: node rendu.mjs icone-z.html images
+//
+// From icone-evolution.html:
+// Profile picture, thirteenth round (31/10/2026). The study of the current
+// picture against the wordmark finalists (mesure-icones.html) found that the
+// current symbol (the app icon: a violet disc, a fan of three cards, the Z on
+// the front card) is the one that is recognised and remembered at small sizes,
+// and that it doubles as the app icon. The user asked what could improve it,
+// « une vingtaine de maquettes ». So: the same symbol, evolved, never replaced
+// (size, the Z in the brand gradient, the ground's light, the fan's colours,
+// depth, the wordmark's ghost Zs, one sparkle). Drawn in the 1024 space of
+// assets/icone-app.png. Render: node rendu.mjs icone-evolution.html images
+document.head.insertAdjacentHTML('beforeend', '<style>html, body { background: transparent !important; } .p { width: 1080px; height: 1080px; background: transparent !important; } @font-face{font-family:BagelFatOne;src:url(fonts/BagelFatOne.ttf)} @font-face{font-family:TitanOne;src:url(fonts/TitanOne.ttf)}</style>');
+const V = '#7C3AED';
+const S = []; const add = (id, html) => S.push([id, html]);
+let n = 0; const uid = () => 'v' + n++;
+
+// The Z of the app icon, centred on (0, 0), for a card w x h. t: stroke weight.
+const zPath = (w, h, t) => { const a = .27 * w, b = .25 * h, T = t * w, x0 = -a, x1 = a, y0 = -b, y1 = b, d = T * 1.25;
+  return `M${x0} ${y0} H${x1} V${y0 + T} L${x0 + d} ${y1 - T} H${x1} V${y1} H${x0} V${y1 - T} L${x1 - d} ${y0 + T} H${x0} Z`; };
+// One card: centre, rotation, size, fill; extra drawn inside in card space.
+const cardG = (cx, cy, rot, w, h, fill, o = {}) => `<g transform="translate(${cx} ${cy}) rotate(${rot})" ${o.filter ? `filter="url(#${o.filter})"` : ''}>
+  <rect x="${-w / 2}" y="${-h / 2}" width="${w}" height="${h}" rx="${w * .19}" fill="${fill}" ${o.op != null ? `opacity="${o.op}"` : ''} ${o.stroke ? `stroke="${o.stroke}" stroke-width="${o.sw}"` : ''}/>${o.inner || ''}</g>`;
+
+const icon = (o = {}) => {
+  const defs = []; const k = o.k || 1;
+  const grad = (stops, x1 = 0, y1 = 0, x2 = 1, y2 = 1) => { const id = uid(); defs.push(`<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${stops.map(([of, c, a = 1]) => `<stop offset="${of}" stop-color="${c}" stop-opacity="${a}"/>`).join('')}</linearGradient>`); return `url(#${id})`; };
+  const radial = (stops, cx = .5, cy = .4, r = .75) => { const id = uid(); defs.push(`<radialGradient id="${id}" cx="${cx}" cy="${cy}" r="${r}">${stops.map(([of, c]) => `<stop offset="${of}" stop-color="${c}"/>`).join('')}</radialGradient>`); return `url(#${id})`; };
+  const shadow = (dx, dy, sd, c, a) => { const id = uid(); defs.push(`<filter id="${id}" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="${dx}" dy="${dy}" stdDeviation="${sd}" flood-color="${c}" flood-opacity="${a}"/></filter>`); return id; };
+  const BRAND = [[0, '#FF4FA0'], [.55, '#8B3DFF'], [1, '#3AA9FF']];
+  // Ground
+  const bg = { flat: V, bright: '#8B5CF6', glow: radial([[0, '#A47BFF'], [.6, '#7C3AED'], [1, '#5B21B6']]), glow2: radial([[0, '#9F6DFF'], [1, '#6D28D9']], .5, .3, .9), brand: grad(BRAND), night: radial([[0, '#3B1D7A'], [.6, '#1B1330'], [1, '#0B0812']], .5, .45, .7), deep: radial([[0, '#8B5CF6'], [1, '#4C1D95']], .5, .35, .8) }[o.bg || 'flat'];
+  // Fan fills (back, middle)
+  const fills = { white: ['#fff', '#fff'], pinkblue: ['#FF7EB9', '#6FC3FF'], brand: [grad([[0, '#FF4FA0'], [1, '#B57BFF']]), grad([[0, '#8B3DFF'], [1, '#3AA9FF']])], lav: ['#C4B5FD', '#E9E2FF'] }[o.fan || 'white'];
+  const ops = o.fan && o.fan !== 'white' ? [o.backOp ?? .9, o.midOp ?? .95] : [.25, .65];
+  const zFill = o.z === 'grad' ? grad(BRAND) : o.z === 'night' ? '#1B1330' : (o.z || V);
+  const front = o.front || '#fff';
+  const fw = 275, fh = 400, t = o.thick ? .135 : .095;
+  const ghosts = o.ghosts ? [['#3AA9FF', -.2, .35], ['#8B3DFF', -.13, .5], ['#FF4FA0', -.065, .7]].map(([c, dx, a]) => `<path d="${zPath(fw, fh, t)}" transform="translate(${dx * fw} 0)" fill="${c}" opacity="${a}"/>`).join('') : '';
+  const sheen = o.sheen ? `<rect x="${-fw / 2}" y="${-fh / 2}" width="${fw}" height="${fh}" rx="${fw * .19}" fill="${grad([[0, '#fff', 0], [.42, '#fff', 0], [.5, '#C4E7FF', .55], [.58, '#FFD1EA', .4], [.66, '#fff', 0], [1, '#fff', 0]], 0, 0, 1, 1)}"/>` : '';
+  const fFilter = o.soft ? shadow(0, 18, 22, '#2E1065', .45) : o.hard ? shadow(14, 16, 0, '#2E1065', .9) : null;
+  const zInner = o.zDraw ? o.zDraw(fw, fh) : `${ghosts}<path d="${zPath(fw, fh, t)}" fill="${zFill}" stroke="${zFill}" stroke-width="${o.thick ? 10 : 6}" stroke-linejoin="round"/>`;
+  const rot = o.rot ?? 14;
+  const spark = o.spark ? `<path d="M0 -1 Q.12 -.12 1 0 Q.12 .12 0 1 Q-.12 .12 -1 0 Q-.12 -.12 0 -1Z" transform="translate(${o.spark[0]} ${o.spark[1]}) scale(${o.spark[2]})" fill="${o.spark[3] || '#fff'}"/>` : '';
+  const fan = `${cardG(420, 550, -14, 240, 400, fills[0], { op: ops[0], filter: o.soft ? shadow(0, 10, 16, '#2E1065', .3) : null })}${cardG(490, 497, 0, 240, 405, fills[1], { op: ops[1], filter: o.soft ? shadow(0, 10, 16, '#2E1065', .3) : null })}${cardG(603, 485, rot, fw, fh, front, { filter: fFilter, inner: sheen + zInner, stroke: o.frontStroke, sw: 10 })}`;
+  return `<svg class="abs" width="1080" height="1080" viewBox="0 0 1024 1024" style="left:0;top:0"><defs>${defs.join('')}</defs>${o.noBg ? '' : `<rect width="1024" height="1024" fill="${bg}"/>`}${o.under || ''}<g transform="translate(512 512) scale(${k}) translate(${k === 1 ? -517 : -530} ${k === 1 ? -507 : -496})">${fan}</g>${spark}</svg>`; };
+
+const BASE = { k: 1.22, bg: 'glow' };
+const W = 275, GEO = zPath(275, 400, .135);
+const BR = ['#3AA9FF', '#8B3DFF', '#FF4FA0'];
+// The Z with ghosts: list of [colour, offset in card widths (negative = left), opacity].
+const gz = (list, main = `<path d="${GEO}" fill="${V}" stroke="${V}" stroke-width="10" stroke-linejoin="round"/>`, shape = GEO) => () =>
+  list.map(([c, dx, op]) => `<path d="${shape}" transform="translate(${dx * W} 0)" fill="${c}" opacity="${op}"/>`).join('') + main;
+const T28 = [[BR[0], -.2, .35], [BR[1], -.13, .5], [BR[2], -.065, .7]];
+const scaleOp = (l, k) => l.map(([c, d, o]) => [c, d, +(o * k).toFixed(2)]);
+const scaleDx = (l, k) => l.map(([c, d, o]) => [c, d * k, o]);
+const LOGOZ = (fill, x = 0) => `<text x="${x + 10}" y="2" font-family="Outfit" font-weight="800" font-size="280" text-anchor="middle" dominant-baseline="central" fill="${fill}" transform="skewX(-8)">Z</text>`;
+const DYN = 'M-76 -98 H76 V-74 L-14 74 H76 V98 H-76 V74 L14 -74 H-76 Z';
+
+const FINAL = (o = {}) => icon({ ...BASE, ...o, zDraw: o.mono ? () => LOGOZ('#000') : () => scaleDx(scaleOp(T28, .6), .75).map(([c, d, op]) => `<g opacity="${op}">${LOGOZ(c, d * W)}</g>`).join('') + LOGOZ(V) });
+const KA = +(new URLSearchParams(location.search).get('ka') || 1);
+add('carre', FINAL());
+add('avant', FINAL({ noBg: true, k: KA }));
+add('mono', FINAL({ noBg: true, k: KA, mono: true }));
+add('fond', icon({ ...BASE, zDraw: () => '', k: .0001 }));
+
+carousel(S);
+</script></body></html>
