@@ -1,0 +1,65 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #E9E6F2; font-family: -apple-system, 'DM Sans', 'Helvetica Neue', Arial, sans-serif; padding: 30px; width: 1760px; }
+h1 { font: 800 34px Outfit; color: #1B1330; margin: 0 0 6px 10px; }
+.sub { font: 600 17px 'DM Sans'; color: #5B5470; margin: 0 0 24px 10px; }
+.row { display: flex; gap: 30px; margin-bottom: 34px; align-items: flex-start; }
+.col { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.tag { font: 800 22px Outfit; color: #1B1330; }
+.phone { width: 390px; height: 800px; background: #000; color: #F5F5F5; border-radius: 46px; border: 10px solid #111; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(27,19,48,.25); font-size: 14px; }
+.status { height: 44px; display: flex; justify-content: space-between; align-items: center; padding: 0 26px; font-weight: 600; font-size: 15px; }
+.av { border-radius: 50%; background-size: cover; background-position: center; flex: none; }
+.btn { flex: 1; background: #262626; border-radius: 8px; text-align: center; font-weight: 600; font-size: 13.5px; padding: 8px 0; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.grid div { aspect-ratio: 3 / 4; background-size: cover; background-position: center top; position: relative; }
+.views { position: absolute; left: 6px; bottom: 5px; font-weight: 700; font-size: 12px; text-shadow: 0 1px 2px #000; }
+.small { width: 390px; background: #000; color: #F5F5F5; border-radius: 22px; padding: 16px 18px; display: flex; flex-direction: column; gap: 14px; }
+.line { display: flex; align-items: center; gap: 10px; font-size: 13.5px; }
+.ring { padding: 3px; border-radius: 50%; background: linear-gradient(45deg, #FEDA75, #FA7E1E, #D62976, #962FBF, #4F5BD5); }
+.ring > div { border: 3px solid #000; }
+.cap { color: #A8A8A8; font-size: 12px; }
+</style></head><body>
+<h1>Photo de profil : 01 ou 06 ?</h1>
+<div class="sub">Maquette, à la taille réelle d'un téléphone. Les publications sont nos vrais visuels.</div>
+<div class="row" id="ig"></div>
+<div class="row" id="small"></div>
+<script>
+const R = '../images/';
+const AV = { '01': R + 'icone-reseaux/halo/01-flottantes.jpg', '06': R + 'icone-reseaux/halo/06-grande-carte.jpg' };
+const POSTS = ['2026-10-28-top-hyperia-city/1-couverture.jpg', '2026-10-26-analyse-mega-dracaufeu-x/1-couverture.jpg', 'couvertures/2026-10-23-discord.jpg', '2026-10-20-cotes-qui-bougent-1/1-couverture.jpg', '2026-10-17-sortie-mondes-natals/1-couverture.jpg', 'couvertures/2026-10-16-lancement-stickers.jpg', 'couvertures/2026-10-31-halloween.jpg', 'couvertures/2026-11-11-beta-j-3.jpg', 'couvertures/2026-11-14-beta-android-ouverte.jpg'];
+const av = (k, d) => `<div class="av" style="width:${d}px;height:${d}px;background-image:url(${AV[k]})"></div>`;
+const status = `<div class="status"><span>10:00</span><span>▂▄▆ 5G ▮</span></div>`;
+const grid = (list, views) => `<div class="grid">${list.map((p, i) => `<div style="background-image:url(${R + p})">${views ? `<span class="views">▷ ${views[i]}</span>` : ''}</div>`).join('')}</div>`;
+const insta = (k) => `<div class="phone">${status}
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 16px 10px"><span style="font-weight:700;font-size:21px">boostz.app ⌄</span><span style="font-size:20px">＋ ☰</span></div>
+  <div style="display:flex;align-items:center;gap:22px;padding:4px 16px 10px">${av(k, 86)}
+    <div style="display:flex;flex:1;justify-content:space-around;text-align:center">${[['6', 'publications'], ['27', 'followers'], ['33', 'suivi(e)s']].map(([a, b]) => `<div><div style="font-weight:700;font-size:17px">${a}</div><div style="font-size:13px">${b}</div></div>`).join('')}</div></div>
+  <div style="padding:0 16px;line-height:1.38"><div style="font-weight:700">BoostZ</div><div>⚡ | Boost ta collection TCG</div><div>🃏 | 8 TCG, une seule app.</div><div>🧪 | Bêta Android et iOS le 14 novembre, inscris-toi :</div><div style="color:#E0F1FF;font-weight:600">🔗 linktr.ee/boostz</div></div>
+  <div style="display:flex;gap:6px;padding:12px 16px"><div class="btn">Modifier le profil</div><div class="btn">Partager le profil</div></div>
+  <div style="display:flex;justify-content:space-around;border-top:1px solid #262626;padding:10px 0;font-size:20px"><span style="border-bottom:1px solid #fff">▦</span><span>▶</span><span>☺</span></div>
+  ${grid(POSTS)}</div>`;
+const tiktok = (k) => `<div class="phone">${status}
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 16px"><span style="font-size:20px">👤</span><span style="font-weight:700;font-size:17px">BoostZ ⌄</span><span style="font-size:20px">☰</span></div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:8px 0 10px">${av(k, 96)}<div style="font-weight:600;font-size:15px">@boostz.app</div>
+    <div style="display:flex;gap:26px;text-align:center">${[['2', 'Abonnements'], ['2', 'Abonnés'], ['11', 'J’aime']].map(([a, b]) => `<div><div style="font-weight:700;font-size:17px">${a}</div><div style="font-size:12.5px;color:#A8A8A8">${b}</div></div>`).join('')}</div>
+    <div style="display:flex;gap:6px;width:100%;padding:4px 50px"><div class="btn">Modifier le profil</div><div class="btn">Partager le profil</div></div>
+    <div style="text-align:center;line-height:1.38;font-size:13.5px">⚡ | Boost ta collection TCG<br>🃏 | 8 TCG, une seule app.<br>🧪 | Bêta Android &amp; iOS</div></div>
+  <div style="display:flex;justify-content:space-around;border-bottom:1px solid #262626;padding:8px 0;font-size:18px"><span style="border-bottom:2px solid #fff;padding:0 20px 6px">▦</span><span>🔒</span><span>♡</span></div>
+  ${grid(POSTS, ['390', '268', '249', '1', '21', '862', '—', '—', '—'])}</div>`;
+// In a feed, a story bar, a comment and the messages list: the small sizes.
+const small = (k) => `<div class="small">
+  <div class="cap">Barre des stories</div>
+  <div style="display:flex;gap:16px">${['boostz.app', 'geronimo', 'emeric', 'micka'].map((n, i) => `<div style="text-align:center;font-size:11.5px">${i ? `<div class="ring"><div class="av" style="width:58px;height:58px;background:#333"></div></div>` : `<div class="ring">${av(k, 58).replace('class="av"', 'class="av" style2')}</div>`.replace('style2', '')}<div style="margin-top:4px">${n}</div></div>`).join('')}</div>
+  <div class="cap">En haut d'un post dans le fil</div>
+  <div class="line">${av(k, 32)}<b>boostz.app</b><span class="cap">· Hyperia City</span></div>
+  <div class="cap">Un commentaire</div>
+  <div class="line">${av(k, 24)}<span><b>boostz.app</b> Le Mickey iconique dépasse les 2&nbsp;400&nbsp;$ 🔥</span></div>
+  <div class="cap">Messages</div>
+  <div class="line">${av(k, 48)}<div><b>BoostZ</b><div class="cap">Bienvenue dans la bêta ! · 2 min</div></div></div>
+</div>`;
+const col = (title, html) => `<div class="col"><div class="tag">${title}</div>${html}</div>`;
+document.getElementById('ig').innerHTML = col('01 · Instagram', insta('01')) + col('06 · Instagram', insta('06')) + col('01 · TikTok', tiktok('01')) + col('06 · TikTok', tiktok('06'));
+document.getElementById('small').innerHTML = col('01 · en tout petit', small('01')) + col('06 · en tout petit', small('06'));
+</script></body></html>
