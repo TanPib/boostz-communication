@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ icone Z</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Fourteenth round (31/10/2026): the user validated n° 19 of
+// icone-evolution.html (larger symbol, glowing ground, thick Z) and asked to
+// rethink the Z itself, « au moins une quinzaine ». Same composition, the Z
+// redrawn twenty ways, in plain violet (the user does not want it filled with
+// the gradient). Render: node rendu.mjs icone-z.html images
+//
+// From icone-evolution.html:
+// Profile picture, thirteenth round (31/10/2026). The study of the current
+// picture against the wordmark finalists (mesure-icones.html) found that the
+// current symbol (the app icon: a violet disc, a fan of three cards, the Z on
+// the front card) is the one that is recognised and remembered at small sizes,
+// and that it doubles as the app icon. The user asked what could improve it,
+// « une vingtaine de maquettes ». So: the same symbol, evolved, never replaced
+// (size, the Z in the brand gradient, the ground's light, the fan's colours,
+// depth, the wordmark's ghost Zs, one sparkle). Drawn in the 1024 space of
+// assets/icone-app.png. Render: node rendu.mjs icone-evolution.html images
+document.head.insertAdjacentHTML('beforeend', '<style>.p { width: 1080px; height: 1080px; } @font-face{font-family:BagelFatOne;src:url(fonts/BagelFatOne.ttf)} @font-face{font-family:TitanOne;src:url(fonts/TitanOne.ttf)}</style>');
+const V = '#7C3AED';
+const S = []; const add = (id, html) => S.push([id, html]);
+let n = 0; const uid = () => 'v' + n++;
+
+// The Z of the app icon, centred on (0, 0), for a card w x h. t: stroke weight.
+const zPath = (w, h, t) => { const a = .27 * w, b = .25 * h, T = t * w, x0 = -a, x1 = a, y0 = -b, y1 = b, d = T * 1.25;
+  return `M${x0} ${y0} H${x1} V${y0 + T} L${x0 + d} ${y1 - T} H${x1} V${y1} H${x0} V${y1 - T} L${x1 - d} ${y0 + T} H${x0} Z`; };
+// One card: centre, rotation, size, fill; extra drawn inside in card space.
+const cardG = (cx, cy, rot, w, h, fill, o = {}) => `<g transform="translate(${cx} ${cy}) rotate(${rot})" ${o.filter ? `filter="url(#${o.filter})"` : ''}>
+  <rect x="${-w / 2}" y="${-h / 2}" width="${w}" height="${h}" rx="${w * .19}" fill="${fill}" ${o.op != null ? `opacity="${o.op}"` : ''} ${o.stroke ? `stroke="${o.stroke}" stroke-width="${o.sw}"` : ''}/>${o.inner || ''}</g>`;
+
+const icon = (o = {}) => {
+  const defs = []; const k = o.k || 1;
+  const grad = (stops, x1 = 0, y1 = 0, x2 = 1, y2 = 1) => { const id = uid(); defs.push(`<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${stops.map(([of, c, a = 1]) => `<stop offset="${of}" stop-color="${c}" stop-opacity="${a}"/>`).join('')}</linearGradient>`); return `url(#${id})`; };
+  const radial = (stops, cx = .5, cy = .4, r = .75) => { const id = uid(); defs.push(`<radialGradient id="${id}" cx="${cx}" cy="${cy}" r="${r}">${stops.map(([of, c]) => `<stop offset="${of}" stop-color="${c}"/>`).join('')}</radialGradient>`); return `url(#${id})`; };
+  const shadow = (dx, dy, sd, c, a) => { const id = uid(); defs.push(`<filter id="${id}" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="${dx}" dy="${dy}" stdDeviation="${sd}" flood-color="${c}" flood-opacity="${a}"/></filter>`); return id; };
+  const BRAND = [[0, '#FF4FA0'], [.55, '#8B3DFF'], [1, '#3AA9FF']];
+  // Ground
+  const bg = { flat: V, bright: '#8B5CF6', glow: radial([[0, '#A47BFF'], [.6, '#7C3AED'], [1, '#5B21B6']]), glow2: radial([[0, '#9F6DFF'], [1, '#6D28D9']], .5, .3, .9), brand: grad(BRAND), night: radial([[0, '#3B1D7A'], [.6, '#1B1330'], [1, '#0B0812']], .5, .45, .7), deep: radial([[0, '#8B5CF6'], [1, '#4C1D95']], .5, .35, .8) }[o.bg || 'flat'];
+  // Fan fills (back, middle)
+  const fills = { white: ['#fff', '#fff'], pinkblue: ['#FF7EB9', '#6FC3FF'], brand: [grad([[0, '#FF4FA0'], [1, '#B57BFF']]), grad([[0, '#8B3DFF'], [1, '#3AA9FF']])], lav: ['#C4B5FD', '#E9E2FF'] }[o.fan || 'white'];
+  const ops = o.fan && o.fan !== 'white' ? [o.backOp ?? .9, o.midOp ?? .95] : [.25, .65];
+  const zFill = o.z === 'grad' ? grad(BRAND) : o.z === 'night' ? '#1B1330' : (o.z || V);
+  const front = o.front || '#fff';
+  const fw = 275, fh = 400, t = o.thick ? .135 : .095;
+  const ghosts = o.ghosts ? [['#3AA9FF', -.2, .35], ['#8B3DFF', -.13, .5], ['#FF4FA0', -.065, .7]].map(([c, dx, a]) => `<path d="${zPath(fw, fh, t)}" transform="translate(${dx * fw} 0)" fill="${c}" opacity="${a}"/>`).join('') : '';
+  const sheen = o.sheen ? `<rect x="${-fw / 2}" y="${-fh / 2}" width="${fw}" height="${fh}" rx="${fw * .19}" fill="${grad([[0, '#fff', 0], [.42, '#fff', 0], [.5, '#C4E7FF', .55], [.58, '#FFD1EA', .4], [.66, '#fff', 0], [1, '#fff', 0]], 0, 0, 1, 1)}"/>` : '';
+  const fFilter = o.soft ? shadow(0, 18, 22, '#2E1065', .45) : o.hard ? shadow(14, 16, 0, '#2E1065', .9) : null;
+  const zInner = o.zDraw ? o.zDraw(fw, fh) : `${ghosts}<path d="${zPath(fw, fh, t)}" fill="${zFill}" stroke="${zFill}" stroke-width="${o.thick ? 10 : 6}" stroke-linejoin="round"/>`;
+  const rot = o.rot ?? 14;
+  const spark = o.spark ? `<path d="M0 -1 Q.12 -.12 1 0 Q.12 .12 0 1 Q-.12 .12 -1 0 Q-.12 -.12 0 -1Z" transform="translate(${o.spark[0]} ${o.spark[1]}) scale(${o.spark[2]})" fill="${o.spark[3] || '#fff'}"/>` : '';
+  const fan = `${cardG(420, 550, -14, 240, 400, fills[0], { op: ops[0], filter: o.soft ? shadow(0, 10, 16, '#2E1065', .3) : null })}${cardG(490, 497, 0, 240, 405, fills[1], { op: ops[1], filter: o.soft ? shadow(0, 10, 16, '#2E1065', .3) : null })}${cardG(603, 485, rot, fw, fh, front, { filter: fFilter, inner: sheen + zInner, stroke: o.frontStroke, sw: 10 })}`;
+  return `<svg class="abs" width="1080" height="1080" viewBox="0 0 1024 1024" style="left:0;top:0"><defs>${defs.join('')}</defs><rect width="1024" height="1024" fill="${bg}"/>${o.under || ''}<g transform="translate(512 512) scale(${k}) translate(${k === 1 ? -517 : -530} ${k === 1 ? -507 : -496})">${fan}</g>${spark}</svg>`; };
+
+const BASE = { k: 1.22, bg: 'glow' };
+const PZ = (d, extra = '') => (w, h) => `<path d="${d}" fill="${V}" stroke="${V}" stroke-width="8" stroke-linejoin="round"/>${extra}`;
+const TZ = (font, weight, size, o = {}) => () => `<text x="${o.dx || 0}" y="${o.dy || 0}" font-family="${font}" font-weight="${weight}" font-size="${size}" text-anchor="middle" dominant-baseline="central" fill="${o.fill || V}" ${o.stroke ? `stroke="${o.stroke}" stroke-width="${o.sw}" paint-order="stroke"` : ''} transform="${o.tf || ''}">Z</text>${o.extra || ''}`;
+const geo = (t) => zPath(275, 400, t);
+const sparkle = (x, y, s, c = V) => `<path d="M0 -1 Q.12 -.12 1 0 Q.12 .12 0 1 Q-.12 .12 -1 0 Q-.12 -.12 0 -1Z" transform="translate(${x} ${y}) scale(${s})" fill="${c}"/>`;
+
+add('01-geometrique-fin', icon({ ...BASE }));
+add('02-geometrique-epais', icon({ ...BASE, thick: true }));
+add('03-arrondi', icon({ ...BASE, zDraw: () => `<path d="${geo(.12)}" fill="${V}" stroke="${V}" stroke-width="30" stroke-linejoin="round"/>` }));
+add('04-trait-continu', icon({ ...BASE, zDraw: () => `<path d="M-66 -88 H66 L-66 88 H66" fill="none" stroke="${V}" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>` }));
+add('05-z-du-logo', icon({ ...BASE, zDraw: TZ('Outfit', 800, 300, { dy: 6 }) }));
+add('06-z-du-logo-incline', icon({ ...BASE, zDraw: TZ('Outfit', 800, 300, { dy: 6, tf: 'skewX(-8)' }) }));
+add('07-z-poppins', icon({ ...BASE, zDraw: TZ('Poppins', 800, 290, { dy: 14 }) }));
+add('08-z-rond-bagel', icon({ ...BASE, zDraw: TZ('BagelFatOne', 400, 290, { dy: 6 }) }));
+add('09-z-titan', icon({ ...BASE, zDraw: TZ('TitanOne', 400, 270, { dy: 8 }) }));
+add('10-diagonale-dynamique', icon({ ...BASE, zDraw: PZ('M-76 -98 H76 V-74 L-14 74 H76 V98 H-76 V74 L14 -74 H-76 Z') }));
+add('11-eclair', icon({ ...BASE, zDraw: PZ('M-76 -100 H76 V-72 L14 -14 H46 L-26 72 H76 V100 H-76 V72 L-16 16 H-48 L22 -72 H-76 Z') }));
+add('12-fleche', icon({ ...BASE, zDraw: PZ(geo(.12), `<path d="M52 52 L104 86 L52 120 Z" fill="${V}" stroke="${V}" stroke-width="8" stroke-linejoin="round"/>`) }));
+add('13-pochoir', icon({ ...BASE, zDraw: (w, h) => `<path d="${geo(.135)}" fill="${V}" stroke="${V}" stroke-width="10" stroke-linejoin="round"/><rect x="-6" y="-120" width="12" height="70" fill="#fff" transform="rotate(38)"/><rect x="-6" y="50" width="12" height="70" fill="#fff" transform="rotate(38)"/>` }));
+add('14-lignes-de-vitesse', icon({ ...BASE, zDraw: () => `<path d="${geo(.12)}" fill="${V}" stroke="${V}" stroke-width="8" stroke-linejoin="round"/>${[[-62, 40], [-30, 58], [2, 30]].map(([y, l], i) => `<rect x="${-118 + i * 4}" y="${y - 6 + 30}" width="${l}" height="12" rx="6" fill="${V}" opacity="${.55 - i * .12}"/>`).join('')}` }));
+add('15-filet-blanc', icon({ ...BASE, zDraw: () => `<path d="${geo(.15)}" fill="${V}" stroke="${V}" stroke-width="10" stroke-linejoin="round"/><path d="M-60 -82 H60 L-56 82 H60" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>` }));
+add('16-etincelle', icon({ ...BASE, zDraw: () => `<path d="${geo(.135)}" fill="${V}" stroke="${V}" stroke-width="10" stroke-linejoin="round"/>${sparkle(92, -122, 26)}` }));
+add('17-echo-violet', icon({ ...BASE, zDraw: () => `<path d="${geo(.135)}" transform="translate(-22 0)" fill="#C4B5FD"/><path d="${geo(.135)}" transform="translate(-11 0)" fill="#A78BFA"/><path d="${geo(.135)}" fill="${V}" stroke="${V}" stroke-width="10" stroke-linejoin="round"/>` }));
+add('18-contour', icon({ ...BASE, zDraw: () => `<path d="${geo(.16)}" fill="#fff" stroke="${V}" stroke-width="16" stroke-linejoin="round"/>` }));
+add('19-carte-inversee', icon({ ...BASE, front: V, frontStroke: '#fff', zDraw: () => `<path d="${geo(.135)}" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>` }));
+add('20-z-du-logo-fantomes', icon({ ...BASE, zDraw: () => [['#C4B5FD', -.12], ['#A78BFA', -.06]].map(([c, dx]) => `<text x="${dx * 300}" y="6" font-family="Outfit" font-weight="800" font-size="300" text-anchor="middle" dominant-baseline="central" fill="${c}">Z</text>`).join('') + `<text x="0" y="6" font-family="Outfit" font-weight="800" font-size="300" text-anchor="middle" dominant-baseline="central" fill="${V}">Z</text>` }));
+
+carousel(S);
+</script></body></html>
