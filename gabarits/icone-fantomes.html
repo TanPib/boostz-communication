@@ -69,7 +69,7 @@ const gz = (list, main = `<path d="${GEO}" fill="${V}" stroke="${V}" stroke-widt
 const T28 = [[BR[0], -.2, .35], [BR[1], -.13, .5], [BR[2], -.065, .7]];
 const scaleOp = (l, k) => l.map(([c, d, o]) => [c, d, +(o * k).toFixed(2)]);
 const scaleDx = (l, k) => l.map(([c, d, o]) => [c, d * k, o]);
-const LOGOZ = (fill, x = 0) => `<text x="${x}" y="6" font-family="Outfit" font-weight="800" font-size="300" text-anchor="middle" dominant-baseline="central" fill="${fill}" transform="skewX(-8)">Z</text>`;
+const LOGOZ = (fill, x = 0) => `<text x="${x + 10}" y="2" font-family="Outfit" font-weight="800" font-size="280" text-anchor="middle" dominant-baseline="central" fill="${fill}" transform="skewX(-8)">Z</text>`;
 const DYN = 'M-76 -98 H76 V-74 L-14 74 H76 V98 H-76 V74 L14 -74 H-76 Z';
 
 add('01-fantomes-28', icon({ ...BASE, soft: true, zDraw: gz(T28) }));
@@ -84,6 +84,14 @@ add('09-z-du-logo-fantomes', icon({ ...BASE, soft: true, zDraw: () => T28.map(([
 add('10-diagonale-fantomes', icon({ ...BASE, soft: true, zDraw: gz(scaleOp(T28, .85), `<path d="${DYN}" fill="${V}" stroke="${V}" stroke-width="8" stroke-linejoin="round"/>`, DYN) }));
 add('11-fantomes-degrades', icon({ ...BASE, soft: true, zDraw: gz([[BR[0], -.2, .18], [BR[1], -.13, .38], [BR[2], -.065, .6]]) }));
 add('12-fantomes-z-fin', icon({ ...BASE, soft: true, zDraw: gz(scaleOp(T28, .85), `<path d="${zPath(275, 400, .095)}" fill="${V}" stroke="${V}" stroke-width="6" stroke-linejoin="round"/>`, zPath(275, 400, .095)) }));
+
+// The combination chosen after the whole series (31/10/2026): n° 19's base,
+// the wordmark's slanted Outfit Z (one letterform for the icon and the logo),
+// its three ghost Zs at n° 02's lightness.
+add('13-final-z-logo-fantomes-legers', icon({ ...BASE, soft: true, zDraw: () => scaleOp(T28, .55).map(([c, d, o]) => `<g opacity="${o}">${LOGOZ(c, d * W)}</g>`).join('') + LOGOZ(V) }));
+add('14-final-serre', icon({ ...BASE, soft: true, zDraw: () => scaleDx(scaleOp(T28, .6), .75).map(([c, d, o]) => `<g opacity="${o}">${LOGOZ(c, d * W)}</g>`).join('') + LOGOZ(V) }));
+
+add('15-final-serre-sans-ombre', icon({ ...BASE, zDraw: () => scaleDx(scaleOp(T28, .6), .75).map(([c, d, o]) => `<g opacity="${o}">${LOGOZ(c, d * W)}</g>`).join('') + LOGOZ(V) }));
 
 carousel(S);
 </script></body></html>
