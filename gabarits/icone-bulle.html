@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ icone bulle</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// Profile picture, ninth round (31/10/2026): the user fell for Cardaround's
+// logo (fat, round lettering that bounces a little, two tones, a sparkle, one
+// letter swapped for a symbol, a little fan of cards). These are BoostZ in that
+// spirit, not a copy: our name, our colours, our symbols (the Boosties coin for
+// an « o », the app's fan of cards on the Z, the brand gradient).
+// Fonts: OFL display faces from google/fonts, in fonts/.
+// 1080 x 1080, everything inside the inscribed circle.
+// Render: node rendu.mjs icone-bulle.html images
+const FONTS = ['BagelFatOne', 'Modak', 'Gluten', 'Sniglet-ExtraBold', 'Coiny', 'Chewy', 'Shrikhand', 'TitanOne'];
+document.head.insertAdjacentHTML('beforeend', `<style>${FONTS.map((f) => `@font-face{font-family:'${f}';src:url(fonts/${f}.ttf)}`).join('')}
+.p { width: 1080px; height: 1080px; } </style>`);
+const NAVY = '#16123F', V = '#6D3BF5', LAV = '#EEEAFB', BLOB = '#DFD8F7', CREAM = '#F4EADB';
+const GRAD = 'linear-gradient(135deg,#FF4FA0,#8B3DFF 55%,#3AA9FF)';
+let n = 0; const uid = () => 'b' + n++;
+const S = []; const add = (id, html) => S.push([id, html]);
+
+// Soft blobs on the ground, as on Cardaround's banner but ours: four seeded shapes.
+const blobs = (bg, fill, seed = 1) => { let s = seed; const r = () => (s = (s * 9301 + 49297) % 233280) / 233280;
+  const blob = (cx, cy, R) => { const k = 7, pts = Array.from({ length: k }, (_, i) => { const a = i * 2 * Math.PI / k, rr = R * (.75 + r() * .5); return [cx + rr * Math.cos(a), cy + rr * Math.sin(a)]; });
+    return `<path d="M${pts.map((p, i) => { const q = pts[(i + 1) % k]; return `${((p[0] + q[0]) / 2).toFixed(0)} ${((p[1] + q[1]) / 2).toFixed(0)}`; }).map((m, i) => (i ? `Q${pts[i][0].toFixed(0)} ${pts[i][1].toFixed(0)} ${m}` : m)).join(' ')} Q${pts[0][0].toFixed(0)} ${pts[0][1].toFixed(0)} ${((pts[0][0] + pts[1][0]) / 2).toFixed(0)} ${((pts[0][1] + pts[1][1]) / 2).toFixed(0)} Z" fill="${fill}"/>`; };
+  return `<svg class="abs" width="1080" height="1080" style="left:0;top:0"><rect width="1080" height="1080" fill="${bg}"/>${fill ? blob(90, 120, 230) + blob(1000, 160, 200) + blob(980, 980, 260) + blob(80, 960, 190) : ''}</svg>`; };
+// A four-point sparkle, placed in em inside a line (dx, dy from the line's top left).
+const sp = (dx, dy, s, c) => `<svg viewBox="-1 -1 2 2" style="position:absolute;left:${dx}em;top:${dy}em;width:${s}em;height:${s}em;overflow:visible"><path d="M0 -1 Q.12 -.12 1 0 Q.12 .12 0 1 Q-.12 .12 -1 0 Q-.12 -.12 0 -1Z" fill="${c}"/></svg>`;
+// The Boosties coin, standing in for an « o » (em-sized, sits on the baseline).
+const B = 'M39.9 25.2 Q39.9 22.4 42.7 22.4 L44.3 22.4 Q47.1 22.4 47.1 25.2 L47.1 39.9 Q49.9 37.8 53.6 37.8 Q59.4 37.8 63.1 41.9 Q66.8 46 66.8 52.9 Q66.8 59.8 63.1 63.9 Q59.4 68 53.6 68 Q49.6 68 46.8 65.6 L46.8 65.7 Q46.6 68 44 68 L42.7 68 Q39.9 68 39.9 65.2 Z M53.2 44.4 Q50.1 44.4 48.2 46.7 Q46.3 49 46.3 52.9 Q46.3 56.8 48.2 59.1 Q50.1 61.4 53.2 61.4 Q56.3 61.4 58.2 59.1 Q60.1 56.8 60.1 52.9 Q60.1 49 58.2 46.7 Q56.3 44.4 53.2 44.4 Z';
+const coin = (o = {}) => { const g = uid(), size = o.size || .6;
+  return `<svg viewBox="0 0 100 100" style="width:${size}em;height:${size}em;vertical-align:${o.lift ?? -.03}em;margin:0 .015em;overflow:visible"><defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD84D"/><stop offset="1" stop-color="#E08A00"/></linearGradient></defs>
+    <circle cx="50" cy="50" r="47" fill="url(#${g})"/><circle cx="50" cy="50" r="37" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="4"/><g transform="translate(50 46) scale(1.25) translate(-53 -45)"><path d="${B}" fill="#fff"/></g></svg>`; };
+// The app's fan of three cards, leaning off the top right of a letter.
+const fan = (o = {}) => { const c = o.cards || ['#FF4FA0', '#8B3DFF', '#3AA9FF'], line = o.line || '#fff', k = (o.k || 1) * 1.3;
+  const cd = (rot, fill, dx) => `<g transform="translate(${dx} 0) rotate(${rot} 50 120)"><rect x="34" y="10" width="34" height="48" rx="7" fill="${fill}" stroke="${line}" stroke-width="5"/></g>`;
+  return `<svg viewBox="0 0 100 130" style="position:absolute;width:${.5 * k}em;left:${o.x ?? .62}em;top:${o.y ?? -.08}em;overflow:visible">${cd(-14, c[0], -6)}${cd(0, c[1], 0)}${cd(14, c[2], 6)}</svg>`; };
+const BOUNCE = [[-.02, -5], [.03, 3], [-.03, -3], [.02, 4], [-.04, -4], [.02, 6]];
+// One line of bouncing letters; the last one takes the Z colour.
+const line = (size, font, o = {}) => { const letters = o.letters || ['B', 'o', 'o', 's', 't', 'Z'];
+  return `<div style="position:relative;display:flex;align-items:baseline;line-height:1;font-family:'${font}';font-size:${size}px;letter-spacing:${o.ls ?? -.01}em;${o.css || ''}">${letters.map((ch, i) => {
+    const [y, r] = o.flat ? [0, 0] : BOUNCE[(i + (o.shift || 0)) % 6], col = (o.colors || [])[i] || (i === letters.length - 1 ? (o.z || V) : (o.ink || NAVY));
+    const tf = `display:inline-block;position:relative;transform:translate(0,${y}em) rotate(${r}deg);`;
+    if (o.coins && o.coins.includes(i)) return `<span style="${tf}">${coin(o.coin || {})}</span>`;
+    const paint = col.startsWith('linear') ? `background:${col};-webkit-background-clip:text;background-clip:text;color:transparent;` : `color:${col};`;
+    return `<span style="${tf}"><span style="${paint}${o.letterCss || ''}">${ch}</span>${i === letters.length - 1 && o.fan ? fan(o.fan) : ''}</span>`;
+  }).join('')}${o.extra || ''}</div>`; };
+// The lines stacked and centred; fit() then scales the whole block to fill the circle.
+const mark = (lines, o = {}) => `<div class="mark" data-w="${o.w || 900}" data-d="${o.d || 480}" style="position:absolute;left:540px;top:540px;display:flex;flex-direction:column;align-items:center;gap:${o.gap ?? 0}px;${o.markCss || ''}">${lines.join('')}</div>`;
+const one = (font, o = {}) => mark([line(200, font, o)], o);
+const stack = (font, o = {}) => mark([line(200, font, { ...o, letters: ['B', 'o', 'o', 's', 't'], z: o.ink || NAVY, fan: null, extra: o.extra1 }), line(o.zs || 330, font, { ...o, coins: [], letters: ['Z'], ink: o.z || V, fan: o.fan, extra: o.extra2, css: `margin-top:${o.mt ?? -.12}em;margin-left:${o.zx ?? 1.1}em` })], o);
+const outline = (c, w) => `-webkit-text-stroke:${w}px ${c};`;
+const shadow = (c, d) => `text-shadow:${Array.from({ length: d }, (_, i) => `${i + 1}px ${i + 1}px 0 ${c}`).join(',')};`;
+// rendu.mjs calls window.pixelate once the fonts are in: here it scales each
+// mark so its whole drawn extent (fan and sparkles included) is centred and
+// inside the profile circle, as wide as data-w and with a half-diagonal of data-d.
+window.pixelate = () => document.querySelectorAll('.mark').forEach((m) => {
+  const box = (el) => [...el.querySelectorAll('span > span, path, rect, circle')].map((e) => e.getBoundingClientRect()).filter((r) => r.width).reduce((a, r) => [Math.min(a[0], r.left), Math.min(a[1], r.top), Math.max(a[2], r.right), Math.max(a[3], r.bottom)], [1e9, 1e9, -1e9, -1e9]);
+  const [l, t, r, b] = box(m), w = r - l, h = b - t, k = Math.min(+m.dataset.w / w, 2 * +m.dataset.d / Math.hypot(w, h));
+  const p = m.parentElement.getBoundingClientRect(), dx = (l + r) / 2 - (p.left + 540), dy = (t + b) / 2 - (p.top + 540);
+  m.style.transformOrigin = '0 0';
+  m.style.transform = `translate(${-dx * k}px, ${-dy * k}px) scale(${k})`;
+  m.dataset.k = k.toFixed(2);
+});
+
+// --- One line, light lavender ground (the Cardaround mood) ---
+add('01-bagel-lavande', `${blobs(LAV, BLOB, 2)}${one('BagelFatOne', { fan: {}, extra: sp(-.35, .05, .32, V) + sp(3.5, .9, .16, NAVY) })}`);
+add('02-bagel-pieces', `${blobs(LAV, BLOB, 5)}${one('BagelFatOne', { coins: [1, 2], fan: {}, extra: sp(-.35, .05, .32, V) })}`);
+add('03-bagel-une-piece', `${blobs(LAV, BLOB, 9)}${one('BagelFatOne', { coins: [2], extra: sp(3.45, -.2, .34, V) + sp(-.3, .85, .16, NAVY) })}`);
+add('04-modak-lavande', `${blobs(LAV, BLOB, 3)}${one('Modak', { fan: { y: .12 }, extra: sp(-.3, .25, .28, V) })}`);
+add('05-gluten-lavande', `${blobs(LAV, BLOB, 7)}${one('Gluten', { css: 'font-weight:900', coins: [1], fan: {}, extra: sp(-.35, .05, .3, V) })}`);
+add('06-sniglet-lavande', `${blobs(LAV, BLOB, 11)}${one('Sniglet-ExtraBold', { coins: [1, 2], extra: sp(3.4, -.2, .32, V) })}`);
+add('07-coiny-lavande', `${blobs(LAV, BLOB, 13)}${one('Coiny', { fan: { y: 0 }, extra: sp(-.35, .05, .3, V) })}`);
+add('08-chewy-lavande', `${blobs(LAV, BLOB, 17)}${one('Chewy', { coins: [2], fan: { x: .5, y: -.12 }, extra: sp(-.3, .1, .3, V) })}`);
+
+// --- Stacked, "Boost" over a big "Z" ---
+add('09-bagel-empile', `${blobs(LAV, BLOB, 19)}${stack('BagelFatOne', { fan: { x: .62, y: .05, k: .7 }, extra2: sp(-.55, .3, .22, V) + sp(1.05, .85, .1, NAVY) })}`);
+add('10-bagel-empile-degrade', `${blobs(LAV, BLOB, 23)}${stack('BagelFatOne', { z: GRAD, coins: [1, 2], extra2: sp(-.55, .3, .22, V) + sp(1.0, .2, .14, '#FF4FA0') })}`);
+add('11-modak-empile', `${blobs(LAV, BLOB, 29)}${stack('Modak', { fan: { x: .6, y: -.02, k: .7 }, extra2: sp(-.5, .4, .2, V) })}`);
+add('12-gluten-empile', `${blobs(LAV, BLOB, 31)}${stack('Gluten', { css: 'font-weight:900', coins: [1, 2], extra2: sp(-.5, .3, .2, V) })}`);
+
+// --- Other grounds ---
+add('13-bagel-nuit', `${blobs('#120C2E', '#1D1546', 2)}${one('BagelFatOne', { ink: '#fff', z: '#B89BFF', coins: [1, 2], fan: { line: '#120C2E' }, extra: sp(-.35, .05, .32, '#B89BFF') + sp(3.5, .9, .14, '#fff') })}`);
+add('14-bagel-violet', `${blobs(V, '#7B4DF7', 4)}${one('BagelFatOne', { ink: '#fff', z: '#FFD84D', fan: { line: V, cards: ['#FF4FA0', '#FFD84D', '#3AA9FF'] }, extra: sp(-.35, .05, .32, '#FFD84D') })}`);
+add('15-bagel-creme', `${blobs(CREAM, '#EADCC7', 8)}${one('BagelFatOne', { coins: [1, 2], z: '#E5487F', extra: sp(3.45, -.2, .32, '#E5487F') })}`);
+add('16-bagel-degrade-fond', `<div class="abs" style="inset:0;background:${GRAD}"></div>${one('BagelFatOne', { ink: '#fff', z: '#fff', coins: [1, 2], css: 'filter:drop-shadow(0 12px 0 rgba(22,18,63,.35))', extra: sp(3.45, -.2, .32, '#fff') })}`);
+
+// --- Sticker finish (white rim, hard shadow), our posts' style ---
+// A sticker rim: the letters dilated in white, then one hard navy shadow (an SVG filter, so it stays one clean edge).
+const RIMF = `<svg width="0" height="0" style="position:absolute"><filter id="rim" x="-20%" y="-30%" width="140%" height="160%"><feMorphology in="SourceAlpha" operator="dilate" radius="16" result="d"/><feFlood flood-color="#fff"/><feComposite in2="d" operator="in" result="w"/><feOffset in="d" dx="10" dy="12" result="o"/><feFlood flood-color="${NAVY}"/><feComposite in2="o" operator="in" result="s"/><feMerge><feMergeNode in="s"/><feMergeNode in="w"/><feMergeNode in="SourceGraphic"/></feMerge></filter></svg>`;
+add('17-bagel-sticker', `${blobs(LAV, BLOB, 37)}${RIMF + one('BagelFatOne', { coins: [1, 2], css: 'filter:url(#rim)', fan: {}, extra: sp(-.4, .05, .3, V) })}`);
+add('18-modak-relief', `${blobs(LAV, BLOB, 41)}${one('Modak', { letterCss: shadow(NAVY, 12), ink: V, z: '#FF4FA0', extra: sp(-.3, .25, .28, NAVY) })}`);
+add('19-shrikhand-vitesse', `${blobs(LAV, BLOB, 43)}${one('Shrikhand', { flat: true, coins: [1, 2], coin: { size: .55 }, extra: `<svg style="position:absolute;left:-.75em;top:.3em;width:.6em;height:.5em;overflow:visible" viewBox="0 0 60 50">${[0, 18, 36].map((y, i) => `<rect x="${i * 6}" y="${y}" width="${54 - i * 14}" height="9" rx="4.5" fill="${V}" opacity="${1 - i * .25}"/>`).join('')}</svg>` + sp(3.4, -.2, .3, V) })}`);
+add('20-titan-pieces', `${blobs(LAV, BLOB, 47)}${one('TitanOne', { coins: [1, 2], fan: {}, extra: sp(-.35, .05, .3, V) })}`);
+
+// --- Monograms, for the tiny sizes (a profile circle is 110 px on a phone) ---
+const BZ = (o) => mark([line(300, 'BagelFatOne', { letters: ['B', 'Z'], ...o })], { w: 720, d: 430 });
+add('21-bz-bagel', `${blobs(LAV, BLOB, 53)}${BZ({ fan: { x: .55, y: -.05, k: .8 }, extra: sp(-.4, .05, .3, V) })}`);
+add('22-bz-degrade', `${blobs(LAV, BLOB, 59)}${BZ({ z: GRAD, extra: sp(-.4, .05, .3, V) + sp(1.5, .9, .15, NAVY) })}`);
+add('23-z-cartes', `${blobs(LAV, BLOB, 61)}${mark([line(300, 'BagelFatOne', { letters: ['Z'], ink: V, fan: { x: .5, y: -.05, k: .8 }, extra: sp(-.4, .05, .3, NAVY) })], { w: 640, d: 420 })}`);
+add('24-bz-nuit', `${blobs('#120C2E', '#1D1546', 67)}${BZ({ ink: '#fff', z: '#B89BFF', fan: { x: .55, y: -.05, k: .8, line: '#120C2E' }, extra: sp(-.4, .05, .3, '#B89BFF') })}`);
+
+carousel(S);
+</script></body></html>
