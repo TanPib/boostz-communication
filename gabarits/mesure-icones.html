@@ -1,6 +1,6 @@
 <!doctype html><html><body><script>
 const R='../';
-const IM={actuelle:R+'gabarits/assets/icone-app.png', p01:R+'images/icone-reseaux/halo/01-flottantes.jpg', p06:R+'images/icone-reseaux/halo/06-grande-carte.jpg'};
+const IM={actuelle:R+'gabarits/assets/icone-app-ancienne.png', p01:R+'images/icone-reseaux/halo/01-flottantes.jpg', p06:R+'images/icone-reseaux/halo/06-grande-carte.jpg'};
 const lin=c=>{c/=255;return c<=.04045?c/12.92:((c+.055)/1.055)**2.4};
 const L=(r,g,b)=>.2126*lin(r)+.7152*lin(g)+.0722*lin(b);
 const cr=(a,b)=>(Math.max(a,b)+.05)/(Math.min(a,b)+.05);
