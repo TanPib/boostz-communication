@@ -1,0 +1,343 @@
+{
+ "debut": "2026-10-16",
+ "fin": "2026-11-01",
+ "mode": "Prix de vente moyen sur 30 jours, d'un relevé à l'autre",
+ "seuil_eur": 10.0,
+ "candidates": 217,
+ "mouvements": [
+  {
+   "id": "sm7-108",
+   "nom": "Latios ◇",
+   "set": "Tempête Céleste",
+   "numero": "108",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/sm/sm7/108",
+   "avant": 11.97,
+   "apres": 26.28,
+   "evolution": 119.5
+  },
+  {
+   "id": "dp3-15",
+   "nom": "Mew",
+   "set": "Merveilles Secrètes",
+   "numero": "15",
+   "rarete": "Rare Holo",
+   "image": "https://assets.tcgdex.net/fr/dp/dp3/15",
+   "avant": 31.71,
+   "apres": 62.41,
+   "evolution": 96.8
+  },
+  {
+   "id": "smp-SM160",
+   "nom": "Nidoqueen",
+   "set": "Promo SM",
+   "numero": "SM160",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 11.79,
+   "apres": 22.2,
+   "evolution": 88.3
+  },
+  {
+   "id": "hgssp-HGSS11",
+   "nom": "Latios",
+   "set": "Promo HGSS",
+   "numero": "HGSS11",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 23.78,
+   "apres": 42.06,
+   "evolution": 76.9
+  },
+  {
+   "id": "sm7-97",
+   "nom": "Jirachi ◇",
+   "set": "Tempête Céleste",
+   "numero": "97",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/sm/sm7/97",
+   "avant": 10.14,
+   "apres": 17.66,
+   "evolution": 74.2
+  },
+  {
+   "id": "neo1-16",
+   "nom": "Togetic",
+   "set": "Neo Genesis",
+   "numero": "16",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/neo/neo1/16",
+   "avant": 29.29,
+   "apres": 47.54,
+   "evolution": 62.3
+  },
+  {
+   "id": "pop3-2",
+   "nom": "Pyroli",
+   "set": "POP Série 3",
+   "numero": "2",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/pop/pop3/2",
+   "avant": 78.38,
+   "apres": 127.09,
+   "evolution": 62.1
+  },
+  {
+   "id": "base1-5",
+   "nom": "Mélofée",
+   "set": "Set de Base",
+   "numero": "5",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base1/5",
+   "avant": 25.26,
+   "apres": 37.67,
+   "evolution": 49.1
+  },
+  {
+   "id": "ex14-95",
+   "nom": "Kyogre ex",
+   "set": "EX Gardiens de Cristal",
+   "numero": "95",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ex/ex14/95",
+   "avant": 103.59,
+   "apres": 147.41,
+   "evolution": 42.3
+  },
+  {
+   "id": "smp-SM109",
+   "nom": "Pikachu de Sacha",
+   "set": "Promo SM",
+   "numero": "SM109",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 31.8,
+   "apres": 44.37,
+   "evolution": 39.5
+  }
+ ],
+ "hausses": [
+  {
+   "id": "sm7-108",
+   "nom": "Latios ◇",
+   "set": "Tempête Céleste",
+   "numero": "108",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/sm/sm7/108",
+   "avant": 11.97,
+   "apres": 26.28,
+   "evolution": 119.5
+  },
+  {
+   "id": "dp3-15",
+   "nom": "Mew",
+   "set": "Merveilles Secrètes",
+   "numero": "15",
+   "rarete": "Rare Holo",
+   "image": "https://assets.tcgdex.net/fr/dp/dp3/15",
+   "avant": 31.71,
+   "apres": 62.41,
+   "evolution": 96.8
+  },
+  {
+   "id": "smp-SM160",
+   "nom": "Nidoqueen",
+   "set": "Promo SM",
+   "numero": "SM160",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 11.79,
+   "apres": 22.2,
+   "evolution": 88.3
+  },
+  {
+   "id": "hgssp-HGSS11",
+   "nom": "Latios",
+   "set": "Promo HGSS",
+   "numero": "HGSS11",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 23.78,
+   "apres": 42.06,
+   "evolution": 76.9
+  },
+  {
+   "id": "sm7-97",
+   "nom": "Jirachi ◇",
+   "set": "Tempête Céleste",
+   "numero": "97",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/sm/sm7/97",
+   "avant": 10.14,
+   "apres": 17.66,
+   "evolution": 74.2
+  },
+  {
+   "id": "neo1-16",
+   "nom": "Togetic",
+   "set": "Neo Genesis",
+   "numero": "16",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/neo/neo1/16",
+   "avant": 29.29,
+   "apres": 47.54,
+   "evolution": 62.3
+  },
+  {
+   "id": "pop3-2",
+   "nom": "Pyroli",
+   "set": "POP Série 3",
+   "numero": "2",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/pop/pop3/2",
+   "avant": 78.38,
+   "apres": 127.09,
+   "evolution": 62.1
+  },
+  {
+   "id": "base1-5",
+   "nom": "Mélofée",
+   "set": "Set de Base",
+   "numero": "5",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base1/5",
+   "avant": 25.26,
+   "apres": 37.67,
+   "evolution": 49.1
+  },
+  {
+   "id": "ex14-95",
+   "nom": "Kyogre ex",
+   "set": "EX Gardiens de Cristal",
+   "numero": "95",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ex/ex14/95",
+   "avant": 103.59,
+   "apres": 147.41,
+   "evolution": 42.3
+  },
+  {
+   "id": "smp-SM109",
+   "nom": "Pikachu de Sacha",
+   "set": "Promo SM",
+   "numero": "SM109",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 31.8,
+   "apres": 44.37,
+   "evolution": 39.5
+  }
+ ],
+ "baisses": [
+  {
+   "id": "ex3-94",
+   "nom": "Latios ex",
+   "set": "EX Dragon",
+   "numero": "94",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ex/ex3/94",
+   "avant": 340.49,
+   "apres": 272.29,
+   "evolution": -20.0
+  },
+  {
+   "id": "sv02-211",
+   "nom": "Raichu",
+   "set": "Évolutions à Paldea",
+   "numero": "211",
+   "rarete": "Illustration rare",
+   "image": "https://assets.tcgdex.net/fr/sv/sv02/211",
+   "avant": 81.25,
+   "apres": 65.84,
+   "evolution": -19.0
+  },
+  {
+   "id": "me02.5-283",
+   "nom": "Méga-Brutalibré-ex",
+   "set": "Héros Transcendants",
+   "numero": "283",
+   "rarete": "Illustration spéciale rare",
+   "image": "https://assets.tcgdex.net/fr/me/me02.5/283",
+   "avant": 44.71,
+   "apres": 38.23,
+   "evolution": -14.5
+  },
+  {
+   "id": "neo4-113",
+   "nom": "Tyranocif brillant",
+   "set": "Neo Destiny",
+   "numero": "113",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/neo/neo4/113",
+   "avant": 831.76,
+   "apres": 727.71,
+   "evolution": -12.5
+  },
+  {
+   "id": "mep-046",
+   "nom": "Germignon",
+   "set": "MEP Black Star Promos",
+   "numero": "046",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 12.91,
+   "apres": 11.37,
+   "evolution": -11.9
+  },
+  {
+   "id": "smp-SM167",
+   "nom": "Celebi et Florizarre GX",
+   "set": "Promo SM",
+   "numero": "SM167",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 210.82,
+   "apres": 186.49,
+   "evolution": -11.5
+  },
+  {
+   "id": "sv08-247",
+   "nom": "Pikachu-ex",
+   "set": "Étincelles Déferlantes",
+   "numero": "247",
+   "rarete": "Hyper rare",
+   "image": "https://assets.tcgdex.net/fr/sv/sv08/247",
+   "avant": 75.84,
+   "apres": 67.42,
+   "evolution": -11.1
+  },
+  {
+   "id": "me05-114",
+   "nom": "Méga-Zeraora-ex",
+   "set": "Nuit Noire",
+   "numero": "114",
+   "rarete": "Illustration spéciale rare",
+   "image": "https://assets.tcgdex.net/fr/me/me05/114",
+   "avant": 47.46,
+   "apres": 42.24,
+   "evolution": -11.0
+  },
+  {
+   "id": "mep-047",
+   "nom": "Héricendre",
+   "set": "MEP Black Star Promos",
+   "numero": "047",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 13.57,
+   "apres": 12.15,
+   "evolution": -10.5
+  },
+  {
+   "id": "sm115-68",
+   "nom": "Jessie et James",
+   "set": "Destinées Occultes",
+   "numero": "68",
+   "rarete": "Ultra Rare",
+   "image": null,
+   "avant": 73.63,
+   "apres": 65.98,
+   "evolution": -10.4
+  }
+ ]
+}
