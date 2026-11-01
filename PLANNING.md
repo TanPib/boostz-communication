@@ -218,6 +218,15 @@ Relevées le 05/10/2026, toutes reconfirmées le 07/10/2026 (Hyperia City : avan
 - Lorcana Hyperia City le 23/10, One Piece EB05 le 30/10, Pokémon Delta Reign le 06/11, Magic × Star Trek le 13/11, OP18 le 20/11 ([pokezenith](https://www.pokezenith.com/content/51-calendrier-sorties-tcg-2026), [Maison du Booster](https://maisondubooster.com/pages/calendrier-sorties-tcg)).
 - Yu-Gi-Oh! Magnificent Maestros le 13/11 ([ICv2](https://icv2.com/articles/news/view/63153/new-yu-gi-oh-tcg-booster-set-revealed)).
 
+Check-in du 01/11/2026 :
+- Règne Delta (06/11) : date confirmée (le 6 novembre en français et en anglais). La fourchette du slide 4, 215,64 € à 249 € le display en français, tient toujours : Pokecop 215,64 €, Vilmo 245 € (prix conseillé indiqué : 180 €, non vérifié ailleurs), HamaCards 249,90 € en rupture ([Vilmo](https://vilmo.fr/serie/regne-delta), [Pokecop](https://pokecop.com/blog/delta-reign-storm-emeralda-le-retour-de-mega-rayquaza-dans-le-jcc-pokemon), [HamaCards](https://www.hamacards.com/cartes-pokemon-me06-regne-delta/)). Au Pokémon Center allemand, le display est à 165,99 € ([mydealz](https://www.mydealz.de/magazin/pokemon-delta-herrschaft-display-vorbestellen-75099)). Slides et posts inchangés.
+- 03/11 (Tyler) et 17/11 (raretés Pokémon) : en place sur Instagram, TikTok (photo, publication manuelle) et Facebook, avec leur story.
+
+Veille du 01/11/2026, rien qui déplace un post :
+- Yu-Gi-Oh! : la liste des cartes interdites du 19/10 est la plus grosse vue jusqu'ici, avec 34 cartes interdites et 8 limitées, annoncée pendant le YCS Houston ([Master Duel Meta](https://www.masterduelmeta.com/articles/news/october-2026/tcg-forbidden-list/part-1/), [YGOrganization](https://ygorganization.com/permanentsleepforthetapir)). C'est surtout une affaire de jeu compétitif et elle a déjà deux semaines : elle ne prend la place d'aucun post.
+- Pokémon : Aura Seeker (Méga-Lucario Z-ex) annoncé au Japon pour le 27/11, d'après la presse, pas encore par The Pokémon Company ; produits 30th Celebration le 04/12 ([pokemoncard.io](https://pokemoncard.io/article/ex-series-revealed-mega-lucario-z-ex-raikou-entei-suicune), [ICv2](https://icv2.com/print/article/63405)).
+- Lorcana : produits Winterspell chez les revendeurs ([BOXED](https://blog.boxed.gg/new-boxed-releases-yu-gi-oh-lorcana/)) ; Magic : Star Trek le 20/11 selon un calendrier ancien, à recouper avec le 13/11 déjà noté ([VintageCCG](https://www.vintageccg.com/ccg-news/tcg-release-schedule-2026-2027/)).
+
 Veille du 26/10/2026, rien qui déplace un post :
 - One Piece EB05 (Heroines Edition vol. 2) le 30/10 en anglais, OP18 le 20/11 ; Mihawk OP14-020 interdit depuis le 12/10 ([Samurai Sword Tokyo](https://samuraiswordtokyo.com/blogs/news/one-piece-card-game-news-october-november-2026-calendar)).
 - Yu-Gi-Oh! : Magnificent Maestros le 13/11 (ICv2) ou le 12/11 (Yugipedia) ; Immortal Phoenix le 31/10 au Japon ([ICv2](https://icv2.com/articles/news/view/63062/konami-unveils-magnificent-maestros-yu-gi-oh-tcg), [YGOrganization](https://ygorganization.com/yu-gi-oh-official-card-game-times-october-2026-general-information/)).
