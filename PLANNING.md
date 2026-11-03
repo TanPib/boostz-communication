@@ -218,6 +218,8 @@ Relevées le 05/10/2026, toutes reconfirmées le 07/10/2026 (Hyperia City : avan
 - Lorcana Hyperia City le 23/10, One Piece EB05 le 30/10, Pokémon Delta Reign le 06/11, Magic × Star Trek le 13/11, OP18 le 20/11 ([pokezenith](https://www.pokezenith.com/content/51-calendrier-sorties-tcg-2026), [Maison du Booster](https://maisondubooster.com/pages/calendrier-sorties-tcg)).
 - Yu-Gi-Oh! Magnificent Maestros le 13/11 ([ICv2](https://icv2.com/articles/news/view/63153/new-yu-gi-oh-tcg-booster-set-revealed)).
 
+03/11/2026 : le carrousel TikTok de Tyler (photo, à finir à la main) n'a pas été terminé dans l'appli. À la demande de TanPib, il est reparti à 13 h 30 en vidéo publiée automatiquement (`videos/2026-11-03-histoire-tyler-grand-guerrier-tiktok.mp4`, notre musique, post Metricool 415190197). Le post photo de 10 h reste « publié » dans Metricool, mais sans rien en ligne sur TikTok.
+
 Check-in du 01/11/2026 :
 - Règne Delta (06/11) : date confirmée (le 6 novembre en français et en anglais). La fourchette du slide 4, 215,64 € à 249 € le display en français, tient toujours : Pokecop 215,64 €, Vilmo 245 € (prix conseillé indiqué : 180 €, non vérifié ailleurs), HamaCards 249,90 € en rupture ([Vilmo](https://vilmo.fr/serie/regne-delta), [Pokecop](https://pokecop.com/blog/delta-reign-storm-emeralda-le-retour-de-mega-rayquaza-dans-le-jcc-pokemon), [HamaCards](https://www.hamacards.com/cartes-pokemon-me06-regne-delta/)). Au Pokémon Center allemand, le display est à 165,99 € ([mydealz](https://www.mydealz.de/magazin/pokemon-delta-herrschaft-display-vorbestellen-75099)). Slides et posts inchangés.
 - 03/11 (Tyler) et 17/11 (raretés Pokémon) : en place sur Instagram, TikTok (photo, publication manuelle) et Facebook, avec leur story.
