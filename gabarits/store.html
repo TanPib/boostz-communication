@@ -23,24 +23,23 @@ document.head.insertAdjacentHTML('beforeend', `<style>
   .s { font-family: 'DM Sans'; font-weight: 700; text-align: center; }
   .hl { background: linear-gradient(120deg, #FF4FA0, #8B3DFF 55%, #3AA9FF); -webkit-background-clip: text; background-clip: text; color: transparent; }
 </style>`);
-// Layout (third round, 04/11/2026). TanPib found the first round less clean than
-// the store set already online (« surtout le texte en blanc ou noir ») and
-// pointed to its first visual as the model: the phone up top, tilted and cut
-// by the edge; one hero element bursting out of it on the right, lit by a soft
-// glow; the small wordmark, then the headline in plain white or black and a
-// quiet line, bottom left. At most one label and a couple of Boosties each.
-const PW = PLAY ? 680 : 820, PY = PLAY ? 70 : 110, PXL = PLAY ? 110 : 110;
-const ground = (dark, glow = '#3B1D7A') => dark
-  ? `<div class="abs" style="inset:0;background:radial-gradient(ellipse at 55% 32%, ${glow} 0%, #1B1330 50%, #0B0812 100%)"></div>`
-  : `<div class="abs" style="inset:0;background:radial-gradient(ellipse at 55% 32%, #FFFFFF 0%, ${LIGHT} 55%, #E9E3F7 100%)"></div>`;
-const TB = H - (PLAY ? 640 : 760); // top of the text block
-const text = (dark, t, s) => `<div class="abs" style="left:90px;top:${TB}px;z-index:20">${wordmark(PLAY ? 52 : 60).replace('color:#fff', 'color:' + (dark ? '#fff' : INKD))}</div>
-  <div class="abs t" style="left:90px;right:90px;top:${TB + (PLAY ? 100 : 115)}px;font-size:${PLAY ? 96 : 112}px;text-align:left;color:${dark ? '#fff' : INKD};z-index:20">${t}</div>
-  <div class="abs s" style="left:90px;right:150px;top:${TB + (PLAY ? 100 : 115) + (PLAY ? 96 : 112) * 2.1 + 34}px;font-size:${PLAY ? 36 : 42}px;line-height:1.32;text-align:left;font-weight:600;color:${dark ? 'rgba(245,242,251,.62)' : '#625B78'};z-index:20">${s}</div>`;
-const phone = (shot, o = {}) => { const w = o.w || PW, h = w * 2.164, x = o.x ?? PXL, y = o.y ?? PY, dark = o.dark !== false;
-  return `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;transform:rotate(${o.r ?? -7}deg);border-radius:${w * .13}px;background:#0B0812;border:${w * .006}px solid ${dark ? 'rgba(255,255,255,.18)' : 'rgba(27,19,48,.25)'};box-shadow:0 ${w * .05}px ${w * .14}px rgba(11,8,18,${dark ? .65 : .3});padding:${w * .026}px;z-index:${o.z || 3}">
+// Layout (fourth round, 04/11/2026). TanPib: the text at the top, the phones
+// not always on the same side, and « que les 8 images se répondent ». So the
+// eight are one panorama: a continuous ground, the dashed path of our posts
+// running through all of them under the headlines, and at every second seam a
+// real card, a Boostie or card backs straddling two screenshots. The phone
+// alternates sides (left, tilted left; right, tilted right), which leaves the
+// seams with room on both sides free for those bridges.
+const PW = PLAY ? 700 : 880, PT = PLAY ? 660 : 800, N = 8;
+const PANOW = N * W;
+const phoneX = (k) => (k % 2 ? W - PW - 70 : 70), phoneR = (k) => (k % 2 ? 6 : -6);
+const FREE = (k) => (k % 2 ? 40 : W - (W - PW - 70) + 30); // left edge of the free column
+const text = (t, s) => `<div class="abs" style="left:90px;top:${PLAY ? 100 : 130}px;z-index:20">${wordmark(PLAY ? 50 : 58)}</div>
+  <div class="abs t" style="left:90px;right:90px;top:${PLAY ? 190 : 225}px;font-size:${PLAY ? 92 : 108}px;text-align:left;color:#fff;z-index:20">${t}</div>
+  <div class="abs s" style="left:90px;right:140px;top:${(PLAY ? 190 : 225) + (PLAY ? 92 : 108) * 2.1 + 30}px;font-size:${PLAY ? 34 : 40}px;line-height:1.32;text-align:left;font-weight:600;color:rgba(245,242,251,.62);z-index:20">${s}</div>`;
+const phone = (shot, k) => { const w = PW, h = w * 2.164;
+  return `<div class="abs" style="left:${phoneX(k)}px;top:${PT}px;width:${w}px;height:${h}px;transform:rotate(${phoneR(k)}deg);border-radius:${w * .13}px;background:#0B0812;border:${w * .006}px solid rgba(255,255,255,.18);box-shadow:0 ${w * .05}px ${w * .14}px rgba(11,8,18,.65);padding:${w * .026}px;z-index:5">
     <div style="width:100%;height:100%;border-radius:${w * .105}px;overflow:hidden;background:#0B0812"><img src="shots/app-${shot}.jpg" style="width:100%;display:block"></div></div>`; };
-// The hero: a real card with a glowing violet edge, as on the original visual.
 const glowCard = (src, x, y, w, r, z = 8) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;transform:rotate(${r}deg);border:${w * .022}px solid #E9DDFF;border-radius:${w * .06}px;overflow:hidden;box-shadow:0 0 ${w * .1}px rgba(167,139,250,.9), 0 0 ${w * .3}px rgba(124,58,237,.55), 0 ${w * .08}px ${w * .2}px rgba(11,8,18,.6);z-index:${z};background:#111"><img src="${src}" style="width:100%;height:100%;object-fit:cover;display:block"></div>`;
 const real = (img, x, y, w, r, z) => glowCard('assets/' + img, x, y, w, r, z);
 const dos = (g, x, y, w, r, z) => glowCard(`assets/dos-${g}.svg`, x, y, w, r, z);
@@ -48,51 +47,47 @@ const label = (x, y, html, o = {}) => `<div class="abs ui" style="left:${x}px;to
 const B = 'M39.9 25.2 Q39.9 22.4 42.7 22.4 L44.3 22.4 Q47.1 22.4 47.1 25.2 L47.1 39.9 Q49.9 37.8 53.6 37.8 Q59.4 37.8 63.1 41.9 Q66.8 46 66.8 52.9 Q66.8 59.8 63.1 63.9 Q59.4 68 53.6 68 Q49.6 68 46.8 65.6 L46.8 65.7 Q46.6 68 44 68 L42.7 68 Q39.9 68 39.9 65.2 Z M53.2 44.4 Q50.1 44.4 48.2 46.7 Q46.3 49 46.3 52.9 Q46.3 56.8 48.2 59.1 Q50.1 61.4 53.2 61.4 Q56.3 61.4 58.2 59.1 Q60.1 56.8 60.1 52.9 Q60.1 49 58.2 46.7 Q56.3 44.4 53.2 44.4 Z';
 let cid = 0;
 const coin = (x, y, d, r = 0, z = 9) => { const g = 'cg' + cid++; return `<svg class="abs" width="${d}" height="${d}" viewBox="0 0 100 100" style="left:${x}px;top:${y}px;transform:rotate(${r}deg);z-index:${z};filter:drop-shadow(0 ${d * .08}px ${d * .12}px rgba(11,8,18,.5));overflow:visible"><defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD84D"/><stop offset="1" stop-color="#E08A00"/></linearGradient></defs><circle cx="50" cy="50" r="47" fill="url(#${g})"/><circle cx="50" cy="50" r="37" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3"/><g transform="translate(50 46) scale(1.25) translate(-53 -45)"><path d="${B}" fill="#fff"/></g></svg>`; };
-// The right side, level with the lower half of the phone.
-const RX = W - (PLAY ? 520 : 600), RY = PLAY ? 430 : 600;
+
+// The panorama, drawn once in panorama coordinates (x from 0 to 8 W) and shown
+// through each screenshot at its own offset.
+const seam = (k) => (k + 1) * W; // between screenshot k and k + 1
+const PY = PT - (PLAY ? 50 : 70);
+const path = (() => { let d = `M 0 ${PY}`; for (let i = 0; i < N * 4; i++) { const x0 = i * W / 4, x1 = x0 + W / 4; d += ` Q ${x0 + W / 8} ${PY + (i % 2 ? 46 : -46)} ${x1} ${PY}`; } return d; })();
+const PANO = `<div class="abs" style="left:0;top:0;width:${PANOW}px;height:${H}px;background:linear-gradient(90deg, #120A2A 0%, #22114A 14%, #2A1458 27%, #1A1440 40%, #112045 52%, #1F1048 64%, #2E1065 77%, #22114A 89%, #120A2A 100%)"></div>
+  ${[0, 2, 4, 6].map((k) => `<div class="abs" style="left:${seam(k) - 700}px;top:${PT + 200}px;width:1400px;height:1400px;border-radius:50%;background:radial-gradient(circle, rgba(139,61,255,.42), rgba(139,61,255,0) 65%)"></div>`).join('')}
+  <svg class="abs" width="${PANOW}" height="${H}" style="left:0;top:0;z-index:4"><path d="${path}" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 30"/></svg>`;
+const BRIDGES = [
+  real('carte-dracaufeu-ex-sv035-199.jpg', seam(0) - 200, PT + 640, PLAY ? 360 : 400, 9, 9),
+  real('carte-luffy-op05-119-p1-jp.png', seam(2) - 190, PT + 560, PLAY ? 340 : 380, -8, 9),
+  coin(seam(4) - 170, PT + 640, 340, -12) + coin(seam(4) - 330, PT + 1040, 150, 16) + coin(seam(4) + 200, PT + 380, 120, -20),
+  dos('pokemon', seam(6) - 260, PT + 600, 300, -12, 8) + dos('lorcana', seam(6) - 60, PT + 680, 300, 10, 9),
+].join('');
+const pano = (k) => `<div class="abs" style="left:${-k * W}px;top:0;width:${PANOW}px;height:${H}px">${PANO}<div class="abs" style="left:0;top:0;width:${PANOW}px;height:${H}px;z-index:9">${BRIDGES}</div></div>`;
+// Per screenshot, on its free side, higher than the bridges.
 const S = [];
+const add = (id, k, inner) => S.push([id, `${pano(k)}${inner}`]);
+const FY = PT + (PLAY ? 120 : 160);
 
-S.push(['1-collection', `${ground(true)}${phone('accueil')}
-  ${real('carte-dracaufeu-ex-sv035-199.jpg', RX + 40, RY, PLAY ? 430 : 500, 8)}
-  ${label(RX - 40, RY + (PLAY ? 700 : 820), '<span style="color:#1E9E6A">▲ +21,9 %</span> en 30 jours', { r: -4, fs: PLAY ? 38 : 44 })}
-  ${text(true, 'Ta collection,<br>sa vraie valeur.', 'Tes cartes de 8 TCG au même endroit, avec leur cote du jour.')}`]);
-
-S.push(['2-invest', `${ground(false)}${phone('invest', { dark: false })}
-  ${dos('pokemon', RX + 20, RY - 40, PLAY ? 300 : 340, -6, 7)}${dos('lorcana', RX + 160, RY + 180, PLAY ? 300 : 340, 9, 8)}
-  ${label(RX - 30, RY + (PLAY ? 700 : 800), '149,80 €', { bg: V, c: '#fff', r: -4, fs: PLAY ? 54 : 62 })}
-  ${text(false, 'Ton portefeuille TCG,<br>jeu par jeu.', 'Ce que pèse chaque jeu et chaque langue, et comment ça évolue.')}`]);
-
-S.push(['3-vitrine', `${ground(true, '#4A1FA0')}${phone('vitrine')}
-  ${real('carte-hyperia-241-mickey.jpg', RX + 40, RY - 20, PLAY ? 430 : 500, 9)}
-  ${text(true, 'Montre ta vitrine.', 'Tes plus belles cartes et tes scellés, rangés comme dans un classeur.')}`]);
-
-S.push(['4-langues', `${ground(false)}${phone('langues', { dark: false })}
-  ${real('carte-luffy-op05-119-p1-jp.png', RX + 40, RY - 20, PLAY ? 400 : 460, 8)}
-  <div class="abs" style="left:${RX - 20}px;top:${RY + (PLAY ? 640 : 740)}px;display:flex;gap:22px;z-index:9">${['fr', 'en', 'ja'].map((c, i) => `<img src="assets/drapeau-${c}.svg" style="width:${PLAY ? 140 : 160}px;height:${PLAY ? 93 : 106}px;object-fit:cover;border-radius:14px;box-shadow:0 12px 28px rgba(11,8,18,.3);transform:rotate(${[-5, 3, -2][i]}deg)">`).join('')}</div>
-  ${text(false, 'Français, anglais,<br>japonais.', 'Choisis les langues que tu collectionnes, jeu par jeu.')}`]);
-
-S.push(['5-missions', `${ground(true)}${phone('missions')}
-  ${coin(RX + 60, RY, PLAY ? 300 : 360, -10)}${coin(RX + 290, RY + (PLAY ? 300 : 360), PLAY ? 170 : 200, 14)}
-  ${label(RX - 30, RY + (PLAY ? 620 : 720), '+ 35 Boosties', { bg: SUN, c: DARK, r: -4 })}
-  ${text(true, 'Gagne des Boosties<br>chaque jour.', 'Des missions simples, une série de connexions, des récompenses.')}`]);
-
-S.push(['6-parrainage', `${ground(false)}${phone('parrainage', { dark: false })}
-  ${label(RX + 20, RY + 40, '150 pour lui', { bg: V, c: '#fff', r: -5, fs: PLAY ? 50 : 58 })}${label(RX + 80, RY + (PLAY ? 230 : 260), '100 pour toi', { bg: SUN, c: DARK, r: 4, fs: PLAY ? 50 : 58 })}
-  ${coin(RX + 120, RY + (PLAY ? 460 : 520), PLAY ? 220 : 260, -10)}
-  ${text(false, 'Invite tes potes,<br>gagnez des Boosties.', 'Ton code : 150 Boosties pour ton filleul, 100 pour toi.')}`]);
-
-S.push(['7-pass', `${ground(true, '#5B21B6')}${phone('pass')}
-  ${label(RX + 10, RY + 20, '2,99 €<span style="font-size:.5em"> /mois</span><div style="font-size:.36em;font-weight:600;margin-top:6px">jusqu’au 31/12/2027, puis 4,99 €</div>', { bg: SUN, c: DARK, r: -5, fs: PLAY ? 76 : 88, pad: '20px 34px' })}
-  ${label(RX + 40, RY + (PLAY ? 330 : 380), '+ 1 500 Boosties<br><span style="font-size:.75em">par mois payé</span>', { r: 4, fs: PLAY ? 38 : 44 })}
-  ${text(true, 'Va plus loin<br>avec le Pass.', 'En option : les 8 jeux, 30 alertes, 15 pré‑estimations par 30 jours, une wishlist de 30.')}`]);
-
+add('1-collection', 0, `${phone('accueil', 0)}${label(FREE(0), FY, '<span style="color:#1E9E6A">▲ +21,9 %</span><br><span style="font-size:.7em">en 30 jours</span>', { r: 5, fs: 50 })}
+  ${text('Ta collection,<br>sa vraie valeur.', 'Tes cartes de 8 TCG au même endroit, avec leur cote du jour.')}`);
+add('2-invest', 1, `${phone('invest', 1)}${label(FREE(1), FY, '149,80 €', { bg: V, c: '#fff', r: -5, fs: 58 })}
+  ${text('Ton portefeuille TCG,<br>jeu par jeu.', 'Ce que pèse chaque jeu et chaque langue, et comment ça évolue.')}`);
+add('3-vitrine', 2, `${phone('vitrine', 2)}${real('carte-hyperia-241-mickey.jpg', FREE(2) + 20, FY - 30, PLAY ? 260 : 290, 7, 7)}
+  ${text('Montre ta vitrine.', 'Tes plus belles cartes et tes scellés, rangés comme dans un classeur.')}`);
+add('4-langues', 3, `${phone('langues', 3)}<div class="abs" style="left:${FREE(3) + 10}px;top:${FY}px;display:flex;flex-direction:column;gap:24px;z-index:8">${['fr', 'en', 'ja'].map((c, i) => `<img src="assets/drapeau-${c}.svg" style="width:${PLAY ? 170 : 190}px;height:${PLAY ? 113 : 126}px;object-fit:cover;border-radius:16px;box-shadow:0 12px 28px rgba(11,8,18,.45);transform:rotate(${[-5, 3, -2][i]}deg)">`).join('')}</div>
+  ${text('Français, anglais,<br>japonais.', 'Choisis les langues que tu collectionnes, jeu par jeu.')}`);
+add('5-missions', 4, `${phone('missions', 4)}${label(FREE(4), FY, '+ 35<br><span style="font-size:.7em">Boosties</span>', { bg: SUN, c: DARK, r: 5, fs: 56 })}
+  ${text('Gagne des Boosties<br>chaque jour.', 'Des missions simples, une série de connexions, des récompenses.')}`);
+add('6-parrainage', 5, `${phone('parrainage', 5)}${label(FREE(5), FY, '150<br><span style="font-size:.6em">pour lui</span>', { bg: V, c: '#fff', r: -5, fs: 60 })}${label(FREE(5) + 30, FY + (PLAY ? 230 : 260), '100<br><span style="font-size:.6em">pour toi</span>', { bg: SUN, c: DARK, r: 4, fs: 60 })}
+  ${text('Invite tes potes,<br>gagnez des Boosties.', 'Ton code : 150 Boosties pour ton filleul, 100 pour toi.')}`);
+add('7-pass', 6, `${phone('pass', 6)}${label(FREE(6), FY, '2,99 €<div style="font-size:.4em">par mois</div><div style="font-size:.3em;font-weight:600;margin-top:6px">jusqu’au 31/12/2027,<br>puis 4,99 €</div>', { bg: SUN, c: DARK, r: 5, fs: 76, pad: '20px 28px' })}
+  ${text('Va plus loin<br>avec le Pass.', 'En option : les 8 jeux, 30 alertes, 15 pré‑estimations par 30 jours, une wishlist de 30.')}`);
 const games8 = ['pokemon', 'onepiece', 'lorcana', 'yugioh', 'magic', 'starwarsunlimited', 'dragonball', 'wow'];
-const FY = PLAY ? 260 : 320, FW = PLAY ? 220 : 250;
-S.push(['8-huit-tcg', `${ground(true, '#4A1FA0')}
-  ${games8.map((g, i) => { const a = (i - 3.5) * 8, rad = a * Math.PI / 180, R = PLAY ? 660 : 780; return dos(g, W / 2 - FW / 2 + Math.sin(rad) * R, FY + R - Math.cos(rad) * R, FW, a, 2 + i); }).join('')}
-  <img class="abs" src="assets/icone-app.png" style="left:${W / 2 - (PLAY ? 180 : 210)}px;top:${FY + (PLAY ? 330 : 400)}px;width:${PLAY ? 360 : 420}px;border-radius:${PLAY ? 82 : 96}px;box-shadow:0 0 60px rgba(167,139,250,.7), 0 30px 70px rgba(11,8,18,.6);transform:rotate(-4deg);z-index:20">
-  <div class="abs" style="left:0;width:${W}px;top:${FY + (PLAY ? 800 : 960)}px;display:flex;justify-content:center;gap:${PLAY ? 14 : 18}px;z-index:20">${games8.map((g) => `<div style="border-radius:50%;box-shadow:0 10px 24px rgba(11,8,18,.4)">${emblemDisc(g, PLAY ? 112 : 124)}</div>`).join('')}</div>
-  ${text(true, 'Les 8 TCG,<br>une seule appli.', 'Pokémon, One Piece, Lorcana, Yu-Gi-Oh!, Magic, Star Wars Unlimited, Dragon Ball, Warcraft.')}`]);
+const CX = W / 2 + 120, CY = PT + (PLAY ? 240 : 300), FW = PLAY ? 200 : 230;
+add('8-huit-tcg', 7, `${games8.map((g, i) => { const a = (i - 3.5) * 8, rad = a * Math.PI / 180, R = PLAY ? 560 : 660; return dos(g, CX - FW / 2 + Math.sin(rad) * R, CY + R - Math.cos(rad) * R, FW, a, 2 + i); }).join('')}
+  <img class="abs" src="assets/icone-app.png" style="left:${CX - (PLAY ? 170 : 200)}px;top:${CY + (PLAY ? 300 : 360)}px;width:${PLAY ? 340 : 400}px;border-radius:${PLAY ? 78 : 92}px;box-shadow:0 0 60px rgba(167,139,250,.7), 0 30px 70px rgba(11,8,18,.6);transform:rotate(4deg);z-index:20">
+  <div class="abs" style="left:${CX - 2 * ((PLAY ? 120 : 140) + (PLAY ? 18 : 22))}px;width:${4 * ((PLAY ? 120 : 140) + (PLAY ? 18 : 22))}px;top:${CY + (PLAY ? 780 : 920)}px;display:flex;flex-wrap:wrap;justify-content:center;gap:${PLAY ? 18 : 22}px;z-index:20">${games8.map((g) => `<div style="border-radius:50%;box-shadow:0 10px 24px rgba(11,8,18,.4)">${emblemDisc(g, PLAY ? 120 : 140)}</div>`).join('')}</div>
+  ${text('Les 8 TCG,<br>une seule appli.', 'Pokémon, One Piece, Lorcana, Yu-Gi-Oh!, Magic, Star Wars Unlimited, Dragon Ball, Warcraft.')}`);
 
 carousel(S);
 </script></body></html>
