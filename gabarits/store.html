@@ -23,71 +23,103 @@ document.head.insertAdjacentHTML('beforeend', `<style>
   .s { font-family: 'DM Sans'; font-weight: 700; text-align: center; }
   .hl { background: linear-gradient(120deg, #FF4FA0, #8B3DFF 55%, #3AA9FF); -webkit-background-clip: text; background-clip: text; color: transparent; }
 </style>`);
-// Layout (fourth round, 04/11/2026). TanPib: the text at the top, the phones
-// not always on the same side, and « que les 8 images se répondent ». So the
-// eight are one panorama: a continuous ground, the dashed path of our posts
-// running through all of them under the headlines, and at every second seam a
-// real card, a Boostie or card backs straddling two screenshots. The phone
-// alternates sides (left, tilted left; right, tilted right), which leaves the
-// seams with room on both sides free for those bridges.
-const PW = PLAY ? 700 : 880, PT = PLAY ? 660 : 800, N = 8;
-const PANOW = N * W;
-const phoneX = (k) => (k % 2 ? W - PW - 70 : 70), phoneR = (k) => (k % 2 ? 6 : -6);
-const FREE = (k) => (k % 2 ? 40 : W - (W - PW - 70) + 30); // left edge of the free column
-const text = (t, s) => `<div class="abs" style="left:90px;top:${PLAY ? 100 : 130}px;z-index:20">${wordmark(PLAY ? 50 : 58)}</div>
-  <div class="abs t" style="left:90px;right:90px;top:${PLAY ? 190 : 225}px;font-size:${PLAY ? 92 : 108}px;text-align:left;color:#fff;z-index:20">${t}</div>
-  <div class="abs s" style="left:90px;right:140px;top:${(PLAY ? 190 : 225) + (PLAY ? 92 : 108) * 2.1 + 30}px;font-size:${PLAY ? 34 : 40}px;line-height:1.32;text-align:left;font-weight:600;color:rgba(245,242,251,.62);z-index:20">${s}</div>`;
+// Layout (fifth round, 04/11/2026). TanPib: keep the panorama, but make it
+// coherent with boostz.fr's home page (its numbered sections, their colours,
+// titles and copy, the sticker phone and discs) and put the falling cards of
+// the app's login screen (mobile/src/components/CardRain.js: outlined cards
+// with a short bar, white at 14 %, tilted) in the ground.
+// Each screenshot is one section of the site: the kicker « 0N · SECTION » in
+// its colour, the title in white with its second line in the site's lavender,
+// one short line of the site's own copy; the phone as a sticker (white edge,
+// hard shadow), alternating sides; the eight share one ground, the rain, the
+// dashed wave, and a card, a Boostie or two card backs straddle every second seam.
+const PW = PLAY ? 620 : 760, PT = PLAY ? 720 : 880, N = 8, PANOW = N * W;
+const phoneX = (k) => (k % 2 ? W - PW - 80 : 80), phoneR = (k) => (k % 2 ? 4 : -4);
+const FREE = (k) => (k % 2 ? 50 : PW + 80 + 50);
+const TXT_BOTTOM = PT - (PLAY ? 90 : 110);
+const text = (kick, color, t, s) => `<div class="abs" style="left:90px;top:${PLAY ? 110 : 140}px;font-family:'DM Sans';font-weight:700;font-size:${PLAY ? 34 : 40}px;letter-spacing:.18em;text-transform:uppercase;color:${color};z-index:20">${kick}</div>
+  <div class="abs t" style="left:90px;right:90px;top:${PLAY ? 175 : 215}px;font-size:${PLAY ? 92 : 108}px;text-align:left;color:#fff;z-index:20">${t}</div>
+  <div class="abs" style="left:90px;right:120px;top:${(PLAY ? 175 : 215) + (PLAY ? 92 : 108) * 2.08 + 30}px;font-family:Exo;font-weight:600;font-size:${PLAY ? 36 : 42}px;line-height:1.45;color:#BFB9CB;z-index:20">${s}</div>`;
+const ACC = (x) => `<span style="color:#C4B5FD">${x}</span>`;
+const STB = PLAY ? 10 : 12, STS = PLAY ? 22 : 26; // sticker border and shadow at this scale
 const phone = (shot, k) => { const w = PW, h = w * 2.164;
-  return `<div class="abs" style="left:${phoneX(k)}px;top:${PT}px;width:${w}px;height:${h}px;transform:rotate(${phoneR(k)}deg);border-radius:${w * .13}px;background:#0B0812;border:${w * .006}px solid rgba(255,255,255,.18);box-shadow:0 ${w * .05}px ${w * .14}px rgba(11,8,18,.65);padding:${w * .026}px;z-index:5">
-    <div style="width:100%;height:100%;border-radius:${w * .105}px;overflow:hidden;background:#0B0812"><img src="shots/app-${shot}.jpg" style="width:100%;display:block"></div></div>`; };
-const glowCard = (src, x, y, w, r, z = 8) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;transform:rotate(${r}deg);border:${w * .022}px solid #E9DDFF;border-radius:${w * .06}px;overflow:hidden;box-shadow:0 0 ${w * .1}px rgba(167,139,250,.9), 0 0 ${w * .3}px rgba(124,58,237,.55), 0 ${w * .08}px ${w * .2}px rgba(11,8,18,.6);z-index:${z};background:#111"><img src="${src}" style="width:100%;height:100%;object-fit:cover;display:block"></div>`;
-const real = (img, x, y, w, r, z) => glowCard('assets/' + img, x, y, w, r, z);
-const dos = (g, x, y, w, r, z) => glowCard(`assets/dos-${g}.svg`, x, y, w, r, z);
-const label = (x, y, html, o = {}) => `<div class="abs ui" style="left:${x}px;top:${y}px;padding:${o.pad || '22px 34px'};background:${o.bg || '#fff'};color:${o.c || INKD};font-size:${o.fs || 46}px;border-radius:28px;box-shadow:0 0 40px rgba(124,58,237,.5), 0 18px 40px rgba(11,8,18,.4);transform:rotate(${o.r || 0}deg);white-space:nowrap;z-index:${o.z || 9}">${html}</div>`;
+  return `<div class="abs" style="left:${phoneX(k)}px;top:${PT}px;width:${w}px;height:${h}px;transform:rotate(${phoneR(k)}deg);border-radius:${w * .14}px;background:#1D1730;border:${STB}px solid ${INK};box-shadow:${STS}px ${STS}px 0 ${SHADOW};overflow:hidden;z-index:5"><img src="shots/app-${shot}.jpg" style="width:100%;display:block"></div>`; };
+// Stickers as on the site: a card, a disc with an icon, a small panel, a label.
+const stc = (src, x, y, w, r, z = 9) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;transform:rotate(${r}deg);border:${STB}px solid ${INK};border-radius:${w * .07}px;box-shadow:${STS * .8}px ${STS * .8}px 0 ${SHADOW};overflow:hidden;z-index:${z};background:#1D1730"><img src="${src}" style="width:100%;height:100%;object-fit:cover;display:block"></div>`;
+const real = (img, x, y, w, r, z) => stc('assets/' + img, x, y, w, r, z);
+const dos = (g, x, y, w, r, z) => stc(`assets/dos-${g}.svg`, x, y, w, r, z);
+const sdisc = (x, y, d, bg, svg, z = 9) => `<div class="abs" style="left:${x}px;top:${y}px;width:${d}px;height:${d}px;border-radius:50%;background:${bg};border:${STB}px solid ${INK};box-shadow:${STS * .7}px ${STS * .7}px 0 ${SHADOW};display:flex;align-items:center;justify-content:center;z-index:${z}">${svg}</div>`;
+const ico = (d, size = 120) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="#1A1424" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const panel = (x, y, w, inner, r = 0, z = 9) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;padding:${PLAY ? '26px 30px' : '30px 36px'};background:#1D1730;border:${STB}px solid ${INK};border-radius:44px;box-shadow:${STS}px ${STS}px 0 ${SHADOW};transform:rotate(${r}deg);z-index:${z}">${inner}</div>`;
+const pl = (t) => `<div class="ui" style="font-size:${PLAY ? 30 : 34}px;color:#A8A2B8">${t}</div>`;
 const B = 'M39.9 25.2 Q39.9 22.4 42.7 22.4 L44.3 22.4 Q47.1 22.4 47.1 25.2 L47.1 39.9 Q49.9 37.8 53.6 37.8 Q59.4 37.8 63.1 41.9 Q66.8 46 66.8 52.9 Q66.8 59.8 63.1 63.9 Q59.4 68 53.6 68 Q49.6 68 46.8 65.6 L46.8 65.7 Q46.6 68 44 68 L42.7 68 Q39.9 68 39.9 65.2 Z M53.2 44.4 Q50.1 44.4 48.2 46.7 Q46.3 49 46.3 52.9 Q46.3 56.8 48.2 59.1 Q50.1 61.4 53.2 61.4 Q56.3 61.4 58.2 59.1 Q60.1 56.8 60.1 52.9 Q60.1 49 58.2 46.7 Q56.3 44.4 53.2 44.4 Z';
 let cid = 0;
-const coin = (x, y, d, r = 0, z = 9) => { const g = 'cg' + cid++; return `<svg class="abs" width="${d}" height="${d}" viewBox="0 0 100 100" style="left:${x}px;top:${y}px;transform:rotate(${r}deg);z-index:${z};filter:drop-shadow(0 ${d * .08}px ${d * .12}px rgba(11,8,18,.5));overflow:visible"><defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD84D"/><stop offset="1" stop-color="#E08A00"/></linearGradient></defs><circle cx="50" cy="50" r="47" fill="url(#${g})"/><circle cx="50" cy="50" r="37" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3"/><g transform="translate(50 46) scale(1.25) translate(-53 -45)"><path d="${B}" fill="#fff"/></g></svg>`; };
+const coin = (x, y, d, r = 0, z = 9) => { const g = 'cg' + cid++; return `<svg class="abs" width="${d}" height="${d}" viewBox="0 0 100 100" style="left:${x}px;top:${y}px;transform:rotate(${r}deg);z-index:${z};filter:drop-shadow(${d * .07}px ${d * .07}px 0 ${SHADOW});overflow:visible"><defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD84D"/><stop offset="1" stop-color="#E08A00"/></linearGradient></defs><circle cx="50" cy="50" r="46" fill="url(#${g})" stroke="${INK}" stroke-width="5"/><circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3"/><g transform="translate(50 46) scale(1.25) translate(-53 -45)"><path d="${B}" fill="#fff"/></g></svg>`; };
+const label = (x, y, html, o = {}) => `<div class="abs ui" style="left:${x}px;top:${y}px;padding:${o.pad || '20px 32px'};background:${o.bg || SUN};color:${o.c || DARK};font-size:${o.fs || (PLAY ? 40 : 46)}px;line-height:1.1;border:${STB}px solid ${INK};border-radius:34px;box-shadow:${STS * .8}px ${STS * .8}px 0 ${SHADOW};transform:rotate(${o.r || 0}deg);white-space:nowrap;z-index:${o.z || 10}">${html}</div>`;
 
-// The panorama, drawn once in panorama coordinates (x from 0 to 8 W) and shown
-// through each screenshot at its own offset.
-const seam = (k) => (k + 1) * W; // between screenshot k and k + 1
-const PY = PT - (PLAY ? 50 : 70);
-const path = (() => { let d = `M 0 ${PY}`; for (let i = 0; i < N * 4; i++) { const x0 = i * W / 4, x1 = x0 + W / 4; d += ` Q ${x0 + W / 8} ${PY + (i % 2 ? 46 : -46)} ${x1} ${PY}`; } return d; })();
-const PANO = `<div class="abs" style="left:0;top:0;width:${PANOW}px;height:${H}px;background:linear-gradient(90deg, #120A2A 0%, #22114A 14%, #2A1458 27%, #1A1440 40%, #112045 52%, #1F1048 64%, #2E1065 77%, #22114A 89%, #120A2A 100%)"></div>
-  ${[0, 2, 4, 6].map((k) => `<div class="abs" style="left:${seam(k) - 700}px;top:${PT + 200}px;width:1400px;height:1400px;border-radius:50%;background:radial-gradient(circle, rgba(139,61,255,.42), rgba(139,61,255,0) 65%)"></div>`).join('')}
-  <svg class="abs" width="${PANOW}" height="${H}" style="left:0;top:0;z-index:4"><path d="${path}" fill="none" stroke="rgba(196,181,253,.55)" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 30"/></svg>`;
+// The panorama: ground, the login screen's card rain, the dashed wave, bridges.
+const seam = (k) => (k + 1) * W;
+const rnd = (() => { let x = 7; return () => (x = (x * 9301 + 49297) % 233280) / 233280; })();
+const RAIN = Array.from({ length: N * 13 }, (_, i) => { const h = (PLAY ? 70 : 84) + rnd() * (PLAY ? 70 : 84), x = rnd() * PANOW, y = TXT_BOTTOM + 40 + rnd() * (H - TXT_BOTTOM - 40), r = (rnd() < .5 ? -1 : 1) * (6 + rnd() * 10);
+  return `<div class="abs" style="left:${x}px;top:${y}px;width:${h * .72}px;height:${h}px;border:${PLAY ? 4 : 4.5}px solid rgba(255,255,255,.14);border-radius:${h * .13}px;transform:rotate(${r}deg)"><div style="width:60%;height:${PLAY ? 7 : 8}px;margin:${PLAY ? 7 : 8}px auto 0;border-radius:4px;background:rgba(255,255,255,.14)"></div></div>`; }).join('');
+const WY = TXT_BOTTOM + (PLAY ? 30 : 40);
+const wave = (() => { let d = `M 0 ${WY}`; for (let i = 0; i < N * 2; i++) { const x0 = i * W / 2; d += ` C ${x0 + W / 6} ${WY - 60} ${x0 + W / 3} ${WY + 60} ${x0 + W / 2} ${WY}`; } return d; })();
+const PANO = `<div class="abs" style="left:0;top:0;width:${PANOW}px;height:${H}px;background:linear-gradient(90deg, #120D24, #17112E 25%, #1A1336 50%, #17112E 75%, #120D24)"></div>
+  ${[0, 2, 4, 6].map((k) => `<div class="abs" style="left:${seam(k) - 650}px;top:${PT + 250}px;width:1300px;height:1300px;border-radius:50%;background:radial-gradient(circle, rgba(124,58,237,.30), rgba(124,58,237,0) 65%)"></div>`).join('')}
+  ${RAIN}
+  <svg class="abs" width="${PANOW}" height="${H}" style="left:0;top:0;z-index:4"><path d="${wave}" fill="none" stroke="rgba(196,181,253,.5)" stroke-width="${PLAY ? 8 : 9}" stroke-linecap="round" stroke-dasharray="${PLAY ? '26 22' : '30 26'}"/></svg>`;
+const BY = PT + (PLAY ? 760 : 920);
 const BRIDGES = [
-  real('carte-dracaufeu-ex-sv035-199.jpg', seam(0) - 200, PT + 640, PLAY ? 360 : 400, 9, 9),
-  real('carte-luffy-op05-119-p1-jp.png', seam(2) - 190, PT + 560, PLAY ? 340 : 380, -8, 9),
-  coin(seam(4) - 170, PT + 640, 340, -12) + coin(seam(4) - 330, PT + 1040, 150, 16) + coin(seam(4) + 200, PT + 380, 120, -20),
-  dos('pokemon', seam(6) - 260, PT + 600, 300, -12, 8) + dos('lorcana', seam(6) - 60, PT + 680, 300, 10, 9),
+  real('carte-dracaufeu-ex-sv035-199.jpg', seam(0) - 190, BY, PLAY ? 340 : 380, 8),
+  real('carte-luffy-op05-119-p1-jp.png', seam(2) - 180, BY - 60, PLAY ? 330 : 360, -7),
+  coin(seam(4) - 165, BY, PLAY ? 290 : 330, -12) + coin(seam(4) + 170, BY + (PLAY ? 330 : 380), 130, 16),
+  dos('pokemon', seam(6) - 250, BY - 40, PLAY ? 260 : 290, -11, 8) + dos('lorcana', seam(6) - 30, BY + 40, PLAY ? 260 : 290, 9, 9),
 ].join('');
 const pano = (k) => `<div class="abs" style="left:${-k * W}px;top:0;width:${PANOW}px;height:${H}px">${PANO}<div class="abs" style="left:0;top:0;width:${PANOW}px;height:${H}px;z-index:9">${BRIDGES}</div></div>`;
-// Per screenshot, on its free side, higher than the bridges.
 const S = [];
 const add = (id, k, inner) => S.push([id, `${pano(k)}${inner}`]);
-const FY = PT + (PLAY ? 120 : 160);
+const FY = PT + (PLAY ? 80 : 100), FW = W - PW - 80 - 50 - 50; // the free column's top and width
 
-add('1-collection', 0, `${phone('accueil', 0)}${label(FREE(0), FY, '<span style="color:#1E9E6A">▲ +21,9 %</span><br><span style="font-size:.7em">en 30 jours</span>', { r: 5, fs: 50 })}
-  ${text('Ta collection,<br>sa vraie valeur.', 'Tes cartes de 8 TCG au même endroit, avec leur cote du jour.')}`);
-add('2-invest', 1, `${phone('invest', 1)}${label(FREE(1), FY, '149,80 €', { bg: V, c: '#fff', r: -5, fs: 58 })}
-  ${text('Ton portefeuille TCG,<br>jeu par jeu.', 'Ce que pèse chaque jeu et chaque langue, et comment ça évolue.')}`);
-add('3-vitrine', 2, `${phone('vitrine', 2)}${real('carte-hyperia-241-mickey.jpg', FREE(2) + 20, FY - 30, PLAY ? 260 : 290, 7, 7)}
-  ${text('Montre ta vitrine.', 'Tes plus belles cartes et tes scellés, rangés comme dans un classeur.')}`);
-add('4-langues', 3, `${phone('langues', 3)}<div class="abs" style="left:${FREE(3) + 10}px;top:${FY}px;display:flex;flex-direction:column;gap:24px;z-index:8">${['fr', 'en', 'ja'].map((c, i) => `<img src="assets/drapeau-${c}.svg" style="width:${PLAY ? 170 : 190}px;height:${PLAY ? 113 : 126}px;object-fit:cover;border-radius:16px;box-shadow:0 12px 28px rgba(11,8,18,.45);transform:rotate(${[-5, 3, -2][i]}deg)">`).join('')}</div>
-  ${text('Français, anglais,<br>japonais.', 'Choisis les langues que tu collectionnes, jeu par jeu.')}`);
-add('5-missions', 4, `${phone('missions', 4)}${label(FREE(4), FY, '+ 35<br><span style="font-size:.7em">Boosties</span>', { bg: SUN, c: DARK, r: 5, fs: 56 })}
-  ${text('Gagne des Boosties<br>chaque jour.', 'Des missions simples, une série de connexions, des récompenses.')}`);
-add('6-parrainage', 5, `${phone('parrainage', 5)}${label(FREE(5), FY, '150<br><span style="font-size:.6em">pour lui</span>', { bg: V, c: '#fff', r: -5, fs: 60 })}${label(FREE(5) + 30, FY + (PLAY ? 230 : 260), '100<br><span style="font-size:.6em">pour toi</span>', { bg: SUN, c: DARK, r: 4, fs: 60 })}
-  ${text('Invite tes potes,<br>gagnez des Boosties.', 'Ton code : 150 Boosties pour ton filleul, 100 pour toi.')}`);
-add('7-pass', 6, `${phone('pass', 6)}${label(FREE(6), FY, '2,99 €<div style="font-size:.4em">par mois</div><div style="font-size:.3em;font-weight:600;margin-top:6px">jusqu’au 31/12/2027,<br>puis 4,99 €</div>', { bg: SUN, c: DARK, r: 5, fs: 76, pad: '20px 28px' })}
-  ${text('Va plus loin<br>avec le Pass.', 'En option : les 8 jeux, 30 alertes, 15 pré‑estimations par 30 jours, une wishlist de 30.')}`);
+add('1-collection', 0, `${phone('accueil', 0)}
+  ${sdisc(FREE(0) + 40, FY, PLAY ? 170 : 200, '#C4B5FD', ico('<path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M4 12h16"/>', PLAY ? 80 : 96))}
+  ${panel(FREE(0) - 20, FY + (PLAY ? 230 : 270), FW + 20, `${pl('Progression')}<div style="height:18px;border-radius:9px;background:#2A2140;margin-top:16px;overflow:hidden"><div style="width:62%;height:100%;background:#5FD3A3;border-radius:9px"></div></div>`, 3)}
+  ${text('01 · Collection', '#C4B5FD', `Ta collection,<br>${ACC('rangée toute seule.')}`, 'Chaque carte scannée est reconnue et rangée.')}`);
+
+add('2-langues', 1, `${phone('langues', 1)}
+  <div class="abs" style="left:${FREE(1) + 10}px;top:${FY}px;display:flex;flex-direction:column;gap:${PLAY ? 26 : 32}px;z-index:9">${['fr', 'en', 'ja'].map((c, i) => `<img src="assets/drapeau-${c}.svg" style="width:${PLAY ? 190 : 220}px;height:${PLAY ? 126 : 146}px;object-fit:cover;border:${STB}px solid ${INK};border-radius:22px;box-shadow:${STS * .7}px ${STS * .7}px 0 ${SHADOW};transform:rotate(${[-5, 4, -3][i]}deg)">`).join('')}</div>
+  ${text('02 · Langues', '#FF7AB8', `Ta langue,<br>${ACC('ta cote.')}`, 'Une carte japonaise et la même en français n’ont pas le même prix.')}`);
+
+add('3-investissement', 2, `${phone('invest', 2)}
+  ${label(FREE(2), FY, '149,80 €', { bg: '#5FD3A3', r: 4, fs: PLAY ? 54 : 62 })}
+  ${panel(FREE(2) - 10, FY + (PLAY ? 200 : 240), FW + 10, `${pl('En 30 jours')}<div class="ui" style="font-size:${PLAY ? 46 : 54}px;color:#5FD3A3;margin-top:8px;white-space:nowrap">▲ +24,8&nbsp;%</div>`, -3)}
+  ${text('03 · Investissement', '#5FD3A3', `Ce que vaut<br>${ACC('ta collection.')}`, 'La cote de tes cartes et de tes scellés, jeu par jeu.')}`);
+
+add('4-vitrine', 3, `${phone('vitrine', 3)}
+  ${real('carte-hyperia-241-mickey.jpg', FREE(3) + 20, FY - 20, PLAY ? 250 : 290, -6)}
+  ${sdisc(FREE(3) + (PLAY ? 120 : 140), FY + (PLAY ? 380 : 440), PLAY ? 150 : 170, SUN, ico('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>', PLAY ? 70 : 82))}
+  ${text('Ta vitrine', '#F0C066', `Tes plus belles cartes,<br>${ACC('bien rangées.')}`, 'Tes cartes et tes scellés, comme dans un classeur.')}`);
+
+add('5-missions', 4, `${phone('missions', 4)}
+  ${label(FREE(4), FY, '+ 35<br>Boosties', { r: 4 })}
+  ${panel(FREE(4) - 10, FY + (PLAY ? 190 : 220), FW + 10, `${pl('Aujourd’hui')}<div class="ui" style="font-size:${PLAY ? 46 : 54}px;color:#F0C066;margin-top:8px;white-space:nowrap">55 / 100</div>`, -3)}
+  ${text('08 · Missions et Boosties', '#F0C066', `Relève des missions,<br>${ACC('gagne des Boosties.')}`, 'Missions, hauts faits, cartes ajoutées au catalogue : tout rapporte.')}`);
+
+add('6-parrainage', 5, `${phone('parrainage', 5)}
+  ${label(FREE(5), FY, '150 pour lui', { bg: '#C4B5FD', r: -5 })}${label(FREE(5) + 20, FY + (PLAY ? 170 : 200), '100 pour toi', { r: 4 })}
+  ${text('09 · Parrainage', '#C4B5FD', `Invite tes amis,<br>${ACC('gagnez tous les deux.')}`, 'Ton ami reçoit 150 Boosties, et toi 100.')}`);
+
+add('7-pass', 6, `${phone('pass', 6)}
+  ${label(FREE(6), FY, '2,99 €<span style="font-size:.55em"> /mois</span>', { r: 4, fs: PLAY ? 58 : 66 })}
+  ${panel(FREE(6) - 10, FY + (PLAY ? 210 : 250), FW + 10, `${pl('Prix de lancement')}<div class="ui" style="font-size:${PLAY ? 32 : 36}px;color:#F5C542;margin-top:8px;line-height:1.25">jusqu’au<br>31/12/2027</div>`, -3)}
+  ${text('10 · BoostZ Pass', '#F5C542', `Le compte est gratuit,<br>${ACC('le Pass en option.')}`, 'Les 8 jeux, 30 alertes, 15 pré‑estimations par 30 jours, une wishlist de 30.')}`);
+
 const games8 = ['pokemon', 'onepiece', 'lorcana', 'yugioh', 'magic', 'starwarsunlimited', 'dragonball', 'wow'];
-const CX = W / 2 + 120, CY = PT + (PLAY ? 240 : 300), FW = PLAY ? 200 : 230;
-add('8-huit-tcg', 7, `${games8.map((g, i) => { const a = (i - 3.5) * 8, rad = a * Math.PI / 180, R = PLAY ? 560 : 660; return dos(g, CX - FW / 2 + Math.sin(rad) * R, CY + R - Math.cos(rad) * R, FW, a, 2 + i); }).join('')}
-  <img class="abs" src="assets/icone-app.png" style="left:${CX - (PLAY ? 170 : 200)}px;top:${CY + (PLAY ? 300 : 360)}px;width:${PLAY ? 340 : 400}px;border-radius:${PLAY ? 78 : 92}px;box-shadow:0 0 60px rgba(167,139,250,.7), 0 30px 70px rgba(11,8,18,.6);transform:rotate(4deg);z-index:20">
-  <div class="abs" style="left:${CX - 2 * ((PLAY ? 120 : 140) + (PLAY ? 18 : 22))}px;width:${4 * ((PLAY ? 120 : 140) + (PLAY ? 18 : 22))}px;top:${CY + (PLAY ? 780 : 920)}px;display:flex;flex-wrap:wrap;justify-content:center;gap:${PLAY ? 18 : 22}px;z-index:20">${games8.map((g) => `<div style="border-radius:50%;box-shadow:0 10px 24px rgba(11,8,18,.4)">${emblemDisc(g, PLAY ? 120 : 140)}</div>`).join('')}</div>
-  ${text('Les 8 TCG,<br>une seule appli.', 'Pokémon, One Piece, Lorcana, Yu-Gi-Oh!, Magic, Star Wars Unlimited, Dragon Ball, Warcraft.')}`);
+const CX = W / 2 + 120, CY = PT - (PLAY ? 20 : 0), CW = PLAY ? 200 : 230;
+add('8-huit-tcg', 7, `${games8.map((g, i) => { const a = (i - 3.5) * 9, rad = a * Math.PI / 180, R = PLAY ? 560 : 660; return dos(g, CX - CW / 2 + Math.sin(rad) * R, CY + R - Math.cos(rad) * R, CW, a, 2 + i); }).join('')}
+  <img class="abs" src="assets/icone-app.png" style="left:${CX - (PLAY ? 170 : 200)}px;top:${CY + (PLAY ? 300 : 360)}px;width:${PLAY ? 340 : 400}px;border:${STB}px solid ${INK};border-radius:${PLAY ? 80 : 94}px;box-shadow:${STS}px ${STS}px 0 ${SHADOW};transform:rotate(4deg);z-index:20">
+  <div class="abs" style="left:${CX - 2 * ((PLAY ? 120 : 140) + 24)}px;width:${4 * ((PLAY ? 120 : 140) + 24)}px;top:${CY + (PLAY ? 760 : 900)}px;display:flex;flex-wrap:wrap;justify-content:center;gap:24px;z-index:20">${games8.map((g) => emblemDisc(g, PLAY ? 120 : 140)).join('')}</div>
+  <div class="abs" style="left:${CX - 400}px;width:800px;top:${CY + (PLAY ? 1110 : 1310)}px;display:flex;justify-content:center;z-index:20">${wordmark(PLAY ? 110 : 130)}</div>
+  ${text('8 TCG couverts', '#C4B5FD', `8 TCG couverts.<br>${ACC('Une seule app.')}`, 'Pokémon, One Piece, Lorcana, Yu-Gi-Oh!, Magic, Star Wars Unlimited, Dragon Ball, Warcraft.')}`);
 
 carousel(S);
 </script></body></html>
