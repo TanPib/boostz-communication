@@ -23,92 +23,76 @@ document.head.insertAdjacentHTML('beforeend', `<style>
   .s { font-family: 'DM Sans'; font-weight: 700; text-align: center; }
   .hl { background: linear-gradient(120deg, #FF4FA0, #8B3DFF 55%, #3AA9FF); -webkit-background-clip: text; background-clip: text; color: transparent; }
 </style>`);
-// Layout: the headline band, then the phone, larger on the taller App Store canvas.
-const PW = PLAY ? 690 : 840, PT = PLAY ? 640 : 760;
+// Layout (third round, 04/11/2026). TanPib found the first round less clean than
+// the store set already online (« surtout le texte en blanc ou noir ») and
+// pointed to its first visual as the model: the phone up top, tilted and cut
+// by the edge; one hero element bursting out of it on the right, lit by a soft
+// glow; the small wordmark, then the headline in plain white or black and a
+// quiet line, bottom left. At most one label and a couple of Boosties each.
+const PW = PLAY ? 680 : 820, PY = PLAY ? 70 : 110, PXL = PLAY ? 110 : 110;
 const ground = (dark, glow = '#3B1D7A') => dark
-  ? `<div class="abs" style="inset:0;background:radial-gradient(ellipse at 50% 62%, ${glow} 0%, #1B1330 45%, #0B0812 100%)"></div>`
-  : `<div class="abs" style="inset:0;background:radial-gradient(ellipse at 50% 60%, #FFFFFF 0%, ${LIGHT} 55%, #E7E0F6 100%)"></div>`;
-const title = (dark, t, s) => `<div class="abs t" style="left:70px;right:70px;top:${PLAY ? 120 : 150}px;font-size:${PLAY ? 104 : 118}px;color:${dark ? '#fff' : INKD}">${t}</div>
-  <div class="abs s" style="left:110px;right:110px;top:${PLAY ? 400 : 470}px;font-size:${PLAY ? 40 : 46}px;line-height:1.3;color:${dark ? 'rgba(245,242,251,.72)' : '#5B5470'}">${s}</div>`;
-// A phone holding a real capture, with our white outline and hard shadow.
-const phone = (shot, o = {}) => { const w = o.w || PW, h = w * 2.164, x = o.x ?? (W - w) / 2, y = o.y ?? PT;
-  return `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;transform:rotate(${o.r || 0}deg);border-radius:${w * .13}px;background:#05040A;border:${w * .012}px solid ${o.dark === false ? INKD : INK};box-shadow:${w * .03}px ${w * .03}px 0 ${o.dark === false ? 'rgba(27,19,48,.85)' : SHADOW}, 0 40px 90px rgba(11,8,18,.45);padding:${w * .028}px;z-index:${o.z || 3}">
-    <div style="width:100%;height:100%;border-radius:${w * .105}px;overflow:hidden;background:#0B0812"><img src="shots/app-${shot}.jpg" style="width:100%;display:block"></div>
-    <div style="position:absolute;left:50%;top:${w * .045}px;width:${w * .3}px;height:${w * .085}px;margin-left:${-w * .15}px;border-radius:${w * .05}px;background:#05040A"></div></div>`; };
-// A real card scan, a sticker label, the Boosties coin, a sparkle, the app icon.
-const cardS = (img, x, y, w, r, z = 4) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;transform:rotate(${r}deg);border:${w * .04}px solid ${INK};border-radius:${w * .06}px;overflow:hidden;box-shadow:${w * .06}px ${w * .06}px 0 ${SHADOW};z-index:${z};background:#111"><img src="assets/${img}" style="width:100%;height:100%;object-fit:cover;display:block"></div>`;
-const tag = (x, y, html, o = {}) => `<div class="abs ui" style="left:${x}px;top:${y}px;padding:${o.pad || '22px 34px'};background:${o.bg || SUN};color:${o.c || DARK};font-size:${o.fs || 48}px;border:7px solid ${INK};border-radius:30px;box-shadow:12px 12px 0 ${SHADOW};transform:rotate(${o.r || 0}deg);white-space:nowrap;z-index:${o.z || 6}">${html}</div>`;
+  ? `<div class="abs" style="inset:0;background:radial-gradient(ellipse at 55% 32%, ${glow} 0%, #1B1330 50%, #0B0812 100%)"></div>`
+  : `<div class="abs" style="inset:0;background:radial-gradient(ellipse at 55% 32%, #FFFFFF 0%, ${LIGHT} 55%, #E9E3F7 100%)"></div>`;
+const TB = H - (PLAY ? 640 : 760); // top of the text block
+const text = (dark, t, s) => `<div class="abs" style="left:90px;top:${TB}px;z-index:20">${wordmark(PLAY ? 52 : 60).replace('color:#fff', 'color:' + (dark ? '#fff' : INKD))}</div>
+  <div class="abs t" style="left:90px;right:90px;top:${TB + (PLAY ? 100 : 115)}px;font-size:${PLAY ? 96 : 112}px;text-align:left;color:${dark ? '#fff' : INKD};z-index:20">${t}</div>
+  <div class="abs s" style="left:90px;right:150px;top:${TB + (PLAY ? 100 : 115) + (PLAY ? 96 : 112) * 2.1 + 34}px;font-size:${PLAY ? 36 : 42}px;line-height:1.32;text-align:left;font-weight:600;color:${dark ? 'rgba(245,242,251,.62)' : '#625B78'};z-index:20">${s}</div>`;
+const phone = (shot, o = {}) => { const w = o.w || PW, h = w * 2.164, x = o.x ?? PXL, y = o.y ?? PY, dark = o.dark !== false;
+  return `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;transform:rotate(${o.r ?? -7}deg);border-radius:${w * .13}px;background:#0B0812;border:${w * .006}px solid ${dark ? 'rgba(255,255,255,.18)' : 'rgba(27,19,48,.25)'};box-shadow:0 ${w * .05}px ${w * .14}px rgba(11,8,18,${dark ? .65 : .3});padding:${w * .026}px;z-index:${o.z || 3}">
+    <div style="width:100%;height:100%;border-radius:${w * .105}px;overflow:hidden;background:#0B0812"><img src="shots/app-${shot}.jpg" style="width:100%;display:block"></div></div>`; };
+// The hero: a real card with a glowing violet edge, as on the original visual.
+const glowCard = (src, x, y, w, r, z = 8) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;transform:rotate(${r}deg);border:${w * .022}px solid #E9DDFF;border-radius:${w * .06}px;overflow:hidden;box-shadow:0 0 ${w * .1}px rgba(167,139,250,.9), 0 0 ${w * .3}px rgba(124,58,237,.55), 0 ${w * .08}px ${w * .2}px rgba(11,8,18,.6);z-index:${z};background:#111"><img src="${src}" style="width:100%;height:100%;object-fit:cover;display:block"></div>`;
+const real = (img, x, y, w, r, z) => glowCard('assets/' + img, x, y, w, r, z);
+const dos = (g, x, y, w, r, z) => glowCard(`assets/dos-${g}.svg`, x, y, w, r, z);
+const label = (x, y, html, o = {}) => `<div class="abs ui" style="left:${x}px;top:${y}px;padding:${o.pad || '22px 34px'};background:${o.bg || '#fff'};color:${o.c || INKD};font-size:${o.fs || 46}px;border-radius:28px;box-shadow:0 0 40px rgba(124,58,237,.5), 0 18px 40px rgba(11,8,18,.4);transform:rotate(${o.r || 0}deg);white-space:nowrap;z-index:${o.z || 9}">${html}</div>`;
 const B = 'M39.9 25.2 Q39.9 22.4 42.7 22.4 L44.3 22.4 Q47.1 22.4 47.1 25.2 L47.1 39.9 Q49.9 37.8 53.6 37.8 Q59.4 37.8 63.1 41.9 Q66.8 46 66.8 52.9 Q66.8 59.8 63.1 63.9 Q59.4 68 53.6 68 Q49.6 68 46.8 65.6 L46.8 65.7 Q46.6 68 44 68 L42.7 68 Q39.9 68 39.9 65.2 Z M53.2 44.4 Q50.1 44.4 48.2 46.7 Q46.3 49 46.3 52.9 Q46.3 56.8 48.2 59.1 Q50.1 61.4 53.2 61.4 Q56.3 61.4 58.2 59.1 Q60.1 56.8 60.1 52.9 Q60.1 49 58.2 46.7 Q56.3 44.4 53.2 44.4 Z';
 let cid = 0;
-const coin = (x, y, d, r = 0, z = 5, blur = 0) => { const g = 'cg' + cid++; return `<svg class="abs" width="${d}" height="${d}" viewBox="0 0 100 100" style="left:${x}px;top:${y}px;transform:rotate(${r}deg);z-index:${z};filter:${blur ? `blur(${blur}px)` : `drop-shadow(${d * .06}px ${d * .07}px 0 ${SHADOW})`};overflow:visible"><defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD84D"/><stop offset="1" stop-color="#E08A00"/></linearGradient></defs><circle cx="50" cy="50" r="46" fill="url(#${g})" stroke="${INK}" stroke-width="5"/><circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3"/><g transform="translate(50 46) scale(1.25) translate(-53 -45)"><path d="${B}" fill="#fff"/></g></svg>`; };
-const spark = (x, y, s, c = '#fff', z = 2) => `<svg class="abs" width="${2 * s}" height="${2 * s}" viewBox="-1 -1 2 2" style="left:${x - s}px;top:${y - s}px;z-index:${z};overflow:visible"><path d="M0 -1 Q.12 -.12 1 0 Q.12 .12 0 1 Q-.12 .12 -1 0 Q-.12 -.12 0 -1Z" fill="${c}"/></svg>`;
-const icon = (x, y, d, r = 0, z = 6) => `<img class="abs" src="assets/icone-app.png" style="left:${x}px;top:${y}px;width:${d}px;height:${d}px;border-radius:${d * .23}px;border:${d * .04}px solid ${INK};box-shadow:${d * .06}px ${d * .06}px 0 ${SHADOW};transform:rotate(${r}deg);z-index:${z}">`;
-const gdisc = (game, x, y, d, r = 0, z = 5) => `<div class="abs" style="left:${x}px;top:${y}px;transform:rotate(${r}deg);z-index:${z}">${emblemDisc(game, d)}</div>`;
-const flag = (c, x, y, w, r = 0, z = 6) => `<img class="abs" src="assets/drapeau-${c}.svg" style="left:${x}px;top:${y}px;width:${w}px;height:${w * .66}px;object-fit:cover;border:7px solid ${INK};border-radius:18px;box-shadow:10px 10px 0 ${SHADOW};transform:rotate(${r}deg);z-index:${z}">`;
-const sback = (g, x, y, w, r, z = 2, op = 1) => `<img class="abs" src="assets/dos-${g}.svg" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 1.4}px;border:${w * .04}px solid ${INK};border-radius:${w * .07}px;box-shadow:${w * .05}px ${w * .05}px 0 ${SHADOW};transform:rotate(${r}deg);z-index:${z};opacity:${op}">`;
-const mid = PT + PW * 1.0; // a band level with the middle of the phone
+const coin = (x, y, d, r = 0, z = 9) => { const g = 'cg' + cid++; return `<svg class="abs" width="${d}" height="${d}" viewBox="0 0 100 100" style="left:${x}px;top:${y}px;transform:rotate(${r}deg);z-index:${z};filter:drop-shadow(0 ${d * .08}px ${d * .12}px rgba(11,8,18,.5));overflow:visible"><defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD84D"/><stop offset="1" stop-color="#E08A00"/></linearGradient></defs><circle cx="50" cy="50" r="47" fill="url(#${g})"/><circle cx="50" cy="50" r="37" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3"/><g transform="translate(50 46) scale(1.25) translate(-53 -45)"><path d="${B}" fill="#fff"/></g></svg>`; };
+// The right side, level with the lower half of the phone.
+const RX = W - (PLAY ? 520 : 600), RY = PLAY ? 430 : 600;
 const S = [];
 
-// 1 - The hook: your collection and what it is worth.
-S.push(['1-collection', `${ground(true)}${title(true, 'Ta collection,<br><span class="hl">sa vraie valeur.</span>', 'Tes cartes de 8 TCG au même endroit, avec leur cote du jour.')}
-  ${phone('accueil')}
-  ${cardS('carte-dracaufeu-ex-sv035-199.jpg', 40, PT + 120, 300, -14)}${cardS('carte-valgavoth-dsk-407.jpg', W - 330, PT + 60, 290, 12)}${cardS('carte-elsa-enchantee-tfc-207.avif', W - 300, mid + 260, 260, -8)}
-  ${tag(30, PT + 640, '+21,9 %<br><span style="font-size:.6em">en 30 jours</span>', { bg: DONE, r: -6, pad: '18px 30px' })}
-  ${coin(110, mid + 420, 130, -12)}${coin(W - 250, PT - 80, 110, 18)}${spark(260, PT - 40, 34)}${spark(W - 120, mid + 60, 26, SUN)}`]);
+S.push(['1-collection', `${ground(true)}${phone('accueil')}
+  ${real('carte-dracaufeu-ex-sv035-199.jpg', RX + 40, RY, PLAY ? 430 : 500, 8)}
+  ${label(RX - 40, RY + (PLAY ? 700 : 820), '<span style="color:#1E9E6A">▲ +21,9 %</span> en 30 jours', { r: -4, fs: PLAY ? 38 : 44 })}
+  ${text(true, 'Ta collection,<br>sa vraie valeur.', 'Tes cartes de 8 TCG au même endroit, avec leur cote du jour.')}`]);
 
-// 2 - Invest': the portfolio by game and by language.
-S.push(['2-invest', `${ground(false)}${title(false, 'Ton portefeuille TCG,<br><span class="hl">jeu par jeu.</span>', 'Ce que pèse chaque jeu et chaque langue, et comment ça évolue.')}
-  ${phone('invest', { dark: false })}
-  ${gdisc('pokemon', 60, PT + 180, 170, -8)}${gdisc('lorcana', W - 230, PT + 330, 160, 10)}${gdisc('onepiece', 90, mid + 200, 150, 6)}
-  ${tag(W - 470, mid + 90, '149,80 €', { bg: V, c: '#fff', r: 5, fs: 56 })}
-  ${spark(240, PT - 30, 32, V)}${spark(W - 150, PT + 120, 24, '#FF4FA0')}`]);
+S.push(['2-invest', `${ground(false)}${phone('invest', { dark: false })}
+  ${dos('pokemon', RX + 20, RY - 40, PLAY ? 300 : 340, -6, 7)}${dos('lorcana', RX + 160, RY + 180, PLAY ? 300 : 340, 9, 8)}
+  ${label(RX - 30, RY + (PLAY ? 700 : 800), '149,80 €', { bg: V, c: '#fff', r: -4, fs: PLAY ? 54 : 62 })}
+  ${text(false, 'Ton portefeuille TCG,<br>jeu par jeu.', 'Ce que pèse chaque jeu et chaque langue, et comment ça évolue.')}`]);
 
-// 3 - The showcase: the cards you want to show.
-S.push(['3-vitrine', `${ground(true, '#4A1FA0')}${title(true, 'Montre ta<br><span class="hl">vitrine.</span>', 'Tes plus belles cartes et tes scellés, rangés comme dans un classeur.')}
-  ${phone('vitrine')}
-  ${cardS('carte-mega-dracaufeu-x-pfl130.jpg', 30, PT + 260, 320, -12)}${cardS('carte-hyperia-241-mickey.jpg', W - 340, PT + 160, 300, 10)}${cardS('carte-son-goku-fb01-139.webp', W - 310, mid + 330, 270, -6)}
-  ${spark(200, PT + 160, 40, SUN)}${spark(W - 200, PT + 90, 30)}${spark(150, mid + 500, 26)}`]);
+S.push(['3-vitrine', `${ground(true, '#4A1FA0')}${phone('vitrine')}
+  ${real('carte-hyperia-241-mickey.jpg', RX + 40, RY - 20, PLAY ? 430 : 500, 9)}
+  ${text(true, 'Montre ta vitrine.', 'Tes plus belles cartes et tes scellés, rangés comme dans un classeur.')}`]);
 
-// 4 - The languages: French, English and Japanese, side by side.
-S.push(['4-langues', `${ground(false)}${title(false, 'Français, anglais,<br><span class="hl">japonais.</span>', 'Choisis les langues que tu collectionnes, jeu par jeu.')}
-  ${phone('langues', { dark: false })}
-  ${flag('fr', 50, PT + 200, 220, -8)}${flag('en', W - 270, PT + 380, 220, 7)}${flag('ja', 70, mid + 230, 220, 5)}
-  ${cardS('carte-luffy-op05-119-p1-jp.png', W - 320, mid + 260, 270, 9)}
-  ${spark(260, PT - 20, 30, V)}`]);
+S.push(['4-langues', `${ground(false)}${phone('langues', { dark: false })}
+  ${real('carte-luffy-op05-119-p1-jp.png', RX + 40, RY - 20, PLAY ? 400 : 460, 8)}
+  <div class="abs" style="left:${RX - 20}px;top:${RY + (PLAY ? 640 : 740)}px;display:flex;gap:22px;z-index:9">${['fr', 'en', 'ja'].map((c, i) => `<img src="assets/drapeau-${c}.svg" style="width:${PLAY ? 140 : 160}px;height:${PLAY ? 93 : 106}px;object-fit:cover;border-radius:14px;box-shadow:0 12px 28px rgba(11,8,18,.3);transform:rotate(${[-5, 3, -2][i]}deg)">`).join('')}</div>
+  ${text(false, 'Français, anglais,<br>japonais.', 'Choisis les langues que tu collectionnes, jeu par jeu.')}`]);
 
-// 5 - Missions: Boosties every day.
-S.push(['5-missions', `${ground(true)}${title(true, 'Gagne des Boosties<br><span class="hl">chaque jour.</span>', 'Des missions simples, une série de connexions, des récompenses.')}
-  ${phone('missions')}
-  ${coin(50, PT + 100, 190, -14)}${coin(W - 250, PT + 260, 170, 16)}${coin(90, mid + 300, 150, 8)}${coin(W - 210, mid + 520, 120, -20)}${coin(250, PT - 60, 90, 25, 2, 3)}${coin(W - 360, PT - 90, 80, -10, 2, 4)}
-  ${tag(W - 520, mid + 40, '+ 35 Boosties', { bg: SUN, r: 6 })}${spark(W - 120, PT + 120, 30)}`]);
+S.push(['5-missions', `${ground(true)}${phone('missions')}
+  ${coin(RX + 60, RY, PLAY ? 300 : 360, -10)}${coin(RX + 290, RY + (PLAY ? 300 : 360), PLAY ? 170 : 200, 14)}
+  ${label(RX - 30, RY + (PLAY ? 620 : 720), '+ 35 Boosties', { bg: SUN, c: DARK, r: -4 })}
+  ${text(true, 'Gagne des Boosties<br>chaque jour.', 'Des missions simples, une série de connexions, des récompenses.')}`]);
 
-// 6 - Sponsorship: invite your friends.
-S.push(['6-parrainage', `${ground(false)}${title(false, 'Invite tes potes,<br><span class="hl">gagnez des Boosties.</span>', 'Ton code : 150 Boosties pour ton filleul, 100 pour toi.')}
-  ${phone('parrainage', { dark: false })}
-  ${coin(60, PT + 220, 170, -10)}${coin(W - 240, PT + 140, 150, 14)}
-  ${tag(40, mid + 180, '150 pour lui', { bg: V, c: '#fff', r: -6 })}${tag(W - 440, mid + 360, '100 pour toi', { bg: SUN, r: 6 })}
-  ${spark(250, PT - 30, 30, '#FF4FA0')}${spark(W - 160, mid + 140, 26, V)}`]);
+S.push(['6-parrainage', `${ground(false)}${phone('parrainage', { dark: false })}
+  ${label(RX + 20, RY + 40, '150 pour lui', { bg: V, c: '#fff', r: -5, fs: PLAY ? 50 : 58 })}${label(RX + 80, RY + (PLAY ? 230 : 260), '100 pour toi', { bg: SUN, c: DARK, r: 4, fs: PLAY ? 50 : 58 })}
+  ${coin(RX + 120, RY + (PLAY ? 460 : 520), PLAY ? 220 : 260, -10)}
+  ${text(false, 'Invite tes potes,<br>gagnez des Boosties.', 'Ton code : 150 Boosties pour ton filleul, 100 pour toi.')}`]);
 
-// 7 - The Pass, as an option, with its launch price: a smaller phone on the right
-// leaves a column for the price on the left.
-S.push(['7-pass', `${ground(true, '#5B21B6')}${title(true, 'Va plus loin<br><span class="hl">avec le Pass.</span>', 'En option : les 8 jeux, 30 alertes, 15 pré-estimations par 30 jours, une wishlist de 30.')}
-  ${phone('pass', { w: PW * .86, x: W - PW * .86 - 60, y: PT + 40, r: 2 })}
-  ${tag(40, PT + 260, '2,99 €<span style="font-size:.5em">/mois</span>', { bg: SUN, r: -6, fs: 84, pad: '18px 30px' })}
-  <div class="abs s" style="left:40px;top:${PT + 480}px;width:360px;font-size:34px;line-height:1.3;color:rgba(245,242,251,.85);text-align:left">jusqu'au 31/12/2027,<br>puis 4,99 €/mois</div>
-  ${tag(40, PT + 640, '+ 1 500<br><span style="font-size:.7em">Boosties/mois</span>', { bg: V, c: '#fff', r: 5, fs: 48 })}
-  ${coin(110, PT + 900, 170, -12)}${coin(250, PT + 1180, 110, 16)}
-  ${spark(330, PT + 100, 32, SUN)}${spark(170, mid + 520, 28)}`]);
+S.push(['7-pass', `${ground(true, '#5B21B6')}${phone('pass')}
+  ${label(RX + 10, RY + 20, '2,99 €<span style="font-size:.5em"> /mois</span><div style="font-size:.36em;font-weight:600;margin-top:6px">jusqu’au 31/12/2027, puis 4,99 €</div>', { bg: SUN, c: DARK, r: -5, fs: PLAY ? 76 : 88, pad: '20px 34px' })}
+  ${label(RX + 40, RY + (PLAY ? 330 : 380), '+ 1 500 Boosties<br><span style="font-size:.75em">par mois payé</span>', { r: 4, fs: PLAY ? 38 : 44 })}
+  ${text(true, 'Va plus loin<br>avec le Pass.', 'En option : les 8 jeux, 30 alertes, 15 pré‑estimations par 30 jours, une wishlist de 30.')}`]);
 
-// 8 - The promise: the eight games in one app, the app's own card backs fanned
-// behind the new icon, the eight emblems in a row, the wordmark.
 const games8 = ['pokemon', 'onepiece', 'lorcana', 'yugioh', 'magic', 'starwarsunlimited', 'dragonball', 'wow'];
-const FY = PT + (PLAY ? 520 : 640), FW = PLAY ? 210 : 240;
-S.push(['8-huit-tcg', `${ground(true, '#4A1FA0')}${title(true, 'Les 8 TCG,<br><span class="hl">une seule appli.</span>', 'Pokémon, One Piece, Lorcana, Yu-Gi-Oh!, Magic, Star Wars Unlimited, Dragon Ball, Warcraft.')}
-  ${games8.map((g, i) => { const a = (i - 3.5) * 8, rad = a * Math.PI / 180, R = PLAY ? 640 : 760; return sback(g, W / 2 - FW / 2 + Math.sin(rad) * R, FY - FW * .7 + R - Math.cos(rad) * R, FW, a, 2 + i); }).join('')}
-  ${icon(W / 2 - (PLAY ? 170 : 200), FY + (PLAY ? 260 : 340), PLAY ? 340 : 400, -4, 20)}
-  <div class="abs" style="left:0;width:${W}px;top:${FY + (PLAY ? 720 : 900)}px;display:flex;justify-content:center;gap:${PLAY ? 14 : 18}px;z-index:20">${games8.map((g, i) => `<div style="transform:rotate(${i % 2 ? 6 : -6}deg)">${emblemDisc(g, PLAY ? 118 : 128)}</div>`).join('')}</div>
-  <div class="abs" style="left:0;width:${W}px;top:${FY + (PLAY ? 930 : 1160)}px;display:flex;justify-content:center;z-index:20">${wordmark(PLAY ? 120 : 150)}</div>
-  ${spark(180, FY - 60, 34, SUN)}${spark(W - 180, FY + 40, 28)}${spark(220, FY + 640, 24)}${spark(W - 230, FY + 700, 30, '#FF4FA0')}`]);
+const FY = PLAY ? 260 : 320, FW = PLAY ? 220 : 250;
+S.push(['8-huit-tcg', `${ground(true, '#4A1FA0')}
+  ${games8.map((g, i) => { const a = (i - 3.5) * 8, rad = a * Math.PI / 180, R = PLAY ? 660 : 780; return dos(g, W / 2 - FW / 2 + Math.sin(rad) * R, FY + R - Math.cos(rad) * R, FW, a, 2 + i); }).join('')}
+  <img class="abs" src="assets/icone-app.png" style="left:${W / 2 - (PLAY ? 180 : 210)}px;top:${FY + (PLAY ? 330 : 400)}px;width:${PLAY ? 360 : 420}px;border-radius:${PLAY ? 82 : 96}px;box-shadow:0 0 60px rgba(167,139,250,.7), 0 30px 70px rgba(11,8,18,.6);transform:rotate(-4deg);z-index:20">
+  <div class="abs" style="left:0;width:${W}px;top:${FY + (PLAY ? 800 : 960)}px;display:flex;justify-content:center;gap:${PLAY ? 14 : 18}px;z-index:20">${games8.map((g) => `<div style="border-radius:50%;box-shadow:0 10px 24px rgba(11,8,18,.4)">${emblemDisc(g, PLAY ? 112 : 124)}</div>`).join('')}</div>
+  ${text(true, 'Les 8 TCG,<br>une seule appli.', 'Pokémon, One Piece, Lorcana, Yu-Gi-Oh!, Magic, Star Wars Unlimited, Dragon Ball, Warcraft.')}`]);
 
 carousel(S);
 </script></body></html>
