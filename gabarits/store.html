@@ -74,8 +74,8 @@ const BY = PT + (PLAY ? 760 : 920);
 const BRIDGES = [
   tile('item-pk-display.jpg', seam(0) - (PLAY ? 160 : 180), BY + 40, PLAY ? 320 : 360, 6),
   tile('item-pk-booster.png', seam(2) - (PLAY ? 150 : 170), BY - 80, PLAY ? 300 : 340, -7, 9, 1.43),
-  coin(seam(4) - 165, BY, PLAY ? 290 : 330, -12) + coin(seam(4) + 170, BY + (PLAY ? 330 : 380), 130, 16),
-  dos('pokemon', seam(6) - 250, BY - 40, PLAY ? 260 : 290, -11, 8) + dos('lorcana', seam(6) - 30, BY + 40, PLAY ? 260 : 290, 9, 9),
+  dos('pokemon', seam(4) - 250, BY - 40, PLAY ? 260 : 290, -11, 8) + dos('onepiece', seam(4) - 30, BY + 40, PLAY ? 260 : 290, 9, 9),
+  coin(seam(6) - 165, BY, PLAY ? 290 : 330, -12) + coin(seam(6) + 170, BY + (PLAY ? 330 : 380), 130, 16),
 ].join('');
 const pano = (k) => `<div class="abs" style="left:${-k * W}px;top:0;width:${PANOW}px;height:${H}px">${PANO}<div class="abs" style="left:0;top:0;width:${PANOW}px;height:${H}px;z-index:9">${BRIDGES}</div></div>`;
 const S = [];
@@ -86,47 +86,61 @@ add('1-collection', 0, `${phone('accueil', 0)}
   ${sdisc(FREE(0) + 40, FY, PLAY ? 170 : 200, '#C4B5FD', ico('<path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M4 12h16"/>', PLAY ? 80 : 96))}
   ${panel(FREE(0) - 20, FY + (PLAY ? 230 : 270), FW + 20, `${pl('Progression')}<div style="height:18px;border-radius:9px;background:#2A2140;margin-top:16px;overflow:hidden"><div style="width:62%;height:100%;background:#5FD3A3;border-radius:9px"></div></div>`, 3)}
   ${real('carte-dracaufeu-ex-sv035-199.jpg', FREE(0) + 20, FY + (PLAY ? 380 : 440), PLAY ? 240 : 270, -7)}
-  ${text('01 · Collection', '#C4B5FD', `Ta collection,<br>${ACC('rangée toute seule.')}`, 'Tes cartes et tes scellés, reconnus et rangés.')}`);
+  ${text('Collection', '#C4B5FD', `Ta collection,<br>${ACC('rangée toute seule.')}`, 'Tes cartes et tes scellés, reconnus et rangés.')}`);
 
-add('2-langues', 1, `${phone('langues', 1)}
-  <div class="abs" style="left:${FREE(1) + 10}px;top:${FY}px;display:flex;flex-direction:column;gap:${PLAY ? 26 : 32}px;z-index:9">${['fr', 'en', 'ja'].map((c, i) => `<img src="assets/drapeau-${c}.svg" style="width:${PLAY ? 190 : 220}px;height:${PLAY ? 126 : 146}px;object-fit:cover;border:${STB}px solid ${INK};border-radius:22px;box-shadow:${STS * .7}px ${STS * .7}px 0 ${SHADOW};transform:rotate(${[-5, 4, -3][i]}deg)">`).join('')}</div>
-  ${text('02 · Langues', '#FF7AB8', `Ta langue,<br>${ACC('ta cote.')}`, 'Une carte ou un display en japonais n’a pas le même prix qu’en français.')}`);
+// 2 - Languages: the table of the languages covered, as on boostz.fr (TanPib,
+// 04/11/2026: « le schéma des langues couvertes » instead of the capture).
+// Data: the site's table, « langues servies au 23 septembre 2026 ».
+const LANGS = [['pokemon', 'Pokémon', 1, 1, 1], ['onepiece', 'One Piece', 0, 1, 0], ['lorcana', 'Lorcana', 1, 1, 0], ['yugioh', 'Yu-Gi-Oh!', 0, 1, 0],
+  ['magic', 'Magic', 1, 1, 1], ['starwarsunlimited', 'Star Wars Unlimited', 1, 1, 0], ['dragonball', 'Dragon Ball Super', 1, 0, 0], ['wow', 'Warcraft', 0, 1, 0]];
+const RH = PLAY ? 100 : 138, FLW = PLAY ? 78 : 90;
+const fl = (c) => `<img src="assets/drapeau-${c}.svg" style="width:${FLW}px;height:${FLW * .66}px;object-fit:cover;border:${PLAY ? 4 : 5}px solid ${INK};border-radius:10px;box-shadow:4px 4px 0 ${SHADOW}">`;
+const dash = `<span style="display:inline-block;width:${FLW * .45}px;height:8px;border-radius:4px;background:#4A4360"></span>`;
+const cell = (x) => `<div style="width:${FLW + 28}px;display:flex;justify-content:center;align-items:center">${x}</div>`;
+const table = `<div class="abs" style="left:${PLAY ? 180 : 230}px;top:${PT}px;width:${PLAY ? 1000 : 980}px;padding:${PLAY ? '30px 34px 16px' : '36px 40px 20px'};background:#1D1730;border:${STB}px solid ${INK};border-radius:56px;box-shadow:${STS}px ${STS}px 0 ${SHADOW};transform:rotate(2deg);z-index:5">
+  <div style="display:flex;align-items:center;height:${RH * .8}px"><div class="ui" style="flex:1;font-size:${PLAY ? 30 : 34}px;letter-spacing:.14em;color:#A8A2B8">JEU</div>${['fr', 'en', 'ja'].map((c) => cell(fl(c))).join('')}</div>
+  ${LANGS.map(([g, n, ...l], i) => `<div style="display:flex;align-items:center;height:${RH}px;border-top:3px solid rgba(255,255,255,.07)"><div style="flex:1;display:flex;align-items:center;gap:${PLAY ? 20 : 24}px">${emblemDisc(g, PLAY ? 66 : 76)}<span class="ui" style="font-size:${PLAY ? 34 : 40}px;color:${GAMES[g][1]};white-space:nowrap">${n}</span></div>${l.map((v, j) => cell(v ? fl(['fr', 'en', 'ja'][j]) : dash)).join('')}</div>`).join('')}
+  <div class="lab" style="text-align:center;font-size:${PLAY ? 20 : 22}px;letter-spacing:.2em;color:rgba(168,162,184,.7);margin-top:${PLAY ? 14 : 18}px">LANGUES SERVIES AU 23 SEPTEMBRE 2026</div></div>`;
+const TBOT = PT + RH * 8.8 + (PLAY ? 150 : 170);
+add('4-langues', 3, `${table}
+  ${panel(PLAY ? 260 : 300, TBOT + (PLAY ? 40 : 60), PLAY ? 900 : 880, `<div class="ui" style="font-size:${PLAY ? 28 : 32}px;letter-spacing:.12em;color:#FF7AB8">LES SCELLÉS AUSSI</div><div class="ui" style="font-size:${PLAY ? 36 : 42}px;color:#fff;margin-top:10px;line-height:1.25">Un display FR et un display JP :<br>deux produits, deux cotes.</div>`, -2, 6)}
+  ${text('Langues', '#FF7AB8', `Ta langue,<br>${ACC('ta cote.')}`, 'Carte ou display : chaque langue a sa cote.')}`);
 
-add('3-investissement', 2, `${phone('invest', 2)}
-  ${label(FREE(2), FY, '149,80 €', { bg: '#5FD3A3', r: 4, fs: PLAY ? 54 : 62 })}
-  ${panel(FREE(2) - 10, FY + (PLAY ? 200 : 240), FW + 10, `${pl('En 30 jours')}<div class="ui" style="font-size:${PLAY ? 46 : 54}px;color:#5FD3A3;margin-top:8px;white-space:nowrap">▲ +24,8&nbsp;%</div>`, -3)}
-  ${text('03 · Investissement', '#5FD3A3', `Ce que vaut<br>${ACC('ta collection.')}`, 'La cote de tes cartes et de tes scellés, jeu par jeu.')}`);
+add('2-investissement', 1, `${phone('invest', 1)}
+  ${label(FREE(1), FY, '149,80 €', { bg: '#5FD3A3', r: 4, fs: PLAY ? 54 : 62 })}
+  ${panel(FREE(1) - 10, FY + (PLAY ? 200 : 240), FW + 10, `${pl('En 30 jours')}<div class="ui" style="font-size:${PLAY ? 46 : 54}px;color:#5FD3A3;margin-top:8px;white-space:nowrap">▲ +24,8&nbsp;%</div>`, -3)}
+  ${text('Investissement', '#5FD3A3', `Ce que vaut<br>${ACC('ta collection.')}`, 'La cote de tes cartes et de tes scellés, jeu par jeu.')}`);
 
 // 4 - The showcase, with the sealed products up front (TanPib, 04/11/2026:
 // « mentionner le scellé, c'est primordial »). Product shots on white, in white
 // sticker tiles: the French One Piece and Lorcana displays.
-add('4-vitrine', 3, `${phone('vitrine', 3)}
-  ${tile('item-op-display2.png', FREE(3) + 10, FY - 20, PLAY ? 280 : 320, -6)}
-  ${tile('item-lo-display.png', FREE(3) + 50, FY + (PLAY ? 290 : 330), PLAY ? 280 : 320, 5)}
+add('3-scelles', 2, `${phone('vitrine', 2)}
+  ${tile('item-op-display2.png', FREE(2) + 10, FY - 20, PLAY ? 280 : 320, -6)}
+  ${tile('item-lo-display.png', FREE(2) + 50, FY + (PLAY ? 290 : 330), PLAY ? 280 : 320, 5)}
   ${text('Cartes et scellés', '#F0C066', `Tes scellés aussi,<br>${ACC('avec leur cote.')}`, 'Boosters, displays et coffrets ont leur place à côté de tes cartes.')}`);
 
-add('5-missions', 4, `${phone('missions', 4)}
-  ${label(FREE(4), FY, '+ 35<br>Boosties', { r: 4 })}
-  ${panel(FREE(4) - 10, FY + (PLAY ? 190 : 220), FW + 10, `${pl('Aujourd’hui')}<div class="ui" style="font-size:${PLAY ? 46 : 54}px;color:#F0C066;margin-top:8px;white-space:nowrap">55 / 100</div>`, -3)}
-  ${text('08 · Missions et Boosties', '#F0C066', `Relève des missions,<br>${ACC('gagne des Boosties.')}`, 'Missions, hauts faits, cartes ajoutées au catalogue : tout rapporte.')}`);
+add('6-missions', 5, `${phone('missions', 5)}
+  ${label(FREE(5), FY, '+ 35<br>Boosties', { r: 4 })}
+  ${panel(FREE(5) - 10, FY + (PLAY ? 190 : 220), FW + 10, `${pl('Aujourd’hui')}<div class="ui" style="font-size:${PLAY ? 46 : 54}px;color:#F0C066;margin-top:8px;white-space:nowrap">55 / 100</div>`, -3)}
+  ${text('Missions et Boosties', '#F0C066', `Relève des missions,<br>${ACC('gagne des Boosties.')}`, 'Missions, hauts faits, cartes ajoutées au catalogue : tout rapporte.')}`);
 
-add('6-parrainage', 5, `${phone('parrainage', 5)}
-  ${label(FREE(5), FY, '150 pour lui', { bg: '#C4B5FD', r: -5 })}${label(FREE(5) + 20, FY + (PLAY ? 170 : 200), '100 pour toi', { r: 4 })}
-  ${text('09 · Parrainage', '#C4B5FD', `Invite tes amis,<br>${ACC('gagnez tous les deux.')}`, 'Ton ami reçoit 150 Boosties, et toi 100.')}`);
+add('8-parrainage', 7, `${phone('parrainage', 7)}
+  ${label(FREE(7), FY, '150 pour lui', { bg: '#C4B5FD', r: -5 })}${label(FREE(7) + 20, FY + (PLAY ? 170 : 200), '100 pour toi', { r: 4 })}
+  ${text('Parrainage', '#C4B5FD', `Invite tes amis,<br>${ACC('gagnez tous les deux.')}`, 'Ton ami reçoit 150 Boosties, et toi 100.')}`);
 
 add('7-pass', 6, `${phone('pass', 6)}
   ${label(FREE(6), FY, '2,99 €<span style="font-size:.55em"> /mois</span>', { r: 4, fs: PLAY ? 58 : 66 })}
   ${panel(FREE(6) - 10, FY + (PLAY ? 210 : 250), FW + 10, `${pl('Prix de lancement')}<div class="ui" style="font-size:${PLAY ? 32 : 36}px;color:#F5C542;margin-top:8px;line-height:1.25">jusqu’au<br>31/12/2027</div>`, -3)}
-  ${text('10 · BoostZ Pass', '#F5C542', `Le compte est gratuit,<br>${ACC('le Pass en option.')}`, 'Les 8 jeux, 30 alertes, 15 pré‑estimations par 30 jours, une wishlist de 30.')}`);
+  ${text('BoostZ Pass', '#F5C542', `Le compte est gratuit,<br>${ACC('le Pass en option.')}`, 'Les 8 jeux, 30 alertes, 15 pré‑estimations par 30 jours, une wishlist de 30.')}`);
 
 // 8 - Community and partner shops (TanPib, 04/11/2026: not the brand slide,
 // rather alerts and wishlist or exchanges in partner shops). The forum capture
 // is the real one boostz.fr shows (shots/forum-rhone.png, full resolution).
-add('8-communaute', 7, `${phone('communaute', 7)}
-  ${sdisc(FREE(7) + 60, FY, PLAY ? 170 : 200, '#63B7FF', ico('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>', PLAY ? 80 : 96))}
-  ${panel(FREE(7) - 10, FY + (PLAY ? 230 : 270), FW + 10, `<div class="ui" style="font-size:${PLAY ? 28 : 32}px;color:#5FDCDC;letter-spacing:.08em">BOUTIQUE PARTENAIRE</div><div class="ui" style="font-size:${PLAY ? 34 : 38}px;color:#fff;margin-top:10px;line-height:1.25">Un lieu pour tes échanges</div>`, -3)}
-  ${label(FREE(7) + 10, FY + (PLAY ? 560 : 650), '★★★★★', { bg: SUN, r: 4, fs: PLAY ? 44 : 50 })}
-  ${text('06 · Communauté', '#63B7FF', `Échange, discute,<br>${ACC('retrouve-toi.')}`, 'Du troc entre collectionneurs, les forums de ta région et des boutiques partenaires pour tes rendez-vous.')}`);
+add('5-communaute', 4, `${phone('communaute', 4)}
+  ${sdisc(FREE(4) + 60, FY, PLAY ? 170 : 200, '#63B7FF', ico('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>', PLAY ? 80 : 96))}
+  ${panel(FREE(4) - 10, FY + (PLAY ? 230 : 270), FW + 10, `<div class="ui" style="font-size:${PLAY ? 28 : 32}px;color:#5FDCDC;letter-spacing:.08em">BOUTIQUE PARTENAIRE</div><div class="ui" style="font-size:${PLAY ? 34 : 38}px;color:#fff;margin-top:10px;line-height:1.25">Un lieu pour tes échanges</div>`, -3)}
+  ${label(FREE(4) + 10, FY + (PLAY ? 560 : 650), '★★★★★', { bg: SUN, r: 4, fs: PLAY ? 44 : 50 })}
+  ${text('Communauté', '#63B7FF', `Échange, discute,<br>${ACC('retrouve-toi.')}`, 'Du troc entre collectionneurs, les forums de ta région et des boutiques partenaires pour tes rendez-vous.')}`);
 
 carousel(S);
 </script></body></html>
