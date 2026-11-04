@@ -113,13 +113,14 @@ add('7-pass', 6, `${phone('pass', 6)}
   ${panel(FREE(6) - 10, FY + (PLAY ? 210 : 250), FW + 10, `${pl('Prix de lancement')}<div class="ui" style="font-size:${PLAY ? 32 : 36}px;color:#F5C542;margin-top:8px;line-height:1.25">jusqu’au<br>31/12/2027</div>`, -3)}
   ${text('10 · BoostZ Pass', '#F5C542', `Le compte est gratuit,<br>${ACC('le Pass en option.')}`, 'Les 8 jeux, 30 alertes, 15 pré‑estimations par 30 jours, une wishlist de 30.')}`);
 
-const games8 = ['pokemon', 'onepiece', 'lorcana', 'yugioh', 'magic', 'starwarsunlimited', 'dragonball', 'wow'];
-const CX = W / 2 + 120, CY = PT - (PLAY ? 20 : 0), CW = PLAY ? 200 : 230;
-add('8-huit-tcg', 7, `${games8.map((g, i) => { const a = (i - 3.5) * 9, rad = a * Math.PI / 180, R = PLAY ? 560 : 660; return dos(g, CX - CW / 2 + Math.sin(rad) * R, CY + R - Math.cos(rad) * R, CW, a, 2 + i); }).join('')}
-  <img class="abs" src="assets/icone-app.png" style="left:${CX - (PLAY ? 170 : 200)}px;top:${CY + (PLAY ? 300 : 360)}px;width:${PLAY ? 340 : 400}px;border:${STB}px solid ${INK};border-radius:${PLAY ? 80 : 94}px;box-shadow:${STS}px ${STS}px 0 ${SHADOW};transform:rotate(4deg);z-index:20">
-  <div class="abs" style="left:${CX - 2 * ((PLAY ? 120 : 140) + 24)}px;width:${4 * ((PLAY ? 120 : 140) + 24)}px;top:${CY + (PLAY ? 760 : 900)}px;display:flex;flex-wrap:wrap;justify-content:center;gap:24px;z-index:20">${games8.map((g) => emblemDisc(g, PLAY ? 120 : 140)).join('')}</div>
-  <div class="abs" style="left:${CX - 400}px;width:800px;top:${CY + (PLAY ? 1110 : 1310)}px;display:flex;justify-content:center;z-index:20">${wordmark(PLAY ? 110 : 130)}</div>
-  ${text('8 TCG couverts', '#C4B5FD', `8 TCG couverts.<br>${ACC('Une seule app.')}`, 'Pokémon, One Piece, Lorcana, Yu-Gi-Oh!, Magic, Star Wars Unlimited, Dragon Ball, Warcraft.')}`);
+// 8 - Community and partner shops (TanPib, 04/11/2026: not the brand slide,
+// rather alerts and wishlist or exchanges in partner shops). The forum capture
+// is the real one boostz.fr shows (shots/forum-rhone.png, full resolution).
+add('8-communaute', 7, `${phone('communaute', 7)}
+  ${sdisc(FREE(7) + 60, FY, PLAY ? 170 : 200, '#63B7FF', ico('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>', PLAY ? 80 : 96))}
+  ${panel(FREE(7) - 10, FY + (PLAY ? 230 : 270), FW + 10, `<div class="ui" style="font-size:${PLAY ? 28 : 32}px;color:#5FDCDC;letter-spacing:.08em">BOUTIQUE PARTENAIRE</div><div class="ui" style="font-size:${PLAY ? 34 : 38}px;color:#fff;margin-top:10px;line-height:1.25">Un lieu pour tes échanges</div>`, -3)}
+  ${label(FREE(7) + 10, FY + (PLAY ? 560 : 650), '★★★★★', { bg: SUN, r: 4, fs: PLAY ? 44 : 50 })}
+  ${text('06 · Communauté', '#63B7FF', `Échange, discute,<br>${ACC('retrouve-toi.')}`, 'Du troc entre collectionneurs, les forums de ta région et des boutiques partenaires pour tes rendez-vous.')}`);
 
 carousel(S);
 </script></body></html>
