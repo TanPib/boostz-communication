@@ -9,7 +9,11 @@
 // a shop and its QR code, friends trading) and ends in a young woman's phone,
 // which she throws up in joy; the camera locks on the phone, the app scrolls,
 // and the end card says « BoostZ, ton compagnon TCG, le 14 janvier ».
-// Sketches only, to agree the shots before any generation (Higgsfield).
+// First round: SVG sketches. Second round (07/11/2026): TanPib preferred a
+// painterly 2D look (« petit côté ghibli ») to the 3D tests, so every panel
+// now shows a Higgsfield z_image keyframe (images/video-z/plans/plan-NN.jpg).
+// Brand elements are never generated: the Z, the app capture and the end
+// card are drawn here on top, as they will be composited in the edit.
 // Render: node rendu.mjs storyboard-z.html images
 document.head.insertAdjacentHTML('beforeend', `<style>
   .p { width: 1800px; height: 960px; background: #F4F1FA; }
@@ -56,8 +60,22 @@ const PANELS = [
   ['12', '0:23,5 – 0:27', 'L’image se fige sur le téléphone.', 'La caméra suit le téléphone en l’air jusqu’à remplir l’écran ; dedans, l’appli BoostZ défile vite : collection, cote, scellés, échanges. Vraies captures incrustées.', svg(`<rect width="300" height="533" fill="#2A2238"/>` + phone(150, 266, 118, 4, '#1B1330') + `<rect x="98" y="160" width="104" height="40" rx="8" fill="#3B1D7A"/><text x="150" y="187" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="20" fill="#fff">150 €</text>` + [0, 1, 2, 3].map((i) => `<rect x="98" y="${215 + i * 42}" width="104" height="32" rx="6" fill="#2A2140"/>`).join('') + `<text x="150" y="400" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="11" fill="#C4B5FD">CAPTURE RÉELLE DE L’APPLI</text>`)],
   ['13', '0:27 – 0:30', 'La fin.', 'Le téléphone s’efface, la nébuleuse revient ; le logo boostZ, puis « Ton compagnon TCG », « le 14 janvier ». Musique qui retombe, un dernier battement.', svg(nebula + `<circle cx="150" cy="230" r="120" fill="url(##Gsp)" opacity=".35"/><text x="150" y="250" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="56" fill="#fff">boost<tspan fill="url(##Gz)">Z</tspan></text><text x="150" y="300" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="18" fill="#C4B5FD">Ton compagnon TCG</text><text x="150" y="340" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="26" fill="#fff">le 14 janvier</text>`)]
 ];
+// Painted keyframes, with what we composite ourselves on top.
+const zOver = (x, y, s) => `<svg class="abs" width="300" height="533" viewBox="0 0 300 533" style="left:0;top:0"><defs><linearGradient id="zg${x}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${GR[0]}"/><stop offset=".55" stop-color="${GR[1]}"/><stop offset="1" stop-color="${GR[2]}"/></linearGradient></defs>${Z(x, y, s).replace(/##Gz/g, '#zg' + x)}</svg>`;
+const OVER = {
+  4: zOver(150, 282, 1.25),
+  12: `<div class="abs" style="left:64px;top:74px;width:164px;height:392px;border-radius:18px;overflow:hidden;background:#0B0812"><img src="shots/app-accueil.jpg" style="width:164px;display:block;margin-top:10px"></div>`,
+  13: `<div class="abs" style="left:0;top:170px;width:300px;display:flex;flex-direction:column;align-items:center">${wordmark(52)}<div style="margin-top:14px;font-family:Poppins;font-weight:700;font-size:17px;color:#fff">Ton compagnon TCG</div><div style="margin-top:22px;font-family:Outfit;font-weight:800;font-size:26px;color:#fff;text-align:center;line-height:1.15">BoostZ sort<br>le 14 janvier</div></div>`
+};
+PANELS.forEach((pn, i) => { const k = i + 1; pn[4] = `<img src="../images/video-z/plans/plan-${String(k).padStart(2, '0')}.jpg" style="width:300px;height:533px;object-fit:cover;display:block">${OVER[k] || ''}`; });
+PANELS[5][2] = 'Un collectionneur au comptoir.';
+PANELS[5][3] = 'Boutique de quartier, lampe chaude. Il scanne une carte posée sur le comptoir ; la traînée rose, violette et bleue entre dans l’écran. Vraies cartes et vraie capture incrustées.';
+PANELS[6][3] += ' Bannières sans texte au montage.';
+PANELS[7][3] = 'Boutique de jeux, étagères de displays. Une cliente scanne le présentoir QR BoostZ (le vrai, incrusté), la traînée rebondit dans son téléphone.';
+PANELS[11][3] = 'La caméra suit le téléphone en l’air jusqu’à remplir l’écran ; dedans, l’appli BoostZ défile : collection, cote, scellés, échanges. Vraies captures incrustées.';
+PANELS[12][3] = 'La nébuleuse revient, calme ; puis le logo boostZ, le sous-titre « Ton compagnon TCG » et « BoostZ sort le 14 janvier ». Un dernier battement.';
 const sheet = (list, title) => `<div class="abs" style="left:60px;top:40px;font-family:Outfit;font-weight:800;font-size:34px;color:#1B1330">${title}</div>
-  <div class="abs" style="left:60px;top:88px;font-family:'DM Sans';font-weight:600;font-size:16px;color:#625B78">Storyboard, 9:16, environ 30 secondes. Croquis de travail : aucune génération avant validation.</div>
+  <div class="abs" style="left:60px;top:88px;font-family:'DM Sans';font-weight:600;font-size:16px;color:#625B78">Storyboard, 9:16, environ 30 secondes. Images clés peintes (Higgsfield) ; le Z, l’appli et la fin sont incrustés par nous.</div>
   ${list.map(([num, tc, t, note, fr], i) => `<div class="pan" style="left:${60 + (i % 5) * 340}px;top:${140}px"><div class="fr">${fr}</div><div class="cap"><span class="num">${num}</span> <span class="tc">${tc}</span><br>${t}</div><div class="note">${note}</div></div>`).join('')}`;
 carousel([['planche-1', sheet(PANELS.slice(0, 5), 'Le Z · 1/3 · L’éveil')], ['planche-2', sheet(PANELS.slice(5, 10), 'Le Z · 2/3 · Le monde réel')], ['planche-3', sheet(PANELS.slice(10), 'Le Z · 3/3 · La révélation')]]);
 </script></body></html>
