@@ -18,10 +18,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 outils/cotes.py quotidien
+      # TCGplayer too (tcgcsv, USD, English edition), every day of the same window:
+      # TCGdex had not listed Règne Delta on 07/11/2026, the day after its release,
+      # and the month-long curve cannot wait for it (see PLANNING, check-in du 07/11).
+      - name: Relevé TCGplayer du set
+        run: |
+          d=$(date -u +%F)
+          if [ "$d" \> "2026-11-05" ] && [ "$d" \< "2026-12-07" ]; then python3 outils/scelles.py set pokemon Delta Reign; fi
       - name: Enregistrer
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add donnees/cotes
+          git add donnees/cotes donnees/sets
           git diff --cached --quiet || git commit -q -m "Relevé quotidien des cotes du $(date -u +%d/%m/%Y)"
           git pull -q --rebase && git push -q

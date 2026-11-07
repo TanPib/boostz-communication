@@ -218,6 +218,11 @@ Relevées le 05/10/2026, toutes reconfirmées le 07/10/2026 (Hyperia City : avan
 - Lorcana Hyperia City le 23/10, One Piece EB05 le 30/10, Pokémon Delta Reign le 06/11, Magic × Star Trek le 13/11, OP18 le 20/11 ([pokezenith](https://www.pokezenith.com/content/51-calendrier-sorties-tcg-2026), [Maison du Booster](https://maisondubooster.com/pages/calendrier-sorties-tcg)).
 - Yu-Gi-Oh! Magnificent Maestros le 13/11 ([ICv2](https://icv2.com/articles/news/view/63153/new-yu-gi-oh-tcg-booster-set-revealed)).
 
+Check-in du 07/11/2026, Règne Delta (relevé quotidien pour le post du 06/12) :
+- TCGdex n'a pas encore le set (dernière mise à jour de sa base le 02/11, dernier set Méga-Évolution listé : Nuit Noire, me05). Le relevé Cardmarket du workflow « Cotes quotidiennes » n'a donc rien écrit les 06 et 07/11 (« set not on TCGdex yet »). Il démarrera tout seul dès que TCGdex l'ajoute sous le nom « Règne Delta », et la courbe Cardmarket commencera ce jour-là ; le post le dira.
+- Pour ne pas perdre ces jours, le même workflow relève aussi chaque jour, jusqu'au 06/12, les prix TCGplayer du set (édition anglaise, USD, via tcgcsv) dans `donnees/sets/pokemon-delta-reign-<date>.json`. Premier relevé le 07/11 (build tcgcsv du 06/11 20:05 UTC), 228 produits.
+- Chase cards au premier relevé (prix du marché TCGplayer, 07/11) : Méga-Rayquaza-ex 141/103 Méga Hyper Rare 349,35 $ ; Méga-Rayquaza-ex 138/103 IAS 327,81 $ ; Raikou-ex 136/103 IAS 81,56 $ ; Zinnia's Trust 140/103 IAS 38,42 $ ; Méga-Golurk-ex 137/103 IAS 32,05 $ ; Méga-Golisopod-ex 135/103 IAS 21,12 $ ; Évoli 114/103 IR 20,60 $ ; Caninos 106/103 IR 15,91 $ ; Groudon 111/103 IR 15,56 $ ; Kecleon 117/103 IR 14,57 $ ; Talonflame-ex 124/103 UR 12,27 $ ; Aarune 139/103 IAS 11,81 $ ; Poussacha 105/103 IR 9,61 $. Noms français à vérifier sur les scans FR pour le carrousel.
+
 03/11/2026 : le carrousel TikTok de Tyler (photo, à finir à la main) n'a pas été terminé dans l'appli. À la demande de TanPib, il est reparti à 13 h 30 en vidéo publiée automatiquement (`videos/2026-11-03-histoire-tyler-grand-guerrier-tiktok.mp4`, notre musique, post Metricool 415190197). Le post photo de 10 h reste « publié » dans Metricool, mais sans rien en ligne sur TikTok.
 
 Check-in du 01/11/2026 :
