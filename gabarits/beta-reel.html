@@ -45,6 +45,35 @@ const endCard = (at, line) => `<div class="abs" ${A(at, null, 0, 'rise')} style=
     <div class="h" style="font-size:52px;text-align:center"><span style="color:${DONE}">Android</span> <span style="color:${VSOFT}">·</span> <span style="color:${VSOFT}">iPhone</span></div></div>
   ${st(190, 1050, 700, 170, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:80px;color:${DARK};white-space:nowrap">boostz.fr/beta</div>`, { fill: SUN, r: -3, z: 6, attrs: A(at + .5, null, -3) })}
   ${center(1300, 44, 'Dès 15 ans', at + .9, null)}`;
+// The opening day, second edition (13/11/2026, TanPib: « un post primordial,
+// il est impératif qu'il soit bien réussi »). The first one was text only.
+// This one shows the app before the method: four real captures of the app
+// (shots/app-*.jpg, the ones of the store listing, under the store listing's
+// own lines) slide through, then the two ways in, then the new app icon on
+// the closing card, with one burst of confetti. No figure of ours, no store
+// badge, no Apple logo, no TestFlight link.
+const O_SHOTS = [['accueil', 'Ta collection,<br><span class="acc">rangée toute seule.</span>'], ['invest', 'Ce que vaut<br><span class="acc">ta collection.</span>'],
+  ['vitrine', 'Tes scellés aussi,<br><span class="acc">avec leur cote.</span>'], ['communaute', 'Échange, discute,<br><span class="acc">retrouve-toi.</span>']];
+const O_A = .25, O_BL = 1.75, O_B = O_A + 4 * O_BL + .15, O_E = O_B + 7.1, O_TOTAL = O_E + 4.4;
+const O_PW = 480, O_PH = Math.round((O_PW - 16) * 2.164) + 16, O_PY = 625;
+const oPhones = O_SHOTS.map(([shot, line], i) => `${center(400, 88, line, O_A + i * O_BL, O_A + (i + 1) * O_BL - .3)}
+  <div id="ph${i}" class="abs" style="left:${540 - O_PW / 2}px;top:${O_PY}px;width:${O_PW}px;height:${O_PH}px;border-radius:${O_PW * .13}px;background:#131020;border:8px solid ${INK};box-shadow:14px 14px 0 ${SHADOW};overflow:hidden;z-index:6;opacity:0"><img src="shots/app-${shot}.jpg" style="width:100%;display:block"></div>`).join('');
+// The 8 games, four emblems on each side of the phone, floating.
+const oDiscs = ALL8.map((g, i) => `<div class="abs" ${A(O_A + .15 + i * .09, O_B - .25, 0)} style="left:${i % 2 ? 895 : 95}px;top:${(i % 2 ? 810 : 730) + Math.floor(i / 2) * 210}px;z-index:5"><div id="dz${i}">${emblemDisc(g, 90)}</div></div>`).join('');
+const oWays = `${center(380, 84, 'Rejoins la bêta<br><span class="acc">depuis ton téléphone.</span>', O_B + .1, O_E - .25)}
+  ${way('android', 610, O_B + .7, O_E - .25, -1.5)}${way('iphone', 1030, O_B + 1.7, O_E - .25, 1.5)}
+  ${center(1465, 40, 'Un seul compte BoostZ sur les deux téléphones', O_B + 2.7, O_E - .25)}`;
+const oEnd = `<div class="abs" ${A(O_E, null, -3)} style="left:420px;top:370px;width:240px;height:240px;border-radius:54px;overflow:hidden;border:8px solid ${INK};box-shadow:16px 16px 0 ${SHADOW};z-index:7"><img src="assets/icone-app.png" style="width:100%;height:100%;display:block"></div>
+  <div class="abs" ${A(O_E + .35, null, 0, 'rise')} style="left:0;top:680px;width:1080px;display:flex;flex-direction:column;align-items:center;gap:26px;z-index:5">${wordmark(120)}
+    <div class="h" style="font-size:72px;text-align:center;line-height:1.1">La bêta est ouverte</div>
+    <div class="h" style="font-size:52px;text-align:center"><span style="color:${DONE}">Android</span> <span style="color:${VSOFT}">·</span> <span style="color:${VSOFT}">iPhone</span></div></div>
+  ${st(190, 1110, 700, 170, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:80px;color:${DARK};white-space:nowrap">boostz.fr/beta</div>`, { fill: SUN, r: -3, z: 6, attrs: A(O_E + .8, null, -3) })}
+  ${center(1345, 44, 'Dès 15 ans', O_E + 1.2, null)}`;
+// Confetti, seeded so every render is identical; it bursts from behind the icon.
+let oSeed = 11; const oRnd = () => (oSeed = (oSeed * 16807) % 2147483647) / 2147483647;
+const O_COLORS = ['#FF4FA0', '#8B3DFF', '#3AA9FF', SUN, DONE, INK];
+const O_CONF = Array.from({ length: 90 }, (_, i) => ({ id: 'cf' + i, t0: O_E + .05 + oRnd() * .12, vx: (oRnd() - .5) * 1900, vy: -600 - oRnd() * 1300, spin: (oRnd() - .5) * 1400, w: 16 + oRnd() * 18, h: 10 + oRnd() * 10, c: O_COLORS[i % O_COLORS.length] }));
+const oConf = O_CONF.map((c) => `<div id="${c.id}" class="abs" style="left:0;top:0;width:${c.w}px;height:${c.h}px;background:${c.c};border-radius:3px;opacity:0;z-index:4"></div>`).join('');
 const ENTRIES = {
   j3: [`${kick('BÊTA BOOSTZ', .2, 4)}
     <div class="abs h" ${A(.3, 4, -3)} style="left:0;top:360px;width:1080px;text-align:center;font-size:300px;line-height:1;z-index:5"><span class="grad">J-3</span></div>
@@ -59,6 +88,7 @@ const ENTRIES = {
     ${way('android', 700, 1.4, 8.4, -1.5)}${way('iphone', 1130, 2.4, 8.4, 1.5)}
     ${center(1600, 40, 'Un seul compte BoostZ sur les deux téléphones', 3.4, 8.4)}
     ${endCard(8.6, 'La bêta est ouverte')}`, 13],
+  ouverte: [`${kick('BÊTA BOOSTZ · OUVERTE', .15, O_E - .25)}${oDiscs}${oPhones}${oWays}${oEnd}${oConf}`, O_TOTAL],
   rappel: [`${kick('BÊTA BOOSTZ · OUVERTE', .2, 8.4)}
     ${center(380, 88, 'Rejoins la bêta BoostZ<br><span class="acc">sur ton téléphone :</span>', .4, 8.4)}
     ${way('android', 700, 1.2, 8.4, -1.5)}${way('iphone', 1130, 2.2, 8.4, 1.5)}
@@ -71,6 +101,17 @@ reel(`${ghosts([[60, 160, 90, -8], [930, 200, 80, 6], [70, 1760, 90, 10], [900, 
 </script>
 <script>
 const base = window.render;
-window.render = (t) => { base(t); const p = document.getElementById('poster'); if (p) p.style.transform = `scale(${1 + .025 * Math.min(1, t / 8)})`; };
+window.render = (t) => { base(t); const p = document.getElementById('poster'); if (p) p.style.transform = `scale(${1 + .025 * Math.min(1, t / 8)})`;
+  if (key !== 'ouverte') return;
+  // The captures slide in from the right and leave to the left, one per line.
+  O_SHOTS.forEach((_, i) => { const el = document.getElementById('ph' + i), a = O_A + i * O_BL, inn = out3((t - a) / .45), outp = out3((t - a - O_BL + .3) / .35);
+    el.style.opacity = t < a ? 0 : 1 - outp;
+    el.style.transform = `translateX(${760 * (1 - inn) - 820 * outp}px) rotate(${(i % 2 ? 3 : -3) + 10 * (1 - inn)}deg)`; });
+  ALL8.forEach((_, i) => { document.getElementById('dz' + i).style.transform = `translateY(${Math.sin(t * 1.6 + i * 1.3) * 9}px) rotate(${Math.sin(t + i) * 4}deg)`; });
+  for (const c of O_CONF) { const el = document.getElementById(c.id), d = t - c.t0;
+    if (d < 0 || d > 3.2) { el.style.opacity = 0; continue; }
+    el.style.opacity = 1 - clamp((d - 2.5) / .7);
+    el.style.transform = `translate(${540 + c.vx * d * .55}px, ${490 + c.vy * d + 1500 * d * d}px) rotate(${c.spin * d}deg) scaleX(${Math.cos(d * 9 + c.spin)})`; }
+};
 window.render(0);
 </script></body></html>
