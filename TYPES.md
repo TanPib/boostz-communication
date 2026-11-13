@@ -230,7 +230,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | lun. 09/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 30 | Zoom mystère : Mickey Mouse, Brave Petit Tailleur, « Tu l'as trouvée à quelle étape ? » | Lorcana | `videos/2026-11-09-zoom-mystere.mp4` |
 | jeu. 12/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 15 | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | `images/2026-11-12-sorties-maestros-star-trek/` |
 | mer. 11/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Bêta J-3, sur Android et iPhone | les 8 | `videos/2026-11-11-beta-j-3.mp4` |
-| sam. 14/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | La bêta est ouverte, sur Android et iPhone | les 8 | `videos/2026-11-14-beta-android-ouverte.mp4` |
+| sam. 14/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | La bêta est ouverte, sur Android et iPhone | les 8 | `videos/2026-11-14-beta-ouverte.mp4` |
 | mar. 17/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Pokémon | Pokémon | `images/2026-11-17-raretes-pokemon/` |
 | dim. 22/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Rejoins la bêta, sur Android et iPhone | les 8 | `videos/2026-11-22-beta-rejoindre.mp4` |
 | ven. 27/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Black Friday : « Promo ou pas ? » | les 8 | `videos/2026-11-27-black-friday.mp4` |
