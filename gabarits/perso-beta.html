@@ -19,7 +19,7 @@ const icon = (x, y, w, r) => `<div class="abs" style="left:${x}px;top:${y}px;wid
 const ask = (x, y, w, h, size, r) => st(x, y, w, h, `<div class="h" style="display:flex;align-items:center;justify-content:center;height:100%;font-size:${size}px;line-height:1.05;color:${DARK};text-align:center">Je cherche<br>des testeurs</div>`, { fill: SUN, r, z: 6 });
 
 carousel([
-  ['post', `${ghosts([[950, 70, 80, 8]])}${track(0, 1312, .25)}
+  ['post', `${ghosts([[950, 70, 80, 8]])}
     <div class="abs h" style="left:70px;top:118px;font-size:120px">J’ai développé<br><span class="acc">une appli.</span></div>
     ${icon(70, 440, 170, -4)}
     <div class="abs" style="left:285px;top:478px">${wordmark(92)}</div>
@@ -28,6 +28,7 @@ carousel([
     ${ask(70, 905, 500, 180, 60, -2)}
     <div class="abs h" style="left:70px;top:1120px;font-size:68px">boostz.fr/beta</div>
     <div class="abs ui" style="left:72px;top:1200px;font-size:32px;color:${VSOFT}">Android et iPhone · dès 15 ans</div>
+    <div class="abs ui" style="left:72px;top:1262px;font-size:32px;white-space:nowrap">Une question ? Écrivez-moi en message privé.</div>
     ${phone(650, 440, 360, 4)}`],
   ['story', `${ghosts([[40, 205, 80, -8], [960, 215, 70, 6], [70, 1690, 90, 10], [910, 1700, 100, -6]])}
     <div class="abs h" style="left:0;top:356px;width:1080px;text-align:center;font-size:124px">J’ai développé<br><span class="acc">une appli.</span></div>
