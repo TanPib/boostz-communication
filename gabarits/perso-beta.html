@@ -9,7 +9,8 @@
 // family, so it stays simple: one 4:5 image for the post, one 9:16 image for
 // the story (he adds the link sticker to boostz.fr/beta and the mention of
 // @boostz.app by hand). First person, no marketing line, the real home screen
-// of the app, no store badge and no TestFlight link.
+// of the app, no store badge and no TestFlight link. « une appli » is in the
+// plain accent colour: the brand gradient on it read as « trop IA » to him.
 // Render: node rendu.mjs perso-beta.html images
 document.head.insertAdjacentHTML('beforeend', '<style>#story { height: 1920px; }</style>');
 const phone = (x, y, w, r) => `<div class="abs" style="left:${x}px;top:${y}px;width:${w}px;height:${Math.round((w - 16) * 2.164) + 16}px;border-radius:${w * .13}px;background:#131020;border:8px solid ${INK};box-shadow:14px 14px 0 ${SHADOW};overflow:hidden;transform:rotate(${r}deg);z-index:4"><img src="shots/app-accueil.jpg" style="width:100%;display:block"></div>`;
@@ -19,7 +20,7 @@ const ask = (x, y, w, h, size, r) => st(x, y, w, h, `<div class="h" style="displ
 carousel([
   ['post', `${ghosts([[950, 70, 80, 8]])}${track(0, 1312, .25)}
     <div class="abs lab" style="left:70px;top:92px;font-size:30px;letter-spacing:8px;color:${PINK}">ÇA Y EST</div>
-    <div class="abs h" style="left:70px;top:146px;font-size:120px">J’ai développé<br><span class="grad">une appli.</span></div>
+    <div class="abs h" style="left:70px;top:146px;font-size:120px">J’ai développé<br><span class="acc">une appli.</span></div>
     ${icon(70, 440, 170, -4)}
     <div class="abs" style="left:285px;top:478px">${wordmark(92)}</div>
     <div class="abs ui" style="left:70px;top:655px;width:540px;font-size:38px;line-height:1.3">Pour les collectionneurs de cartes : Pokémon, Magic, One Piece, Lorcana…</div>
@@ -30,12 +31,13 @@ carousel([
     ${phone(650, 440, 360, 4)}`],
   ['story', `${ghosts([[40, 205, 80, -8], [960, 215, 70, 6], [70, 1690, 90, 10], [910, 1700, 100, -6]])}
     <div class="abs lab" style="left:0;top:300px;width:1080px;text-align:center;font-size:30px;letter-spacing:8px;color:${PINK}">ÇA Y EST</div>
-    <div class="abs h" style="left:0;top:356px;width:1080px;text-align:center;font-size:124px">J’ai développé<br><span class="grad">une appli.</span></div>
+    <div class="abs h" style="left:0;top:356px;width:1080px;text-align:center;font-size:124px">J’ai développé<br><span class="acc">une appli.</span></div>
     <div class="abs ui" style="left:60px;top:640px;width:960px;text-align:center;font-size:38px;line-height:1.35">BoostZ, pour les collectionneurs de cartes<br>Pokémon, Magic, One Piece, Lorcana…<br><span class="acc">La bêta ouvre aujourd’hui.</span></div>
     ${phone(110, 810, 330, -4)}
     ${icon(590, 830, 200, 4)}
     ${ask(520, 1090, 460, 200, 62, 3)}
     <div class="abs ui" style="left:520px;top:1340px;width:470px;font-size:36px;line-height:1.3">Sur Android et sur iPhone, dès 15 ans.</div>
-    <div class="abs h" style="left:0;top:1560px;width:1080px;text-align:center;font-size:84px">boostz.fr/beta</div>`]
+    <div class="abs h" style="left:0;top:1520px;width:1080px;text-align:center;font-size:84px">boostz.fr/beta</div>
+    <div class="abs ui" style="left:0;top:1622px;width:1080px;text-align:center;font-size:34px;color:${VSOFT}">Une question ? Écris-moi en message privé.</div>`]
 ]);
 </script></body></html>
