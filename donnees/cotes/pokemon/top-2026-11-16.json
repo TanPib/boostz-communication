@@ -1,0 +1,343 @@
+{
+ "debut": "2026-11-01",
+ "fin": "2026-11-16",
+ "mode": "Prix de vente moyen sur 30 jours, d'un relevé à l'autre",
+ "seuil_eur": 10.0,
+ "candidates": 230,
+ "mouvements": [
+  {
+   "id": "bw1-114",
+   "nom": "Zekrom",
+   "set": "Noir & Blanc",
+   "numero": "114",
+   "rarete": "Ultra Rare",
+   "image": "https://assets.tcgdex.net/fr/bw/bw1/114",
+   "avant": 14.55,
+   "apres": 108.29,
+   "evolution": 644.3
+  },
+  {
+   "id": "base5-25",
+   "nom": "Léviator obscur",
+   "set": "Team Rocket",
+   "numero": "25",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base5/25",
+   "avant": 164.9,
+   "apres": 15.57,
+   "evolution": -90.6
+  },
+  {
+   "id": "base5-27",
+   "nom": "Mackogneur obscur",
+   "set": "Team Rocket",
+   "numero": "27",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base5/27",
+   "avant": 78.72,
+   "apres": 12.67,
+   "evolution": -83.9
+  },
+  {
+   "id": "smp-SM109",
+   "nom": "Pikachu de Sacha",
+   "set": "Promo SM",
+   "numero": "SM109",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 44.37,
+   "apres": 81.36,
+   "evolution": 83.4
+  },
+  {
+   "id": "base3-29",
+   "nom": "Raichu",
+   "set": "Fossile",
+   "numero": "29",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/29",
+   "avant": 72.93,
+   "apres": 12.35,
+   "evolution": -83.1
+  },
+  {
+   "id": "base3-19",
+   "nom": "Dracolosse",
+   "set": "Fossile",
+   "numero": "19",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/19",
+   "avant": 178.19,
+   "apres": 35.67,
+   "evolution": -80.0
+  },
+  {
+   "id": "base3-18",
+   "nom": "Métamorph",
+   "set": "Fossile",
+   "numero": "18",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/18",
+   "avant": 52.68,
+   "apres": 10.97,
+   "evolution": -79.2
+  },
+  {
+   "id": "base2-27",
+   "nom": "Ronflex",
+   "set": "Jungle",
+   "numero": "27",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base2/27",
+   "avant": 71.26,
+   "apres": 15.93,
+   "evolution": -77.6
+  },
+  {
+   "id": "base5-30",
+   "nom": "Rafflesia obscur",
+   "set": "Team Rocket",
+   "numero": "30",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base5/30",
+   "avant": 44.24,
+   "apres": 10.16,
+   "evolution": -77.0
+  },
+  {
+   "id": "base3-16",
+   "nom": "Ptéra",
+   "set": "Fossile",
+   "numero": "16",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/16",
+   "avant": 42.95,
+   "apres": 10.45,
+   "evolution": -75.7
+  }
+ ],
+ "hausses": [
+  {
+   "id": "bw1-114",
+   "nom": "Zekrom",
+   "set": "Noir & Blanc",
+   "numero": "114",
+   "rarete": "Ultra Rare",
+   "image": "https://assets.tcgdex.net/fr/bw/bw1/114",
+   "avant": 14.55,
+   "apres": 108.29,
+   "evolution": 644.3
+  },
+  {
+   "id": "smp-SM109",
+   "nom": "Pikachu de Sacha",
+   "set": "Promo SM",
+   "numero": "SM109",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 44.37,
+   "apres": 81.36,
+   "evolution": 83.4
+  },
+  {
+   "id": "swsh12-185",
+   "nom": "Lugia V",
+   "set": "Tempête Argentée",
+   "numero": "185",
+   "rarete": "Ultra Rare",
+   "image": "https://assets.tcgdex.net/fr/swsh/swsh12/185",
+   "avant": 14.78,
+   "apres": 21.07,
+   "evolution": 42.6
+  },
+  {
+   "id": "dp3-16",
+   "nom": "Raikou",
+   "set": "Merveilles Secrètes",
+   "numero": "16",
+   "rarete": "Rare Holo",
+   "image": "https://assets.tcgdex.net/fr/dp/dp3/16",
+   "avant": 10.88,
+   "apres": 14.76,
+   "evolution": 35.7
+  },
+  {
+   "id": "sm12-215",
+   "nom": "Tortank et Tiplouf GX",
+   "set": "Éclipse Cosmique",
+   "numero": "215",
+   "rarete": "Ultra Rare",
+   "image": "https://assets.tcgdex.net/fr/sm/sm12/215",
+   "avant": 309.41,
+   "apres": 414.3,
+   "evolution": 33.9
+  },
+  {
+   "id": "ecard2-10",
+   "nom": "Entei",
+   "set": "Aquapolis",
+   "numero": "10",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/ecard/ecard2/10",
+   "avant": 195.92,
+   "apres": 254.66,
+   "evolution": 30.0
+  },
+  {
+   "id": "base1-10",
+   "nom": "Mewtwo",
+   "set": "Set de Base",
+   "numero": "10",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base1/10",
+   "avant": 29.66,
+   "apres": 38.46,
+   "evolution": 29.7
+  },
+  {
+   "id": "xy12-12",
+   "nom": "Dracaufeu EX",
+   "set": "Évolutions",
+   "numero": "12",
+   "rarete": "Ultra Rare",
+   "image": "https://assets.tcgdex.net/fr/xy/xy12/12",
+   "avant": 19.81,
+   "apres": 25.62,
+   "evolution": 29.3
+  },
+  {
+   "id": "ecard2-H02",
+   "nom": "Arcanin",
+   "set": "Aquapolis",
+   "numero": "H02",
+   "rarete": "Holo Rare",
+   "image": null,
+   "avant": 31.85,
+   "apres": 40.12,
+   "evolution": 26.0
+  },
+  {
+   "id": "smp-SM150",
+   "nom": "Raikou",
+   "set": "Promo SM",
+   "numero": "SM150",
+   "rarete": "Promo",
+   "image": null,
+   "avant": 29.8,
+   "apres": 37.02,
+   "evolution": 24.2
+  }
+ ],
+ "baisses": [
+  {
+   "id": "base5-25",
+   "nom": "Léviator obscur",
+   "set": "Team Rocket",
+   "numero": "25",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base5/25",
+   "avant": 164.9,
+   "apres": 15.57,
+   "evolution": -90.6
+  },
+  {
+   "id": "base5-27",
+   "nom": "Mackogneur obscur",
+   "set": "Team Rocket",
+   "numero": "27",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base5/27",
+   "avant": 78.72,
+   "apres": 12.67,
+   "evolution": -83.9
+  },
+  {
+   "id": "base3-29",
+   "nom": "Raichu",
+   "set": "Fossile",
+   "numero": "29",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/29",
+   "avant": 72.93,
+   "apres": 12.35,
+   "evolution": -83.1
+  },
+  {
+   "id": "base3-19",
+   "nom": "Dracolosse",
+   "set": "Fossile",
+   "numero": "19",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/19",
+   "avant": 178.19,
+   "apres": 35.67,
+   "evolution": -80.0
+  },
+  {
+   "id": "base3-18",
+   "nom": "Métamorph",
+   "set": "Fossile",
+   "numero": "18",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/18",
+   "avant": 52.68,
+   "apres": 10.97,
+   "evolution": -79.2
+  },
+  {
+   "id": "base2-27",
+   "nom": "Ronflex",
+   "set": "Jungle",
+   "numero": "27",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base2/27",
+   "avant": 71.26,
+   "apres": 15.93,
+   "evolution": -77.6
+  },
+  {
+   "id": "base5-30",
+   "nom": "Rafflesia obscur",
+   "set": "Team Rocket",
+   "numero": "30",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base5/30",
+   "avant": 44.24,
+   "apres": 10.16,
+   "evolution": -77.0
+  },
+  {
+   "id": "base3-16",
+   "nom": "Ptéra",
+   "set": "Fossile",
+   "numero": "16",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/16",
+   "avant": 42.95,
+   "apres": 10.45,
+   "evolution": -75.7
+  },
+  {
+   "id": "base3-20",
+   "nom": "Ectoplasma",
+   "set": "Fossile",
+   "numero": "20",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base3/20",
+   "avant": 129.22,
+   "apres": 31.52,
+   "evolution": -75.6
+  },
+  {
+   "id": "base5-26",
+   "nom": "Hypnomade obscur",
+   "set": "Team Rocket",
+   "numero": "26",
+   "rarete": "Rare",
+   "image": "https://assets.tcgdex.net/fr/base/base5/26",
+   "avant": 47.22,
+   "apres": 11.54,
+   "evolution": -75.6
+  }
+ ]
+}
