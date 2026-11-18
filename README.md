@@ -52,6 +52,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-11-17-story-raretes-pokemon.mp4` | mar. 17/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-11-22-beta-rejoindre-v2.mp4` | dim. 22/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,8 s, musique originale |
 | `videos/2026-11-22-story-beta-rejoindre-v2.mp4` | dim. 22/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `images/2026-11-25-radar-scelles-pokemon/` | mer. 25/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG |
+| `videos/2026-11-25-story-radar-scelles-pokemon.mp4` | mer. 25/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique Mixkit « Lo-Fi 05 » |
 | `videos/2026-11-27-black-friday.mp4` | ven. 27/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 11,8 s, musique originale (refait le 08/10 pour sa nouvelle date) |
 | `videos/2026-11-27-story-black-friday.mp4` | ven. 27/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-12-03-glorious-victors.mp4` | jeu. 03/12/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 16,3 s, musique originale |

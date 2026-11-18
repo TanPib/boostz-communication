@@ -40,7 +40,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | mar. 17/11 | carrousel | 25 Les raretés expliquées | Épisode Pokémon : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Pokémon | ✅ programmé |
 | \*sam. 21/11 | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | brouillon dans Metricool, produit par le rappel du 20/11 |
 | \*dim. 22/11 | Reel | 11 Annonce | Rejoins la bêta, sur Android (3 étapes) et iPhone (TestFlight), refait le 20/10 | les 8 | ✅ programmé |
-| mer. 25/11 | carrousel | 35 Le radar des scellés | N° 1 : les coffrets Dresseur d’élite Écarlate et Violet, prix TCGplayer du 17/10 au 16/11, deux jours avant le Black Friday | Pokémon | brouillon dans Metricool, produit par le rappel du 18/11 |
+| mer. 25/11 | carrousel | 35 Le radar des scellés | N° 1 : les coffrets Dresseur d’élite Écarlate et Violet, prix TCGplayer du 17/10 au 16/11, deux jours avant le Black Friday | Pokémon | ✅ programmé (produit le 18/11) |
 | \*ven. 27/11 | Reel | 16 Thème | Black Friday : « Promo ou pas ? » | les 8 | ✅ programmé |
 | mar. 01/12 | carrousel | 2 Cotes qui bougent | Édition n° 2 : du 16/11 au 30/11 | One Piece | brouillon dans Metricool, produit par le rappel du 29/11 |
 | \*jeu. 03/12 | Reel | 15 Sortie d'extension | Glorious Victors sort aujourd'hui | Yu-Gi-Oh! | ✅ programmé |

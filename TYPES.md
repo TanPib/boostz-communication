@@ -40,7 +40,7 @@ Dis « fais-moi une publication » : Claude ouvre ce menu, te dit ce qui est ten
 | 32 | **Le mur des prix** | carrousel, 5 slides | 🔥🔥🔥 | série (`mur-des-prix.html`) | à venir · 09/03/2027, un set Pokémon récent |
 | 33 | **Un mois après la sortie** | carrousel, 4 à 6 slides | 🔥🔥🔥 | série (`un-mois-apres.html`, relevé quotidien) | à venir · 06/12/2026, Règne Delta (Pokémon) |
 | 34 | **Brute ou gradée ?** | carrousel, 4 slides | 🔥🔥 | série mensuelle (`brut-ou-gradee.html`) | à venir · 17/01/2027, Dracaufeu-ex 199/165 (Pokémon) |
-| 35 | **Le radar des scellés** | carrousel, 5 slides | 🔥🔥🔥 | série, toutes les 3 ou 4 semaines (`radar-scelles.html`) | à venir · 25/11/2026, coffrets Dresseur d’élite (Pokémon) |
+| 35 | **Le radar des scellés** | carrousel, 5 slides | 🔥🔥🔥 | série, toutes les 3 ou 4 semaines (`radar-scelles.html`) | 25/11/2026, coffrets Dresseur d’élite (Pokémon) |
 
 *Prêt* : le gabarit existe, il n'y a plus qu'à changer le sujet. *Maquette* : le design a été proposé une fois, avec des chiffres d'exemple, et sera finalisé au premier usage.
 
@@ -233,6 +233,7 @@ Pas un format fixe : une grosse actu d'un des 8 jeux (annonce, réédition, reco
 | sam. 14/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | La bêta est ouverte, sur Android et iPhone | les 8 | `videos/2026-11-14-beta-ouverte.mp4` |
 | mar. 17/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 25 | Les raretés expliquées : Pokémon | Pokémon | `images/2026-11-17-raretes-pokemon/` |
 | dim. 22/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 11 | Rejoins la bêta, sur Android et iPhone | les 8 | `videos/2026-11-22-beta-rejoindre.mp4` |
+| mer. 25/11/2026, 10 h | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 35 | Le radar des scellés n° 1 : coffrets Dresseur d’élite Écarlate et Violet, 5 sur 6 en baisse du 17/10 au 16/11 (Évolutions Prismatiques −8,9 %, Couronne Stellaire seule en hausse, +0,5 %) | Pokémon | `images/2026-11-25-radar-scelles-pokemon/` |
 | ven. 27/11/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 16 | Black Friday : « Promo ou pas ? » | les 8 | `videos/2026-11-27-black-friday.mp4` |
 | jeu. 03/12/2026, 10 h | Instagram (Reel), TikTok, Facebook (Reel), story Instagram et Facebook | 15 | Glorious Victors sort aujourd'hui | Yu-Gi-Oh! | `videos/2026-12-03-glorious-victors.mp4` |
 | mar. 16/02/2027, 10 h (déplacé du 06/12 le 16/10) | Instagram (carrousel), TikTok (photos), Facebook, story vidéo Instagram et Facebook | 21 | Épisode : One Piece | One Piece | `images/2027-02-16-guide-scelles-onepiece/` |
