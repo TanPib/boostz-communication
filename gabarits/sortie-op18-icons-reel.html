@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>BoostZ OP18 et Icons</title>
+<link rel="stylesheet" href="fonts/local.css">
+<script src="posts-emblems.js"></script><script src="stickers.js"></script>
+</head><body><script>
+// N° 13 « Sorti hier » (sam. 21/11/2026): One Piece OP18 The Dominance of God
+// (English, out 20/11) and Star Wars Unlimited Icons 2027 Edition (out 20/11).
+// The cards worth the most, from the first TCGplayer record of each set
+// (donnees/sets/*-2026-11-20.json, market prices, tcgcsv build of 19/11/2026
+// 20:04 UTC, US dollars, English editions). Icons had only 13 priced cards
+// that day and five Legendary tied at 30 $: the Reel shows three and says so.
+// Card and product images: TCGplayer (Image workflow).
+// Render: node rendu.mjs sortie-op18-icons-reel.html video
+window.PUB = '2026-11-21';
+const OP = GAMES.onepiece[1], SW = GAMES.starwarsunlimited[1];
+const dol = (v) => (Number.isInteger(v) ? String(v) : v.toFixed(2).replace('.', ',')).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' $';
+const hdr = (game, label, at, out) => `<div class="abs" ${A(at, out, 0, 'rise')} style="left:70px;top:150px;display:flex;align-items:center;gap:22px;z-index:6">${emblemDisc(game, 84)}<div><div class="lab" style="font-size:26px;letter-spacing:6px;color:${GAMES[game][1]}">${GAMES[game][0]}</div><div class="lab" style="font-size:24px;letter-spacing:5px;color:${VSOFT};margin-top:6px">${label}</div></div></div>`;
+const center = (top, size, html, at, out, kind = 'rise') => `<div class="abs h" ${A(at, out, 0, kind)} style="left:60px;right:60px;top:${top}px;text-align:center;font-size:${size}px;z-index:6">${html}</div>`;
+// Three cards in a fan, each with its name and price under it.
+const fan = (list, c, at, out) => list.map(([img, name, price], i) => { const x = [70, 390, 710][i], r = [-5, 0, 5][i], y = [700, 660, 700][i];
+  return `${card(`assets/${img}.jpg`, x, y, 300, r, 3 + (i === 1), { attrs: A(at + i * .45, out, r) })}
+    <div class="abs" ${A(at + .25 + i * .45, out, 0, 'rise')} style="left:${x - 10}px;top:${y + 450}px;width:320px;text-align:center;z-index:5">
+      <div class="ui" style="font-size:28px;line-height:1.2">${name}</div>
+      <div class="h" style="font-size:62px;margin-top:6px;color:${c}">${price}</div></div>`; }).join('');
+const pack = (img, at, out, r) => `<div class="abs" ${A(at, out, r)} style="left:290px;top:620px;width:500px;height:500px;background:#fff;border:8px solid ${INK};border-radius:30px;box-shadow:16px 16px 0 ${SHADOW};display:flex;align-items:center;justify-content:center;overflow:hidden;z-index:3"><img src="assets/${img}.jpg" style="width:92%;height:92%;object-fit:contain"></div>`;
+const OPC = [['carte-op18-031-robin-manga', 'Nico Robin<br>version manga', dol(1500)], ['carte-op18-096-ill-make-the-call', 'I’ll Make the Call<br>art alternatif', dol(199.99)], ['carte-op18-021-franky-aa', 'Franky<br>art alternatif', dol(147.5)]];
+const SWC = [['carte-icons-039-ahsoka', 'Ahsoka Tano<br>Legendary', dol(30)], ['carte-icons-067-vador', 'Dark Vador<br>Legendary', dol(30)], ['carte-icons-042-obi-wan', 'Obi-Wan Kenobi<br>Legendary', dol(30)]];
+const srcl = (t, at, out) => `<div class="abs" ${A(at, out, 0, 'fade')} style="left:70px;right:70px;top:1500px;text-align:center;font-family:Exo;font-size:25px;line-height:1.4;color:rgba(255,255,255,.5);z-index:5">${t}</div>`;
+const S1 = .2, S2 = 8.6, END = 16.8;
+reel(`${ghosts([[930, 330, 80, 6], [60, 1450, 80, -8], [70, 1760, 90, 10], [900, 1780, 100, -6]])}
+  ${reelPath('M-20 1800 C160 1750 300 1870 520 1820 S860 1740 1100 1790')}
+  ${hdr('onepiece', 'SORTI HIER · 20/11', S1, S2 - .3)}
+  ${center(320, 96, `OP18`, S1 + .3, 3.6)}
+  ${center(430, 66, `<span style="color:${OP};white-space:nowrap">The Dominance of God</span>`, S1 + .45, 3.6)}
+  ${pack('sortie-op18-booster', S1 + .8, 3.6, -3)}
+  ${center(330, 84, `Les cartes qui valent<br><span style="color:${OP}">déjà le plus</span>`, 3.8, S2 - .3)}
+  ${fan(OPC, OP, 4.2, S2 - .3)}
+  ${srcl('Prix de marché TCGplayer (éditions anglaises, en dollars), premier relevé BoostZ du 20/11/2026. Images : TCGplayer.', 5.2, S2 - .3)}
+  ${hdr('starwarsunlimited', 'SORTI HIER · 20/11', S2, END - .3)}
+  ${center(320, 96, `Icons`, S2 + .3, S2 + 3.4)}
+  ${center(430, 66, `<span style="color:${SW};white-space:nowrap">2027 Edition</span>`, S2 + .45, S2 + 3.4)}
+  ${pack('sortie-icons-display', S2 + .8, S2 + 3.4, 3)}
+  ${center(330, 84, `Les cartes qui valent<br><span style="color:${SW}">déjà le plus</span>`, S2 + 3.6, END - .3)}
+  ${fan(SWC, SW, S2 + 4, END - .3)}
+  ${srcl('Cinq Legendary à égalité à 30 $ (avec Devastator et Comte Dooku). Prix de marché TCGplayer (éditions anglaises, en dollars), premier relevé BoostZ du 20/11/2026. Images : TCGplayer.', S2 + 5, END - .3)}
+  ${center(560, 96, `Suis leur cote<br><span class="acc">dès aujourd’hui.</span>`, END, null)}
+  <div class="abs" ${A(END + .5, null, 0, 'rise')} style="left:0;top:900px;width:1080px;display:flex;flex-direction:column;align-items:center;gap:26px;z-index:6">${wordmark(110)}
+    <div class="mut" style="font-weight:600;font-size:38px">Ton compagnon TCG, bientôt sur ton téléphone</div>
+    <div class="ui" style="font-size:36px;color:${VSOFT}">Abonne-toi pour ne rien manquer</div></div>`, END + 3.2);
+</script></body></html>
