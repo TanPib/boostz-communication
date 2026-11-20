@@ -1,0 +1,151 @@
+{
+"date": "2026-11-20",
+"source": "TCGplayer market price, via tcgcsv.com",
+"devise": "USD",
+"build": "2026-11-19T20:04:34+0000",
+"cartes": [
+{
+"id": 731839,
+"nom": "Ahsoka Tano - Not on My Death Watch",
+"set": "Icons 2027 Edition",
+"numero": "39/194",
+"rarete": "Legendary",
+"version": "Normal",
+"market": 30.0,
+"low": 25.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731839_200w.jpg"
+},
+{
+"id": 731842,
+"nom": "Obi-Wan Kenobi - I Sense a Trap",
+"set": "Icons 2027 Edition",
+"numero": "42/194",
+"rarete": "Legendary",
+"version": "Normal",
+"market": 30.0,
+"low": 25.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731842_200w.jpg"
+},
+{
+"id": 731867,
+"nom": "Darth Vader - Useless to Resist",
+"set": "Icons 2027 Edition",
+"numero": "67/194",
+"rarete": "Legendary",
+"version": "Normal",
+"market": 30.0,
+"low": 22.01,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731867_200w.jpg"
+},
+{
+"id": 731868,
+"nom": "Devastator - Lord Vader's Flagship",
+"set": "Icons 2027 Edition",
+"numero": "68/194",
+"rarete": "Legendary",
+"version": "Normal",
+"market": 30.0,
+"low": 22.01,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731868_200w.jpg"
+},
+{
+"id": 731948,
+"nom": "Count Dooku - Silver-Tongued",
+"set": "Icons 2027 Edition",
+"numero": "148/194",
+"rarete": "Legendary",
+"version": "Normal",
+"market": 30.0,
+"low": 25.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731948_200w.jpg"
+},
+{
+"id": 731826,
+"nom": "Darth Sidious - Move Against the Jedi",
+"set": "Icons 2027 Edition",
+"numero": "26/194",
+"rarete": "Rare",
+"version": "Normal",
+"market": 13.51,
+"low": 10.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731826_200w.jpg"
+},
+{
+"id": 731823,
+"nom": "Grand Moff Tarkin - Cracking Down on Lothal",
+"set": "Icons 2027 Edition",
+"numero": "23/194",
+"rarete": "Rare",
+"version": "Normal",
+"market": 10.0,
+"low": 5.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731823_200w.jpg"
+},
+{
+"id": 731949,
+"nom": "The Invisible Hand - Confederate Might",
+"set": "Icons 2027 Edition",
+"numero": "149/194",
+"rarete": "Rare",
+"version": "Normal",
+"market": 10.0,
+"low": 6.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731949_200w.jpg"
+},
+{
+"id": 731846,
+"nom": "Vigilant Defense",
+"set": "Icons 2027 Edition",
+"numero": "46/194",
+"rarete": "Uncommon",
+"version": "Normal",
+"market": 1.0,
+"low": 1.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731846_200w.jpg"
+},
+{
+"id": 731879,
+"nom": "Qui-Gon Jinn - Unwavering Belief",
+"set": "Icons 2027 Edition",
+"numero": "79/194",
+"rarete": "Uncommon",
+"version": "Normal",
+"market": 1.0,
+"low": 1.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731879_200w.jpg"
+},
+{
+"id": 731887,
+"nom": "Issue a Command",
+"set": "Icons 2027 Edition",
+"numero": "87/194",
+"rarete": "Uncommon",
+"version": "Normal",
+"market": 1.0,
+"low": 1.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731887_200w.jpg"
+},
+{
+"id": 731927,
+"nom": "Act of Aggression",
+"set": "Icons 2027 Edition",
+"numero": "127/194",
+"rarete": "Uncommon",
+"version": "Normal",
+"market": 1.0,
+"low": 1.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731927_200w.jpg"
+},
+{
+"id": 731968,
+"nom": "Cunning Ploy",
+"set": "Icons 2027 Edition",
+"numero": "168/194",
+"rarete": "Uncommon",
+"version": "Normal",
+"market": 1.0,
+"low": 30.0,
+"image": "https://tcgplayer-cdn.tcgplayer.com/product/731968_200w.jpg"
+}
+]
+}
