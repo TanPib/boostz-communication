@@ -50,6 +50,8 @@ Ce dépôt est public exprès : Metricool, qui programme les publications, récu
 | `videos/2026-11-14-story-beta-ouverte.mp4` | sam. 14/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-11-17-raretes-pokemon/` | mar. 17/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 11 JPEG |
 | `videos/2026-11-17-story-raretes-pokemon.mp4` | mar. 17/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
+| `videos/2026-11-21-sortie-op18-icons.mp4` | sam. 21/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 21,8 s, musique Mixkit « Dim The Lights » |
+| `videos/2026-11-21-story-sortie-op18-icons.mp4` | sam. 21/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `videos/2026-11-22-beta-rejoindre-v2.mp4` | dim. 22/11/2026, 10 h — Instagram, TikTok, Facebook | Reel 9:16, 1080 × 1920, 14,8 s, musique originale |
 | `videos/2026-11-22-story-beta-rejoindre-v2.mp4` | dim. 22/11/2026, 10 h — story Instagram et Facebook | 9:16, 7 s, couverture animée, musique du post |
 | `images/2026-11-25-radar-scelles-pokemon/` | mer. 25/11/2026, 10 h — Instagram, TikTok, Facebook | carrousel 4:5, 5 JPEG |

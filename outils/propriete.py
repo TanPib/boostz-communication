@@ -31,7 +31,7 @@ POSTS = {  # date: (IPs, photo credit or '')
  '2026-11-12': ('YMT', ''),
  '2026-11-14': (ALL, ''),
  '2027-05-08': ('P', "Image de la carte : slabfol.io."),
- '2026-11-21': ('OS', "Images des cartes et des produits : TCGplayer."),
+ '2026-11-21': ('OS', "Images des cartes et des produits : TCGplayer (visuels officiels Bandai pour One Piece)."),
  '2026-11-22': (ALL, ''),
  '2026-11-25': ('P', "Photos des produits : TCGplayer."),
  '2026-11-27': (ALL, ''),

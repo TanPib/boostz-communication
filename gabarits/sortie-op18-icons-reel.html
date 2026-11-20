@@ -9,7 +9,10 @@
 // (donnees/sets/*-2026-11-20.json, market prices, tcgcsv build of 19/11/2026
 // 20:04 UTC, US dollars, English editions). Icons had only 13 priced cards
 // that day and five Legendary tied at 30 $: the Reel shows three and says so.
-// Card and product images: TCGplayer (Image workflow).
+// Card and product images: TCGplayer (Image workflow). The OP18 ones are Bandai's
+// official previews, which carry « SAMPLE »: no clean scan of these variants
+// existed the day after release (Limitless had the same watermark), so the
+// source line says it.
 // Render: node rendu.mjs sortie-op18-icons-reel.html video
 window.PUB = '2026-11-21';
 const OP = GAMES.onepiece[1], SW = GAMES.starwarsunlimited[1];
@@ -35,7 +38,7 @@ reel(`${ghosts([[930, 330, 80, 6], [60, 1450, 80, -8], [70, 1760, 90, 10], [900,
   ${pack('sortie-op18-booster', S1 + .8, 3.6, -3)}
   ${center(330, 84, `Les cartes qui valent<br><span style="color:${OP}">déjà le plus</span>`, 3.8, S2 - .3)}
   ${fan(OPC, OP, 4.2, S2 - .3)}
-  ${srcl('Prix de marché TCGplayer (éditions anglaises, en dollars), premier relevé BoostZ du 20/11/2026. Images : TCGplayer.', 5.2, S2 - .3)}
+  ${srcl('Prix de marché TCGplayer (éditions anglaises, en dollars), premier relevé BoostZ du 20/11/2026. Images : visuels officiels Bandai (mention SAMPLE d’origine), via TCGplayer.', 5.2, S2 - .3)}
   ${hdr('starwarsunlimited', 'SORTI HIER · 20/11', S2, END - .3)}
   ${center(320, 96, `Icons`, S2 + .3, S2 + 3.4)}
   ${center(430, 66, `<span style="color:${SW};white-space:nowrap">2027 Edition</span>`, S2 + .45, S2 + 3.4)}

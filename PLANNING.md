@@ -38,7 +38,7 @@ Réorganisé deux fois le 07/10/2026 : selon le rythme ci-dessus, puis pour vari
 | \*jeu. 12/11 | carrousel | 15 Sortie d'extension | Magnificent Maestros (12/11) et Magic × Star Trek (13/11) | Yu-Gi-Oh!, Magic | ✅ programmé |
 | \*sam. 14/11 | Reel | 11 Annonce | La bêta est ouverte, sur Android et iPhone (refait le 20/10, puis le 13/11 : nouvelle icône, quatre captures de l'appli, musique Mixkit « Sleepy Cat ») | les 8 | ✅ programmé |
 | mar. 17/11 | carrousel | 25 Les raretés expliquées | Épisode Pokémon : 9 raretés, le vrai scan d’une carte et un zoom sur son repère | Pokémon | ✅ programmé |
-| \*sam. 21/11 | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | brouillon dans Metricool, produit par le rappel du 20/11 |
+| \*sam. 21/11 | Reel | 15 Sortie d'extension | Sorti hier : OP18 et Star Wars Unlimited Icons | One Piece, Star Wars Unlimited | ✅ programmé (produit le 20/11) |
 | \*dim. 22/11 | Reel | 11 Annonce | Rejoins la bêta, sur Android (3 étapes) et iPhone (TestFlight), refait le 20/10 | les 8 | ✅ programmé |
 | mer. 25/11 | carrousel | 35 Le radar des scellés | N° 1 : les coffrets Dresseur d’élite Écarlate et Violet, prix TCGplayer du 17/10 au 16/11, deux jours avant le Black Friday | Pokémon | ✅ programmé (produit le 18/11) |
 | \*ven. 27/11 | Reel | 16 Thème | Black Friday : « Promo ou pas ? » | les 8 | ✅ programmé |

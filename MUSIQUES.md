@@ -33,7 +33,7 @@ Tempo et entrée de la batterie mesurés sur le fichier (analyse du 13/11/2026),
 | 763 | Lo-Fi 01 | Lily J | 75 BPM | 31,75 s (la basse entre à 32 s) | détendu, chaleureux | essai B du Reel du 14/11, non retenu |
 | 135 | Sleepy Cat | Alejandro Magaña (A. M.) | 67,5 BPM | 0 s | posé, mélodique | **Reel et story du 14/11** (ouverture de la bêta), choisi par TanPib le 13/11 parmi trois essais |
 | 764 | Lo-Fi 02 | Lily J | 82 BPM | 23 s (la batterie entre à 23,5 s) | détendu, un peu décalé | — |
-| 97 | Dim The Lights | Ahjay Stelino | 70 BPM | 0 s | détendu, insistant | — |
+| 97 | Dim The Lights | Ahjay Stelino | 70 BPM | 0 s | détendu, insistant | Reel et story du 21/11 (OP18 et Icons) |
 | 282 | Sweet September | Arulo | 76 BPM | 11 s | calme, hip-hop doux | — |
 
 Écartés : Lo-Fi 03 (jazz à cuivres, ambiance « sensuelle »), Lo-Fi 04 (43 s d'introduction).
